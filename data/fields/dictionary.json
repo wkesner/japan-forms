@@ -1,0 +1,770 @@
+{
+  "_meta": {
+    "description": "Universal field dictionary for Japanese government forms. Each field is translated once and referenced by form templates via field_id.",
+    "version": "0.1.0",
+    "last_updated": "2025-02-07",
+    "confidence_levels": {
+      "draft": "Machine-translated or best guess — needs verification",
+      "reviewed": "Reviewed by someone with Japanese ability",
+      "verified": "Confirmed against official English materials or by native speaker",
+      "official": "Taken directly from an official government English translation"
+    }
+  },
+  "fields": {
+    "shimei": {
+      "kanji": "氏名",
+      "reading": "しめい",
+      "romaji": "Shimei",
+      "english": "Full name",
+      "category": "personal",
+      "tip_en": "Write in katakana for foreign names. Some forms accept romaji.",
+      "tip_ja": "外国人はカタカナで記入",
+      "appears_on": [
+        "residence_registration",
+        "seal_registration",
+        "juminhyo_request",
+        "bank_account",
+        "pension_withdrawal",
+        "health_insurance"
+      ],
+      "confidence": "official",
+      "notes": "Also written as お名前 (onamae) on less formal forms"
+    },
+    "furigana": {
+      "kanji": "フリガナ",
+      "reading": "ふりがな",
+      "romaji": "Furigana",
+      "english": "Phonetic reading (katakana)",
+      "category": "personal",
+      "tip_en": "Write the katakana reading of your name. For foreign names, this IS your name in katakana.",
+      "appears_on": [
+        "residence_registration",
+        "seal_registration",
+        "bank_account",
+        "pension_withdrawal"
+      ],
+      "confidence": "verified",
+      "notes": "Sometimes shown in hiragana (ふりがな) — same purpose, use katakana for foreign names either way"
+    },
+    "jusho": {
+      "kanji": "住所",
+      "reading": "じゅうしょ",
+      "romaji": "Jūsho",
+      "english": "Address",
+      "category": "address",
+      "tip_en": "Write in kanji if possible. Ward office staff can help you look up the correct kanji for your address.",
+      "appears_on": [
+        "residence_registration",
+        "seal_registration",
+        "juminhyo_request",
+        "bank_account",
+        "pension_withdrawal",
+        "health_insurance"
+      ],
+      "confidence": "official"
+    },
+    "gen_jusho": {
+      "kanji": "現住所",
+      "reading": "げんじゅうしょ",
+      "romaji": "Gen-jūsho",
+      "english": "Current address",
+      "category": "address",
+      "tip_en": "Your address as currently registered. Same as 住所 on most forms.",
+      "appears_on": [
+        "juminhyo_request",
+        "seal_registration"
+      ],
+      "confidence": "verified"
+    },
+    "shin_jusho": {
+      "kanji": "新住所",
+      "reading": "しんじゅうしょ",
+      "romaji": "Shin-jūsho",
+      "english": "New address",
+      "category": "address",
+      "tip_en": "The address you are moving TO.",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "official"
+    },
+    "kyu_jusho": {
+      "kanji": "旧住所",
+      "reading": "きゅうじゅうしょ",
+      "romaji": "Kyū-jūsho",
+      "english": "Previous address",
+      "category": "address",
+      "tip_en": "If coming from abroad, write your country name (e.g. アメリカ合衆国).",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "official",
+      "aliases": [
+        "前住所"
+      ]
+    },
+    "katagaki": {
+      "kanji": "方書",
+      "reading": "かたがき",
+      "romaji": "Katagaki",
+      "english": "Building name / room number",
+      "category": "address",
+      "tip_en": "Apartment/mansion name and room number. e.g. ○○マンション 301号室",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "verified"
+    },
+    "seinengappi": {
+      "kanji": "生年月日",
+      "reading": "せいねんがっぴ",
+      "romaji": "Seinengappi",
+      "english": "Date of birth",
+      "category": "personal",
+      "tip_en": "Format: 年(year) 月(month) 日(day). Use Japanese calendar (令和/平成) or Western year.",
+      "appears_on": [
+        "residence_registration",
+        "seal_registration",
+        "bank_account",
+        "pension_withdrawal",
+        "health_insurance"
+      ],
+      "confidence": "official"
+    },
+    "seibetsu": {
+      "kanji": "性別",
+      "reading": "せいべつ",
+      "romaji": "Seibetsu",
+      "english": "Gender",
+      "category": "personal",
+      "tip_en": "男 (otoko) = Male, 女 (onna) = Female. Circle the appropriate one.",
+      "appears_on": [
+        "residence_registration",
+        "bank_account",
+        "pension_withdrawal"
+      ],
+      "confidence": "official",
+      "options": {
+        "男": {
+          "reading": "おとこ",
+          "english": "Male"
+        },
+        "女": {
+          "reading": "おんな",
+          "english": "Female"
+        }
+      }
+    },
+    "denwa_bango": {
+      "kanji": "電話番号",
+      "reading": "でんわばんごう",
+      "romaji": "Denwa bangō",
+      "english": "Phone number",
+      "category": "personal",
+      "tip_en": "Japanese mobile number preferred. Some forms accept overseas numbers.",
+      "appears_on": [
+        "residence_registration",
+        "seal_registration",
+        "bank_account"
+      ],
+      "confidence": "official",
+      "aliases": [
+        "電話",
+        "連絡先"
+      ]
+    },
+    "kokuseki": {
+      "kanji": "国籍・地域",
+      "reading": "こくせき・ちいき",
+      "romaji": "Kokuseki / Chiiki",
+      "english": "Nationality / Region",
+      "category": "personal",
+      "tip_en": "Write your country of nationality. For Taiwan, write 台湾.",
+      "appears_on": [
+        "residence_registration",
+        "pension_withdrawal"
+      ],
+      "confidence": "official",
+      "aliases": [
+        "国籍"
+      ]
+    },
+    "setainushi_shimei": {
+      "kanji": "世帯主氏名",
+      "reading": "せたいぬし しめい",
+      "romaji": "Setainushi shimei",
+      "english": "Head of household name",
+      "category": "household",
+      "tip_en": "If you live alone, YOU are the head of household — write your own name.",
+      "appears_on": [
+        "residence_registration",
+        "juminhyo_request",
+        "health_insurance"
+      ],
+      "confidence": "verified"
+    },
+    "tsuzukigara": {
+      "kanji": "続柄",
+      "reading": "つづきがら",
+      "romaji": "Tsuzukigara",
+      "english": "Relationship to head of household",
+      "category": "household",
+      "tip_en": "See relationship terms table.",
+      "appears_on": [
+        "residence_registration",
+        "juminhyo_request",
+        "health_insurance"
+      ],
+      "confidence": "verified",
+      "options": {
+        "本人": {
+          "reading": "ほんにん",
+          "english": "Self (head of household)"
+        },
+        "妻": {
+          "reading": "つま",
+          "english": "Wife"
+        },
+        "夫": {
+          "reading": "おっと",
+          "english": "Husband"
+        },
+        "子": {
+          "reading": "こ",
+          "english": "Child"
+        },
+        "父": {
+          "reading": "ちち",
+          "english": "Father"
+        },
+        "母": {
+          "reading": "はは",
+          "english": "Mother"
+        },
+        "兄": {
+          "reading": "あに",
+          "english": "Older brother"
+        },
+        "姉": {
+          "reading": "あね",
+          "english": "Older sister"
+        },
+        "弟": {
+          "reading": "おとうと",
+          "english": "Younger brother"
+        },
+        "妹": {
+          "reading": "いもうと",
+          "english": "Younger sister"
+        },
+        "同居人": {
+          "reading": "どうきょにん",
+          "english": "Cohabitant / Roommate"
+        }
+      }
+    },
+    "todokede_bi": {
+      "kanji": "届出日",
+      "reading": "とどけでび",
+      "romaji": "Todokede-bi",
+      "english": "Date of filing",
+      "category": "dates",
+      "tip_en": "Today's date. Use Japanese calendar or Western calendar.",
+      "appears_on": [
+        "residence_registration",
+        "seal_registration",
+        "health_insurance"
+      ],
+      "confidence": "verified"
+    },
+    "ido_bi": {
+      "kanji": "異動日",
+      "reading": "いどうび",
+      "romaji": "Idō-bi",
+      "english": "Date of move / change",
+      "category": "dates",
+      "tip_en": "The date you actually moved into your new address — NOT your arrival date in Japan if different.",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "verified",
+      "aliases": [
+        "転入日",
+        "転居日"
+      ]
+    },
+    "tennyu": {
+      "kanji": "転入",
+      "reading": "てんにゅう",
+      "romaji": "Tennyu",
+      "english": "Moving in (from another municipality or abroad)",
+      "category": "move_type",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "official"
+    },
+    "tenshutsu": {
+      "kanji": "転出",
+      "reading": "てんしゅつ",
+      "romaji": "Tenshutsu",
+      "english": "Moving out",
+      "category": "move_type",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "official"
+    },
+    "tenkyo": {
+      "kanji": "転居",
+      "reading": "てんきょ",
+      "romaji": "Tenkyo",
+      "english": "Moving within the same municipality",
+      "category": "move_type",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "official"
+    },
+    "setai_henko": {
+      "kanji": "世帯変更",
+      "reading": "せたいへんこう",
+      "romaji": "Setai henkō",
+      "english": "Change of household (head of household change, merge, split)",
+      "category": "move_type",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "verified"
+    },
+    "zairyu_card_bango": {
+      "kanji": "在留カード番号",
+      "reading": "ざいりゅうカードばんごう",
+      "romaji": "Zairyū kādo bangō",
+      "english": "Residence Card number",
+      "category": "immigration",
+      "tip_en": "Alphanumeric code on the front of your Residence Card (Zairyu Card).",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "verified"
+    },
+    "zairyu_shikaku": {
+      "kanji": "在留資格",
+      "reading": "ざいりゅうしかく",
+      "romaji": "Zairyū shikaku",
+      "english": "Residence status / Visa type",
+      "category": "immigration",
+      "tip_en": "e.g. 技術・人文知識・国際業務, 日本人の配偶者等, 留学, 永住者",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "official"
+    },
+    "zairyu_kikan": {
+      "kanji": "在留期間",
+      "reading": "ざいりゅうきかん",
+      "romaji": "Zairyū kikan",
+      "english": "Period of stay",
+      "category": "immigration",
+      "tip_en": "e.g. 1年, 3年, 5年. As shown on your Residence Card.",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "official"
+    },
+    "kojin_bango": {
+      "kanji": "個人番号",
+      "reading": "こじんばんごう",
+      "romaji": "Kojin bangō",
+      "english": "My Number (Individual Number)",
+      "category": "immigration",
+      "tip_en": "12-digit number. Leave blank on first registration — it will be mailed to you after.",
+      "appears_on": [
+        "residence_registration",
+        "health_insurance",
+        "pension_withdrawal"
+      ],
+      "confidence": "official",
+      "aliases": [
+        "マイナンバー"
+      ]
+    },
+    "shomei": {
+      "kanji": "署名",
+      "reading": "しょめい",
+      "romaji": "Shomei",
+      "english": "Signature",
+      "category": "other",
+      "tip_en": "Sign your name. Foreigners can use a written signature instead of a seal (inkan).",
+      "appears_on": [
+        "residence_registration",
+        "seal_registration",
+        "bank_account"
+      ],
+      "confidence": "verified"
+    },
+    "in": {
+      "kanji": "印",
+      "reading": "いん",
+      "romaji": "In",
+      "english": "Seal (inkan / hanko)",
+      "category": "other",
+      "tip_en": "Personal seal stamp. Most ward offices accept a written signature for foreigners instead.",
+      "appears_on": [
+        "residence_registration",
+        "seal_registration",
+        "bank_account"
+      ],
+      "confidence": "verified",
+      "aliases": [
+        "印鑑",
+        "はんこ"
+      ]
+    },
+    "todokedenin": {
+      "kanji": "届出人",
+      "reading": "とどけでにん",
+      "romaji": "Todokedenin",
+      "english": "Applicant / Person filing the form",
+      "category": "other",
+      "tip_en": "The person physically submitting the form. Usually yourself.",
+      "appears_on": [
+        "residence_registration",
+        "health_insurance"
+      ],
+      "confidence": "verified"
+    },
+    "ininjou": {
+      "kanji": "委任状",
+      "reading": "いにんじょう",
+      "romaji": "Ininjō",
+      "english": "Letter of proxy / Power of attorney",
+      "category": "other",
+      "tip_en": "Required if someone else is filing on your behalf.",
+      "appears_on": [
+        "residence_registration",
+        "juminhyo_request",
+        "seal_registration"
+      ],
+      "confidence": "verified"
+    },
+    "kinmusaki": {
+      "kanji": "勤務先",
+      "reading": "きんむさき",
+      "romaji": "Kinmusaki",
+      "english": "Place of employment / Employer",
+      "category": "employment",
+      "tip_en": "Company name and address. Some forms also ask for 勤務先電話番号 (employer phone number).",
+      "appears_on": [
+        "bank_account",
+        "health_insurance"
+      ],
+      "confidence": "verified"
+    },
+    "shokugyo": {
+      "kanji": "職業",
+      "reading": "しょくぎょう",
+      "romaji": "Shokugyō",
+      "english": "Occupation",
+      "category": "employment",
+      "tip_en": "e.g. 会社員 (company employee), 自営業 (self-employed), 学生 (student)",
+      "appears_on": [
+        "bank_account"
+      ],
+      "confidence": "verified"
+    },
+    "koza_bango": {
+      "kanji": "口座番号",
+      "reading": "こうざばんごう",
+      "romaji": "Kōza bangō",
+      "english": "Account number",
+      "category": "financial",
+      "tip_en": "Your bank account number (usually 7 digits).",
+      "appears_on": [
+        "bank_account",
+        "pension_withdrawal"
+      ],
+      "confidence": "verified"
+    },
+    "koza_meigi": {
+      "kanji": "口座名義",
+      "reading": "こうざめいぎ",
+      "romaji": "Kōza meigi",
+      "english": "Account holder name",
+      "category": "financial",
+      "tip_en": "Must match the name on the account exactly — usually in katakana.",
+      "appears_on": [
+        "bank_account",
+        "pension_withdrawal"
+      ],
+      "confidence": "verified"
+    },
+    "koza_shurui": {
+      "kanji": "口座の種類",
+      "reading": "こうざのしゅるい",
+      "romaji": "Kōza no shurui",
+      "english": "Type of account",
+      "category": "financial",
+      "tip_en": "Most foreigners open 普通預金 (ordinary savings). Circle the correct type.",
+      "appears_on": [
+        "bank_account_personal",
+        "bank_account_corporate"
+      ],
+      "confidence": "verified",
+      "options": {
+        "普通預金": {
+          "reading": "ふつうよきん",
+          "english": "Ordinary savings (most common)"
+        },
+        "当座預金": {
+          "reading": "とうざよきん",
+          "english": "Current/checking account (business)"
+        },
+        "定期預金": {
+          "reading": "ていきよきん",
+          "english": "Fixed-term deposit"
+        },
+        "貯蓄預金": {
+          "reading": "ちょちくよきん",
+          "english": "Savings deposit (higher interest)"
+        },
+        "通常貯金": {
+          "reading": "つうじょうちょきん",
+          "english": "General savings (JP Post Bank term)"
+        }
+      }
+    },
+    "anshobango": {
+      "kanji": "暗証番号",
+      "reading": "あんしょばんごう",
+      "romaji": "Anshō bangō",
+      "english": "PIN (4-digit personal identification number)",
+      "category": "financial",
+      "tip_en": "Choose a 4-digit PIN for your cash card. Avoid birthdays — banks may reject obvious numbers.",
+      "appears_on": [
+        "bank_account_personal",
+        "bank_account_corporate"
+      ],
+      "confidence": "verified"
+    },
+    "riyou_mokuteki": {
+      "kanji": "利用目的",
+      "reading": "りようもくてき",
+      "romaji": "Riyō mokuteki",
+      "english": "Purpose of account use",
+      "category": "financial",
+      "tip_en": "Common answers: 給与受取 (salary deposit), 生活費 (living expenses), 貯蓄 (savings). Be specific — vague answers can delay approval.",
+      "appears_on": [
+        "bank_account_personal",
+        "bank_account_corporate"
+      ],
+      "confidence": "verified",
+      "options": {
+        "給与受取": {
+          "reading": "きゅうよ うけとり",
+          "english": "Receiving salary"
+        },
+        "生活費": {
+          "reading": "せいかつひ",
+          "english": "Living expenses"
+        },
+        "貯蓄": {
+          "reading": "ちょちく",
+          "english": "Savings"
+        },
+        "公共料金支払": {
+          "reading": "こうきょう りょうきん しはらい",
+          "english": "Utility bill payments"
+        },
+        "事業用": {
+          "reading": "じぎょうよう",
+          "english": "Business use"
+        },
+        "送金": {
+          "reading": "そうきん",
+          "english": "Money transfers/remittances"
+        }
+      }
+    },
+    "tsuchou": {
+      "kanji": "通帳",
+      "reading": "つうちょう",
+      "romaji": "Tsūchō",
+      "english": "Passbook / bankbook",
+      "category": "financial",
+      "tip_en": "Physical booklet that records transactions. Some banks now offer passbook-free (通帳なし) digital-only accounts.",
+      "appears_on": [
+        "bank_account_personal"
+      ],
+      "confidence": "verified"
+    },
+    "kyasshu_kaado": {
+      "kanji": "キャッシュカード",
+      "reading": "きゃっしゅかーど",
+      "romaji": "Kyasshu kādo",
+      "english": "Cash card (ATM card)",
+      "category": "financial",
+      "tip_en": "Usually mailed to your registered address 1-2 weeks after opening. Some banks issue on the spot.",
+      "appears_on": [
+        "bank_account_personal",
+        "bank_account_corporate"
+      ],
+      "confidence": "verified"
+    },
+    "hoken_shosho": {
+      "kanji": "保険証",
+      "reading": "ほけんしょう",
+      "romaji": "Hokenshō",
+      "english": "Health insurance card",
+      "category": "identification",
+      "tip_en": "Japanese health insurance card. Can serve as secondary ID at some banks.",
+      "appears_on": [
+        "bank_account_personal"
+      ],
+      "confidence": "verified",
+      "aliases": [
+        "健康保険証"
+      ]
+    },
+    "houjin_mei": {
+      "kanji": "法人名",
+      "reading": "ほうじんめい",
+      "romaji": "Hōjin-mei",
+      "english": "Company name (legal entity name)",
+      "category": "corporate",
+      "tip_en": "Must exactly match the company name registered with the Legal Affairs Bureau.",
+      "appears_on": [
+        "bank_account_corporate"
+      ],
+      "confidence": "verified",
+      "aliases": [
+        "会社名",
+        "商号"
+      ]
+    },
+    "daihyo_torishimariyaku": {
+      "kanji": "代表取締役",
+      "reading": "だいひょう とりしまりやく",
+      "romaji": "Daihyō torishimariyaku",
+      "english": "Representative Director (CEO)",
+      "category": "corporate",
+      "tip_en": "The person authorized to sign on behalf of the company. Must have Japanese residency for most banks.",
+      "appears_on": [
+        "bank_account_corporate"
+      ],
+      "confidence": "verified"
+    },
+    "houjin_bangou": {
+      "kanji": "法人番号",
+      "reading": "ほうじんばんごう",
+      "romaji": "Hōjin bangō",
+      "english": "Corporate Number (13-digit)",
+      "category": "corporate",
+      "tip_en": "Assigned after company registration. Lookup at houjin-bangou.nta.go.jp",
+      "appears_on": [
+        "bank_account_corporate"
+      ],
+      "confidence": "verified"
+    },
+    "teikan": {
+      "kanji": "定款",
+      "reading": "ていかん",
+      "romaji": "Teikan",
+      "english": "Articles of Incorporation",
+      "category": "corporate",
+      "tip_en": "Certified copy from the notary public. Must be notarized for KK; not required for GK.",
+      "appears_on": [
+        "bank_account_corporate"
+      ],
+      "confidence": "verified"
+    },
+    "touroku_jihkou_shoumeisho": {
+      "kanji": "登記事項証明書",
+      "reading": "とうきじこうしょうめいしょ",
+      "romaji": "Tōki jihkō shōmeisho",
+      "english": "Certificate of Registered Matters (company registry extract)",
+      "category": "corporate",
+      "tip_en": "Issued by the Legal Affairs Bureau (法務局). Must be from the last 6 months. ¥480-600.",
+      "appears_on": [
+        "bank_account_corporate"
+      ],
+      "confidence": "verified",
+      "aliases": [
+        "履歴事項全部証明書"
+      ]
+    },
+    "houjin_inkan_shoumeisho": {
+      "kanji": "法人印鑑証明書",
+      "reading": "ほうじん いんかん しょうめいしょ",
+      "romaji": "Hōjin inkan shōmeisho",
+      "english": "Corporate Seal Registration Certificate",
+      "category": "corporate",
+      "tip_en": "Proves the company's official seal (代表印) is registered. Issued by Legal Affairs Bureau. ¥450.",
+      "appears_on": [
+        "bank_account_corporate"
+      ],
+      "confidence": "verified"
+    },
+    "jigyou_naiyo": {
+      "kanji": "事業内容",
+      "reading": "じぎょうないよう",
+      "romaji": "Jigyō naiyō",
+      "english": "Business description / Nature of business",
+      "category": "corporate",
+      "tip_en": "What your company does. Must match what's in your Articles of Incorporation.",
+      "appears_on": [
+        "bank_account_corporate"
+      ],
+      "confidence": "verified"
+    },
+    "shihon_kin": {
+      "kanji": "資本金",
+      "reading": "しほんきん",
+      "romaji": "Shihon-kin",
+      "english": "Paid-in capital",
+      "category": "corporate",
+      "tip_en": "Business Manager visa requires ¥5M minimum (¥30M from Oct 2025). Amount on your registry certificate.",
+      "appears_on": [
+        "bank_account_corporate"
+      ],
+      "confidence": "verified"
+    },
+    "honten_jusho": {
+      "kanji": "本店所在地",
+      "reading": "ほんてん しょざいち",
+      "romaji": "Honten shozaichi",
+      "english": "Registered head office address",
+      "category": "corporate",
+      "tip_en": "Must match the address in your company registration. Virtual offices may be rejected by banks.",
+      "appears_on": [
+        "bank_account_corporate"
+      ],
+      "confidence": "verified"
+    },
+    "torihiki_tantousha": {
+      "kanji": "取引担当者",
+      "reading": "とりひき たんとうしゃ",
+      "romaji": "Torihiki tantōsha",
+      "english": "Person in charge of transactions / Account officer",
+      "category": "corporate",
+      "tip_en": "Person who will actually operate the account day-to-day. Often the representative director for small companies.",
+      "appears_on": [
+        "bank_account_corporate"
+      ],
+      "confidence": "verified"
+    },
+    "jittai_shoyuusha": {
+      "kanji": "実質的支配者",
+      "reading": "じったいてき しはいしゃ",
+      "romaji": "Jittaiteki shihaisha",
+      "english": "Ultimate Beneficial Owner (UBO)",
+      "category": "corporate",
+      "tip_en": "Any individual holding 25%+ of shares or voting rights. Required for anti-money-laundering compliance.",
+      "appears_on": [
+        "bank_account_corporate"
+      ],
+      "confidence": "verified"
+    }
+  }
+}

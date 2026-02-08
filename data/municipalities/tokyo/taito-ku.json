@@ -1,0 +1,69 @@
+{
+  "_meta": {
+    "version": "0.1.0",
+    "last_updated": "2025-02-07",
+    "confidence": "draft",
+    "needs_verification": "Office hours, English support level, branch offices, and local tips should be verified by someone who has visited."
+  },
+  "municipality_id": "tokyo/taito-ku",
+  "names": {
+    "ja": "台東区",
+    "reading": "たいとうく",
+    "romaji": "Taitō-ku",
+    "en": "Taito Ward"
+  },
+  "prefecture": {
+    "ja": "東京都",
+    "en": "Tokyo"
+  },
+  "type": "special_ward",
+  "population_note": "Ueno, Asakusa, Senso-ji. Smallest ward by area. High tourist traffic, significant international resident community.",
+  "offices": [
+    {
+      "name_ja": "台東区役所",
+      "name_en": "Taito City Hall",
+      "is_main": true,
+      "address_ja": "〒110-8615 東京都台東区東上野4丁目5番6号",
+      "address_en": "4-5-6 Higashiueno, Taito-ku, Tokyo 110-8615",
+      "postal_code": "110-8615",
+      "phone": "03-5246-1111",
+      "hours": {
+        "weekday": "8:30-17:00",
+        "saturday": null,
+        "sunday": null,
+        "note_en": "Closed weekends and national holidays. Some wards offer limited Saturday services — verify."
+      },
+      "english_support": "partial",
+      "english_support_note": "Verify English availability before visiting. Bring a Japanese-speaking friend as backup."
+    }
+  ],
+  "forms_available": {
+    "residence_registration": {
+      "has_english_version": null,
+      "pdf_download_url_ja": null,
+      "pdf_download_url_en": null,
+      "online_submission": false,
+      "local_field_additions": [],
+      "local_tips": [],
+      "last_verified": null,
+      "verified_by": null
+    },
+    "bank_account_personal": {
+      "has_english_version": false,
+      "local_tips": [],
+      "last_verified": null
+    },
+    "bank_account_corporate": {
+      "has_english_version": false,
+      "local_tips": [],
+      "last_verified": null
+    }
+  },
+  "useful_links": {
+    "official_website": "https://www.city.taito.lg.jp/",
+    "living_guide_en": null,
+    "living_guide_ja": null
+  },
+  "contributors": [],
+  "last_updated": "2025-02-07"
+}

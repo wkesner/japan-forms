@@ -1,0 +1,69 @@
+{
+  "_meta": {
+    "version": "0.1.0",
+    "last_updated": "2025-02-07",
+    "confidence": "draft",
+    "needs_verification": "Office hours, English support level, branch offices, and local tips should be verified by someone who has visited."
+  },
+  "municipality_id": "tokyo/ota-ku",
+  "names": {
+    "ja": "大田区",
+    "reading": "おおたく",
+    "romaji": "Ōta-ku",
+    "en": "Ota Ward"
+  },
+  "prefecture": {
+    "ja": "東京都",
+    "en": "Tokyo"
+  },
+  "type": "special_ward",
+  "population_note": "Largest Tokyo ward by area. Home to Haneda Airport. Growing international community.",
+  "offices": [
+    {
+      "name_ja": "大田区役所",
+      "name_en": "Ota City Hall",
+      "is_main": true,
+      "address_ja": "〒144-8621 東京都大田区蒲田5丁目13番14号",
+      "address_en": "5-13-14 Kamata, Ota-ku, Tokyo 144-8621",
+      "postal_code": "144-8621",
+      "phone": "03-5744-1111",
+      "hours": {
+        "weekday": "8:30-17:00",
+        "saturday": null,
+        "sunday": null,
+        "note_en": "Closed weekends and national holidays. Some wards offer limited Saturday services — verify."
+      },
+      "english_support": "partial",
+      "english_support_note": "Verify English availability before visiting. Bring a Japanese-speaking friend as backup."
+    }
+  ],
+  "forms_available": {
+    "residence_registration": {
+      "has_english_version": null,
+      "pdf_download_url_ja": null,
+      "pdf_download_url_en": null,
+      "online_submission": false,
+      "local_field_additions": [],
+      "local_tips": [],
+      "last_verified": null,
+      "verified_by": null
+    },
+    "bank_account_personal": {
+      "has_english_version": false,
+      "local_tips": [],
+      "last_verified": null
+    },
+    "bank_account_corporate": {
+      "has_english_version": false,
+      "local_tips": [],
+      "last_verified": null
+    }
+  },
+  "useful_links": {
+    "official_website": "https://www.city.ota.tokyo.jp/",
+    "living_guide_en": null,
+    "living_guide_ja": null
+  },
+  "contributors": [],
+  "last_updated": "2025-02-07"
+}

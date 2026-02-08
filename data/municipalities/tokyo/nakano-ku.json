@@ -1,0 +1,69 @@
+{
+  "_meta": {
+    "version": "0.1.0",
+    "last_updated": "2025-02-07",
+    "confidence": "draft",
+    "needs_verification": "Office hours, English support level, branch offices, and local tips should be verified by someone who has visited."
+  },
+  "municipality_id": "tokyo/nakano-ku",
+  "names": {
+    "ja": "中野区",
+    "reading": "なかのく",
+    "romaji": "Nakano-ku",
+    "en": "Nakano Ward"
+  },
+  "prefecture": {
+    "ja": "東京都",
+    "en": "Tokyo"
+  },
+  "type": "special_ward",
+  "population_note": "Known for Nakano Broadway (anime/manga). Affordable central location.",
+  "offices": [
+    {
+      "name_ja": "中野区役所",
+      "name_en": "Nakano City Hall",
+      "is_main": true,
+      "address_ja": "〒164-8501 東京都中野区中野4丁目8番1号",
+      "address_en": "4-8-1 Nakano, Nakano-ku, Tokyo 164-8501",
+      "postal_code": "164-8501",
+      "phone": "03-3389-1111",
+      "hours": {
+        "weekday": "8:30-17:00",
+        "saturday": null,
+        "sunday": null,
+        "note_en": "Closed weekends and national holidays. Some wards offer limited Saturday services — verify."
+      },
+      "english_support": "partial",
+      "english_support_note": "Verify English availability before visiting. Bring a Japanese-speaking friend as backup."
+    }
+  ],
+  "forms_available": {
+    "residence_registration": {
+      "has_english_version": null,
+      "pdf_download_url_ja": null,
+      "pdf_download_url_en": null,
+      "online_submission": false,
+      "local_field_additions": [],
+      "local_tips": [],
+      "last_verified": null,
+      "verified_by": null
+    },
+    "bank_account_personal": {
+      "has_english_version": false,
+      "local_tips": [],
+      "last_verified": null
+    },
+    "bank_account_corporate": {
+      "has_english_version": false,
+      "local_tips": [],
+      "last_verified": null
+    }
+  },
+  "useful_links": {
+    "official_website": "https://www.city.tokyo-nakano.lg.jp/",
+    "living_guide_en": null,
+    "living_guide_ja": null
+  },
+  "contributors": [],
+  "last_updated": "2025-02-07"
+}

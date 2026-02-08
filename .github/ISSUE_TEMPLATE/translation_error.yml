@@ -1,0 +1,60 @@
+name: 🔤 Translation Error
+description: Report an incorrect or misleading translation
+title: "[Translation] "
+labels: ["translation", "bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve our translations! Please provide as much detail as you can.
+  - type: input
+    id: form
+    attributes:
+      label: Form type
+      description: Which form is affected?
+      placeholder: "e.g. residence_registration, seal_registration"
+    validations:
+      required: true
+  - type: input
+    id: field
+    attributes:
+      label: Field (Japanese)
+      description: The Japanese text of the field with the error
+      placeholder: "e.g. 世帯主氏名"
+    validations:
+      required: true
+  - type: input
+    id: municipality
+    attributes:
+      label: Municipality (if specific)
+      description: Ward/city where you encountered this
+      placeholder: "e.g. tokyo/minato-ku or 'all'"
+  - type: textarea
+    id: current
+    attributes:
+      label: Current translation
+      description: What does the guide currently say?
+    validations:
+      required: true
+  - type: textarea
+    id: suggested
+    attributes:
+      label: Suggested correction
+      description: What should it say instead?
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: How do you know?
+      description: "e.g. 'I used this form at Minato ward office', 'native speaker', 'official English version says...'"
+  - type: dropdown
+    id: confidence
+    attributes:
+      label: Your confidence level
+      options:
+        - "I used this form myself"
+        - "Native Japanese speaker"
+        - "Studied Japanese / intermediate+"
+        - "Found a different source that disagrees"
+        - "Not sure, but current version seems wrong"

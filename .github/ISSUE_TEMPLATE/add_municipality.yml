@@ -1,0 +1,69 @@
+name: 🏙️ Add Municipality Data
+description: Contribute information about a ward, city, or town
+title: "[Municipality] "
+labels: ["municipality", "new-data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us expand coverage! Even partial information is useful — just fill in what you know.
+  - type: input
+    id: name_ja
+    attributes:
+      label: Municipality name (Japanese)
+      placeholder: "e.g. 渋谷区"
+    validations:
+      required: true
+  - type: input
+    id: name_en
+    attributes:
+      label: Municipality name (English)
+      placeholder: "e.g. Shibuya Ward"
+    validations:
+      required: true
+  - type: input
+    id: prefecture
+    attributes:
+      label: Prefecture
+      placeholder: "e.g. Tokyo, Osaka, Hokkaido"
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Municipality type
+      options:
+        - "Special ward (特別区) — Tokyo 23 wards"
+        - "City (市)"
+        - "Town (町)"
+        - "Village (村)"
+        - "Designated city ward (政令指定都市の区)"
+  - type: textarea
+    id: offices
+    attributes:
+      label: Office locations
+      description: "Main office address, phone, hours. Branch offices if known."
+      placeholder: |
+        Main office: 1-2-3 Somewhere, Shibuya-ku, Tokyo
+        Phone: 03-XXXX-XXXX
+        Hours: 8:30-17:00 weekdays
+  - type: textarea
+    id: english_support
+    attributes:
+      label: English support availability
+      description: "Have you visited? Were there English-speaking staff? English forms available?"
+  - type: textarea
+    id: local_tips
+    attributes:
+      label: Local tips
+      description: "Anything useful for foreigners visiting this office — busy times, which counter, etc."
+  - type: textarea
+    id: form_differences
+    attributes:
+      label: Form differences from standard
+      description: "Any extra fields or different layout compared to other wards?"
+  - type: input
+    id: website
+    attributes:
+      label: Official website URL
+      placeholder: "https://www.city.shibuya.tokyo.jp/"

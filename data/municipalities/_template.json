@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "description": "Template for municipality data. Copy this file, rename to {ward-name}.json, and fill in your municipality's details. Even partial data is helpful — submit what you know!",
+    "version": "0.1.0"
+  },
+
+  "municipality_id": "",
+  "names": {
+    "ja": "",
+    "reading": "",
+    "romaji": "",
+    "en": ""
+  },
+  "prefecture": {
+    "ja": "",
+    "en": ""
+  },
+  "type": "",
+  "type_note": "One of: special_ward (特別区), city (市), town (町), village (村), designated_city_ward (政令指定都市の区)",
+
+  "offices": [
+    {
+      "name_ja": "",
+      "name_en": "",
+      "is_main": true,
+      "address_ja": "",
+      "address_en": "",
+      "postal_code": "",
+      "phone": "",
+      "hours": {
+        "weekday": "8:30-17:00",
+        "saturday": null,
+        "sunday": null,
+        "note_en": ""
+      },
+      "english_support": null,
+      "english_support_note": "true/false/partial — add notes about availability"
+    }
+  ],
+
+  "forms_available": {
+    "residence_registration": {
+      "has_english_version": null,
+      "pdf_download_url_ja": null,
+      "pdf_download_url_en": null,
+      "online_submission": false,
+      "local_field_additions": [],
+      "local_field_additions_note": "Fields that this municipality includes beyond the national standard",
+      "local_tips": [],
+      "last_verified": null,
+      "verified_by": null
+    }
+  },
+
+  "useful_links": {
+    "official_website": "",
+    "living_guide_en": null,
+    "living_guide_ja": null
+  },
+
+  "contributors": [],
+  "last_updated": ""
+}

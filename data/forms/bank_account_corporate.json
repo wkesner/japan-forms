@@ -1,0 +1,382 @@
+{
+  "_meta": {
+    "form_id": "bank_account_corporate",
+    "version": "0.1.0",
+    "last_updated": "2025-02-07",
+    "confidence": "verified"
+  },
+
+  "names": {
+    "en": "Corporate Bank Account Opening (Business Manager Visa)",
+    "ja": "法人口座開設申込書",
+    "reading": "ほうじん こうざ かいせつ もうしこみしょ",
+    "romaji": "Hōjin Kōza Kaisetsu Mōshikomisho",
+    "aliases_ja": ["法人口座開設", "法人名義口座"],
+    "aliases_en": ["Business Account Application", "Corporate Account Opening"]
+  },
+
+  "legal_basis": {
+    "law": "犯罪による収益の移転防止に関する法律",
+    "law_en": "Act on Prevention of Transfer of Criminal Proceeds (Anti-Money Laundering)",
+    "deadline_days": null,
+    "deadline_description_en": "No legal deadline. In practice, you need a corporate account to transfer capital from your personal account after incorporation and to begin business transactions.",
+    "penalty_en": "No penalty for delay, but operating without a corporate account creates accounting problems and reduces credibility with business partners.",
+    "cost": 0,
+    "cost_note_en": "Free to open. Monthly fees vary — some banks charge ¥0, megabanks may charge ¥2,000-5,000/month for corporate accounts."
+  },
+
+  "overview": {
+    "difficulty_en": "HIGH — Corporate account opening is one of the most difficult steps for foreign entrepreneurs in Japan. Banks reject applications frequently, especially from newly incorporated companies. Plan for 2-4 weeks of processing and possible rejection from your first-choice bank.",
+    "timing_en": "Open your corporate account AFTER company registration but BEFORE applying for (or renewing) your Business Manager visa, as immigration wants to see the capital properly transferred to a corporate account.",
+    "strategy_en": "Apply to multiple banks simultaneously. Start with Japan Post Bank or a regional/online bank (higher approval rate), then try megabanks later once you have transaction history."
+  },
+
+  "business_manager_visa_context": {
+    "capital_requirement_current": "¥5,000,000 (until October 2025)",
+    "capital_requirement_new": "¥30,000,000 (from October 2025)",
+    "capital_note_en": "The capital must be deposited into your personal account first (as proof of funds during incorporation), then transferred to the corporate account after registration. Banks and immigration both want to see this paper trail.",
+    "employee_requirement": "2+ full-time employees (from October 2025, previously 'or' with capital requirement, now both required)",
+    "japanese_ability_note": "JLPT N2 or equivalent now required for at least the applicant or one full-time employee (from October 2025)",
+    "physical_office_note": "Banks strongly prefer a dedicated physical office. Virtual offices and residential addresses are frequently rejected. Lease agreement will be requested."
+  },
+
+  "bank_comparison_corporate": [
+    {
+      "bank_ja": "ゆうちょ銀行",
+      "bank_en": "Japan Post Bank",
+      "approval_difficulty": "Medium",
+      "screening_time": "2-3 weeks",
+      "english_support": "Limited",
+      "note": "Most accessible for new companies. Does NOT allow business-purpose accounts for some entity types. Check eligibility first."
+    },
+    {
+      "bank_ja": "GMOあおぞらネット銀行",
+      "bank_en": "GMO Aozora Net Bank",
+      "approval_difficulty": "Medium",
+      "screening_time": "2-3 weeks",
+      "english_support": "None (Japanese only)",
+      "note": "Online bank popular with startups. Fast application, lower rejection rate than megabanks."
+    },
+    {
+      "bank_ja": "住信SBIネット銀行",
+      "bank_en": "SBI Sumishin Net Bank",
+      "approval_difficulty": "Medium",
+      "screening_time": "2-3 weeks",
+      "english_support": "None",
+      "note": "Online bank, relatively startup-friendly."
+    },
+    {
+      "bank_ja": "三井住友銀行",
+      "bank_en": "SMBC (Sumitomo Mitsui)",
+      "approval_difficulty": "High",
+      "screening_time": "3-4 weeks",
+      "english_support": "Some English-speaking staff at large branches",
+      "note": "Often recommended as the 'most realistic' megabank for foreign-owned companies. Having SMBC Prestia personal account may help."
+    },
+    {
+      "bank_ja": "三菱UFJ銀行",
+      "bank_en": "MUFG Bank",
+      "approval_difficulty": "Very High",
+      "screening_time": "3-4 weeks",
+      "english_support": "Minimal",
+      "note": "Highest credibility if approved. Very strict with new/foreign companies. Often rejects on first attempt."
+    },
+    {
+      "bank_ja": "みずほ銀行",
+      "bank_en": "Mizuho Bank",
+      "approval_difficulty": "High",
+      "screening_time": "3-4 weeks",
+      "english_support": "Minimal",
+      "note": "Similar to MUFG in strictness."
+    }
+  ],
+
+  "sections": [
+    {
+      "section_id": "company_info",
+      "title_ja": "法人情報",
+      "title_en": "Company Information",
+      "section_number": 1,
+      "fields": [
+        {"field_id": "houjin_mei", "required": true},
+        {"field_id": "furigana", "required": true, "context_label_en": "Company name reading (katakana)"},
+        {"field_id": "houjin_bangou", "required": true},
+        {"field_id": "honten_jusho", "required": true},
+        {"field_id": "denwa_bango", "required": true, "context_label_en": "Company phone number"},
+        {"field_id": "jigyou_naiyo", "required": true},
+        {"field_id": "shihon_kin", "required": true}
+      ]
+    },
+    {
+      "section_id": "representative",
+      "title_ja": "代表者情報",
+      "title_en": "Representative Director Information",
+      "section_number": 2,
+      "note_en": "The representative director must be a Japan resident. This is the person who signs the application.",
+      "fields": [
+        {"field_id": "daihyo_torishimariyaku", "required": true},
+        {"field_id": "shimei", "required": true, "context_label_en": "Representative's full name"},
+        {"field_id": "furigana", "required": true, "context_label_en": "Representative's name reading (katakana)"},
+        {"field_id": "seinengappi", "required": true},
+        {"field_id": "jusho", "required": true, "context_label_en": "Representative's home address"},
+        {"field_id": "denwa_bango", "required": true, "context_label_en": "Representative's phone number"},
+        {"field_id": "zairyu_card_bango", "required": true},
+        {"field_id": "zairyu_shikaku", "required": true, "note_en": "Should be 経営・管理 (Business Manager)"}
+      ]
+    },
+    {
+      "section_id": "transaction_officer",
+      "title_ja": "取引担当者情報",
+      "title_en": "Transaction Officer (if different from representative)",
+      "section_number": 3,
+      "note_en": "Fill this section if the person who will operate the account daily is different from the representative director. For sole-director companies, this is usually the same person.",
+      "fields": [
+        {"field_id": "torihiki_tantousha", "required": false},
+        {"field_id": "shimei", "required": false, "context_label_en": "Transaction officer's name"},
+        {"field_id": "seinengappi", "required": false},
+        {"field_id": "jusho", "required": false, "context_label_en": "Transaction officer's address"}
+      ]
+    },
+    {
+      "section_id": "beneficial_owner",
+      "title_ja": "実質的支配者",
+      "title_en": "Ultimate Beneficial Owner (AML requirement)",
+      "section_number": 4,
+      "note_en": "Required by anti-money laundering law. Declare anyone holding 25%+ of shares or voting rights.",
+      "fields": [
+        {"field_id": "jittai_shoyuusha", "required": true},
+        {"field_id": "shimei", "required": true, "context_label_en": "Beneficial owner's name"},
+        {"field_id": "jusho", "required": true, "context_label_en": "Beneficial owner's address"},
+        {"field_id": "seinengappi", "required": true},
+        {"field_id": "kokuseki", "required": true}
+      ]
+    },
+    {
+      "section_id": "account_details",
+      "title_ja": "口座情報",
+      "title_en": "Account Details",
+      "section_number": 5,
+      "fields": [
+        {"field_id": "koza_shurui", "required": true, "note_en": "普通預金 for general use; 当座預金 if you need to issue checks"},
+        {"field_id": "riyou_mokuteki", "required": true, "note_en": "Be specific: 事業資金の管理, 取引先への支払い, 売上の入金 etc."},
+        {"field_id": "anshobango", "required": true}
+      ]
+    },
+    {
+      "section_id": "seal_registration",
+      "title_ja": "届出印",
+      "title_en": "Corporate Seal (Banking Seal)",
+      "section_number": 6,
+      "note_en": "A dedicated banking seal (銀行印 ginkō-in) separate from your corporate registered seal (代表印 daihyō-in) is recommended. Using the same seal for both is a security risk.",
+      "fields": [
+        {"field_id": "in", "required": true, "note_en": "Corporate banking seal required — signatures alone are NOT accepted for corporate accounts"}
+      ]
+    }
+  ],
+
+  "scenarios": {
+    "new_company": {
+      "title_en": "Newly Incorporated Company",
+      "title_ja": "新設法人",
+      "documents_required": [
+        {"ja": "登記事項証明書（6ヶ月以内）", "en": "Certificate of Registered Matters (issued within 6 months)", "required": true},
+        {"ja": "定款の写し", "en": "Copy of Articles of Incorporation", "required": true},
+        {"ja": "法人印鑑証明書（6ヶ月以内）", "en": "Corporate Seal Registration Certificate (issued within 6 months)", "required": true},
+        {"ja": "代表者の本人確認書類", "en": "Representative's ID: Residence Card + Passport", "required": true},
+        {"ja": "代表者の印鑑証明書", "en": "Representative's personal Seal Registration Certificate", "required": false, "condition_en": "Required at some megabanks"},
+        {"ja": "銀行印", "en": "Corporate banking seal (separate from registered seal recommended)", "required": true},
+        {"ja": "事業計画書", "en": "Business plan (often required in Japanese)", "required": true, "condition_en": "Critical — banks use this to evaluate legitimacy"},
+        {"ja": "オフィスの賃貸契約書", "en": "Office lease agreement", "required": true, "condition_en": "Virtual offices often rejected"},
+        {"ja": "会社のウェブサイトまたはパンフレット", "en": "Company website URL or brochures", "required": false, "condition_en": "Strongly recommended — proves you're a real operating business"},
+        {"ja": "取引先との契約書・発注書", "en": "Contracts or purchase orders from clients", "required": false, "condition_en": "If available, greatly improves approval chances"},
+        {"ja": "許認可証", "en": "Business licenses/permits (for regulated industries)", "required": false, "condition_en": "Required if your business needs specific permits"}
+      ]
+    },
+    "existing_company_adding_account": {
+      "title_en": "Existing Company Opening Additional Account",
+      "title_ja": "既存法人の追加口座",
+      "documents_required": [
+        {"ja": "登記事項証明書", "en": "Certificate of Registered Matters (recent)", "required": true},
+        {"ja": "法人印鑑証明書", "en": "Corporate Seal Registration Certificate", "required": true},
+        {"ja": "代表者の本人確認書類", "en": "Representative's ID", "required": true},
+        {"ja": "銀行印", "en": "Banking seal", "required": true},
+        {"ja": "直近の決算報告書", "en": "Most recent financial statements / tax return", "required": true, "condition_en": "Proves the company is actually operating"},
+        {"ja": "既存の銀行口座の取引明細", "en": "Existing bank account transaction history", "required": false, "condition_en": "Shows real business activity"}
+      ]
+    }
+  },
+
+  "counter_phrases": [
+    {
+      "situation_en": "Stating your purpose",
+      "ja": "法人口座を開設したいのですが",
+      "romaji": "Hōjin kōza wo kaisetsu shitai no desu ga",
+      "en": "I'd like to open a corporate bank account"
+    },
+    {
+      "situation_en": "Explaining your company is new",
+      "ja": "先月会社を設立したばかりです",
+      "romaji": "Sengetsu kaisha wo setsuritsu shita bakari desu",
+      "en": "I just incorporated my company last month"
+    },
+    {
+      "situation_en": "Explaining your visa type",
+      "ja": "経営・管理ビザで日本に住んでいます",
+      "romaji": "Keiei kanri biza de nihon ni sunde imasu",
+      "en": "I'm living in Japan on a Business Manager visa"
+    },
+    {
+      "situation_en": "Asking about required documents",
+      "ja": "法人口座の開設に必要な書類を教えてください",
+      "romaji": "Hōjin kōza no kaisetsu ni hitsuyō na shorui wo oshiete kudasai",
+      "en": "Could you tell me what documents are needed to open a corporate account?"
+    },
+    {
+      "situation_en": "Asking about the screening process",
+      "ja": "審査にはどのくらい時間がかかりますか？",
+      "romaji": "Shinsa ni wa dono kurai jikan ga kakarimasu ka?",
+      "en": "How long does the screening process take?"
+    },
+    {
+      "situation_en": "Asking about online banking",
+      "ja": "法人インターネットバンキングの申込もお願いします",
+      "romaji": "Hōjin intānetto bankingu no mōshikomi mo onegai shimasu",
+      "en": "I'd also like to apply for corporate online banking"
+    },
+    {
+      "situation_en": "After rejection — asking why",
+      "ja": "不承認の理由を教えていただけますか？",
+      "romaji": "Fu-shōnin no riyū wo oshiete itadakemasu ka?",
+      "en": "Could you tell me the reason for the rejection?"
+    },
+    {
+      "situation_en": "Scheduling an appointment",
+      "ja": "法人口座開設の予約を取りたいのですが",
+      "romaji": "Hōjin kōza kaisetsu no yoyaku wo toritai no desu ga",
+      "en": "I'd like to make an appointment for corporate account opening"
+    }
+  ],
+
+  "screening_tips": [
+    {
+      "tip_en": "Have a real website ready before applying",
+      "detail_en": "Banks check your company website during screening. A professional site with your company name, services, contact info, and team page dramatically improves your chances. Even a simple one-page site helps."
+    },
+    {
+      "tip_en": "Physical office > virtual office > residential address",
+      "detail_en": "Banks want to see your lease agreement. Virtual office addresses (バーチャルオフィス) are red flags. A small dedicated office or co-working membership with a fixed desk is much better."
+    },
+    {
+      "tip_en": "Bring a business plan in Japanese",
+      "detail_en": "Even if the bank doesn't require it, having a well-written 事業計画書 in Japanese shows seriousness. Include: business description, target market, revenue model, 3-year projections, and how the account will be used."
+    },
+    {
+      "tip_en": "Apply to easier banks first, then upgrade",
+      "detail_en": "Start with Japan Post Bank, GMO Aozora, or a regional bank (信用金庫). Once you have 6+ months of transaction history, megabanks become much more approachable."
+    },
+    {
+      "tip_en": "The representative director MUST be a Japan resident",
+      "detail_en": "Non-resident directors almost always get rejected. If you haven't received your Business Manager visa yet, use a co-director who already has residency."
+    },
+    {
+      "tip_en": "Dress professionally for the branch visit",
+      "detail_en": "Corporate account opening often includes an in-person interview at the branch. Dress as you would for a business meeting. First impressions matter in Japanese business culture."
+    },
+    {
+      "tip_en": "Bring any existing contracts or client relationships",
+      "detail_en": "Purchase orders, service agreements, or letters of intent from real companies prove your business is legitimate and operational — not a shell company."
+    },
+    {
+      "tip_en": "Be specific about account usage",
+      "detail_en": "When asked 利用目的, don't just say '事業用'. Explain: 'We receive payments from X clients, pay Y suppliers, and handle Z operational costs monthly.' Specificity builds trust."
+    }
+  ],
+
+  "after_submission": [
+    {
+      "step": 1,
+      "ja": "審査（2〜4週間）",
+      "en": "Screening period: 2-4 weeks. Bank may call you or your office for additional information."
+    },
+    {
+      "step": 2,
+      "ja": "審査結果の連絡",
+      "en": "Result notification by phone or mail. If rejected, you will usually NOT be told the specific reason."
+    },
+    {
+      "step": 3,
+      "ja": "口座開設完了・通帳発行",
+      "en": "Account opened. Receive passbook at branch or by mail. Note your account number (口座番号)."
+    },
+    {
+      "step": 4,
+      "ja": "個人口座から資本金を法人口座へ振込",
+      "en": "Transfer the paid-in capital from your personal account to the corporate account. Keep the transfer receipt — immigration wants to see this."
+    },
+    {
+      "step": 5,
+      "ja": "インターネットバンキング設定",
+      "en": "Set up corporate online banking. Approval may take an additional 1-2 weeks. You'll receive a security token by mail."
+    },
+    {
+      "step": 6,
+      "ja": "税務署・年金事務所に届出",
+      "en": "Notify the tax office and pension office of your corporate account details."
+    }
+  ],
+
+  "common_mistakes": [
+    {
+      "mistake_en": "Going straight to a megabank as a brand new company",
+      "fix_en": "Megabanks reject most new foreign-owned companies. Start with Japan Post Bank, GMO Aozora, or a local credit union (信用金庫). Build transaction history first."
+    },
+    {
+      "mistake_en": "Using a virtual office as your registered address",
+      "fix_en": "Banks view virtual offices as a red flag for shell companies. Get a dedicated physical space, even a small one. Co-working spaces with fixed desks and lease agreements can work."
+    },
+    {
+      "mistake_en": "Not having a company website or any web presence",
+      "fix_en": "Banks will Google your company. A professional website proves legitimacy. Even a simple bilingual one-page site with your business description, team, and contact info helps enormously."
+    },
+    {
+      "mistake_en": "Using your registered seal (代表印) as your banking seal",
+      "fix_en": "Create a separate banking seal (銀行印). If your registered seal is compromised, your bank account is too. Most seal shops (はんこ屋) can make a set of corporate seals."
+    },
+    {
+      "mistake_en": "Applying before your company registration is complete",
+      "fix_en": "You cannot open a corporate account without your Certificate of Registered Matters (登記事項証明書). Wait until registration is complete, then get fresh copies (within 6 months)."
+    },
+    {
+      "mistake_en": "Not being able to explain your business clearly in Japanese",
+      "fix_en": "The branch interview will be in Japanese. If your Japanese isn't business-level, bring a trusted Japanese-speaking colleague or hire a professional interpreter for the appointment."
+    },
+    {
+      "mistake_en": "Giving up after one rejection",
+      "fix_en": "Rejection is normal, especially from megabanks. Apply to 2-3 banks simultaneously. If rejected, ask why, improve your materials, and try a different bank."
+    },
+    {
+      "mistake_en": "Not transferring capital to corporate account promptly",
+      "fix_en": "Immigration wants to see capital in a corporate account (not sitting in your personal account). Transfer promptly after opening and keep the receipt as proof for visa renewal."
+    }
+  ],
+
+  "rejection_handling": {
+    "explanation_en": "Corporate account rejection is extremely common for foreign-owned companies. Banks are rarely required to give specific reasons. Common unstated reasons include:",
+    "common_reasons": [
+      "Company too new (under 6 months since incorporation)",
+      "Virtual or residential office address",
+      "No visible business activity (no website, no clients, no contracts)",
+      "Representative director not a Japan resident",
+      "Business description too vague or inconsistent with Articles of Incorporation",
+      "Industry perceived as high-risk (crypto, money transfer, consulting with no clear clients)",
+      "Insufficient paid-in capital for the stated business scope"
+    ],
+    "next_steps": [
+      "Ask the bank for feedback (they may give hints even if not required to)",
+      "Strengthen your weak points and apply to a different bank",
+      "Consider a credit union (信用金庫) — they serve local businesses and may be more flexible",
+      "Build 3-6 months of real business activity, then reapply",
+      "Consult with a judicial scrivener (司法書士) or administrative scrivener (行政書士) who specializes in foreign business setup"
+    ]
+  }
+}

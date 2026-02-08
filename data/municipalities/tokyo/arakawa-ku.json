@@ -1,0 +1,69 @@
+{
+  "_meta": {
+    "version": "0.1.0",
+    "last_updated": "2025-02-07",
+    "confidence": "draft",
+    "needs_verification": "Office hours, English support level, branch offices, and local tips should be verified by someone who has visited."
+  },
+  "municipality_id": "tokyo/arakawa-ku",
+  "names": {
+    "ja": "荒川区",
+    "reading": "あらかわく",
+    "romaji": "Arakawa-ku",
+    "en": "Arakawa Ward"
+  },
+  "prefecture": {
+    "ja": "東京都",
+    "en": "Tokyo"
+  },
+  "type": "special_ward",
+  "population_note": "Smaller ward along Arakawa River. Traditional shitamachi atmosphere.",
+  "offices": [
+    {
+      "name_ja": "荒川区役所",
+      "name_en": "Arakawa City Hall",
+      "is_main": true,
+      "address_ja": "〒116-8501 東京都荒川区荒川2丁目2番3号",
+      "address_en": "2-2-3 Arakawa, Arakawa-ku, Tokyo 116-8501",
+      "postal_code": "116-8501",
+      "phone": "03-3802-3111",
+      "hours": {
+        "weekday": "8:30-17:00",
+        "saturday": null,
+        "sunday": null,
+        "note_en": "Closed weekends and national holidays. Some wards offer limited Saturday services — verify."
+      },
+      "english_support": "partial",
+      "english_support_note": "Verify English availability before visiting. Bring a Japanese-speaking friend as backup."
+    }
+  ],
+  "forms_available": {
+    "residence_registration": {
+      "has_english_version": null,
+      "pdf_download_url_ja": null,
+      "pdf_download_url_en": null,
+      "online_submission": false,
+      "local_field_additions": [],
+      "local_tips": [],
+      "last_verified": null,
+      "verified_by": null
+    },
+    "bank_account_personal": {
+      "has_english_version": false,
+      "local_tips": [],
+      "last_verified": null
+    },
+    "bank_account_corporate": {
+      "has_english_version": false,
+      "local_tips": [],
+      "last_verified": null
+    }
+  },
+  "useful_links": {
+    "official_website": "https://www.city.arakawa.tokyo.jp/",
+    "living_guide_en": null,
+    "living_guide_ja": null
+  },
+  "contributors": [],
+  "last_updated": "2025-02-07"
+}

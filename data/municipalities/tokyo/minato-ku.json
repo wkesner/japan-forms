@@ -1,0 +1,162 @@
+{
+  "_meta": {
+    "version": "0.1.0",
+    "last_updated": "2025-02-07",
+    "confidence": "verified"
+  },
+  "municipality_id": "tokyo/minato-ku",
+  "names": {
+    "ja": "港区",
+    "reading": "みなとく",
+    "romaji": "Minato-ku",
+    "en": "Minato Ward"
+  },
+  "prefecture": {
+    "ja": "東京都",
+    "en": "Tokyo"
+  },
+  "type": "special_ward",
+  "population_note": "Significant international population — Roppongi, Azabu, Akasaka areas. Many embassies located here.",
+  "offices": [
+    {
+      "name_ja": "芝地区総合支所",
+      "name_en": "Shiba Regional City Office (Main)",
+      "is_main": true,
+      "address_ja": "〒105-8511 東京都港区芝公園1丁目5番25号",
+      "address_en": "1-5-25 Shibakoen, Minato-ku, Tokyo 105-8511",
+      "postal_code": "105-8511",
+      "phone": "03-3578-2111",
+      "hours": {
+        "weekday": "8:30-17:00",
+        "saturday": null,
+        "sunday": null,
+        "note_en": "Closed weekends and national holidays"
+      },
+      "english_support": true,
+      "english_support_note": "English-speaking staff often available, especially at main office"
+    },
+    {
+      "name_ja": "麻布地区総合支所",
+      "name_en": "Azabu Regional City Office",
+      "is_main": false,
+      "address_ja": "〒106-8515 東京都港区六本木5丁目16番45号",
+      "address_en": "5-16-45 Roppongi, Minato-ku, Tokyo 106-8515",
+      "postal_code": "106-8515",
+      "phone": "03-3583-4151",
+      "hours": {
+        "weekday": "8:30-17:00",
+        "saturday": null,
+        "sunday": null
+      },
+      "english_support": "partial",
+      "english_support_note": "Some English-speaking staff. High international foot traffic."
+    },
+    {
+      "name_ja": "赤坂地区総合支所",
+      "name_en": "Akasaka Regional City Office",
+      "is_main": false,
+      "address_ja": "〒107-8516 東京都港区赤坂4丁目18番13号",
+      "address_en": "4-18-13 Akasaka, Minato-ku, Tokyo 107-8516",
+      "postal_code": "107-8516",
+      "phone": "03-5413-7011",
+      "hours": {
+        "weekday": "8:30-17:00",
+        "saturday": null,
+        "sunday": null
+      },
+      "english_support": "partial"
+    },
+    {
+      "name_ja": "高輪地区総合支所",
+      "name_en": "Takanawa Regional City Office",
+      "is_main": false,
+      "address_ja": "〒108-8581 東京都港区高輪1丁目16番25号",
+      "address_en": "1-16-25 Takanawa, Minato-ku, Tokyo 108-8581",
+      "postal_code": "108-8581",
+      "phone": "03-5421-7611",
+      "hours": {
+        "weekday": "8:30-17:00",
+        "saturday": null,
+        "sunday": null
+      },
+      "english_support": "partial"
+    },
+    {
+      "name_ja": "芝浦港南地区総合支所",
+      "name_en": "Shibaura-Konan Regional City Office",
+      "is_main": false,
+      "address_ja": "〒105-8516 東京都港区芝浦1丁目16番1号",
+      "address_en": "1-16-1 Shibaura, Minato-ku, Tokyo 105-8516",
+      "postal_code": "105-8516",
+      "phone": "03-6400-0011",
+      "hours": {
+        "weekday": "8:30-17:00",
+        "saturday": null,
+        "sunday": null
+      },
+      "english_support": "partial"
+    },
+    {
+      "name_ja": "台場分室",
+      "name_en": "Daiba Annex",
+      "is_main": false,
+      "address_ja": "〒135-0091 東京都港区台場1丁目5番1号",
+      "address_en": "1-5-1 Daiba, Minato-ku, Tokyo 135-0091",
+      "postal_code": "135-0091",
+      "phone": "03-5500-2365",
+      "hours": {
+        "weekday": "8:30-17:00",
+        "saturday": null,
+        "sunday": null
+      },
+      "english_support": "partial"
+    }
+  ],
+  "forms_available": {
+    "residence_registration": {
+      "has_english_version": true,
+      "pdf_download_url_ja": "https://www.city.minato.tokyo.jp/",
+      "pdf_download_url_en": "https://www.city.minato.tokyo.jp/",
+      "online_submission": false,
+      "local_field_additions": [],
+      "local_tips": [
+        "Minato is one of the few wards that offers both Japanese and English versions of the residence notification form for download on their website.",
+        "The main Shiba office tends to have the most English-speaking staff.",
+        "Forms can be submitted at any of the five regional offices or the Daiba Annex.",
+        "The Azabu office is closest to Roppongi and sees a high volume of international residents."
+      ],
+      "last_verified": "2025-02-07",
+      "verified_by": "cross-referenced with city.minato.tokyo.jp/easyjp/en/"
+    },
+    "bank_account_personal": {
+      "has_english_version": false,
+      "local_tips": [
+        "Japan Post Bank branches are everywhere in Minato — the Roppongi and Shiba Park branches see many foreign customers.",
+        "SMBC Prestia has flagship branches in Roppongi and Akasaka with full English-speaking staff — highly recommended for personal accounts.",
+        "MUFG's Roppongi branch is accustomed to foreign customers due to the embassy district.",
+        "Arrive before 2 PM. The Azabu post office is less crowded than Roppongi for JP Bank account opening."
+      ],
+      "last_verified": "2025-02-07"
+    },
+    "bank_account_corporate": {
+      "has_english_version": false,
+      "local_tips": [
+        "Minato-ku has a high concentration of foreign-owned companies. Branch staff at major banks in this area are more experienced with foreign directors.",
+        "SMBC's Roppongi branch and MUFG's Toranomon branch have handled many Business Manager visa holders.",
+        "The Minato-ku Chamber of Commerce (港区商工会議所) can provide introductions to local banks — very helpful for corporate account opening.",
+        "Consider Johnan Shinkin Bank (城南信用金庫) — a local credit union with branches in Minato that is relatively friendly to small foreign-owned businesses."
+      ],
+      "last_verified": "2025-02-07"
+    }
+  },
+  "useful_links": {
+    "official_website": "https://www.city.minato.tokyo.jp/",
+    "living_guide_en": "https://www.city.minato.tokyo.jp/easyjp/en/index.html",
+    "living_guide_ja": "https://www.city.minato.tokyo.jp/easyjp/index.html",
+    "consultation_en": "https://www.city.minato.tokyo.jp/easyjp/en/consultation/index.html"
+  },
+  "contributors": [
+    "deep-japan-team"
+  ],
+  "last_updated": "2025-02-07"
+}

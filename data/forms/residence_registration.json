@@ -1,0 +1,240 @@
+{
+  "_meta": {
+    "form_id": "residence_registration",
+    "version": "0.1.0",
+    "last_updated": "2025-02-07",
+    "confidence": "verified"
+  },
+
+  "names": {
+    "en": "Residence Registration (Moving In/Out/Within)",
+    "ja": "住民異動届",
+    "reading": "じゅうみん いどう とどけ",
+    "romaji": "Jūmin Idō Todoke",
+    "aliases_ja": ["転入届", "転居届", "転出届"],
+    "aliases_en": ["Moving-In Notification", "Change of Address Form", "Notification of Change of Residence"]
+  },
+
+  "legal_basis": {
+    "law": "住民基本台帳法",
+    "law_en": "Basic Resident Registration Act",
+    "deadline_days": 14,
+    "deadline_description_en": "Must be submitted within 14 days of moving in",
+    "penalty_en": "Fine of up to ¥50,000 for failure to register",
+    "cost": 0,
+    "cost_note_en": "Free. Certificate of Residence (住民票) afterwards costs ¥300."
+  },
+
+  "sections": [
+    {
+      "section_id": "move_type",
+      "title_ja": "届出の種類",
+      "title_en": "Type of Notification",
+      "section_number": 1,
+      "input_type": "checkbox_single",
+      "fields": [
+        { "field_id": "tennyu", "required": true },
+        { "field_id": "tenkyo", "required": true },
+        { "field_id": "tenshutsu", "required": true },
+        { "field_id": "setai_henko", "required": false }
+      ]
+    },
+    {
+      "section_id": "dates",
+      "title_ja": "届出日・異動日",
+      "title_en": "Filing Date & Move Date",
+      "section_number": 2,
+      "input_type": "date",
+      "fields": [
+        { "field_id": "todokede_bi", "required": true },
+        { "field_id": "ido_bi", "required": true }
+      ]
+    },
+    {
+      "section_id": "new_address",
+      "title_ja": "新住所",
+      "title_en": "New Address",
+      "section_number": 3,
+      "fields": [
+        { "field_id": "shin_jusho", "required": true },
+        { "field_id": "katagaki", "required": false },
+        { "field_id": "setainushi_shimei", "required": true },
+        { "field_id": "tsuzukigara", "required": true }
+      ]
+    },
+    {
+      "section_id": "previous_address",
+      "title_ja": "旧住所（前住所）",
+      "title_en": "Previous Address",
+      "section_number": 4,
+      "fields": [
+        { "field_id": "kyu_jusho", "required": true }
+      ]
+    },
+    {
+      "section_id": "persons_moving",
+      "title_ja": "異動者",
+      "title_en": "Person(s) Moving",
+      "section_number": 5,
+      "input_type": "repeating_row",
+      "note_en": "Fill out one row per household member being registered",
+      "fields": [
+        { "field_id": "shimei", "required": true },
+        { "field_id": "furigana", "required": true },
+        { "field_id": "seinengappi", "required": true },
+        { "field_id": "seibetsu", "required": true },
+        { "field_id": "tsuzukigara", "required": true },
+        { "field_id": "kokuseki", "required": true },
+        { "field_id": "zairyu_card_bango", "required": true },
+        { "field_id": "zairyu_shikaku", "required": true },
+        { "field_id": "zairyu_kikan", "required": true },
+        { "field_id": "kojin_bango", "required": false, "note_en": "Leave blank on first registration" }
+      ]
+    },
+    {
+      "section_id": "applicant",
+      "title_ja": "届出人",
+      "title_en": "Applicant (Person Filing)",
+      "section_number": 6,
+      "fields": [
+        { "field_id": "shimei", "required": true, "context_label_en": "Applicant Name" },
+        { "field_id": "jusho", "required": true, "context_label_en": "Applicant Address" },
+        { "field_id": "denwa_bango", "required": true },
+        { "field_id": "shomei", "required": true }
+      ]
+    }
+  ],
+
+  "scenarios": {
+    "from_abroad": {
+      "title_en": "First Time from Abroad",
+      "title_ja": "海外からの転入",
+      "documents_required": [
+        { "ja": "パスポート", "en": "Passport (all household members)", "required": true },
+        { "ja": "在留カード", "en": "Residence Card (received at airport)", "required": true },
+        { "ja": "婚姻証明書 + 日本語訳", "en": "Marriage Certificate + Japanese translation", "required": false, "condition_en": "If registering with spouse" },
+        { "ja": "出生証明書 + 日本語訳", "en": "Birth Certificate + Japanese translation", "required": false, "condition_en": "If registering children" }
+      ]
+    },
+    "from_another_municipality": {
+      "title_en": "From Another Municipality",
+      "title_ja": "他市区町村からの転入",
+      "documents_required": [
+        { "ja": "在留カード", "en": "Residence Cards (all household members)", "required": true },
+        { "ja": "転出証明書", "en": "Moving-Out Certificate (from previous ward)", "required": true },
+        { "ja": "マイナンバーカード", "en": "My Number Card (all who have one)", "required": false },
+        { "ja": "国民健康保険証", "en": "National Health Insurance Card", "required": false, "condition_en": "If enrolled" }
+      ]
+    },
+    "within_municipality": {
+      "title_en": "Moving Within Same Municipality",
+      "title_ja": "同一市区町村内の転居",
+      "documents_required": [
+        { "ja": "在留カード", "en": "Residence Cards (all household members)", "required": true },
+        { "ja": "マイナンバーカード", "en": "My Number Card", "required": false }
+      ]
+    }
+  },
+
+  "counter_phrases": [
+    {
+      "situation_en": "Finding the counter",
+      "ja": "すみません、住民登録の窓口はどこですか？",
+      "romaji": "Sumimasen, jūmin tōroku no madoguchi wa doko desu ka?",
+      "en": "Excuse me, where is the resident registration counter?"
+    },
+    {
+      "situation_en": "Stating your purpose",
+      "ja": "転入届を出したいのですが",
+      "romaji": "Tennyu todoke wo dashitai no desu ga",
+      "en": "I'd like to submit a moving-in notification"
+    },
+    {
+      "situation_en": "First time from abroad",
+      "ja": "海外から初めて転入します",
+      "romaji": "Kaigai kara hajimete tennyu shimasu",
+      "en": "I'm registering for the first time from abroad"
+    },
+    {
+      "situation_en": "From another ward",
+      "ja": "○○区から転入します",
+      "romaji": "○○-ku kara tennyu shimasu",
+      "en": "I'm moving in from ○○ Ward"
+    },
+    {
+      "situation_en": "Asking for English form",
+      "ja": "英語の用紙はありますか？",
+      "romaji": "Eigo no yōshi wa arimasu ka?",
+      "en": "Do you have an English version of the form?"
+    },
+    {
+      "situation_en": "Asking for help filling out",
+      "ja": "記入方法を教えていただけますか？",
+      "romaji": "Kinyū hōhō wo oshiete itadakemasu ka?",
+      "en": "Could you help me fill this out?"
+    },
+    {
+      "situation_en": "Requesting residence certificate",
+      "ja": "住民票もお願いしたいのですが",
+      "romaji": "Jūminhyō mo onegai shitai no desu ga",
+      "en": "I'd also like a Certificate of Residence, please"
+    },
+    {
+      "situation_en": "Asking about My Number",
+      "ja": "マイナンバーはいつ届きますか？",
+      "romaji": "Mainanbā wa itsu todokimasu ka?",
+      "en": "When will my My Number arrive?"
+    }
+  ],
+
+  "after_submission": [
+    {
+      "step": 1,
+      "ja": "在留カードに新住所が記載されます",
+      "en": "Your new address is printed on the back of your Residence Card (10-30 min wait)"
+    },
+    {
+      "step": 2,
+      "ja": "マイナンバー通知が届きます",
+      "en": "My Number notification card mailed to your address (2-3 weeks, first-time only)"
+    },
+    {
+      "step": 3,
+      "ja": "国民健康保険に加入",
+      "en": "Enrolled in National Health Insurance (if not employer-provided) — same counter or nearby"
+    },
+    {
+      "step": 4,
+      "ja": "国民年金に加入",
+      "en": "Enrolled in National Pension (ages 20-59)"
+    },
+    {
+      "step": 5,
+      "ja": "住民票を取得可能",
+      "en": "Can request Certificate of Residence (住民票) immediately — ¥300, needed for bank/phone/lease"
+    }
+  ],
+
+  "common_mistakes": [
+    {
+      "mistake_en": "Writing name in romaji instead of katakana",
+      "fix_en": "Most forms want katakana (カタカナ). Ask staff for help converting your name."
+    },
+    {
+      "mistake_en": "Using arrival date instead of move-in date",
+      "fix_en": "異動日 is when you moved into your apartment, not when your flight landed."
+    },
+    {
+      "mistake_en": "Leaving head of household (世帯主) blank",
+      "fix_en": "If you live alone, you ARE the head of household. Write your own name."
+    },
+    {
+      "mistake_en": "Forgetting Japanese translations of certificates",
+      "fix_en": "Marriage/birth certificates need a Japanese translation with the translator's name stated. A friend can do it — no certified translator required."
+    },
+    {
+      "mistake_en": "Not bringing all household members' Residence Cards",
+      "fix_en": "You need every person's Zairyu Card, including children."
+    }
+  ]
+}

@@ -1,0 +1,353 @@
+{
+  "_meta": {
+    "form_id": "bank_account_personal",
+    "version": "0.1.0",
+    "last_updated": "2025-02-07",
+    "confidence": "verified"
+  },
+
+  "names": {
+    "en": "Personal Bank Account Opening",
+    "ja": "口座開設申込書",
+    "reading": "こうざ かいせつ もうしこみしょ",
+    "romaji": "Kōza Kaisetsu Mōshikomisho",
+    "aliases_ja": ["普通預金口座開設", "新規口座開設"],
+    "aliases_en": ["Savings Account Application", "New Account Application"]
+  },
+
+  "legal_basis": {
+    "law": "犯罪による収益の移転防止に関する法律",
+    "law_en": "Act on Prevention of Transfer of Criminal Proceeds (Anti-Money Laundering)",
+    "deadline_days": null,
+    "deadline_description_en": "No legal deadline, but needed almost immediately for salary, rent, and utilities",
+    "penalty_en": "None for not opening an account, but daily life in Japan is extremely difficult without one",
+    "cost": 0,
+    "cost_note_en": "Free to open. ATM and transfer fees vary by bank."
+  },
+
+  "eligibility": {
+    "residence_requirement_en": "Most banks: 6+ months of residence in Japan. Exception: Japan Post Bank accepts 3+ months.",
+    "visa_requirement_en": "Must hold a valid residence status (在留資格) with a period of stay over 6 months on your Residence Card.",
+    "exceptions": [
+      "Japan Post Bank (ゆうちょ銀行): Only requires 3+ months on Residence Card. Most accessible for newcomers.",
+      "Employer-sponsored: If your employer banks with MUFG/SMBC/Mizuho, they may help you open an account before the 6-month mark.",
+      "Some online banks (Seven Bank, Rakuten) have streamlined processes but still need 6 months."
+    ]
+  },
+
+  "bank_comparison": [
+    {
+      "bank_ja": "ゆうちょ銀行",
+      "bank_en": "Japan Post Bank",
+      "english_support": "App in English/Vietnamese/Chinese. Limited branch English.",
+      "min_residency": "3 months",
+      "hanko_required": false,
+      "debit_card": true,
+      "best_for": "Newcomers, first account, widest ATM/branch network"
+    },
+    {
+      "bank_ja": "SMBC プレスティア",
+      "bank_en": "SMBC Prestia",
+      "english_support": "Full English: branch staff, phone, online banking",
+      "min_residency": "6 months",
+      "hanko_required": false,
+      "debit_card": true,
+      "best_for": "Expats wanting full English banking experience"
+    },
+    {
+      "bank_ja": "ソニー銀行",
+      "bank_en": "Sony Bank",
+      "english_support": "English app signup, English live chat. Note: new English applications stopped June 2025.",
+      "min_residency": "6 months",
+      "hanko_required": false,
+      "debit_card": true,
+      "best_for": "Online-first users, multi-currency"
+    },
+    {
+      "bank_ja": "SBI新生銀行",
+      "bank_en": "SBI Shinsei Bank",
+      "english_support": "English online banking, English mail-in application. Phone support discontinued Oct 2024.",
+      "min_residency": "6 months",
+      "hanko_required": false,
+      "debit_card": false,
+      "best_for": "Free ATM withdrawals at convenience stores"
+    },
+    {
+      "bank_ja": "楽天銀行",
+      "bank_en": "Rakuten Bank",
+      "english_support": "English application instructions, some Japanese still required",
+      "min_residency": "6 months",
+      "hanko_required": false,
+      "debit_card": true,
+      "best_for": "Rakuten ecosystem users, online shopping cashback"
+    },
+    {
+      "bank_ja": "セブン銀行",
+      "bank_en": "Seven Bank",
+      "english_support": "English instructions, collect card at 7-Eleven",
+      "min_residency": "6 months",
+      "hanko_required": false,
+      "debit_card": true,
+      "best_for": "Quick setup, 7-Eleven ATM convenience"
+    },
+    {
+      "bank_ja": "三菱UFJ銀行",
+      "bank_en": "MUFG Bank",
+      "english_support": "Minimal. Branch only, some branches refuse foreigners.",
+      "min_residency": "6 months",
+      "hanko_required": true,
+      "debit_card": true,
+      "best_for": "When your employer requires it for payroll"
+    }
+  ],
+
+  "sections": [
+    {
+      "section_id": "personal_info",
+      "title_ja": "お客さま情報",
+      "title_en": "Personal Information",
+      "section_number": 1,
+      "fields": [
+        {"field_id": "shimei", "required": true},
+        {"field_id": "furigana", "required": true, "note_en": "Write your name in katakana. This becomes your official account name."},
+        {"field_id": "seinengappi", "required": true},
+        {"field_id": "seibetsu", "required": true},
+        {"field_id": "kokuseki", "required": true},
+        {"field_id": "jusho", "required": true},
+        {"field_id": "katagaki", "required": false},
+        {"field_id": "denwa_bango", "required": true, "note_en": "Must be a Japanese phone number. Some banks call to verify."}
+      ]
+    },
+    {
+      "section_id": "id_documents",
+      "title_ja": "本人確認書類",
+      "title_en": "Identity Verification Documents",
+      "section_number": 2,
+      "input_type": "document_list",
+      "note_en": "Bring originals — copies usually not accepted",
+      "fields": [
+        {"field_id": "zairyu_card_bango", "required": true},
+        {"field_id": "zairyu_shikaku", "required": true},
+        {"field_id": "zairyu_kikan", "required": true},
+        {"field_id": "kojin_bango", "required": false, "note_en": "Not always required at opening, but may be requested later for tax reporting"}
+      ]
+    },
+    {
+      "section_id": "employment",
+      "title_ja": "ご職業",
+      "title_en": "Employment Information",
+      "section_number": 3,
+      "fields": [
+        {"field_id": "shokugyo", "required": true},
+        {"field_id": "kinmusaki", "required": false, "note_en": "Company name. Required at megabanks, optional at online banks."}
+      ]
+    },
+    {
+      "section_id": "account_details",
+      "title_ja": "口座情報",
+      "title_en": "Account Details",
+      "section_number": 4,
+      "fields": [
+        {"field_id": "koza_shurui", "required": true, "note_en": "Almost always 普通預金 (ordinary savings) for personal accounts"},
+        {"field_id": "riyou_mokuteki", "required": true},
+        {"field_id": "anshobango", "required": true}
+      ]
+    },
+    {
+      "section_id": "seal_or_signature",
+      "title_ja": "届出印・署名",
+      "title_en": "Seal or Signature",
+      "section_number": 5,
+      "note_en": "Most banks now accept signatures from foreigners instead of seals. MUFG is a notable exception.",
+      "fields": [
+        {"field_id": "in", "required": false, "note_en": "Hanko/inkan — increasingly optional for foreigners"},
+        {"field_id": "shomei", "required": true}
+      ]
+    }
+  ],
+
+  "scenarios": {
+    "newcomer_under_6mo": {
+      "title_en": "Just Arrived (Under 6 Months)",
+      "title_ja": "来日6ヶ月未満",
+      "recommended_bank": "Japan Post Bank (ゆうちょ銀行)",
+      "documents_required": [
+        {"ja": "在留カード", "en": "Residence Card (3+ months remaining)", "required": true},
+        {"ja": "パスポート", "en": "Passport", "required": true},
+        {"ja": "日本の電話番号", "en": "Japanese phone number", "required": true},
+        {"ja": "学生証 or 社員証", "en": "Student ID or Employee ID (if Student/Trainee visa)", "required": false, "condition_en": "Required for Student and Technical Intern Training visa holders"}
+      ]
+    },
+    "resident_over_6mo": {
+      "title_en": "Established Resident (6+ Months)",
+      "title_ja": "在留6ヶ月以上",
+      "recommended_bank": "Any bank — megabanks, online banks all available",
+      "documents_required": [
+        {"ja": "在留カード", "en": "Residence Card", "required": true},
+        {"ja": "パスポート", "en": "Passport", "required": false, "condition_en": "Some banks require both"},
+        {"ja": "住民票", "en": "Certificate of Residence (from ward office)", "required": false, "condition_en": "Required at some megabank branches"},
+        {"ja": "印鑑", "en": "Personal seal (hanko)", "required": false, "condition_en": "Required at MUFG, optional at most others"},
+        {"ja": "マイナンバーカード", "en": "My Number Card", "required": false, "condition_en": "May be requested for tax purposes"},
+        {"ja": "勤務先の名刺 or 在職証明書", "en": "Business card or employment certificate", "required": false, "condition_en": "Helps smooth the process, especially if under 6 months"}
+      ]
+    },
+    "online_application": {
+      "title_en": "Online/App Application",
+      "title_ja": "オンライン申込",
+      "recommended_bank": "Japan Post (app), Sony Bank, Rakuten, Seven Bank",
+      "documents_required": [
+        {"ja": "在留カード（写真）", "en": "Residence Card (photo upload)", "required": true},
+        {"ja": "スマートフォン", "en": "Smartphone with camera", "required": true},
+        {"ja": "日本の電話番号", "en": "Japanese phone number (for SMS verification)", "required": true},
+        {"ja": "メールアドレス", "en": "Email address", "required": true}
+      ]
+    }
+  },
+
+  "counter_phrases": [
+    {
+      "situation_en": "Stating your purpose",
+      "ja": "口座を開きたいのですが",
+      "romaji": "Kōza wo hirakitai no desu ga",
+      "en": "I'd like to open a bank account"
+    },
+    {
+      "situation_en": "Specifying account type",
+      "ja": "普通預金口座をお願いします",
+      "romaji": "Futsū yokin kōza wo onegai shimasu",
+      "en": "An ordinary savings account, please"
+    },
+    {
+      "situation_en": "Asking about English forms",
+      "ja": "英語の申込書はありますか？",
+      "romaji": "Eigo no mōshikomisho wa arimasu ka?",
+      "en": "Do you have an English application form?"
+    },
+    {
+      "situation_en": "Asking about debit card",
+      "ja": "デビットカードは作れますか？",
+      "romaji": "Debitto kādo wa tsukuremasu ka?",
+      "en": "Can I get a debit card?"
+    },
+    {
+      "situation_en": "Asking about online banking",
+      "ja": "インターネットバンキングの登録もお願いしたいです",
+      "romaji": "Intānetto bankingu no tōroku mo onegai shitai desu",
+      "en": "I'd also like to register for online banking"
+    },
+    {
+      "situation_en": "No hanko",
+      "ja": "印鑑を持っていません。署名でもいいですか？",
+      "romaji": "Inkan wo motte imasen. Shomei demo ii desu ka?",
+      "en": "I don't have a personal seal. Is a signature OK?"
+    },
+    {
+      "situation_en": "Explaining you're new",
+      "ja": "日本に来たばかりで、初めて口座を作ります",
+      "romaji": "Nihon ni kita bakari de, hajimete kōza wo tsukurimasu",
+      "en": "I just arrived in Japan and this is my first account"
+    },
+    {
+      "situation_en": "Purpose of account",
+      "ja": "給与の受け取りと生活費のために使います",
+      "romaji": "Kyūyo no uketori to seikatsuhi no tame ni tsukaimasu",
+      "en": "I'll use it for receiving salary and living expenses"
+    },
+    {
+      "situation_en": "Asking about cash card delivery",
+      "ja": "キャッシュカードはいつ届きますか？",
+      "romaji": "Kyasshu kādo wa itsu todokimasu ka?",
+      "en": "When will my cash card arrive?"
+    },
+    {
+      "situation_en": "Asking for help",
+      "ja": "記入を手伝っていただけますか？",
+      "romaji": "Kinyū wo tetsudatte itadakemasu ka?",
+      "en": "Could you help me fill this out?"
+    }
+  ],
+
+  "after_submission": [
+    {
+      "step": 1,
+      "ja": "通帳が発行されます（即日）",
+      "en": "Passbook issued on the spot (at branch). Online banks skip this."
+    },
+    {
+      "step": 2,
+      "ja": "キャッシュカードが届きます（1〜2週間）",
+      "en": "Cash card mailed via registered post to your address (1-2 weeks). Some branches issue same-day."
+    },
+    {
+      "step": 3,
+      "ja": "インターネットバンキングの設定",
+      "en": "Set up online/mobile banking — login credentials often arrive in a separate envelope."
+    },
+    {
+      "step": 4,
+      "ja": "口座番号を勤務先・不動産会社に伝える",
+      "en": "Share your account number with employer (payroll) and landlord (rent auto-debit)."
+    },
+    {
+      "step": 5,
+      "ja": "公共料金の自動引き落とし設定",
+      "en": "Set up auto-debit (口座振替 kōza furikae) for utilities, phone, internet."
+    }
+  ],
+
+  "common_mistakes": [
+    {
+      "mistake_en": "Going to a megabank within your first 6 months",
+      "fix_en": "Start with Japan Post Bank — they accept 3+ month residence. Open a megabank account later if needed."
+    },
+    {
+      "mistake_en": "Writing name in romaji instead of katakana on the form",
+      "fix_en": "Your account name MUST be in katakana. Practice writing your name beforehand or ask staff for help."
+    },
+    {
+      "mistake_en": "Not having a Japanese phone number",
+      "fix_en": "Get a prepaid SIM first (available at convenience stores and electronics shops with just a passport). Banks need to call or SMS you."
+    },
+    {
+      "mistake_en": "Being vague about account purpose",
+      "fix_en": "Banks are required to ask why you need the account (anti-money laundering). Say '給与受取と生活費' (salary and living expenses) — concrete and normal."
+    },
+    {
+      "mistake_en": "Middle name problems",
+      "fix_en": "Japanese systems expect exactly two names (surname + given). If you have middle names, you may need to omit them or combine them with your first name. Make sure your bank name matches your Residence Card name exactly."
+    },
+    {
+      "mistake_en": "Arriving after 3 PM",
+      "fix_en": "Bank branch counters close at 3 PM sharp (some at 4 PM). Arrive by 2 PM latest to allow time for processing."
+    },
+    {
+      "mistake_en": "Not bringing both Residence Card AND passport",
+      "fix_en": "Some branches want both even if the website says one is enough. Bring everything to avoid a wasted trip."
+    },
+    {
+      "mistake_en": "Choosing a birthday as your PIN",
+      "fix_en": "Banks may reject PINs that match your birthday, phone number, or sequential numbers (1234). Pick something unrelated."
+    }
+  ],
+
+  "middle_name_guide": {
+    "explanation_en": "Japanese name systems expect exactly one surname and one given name. Most banking systems have character limits (often 20-30 katakana) and no concept of middle names. This causes real problems for people with long or multi-part names.",
+    "options": [
+      {
+        "option_en": "Combine first + middle as one given name",
+        "example": "John Michael Smith → ジョン マイケル スミス or ジョンマイケル スミス",
+        "note": "Most common approach. Must match your Residence Card."
+      },
+      {
+        "option_en": "Drop the middle name",
+        "example": "John Michael Smith → ジョン スミス",
+        "note": "Only if your Residence Card also shows it this way. May need to register a 通称 (alias) at city hall."
+      },
+      {
+        "option_en": "Register a legal alias (通称, tsūshō)",
+        "example": "Go to your ward office with supporting documents (employment certificate, etc.)",
+        "note": "Cleanest long-term solution. Your alias appears on Residence Card, My Number, and bank records."
+      }
+    ]
+  }
+}
