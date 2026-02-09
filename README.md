@@ -89,4 +89,4 @@ This is a community project and not affiliated with any Japanese government enti
 
 ## Acknowledgments
 
-Built by [Deep Japan](https://deepjapan.io). Translations cross-referenced with official ward office materials, MailMate.jp, JobsInJapan.com, and community contributions.
+ Translations cross-referenced with official ward office materials and community contributions.
