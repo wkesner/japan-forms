@@ -513,29 +513,480 @@ def crop_section(page_image, zone, page_height_pts, image_height_px):
 
 
 # ═══════════════════════════════════════════
+# ANNOTATED IMAGE + EXPLANATIONS
+# ═══════════════════════════════════════════
+
+def annotate_section_image(cropped_image, zone_translations, zone, page_height_pts, image_height_px):
+    """
+    Draw numbered red circles in nearby white space with routed leader lines.
+
+    Analyzes the cropped form image to find clear areas near each field,
+    places numbered circles there, and draws leader lines routed to
+    minimize crossing through text and form borders.
+
+    Args:
+        cropped_image: PIL Image (already cropped to zone)
+        zone_translations: list of dicts with ja, en, x0, y0 (in PDF points)
+        zone: zone dict with y_min, y_max
+        page_height_pts: full PDF page height in points
+        image_height_px: full rendered page image height in pixels
+
+    Returns:
+        (annotated_image, numbered_entries) where numbered_entries is
+        [(number, translation_entry), ...] sorted by reading order.
+    """
+    from PIL import Image, ImageDraw, ImageFont
+    import math
+
+    if cropped_image is None or not zone_translations:
+        return cropped_image, []
+
+    radius = 12
+    DARK_THRESHOLD = 230  # pixels darker than this are "content"
+
+    scale = image_height_px / page_height_pts
+    crop_y_top_px = max(0, int(zone["y_min"] * scale) - 10)
+
+    # Sort fields by (y0, x0) for natural reading order
+    sorted_trans = sorted(zone_translations, key=lambda t: (t.get("y0", 0), t.get("x0", 0)))
+
+    # --- Step 1: Build occupancy reference from grayscale ---
+    gray = cropped_image.convert("L")
+    img_w, img_h = gray.size
+    gray_pixels = gray.load()
+
+    # Work directly on the original image dimensions (no gutter)
+    annotated = cropped_image.convert("RGBA")
+    draw = ImageDraw.Draw(annotated)
+
+    # Try to load a font for the numbers
+    try:
+        num_font = ImageFont.truetype("arial.ttf", 14)
+    except (OSError, IOError):
+        try:
+            num_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 14)
+        except (OSError, IOError):
+            num_font = ImageFont.load_default()
+
+    # List of placed circle centers for overlap avoidance
+    occupied_circles = []
+
+    # --- Helper: check if a circle position is clear ---
+    def _circle_clear(cx, cy):
+        # Bounds check
+        if cx - radius < 0 or cx + radius >= img_w:
+            return False
+        if cy - radius < 0 or cy + radius >= img_h:
+            return False
+        # No overlap with already-placed circles
+        min_dist = 2 * radius + 4
+        for (ox, oy) in occupied_circles:
+            if math.hypot(cx - ox, cy - oy) < min_dist:
+                return False
+        # Sample pixels within circle area; reject if too many are dark
+        dark_count = 0
+        total_count = 0
+        for sy in range(cy - radius, cy + radius + 1, 3):
+            for sx in range(cx - radius, cx + radius + 1, 3):
+                if (sx - cx) ** 2 + (sy - cy) ** 2 <= radius * radius:
+                    total_count += 1
+                    if gray_pixels[sx, sy] < DARK_THRESHOLD:
+                        dark_count += 1
+        if total_count == 0:
+            return False
+        return (dark_count / total_count) <= 0.12
+
+    # --- Helper: measure dark-pixel fraction along a line segment ---
+    def _line_darkness(x1, y1, x2, y2):
+        n_samples = 80
+        dark = 0
+        total = 0
+        dx = x2 - x1
+        dy = y2 - y1
+        for i in range(n_samples + 1):
+            t = i / n_samples
+            sx = int(x1 + dx * t)
+            sy = int(y1 + dy * t)
+            if 0 <= sx < img_w and 0 <= sy < img_h:
+                total += 1
+                if gray_pixels[sx, sy] < DARK_THRESHOLD:
+                    dark += 1
+        return dark / total if total > 0 else 1.0
+
+    # --- Helper: pick best route (direct, L-horiz-first, L-vert-first) ---
+    def _best_route(cx, cy, fx, fy):
+        routes = [
+            # Direct
+            [(cx, cy), (fx, fy)],
+            # L-shape horizontal-first: circle → (fx, cy) → field
+            [(cx, cy), (fx, cy), (fx, fy)],
+            # L-shape vertical-first: circle → (cx, fy) → field
+            [(cx, cy), (cx, fy), (fx, fy)],
+        ]
+        best = None
+        best_score = float("inf")
+        for route in routes:
+            score = 0.0
+            for j in range(len(route) - 1):
+                score += _line_darkness(route[j][0], route[j][1],
+                                        route[j + 1][0], route[j + 1][1])
+            if score < best_score:
+                best_score = score
+                best = route
+        return best
+
+    # --- Step 2 & 3 & 4: Place circles, route lines, draw ---
+    # Search directions: upper-left, up, upper-right, left, right,
+    #                    lower-left, down, lower-right
+    directions = [
+        (-1, -1), (0, -1), (1, -1),
+        (-1, 0), (1, 0),
+        (-1, 1), (0, 1), (1, 1),
+    ]
+    search_distances = [18, 28, 40, 55, 70, 90]
+
+    numbered_entries = []
+
+    # First pass: compute field pixel positions and place circles
+    placements = []  # list of (cx, cy, field_x, field_y, entry)
+    for idx, entry in enumerate(sorted_trans):
+        field_y_px = entry.get("y0", 0) * scale - crop_y_top_px + 4
+        field_x_px = entry.get("x0", 0) * scale
+        # Clamp field position to image bounds
+        field_x_px = int(max(2, min(img_w - 2, field_x_px)))
+        field_y_px = int(max(2, min(img_h - 2, field_y_px)))
+
+        # Search outward for clear white space
+        placed = False
+        for dist in search_distances:
+            if placed:
+                break
+            for (ddx, ddy) in directions:
+                cx = field_x_px + int(ddx * dist)
+                cy = field_y_px + int(ddy * dist)
+                if _circle_clear(cx, cy):
+                    occupied_circles.append((cx, cy))
+                    placements.append((cx, cy, field_x_px, field_y_px, entry))
+                    placed = True
+                    break
+        if not placed:
+            # Fallback: offset left of field
+            cx = max(radius + 1, field_x_px - 40)
+            cy = max(radius + 1, min(img_h - radius - 1, field_y_px))
+            occupied_circles.append((cx, cy))
+            placements.append((cx, cy, field_x_px, field_y_px, entry))
+
+    # Second pass: draw in correct order (lines → dots → circles)
+    # Draw all leader lines first
+    for idx, (cx, cy, fx, fy, entry) in enumerate(placements):
+        dist = math.hypot(cx - fx, cy - fy)
+        if dist >= radius + 5:
+            route = _best_route(cx, cy, fx, fy)
+            for j in range(len(route) - 1):
+                draw.line(
+                    [route[j], route[j + 1]],
+                    fill=(220, 50, 50, 90),
+                    width=1,
+                )
+
+    # Draw all field anchor dots
+    dot_r = 3
+    for idx, (cx, cy, fx, fy, entry) in enumerate(placements):
+        dist = math.hypot(cx - fx, cy - fy)
+        if dist >= radius + 5:
+            draw.ellipse(
+                [fx - dot_r, fy - dot_r, fx + dot_r, fy + dot_r],
+                fill=(220, 50, 50, 160),
+            )
+
+    # Draw all circles and numbers on top
+    for idx, (cx, cy, fx, fy, entry) in enumerate(placements):
+        number = idx + 1
+        # Red filled circle
+        draw.ellipse(
+            [cx - radius, cy - radius, cx + radius, cy + radius],
+            fill=(220, 50, 50, 255),
+            outline=(180, 30, 30, 255),
+            width=2,
+        )
+        # White number text centered in circle
+        num_str = str(number)
+        bbox = draw.textbbox((0, 0), num_str, font=num_font)
+        tw = bbox[2] - bbox[0]
+        th = bbox[3] - bbox[1]
+        draw.text(
+            (cx - tw / 2, cy - th / 2 - 1),
+            num_str,
+            fill=(255, 255, 255, 255),
+            font=num_font,
+        )
+        numbered_entries.append((number, entry))
+
+    # Convert back to RGB for compatibility
+    annotated = annotated.convert("RGB")
+    return annotated, numbered_entries
+
+
+def _compute_vision_cache_key(zone_name, field_texts):
+    """Deterministic cache key from zone name + sorted field texts."""
+    combined = zone_name + "|" + "|".join(sorted(field_texts))
+    digest = hashlib.md5(combined.encode("utf-8")).hexdigest()
+    return f"_vision_explanations:{zone_name}:{digest}"
+
+
+def vision_explain_fields(cropped_image, numbered_entries, zone_name):
+    """
+    Send annotated cropped section image to Claude Sonnet via Anthropic messages API
+    and ask for 1-2 sentence practical explanations per numbered field.
+
+    Returns dict {number: explanation_string} or empty dict on failure.
+    """
+    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    if not api_key:
+        return {}
+
+    try:
+        import anthropic
+        import base64
+    except ImportError:
+        print("  WARN: anthropic package not installed. Skipping vision explanations.")
+        return {}
+
+    if cropped_image is None:
+        return {}
+
+    # Encode image as base64 PNG
+    import io as _io
+    img_buf = _io.BytesIO()
+    cropped_image.save(img_buf, format="PNG")
+    img_b64 = base64.b64encode(img_buf.getvalue()).decode("utf-8")
+
+    # Build field list for prompt
+    field_list = "\n".join(
+        f"  {num}: {entry.get('ja', '')} ({entry.get('en', '')})"
+        for num, entry in numbered_entries
+    )
+
+    try:
+        client = anthropic.Anthropic(api_key=api_key)
+        message = client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=2000,
+            messages=[
+                {
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "image",
+                            "source": {
+                                "type": "base64",
+                                "media_type": "image/png",
+                                "data": img_b64,
+                            },
+                        },
+                        {
+                            "type": "text",
+                            "text": (
+                                f"This is a section of a Japanese government form (zone: {zone_name}). "
+                                f"The numbered red circles mark these fields:\n{field_list}\n\n"
+                                f"For each numbered field, give a 1-2 sentence practical explanation "
+                                f"of what to write and any tips for a foreign resident filling this out. "
+                                f"Reply as JSON object mapping number to explanation string, e.g.:\n"
+                                f'{{"1": "Write your full name...", "2": "Enter today\'s date..."}}'
+                            ),
+                        },
+                    ],
+                }
+            ],
+        )
+        raw = message.content[0].text.strip()
+
+        # Handle markdown-fenced JSON
+        if raw.startswith("```"):
+            # Strip ```json ... ``` fencing
+            lines = raw.split("\n")
+            if lines[0].startswith("```"):
+                lines = lines[1:]
+            if lines and lines[-1].strip() == "```":
+                lines = lines[:-1]
+            raw = "\n".join(lines)
+
+        result = json.loads(raw)
+        # Normalize keys to int
+        return {int(k): v for k, v in result.items()}
+
+    except (json.JSONDecodeError, ValueError) as e:
+        print(f"  WARN: Could not parse vision response for zone '{zone_name}': {e}")
+        return {}
+    except Exception as e:
+        print(f"  WARN: Vision explanation failed for zone '{zone_name}': {e}")
+        return {}
+
+
+def _clean_explanation(text):
+    """Strip internal metadata from explanation text that would render as box chars.
+
+    Removes 'Matched: ...' fragment notes (contain kanji Helvetica can't render)
+    and 'No translation available' noise.
+    """
+    if not text:
+        return ""
+    # Remove "Matched: 住所, 方書" fragment notes
+    if text.startswith("Matched:"):
+        return ""
+    # Remove unhelpful filler
+    if text.strip().lower() == "no translation available":
+        return ""
+    return text
+
+
+def resolve_explanations(numbered_entries, zone_name, dictionary, cache,
+                         annotated_image=None, use_llm=True):
+    """
+    Resolve a contextual explanation for each numbered field.
+
+    Strategy (in order):
+    1. Dictionary path: if field was translated via dictionary, use tip_en
+    2. Fragment path: look up matched kanji fragments in dictionary for tip_en
+    3. LLM path: use the 'note' from LLM translation if non-empty
+    4. Vision fallback: batch remaining fields into one Sonnet vision call per zone
+
+    Returns list of (number, entry, explanation) tuples.
+    """
+    results = []
+    need_vision = []
+
+    for number, entry in numbered_entries:
+        explanation = ""
+        trans_type = entry.get("type", "")
+        ja_text = entry.get("ja", "").strip()
+        note = entry.get("note", "")
+
+        # 1. Dictionary path — look up tip_en directly
+        if trans_type == "dictionary":
+            # Find the matching dictionary entry by field_id or kanji
+            field_id = entry.get("field_id", "")
+            if field_id and field_id in dictionary:
+                tip = dictionary[field_id].get("tip_en", "")
+                if tip:
+                    explanation = tip
+            if not explanation:
+                # Search by kanji match
+                for fid, fdata in dictionary.items():
+                    if ja_text == fdata.get("kanji", ""):
+                        tip = fdata.get("tip_en", "")
+                        if tip:
+                            explanation = tip
+                        break
+                    for alias in fdata.get("aliases", []):
+                        if ja_text == alias:
+                            tip = fdata.get("tip_en", "")
+                            if tip:
+                                explanation = tip
+                            break
+                    if explanation:
+                        break
+
+        # 2. Fragment path — look up the matched kanji fragments
+        if not explanation and trans_type == "fragment" and note:
+            # note format: "Matched: 住所, 方書" — look up each kanji
+            if note.startswith("Matched:"):
+                kanji_parts = [k.strip() for k in note.split(":", 1)[1].split(",")]
+                tips = []
+                for kanji in kanji_parts:
+                    for fid, fdata in dictionary.items():
+                        if kanji == fdata.get("kanji", ""):
+                            tip = fdata.get("tip_en", "")
+                            if tip:
+                                tips.append(tip)
+                            break
+                if tips:
+                    explanation = " ".join(tips[:2])
+
+        # 3. LLM path — use note from LLM translation
+        if not explanation and trans_type == "llm" and note:
+            explanation = _clean_explanation(note)
+
+        if explanation:
+            results.append((number, entry, explanation))
+        else:
+            need_vision.append((number, entry))
+            results.append((number, entry, ""))  # placeholder
+
+    # 4. Vision fallback — batch remaining unexplained fields
+    if need_vision and use_llm and annotated_image is not None:
+        # Check cache first
+        field_texts = [e.get("ja", "") for _, e in need_vision]
+        cache_key = _compute_vision_cache_key(zone_name, field_texts)
+
+        vision_results = None
+        if cache and cache_key in cache:
+            vision_results = cache[cache_key]
+        else:
+            print(f"    Vision explaining {len(need_vision)} fields in '{zone_name}'...")
+            vision_results = vision_explain_fields(annotated_image, need_vision, zone_name)
+            if cache is not None and vision_results:
+                cache[cache_key] = vision_results
+
+        if vision_results:
+            # Fill in placeholders
+            for i, (number, entry, explanation) in enumerate(results):
+                if not explanation and number in vision_results:
+                    results[i] = (number, entry, vision_results[number])
+
+    return results
+
+
+# ═══════════════════════════════════════════
 # PDF GUIDE GENERATION
 # ═══════════════════════════════════════════
 
+def _split_zone_into_chunks(zone, zone_translations, max_fields=15):
+    """Split a dense zone into smaller chunks for readable guide pages.
+
+    If the zone has <= max_fields translations, returns it unchanged.
+    Otherwise, sorts by y0 and splits into chunks of max_fields, each
+    with a sub-zone whose y_min/y_max are derived from that chunk's fields.
+    """
+    if len(zone_translations) <= max_fields:
+        return [(zone, zone_translations)]
+
+    sorted_trans = sorted(zone_translations, key=lambda t: t.get("y0", 0))
+    chunks = []
+    for i in range(0, len(sorted_trans), max_fields):
+        chunk_trans = sorted_trans[i:i + max_fields]
+        # Derive sub-zone y bounds from field positions (with padding)
+        y_positions = [t.get("y0", 0) for t in chunk_trans]
+        padding = 5
+        sub_zone = dict(zone)  # shallow copy
+        sub_zone["y_min"] = max(0, min(y_positions) - padding)
+        sub_zone["y_max"] = max(y_positions) + padding
+        chunks.append((sub_zone, chunk_trans))
+    return chunks
+
+
 def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
-                   page_image=None, page_height_pts=842, zones=None):
+                   page_image=None, page_height_pts=842, zones=None,
+                   dictionary=None, cache=None, use_llm=True):
     """
     Generate the multi-page bilingual PDF guide.
 
     Pages:
     1. Original form (embedded untouched)
     2. Cover page — what to bring, common mistakes, what happens after
-    3-7. Zoomed form sections — cropped image + translations
+    3-7. Zoomed form sections — annotated cropped image + numbered explanations
     8. Counter phrases
     """
     from reportlab.lib.pagesizes import A4
     from reportlab.lib.colors import HexColor
     from reportlab.pdfgen import canvas
     from reportlab.lib.utils import ImageReader
+    from reportlab.pdfbase import pdfmetrics
     import io
 
     has_font = register_fonts()
     font_ja = "JPFont" if has_font else "Helvetica"
-    font_en = "Helvetica"
+    font_en = font_ja
 
     if zones is None:
         zones = DEFAULT_ZONES
@@ -550,6 +1001,13 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
     WARM_BG = HexColor("#fff3e0")
     LGRAY = HexColor("#f2f3f4")
 
+    def pick_font(text, size, prefer_en=True):
+        """Set canvas font, auto-switching to Japanese font if text contains CJK."""
+        if any(ord(ch) >= 0x3000 for ch in text):
+            c.setFont(font_ja, size)
+        else:
+            c.setFont(font_en if prefer_en else font_ja, size)
+
     margin = 28
     form_name_en = "Residence Registration"
     form_name_ja = "住民異動届"
@@ -557,8 +1015,12 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
         form_name_en = form_template.get("names", {}).get("en", form_name_en)
         form_name_ja = form_template.get("names", {}).get("ja", form_name_ja)
 
-    # Count total pages
-    section_count = len([z for z in zones if translations_by_zone.get(z["name"])])
+    # Count total pages (account for dense zone splitting into chunks)
+    section_count = 0
+    for z in zones:
+        zt = translations_by_zone.get(z["name"], [])
+        if zt:
+            section_count += len(_split_zone_into_chunks(z, zt))
     total_pages = 2 + section_count + 1  # original + cover + sections + phrases
     if not form_template:
         total_pages = 2 + section_count  # no cover/phrases without template
@@ -688,12 +1150,12 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
                     if y < 60:
                         break
                     marker = "* " if doc["required"] else "  "
-                    c.setFont(font_en, 7.5)
                     c.setFillColor(NAVY if doc["required"] else GRAY)
                     line = f"{marker}{doc['en']}"
                     cond = doc.get("condition_en", "")
                     if cond:
                         line += f"  ({cond})"
+                    pick_font(line, 7.5)
                     c.drawString(margin + 10, y, line)
 
                     c.setFont(font_ja, 7)
@@ -718,12 +1180,15 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
             for m in mistakes[:4]:
                 if y < 80:
                     break
-                c.setFont(font_en, 7.5)
+                mistake_text = f"X  {m['mistake_en']}"
+                pick_font(mistake_text, 7.5)
                 c.setFillColor(RED)
-                c.drawString(margin, y, f"X  {m['mistake_en']}")
+                c.drawString(margin, y, mistake_text)
                 y -= 11
+                fix_text = f"-> {m['fix_en']}"
+                pick_font(fix_text, 7.5)
                 c.setFillColor(GRAY)
-                c.drawString(margin + 15, y, f"-> {m['fix_en']}")
+                c.drawString(margin + 15, y, fix_text)
                 y -= 14
 
         # ── After Submission ──
@@ -742,131 +1207,211 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
             for step in after[:5]:
                 if y < 40:
                     break
-                c.setFont(font_en, 7.5)
+                step_text = f"{step['step']}.  {step['en']}"
+                pick_font(step_text, 7.5)
                 c.setFillColor(NAVY)
-                c.drawString(margin, y, f"{step['step']}.  {step['en']}")
+                c.drawString(margin, y, step_text)
                 y -= 12
 
-    # ═══ PAGES 3-7: Zoomed Form Sections ═══
+    # ═══ PAGES 3-7: Zoomed Form Sections (Annotated) ═══
+    if dictionary is None:
+        dictionary = {}
+
     for zone in zones:
         zone_name = zone["name"]
         zone_translations = translations_by_zone.get(zone_name, [])
         if not zone_translations:
             continue
 
-        c.showPage()
-        next_page()
-        draw_header()
-        draw_footer()
-
-        y = HEIGHT - 65
-
-        # Zone title
-        c.setFont(font_ja, 13)
-        c.setFillColor(NAVY)
-        c.drawString(margin, y, f"{zone['title_ja']}  —  {zone['title_en']}")
-        y -= 8
-        c.setStrokeColor(RED)
-        c.setLineWidth(1.5)
-        c.line(margin, y, WIDTH - margin, y)
-        y -= 10
-
-        # Cropped form image (left half, top portion)
-        cropped = None
-        if page_image:
-            cropped = crop_section(page_image, zone, page_height_pts, page_image.height)
-
-        if cropped:
-            img_buf = io.BytesIO()
-            cropped.save(img_buf, format="PNG")
-            img_buf.seek(0)
-            img_reader = ImageReader(img_buf)
-
-            # Scale cropped image to fit left portion
-            avail_w = WIDTH - 2 * margin
-            avail_h = min(200, (HEIGHT - 120) * 0.4)
-            img_w, img_h = cropped.size
-            scale = min(avail_w / img_w, avail_h / img_h)
-            draw_w = img_w * scale
-            draw_h = img_h * scale
-
-            # Draw light background behind image
-            c.setFillColor(LGRAY)
-            c.rect(margin - 2, y - draw_h - 4, draw_w + 4, draw_h + 4, fill=True, stroke=False)
-            c.drawImage(img_reader, margin, y - draw_h, width=draw_w, height=draw_h)
-
-            # Border
-            c.setStrokeColor(HexColor("#cccccc"))
-            c.setLineWidth(0.5)
-            c.rect(margin - 2, y - draw_h - 4, draw_w + 4, draw_h + 4, fill=False, stroke=True)
-
-            y -= draw_h + 20
-
-        # Staff section — just show a note
+        # Split dense zones into manageable chunks (Staff Section stays as-is)
         if zone_name == "Staff Section":
-            c.setFont(font_en, 10)
-            c.setFillColor(RED)
-            c.drawString(margin, y, "DO NOT FILL IN — Office use only (職員記入欄)")
-            y -= 20
-            c.setFont(font_en, 8)
-            c.setFillColor(GRAY)
-            c.drawString(margin, y, "This section is completed by ward office staff after you submit the form.")
-            continue
+            chunks = [(zone, zone_translations)]
+        else:
+            chunks = _split_zone_into_chunks(zone, zone_translations)
+        num_chunks = len(chunks)
 
-        # Translation table
-        # Column headers
-        col_defs = [
-            ("Japanese", 110),
-            ("English", 170),
-            ("Type", 50),
-            ("Tip / Notes", 200),
-        ]
-        row_h = 16
+        for chunk_idx, (chunk_zone, chunk_translations) in enumerate(chunks):
+            c.showPage()
+            next_page()
+            draw_header()
+            draw_footer()
 
-        cx = margin
-        for hdr, w in col_defs:
+            y = HEIGHT - 65
+
+            # Zone title (with part suffix for multi-chunk zones)
+            title_suffix = ""
+            if num_chunks > 1:
+                title_suffix = f"  (Part {chunk_idx + 1}/{num_chunks})"
+            c.setFont(font_ja, 13)
             c.setFillColor(NAVY)
-            c.rect(cx, y - row_h, w, row_h, fill=True, stroke=False)
-            c.setFillColor(WHITE)
-            c.setFont(font_en, 7)
-            c.drawString(cx + 3, y - row_h + 4, hdr)
-            cx += w
-        y -= row_h
+            c.drawString(margin, y, f"{zone['title_ja']}  —  {zone['title_en']}{title_suffix}")
+            y -= 8
+            c.setStrokeColor(RED)
+            c.setLineWidth(1.5)
+            c.line(margin, y, WIDTH - margin, y)
+            y -= 10
 
-        # Translation rows
-        for i, trans in enumerate(zone_translations):
-            if y < 40:
-                break
+            # Crop and annotate the section image
+            cropped = None
+            annotated_img = None
+            numbered_entries = []
+            if page_image:
+                cropped = crop_section(page_image, chunk_zone, page_height_pts, page_image.height)
 
-            y -= row_h
-            bg = LIGHT if i % 2 == 0 else WHITE
+            if cropped:
+                annotated_img, numbered_entries = annotate_section_image(
+                    cropped, chunk_translations, chunk_zone, page_height_pts, page_image.height
+                )
+                display_img = annotated_img if annotated_img else cropped
 
-            ja_text = trans.get("ja", "")
-            en_text = trans.get("en", "")
-            trans_type = trans.get("type", "")
-            note = trans.get("note", "")
+                img_buf = io.BytesIO()
+                display_img.save(img_buf, format="PNG")
+                img_buf.seek(0)
+                img_reader = ImageReader(img_buf)
 
-            row_data = [ja_text, en_text, trans_type, note]
-            cx = margin
-            for j, ((_, w), text) in enumerate(zip(col_defs, row_data)):
-                c.setFillColor(bg)
-                c.rect(cx, y, w, row_h, fill=True, stroke=False)
+                # Scale annotated image to fit page width
+                avail_w = WIDTH - 2 * margin
+                avail_h = min(200, (HEIGHT - 120) * 0.4)
+                img_w, img_h = display_img.size
+                img_scale = min(avail_w / img_w, avail_h / img_h)
+                draw_w = img_w * img_scale
+                draw_h = img_h * img_scale
 
-                if j == 0:
+                # Draw light background behind image
+                c.setFillColor(LGRAY)
+                c.rect(margin - 2, y - draw_h - 4, draw_w + 4, draw_h + 4, fill=True, stroke=False)
+                c.drawImage(img_reader, margin, y - draw_h, width=draw_w, height=draw_h)
+
+                # Border
+                c.setStrokeColor(HexColor("#cccccc"))
+                c.setLineWidth(0.5)
+                c.rect(margin - 2, y - draw_h - 4, draw_w + 4, draw_h + 4, fill=False, stroke=True)
+
+                y -= draw_h + 20
+
+            # Staff section — just show a note
+            if zone_name == "Staff Section":
+                staff_text = "DO NOT FILL IN — Office use only (職員記入欄)"
+                pick_font(staff_text, 10)
+                c.setFillColor(RED)
+                c.drawString(margin, y, staff_text)
+                y -= 20
+                c.setFont(font_en, 8)
+                c.setFillColor(GRAY)
+                c.drawString(margin, y, "This section is completed by ward office staff after you submit the form.")
+                continue
+
+            # Resolve explanations for numbered fields
+            if numbered_entries:
+                explanations = resolve_explanations(
+                    numbered_entries, zone_name, dictionary, cache,
+                    annotated_image=annotated_img, use_llm=use_llm,
+                )
+            else:
+                # Fallback: build entries without annotation (no image available)
+                explanations = [
+                    (i + 1, t, _clean_explanation(t.get("note", "")))
+                    for i, t in enumerate(chunk_translations)
+                ]
+
+            # Draw numbered explanation list
+            avail_w = WIDTH - 2 * margin
+            circle_r = 8
+            line_spacing = 7  # extra spacing between entries
+
+            for number, entry, explanation in explanations:
+                ja_text = entry.get("ja", "")
+                en_text = entry.get("en", "")
+                # Replace fullwidth spaces (from Japanese form layout) with regular spaces
+                en_text = en_text.replace("\u3000", " ")
+
+                # Pre-compute whether English wraps to next line
+                text_x = margin + circle_r * 2 + 12
+                ja_w = pdfmetrics.stringWidth(ja_text, font_ja, 9)
+                en_w = pdfmetrics.stringWidth(en_text, font_en, 8)
+                en_on_next_line = (text_x + ja_w + 15 + en_w) > (WIDTH - margin)
+
+                # Calculate space needed for this entry
+                # Header line (~16pt, or +12 if en wraps) + explanation wrap lines (~11pt each)
+                explanation_lines = []
+                if explanation:
+                    # Word-wrap explanation to ~80 chars
+                    words = explanation.split()
+                    line_buf = ""
+                    for word in words:
+                        test = f"{line_buf} {word}".strip()
+                        if len(test) > 80:
+                            if line_buf:
+                                explanation_lines.append(line_buf)
+                            line_buf = word
+                        else:
+                            line_buf = test
+                    if line_buf:
+                        explanation_lines.append(line_buf)
+
+                entry_height = 16 + len(explanation_lines) * 11 + line_spacing
+                if en_on_next_line:
+                    entry_height += 12
+
+                # Page break if not enough room
+                if y - entry_height < 45:
+                    c.showPage()
+                    next_page()
+                    draw_header()
+                    draw_footer()
+                    y = HEIGHT - 65
+
+                    # Continuation header
+                    c.setFont(font_ja, 11)
                     c.setFillColor(NAVY)
-                    c.setFont(font_ja, 8)
-                elif j == 2:
-                    c.setFillColor(BLUE)
-                    c.setFont(font_en, 6.5)
-                else:
-                    c.setFillColor(GRAY)
-                    c.setFont(font_en, 6.5)
+                    c.drawString(margin, y, f"{zone['title_ja']}  —  {zone['title_en']}{title_suffix}  (continued)")
+                    y -= 8
+                    c.setStrokeColor(RED)
+                    c.setLineWidth(1.5)
+                    c.line(margin, y, WIDTH - margin, y)
+                    y -= 15
 
-                # Truncate
-                max_chars = int(w / 4.5)
-                display = text[:max_chars] + "..." if len(text) > max_chars else text
-                c.drawString(cx + 3, y + 4, display)
-                cx += w
+                # Draw red circle with number
+                cx = margin + circle_r + 2
+                cy = y - circle_r
+                c.setFillColor(RED)
+                c.circle(cx, cy, circle_r, fill=True, stroke=False)
+                c.setFillColor(WHITE)
+                c.setFont(font_en, 8)
+                num_str = str(number)
+                c.drawCentredString(cx, cy - 3, num_str)
+
+                # Japanese + English on same line (or wrapped to next line)
+                text_x = margin + circle_r * 2 + 12
+                c.setFillColor(NAVY)
+                c.setFont(font_ja, 9)
+                c.drawString(text_x, y - 5, ja_text)
+
+                # Measure actual Japanese text width
+                ja_display_width = pdfmetrics.stringWidth(ja_text, font_ja, 9)
+                en_x = text_x + ja_display_width + 15
+                en_on_next_line = en_x + pdfmetrics.stringWidth(en_text, font_en, 8) > WIDTH - margin
+
+                c.setFillColor(GRAY)
+                pick_font(en_text, 8)
+                if en_on_next_line:
+                    # English wraps to next line, indented at text_x
+                    y -= 12
+                    c.drawString(text_x, y - 5, en_text)
+                else:
+                    c.drawString(en_x, y - 5, en_text)
+
+                y -= 16
+
+                # Explanation paragraph below
+                if explanation_lines:
+                    c.setFillColor(HexColor("#444444"))
+                    for exp_line in explanation_lines:
+                        pick_font(exp_line, 7.5)
+                        c.drawString(text_x, y - 2, exp_line)
+                        y -= 11
+
+                y -= line_spacing
 
     # ═══ LAST PAGE: Counter Phrases ═══
     if form_template:
@@ -917,14 +1462,15 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
                 c.setFont(font_ja, 12)
                 c.drawString(margin + 8, y - 15, p["ja"])
 
-                # Romaji
+                # Romaji (may contain macrons like ū, ō — use pick_font)
                 c.setFillColor(GRAY)
-                c.setFont(font_en, 6.5)
-                c.drawString(margin + 8, y - 25, p.get("romaji", ""))
+                romaji_text = p.get("romaji", "")
+                pick_font(romaji_text, 6.5)
+                c.drawString(margin + 8, y - 25, romaji_text)
 
-                # English
+                # English (may contain ○ or other non-ASCII)
                 c.setFillColor(BLUE)
-                c.setFont(font_en, 7)
+                pick_font(p["en"], 7)
                 c.drawString(margin + 8, y - 35, p["en"])
 
                 y -= card_h + 12
@@ -1056,7 +1602,13 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
         page_image=page_image,
         page_height_pts=page_height_pts,
         zones=zones,
+        dictionary=dictionary,
+        cache=cache,
+        use_llm=use_llm,
     )
+
+    # Save cache again after guide generation (persists vision explanation cache)
+    save_translation_cache(cache)
 
     if result:
         size_kb = output_path.stat().st_size / 1024
