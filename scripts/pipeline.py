@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).parent.parent
 DATA_DIR = BASE_DIR / "data"
 FIELDS_PATH = DATA_DIR / "fields" / "dictionary.json"
 FORMS_DIR = DATA_DIR / "forms"
-OUTPUT_DIR = BASE_DIR / "output" / "guides"
+OUTPUT_DIR = BASE_DIR / "output" / "walkthroughs"
 CACHE_PATH = BASE_DIR / "translations_cache.json"
 
 # ── Form zones for 住民異動届 (pdfplumber y-coordinates) ──
@@ -1522,17 +1522,21 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
         zones = DEFAULT_ZONES
 
     pdf_name = Path(pdf_path).stem
-    # Extract ward name from path (e.g., downloads/tokyo/katsushika/ido.pdf → katsushika)
+    # Extract city and ward from path (e.g., downloads/tokyo/katsushika/ido.pdf)
     ward_name = ""
+    city_name = ""
     parts = Path(pdf_path).parts
     for i, part in enumerate(parts):
-        if part.lower() == "tokyo" and i + 1 < len(parts) - 1:
+        if part.lower() in ("tokyo", "osaka", "kyoto", "nagoya") and i + 1 < len(parts) - 1:
+            city_name = part.lower()
             ward_name = parts[i + 1]
             break
-    if ward_name:
-        output_path = output_dir / f"{ward_name}_{pdf_name}_guide.pdf"
+    if city_name and ward_name:
+        ward_dir = output_dir / city_name / ward_name
+        ward_dir.mkdir(parents=True, exist_ok=True)
+        output_path = ward_dir / f"{pdf_name}_walkthrough.pdf"
     else:
-        output_path = output_dir / f"{pdf_name}_guide.pdf"
+        output_path = output_dir / f"{pdf_name}_walkthrough.pdf"
 
     print(f"  Pipeline: {Path(pdf_path).name}")
 
