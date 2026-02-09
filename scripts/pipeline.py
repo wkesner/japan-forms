@@ -1497,6 +1497,640 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
 
 
 # ═══════════════════════════════════════════
+# TEMPLATE-ONLY WALKTHROUGH
+# ═══════════════════════════════════════════
+
+def _template_only_output_path(form_id, output_dir):
+    """Derive output PDF path from form_id for template-only mode."""
+    mapping = {
+        "bank_account_personal": Path("bank") / "japanpost" / "personal_account_walkthrough.pdf",
+        "bank_account_corporate": Path("bank") / "japanpost" / "corporate_account_walkthrough.pdf",
+    }
+    rel = mapping.get(form_id, Path(f"{form_id}_walkthrough.pdf"))
+    return Path(output_dir) / rel
+
+
+def generate_template_walkthrough(form_template, dictionary, output_path):
+    """
+    Generate a multi-page walkthrough PDF purely from a form template + field dictionary.
+
+    No input PDF needed. Produces:
+    1. Cover page — form name, legal basis, eligibility
+    2. Bank comparison table
+    3. What to Bring — scenarios with document checklists
+    4. Field-by-field translation — sections + fields from dictionary
+    5. Common mistakes
+    6. Middle name guide
+    7. Counter phrases
+    8. After submission steps
+    """
+    from reportlab.lib.pagesizes import A4
+    from reportlab.lib.colors import HexColor
+    from reportlab.pdfgen import canvas
+    from reportlab.pdfbase import pdfmetrics
+
+    has_font = register_fonts()
+    font_ja = "JPFont" if has_font else "Helvetica"
+    font_en = font_ja  # MS Gothic handles both
+
+    WIDTH, HEIGHT = A4
+    NAVY = HexColor("#1a2744")
+    BLUE = HexColor("#2980b9")
+    GRAY = HexColor("#555555")
+    RED = HexColor("#c0392b")
+    WHITE = HexColor("#ffffff")
+    WARM_BG = HexColor("#fff3e0")
+    LIGHT = HexColor("#ebf5fb")
+    GREEN = HexColor("#27ae60")
+    LGRAY = HexColor("#f2f3f4")
+    margin = 28
+
+    form_name_en = form_template.get("names", {}).get("en", "Form Guide")
+    form_name_ja = form_template.get("names", {}).get("ja", "")
+
+    c = canvas.Canvas(str(output_path), pagesize=A4)
+    c.setTitle(f"{form_name_en} ({form_name_ja}) — Walkthrough Guide")
+    c.setAuthor("japan-forms")
+
+    current_page = [0]
+
+    # Count total pages: cover + bank comparison + what-to-bring + fields(1-2) +
+    # mistakes/middle-name + counter phrases + after submission
+    total_pages = 1  # cover
+    if form_template.get("bank_comparison"):
+        total_pages += 1
+    if form_template.get("scenarios"):
+        total_pages += 1
+    if form_template.get("sections"):
+        total_pages += 2  # field guide often spans 2 pages
+    if form_template.get("common_mistakes"):
+        total_pages += 1  # mistakes + middle name guide
+    if form_template.get("counter_phrases"):
+        total_pages += 1
+    if form_template.get("after_submission"):
+        total_pages += 1
+
+    def pick_font(text, size):
+        if any(ord(ch) >= 0x3000 for ch in text):
+            c.setFont(font_ja, size)
+        else:
+            c.setFont(font_en, size)
+
+    def draw_fitted_string(x, y, text, font_name, max_size, min_size, max_width):
+        size = max_size
+        while size >= min_size:
+            w = pdfmetrics.stringWidth(text, font_name, size)
+            if w <= max_width:
+                break
+            size -= 0.5
+        c.setFont(font_name, size)
+        c.drawString(x, y, text)
+
+    def draw_header():
+        current_page[0] += 1
+        c.setFillColor(NAVY)
+        c.rect(0, HEIGHT - 40, WIDTH, 40, fill=True, stroke=False)
+        c.setFillColor(WHITE)
+        header_text = f"{form_name_ja}  {form_name_en}"
+        draw_fitted_string(15, HEIGHT - 27, header_text, font_ja, 12, 7, WIDTH - 30)
+        c.setFont(font_en, 7)
+        c.setFillColor(HexColor("#aabbcc"))
+        c.drawString(15, HEIGHT - 37, "japan-forms  ·  Walkthrough Guide")
+        c.drawRightString(WIDTH - 15, HEIGHT - 37, f"Page {current_page[0]}/{total_pages}")
+        c.setStrokeColor(RED)
+        c.setLineWidth(2)
+        c.line(0, HEIGHT - 41, WIDTH, HEIGHT - 41)
+
+    def draw_footer():
+        c.setFont(font_en, 5.5)
+        c.setFillColor(HexColor("#bdc3c7"))
+        c.drawString(15, 10,
+            f"Generated {date.today().isoformat()} from github.com/wkesner/japan-forms  |  Not an official document")
+
+    def section_heading(y, title, underline_w=160):
+        c.setFont(font_en, 13)
+        c.setFillColor(NAVY)
+        c.drawString(margin, y, title)
+        y -= 5
+        c.setStrokeColor(RED)
+        c.setLineWidth(1.5)
+        c.line(margin, y, margin + underline_w, y)
+        return y - 15
+
+    def new_page():
+        c.showPage()
+        draw_header()
+        draw_footer()
+
+    def wrap_text(text, font_name, font_size, max_width):
+        """Split text into lines that fit within max_width."""
+        words = text.split()
+        lines = []
+        current = ""
+        for word in words:
+            test = f"{current} {word}".strip()
+            if pdfmetrics.stringWidth(test, font_name, font_size) <= max_width:
+                current = test
+            else:
+                if current:
+                    lines.append(current)
+                current = word
+        if current:
+            lines.append(current)
+        return lines or [""]
+
+    # ═══ PAGE 1: Cover Page ═══
+    draw_header()
+    draw_footer()
+
+    y = HEIGHT - 75
+
+    # Title
+    c.setFillColor(NAVY)
+    draw_fitted_string(margin, y, f"{form_name_ja}  —  {form_name_en}", font_ja, 18, 11, WIDTH - 2 * margin)
+    y -= 8
+
+    # Romaji subtitle
+    romaji = form_template.get("names", {}).get("romaji", "")
+    if romaji:
+        c.setFillColor(GRAY)
+        pick_font(romaji, 9)
+        c.drawString(margin, y, romaji)
+    y -= 22
+
+    # Legal basis box
+    legal = form_template.get("legal_basis", {})
+    if legal:
+        box_h = 55
+        c.setFillColor(LIGHT)
+        c.rect(margin, y - box_h, WIDTH - 2 * margin, box_h, fill=True, stroke=False)
+        c.setStrokeColor(BLUE)
+        c.setLineWidth(2)
+        c.line(margin, y - box_h, margin, y)
+
+        bx = margin + 8
+        by = y - 13
+        c.setFillColor(NAVY)
+        c.setFont(font_en, 8)
+        c.drawString(bx, by, "LEGAL BASIS")
+        by -= 12
+        c.setFillColor(GRAY)
+        law_en = legal.get("law_en", "")
+        if law_en:
+            for line in wrap_text(law_en, font_en, 7, WIDTH - 2 * margin - 20):
+                pick_font(line, 7)
+                c.drawString(bx, by, line)
+                by -= 10
+
+        c.setFont(font_en, 7)
+        c.setFillColor(NAVY)
+        deadline = legal.get("deadline_description_en", "N/A")
+        c.drawString(bx, by, f"Deadline: {deadline}")
+        by -= 10
+        cost_note = legal.get("cost_note_en", f"Cost: ¥{legal.get('cost', 0)}")
+        c.drawString(bx, by, cost_note)
+
+        y -= box_h + 15
+
+    # Eligibility
+    elig = form_template.get("eligibility", {})
+    if elig:
+        y = section_heading(y, "ELIGIBILITY", 100)
+
+        for key in ("residence_requirement_en", "visa_requirement_en"):
+            text = elig.get(key, "")
+            if text:
+                c.setFillColor(NAVY)
+                for line in wrap_text(text, font_en, 7.5, WIDTH - 2 * margin - 10):
+                    pick_font(line, 7.5)
+                    c.drawString(margin + 5, y, line)
+                    y -= 11
+                y -= 4
+
+        for exc in elig.get("exceptions", []):
+            c.setFillColor(GREEN)
+            c.setFont(font_en, 6)
+            c.drawString(margin + 5, y + 2, "\u25b6")
+            c.setFillColor(GRAY)
+            for line in wrap_text(exc, font_en, 7, WIDTH - 2 * margin - 20):
+                pick_font(line, 7)
+                c.drawString(margin + 15, y, line)
+                y -= 10
+            y -= 3
+
+    # ═══ PAGE 2: Bank Comparison Table ═══
+    banks = form_template.get("bank_comparison", [])
+    if banks:
+        new_page()
+        y = HEIGHT - 60
+        y = section_heading(y, "BANK COMPARISON", 170)
+
+        # Table header
+        cols = [margin, margin + 95, margin + 195, margin + 265, margin + 310, margin + 350]
+        headers = ["Bank", "English Support", "Min. Residency", "Hanko?", "Debit?", "Best For"]
+        c.setFillColor(NAVY)
+        c.rect(margin, y - 2, WIDTH - 2 * margin, 14, fill=True, stroke=False)
+        c.setFillColor(WHITE)
+        c.setFont(font_en, 6.5)
+        for i, h in enumerate(headers):
+            c.drawString(cols[i] + 3, y + 1, h)
+        y -= 16
+
+        for bank in banks:
+            if y < 60:
+                new_page()
+                y = HEIGHT - 60
+
+            row_h = 26
+            # Alternating row background
+            idx = banks.index(bank)
+            if idx % 2 == 0:
+                c.setFillColor(LGRAY)
+                c.rect(margin, y - row_h + 10, WIDTH - 2 * margin, row_h, fill=True, stroke=False)
+
+            # Bank name (ja + en)
+            c.setFillColor(NAVY)
+            c.setFont(font_ja, 7)
+            c.drawString(cols[0] + 3, y + 2, bank["bank_ja"])
+            c.setFillColor(BLUE)
+            c.setFont(font_en, 6)
+            c.drawString(cols[0] + 3, y - 8, bank["bank_en"])
+
+            # English support (wrap in narrow column)
+            c.setFillColor(GRAY)
+            c.setFont(font_en, 5.5)
+            support_lines = wrap_text(bank.get("english_support", ""), font_en, 5.5, 95)
+            for j, sl in enumerate(support_lines[:2]):
+                c.drawString(cols[1] + 3, y + 2 - j * 9, sl)
+
+            # Min residency
+            c.setFillColor(NAVY)
+            c.setFont(font_en, 7)
+            c.drawString(cols[2] + 3, y + 2, bank.get("min_residency", ""))
+
+            # Hanko
+            hanko = bank.get("hanko_required", False)
+            c.setFillColor(RED if hanko else GREEN)
+            c.setFont(font_en, 7)
+            c.drawString(cols[3] + 3, y + 2, "Yes" if hanko else "No")
+
+            # Debit card
+            debit = bank.get("debit_card", False)
+            c.setFillColor(GREEN if debit else GRAY)
+            c.drawString(cols[4] + 3, y + 2, "Yes" if debit else "No")
+
+            # Best for
+            c.setFillColor(GRAY)
+            c.setFont(font_en, 5.5)
+            best_lines = wrap_text(bank.get("best_for", ""), font_en, 5.5, WIDTH - cols[5] - margin - 5)
+            for j, bl in enumerate(best_lines[:2]):
+                c.drawString(cols[5] + 3, y + 2 - j * 9, bl)
+
+            y -= row_h + 2
+
+    # ═══ PAGE 3: What to Bring (Scenarios) ═══
+    scenarios = form_template.get("scenarios", {})
+    if scenarios:
+        new_page()
+        y = HEIGHT - 60
+        y = section_heading(y, "WHAT TO BRING", 140)
+
+        for scenario_key, scenario in scenarios.items():
+            if y < 120:
+                new_page()
+                y = HEIGHT - 60
+
+            # Scenario title
+            c.setFillColor(BLUE)
+            c.setFont(font_en, 10)
+            title_line = f"{scenario['title_en']}"
+            c.drawString(margin, y, title_line)
+            c.setFillColor(GRAY)
+            c.setFont(font_ja, 7.5)
+            c.drawString(margin + pdfmetrics.stringWidth(title_line, font_en, 10) + 10, y + 1, scenario.get("title_ja", ""))
+            y -= 14
+
+            # Recommended bank
+            rec = scenario.get("recommended_bank", "")
+            if rec:
+                c.setFillColor(GREEN)
+                c.setFont(font_en, 7)
+                c.drawString(margin + 5, y, f"Recommended: {rec}")
+                y -= 14
+
+            # Document list
+            for doc in scenario.get("documents_required", []):
+                if y < 60:
+                    new_page()
+                    y = HEIGHT - 60
+
+                req = doc.get("required", False)
+                marker = "\u2713" if req else "\u25cb"
+                c.setFillColor(RED if req else GRAY)
+                c.setFont(font_ja, 7.5)
+                c.drawString(margin + 10, y, marker)
+
+                c.setFillColor(NAVY if req else GRAY)
+                en_text = doc["en"]
+                cond = doc.get("condition_en", "")
+                if cond:
+                    en_text += f"  ({cond})"
+                for line in wrap_text(en_text, font_en, 7.5, WIDTH - 2 * margin - 130):
+                    pick_font(line, 7.5)
+                    c.drawString(margin + 22, y, line)
+                    y -= 10
+
+                c.setFillColor(GRAY)
+                c.setFont(font_ja, 7)
+                c.drawString(WIDTH - margin - 100, y + 10, doc.get("ja", ""))
+
+                y -= 4
+            y -= 12
+
+    # ═══ PAGE 4+: Field-by-Field Translation ═══
+    sections = form_template.get("sections", [])
+    if sections:
+        new_page()
+        y = HEIGHT - 60
+        y = section_heading(y, "FIELD-BY-FIELD GUIDE", 180)
+
+        for section in sections:
+            if y < 120:
+                new_page()
+                y = HEIGHT - 60
+
+            # Section header
+            sec_num = section.get("section_number", "")
+            sec_title_en = section.get("title_en", "")
+            sec_title_ja = section.get("title_ja", "")
+            c.setFillColor(NAVY)
+            c.rect(margin, y - 2, WIDTH - 2 * margin, 16, fill=True, stroke=False)
+            c.setFillColor(WHITE)
+            c.setFont(font_en, 9)
+            c.drawString(margin + 5, y + 1, f"Section {sec_num}: {sec_title_en}")
+            c.setFont(font_ja, 8)
+            c.drawString(margin + 250, y + 1, sec_title_ja)
+            y -= 20
+
+            # Section note
+            sec_note = section.get("note_en", "")
+            if sec_note:
+                c.setFillColor(BLUE)
+                for line in wrap_text(sec_note, font_en, 7, WIDTH - 2 * margin - 20):
+                    c.setFont(font_en, 7)
+                    c.drawString(margin + 10, y, line)
+                    y -= 10
+                y -= 4
+
+            # Fields
+            for field_ref in section.get("fields", []):
+                if y < 80:
+                    new_page()
+                    y = HEIGHT - 60
+
+                fid = field_ref["field_id"]
+                field = dictionary.get(fid, {})
+                required = field_ref.get("required", False)
+                field_note = field_ref.get("note_en", "")
+
+                kanji = field.get("kanji", fid)
+                romaji_f = field.get("romaji", "")
+                english = field.get("english", fid)
+                tip = field.get("tip_en", "")
+
+                # Field row
+                # Required marker
+                if required:
+                    c.setFillColor(RED)
+                    c.setFont(font_en, 6)
+                    c.drawString(margin + 2, y + 1, "REQ")
+                else:
+                    c.setFillColor(GRAY)
+                    c.setFont(font_en, 6)
+                    c.drawString(margin + 2, y + 1, "OPT")
+
+                # Kanji
+                c.setFillColor(NAVY)
+                c.setFont(font_ja, 10)
+                c.drawString(margin + 25, y, kanji)
+                kanji_w = pdfmetrics.stringWidth(kanji, font_ja, 10)
+
+                # Romaji
+                c.setFillColor(GRAY)
+                pick_font(romaji_f, 7)
+                c.drawString(margin + 25 + kanji_w + 8, y + 1, romaji_f)
+
+                # English
+                c.setFillColor(BLUE)
+                c.setFont(font_en, 8)
+                c.drawString(margin + 200, y + 1, english)
+                y -= 13
+
+                # Tip
+                if tip:
+                    c.setFillColor(HexColor("#444444"))
+                    for line in wrap_text(tip, font_en, 6.5, WIDTH - 2 * margin - 40):
+                        c.setFont(font_en, 6.5)
+                        c.drawString(margin + 30, y, line)
+                        y -= 9
+
+                # Field-specific note from template
+                if field_note:
+                    c.setFillColor(GREEN)
+                    for line in wrap_text(f"\u25b6 {field_note}", font_en, 6.5, WIDTH - 2 * margin - 40):
+                        pick_font(line, 6.5)
+                        c.drawString(margin + 30, y, line)
+                        y -= 9
+
+                # Options
+                options = field.get("options", {})
+                if options:
+                    for opt_key, opt_val in options.items():
+                        if y < 60:
+                            new_page()
+                            y = HEIGHT - 60
+                        opt_en = opt_val.get("english", "")
+                        c.setFillColor(GRAY)
+                        c.setFont(font_ja, 6.5)
+                        c.drawString(margin + 35, y, f"{opt_key}")
+                        c.setFont(font_en, 6.5)
+                        c.drawString(margin + 100, y, f"= {opt_en}")
+                        y -= 9
+
+                y -= 5
+
+    # ═══ Common Mistakes Page ═══
+    mistakes = form_template.get("common_mistakes", [])
+    if mistakes:
+        new_page()
+        y = HEIGHT - 60
+        y = section_heading(y, "COMMON MISTAKES", 160)
+
+        for i, m in enumerate(mistakes):
+            if y < 100:
+                new_page()
+                y = HEIGHT - 60
+
+            # Mistake
+            c.setFillColor(RED)
+            c.setFont(font_en, 8)
+            c.drawString(margin, y, f"{i + 1}.")
+            c.setFillColor(NAVY)
+            for line in wrap_text(m["mistake_en"], font_en, 8, WIDTH - 2 * margin - 20):
+                c.setFont(font_en, 8)
+                c.drawString(margin + 15, y, line)
+                y -= 11
+            y -= 2
+
+            # Fix
+            c.setFillColor(GREEN)
+            c.setFont(font_en, 6)
+            c.drawString(margin + 15, y + 2, "\u25b6")
+            c.setFillColor(HexColor("#444444"))
+            for line in wrap_text(m["fix_en"], font_en, 7, WIDTH - 2 * margin - 30):
+                pick_font(line, 7)
+                c.drawString(margin + 25, y, line)
+                y -= 10
+            y -= 10
+
+    # ═══ Middle Name Guide ═══
+    mng = form_template.get("middle_name_guide", {})
+    if mng:
+        if y < 200:
+            new_page()
+            y = HEIGHT - 60
+        y = section_heading(y, "MIDDLE NAME GUIDE", 170)
+
+        explanation = mng.get("explanation_en", "")
+        if explanation:
+            c.setFillColor(GRAY)
+            for line in wrap_text(explanation, font_en, 7.5, WIDTH - 2 * margin - 10):
+                pick_font(line, 7.5)
+                c.drawString(margin + 5, y, line)
+                y -= 11
+            y -= 8
+
+        for opt in mng.get("options", []):
+            if y < 80:
+                new_page()
+                y = HEIGHT - 60
+
+            # Option title
+            c.setFillColor(BLUE)
+            c.setFont(font_en, 8)
+            c.drawString(margin + 5, y, opt["option_en"])
+            y -= 12
+
+            # Example
+            example = opt.get("example", "")
+            if example:
+                c.setFillColor(NAVY)
+                for line in wrap_text(example, font_ja, 7.5, WIDTH - 2 * margin - 25):
+                    pick_font(line, 7.5)
+                    c.drawString(margin + 15, y, line)
+                    y -= 10
+
+            # Note
+            note = opt.get("note", "")
+            if note:
+                c.setFillColor(HexColor("#444444"))
+                for line in wrap_text(note, font_en, 6.5, WIDTH - 2 * margin - 25):
+                    pick_font(line, 6.5)
+                    c.drawString(margin + 15, y, line)
+                    y -= 9
+            y -= 8
+
+    # ═══ Counter Phrases Page ═══
+    phrases = form_template.get("counter_phrases", [])
+    if phrases:
+        new_page()
+        y = HEIGHT - 60
+        y = section_heading(y, "COUNTER PHRASES", 160)
+
+        c.setFillColor(GRAY)
+        c.setFont(font_en, 8)
+        c.drawString(margin, y, "Point and show these to bank staff")
+        y -= 18
+
+        for p in phrases:
+            if y < 70:
+                new_page()
+                y = HEIGHT - 60
+
+            # Situation label
+            c.setFillColor(BLUE)
+            c.setFont(font_en, 7)
+            c.drawString(margin, y, p["situation_en"].upper())
+            y -= 3
+
+            # Phrase card
+            card_h = 38
+            c.setFillColor(WARM_BG)
+            c.rect(margin, y - card_h, WIDTH - 2 * margin, card_h, fill=True, stroke=False)
+            c.setStrokeColor(RED)
+            c.setLineWidth(2)
+            c.line(margin, y - card_h, margin, y)
+
+            # Japanese (large)
+            c.setFillColor(NAVY)
+            c.setFont(font_ja, 12)
+            c.drawString(margin + 8, y - 15, p["ja"])
+
+            # Romaji
+            c.setFillColor(GRAY)
+            romaji_text = p.get("romaji", "")
+            pick_font(romaji_text, 6.5)
+            c.drawString(margin + 8, y - 25, romaji_text)
+
+            # English
+            c.setFillColor(BLUE)
+            pick_font(p["en"], 7)
+            c.drawString(margin + 8, y - 35, p["en"])
+
+            y -= card_h + 12
+
+    # ═══ After Submission Page ═══
+    after = form_template.get("after_submission", [])
+    if after:
+        new_page()
+        y = HEIGHT - 60
+        y = section_heading(y, "AFTER SUBMISSION", 160)
+
+        for step in after:
+            if y < 70:
+                new_page()
+                y = HEIGHT - 60
+
+            step_num = step.get("step", "")
+            # Step number circle
+            c.setFillColor(NAVY)
+            cx = margin + 10
+            cy = y + 3
+            c.circle(cx, cy, 8, fill=True, stroke=False)
+            c.setFillColor(WHITE)
+            c.setFont(font_en, 8)
+            c.drawCentredString(cx, cy - 3, str(step_num))
+
+            # Japanese
+            c.setFillColor(NAVY)
+            c.setFont(font_ja, 9)
+            c.drawString(margin + 25, y + 2, step.get("ja", ""))
+            y -= 14
+
+            # English
+            c.setFillColor(GRAY)
+            for line in wrap_text(step.get("en", ""), font_en, 7.5, WIDTH - 2 * margin - 30):
+                pick_font(line, 7.5)
+                c.drawString(margin + 25, y, line)
+                y -= 10
+            y -= 8
+
+    c.save()
+    print(f"    Generated {output_path.name}")
+    return output_path
+
+
+# ═══════════════════════════════════════════
 # MAIN PIPELINE
 # ═══════════════════════════════════════════
 
@@ -1659,7 +2293,8 @@ def main():
     parser = argparse.ArgumentParser(
         description="Translate Japanese government form PDFs into bilingual English/Japanese guides"
     )
-    parser.add_argument("input", help="Path to input PDF file")
+    parser.add_argument("input", nargs="?", default=None,
+                        help="Path to input PDF file (not required with --template-only)")
     parser.add_argument("-o", "--output", default=None,
                         help=f"Output directory (default: {OUTPUT_DIR.relative_to(BASE_DIR)})")
     parser.add_argument("--form", default="residence_registration",
@@ -1668,8 +2303,40 @@ def main():
                         help="Dictionary-only mode — no Claude API calls")
     parser.add_argument("--dpi", type=int, default=200,
                         help="DPI for page rendering (default: 200)")
+    parser.add_argument("--template-only", action="store_true",
+                        help="Generate walkthrough from template only (no PDF input)")
 
     args = parser.parse_args()
+
+    # ── Template-only mode ──
+    if args.template_only:
+        form_template = load_form_template(args.form)
+        if not form_template:
+            print(f"ERROR: Form template '{args.form}' not found in {FORMS_DIR}")
+            sys.exit(1)
+
+        dictionary = load_field_dictionary()
+        output_dir = Path(args.output) if args.output else OUTPUT_DIR
+        output_path = _template_only_output_path(args.form, output_dir)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+
+        print(f"japan-forms template-only walkthrough")
+        print(f"  Form:   {args.form}")
+        print(f"  Output: {output_path}")
+        print()
+
+        result = generate_template_walkthrough(form_template, dictionary, output_path)
+        if result:
+            size_kb = output_path.stat().st_size / 1024
+            print(f"\nDone! Walkthrough saved to: {result} ({size_kb:.0f} KB)")
+        else:
+            print(f"\nFailed to generate walkthrough.")
+            sys.exit(1)
+        return
+
+    # ── Normal PDF mode ──
+    if not args.input:
+        parser.error("input PDF is required (or use --template-only)")
 
     # Validate input
     input_path = Path(args.input)
