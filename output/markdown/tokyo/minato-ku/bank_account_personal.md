@@ -26,7 +26,7 @@
 |------|----------|----------------|---------------|--------|------------|----------|
 | Japan Post Bank | ゆうちょ銀行 | App in English/Vietnamese/Chinese. Limited branch English. | 3 months | Not needed | ✅ | Newcomers, first account, widest ATM/branch network |
 | SMBC Prestia | SMBC プレスティア | Full English: branch staff, phone, online banking | 6 months | Not needed | ✅ | Expats wanting full English banking experience |
-| Sony Bank | ソニー銀行 | English app signup, English live chat. Note: new English applications stopped June 2025. | 6 months | Not needed | ✅ | Online-first users, multi-currency |
+| Sony Bank | ソニー銀行 | English live chat available. Note: English app signup discontinued since June 2025. | 6 months | Not needed | ✅ | Online-first users, multi-currency |
 | SBI Shinsei Bank | SBI新生銀行 | English online banking, English mail-in application. Phone support discontinued Oct 2024. | 6 months | Not needed | ❌ | Free ATM withdrawals at convenience stores |
 | Rakuten Bank | 楽天銀行 | English application instructions, some Japanese still required | 6 months | Not needed | ✅ | Rakuten ecosystem users, online shopping cashback |
 | Seven Bank | セブン銀行 | English instructions, collect card at 7-Eleven | 6 months | Not needed | ✅ | Quick setup, 7-Eleven ATM convenience |
@@ -198,7 +198,7 @@ Japanese name systems expect exactly one surname and one given name. Most bankin
 
 ---
 
-*Generated from [japan-forms](https://github.com/deep-japan/japan-forms) data on 2026-02-07.*
+*Generated from [japan-forms](https://github.com/deep-japan/japan-forms) data on 2026-02-09.*
 *Found an error? [Submit an issue](https://github.com/deep-japan/japan-forms/issues/new?template=translation_error.yml) or open a PR.*
 
 *This is a community resource and not an official government document. Always confirm with your local municipal office.*

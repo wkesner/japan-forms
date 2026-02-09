@@ -159,7 +159,7 @@
 
 ---
 
-*Generated from [japan-forms](https://github.com/deep-japan/japan-forms) data on 2026-02-07.*
+*Generated from [japan-forms](https://github.com/deep-japan/japan-forms) data on 2026-02-09.*
 *Found an error? [Submit an issue](https://github.com/deep-japan/japan-forms/issues/new?template=translation_error.yml) or open a PR.*
 
 *This is a community resource and not an official government document. Always confirm with your local municipal office.*

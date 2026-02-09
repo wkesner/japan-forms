@@ -18,14 +18,13 @@
 
 ## Business Manager Visa Requirements
 
-**Capital (current):** ¥5,000,000 (until October 2025)
-**Capital (from Oct 2025):** ¥30,000,000 (from October 2025)
+**Capital:** ¥30,000,000 (raised from ¥5,000,000 in October 2025)
 
 The capital must be deposited into your personal account first (as proof of funds during incorporation), then transferred to the corporate account after registration. Banks and immigration both want to see this paper trail.
 
-**Employees:** 2+ full-time employees (from October 2025, previously 'or' with capital requirement, now both required)
+**Employees:** 2+ full-time employees (both capital AND employee requirements must be met since October 2025)
 
-**Japanese ability:** JLPT N2 or equivalent now required for at least the applicant or one full-time employee (from October 2025)
+**Japanese ability:** JLPT N2 or equivalent required for at least the applicant or one full-time employee (since October 2025)
 
 **Office:** Banks strongly prefer a dedicated physical office. Virtual offices and residential addresses are frequently rejected. Lease agreement will be requested.
 
@@ -243,7 +242,7 @@ Corporate account rejection is extremely common for foreign-owned companies. Ban
 
 ---
 
-*Generated from [japan-forms](https://github.com/deep-japan/japan-forms) data on 2026-02-07.*
+*Generated from [japan-forms](https://github.com/deep-japan/japan-forms) data on 2026-02-09.*
 *Found an error? [Submit an issue](https://github.com/deep-japan/japan-forms/issues/new?template=translation_error.yml) or open a PR.*
 
 *This is a community resource and not an official government document. Always confirm with your local municipal office.*

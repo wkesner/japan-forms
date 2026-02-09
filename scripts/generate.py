@@ -146,10 +146,8 @@ def generate_markdown(form_id, municipality_id, fields, form, muni):
     if bm:
         w("## Business Manager Visa Requirements")
         w("")
-        if bm.get("capital_requirement_current"):
-            w(f"**Capital (current):** {bm['capital_requirement_current']}")
-        if bm.get("capital_requirement_new"):
-            w(f"**Capital (from Oct 2025):** {bm['capital_requirement_new']}")
+        if bm.get("capital_requirement"):
+            w(f"**Capital:** {bm['capital_requirement']}")
         if bm.get("capital_note_en"):
             w(f"")
             w(f"{bm['capital_note_en']}")
