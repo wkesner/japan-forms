@@ -33,7 +33,7 @@ except ImportError:
 # ── Paths ──
 BASE_DIR = Path(__file__).parent.parent
 DOWNLOADS_DIR = BASE_DIR / "downloads" / "tokyo"
-OUTPUT_DIR = BASE_DIR / "output" / "guides"
+OUTPUT_DIR = BASE_DIR / "output" / "walkthroughs"
 MANIFEST_PATH = BASE_DIR / "downloads" / "manifest.json"
 
 # ── Search terms ──
