@@ -967,7 +967,7 @@ def _split_zone_into_chunks(zone, zone_translations, max_fields=15):
 
 def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
                    page_image=None, page_height_pts=842, zones=None,
-                   dictionary=None, cache=None, use_llm=True):
+                   dictionary=None, cache=None, use_llm=True, ward_name=""):
     """
     Generate the multi-page bilingual PDF guide.
 
@@ -1008,6 +1008,17 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
         else:
             c.setFont(font_en if prefer_en else font_ja, size)
 
+    def draw_fitted_string(x, y, text, font_name, max_size, min_size, max_width):
+        """Draw text, shrinking font size if needed to fit within max_width."""
+        size = max_size
+        while size >= min_size:
+            w = pdfmetrics.stringWidth(text, font_name, size)
+            if w <= max_width:
+                break
+            size -= 0.5
+        c.setFont(font_name, size)
+        c.drawString(x, y, text)
+
     margin = 28
     form_name_en = "Residence Registration"
     form_name_ja = "住民異動届"
@@ -1026,7 +1037,9 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
         total_pages = 2 + section_count  # no cover/phrases without template
 
     c = canvas.Canvas(str(output_path), pagesize=A4)
-    c.setTitle(f"{form_name_en} ({form_name_ja}) — Bilingual Guide")
+    ward_label = ward_name.replace("-", " ").title() if ward_name else ""
+    title_prefix = f"{ward_label} — " if ward_label else ""
+    c.setTitle(f"{title_prefix}{form_name_en} ({form_name_ja}) — Bilingual Guide")
     c.setAuthor("japan-forms")
 
     current_page = [0]
@@ -1038,8 +1051,10 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
         c.setFillColor(NAVY)
         c.rect(0, HEIGHT - 40, WIDTH, 40, fill=True, stroke=False)
         c.setFillColor(WHITE)
-        c.setFont(font_ja, 12)
-        c.drawString(15, HEIGHT - 27, f"{form_name_ja}  {form_name_en}")
+        header_text = f"{form_name_ja}  {form_name_en}"
+        if ward_label:
+            header_text = f"{ward_label}  —  {header_text}"
+        draw_fitted_string(15, HEIGHT - 27, header_text, font_ja, 12, 7, WIDTH - 30)
         c.setFont(font_en, 7)
         c.setFillColor(HexColor("#aabbcc"))
         c.drawString(15, HEIGHT - 37, f"japan-forms  ·  Bilingual Guide")
@@ -1113,16 +1128,18 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
         y = HEIGHT - 65
 
         # Title
-        c.setFont(font_ja, 16)
         c.setFillColor(NAVY)
-        c.drawString(margin, y, f"{form_name_ja}  —  {form_name_en}")
+        cover_title = f"{form_name_ja}  —  {form_name_en}"
+        if ward_label:
+            cover_title = f"{ward_label}  —  {cover_title}"
+        draw_fitted_string(margin, y, cover_title, font_ja, 16, 10, WIDTH - 2 * margin)
         y -= 25
 
-        c.setFont(font_en, 9)
         c.setFillColor(GRAY)
         legal = form_template.get("legal_basis", {})
         if legal:
-            c.drawString(margin, y, f"Deadline: {legal.get('deadline_description_en', 'N/A')}  |  Cost: Free  |  Penalty: {legal.get('penalty_en', 'N/A')}")
+            legal_text = f"Deadline: {legal.get('deadline_description_en', 'N/A')}  |  Cost: Free  |  Penalty: {legal.get('penalty_en', 'N/A')}"
+            draw_fitted_string(margin, y, legal_text, font_en, 9, 6, WIDTH - 2 * margin)
         y -= 25
 
         # ── What to Bring (scenarios) ──
@@ -1505,7 +1522,17 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
         zones = DEFAULT_ZONES
 
     pdf_name = Path(pdf_path).stem
-    output_path = output_dir / f"{pdf_name}_guide.pdf"
+    # Extract ward name from path (e.g., downloads/tokyo/katsushika/ido.pdf → katsushika)
+    ward_name = ""
+    parts = Path(pdf_path).parts
+    for i, part in enumerate(parts):
+        if part.lower() == "tokyo" and i + 1 < len(parts) - 1:
+            ward_name = parts[i + 1]
+            break
+    if ward_name:
+        output_path = output_dir / f"{ward_name}_{pdf_name}_guide.pdf"
+    else:
+        output_path = output_dir / f"{pdf_name}_guide.pdf"
 
     print(f"  Pipeline: {Path(pdf_path).name}")
 
@@ -1605,6 +1632,7 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
         dictionary=dictionary,
         cache=cache,
         use_llm=use_llm,
+        ward_name=ward_name,
     )
 
     # Save cache again after guide generation (persists vision explanation cache)

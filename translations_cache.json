@@ -1,0 +1,2057 @@
+{
+  "daec4ea0b508269c6ed232e63d1cf4ca": {
+    "en": "Letter of proxy / Power of attorney",
+    "type": "fragment",
+    "note": "Matched: 委任状"
+  },
+  "60938fefd204e444e4feeae10c067bc3": {
+    "en": "Full name",
+    "type": "fragment",
+    "note": "Matched: 氏名"
+  },
+  "f32c3bc963cc5cfe6cb63aadad4251e8": {
+    "en": "Phone number",
+    "type": "dictionary",
+    "note": "Japanese mobile number preferred. Some forms accept overseas numbers.",
+    "field_id": "denwa_bango"
+  },
+  "1328639bc6583477e47862632729f76e": {
+    "en": "Moving in (from another municipality or abroad)",
+    "type": "fragment",
+    "note": "Matched: 転入"
+  },
+  "6217138d636a0de8fae2aa29b8650a49": {
+    "en": "Moving in (from another municipality or abroad)",
+    "type": "fragment",
+    "note": "Matched: 転入"
+  },
+  "6c9a4caeed9976dc1b98cac9c13559f0": {
+    "en": "Moving in (from another municipality or abroad)",
+    "type": "fragment",
+    "note": "Matched: 転入"
+  },
+  "4b82e1e4adf34b0fed351b5f7ee6dd25": {
+    "en": "Moving within the same municipality",
+    "type": "fragment",
+    "note": "Matched: 転居"
+  },
+  "448cb8884e7d433938d1d90da8013e00": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "f8c54a689de16e286d7afe3472cbfc64": {
+    "en": "Change of household (head of household change, merge, split) / Relationship to head of household",
+    "type": "fragment",
+    "note": "Matched: 世帯変更, 続柄"
+  },
+  "8a011ac414f1715e9e8673e6f8338bb4": {
+    "en": "Moving in (from another municipality or abroad)",
+    "type": "fragment",
+    "note": "Matched: 転入"
+  },
+  "69136f622b161e957e54d97cf69525a7": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "7ba69790faa42404ca89f64c1a96342b": {
+    "en": "Address",
+    "type": "dictionary",
+    "note": "Write in kanji if possible. Ward office staff can help you look up the correct kanji for your address.",
+    "field_id": "jusho"
+  },
+  "b0874f086738c91cbc7096a34fdd935e": {
+    "en": "Letter of proxy / Power of attorney",
+    "type": "fragment",
+    "note": "Matched: 委任状"
+  },
+  "320fa1df44469f0719f5315ea099b0e7": {
+    "en": "Address",
+    "type": "fragment",
+    "note": "Matched: 住所"
+  },
+  "7cd8b314542075a09be6bfc05778524b": {
+    "en": "Address",
+    "type": "fragment",
+    "note": "Matched: 住所"
+  },
+  "dae057ca9e3d5a2bc6b0df9935b887fc": {
+    "en": "Gender / Relationship to head of household / Signature",
+    "type": "fragment",
+    "note": "Matched: 性別, 続柄, 署名"
+  },
+  "c573eb6b691797cc8c4a557b76508271": {
+    "en": "My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 個人番号"
+  },
+  "6df8bd9e3cd1f6265636d09dda72775f": {
+    "en": "Occupation",
+    "type": "fragment",
+    "note": "Matched: 職業"
+  },
+  "2f0581b029f8a84f578f400e358e030a": {
+    "en": "Health insurance card",
+    "type": "fragment",
+    "note": "Matched: 保険証"
+  },
+  "520aac9993fc6adff53f1c82932e4ad9": {
+    "en": "Seal (inkan / hanko)",
+    "type": "fragment",
+    "note": "Matched: 印"
+  },
+  "2b064f97ae0659e4367b6fd1f0080da6": {
+    "en": "Address",
+    "type": "fragment",
+    "note": "Matched: 住所"
+  },
+  "aa99dccdd5aa82a35bdf416bba71ba24": {
+    "en": "R07.02",
+    "type": "llm",
+    "note": ""
+  },
+  "1dcb9b646baeeea28003d7fc7e55b25d": {
+    "en": "Resident Registration Change Notification (Combined National Health Insurance・Pension・Long-term Care Notification Form)",
+    "type": "llm",
+    "note": ""
+  },
+  "a2389008206d21792ee193d652cbca8a": {
+    "en": "Applicant - License/Passport/My Number Card/Residence Card B/Residence Status/ID/Manager/Insurance/Pension/Medical/Other (     )",
+    "type": "llm",
+    "note": "Check boxes for identity documents you're bringing and write any additional documents in the parentheses space"
+  },
+  "15df64a7f8d2265bbee7c5ca1b373578": {
+    "en": "To the Mayor of Edogawa Ward",
+    "type": "llm",
+    "note": ""
+  },
+  "f54070f1e01fa3cdcd7f881e5905ae20": {
+    "en": "Confirmation Number・Validity Period (                                    )",
+    "type": "llm",
+    "note": "Enter the confirmation number and expiration date from your residence card or other relevant immigration document."
+  },
+  "9fb41e1b7c1a9603254697b3cda7f072": {
+    "en": "Date came to the window: Reiwa ___ year ___ month ___ day",
+    "type": "llm",
+    "note": "Fill in today's date when you submit the form at the municipal office counter"
+  },
+  "57e3f1a422fca42657af29dfc0aa2728": {
+    "en": "Type of Change/Category of Moving",
+    "type": "llm",
+    "note": "Select the appropriate box indicating your type of residence change (moving in, moving out, address change within city, etc.)"
+  },
+  "8243b65ddc07116c94eb3bddcf467196": {
+    "en": "Principal Person ( )",
+    "type": "llm",
+    "note": "Write your own name here as the main applicant for the residence registration change"
+  },
+  "de37aac2714cbcac796d721025baaa16": {
+    "en": "□Household separation □30-47 notification",
+    "type": "llm",
+    "note": "Check this box if you're separating from your current household to form a new one at the same address"
+  },
+  "bbd3350b8e20c940e583de4fae3d5835": {
+    "en": "Proxy/Representative     (     )",
+    "type": "llm",
+    "note": "Leave blank if filling out the form yourself; otherwise write the name of the person submitting the form on your behalf"
+  },
+  "d6894a946f77ab66d3d35209fde463bd": {
+    "en": "Former □ All □ Part",
+    "type": "llm",
+    "note": "Check \"All\" if your entire household is moving, or \"Part\" if only some household members are moving from the previous address."
+  },
+  "c165e89938f984fb0738553c92ae84c7": {
+    "en": "Relationship to the person moving",
+    "type": "llm",
+    "note": "Select your relationship to the person whose residence is being registered/changed (e.g., self, spouse, child, parent, etc.)"
+  },
+  "115f0edfb389efffc61c4800727afaee": {
+    "en": "1. The person themselves 2. Family member in the same household 3. Other",
+    "type": "llm",
+    "note": "Select who is submitting this form - choose \"1\" if you're filing for yourself, \"2\" if a family member is filing for you, or \"3\" if someone else (like a representative) is filing."
+  },
+  "1633e5a7c63468fd768d95dfdf0c54f5": {
+    "en": "(Date of moving) *Changes cannot be made after submission",
+    "type": "llm",
+    "note": "Enter the exact date you moved (or will move) to your new address - this date cannot be changed once you submit the form"
+  },
+  "2b35da485cdccd109ddc3e3c44d3f125": {
+    "en": "Please fill out information for person #3",
+    "type": "llm",
+    "note": "This section is for a third person being registered - fill in their details if applicable to your situation"
+  },
+  "57ad2430d33265623c911037c2e57f1f": {
+    "en": "With the person / Person and",
+    "type": "llm",
+    "note": "This indicates a relationship field - write your relationship to the person being registered (e.g., \"spouse,\" \"child,\" \"parent,\" etc.)"
+  },
+  "3b8e4b4698e4d45ec7db71a9c146c8ce": {
+    "en": "New □ All □ Part",
+    "type": "llm",
+    "note": "Check \"All\" if registering your complete household, or \"Part\" if only registering some family members at this address."
+  },
+  "0c81fecd115c6322ffe216a59c802685": {
+    "en": "Relationship to",
+    "type": "llm",
+    "note": "Write your relationship to the person listed above (e.g., \"spouse,\" \"child,\" \"parent,\" etc.)"
+  },
+  "5f7d5436c2ec4c96f5346e8b054452c6": {
+    "en": "From now on / Going forward",
+    "type": "llm",
+    "note": ""
+  },
+  "303c1d9c45b317321ad1efd4ef905259": {
+    "en": "Block/District Number",
+    "type": "llm",
+    "note": "Enter the numbered district section of your address (e.g., if your address is \"1-2-3 Shibuya\", enter \"1\" for 1-chome)"
+  },
+  "60916f9b2404997ad6073ec7f314e81c": {
+    "en": "Number (Address)",
+    "type": "llm",
+    "note": "Enter your building/house number and any sub-address numbers (e.g., \"123-4\" or \"45-2-101\")"
+  },
+  "1d8132301a43538397734d5bdbf5d83f": {
+    "en": "Until now / Previously",
+    "type": "llm",
+    "note": "This typically precedes fields asking for your previous address or status before the current change you're registering."
+  },
+  "acf9182f1bdf049181f909408b809851": {
+    "en": "Name of Person Moving",
+    "type": "llm",
+    "note": "Write your full name as it appears on your residence card or passport."
+  },
+  "96f1e80d5bfe1e0ab451e5a3a3f77109": {
+    "en": "Start and end dates for National Health Insurance coverage",
+    "type": "llm",
+    "note": "Enter the dates when your National Health Insurance (kokuho) coverage began and ended, if applicable to your residence change."
+  },
+  "7f8bee737c1a545ef4abf32c5f10570f": {
+    "en": "Remarks",
+    "type": "llm",
+    "note": "Use this section for any additional information or special circumstances regarding your address change that doesn't fit in other fields."
+  },
+  "56e3ecd6017e5811b6dc47db7ce3feda": {
+    "en": "Former National Health Insurance Number",
+    "type": "llm",
+    "note": "Enter your previous National Health Insurance number if you had one at your old address"
+  },
+  "17bc9b575e9a35e94917ecafcc10c441": {
+    "en": "Resident Registration Code (no entry required)",
+    "type": "llm",
+    "note": ""
+  },
+  "029cacdd66fa722811746f475b3e0b98": {
+    "en": "Nationality/Region and Residence Status Information",
+    "type": "llm",
+    "note": "Fill in your nationality/country and immigration status details (visa type, period of stay, etc.)"
+  },
+  "304f918a9b5b5864c14b59ca5dc7f186": {
+    "en": "For Basic Resident Registration Card verification",
+    "type": "llm",
+    "note": "N/A (this is a section header indicating where card verification information goes)"
+  },
+  "1b4e1754b4d251d7fd603bd2f02eaa9c": {
+    "en": "Meiji, Taisho, Showa, Heisei, Reiwa",
+    "type": "llm",
+    "note": "These are Japanese era names - circle the era corresponding to your birth year (Reiwa: 2019-present, Heisei: 1989-2019, Showa: 1926-1989, etc.)"
+  },
+  "292b12d79c750a107f01a359113478d0": {
+    "en": "Small property (3. Move-in) Property ownership・Residence・No property",
+    "type": "llm",
+    "note": "N/A - this appears to be fragmented or corrupted form text that doesn't represent actual fillable fields"
+  },
+  "594bc5c17c375cad2f1fe475d639b866": {
+    "en": "(blank field for filling in information)",
+    "type": "llm",
+    "note": ""
+  },
+  "ecd3995659b385b97e77812f61d93650": {
+    "en": "New National Health Insurance Number",
+    "type": "llm",
+    "note": "Enter your new health insurance number if you're transferring from another municipality or getting new coverage"
+  },
+  "223a14eb3673a6866ea7f5a762391f7e": {
+    "en": "Year Month Day Female",
+    "type": "llm",
+    "note": "This appears to be part of a date field with gender marker - fill in birth date and check if this indicates female gender selection."
+  },
+  "a20d882c67b7caa763fe13c4bdce2555": {
+    "en": "None (1. Residence) • Continue • Change •",
+    "type": "llm",
+    "note": "N/A - this appears to be form layout text showing checkbox options"
+  },
+  "0e9443c31b96eff23b94615b71260b59": {
+    "en": "Middle/Special Protection Birth Death",
+    "type": "llm",
+    "note": "N/A - this appears to be column headers or category labels for administrative use rather than fields you would fill out"
+  },
+  "1055e9253b67c85e9d548d0f32bf401e": {
+    "en": "Return/Abolition",
+    "type": "llm",
+    "note": "Check this section if you need to return your residence card or cancel your registration when moving abroad or changing status"
+  },
+  "4a27f3e743b7d6cceaa462594618e01a": {
+    "en": "Nationality/Region　　　　　Status　　　　　Period　　　　　Expiration Date",
+    "type": "llm",
+    "note": "Fill in your nationality, visa status type, visa period, and residence card expiration date"
+  },
+  "3a31b0d9a8338b40e21410ee14b7b804": {
+    "en": "Later date / At a later time",
+    "type": "llm",
+    "note": "This likely refers to documentation or procedures to be completed after the initial registration, so note any follow-up requirements mentioned."
+  },
+  "89b10ee97f61bbd0d49cecb01fbcfe82": {
+    "en": "Payment Classification",
+    "type": "llm",
+    "note": "This section indicates how taxes/fees are paid (e.g., automatic deduction, bank transfer, cash payment) - check appropriate box based on your payment method."
+  },
+  "2771b7777dc270357e373f2a31a74d9b": {
+    "en": "Self/Personal Special",
+    "type": "llm",
+    "note": "N/A - This appears to be a partial or unclear form field label that may be cut off or contain a typo"
+  },
+  "6f9d1cfed715c43431823349a2cb5827": {
+    "en": "Head of household collection/levy",
+    "type": "llm",
+    "note": "N/A if it's just instructions/layout text"
+  },
+  "3ef215534fb58b7767ad7b2b41f662e3": {
+    "en": "Supporting Documents Attached",
+    "type": "llm",
+    "note": "Check this box or section when you're submitting required documents like passport, visa, or other proof along with your residence registration form."
+  },
+  "5a5376c9b1293f82bbdbdd150520b896": {
+    "en": "Confirmation・Knowledge・One",
+    "type": "llm",
+    "note": "N/A (appears to be form layout/formatting text rather than fillable fields)"
+  },
+  "f4a32fdd6f0bd6a0c8c9cfaf39cd1652": {
+    "en": "Elementary School / Distance / High School",
+    "type": "llm",
+    "note": "Check the appropriate box for your educational status - 学 (elementary school student), 遠 (studying at a distant location), or 高 (high school student)"
+  },
+  "e3d3d4bb8abd32e4c26f9ffe61ac3761": {
+    "en": "Collected / Not collected",
+    "type": "llm",
+    "note": "N/A - this is for office use only to track document processing status"
+  },
+  "4d04daf19805cd1e778ede3c5bf73eb8": {
+    "en": "Issued / Not Issued",
+    "type": "llm",
+    "note": "Check the appropriate box to indicate whether you have been issued the requested document or certificate."
+  },
+  "e35518f765c44b56a2b585440eb4c255": {
+    "en": "Confirmation · Knowledge",
+    "type": "llm",
+    "note": "This appears to be a checkbox or selection field - check the appropriate box based on whether you are confirming information or acknowledging receipt of information from the municipal office."
+  },
+  "89b22b9dcb6f4df04adda8da789eedd1": {
+    "en": "New household head",
+    "type": "llm",
+    "note": "Enter the name of the person who will be the new head of household after the move/change"
+  },
+  "1d61c5842b4b3b28af3119f1305c7827": {
+    "en": "Mailing Address ( 1 · 2 · 3 · 4 ) Former Household Head",
+    "type": "llm",
+    "note": "Select the appropriate number (1-4) for where documents should be sent regarding the former household head"
+  },
+  "38fb2120e6850116e78db00a25af766d": {
+    "en": "National Health Insurance Input, Pension Input, Long-term Care Input, National Health Insurance Review",
+    "type": "llm",
+    "note": ""
+  },
+  "b3425168556d0e2638aff4480a482ee9": {
+    "en": "Pre-issuance (1・2・3・4)",
+    "type": "llm",
+    "note": "This appears to be an administrative field for office use - you likely don't need to fill this section as an applicant."
+  },
+  "3b2487136ac5ed21d671b9bfdf106a06": {
+    "en": "Reception/Received",
+    "type": "llm",
+    "note": "N/A (this is for office use only - staff will stamp/fill this section when they receive your form)"
+  },
+  "97364afc242eac9dcb85a4693ba7bff0": {
+    "en": "Input",
+    "type": "llm",
+    "note": ""
+  },
+  "afdb0dca967499e194b9ce07098c6837": {
+    "en": "Review/Examination",
+    "type": "llm",
+    "note": "N/A (this is a section header for municipal office use during application processing)"
+  },
+  "86bda221908ede38580452f8733abc16": {
+    "en": "Individual Number Cancellation (1・2・3・4)",
+    "type": "llm",
+    "note": "This field is typically filled out by municipal office staff, not by applicants - leave blank unless specifically instructed otherwise"
+  },
+  "cfc616722ff7beb02a1b6e509408eada": {
+    "en": "Address/Residence",
+    "type": "llm",
+    "note": "This appears to be part of a larger field label - likely indicating where to write your address information"
+  },
+  "9f74fe675db6e271fcc6d826aae18429": {
+    "en": "Attachment V",
+    "type": "llm",
+    "note": "This indicates a supplementary form or document labeled \"V\" that may need to be attached to your residence registration form - check if you need to complete additional paperwork."
+  },
+  "2a3f6ed49d51f4324a4cb0b9a978e47a": {
+    "en": "Registration Contract",
+    "type": "llm",
+    "note": "N/A if it's just instructions/layout text"
+  },
+  "8ecb4167362ca78714e4f49ce27cd9b1": {
+    "en": "Residence/Home address",
+    "type": "llm",
+    "note": "Write your current residential address in Japan where you actually live"
+  },
+  "16529fed89207f940efd5c6d1c32786d": {
+    "en": "Contract/Agreement",
+    "type": "llm",
+    "note": "N/A if it's just instructions/layout text"
+  },
+  "79a6393c48fb8ecac2d4c1ef8b56882d": {
+    "en": "One location",
+    "type": "llm",
+    "note": ""
+  },
+  "fdf0e977088ecddadbb6290b77655e63": {
+    "en": "National Health Insurance - Later - Pension - Long-term Care - Child - Disability - Child - School - Infant - Individual Number Change - Electronic Certificate",
+    "type": "llm",
+    "note": "These appear to be checkbox categories for municipal services that may be affected by your residence change - staff will typically mark relevant boxes for you."
+  },
+  "21f96c0556b9f4d9d597b66a7b6148d8": {
+    "en": "Figure T",
+    "type": "llm",
+    "note": "N/A - this is just a reference label for a diagram or figure on the form"
+  },
+  "49acb3e3a780a3bd32c00cd5b46012b4": {
+    "en": "Register/Record Book",
+    "type": "llm",
+    "note": ""
+  },
+  "1b31eab94489ce6ae37587d8e830df97": {
+    "en": "Reference map/diagram",
+    "type": "llm",
+    "note": "This section typically shows a map or diagram of your address area - no action needed from you, it's for office reference only"
+  },
+  "92bb1f7fa5270072685390a52d1a373c": {
+    "en": "Applicant / Person filing the form / Full name / Signature",
+    "type": "fragment",
+    "note": "Matched: 届出人, 氏名, 署名"
+  },
+  "d764a0d93256eb66df5cfa7c30439ed2": {
+    "en": "New address / Date of move / change / Address",
+    "type": "fragment",
+    "note": "Matched: 新住所, 異動日, 住所"
+  },
+  "df8088b54da4e39eeef575128a02bc3d": {
+    "en": "Date of filing",
+    "type": "fragment",
+    "note": "Matched: 届出日"
+  },
+  "98d60b87dacf3211a20fb3d72d985590": {
+    "en": "Moving in (from another municipality or abroad)",
+    "type": "dictionary",
+    "note": "",
+    "field_id": "tennyu"
+  },
+  "1596bfbc6efa59715a9ed5c1e8c7484e": {
+    "en": "Moving within the same municipality",
+    "type": "dictionary",
+    "note": "",
+    "field_id": "tenkyo"
+  },
+  "a92ecb6f4060ccbdbc1447ca4dabdd3d": {
+    "en": "Moving out",
+    "type": "dictionary",
+    "note": "",
+    "field_id": "tenshutsu"
+  },
+  "515d745cabc898b55b2a99b421c4afa0": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "1866ab646079ec3ec1b00dc4f092d1ab": {
+    "en": "Applicant / Person filing the form / Full name",
+    "type": "fragment",
+    "note": "Matched: 届出人, 氏名"
+  },
+  "6678a20d6a0494b5c3edd2ecbfbf2170": {
+    "en": "Moving in (from another municipality or abroad)",
+    "type": "fragment",
+    "note": "Matched: 転入"
+  },
+  "a5b88fa91e67a599dad880e024543e7d": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "9620880210629333e47784e96641987f": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "f46a3db69b883c16a49307cf3fec77ef": {
+    "en": "Moving in (from another municipality or abroad)",
+    "type": "fragment",
+    "note": "Matched: 転入"
+  },
+  "024b38694b2d8bacc3221bb53ee397dc": {
+    "en": "Moving in (from another municipality or abroad)",
+    "type": "fragment",
+    "note": "Matched: 転入"
+  },
+  "56b8fb0658d87ff403d3af865b297897": {
+    "en": "Moving within the same municipality",
+    "type": "fragment",
+    "note": "Matched: 転居"
+  },
+  "140fb9f6bf6bc93482028caabb94229f": {
+    "en": "Residence status / Visa type",
+    "type": "fragment",
+    "note": "Matched: 在留資格"
+  },
+  "a20d1be00367d8216531b846d4b5189a": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "19ee218fe788f4369ea4c469299cfe79": {
+    "en": "Moving in (from another municipality or abroad)",
+    "type": "fragment",
+    "note": "Matched: 転入"
+  },
+  "257a6679895592c5dee604e9ebb20582": {
+    "en": "Residence status / Visa type",
+    "type": "fragment",
+    "note": "Matched: 在留資格"
+  },
+  "62a0ca370bb246c2a156e1885be1a997": {
+    "en": "My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 個人番号"
+  },
+  "684e134b0d05ab77a19315244fc8423c": {
+    "en": "Health insurance card",
+    "type": "dictionary",
+    "note": "Japanese health insurance card. Can serve as secondary ID at some banks.",
+    "field_id": "hoken_shosho"
+  },
+  "338f667e0fa0757d40e32196673b1634": {
+    "en": "New address / Address",
+    "type": "fragment",
+    "note": "Matched: 新住所, 住所"
+  },
+  "08b80692b9afb24735c68b5ceef6fb5a": {
+    "en": "Full name",
+    "type": "dictionary",
+    "note": "Write in katakana for foreign names. Some forms accept romaji.",
+    "field_id": "shimei"
+  },
+  "fd27333a9c9e48d3aea784e6e3362fd4": {
+    "en": "Relationship to head of household",
+    "type": "fragment",
+    "note": "Matched: 続柄"
+  },
+  "a50f02e83218228ec98534dfa0c81057": {
+    "en": "Relationship to head of household",
+    "type": "fragment",
+    "note": "Matched: 続柄"
+  },
+  "261c52fe2daf3055bc32d6e74d701d42": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "83e88a63c392f2b643c59b7291c29bfe": {
+    "en": "Previous address / Address",
+    "type": "fragment",
+    "note": "Matched: 旧住所, 住所"
+  },
+  "33e282e41b5d4b598f0e15167e6f7f72": {
+    "en": "Full name",
+    "type": "fragment",
+    "note": "Matched: 氏名"
+  },
+  "fa9b11980e39d6465846ed1c15a5943c": {
+    "en": "Phonetic reading (katakana)",
+    "type": "fragment",
+    "note": "Matched: フリガナ"
+  },
+  "a78fa7c9cf1cd39ad1e2d130eb257030": {
+    "en": "Date of birth",
+    "type": "fragment",
+    "note": "Matched: 生年月日"
+  },
+  "4288954c4add3808368964fe31f98885": {
+    "en": "Gender",
+    "type": "dictionary",
+    "note": "男 (otoko) = Male, 女 (onna) = Female. Circle the appropriate one.",
+    "field_id": "seibetsu"
+  },
+  "a9fcc5d7b1e8714b189b0a7e5900c87c": {
+    "en": "Relationship to head of household",
+    "type": "fragment",
+    "note": "Matched: 続柄"
+  },
+  "27241e5e5876d55e1a5011c01bf576e2": {
+    "en": "Residence status / Visa type",
+    "type": "fragment",
+    "note": "Matched: 在留資格"
+  },
+  "b8669417fadb5d5528405ebe6d322569": {
+    "en": "Full name",
+    "type": "fragment",
+    "note": "Matched: 氏名"
+  },
+  "a761166b0b25d25e69b65e2eddade343": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "ac45c105ebba71e098469eda69faaad6": {
+    "en": "My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 個人番号"
+  },
+  "77a4825f3a556ce03ef1bc18e0e51c2b": {
+    "en": "Moving in (from another municipality or abroad)",
+    "type": "fragment",
+    "note": "Matched: 転入"
+  },
+  "315ac83b339343ec102cab403cbb942e": {
+    "en": "Applicant / Person filing the form / Full name",
+    "type": "fragment",
+    "note": "Matched: 届出人, 氏名"
+  },
+  "3202a021772e8566afc647abbd1f5ff7": {
+    "en": "My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 個人番号"
+  },
+  "acd94f6fad4e024790ccd1321987b5cd": {
+    "en": "Phonetic reading (katakana)",
+    "type": "dictionary",
+    "note": "Write the katakana reading of your name. For foreign names, this IS your name in katakana.",
+    "field_id": "furigana"
+  },
+  "b6d48b53f362de3b9cf47bb1a199ff1d": {
+    "en": "Place of employment / Employer",
+    "type": "fragment",
+    "note": "Matched: 勤務先"
+  },
+  "37e2169b721cefa3977ae721af7a7e55": {
+    "en": "New address",
+    "type": "dictionary",
+    "note": "The address you are moving TO.",
+    "field_id": "shin_jusho"
+  },
+  "25cc1dad6323b73420b3ce65394db4f9": {
+    "en": "Full name",
+    "type": "fragment",
+    "note": "Matched: 氏名"
+  },
+  "b2ab1c923a975a1811735822ee859cc0": {
+    "en": "My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 個人番号"
+  },
+  "36f67e72e7e7b82230b3ed3b7e4eae5a": {
+    "en": "Previous address",
+    "type": "dictionary",
+    "note": "If coming from abroad, write your country name (e.g. アメリカ合衆国).",
+    "field_id": "kyu_jusho"
+  },
+  "3bc9bce929b00c4dcabe186996ae7dcb": {
+    "en": "My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 個人番号"
+  },
+  "d2ac8dc6ce864a5f5e0b38bdc5dcb164": {
+    "en": "Date of birth",
+    "type": "dictionary",
+    "note": "Format: 年(year) 月(month) 日(day). Use Japanese calendar (令和/平成) or Western year.",
+    "field_id": "seinengappi"
+  },
+  "b8c531c4eb0c98aa356c3a31a922c24c": {
+    "en": "Relationship to head of household",
+    "type": "dictionary",
+    "note": "See relationship terms table.",
+    "field_id": "tsuzukigara"
+  },
+  "bc24e4435c81ddf3f7c54417d5348502": {
+    "en": "Seal (inkan / hanko)",
+    "type": "dictionary",
+    "note": "Personal seal stamp. Most ward offices accept a written signature for foreigners instead.",
+    "field_id": "in"
+  },
+  "30c179503ff26f874b4faa5c660abc3a": {
+    "en": "My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 個人番号"
+  },
+  "b767253d2af7144588f297555fa76ea7": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "75b788074ec0f7130383a40206c1c25d": {
+    "en": "Applicant / Person filing the form / Letter of proxy / Power of attorney",
+    "type": "fragment",
+    "note": "Matched: 届出人, 委任状"
+  },
+  "2a99085e41256f063a77e9cbf476910c": {
+    "en": "Passbook / bankbook",
+    "type": "fragment",
+    "note": "Matched: 通帳"
+  },
+  "cae9e444f0108233225186747c3a2cce": {
+    "en": "Address",
+    "type": "fragment",
+    "note": "Matched: 住所"
+  },
+  "289faccd5ed1feae521a513b1a6d120f": {
+    "en": "Building name / room number",
+    "type": "fragment",
+    "note": "Matched: 方書"
+  },
+  "2bdaaae955d126d35f37a72fc902391b": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "11e94f4afe2b87ed0f1d3ee83edf84ee": {
+    "en": "Relationship to head of household / Moving out",
+    "type": "fragment",
+    "note": "Matched: 続柄, 転出"
+  },
+  "e481cc53c7ba92083856e7cd0d088d53": {
+    "en": "Letter of proxy / Power of attorney",
+    "type": "fragment",
+    "note": "Matched: 委任状"
+  },
+  "bc72613c06afc9da2afd614b1414646e": {
+    "en": "Resident Registration Change Form",
+    "type": "llm",
+    "note": ""
+  },
+  "7f20e7ae13e959c01fee3fbf48a941d4": {
+    "en": "(Also serves as residence address notification)",
+    "type": "llm",
+    "note": ""
+  },
+  "915e4e65bf10b221fe9d98028583bdf1": {
+    "en": "Reason for Change",
+    "type": "llm",
+    "note": "Select or write the reason for your address change (e.g., moving, marriage, divorce, etc.)"
+  },
+  "ac0307ab7f4d135eeab8b1b46aa29d0c": {
+    "en": "Section Chief/Director Verification Processing Receipt",
+    "type": "llm",
+    "note": "N/A - this is an administrative processing section for municipal office staff use only"
+  },
+  "e1bca4349fc4a02d0c43238c10ef5c8e": {
+    "en": "Summary Court",
+    "type": "llm",
+    "note": "N/A (this is likely a reference field or administrative notation, not something you need to fill out)"
+  },
+  "5200c486da0bcc7c2075fafa6180b133": {
+    "en": "Combined National Health Insurance Change Notification",
+    "type": "llm",
+    "note": "This indicates the form also serves as notification for changes to your national health insurance status - no separate action needed if you're enrolled in NHI."
+  },
+  "a1a117c061d6705563969b0f21c50b10": {
+    "en": "(Former surname)",
+    "type": "llm",
+    "note": "Fill in your previous surname if you changed it due to marriage, divorce, or other reasons and want it recorded alongside your current name."
+  },
+  "33f90b2229516cc4853ab541606cea91": {
+    "en": "Combined Late-Stage Elderly Medical Care Change Notification",
+    "type": "llm",
+    "note": ""
+  },
+  "302a4893eb39db575c69a21031eca999": {
+    "en": "Transfer/Special/Foreign/Transfer/Residence/Status (Transfer/Transfer/Special/Foreign/Re (Head/Household/Household/Household (Transfer/Return (Employment (Employment/Employment/Departure/Death (Ka/Ka",
+    "type": "llm",
+    "note": "N/A - This appears to be corrupted or garbled text, possibly abbreviations or codes that are illegible. Contact the municipal office for clarification of the actual form fields."
+  },
+  "88918e4c2f72b89ab03e601b044700bd": {
+    "en": "All-One-All-All-One-One",
+    "type": "llm",
+    "note": "N/A - this appears to be a form field marker or reference code rather than a field requiring input"
+  },
+  "381ad36756a9ac78e2e34cd05086137a": {
+    "en": "Resident Movement Notification for National Health Insurance and National Pension",
+    "type": "llm",
+    "note": "This is a combined form for updating both your health insurance and pension records when you move - complete all sections if you're enrolled in both systems."
+  },
+  "b9bdd5652fdeb3100da1a64a1138d851": {
+    "en": "Display/Delete",
+    "type": "llm",
+    "note": "N/A (this appears to be system or form layout text indicating display/deletion functions)"
+  },
+  "dcdd289e56e8c80cb184be7c10f0935e": {
+    "en": "Record/Change/Delete",
+    "type": "llm",
+    "note": "This indicates the type of registration action - check the appropriate box for whether you're making a new record, changing existing information, or deleting a registration."
+  },
+  "316bc462a6a9eb7942990e2e75b131d1": {
+    "en": "[Unreadable text - corrupted characters]",
+    "type": "llm",
+    "note": ""
+  },
+  "4e553cca63dd5751a7de7dbec3348bc0": {
+    "en": "National Health Insurance, Long-term Care Insurance (for nationals), Long-term Care Insurance (for foreigners)",
+    "type": "llm",
+    "note": "Check the boxes for insurance programs you're enrolled in - typically National Health Insurance for most foreign residents, and Long-term Care Insurance if you're 40 or older."
+  },
+  "332196c6e8b2d3603cf4913b22866c73": {
+    "en": "To the Mayor of Katsushika Ward",
+    "type": "llm",
+    "note": "N/A (this is a pre-printed address line indicating the form recipient)"
+  },
+  "872e376e02a7b0ed9207097adcd02432": {
+    "en": "Entry Entry Entry Registration Determination Acquisition) Residence Departure Departure Departure Attachment) Change Merger Separation Change) Cancellation Restoration) Correction) Record Removal Birth Death) Record Removal",
+    "type": "llm",
+    "note": "N/A - This appears to be corrupted/garbled text, possibly from scanning errors or display issues. Contact the municipal office for a clear form."
+  },
+  "fbfc4d352b7a7b4764b8490648a9fa73": {
+    "en": "Registration/Update/Removal",
+    "type": "llm",
+    "note": "This indicates the three types of residence registration actions - check the appropriate box for your situation (new registration, address change, or removal from registry)."
+  },
+  "4c9983b2379067a43e1e7ca498ae8130": {
+    "en": "Section Section All One All One",
+    "type": "llm",
+    "note": "N/A - this appears to be garbled text or printing error on the form"
+  },
+  "1b4a2cbeb29bfda0de1d74b9035122e8": {
+    "en": "Please fill out by hand (in your own handwriting).",
+    "type": "llm",
+    "note": "Use a pen to write your information by hand - don't type or have someone else write it for you."
+  },
+  "c8379663ddb5a428a8de5259aaa98150": {
+    "en": "Regarding application for Late-Stage Elderly Medical Care (individual)",
+    "type": "llm",
+    "note": "Check this box if you're 75+ years old or have certain disabilities and need to apply for elderly medical insurance coverage."
+  },
+  "cccce21fcc23d34c7a3b8c159a22a4e9": {
+    "en": "Will provide personal number.",
+    "type": "llm",
+    "note": ""
+  },
+  "ccb652c4628edfaea2a3ba7fc44472d1": {
+    "en": "Date of Change",
+    "type": "llm",
+    "note": "Enter the date you moved/changed residence in YYYY/MM/DD format"
+  },
+  "159ba9cff12de1cded206379e775ecd5": {
+    "en": "Reiwa _____ year _____ month _____ day",
+    "type": "llm",
+    "note": "Fill in the current date using the Japanese Reiwa era calendar (Reiwa 1 = 2019, Reiwa 2 = 2020, etc.)"
+  },
+  "eb43a2606081fdfc9d6d4b876f99366a": {
+    "en": "Date of notification",
+    "type": "llm",
+    "note": "Write the date you are submitting this form to the municipal office (format: year/month/day)"
+  },
+  "f97339265c3172463feb41499bedfa14": {
+    "en": "1. Applicant/Person concerned  2. Head of household  3.",
+    "type": "llm",
+    "note": "Select \"1\" if you're registering your own address change, or \"2\" if you're the household head registering for family members"
+  },
+  "681835c3bcf536dfce2f6b6a9d18fc0b": {
+    "en": "Please circle ○",
+    "type": "llm",
+    "note": "Circle the appropriate option among the choices provided"
+  },
+  "c72ece96fa24a146c019bf50fd45b544": {
+    "en": "い。",
+    "type": "llm",
+    "note": ""
+  },
+  "f2c24b304ab12603c68aa9a8d7071ccd": {
+    "en": "Former household head",
+    "type": "llm",
+    "note": "Enter the name of the previous household head if there was a change in who heads the household"
+  },
+  "1dbd73d4b44793810053e824230b73af": {
+    "en": "Please present if you have",
+    "type": "llm",
+    "note": "This appears to be incomplete text, likely asking you to present a document you possess (such as ID, residence card, etc.)"
+  },
+  "1cf8405305ecde8b281c07274efcb060": {
+    "en": "Please.",
+    "type": "llm",
+    "note": ""
+  },
+  "f23ccb619c830db74fd5ba1241d703df": {
+    "en": "Late-stage elderly (referring to the late-stage elderly healthcare system)",
+    "type": "llm",
+    "note": "Check this box if you are 75 years or older and enrolled in the late-stage elderly medical care insurance system"
+  },
+  "ac77cd721d4d97c2a3ddd414a23b056d": {
+    "en": "Child/Children",
+    "type": "llm",
+    "note": "List any children under 18 who are moving with you and will be registered at the same address"
+  },
+  "fbd39fe0ecd01afaf01ea1957ef4a57c": {
+    "en": "No.",
+    "type": "llm",
+    "note": ""
+  },
+  "ab067036c67554bdcc90f172c032220a": {
+    "en": "Name",
+    "type": "llm",
+    "note": "Write your full name as it appears on your residence card or passport"
+  },
+  "518049adb7252ffaea1fbd0c889162d6": {
+    "en": "Card-related matters",
+    "type": "llm",
+    "note": "This section is for information about residence cards, My Number cards, or other official cards that need to be updated with your address change."
+  },
+  "48aaae0e1e0511c849a9b6031f1129cd": {
+    "en": "National Health Insurance",
+    "type": "llm",
+    "note": "Check this box if you need to enroll in or make changes to Japan's National Health Insurance (kokumin kenkou hoken)"
+  },
+  "8fd3ee48d9059498ab247fca3c9c1d5d": {
+    "en": "Elderly Pension",
+    "type": "llm",
+    "note": "Check this box if you receive elderly/senior pension benefits that may be affected by your address change"
+  },
+  "7887897bb110591f5cc5562c4eb602a4": {
+    "en": "Long-term care insurance",
+    "type": "llm",
+    "note": "This section relates to Japan's mandatory long-term care insurance system - may need to provide your insurance certificate number or indicate enrollment status."
+  },
+  "ac39a06213dcf18d4f6382666f7e21e0": {
+    "en": "Benefits/Medical Care",
+    "type": "llm",
+    "note": "This section is for recording eligibility for various municipal benefits and medical subsidies - leave blank if unsure, as city office staff will verify your eligibility"
+  },
+  "413b738061f6a5148fa3704c5c5bdca9": {
+    "en": "School",
+    "type": "llm",
+    "note": "Write the name of the school you or your children attend (if applicable), or leave blank if not attending school."
+  },
+  "1eed3520569cff12d84987b11f439e41": {
+    "en": "Taishō·Shōwa·Heisei·Reiwa",
+    "type": "llm",
+    "note": "Circle the era name that corresponds to your birth year (Taishō 1912-1926, Shōwa 1926-1989, Heisei 1989-2019, Reiwa 2019-present)"
+  },
+  "f146f3121c28f580739693470962aac2": {
+    "en": "Individual/Resident Registration",
+    "type": "llm",
+    "note": "This is likely a section header - check the box or section that applies to individual/personal resident registration matters"
+  },
+  "7f38bb7c4c35432e77812d89ac02ffcf": {
+    "en": "Yes/No (or Have/Don't Have)",
+    "type": "llm",
+    "note": "Circle or check the appropriate option based on whether the condition or item mentioned applies to your situation."
+  },
+  "be99f00eb9b9c770aaa580f97a98acb5": {
+    "en": "School transfer",
+    "type": "llm",
+    "note": "Check this box if the move requires transferring to a different school and follow up with the education board"
+  },
+  "f3b828ca055194b15f05184e5dd6b511": {
+    "en": "Western calendar (for foreign residents)",
+    "type": "llm",
+    "note": "Use Western calendar format (YYYY/MM/DD) when filling in dates as a foreign resident"
+  },
+  "4c3db431935b19fd8941bd0eb035600a": {
+    "en": "Registration application [status indicators]",
+    "type": "llm",
+    "note": "N/A - this appears to be form layout/status text rather than a field to fill"
+  },
+  "9d650c025b22c69208da46327a16044c": {
+    "en": "Has elementary/middle school children",
+    "type": "llm",
+    "note": "Check this box if you have children attending elementary or middle school who need to transfer schools due to your address change."
+  },
+  "5a3e2f13bc4debdcce68f4357e2d7b80": {
+    "en": "Record Change (Brought) Collection Status - Collected/Not Collected/",
+    "type": "llm",
+    "note": "N/A - this is administrative tracking text for office use"
+  },
+  "92442e06a8a7b3718d85ccc75bbc1a29": {
+    "en": "Month    Day",
+    "type": "llm",
+    "note": "Fill in the month and day using Arabic numerals (e.g., 12 25 for December 25th)"
+  },
+  "36662dec9fe5b404eaaa843aeef8ca52": {
+    "en": "None - Grade/None",
+    "type": "llm",
+    "note": "Select this option if you have no formal education or if the grade level doesn't apply to your situation."
+  },
+  "f1e9ad662b2fa312623fc90d25daa9ac": {
+    "en": "(    years old)",
+    "type": "llm",
+    "note": "Write your age in numbers in the blank space provided."
+  },
+  "d89ff6114a7012f36c5e6a393142c708": {
+    "en": "Request for return application",
+    "type": "llm",
+    "note": "Check this box if you want to apply for the return of your residence card or other documents when moving out of the municipality"
+  },
+  "fe19757bb3b5c5fccd5b700ad5ebe505": {
+    "en": "National Health Insurance, Long-term Care, Late-stage Elderly Medical Care",
+    "type": "llm",
+    "note": "This section relates to changes in your health insurance coverage - municipal staff will typically handle updates to these systems based on your residence change"
+  },
+  "b393f10e2db1f010f6e4371c357cb3ac": {
+    "en": "None, Grade/Year・",
+    "type": "llm",
+    "note": "Select \"None\" if not applicable, or fill in your current grade/academic year if you're a student"
+  },
+  "615d9196eacaab1813f9121ba1168a72": {
+    "en": "□Identity verification 1 item: License・Passport・Resident Card・My Number Card・Handbook・Residence Card・Special Permanent Resident Certificate・Other（　　　　）No.",
+    "type": "llm",
+    "note": "Check this box and circle/write the type of ID you're using, then write its number in the parentheses. As a foreign resident, you'll likely use your residence card (在) or passport (パ)."
+  },
+  "9fe65d8a26d22fc7223ffa4e787851ab": {
+    "en": "Name",
+    "type": "llm",
+    "note": "Write your full name as it appears on your residence card or passport, using the same script (Roman letters for most foreign residents)."
+  },
+  "9c8b8f0eb49d2c4cb33f889650c154f7": {
+    "en": "□ Confirmation of date of change",
+    "type": "llm",
+    "note": ""
+  },
+  "0dadb863c507481421aac5a5ea8f7618": {
+    "en": "Separate household living together: Yes・No (                    )-sama and    Personal nameplate: Yes・No",
+    "type": "llm",
+    "note": "Circle \"Yes\" if you share housing with another household, write their name in parentheses; circle whether you have your own nameplate displayed"
+  },
+  "_vision_explanations:Header & Dates:c5dab2076f1bb0f5ea450e913a1c84b9": {
+    "1": "This is the form title 'Resident Registration Change Form' - you don't need to fill anything here as it's just the header identifying the type of form.",
+    "2": "This is a subtitle indicating the form also serves as a residence address notification - again, this is just informational text and requires no input from you."
+  },
+  "_vision_explanations:Who Is Filing:e0b42e84c2196849206bf1785d1e0411": {
+    "3": "Check this box if you are filing a notification for changes to late-stage elderly medical care (typically for those 75 and older). This is only relevant if the form involves elderly medical care status changes.",
+    "5": "Check this box if you are moving into this municipality from another city/town in Japan or from abroad. This indicates you are registering as a new resident coming from outside the current jurisdiction.",
+    "9": "This field appears to contain corrupted or unreadable characters in the image. You should refer to the original form or contact the municipal office for clarification on what should be entered here."
+  },
+  "_vision_explanations:Who Is Filing:4554067699b79983773c968959b4a6c0": {
+    "2": "Check this box if you will provide your personal number (My Number). As a foreign resident with a My Number card or notification, you should typically check this box and provide your 12-digit My Number in the designated field on the form."
+  },
+  "_vision_explanations:Addresses:9fbbff3606567ac424d444c568611348": {
+    "3": "This appears to be a field for additional address information or apartment/building details. Write your apartment number, building name, or room number if applicable.",
+    "5": "This field seems to be for postal code or zip code. Enter your 7-digit Japanese postal code in the format 000-0000.",
+    "12": "This appears to be requesting your individual number (My Number). Enter your 12-digit individual identification number if you have been assigned one as a resident."
+  },
+  "_vision_explanations:Addresses:d8f17afcc385d399fa9b3536fb226bfb": {
+    "9": "Write the sequential number or identifier for this address entry if you have multiple addresses listed on the form. If this is your only or primary address, you can typically write '1' or leave it blank if not required."
+  },
+  "_vision_explanations:Addresses:104a7596368b63528b98bbb94a9fb465": {
+    "10": "This field asks whether you need to return any items when moving out of your current address (有 = yes, 無 = no). Most foreign residents should circle 無 (no) unless you have specific government-issued items like a senior citizen card or disability card that need to be returned to the municipal office."
+  },
+  "_vision_explanations:Person Table:2ce6404cbccd0b51c544a2fdf381df5f": {
+    "3": "Select '有' (yes) or '無' (no) to indicate whether you are moving out of the municipality. If moving out, you may need to provide a collection number for when you turn in your resident card. Foreign residents should select '有' if moving to a different city/ward and '無' if staying in the same municipality."
+  },
+  "_vision_explanations:Person Table:1d2d740554f281a18c2becfe0c85add3": {
+    "5": "This is a checkbox to confirm that you have verified the date of change (異動年月日) is correct. Check this box after you have double-checked that any dates you entered for changes in status, address, or other personal information are accurate."
+  },
+  "1598c03338389f12bdd2bd868d08fee0": {
+    "en": "※Please fill in using Japanese or alphabetic characters.",
+    "type": "llm",
+    "note": "You can write your name and address information in either Japanese characters or Roman letters (English alphabet)."
+  },
+  "f6eef38f89770308ce8bf1617ae7ea06": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "6d7d71012d85d5733ba5f39eeba6502c": {
+    "en": "1. Date of residential change: Heisei/Reiwa ___ year ___ month ___ day",
+    "type": "llm",
+    "note": "Circle either \"Heisei\" or \"Reiwa\" era name, then fill in the date when you moved/changed residence using Japanese calendar year"
+  },
+  "e98d77b5cc10d682a1deaf2b30a2eef2": {
+    "en": "Address",
+    "type": "fragment",
+    "note": "Matched: 住所"
+  },
+  "e8d8b9b789df80d3e8ed6ef03bd339dc": {
+    "en": "Full name",
+    "type": "fragment",
+    "note": "Matched: 氏名"
+  },
+  "fa4d65ca81cfba2a94fb45fb3417a17f": {
+    "en": "Address",
+    "type": "fragment",
+    "note": "Matched: 住所"
+  },
+  "5652977ee6b32e29aaaa8d1115ed130f": {
+    "en": "Shinjuku Ward",
+    "type": "llm",
+    "note": "This indicates the municipal jurisdiction - if you're registering in Shinjuku, this confirms you're using the correct form for that ward."
+  },
+  "79b22f5640ed3ab1f1e5990a27445e96": {
+    "en": "4. Registered Domicile",
+    "type": "llm",
+    "note": "Enter your official family register location (本籍地) - for foreign nationals, this may be left blank or marked as N/A depending on local requirements."
+  },
+  "1219c7fac54aeb8e466e95127725d826": {
+    "en": "(Japanese nationals only)",
+    "type": "llm",
+    "note": ""
+  },
+  "440f3894dc93e9f83cd707c3e6275e59": {
+    "en": "Full name",
+    "type": "fragment",
+    "note": "Matched: 氏名"
+  },
+  "3d1a61cac08d5b42fab6857ed79755ee": {
+    "en": "Date of birth / Full name / Moving out",
+    "type": "fragment",
+    "note": "Matched: 生年月日, 氏名, 転出"
+  },
+  "822be3d24ce56e7dd36d75967d92bf7e": {
+    "en": "Furigana (phonetic reading)",
+    "type": "llm",
+    "note": "Write the phonetic pronunciation of your name in hiragana characters above or next to where you write your name in kanji/katakana"
+  },
+  "ed869d4ab1ea6ca700fa45aece7c042c": {
+    "en": "Date of birth / Full name",
+    "type": "fragment",
+    "note": "Matched: 生年月日, 氏名"
+  },
+  "aced8895c4f53b2c26848a64b28e9117": {
+    "en": "Full name",
+    "type": "fragment",
+    "note": "Matched: 氏名"
+  },
+  "51394e0c1e2c6f086a9ff0abe5bfd3e8": {
+    "en": "Signature",
+    "type": "fragment",
+    "note": "Matched: 署名"
+  },
+  "_vision_explanations:Who Is Filing:220ef06d5bd475caf243cb4f092f7a31": {
+    "2": "This is the form title indicating it's a 'Moving Out Notification (Mail Submission Form)' - you don't need to fill anything in this header section. This confirms you're using the correct form to notify your municipality that you're moving out of their jurisdiction via mail rather than visiting in person."
+  },
+  "_vision_explanations:Person Table:a2f46d8c74ffb3f77de11fd8d5500ec6": {
+    "1": "Write the name of your ward/district (ku) in Japanese, such as 新宿区 (Shinjuku-ku) or 渋谷区 (Shibuya-ku).",
+    "2": "Write the full name of the head of household (usually the main person listed on the residence record).",
+    "3": "Write your family name in Japanese characters (kanji/hiragana/katakana).",
+    "4": "This field is only for Japanese nationals - foreign residents should leave this blank as indicated by the parenthetical note.",
+    "5": "Write the family name of the head of household if different from the person filling out the form.",
+    "6": "This section is for listing all people who will be transferring - write the number corresponding to how many people are moving.",
+    "7": "Write the reading of the first person's name in hiragana characters.",
+    "8": "Write the first person's full name in Japanese characters.",
+    "9": "Write the reading of the second person's name in hiragana characters.",
+    "10": "Write the second person's full name in Japanese characters.",
+    "11": "Write the reading of the third person's name in hiragana characters."
+  },
+  "d6ab2701e253116ed489fd0b193f9b9d": {
+    "en": "My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 個人番号"
+  },
+  "cb59e9a478910c419293307b0ee7b449": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "31e4bf1b23a106b77aac00419407ad00": {
+    "en": "Date of birth / My Number (Individual Number) / Full name",
+    "type": "fragment",
+    "note": "Matched: 生年月日, 個人番号, 氏名"
+  },
+  "1ef41187ff335d31fe585ec1fb7b92cd": {
+    "en": "Date of birth / Full name",
+    "type": "fragment",
+    "note": "Matched: 生年月日, 氏名"
+  },
+  "_vision_explanations:Who Is Filing:e46d69a52b665fe9c2dd0e21ce403e7c": {
+    "1": "This is explanatory text stating that this form is for people who have been issued a My Number Card or Basic Resident Registration Card to submit when moving out. No action needed - this is just informational.",
+    "2": "This is the form title 'Moving Out Notification (Mail Submission)' - no action needed, just identifies what type of form this is.",
+    "3": "Enter the date you are moving out (not today's date). Choose either Heisei or Reiwa era, then fill in the year within that era, month, and day using Japanese numerals or Arabic numbers."
+  },
+  "8f8f25988343ca8a9c51f23617dc5cd9": {
+    "en": "To: Mayor of Shinjuku City",
+    "type": "llm",
+    "note": ""
+  },
+  "ea8b6fccc02a1faff27b2014cd1395c2": {
+    "en": "Resident Registration Change Notification",
+    "type": "llm",
+    "note": "This is the main form title - you'll need to complete this form when moving to a new address, changing household composition, or other residence-related changes."
+  },
+  "63d9c1aa53093d69aefa3ff3ded44d21": {
+    "en": "Notification of Change in Residence",
+    "type": "llm",
+    "note": ""
+  },
+  "6c6d1878f27145cb48ab5a2bbde9165e": {
+    "en": "Self (head of household)",
+    "type": "dictionary",
+    "note": "Option for Relationship to head of household",
+    "field_id": "tsuzukigara"
+  },
+  "0c3a6ba6696f123d379f73eed40d041d": {
+    "en": "Head of household・Household members",
+    "type": "llm",
+    "note": "Check the appropriate box - \"世帯主\" if you're the head of household, \"世帯員\" if you're a household member"
+  },
+  "301dd1f1a460f21fc96047179ae6a961": {
+    "en": "Representative/Agent",
+    "type": "llm",
+    "note": "Fill in the name and details of the person submitting the form on your behalf if you cannot submit it yourself"
+  },
+  "da8e96e7fb846977868150b1b3efd023": {
+    "en": "(New)",
+    "type": "llm",
+    "note": "This indicates a field for your new address information when moving residences."
+  },
+  "f9560efd8e9abd72193d360f115a7c90": {
+    "en": "Moving in (from another municipality or abroad)",
+    "type": "fragment",
+    "note": "Matched: 転入"
+  },
+  "07a1a497f09de506a9a40b07b12c2f89": {
+    "en": "Signature",
+    "type": "fragment",
+    "note": "Matched: 署名"
+  },
+  "65a272e40a298d2de6f0c908845a5d4a": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "4eb051d20ca27ca26031c3c97076ab61": {
+    "en": "Moving in (from another municipality or abroad)",
+    "type": "fragment",
+    "note": "Matched: 転入"
+  },
+  "901105ce97837beb153be4edee76c731": {
+    "en": "Household head succession/continuation",
+    "type": "llm",
+    "note": "Check this if you are taking over as the new household head due to the previous head moving away or other circumstances"
+  },
+  "71bb2b656e716de552fe9b2afd91a576": {
+    "en": "Visitor's Full Name by handwriting",
+    "type": "llm",
+    "note": ""
+  },
+  "594ea358a099f78e55423ecc1d72d2ef": {
+    "en": "Head of household relationship",
+    "type": "llm",
+    "note": "Write your relationship to the head of household (e.g., \"head\", \"spouse\", \"child\", \"parent\", etc.)"
+  },
+  "4f64c69fe955bc98523fcb80fa9be0dc": {
+    "en": "Signature",
+    "type": "dictionary",
+    "note": "Sign your name. Foreigners can use a written signature instead of a seal (inkan).",
+    "field_id": "shomei"
+  },
+  "69758c01cb47731c5c144c0744fa6b17": {
+    "en": "Household",
+    "type": "llm",
+    "note": "Write the name of the head of household (usually yourself if living alone, or the primary resident if in a family)"
+  },
+  "fb3e46a11167206d885f96bd27c8035a": {
+    "en": "All All One One",
+    "type": "llm",
+    "note": "N/A - This appears to be layout/formatting text or placeholder characters rather than a field to be filled out"
+  },
+  "d24bff40621062ca12c4230f0cb2ce55": {
+    "en": "Division/merger/change",
+    "type": "llm",
+    "note": "Check this box if your address change is due to municipal boundary changes, town mergers, or administrative redistricting rather than a physical move"
+  },
+  "cccc4def346e114e7b39f1133ad0938f": {
+    "en": "Full/All One Full/All One Full/All One Full/All One Full/All One Full/All One Full/All One Full/All One Full/All One Transfer→→→→Change/Divorce/Merger/Update/Certificate/Update Name/Signature",
+    "type": "llm",
+    "note": ""
+  },
+  "d04d5b3ec72a67ce20d75b2d95da5152": {
+    "en": "Number",
+    "type": "llm",
+    "note": "Enter your residence card number or other identifying number as specified in the form instructions."
+  },
+  "7d6a4523a309d8351cdee4506d9417b1": {
+    "en": "Complete departure - Complete - Complete - Change",
+    "type": "llm",
+    "note": ""
+  },
+  "677befbff0d2028b6eaf673212273a56": {
+    "en": "Phone Number",
+    "type": "llm",
+    "note": "Enter your current phone number where you can be contacted regarding this registration."
+  },
+  "379fe681d02053bfd4fea390a71e5936": {
+    "en": "Date of Notification / Date of Change",
+    "type": "llm",
+    "note": "Enter the date you're submitting this form under \"Date of Notification\" and the actual date your residence changed under \"Date of Change\""
+  },
+  "8216a77383313a4811e13220d7f0842e": {
+    "en": "If using a representative, please also fill out the following.",
+    "type": "llm",
+    "note": "This section is only needed if someone else is submitting the form on your behalf - you can skip it if filing yourself."
+  },
+  "2b09b522eeb078b4c583bbff511734ec": {
+    "en": "If you are proxy, please write your address and relation to the applicant",
+    "type": "llm",
+    "note": ""
+  },
+  "286a6833736de68da1aa9c882fc546bf": {
+    "en": "(Y)(M)         (D)",
+    "type": "llm",
+    "note": "Fill in Year, Month, and Day - use Western calendar format (e.g., 2024/03/15)"
+  },
+  "19c682c5177241ffd8c784878a25774e": {
+    "en": "(Y)(M) (D) ☐Residence establishment date confirmed",
+    "type": "llm",
+    "note": "This is a checkbox for municipal staff to mark when they've verified your move-in date - you don't need to fill this part."
+  },
+  "162cc7e42e3d3fac181118774502ae62": {
+    "en": "Letter of proxy / Power of attorney",
+    "type": "fragment",
+    "note": "Matched: 委任状"
+  },
+  "c78a591c4ef462ea8f63dada48372f55": {
+    "en": "Address of proxy/representative",
+    "type": "llm",
+    "note": "Enter the full address of the person filling out this form on your behalf (if applicable)"
+  },
+  "6b9967fa680534cdfd8411edbf8e1f9d": {
+    "en": "Relation to the applicant",
+    "type": "llm",
+    "note": "Write your relationship to the person whose registration is being changed (e.g., \"self\", \"spouse\", \"child\", \"parent\", etc.)"
+  },
+  "df96fcb565aa7ca076514dfb1f7d94a7": {
+    "en": "New Address",
+    "type": "llm",
+    "note": ""
+  },
+  "a0a9ef7040d2ba1b76d1bf9c05f43808": {
+    "en": "Head of",
+    "type": "llm",
+    "note": ""
+  },
+  "c96576702e8d031b610b0dd8d4acb9f1": {
+    "en": "Identity verification ① Driver's license, passport, individual number card, residence card (with photo), residence card, etc.",
+    "type": "llm",
+    "note": "Bring one of these photo ID documents to prove your identity when submitting the form."
+  },
+  "ea4be67641b70cfa3fec0f86ea7f239b": {
+    "en": "Household",
+    "type": "llm",
+    "note": "Enter your household composition details - typically the head of household and all family members living at the same address."
+  },
+  "8258fd876f498d9cceba541d45200c5e": {
+    "en": "②Health insurance・pension handbook・employee ID・student ID・nursing care/interview",
+    "type": "llm",
+    "note": "Bring relevant documents from this list that apply to you (health insurance card, pension book, work/school ID, nursing care documents) or be prepared for an interview if you don't have them."
+  },
+  "4f640b87aa107afab3677bc3ffb3eab0": {
+    "en": "Existing",
+    "type": "llm",
+    "note": "This refers to existing/current information already on record - you typically don't need to fill this section as it shows your current registration details."
+  },
+  "a8472c31596cea39d534e604912d6eaa": {
+    "en": "Previous Address",
+    "type": "llm",
+    "note": "Write your complete previous address including apartment/room number, city, prefecture, and postal code exactly as it appeared on official documents."
+  },
+  "80a9d5b2fc99a00d2cff2ddecf0bfd1b": {
+    "en": "N/A - This appears to be garbled/corrupted text, not valid Japanese",
+    "type": "llm",
+    "note": ""
+  },
+  "751277726e95d01d5e225e8b4590cc4f": {
+    "en": "Branch/Subdivision Number",
+    "type": "llm",
+    "note": "Enter the subdivision or branch number of your address if applicable (often used for large apartment complexes or housing developments)"
+  },
+  "e09c10181834f7ca34338dffe43982fe": {
+    "en": "Special departure confirmation required",
+    "type": "llm",
+    "note": "Check this box if you need confirmation for special circumstances when moving out of the municipality"
+  },
+  "7301a03d3a2ce77d8a830ce171f80848": {
+    "en": "Registered domicile",
+    "type": "llm",
+    "note": "Write your permanent legal domicile address as recorded in your family register (koseki), which may differ from your current residence address."
+  },
+  "ef5f9cf6987e3eef306718aa3c48c2f5": {
+    "en": "New registration",
+    "type": "llm",
+    "note": "Check this box if you're registering your residence in Japan for the first time at this municipality"
+  },
+  "db91e55c5aa2668e78a9cd71a384c3c9": {
+    "en": "Housing address numbering system required",
+    "type": "llm",
+    "note": "Check this box if your address uses the housing address numbering system (住居表示) rather than the traditional lot numbering system"
+  },
+  "0a14b19f95ae461b411e36aa74bca800": {
+    "en": "Head of household",
+    "type": "llm",
+    "note": "Enter the name of the primary person listed on your family register (koseki) - usually the father or eldest family member"
+  },
+  "bac5a8dc9cac7bccb9b0ebad47c9ab0e": {
+    "en": "Building name / room number",
+    "type": "fragment",
+    "note": "Matched: 方書"
+  },
+  "3609f958a376202b6b7d9e798717e1ab": {
+    "en": "None/Nothing",
+    "type": "llm",
+    "note": "Check this option or write \"なし\" when the question doesn't apply to you or you have nothing to report for that field"
+  },
+  "2840fe570d8b3a4c0f8f1878f4f14597": {
+    "en": "Map (P・－) attached fixed diagram",
+    "type": "llm",
+    "note": "N/A - this is a reference code for the official zoning/address map that municipal staff use for verification"
+  },
+  "1ac0ac770a5f5c569be803aa5275781d": {
+    "en": "Person Moving - Full Name",
+    "type": "llm",
+    "note": "Write your complete legal name as it appears on your residence card or passport."
+  },
+  "bafd7322c6e97d25b6299b5d6fe8920b": {
+    "en": "No",
+    "type": "llm",
+    "note": ""
+  },
+  "a920ce0531a4b2088557e69711dc1289": {
+    "en": "Former Name/Alternative Name (alias), Date of Birth, Gender, Relationship to Head of Household ※For foreign residents: Residence Card or Special Permanent Resident Certificate number, etc. Note: This section is only for foreign residents. Nationality/Status of Residence/Region/Qualification, Expiration Date of Period of Stay, Various card confirmation, Residence registration, Qualification country, Citizen issuance, Health insurance collection, Qualification examination, Elderly qualification, Long-term care insurance qualification, National pension/pension type number, Medical/child school affairs",
+    "type": "llm",
+    "note": "Foreign residents should fill in their residence card number and status of residence information in the designated foreign resident section."
+  },
+  "25d9e722fd9d86ab2ca6f84795c6ead6": {
+    "en": "Taishō・Shōwa・Heisei・Reiwa・Western calendar Male",
+    "type": "llm",
+    "note": "Select the appropriate era (Taishō/Shōwa/Heisei/Reiwa) or Western calendar for your birth date, and circle \"男\" if you are male"
+  },
+  "b8934c2ae33b2279adcbd531e9b5be2f": {
+    "en": "Individual/Personal",
+    "type": "llm",
+    "note": "This appears to be a checkbox option - check if applying as an individual person rather than as a household or family unit."
+  },
+  "f27458295341f40d3653085279f98a9f": {
+    "en": "Regular mail completed",
+    "type": "llm",
+    "note": "N/A (this is an administrative marking indicating postal processing status)"
+  },
+  "ef9a025b3ebb405fd1ea2c0fc610ff62": {
+    "en": "Available/Present",
+    "type": "llm",
+    "note": "This likely indicates availability or presence status - check the appropriate box based on your current situation or document availability."
+  },
+  "891058f89b58fa5aa1aa55e78e5acaec": {
+    "en": "Certification/Approval",
+    "type": "llm",
+    "note": "This section is typically filled out by municipal office staff, not by you as the applicant."
+  },
+  "97a4a053c4d0184c7e0e5dbc1413a479": {
+    "en": "Medical Elementary School",
+    "type": "llm",
+    "note": ""
+  },
+  "c713243d1d9f55fbb3a6f4c6fa61b874": {
+    "en": "・(M)",
+    "type": "llm",
+    "note": ""
+  },
+  "c1f95daeb41d7defd802a7e3536d6e9e": {
+    "en": "(Electronic certificate availability)",
+    "type": "llm",
+    "note": "Check if you have an electronic certificate (マイナンバーカード with IC chip functionality) - mark accordingly"
+  },
+  "be7c87a2000ddc6cec9a8843209e5c8b": {
+    "en": "Mandatory: Optional",
+    "type": "llm",
+    "note": "This indicates whether each field is required (強制) or optional (任意) - fill out all mandatory fields completely."
+  },
+  "041da43136a52205460590ca4e8d9023": {
+    "en": "Middle school",
+    "type": "llm",
+    "note": "Enter the name of the middle school if this section applies to a student aged 12-15"
+  },
+  "35f40e1197f96b021c9c766f944eb5af": {
+    "en": "(ellipsis/continuation marks)",
+    "type": "llm",
+    "note": ""
+  },
+  "66191dfb1bd64c995b991f3ef8841074": {
+    "en": "Year(Y)・Month(M)・Day(D) Female(F)",
+    "type": "llm",
+    "note": "This shows the date format and gender designation - enter your birthdate as YYYY/MM/DD and mark F if female"
+  },
+  "9f71aa0c0714f23787d335a76ef98863": {
+    "en": "Residence status/visa type checkboxes (text appears corrupted or poorly scanned)",
+    "type": "llm",
+    "note": ""
+  },
+  "fa60633b8b9526105a1f789358b8e2eb": {
+    "en": "Classification/Category Not Yet Determined",
+    "type": "llm",
+    "note": "This likely indicates a field where the classification hasn't been filled in yet - check with municipal staff about what category applies to your situation."
+  },
+  "eafedd5c92dd7ade38f8805a3969c800": {
+    "en": "Special Resident",
+    "type": "llm",
+    "note": "Check this box if you are a foreign national with special permanent resident status in Japan"
+  },
+  "159aea1cc28db6b63c34b89af3970fd6": {
+    "en": "- year student",
+    "type": "llm",
+    "note": "Enter the school grade level of the child (e.g., 1st year, 2nd year, etc.)"
+  },
+  "6df755e6fc31c139b8c7ca45ac26014d": {
+    "en": "Yes Regular Mail Completed Yes Return",
+    "type": "llm",
+    "note": "These appear to be checkbox options for mail delivery preferences - check the appropriate boxes for your postal service needs."
+  },
+  "207fc0dfce7d60cd070fbaa502d264e0": {
+    "en": "Medical Elementary Middle School School",
+    "type": "llm",
+    "note": "N/A - This appears to be corrupted or incomplete text, possibly indicating sections for medical facilities and schools, but would need clarification from municipal office staff."
+  },
+  "908a34538d7d06bee636ff52bdfadd16": {
+    "en": "22",
+    "type": "llm",
+    "note": ""
+  },
+  "a8a227c9a5eb2af406a2f534ffd78b64": {
+    "en": "(Electronic certificate: Yes/No)",
+    "type": "llm",
+    "note": "Circle \"有\" (Yes) if you have an electronic certificate for digital services, or \"無\" (No) if you don't have one."
+  },
+  "62721ebe42a7b910e4bc8b77b6c2c13e": {
+    "en": "☐Foreign resident ☐Special permanent resident ☐No ☐Elderly ☐At counter ☐Minor",
+    "type": "llm",
+    "note": "Check the appropriate boxes that apply to your status and situation when submitting the form."
+  },
+  "efc0d4f0776ec73b0b46e3dd2636e750": {
+    "en": "Ward/District Not Yet [Determined/Registered]",
+    "type": "llm",
+    "note": "This likely indicates a field where the ward/district hasn't been filled in yet - ensure you write your complete address including the ward (区) name."
+  },
+  "b5f92034de5d9e05f9a0f285b8dd4ae2": {
+    "en": "-child",
+    "type": "llm",
+    "note": "This indicates a section for listing children/dependents in your household registration."
+  },
+  "8e51ee7801a46f52544addc02a5f6dfa": {
+    "en": "Year(Y)・Month(M)・Day(D)(F)",
+    "type": "llm",
+    "note": "Enter dates in YYYY/MM/DD format; the (F) likely indicates foreign date format or a specific field designation"
+  },
+  "4d3c47d0fc1955a941630baad7e22fd4": {
+    "en": "☐With housing card ☐Without housing card",
+    "type": "llm",
+    "note": "Check the appropriate box based on whether you have a jūminhyō (resident registration card) from your previous address"
+  },
+  "82c0ab2a1da79fd794f4f6919dc415ee": {
+    "en": "Year/Grade",
+    "type": "llm",
+    "note": ""
+  },
+  "90db32204a3cd88701529b99ddcaccbf": {
+    "en": "<Remarks Section>",
+    "type": "llm",
+    "note": ""
+  },
+  "320c63b8baef270b085b920f5989a28f": {
+    "en": "Address",
+    "type": "fragment",
+    "note": "Matched: 住所"
+  },
+  "df8ddab1248e2e7526778c4a14dc46c1": {
+    "en": "New N--------Family Name--Given Name---------------Relationship--[28Remarks]---9---1-Notice-----CS-Transmission-----1-9---1-Notice---N-Remarks",
+    "type": "llm",
+    "note": "N/A (this appears to be form layout/formatting text rather than fillable fields)"
+  },
+  "e29b4b545e1dd9b2fdebbbce0a05319e": {
+    "en": "☐Individual explanation (",
+    "type": "llm",
+    "note": "This appears to be an incomplete checkbox label - likely for indicating if individual explanation was provided or needed during the registration process."
+  },
+  "366554ad5b36e3ad486d9980479cc78f": {
+    "en": "Day) □ Sealed/Completed",
+    "type": "llm",
+    "note": "This appears to be a checkbox or field marker indicating completion status - likely for office use only, so you probably don't need to fill this part."
+  },
+  "dee75faf264b4131641fac0c6507d672": {
+    "en": "☐ Integrated record section editing completed",
+    "type": "llm",
+    "note": "N/A (this is an administrative checkbox for office use only)"
+  },
+  "c3582d3c258686520e862ca133500ff0": {
+    "en": "My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 個人番号"
+  },
+  "204256cc336dd95cc3ef73a9e882bef9": {
+    "en": "Moving in (from another municipality or abroad)",
+    "type": "fragment",
+    "note": "Matched: 転入"
+  },
+  "564be1b8277dbb818c60749982830578": {
+    "en": "Memo/Notes - Available/Required/Completed",
+    "type": "llm",
+    "note": "This appears to be administrative checkboxes for office use - you likely don't need to fill this section as an applicant."
+  },
+  "fddeac86ef3535525e605104212e706b": {
+    "en": "Contact (",
+    "type": "llm",
+    "note": ""
+  },
+  "1c60ae3970433f227ee401749c577d2e": {
+    "en": ") completed/processed",
+    "type": "llm",
+    "note": ""
+  },
+  "51af3c0a9be7920d1adfdb8e1ce03b49": {
+    "en": "Period Elapsed",
+    "type": "llm",
+    "note": ""
+  },
+  "40bb182f4bae677b8e60b2073541bfce": {
+    "en": "Required/Completed",
+    "type": "llm",
+    "note": "Check the appropriate box - \"要\" (required) if the action is needed, \"済\" (completed) if already done"
+  },
+  "bd78a422955c5653668a2254a22a3752": {
+    "en": "School age register creation ☐ National Health Insurance 4F",
+    "type": "llm",
+    "note": "N/A (this is administrative routing information indicating which departments need to process your form)"
+  },
+  "8af1faf66f26ddb5817d7a382dde7821": {
+    "en": "Receipt Notification",
+    "type": "llm",
+    "note": ""
+  },
+  "a9f868403e5389bc30403c225652cf83": {
+    "en": "Card",
+    "type": "llm",
+    "note": "This likely refers to your residence card (在留カード) number or mynumber card - check the surrounding context to determine which card information is required."
+  },
+  "fae6fd858d9d65f808979c6c3d1f361b": {
+    "en": "CS①",
+    "type": "llm",
+    "note": "N/A - this is a form section code used for administrative processing"
+  },
+  "f80c0d96506aeab9e5ea5259e690429a": {
+    "en": "CS②",
+    "type": "llm",
+    "note": "N/A - this is likely a form section code or administrative reference number used by municipal office staff for processing"
+  },
+  "30749e25d5bbb3843a99a1a8b24a9f2f": {
+    "en": "Confirmation",
+    "type": "llm",
+    "note": ""
+  },
+  "247d882463c01e75a2efbce70d921884": {
+    "en": "Input/Provisional Update Review/Main Update Number Entry",
+    "type": "llm",
+    "note": ""
+  },
+  "8ee0c736c3cd0bc2ef735b489f6bb6d4": {
+    "en": "Continuation・Card Surface",
+    "type": "llm",
+    "note": "Check this if you're renewing/continuing your residence card and need updates to the card's visible information"
+  },
+  "99996455128e71fd0cf57eb8722a23b2": {
+    "en": "Return/Returned",
+    "type": "llm",
+    "note": ""
+  },
+  "de498e46634c9211c11561d0339b77e2": {
+    "en": "Input Complete",
+    "type": "llm",
+    "note": ""
+  },
+  "1d1de3335383978b90b11e3f656534e3": {
+    "en": "□ Reverse side exists",
+    "type": "llm",
+    "note": "N/A if it's just instructions/layout text"
+  },
+  "_vision_explanations:Header & Dates:59369adaaea1e7a3abe4da014e5171eb": {
+    "2": "This field is pre-printed and indicates the form is addressed to the Mayor of Shinjuku City - no action needed from you.",
+    "5": "Check this box if you are the head of household filling out the form for yourself (most common case for individual foreign residents).",
+    "6": "This is the form title indicating it's for notifying changes in residence - no action needed from you.",
+    "8": "Check this box if you are moving back into Japan from abroad or from another municipality.",
+    "10": "This section lists various types of moving out scenarios - check the appropriate box if you are moving out of your current address.",
+    "11": "Check this box if you are only moving within the same city/municipality (Shinjuku in this case).",
+    "13": "Check this box if you are moving into Shinjuku from another municipality within Japan or from abroad.",
+    "14": "Write your full name clearly by hand in katakana, hiragana, or Roman letters as it appears on your residence card."
+  },
+  "_vision_explanations:Who Is Filing:152d1b813e1f3d861116a9ff1c4382f0": {
+    "1": "Check the box that corresponds to the type of registration change you're making (transfer, divorce, merger, update, etc.). This indicates the reason for your address or household registration change.",
+    "2": "Check this box if you are moving out of your current address completely and not registering a new address in the same municipality. This is typically used when moving to a different city or leaving Japan.",
+    "8": "If someone else is filing this form on your behalf, they should write their full address and their relationship to you (e.g., 'spouse', 'parent', 'legal representative'). Leave blank if you're filing for yourself."
+  },
+  "_vision_explanations:Addresses:7055ab5f75ff15755e7ad0087a85bb32": {
+    "2": "Write the name of the head of household (typically the primary resident or family leader). If you live alone, write your own name here.",
+    "3": "Write your complete new address including postal code, prefecture, city/ward, and apartment/building details if applicable. Use the exact format as it appears on official Japanese address records.",
+    "9": "This field appears to contain corrupted text and cannot be properly identified. Leave blank or consult the issuing office for clarification on what should be entered here."
+  },
+  "_vision_explanations:Addresses:479904bb3b2ee713701c89fe49f9d540": {
+    "3": "This section is marked as 'Japanese nationals only' so foreign residents should leave this field blank and skip it entirely. Only Japanese citizens need to fill out this particular section."
+  },
+  "_vision_explanations:Person Table:5497962515b3c85a1e7d0db9926da86b": {
+    "3": "Write the sequential number for this person entry (usually '1' for the first person, '2' for the second, etc.).",
+    "5": "This appears to be a checkbox or field for educational background - check the appropriate box if applicable, though the text seems corrupted in this scan.",
+    "12": "This is likely a gender marker - write 'M' for male or check the male option if this is a checkbox field.",
+    "14": "These continuation marks typically indicate 'same as above' - use when information is identical to the previous entry or line.",
+    "15": "Check the appropriate box for your residence status/visa type in Japan (the text appears corrupted but likely includes options like permanent resident, spouse visa, work visa, etc.)."
+  },
+  "_vision_explanations:Person Table:4105e45a0206c085fa1bcdc5cd458070": {
+    "10": "Write 'M' if you are male or leave blank/write other designation if female. This appears to be a gender field where M indicates male.",
+    "13": "Write your age in numbers. Based on the context, this appears to be asking for your current age (the example shows '22').",
+    "14": "Use these dots or dashes to indicate continuation or that information extends beyond the available space. Leave blank if not needed for continuation purposes."
+  },
+  "_vision_explanations:Person Table:b53dc0ccb5320a8f8fe13c4f74d0c427": {
+    "6": "Write the year of birth or grade level depending on context. If this is for a school form, write the student's current grade (1年生, 2年生, etc.); if for general registration, write the birth year in Japanese era format.",
+    "14": "This appears to be a marker for 'Male' in a gender selection field. Circle or mark this if the person is male, or leave blank if female.",
+    "15": "These are continuation marks indicating the form continues or that additional information should be written in the following spaces. You may leave this blank as it's typically just a formatting element."
+  },
+  "_vision_explanations:Person Table:4e351347cbb5b009da10b9c9e6251513": {
+    "7": "Write your school grade year (1年生, 2年生, etc.) or academic year level. If you're not a student, leave this field blank or write 'N/A'.",
+    "8": "Use this remarks section to write any additional information that doesn't fit in other fields, such as special circumstances, temporary address changes, or clarifications about your status."
+  },
+  "_vision_explanations:Person Table:c9b48fd702cc6608817f92b2cf617dcc": {
+    "1": "Check this box or mark 'Yes' if you have received a transfer notification from your previous municipality when moving from another city/town in Japan. This confirms proper documentation of your move between municipalities.",
+    "2": "Write the contact method used for coordination with your previous municipality, such as 'phone', 'email', or 'mail'. This helps track how the transfer was communicated.",
+    "3": "Mark this when the transfer process has been completed successfully. City hall staff typically fill this field to confirm all procedures are finished.",
+    "4": "Check this if the standard processing period has passed without completion. This flag helps identify cases that may need additional follow-up or documentation."
+  },
+  "19fbc7d4bb02eab03877dc12290c4259": {
+    "en": "To the Mayor of Shinjuku Ward (Recipient: Mayor of Shinjuku Ward)",
+    "type": "llm",
+    "note": ""
+  },
+  "36032741469abbc8d57932ad16f46d71": {
+    "en": "Resident Change Notification Form (in Japanese/Chinese/Korean)",
+    "type": "llm",
+    "note": ""
+  },
+  "1742b4fe9e04a726e98c1dc6d0cf32b8": {
+    "en": "Moving in (from another municipality or abroad) / Moving out",
+    "type": "fragment",
+    "note": "Matched: 転入, 転出"
+  },
+  "ebcb0cd6a1ddb8b9be0aa755af7d06a5": {
+    "en": "Person who came to the counter to complete the procedure",
+    "type": "llm",
+    "note": "This identifies who physically visited the municipal office - write your name if you came in person, or the name of whoever came on your behalf if using a representative."
+  },
+  "5e7682b269b239f69976e66192afb9c9": {
+    "en": "Belt/band/strap (likely a printing error or placeholder text)",
+    "type": "llm",
+    "note": "N/A - this appears to be erroneous repeated characters, not an actual form field"
+  },
+  "673c83304dd59410587c21a7e2a2cd2c": {
+    "en": "Complete Complete Complete Complete Complete Complete Complete Complete Complete Transfer→Complete→Complete→One→One Change Separation Merger Change Certificate Change",
+    "type": "llm",
+    "note": "N/A - This appears to be corrupted or placeholder text rather than actual form instructions"
+  },
+  "6cd6b1c089db21b4e4fb51e3ac0eccf0": {
+    "en": "Signature",
+    "type": "llm",
+    "note": "Sign your name here as you would normally write it"
+  },
+  "28463e245ef980265237140867c83c81": {
+    "en": "Phone number",
+    "type": "llm",
+    "note": "Enter your primary contact phone number including area code"
+  },
+  "5a08106ae504948575dbd9be6321c426": {
+    "en": "Application/Report Date",
+    "type": "llm",
+    "note": "Enter the date you are submitting this residence registration form to the municipal office"
+  },
+  "264dcd226d064eb764c7bbeefa6258f2": {
+    "en": "Date of Change",
+    "type": "llm",
+    "note": "Enter the date when your address change or residence status change took effect (usually your move-in date)."
+  },
+  "eecef4d5b7b06da60f345dd3fc154178": {
+    "en": "If you are a proxy/representative, please also fill in the following items. If you are a proxy/representative, please also fill in the following items.",
+    "type": "llm",
+    "note": "This section is only for situations where someone else is submitting the form on your behalf - skip if filing for yourself"
+  },
+  "38c8482e3787b9529c3092b63a2d3926": {
+    "en": "※When filing is submitted by someone who is not a member of the same household, a power of attorney must be submitted. Proxy's address",
+    "type": "llm",
+    "note": "If someone else is filing for you, they need your written authorization and must provide their own address here."
+  },
+  "97d871001ce081da9126c383a7765440": {
+    "en": "(Year) (Month) (Day)",
+    "type": "llm",
+    "note": "Enter the date in Japanese calendar format - use the current era year (e.g., Reiwa 6 for 2024), numeric month, and day."
+  },
+  "e158e6471da742fb2091706f8a246c53": {
+    "en": "☐ Residence determination date confirmed",
+    "type": "llm",
+    "note": "N/A - this is a checkbox for municipal office staff to mark after verifying your move-in date"
+  },
+  "bcf8d1860ad8081fb0001c748bba3182": {
+    "en": "※If another household member is filing the report, a power of attorney is required. Proxy's address",
+    "type": "llm",
+    "note": "This appears to be Korean text on a Japanese form - if you're having someone else file for you, they'll need written authorization and must provide their address"
+  },
+  "de3cf6333dca876d4893781c3f326cd0": {
+    "en": "Relationship to the person making changes:",
+    "type": "llm",
+    "note": "Write your relationship to the person whose registration is being changed (e.g., \"spouse,\" \"child,\" \"parent,\" or \"self\" if applying for yourself)"
+  },
+  "6d39f0b5137257365358735a8dcdb6a1": {
+    "en": "New Address",
+    "type": "llm",
+    "note": "Write your complete new residential address in Japan, including postal code, prefecture, city/ward, and apartment/room number if applicable."
+  },
+  "7bd6e5fa29870cddab7192ec6a6771a5": {
+    "en": "Head of household name",
+    "type": "llm",
+    "note": "Write the full name of the person registered as the head of the household where you reside"
+  },
+  "d96cbccfc745bd4c41f63e0412ae6142": {
+    "en": "Relationship to the person moving:",
+    "type": "llm",
+    "note": "Fill in your relationship to the person whose residence registration is changing (e.g., \"self\", \"spouse\", \"child\", \"parent\", etc.)"
+  },
+  "ed4aa2a1edad85e992395dc139aa7ac6": {
+    "en": "New address",
+    "type": "llm",
+    "note": "Write your new complete address including postal code, prefecture, city, and apartment number if applicable"
+  },
+  "dc61f66671db1b71f94fa30ccb305f37": {
+    "en": "Head of Household Name",
+    "type": "llm",
+    "note": "Write the full name of the person who is registered as the head of the household at this address"
+  },
+  "6a10cccb19c86683b5bd630f736b0f8f": {
+    "en": "Previous address",
+    "type": "llm",
+    "note": "Write your complete previous address including prefecture, city, ward, and apartment number if applicable"
+  },
+  "ff17a761ec4dcc2022d517107323a711": {
+    "en": "Previous Address",
+    "type": "llm",
+    "note": "Enter your last registered address before moving to your current residence"
+  },
+  "28ed0a34ea86d3dc6689152b8c401f80": {
+    "en": "Map without (P・-) attached fixed diagram",
+    "type": "llm",
+    "note": "N/A - this appears to be a reference code or notation about map documentation rather than a field to fill out"
+  },
+  "f1ac7703495a9df24e45b3fcea9eb134": {
+    "en": "Gender",
+    "type": "fragment",
+    "note": "Matched: 性別"
+  },
+  "0bdfb031645594be0def39854b7e6fdc": {
+    "en": "Various Cards",
+    "type": "llm",
+    "note": "List any relevant cards you hold (residence card, My Number card, health insurance card, etc.)"
+  },
+  "e4db37dfb599dbe318982938c12b77f4": {
+    "en": "Resident National Health Insurance",
+    "type": "llm",
+    "note": "Check this box if you are enrolled in Japan's National Health Insurance (国民健康保険) system"
+  },
+  "4332f65c118a23795073efeee127c553": {
+    "en": "Long-term care insurance, national pension, medical treatment",
+    "type": "llm",
+    "note": "Check applicable boxes for insurance/pension programs you're enrolled in or need to enroll in"
+  },
+  "1c79226851abc7113615ea98dae3e350": {
+    "en": "Name change person's name",
+    "type": "llm",
+    "note": "Write the full name of the person whose name is being changed (appears to include Korean text, suggesting this may be for Korean residents)"
+  },
+  "78df0103e381c5522865b17bfdb3415f": {
+    "en": "Common name/nickname // Phonetic reading in kana",
+    "type": "llm",
+    "note": "Enter your commonly used name (if different from legal name) in the first field, and its pronunciation in hiragana or katakana in the second field."
+  },
+  "c742d9bb641f2e704cd2773a434bfda8": {
+    "en": "Birth date, gender, relationship, residence card number, special permanent resident certificate number, nationality/region, status of residence, period of stay, expiration date of stay, temporary custody confirmation [__] sheets, residence notification, qualification, issuance, certificate collection, income, examination, qualification, elderly certificate, qualification, pension recipient qualification/number/type, child affairs",
+    "type": "llm",
+    "note": "This appears to be field labels and administrative codes rather than fillable sections - actual form fields would be separate from this text block."
+  },
+  "1358a4b354c9631e4cbfe9ea65861fa6": {
+    "en": "(Male)",
+    "type": "llm",
+    "note": "This appears to be Korean text (남 = male) - you should fill out the Japanese form using Japanese characters instead"
+  },
+  "0601f9d28feee272d0bd6b46a7a6c5bd": {
+    "en": "(Electronic certificate presence/absence)",
+    "type": "llm",
+    "note": "Indicate whether you have an electronic certificate (usually refers to MyNumber card with IC chip functionality) by checking yes or no."
+  },
+  "6401a467718a8f948c32e21f3afa529d": {
+    "en": "☐Foreigner ☐Special Permanent Resident",
+    "type": "llm",
+    "note": "Check the first box if you're a foreign resident with standard visa status, or the second box if you're a special permanent resident (mainly applies to long-term Korean/Taiwanese residents and their descendants)"
+  },
+  "3f773af33b89e5c86b906a4e23330820": {
+    "en": "Residence card number: None/No high window未",
+    "type": "llm",
+    "note": "N/A (appears to be corrupted or incorrectly scanned text - consult the actual form or office staff for clarification)"
+  },
+  "3cf8ddac9947727f26558aece67aa26a": {
+    "en": "Year Month Day (Korean translations in parentheses)",
+    "type": "llm",
+    "note": "Enter the date in Japanese calendar format (year/month/day) - the Korean translations are provided as reference for Korean residents"
+  },
+  "e7efbf126bc934f188258234588e11c6": {
+    "en": "Taisho・Showa・Heisei・Reiwa・Western calendar (Male)",
+    "type": "llm",
+    "note": "Select the appropriate era or Western calendar format for dates, and mark gender as male if applicable"
+  },
+  "d01d6c8a827ff7ac36f5628b2c1e96fc": {
+    "en": "Year Month Day (Female)",
+    "type": "llm",
+    "note": "Enter your birth date and check if you are female - the Korean characters in parentheses are translations for Korean residents"
+  },
+  "33fe84e8a31347eeaaea964261f2fd5e": {
+    "en": "☐ (Individual number card possession status) Have General Mail Completed Have Return",
+    "type": "llm",
+    "note": "Check the box and indicate whether you have your Individual Number Card (My Number Card) - mark \"有\" (have) if you possess it, \"無\" (don't have) if you don't."
+  },
+  "58842176e17d87e21fb23d686ba4723e": {
+    "en": "Certification/Mandatory: Yes/Voluntary Medical Elementary/Middle School School",
+    "type": "llm",
+    "note": "N/A - This appears to be corrupted or fragmented form text that may contain printing errors"
+  },
+  "20d09b402bce9f5391b792db03d64c95": {
+    "en": "*If there is insufficient space in the fields, please fill out on the reverse side.",
+    "type": "llm",
+    "note": ""
+  },
+  "086d6fd6924933a07d4078289b9f960c": {
+    "en": "If you cannot write everything, please write on the back side.",
+    "type": "llm",
+    "note": "Use the back of the form if you run out of space in any section."
+  },
+  "_vision_explanations:Header & Dates:c431ad37dc323bfe49bfac7e3b17a9a9": {
+    "1": "This is the form title - no action needed, it identifies this as a Resident Change Notification Form used when moving in Japan.",
+    "2": "This is pre-printed text addressing the form to the Mayor of Shinjuku Ward - no action needed from you.",
+    "5": "Check this box if you are the head of household (the main person on the residence record) filing this form yourself.",
+    "7": "Check the appropriate box for your type of move - for example, check '転入' if moving TO this ward from another municipality.",
+    "9": "Check this box if you are moving within the same ward/municipality (changing address but staying in Shinjuku).",
+    "11": "Check this if you are moving into Japan from abroad or moving from another municipality - this is the most common option for foreign residents."
+  },
+  "_vision_explanations:Person Table:7490377a8aa1bafde54395b6911fda2d": {
+    "2": "Write the sequential number for each person listed in this household registry form, starting with 1 for the first person, 2 for the second person, etc.",
+    "6": "This appears to be a checkbox or field related to medical/elementary school information - leave blank unless specifically applicable to the person's educational or medical status.",
+    "15": "These dots indicate continuation or additional space for writing - use this area to continue information from adjacent fields if you run out of space in the main boxes."
+  },
+  "_vision_explanations:Person Table:5022bb0a88bdfd93f55111215b048153": {
+    "7": "Write your birth year in Japanese era format (e.g., 昭和, 平成, 令和) or Western calendar year. Foreign residents can use Western calendar years if unsure of Japanese era conversions.",
+    "15": "This appears to be a pre-printed number (22) on the form, likely indicating a section or field number - you typically don't need to write anything here as it's already filled in."
+  },
+  "_vision_explanations:Person Table:298f7984efa28ca82b60348205817ab4": {
+    "1": "These are continuation marks indicating this row continues information from a previous section or person entry. Leave blank if this is a new person entry, or fill with relevant continuation data if continuing from another page.",
+    "11": "These are continuation marks similar to field 1. Use only if you need to continue information that didn't fit in previous sections, otherwise leave blank.",
+    "12": "Check the appropriate boxes for your residence status in Japan (such as permanent resident, work visa, student visa, etc.) and other relevant status indicators. If the text appears corrupted on your form, refer to the original clean form or ask for assistance to identify the correct visa category checkboxes."
+  },
+  "_vision_explanations:Person Table:4fdd01ce06ca8c6b614e701c04ab8989": {
+    "2": "This is a remarks/notes section where clerks or you can write any special circumstances, additional information, or comments relevant to your registration that don't fit in other fields.",
+    "10": "Check or mark this field if you have received and are inputting information from a moving-in notification (typically when transferring residence from another city/ward in Japan or from abroad).",
+    "11": "This appears to be part of a contact method or communication field - write the type of contact method being used (phone, email, etc.) in the parentheses.",
+    "12": "Mark this when the contact or communication process has been completed or processed successfully.",
+    "13": "This field indicates whether a certain time period has elapsed (likely for processing deadlines) - typically filled by municipal staff rather than residents."
+  },
+  "0b09121f5eab86d28a2c814bd852d7ae": {
+    "en": "Please write in Japanese or alphabet.",
+    "type": "llm",
+    "note": ""
+  },
+  "e9d23916c9c70236d4ad50dc0bad86ad": {
+    "en": "Moving-Out Notification Form (for mail notification)",
+    "type": "llm",
+    "note": "N/A (this is a form title/header - note that this text appears to be in Korean, not Japanese)"
+  },
+  "bc6faeca11500c99f3fba97e502c823c": {
+    "en": "1. Date of change        Year      Month      Day",
+    "type": "llm",
+    "note": "Enter the date when your residence change actually occurred (move-in or move-out date), not the date you're filing the form."
+  },
+  "1d31086dac67fe44d380be1e70fad69a": {
+    "en": "2 New address",
+    "type": "llm",
+    "note": "Write your new complete address including postal code, prefecture, city/ward, and apartment number if applicable."
+  },
+  "e52e26a71b4f0272144616af1bb2578e": {
+    "en": "Head of Household Name",
+    "type": "llm",
+    "note": "Write the full name of the person who is registered as the head of the household at this address"
+  },
+  "89a6911643242f925ac0575d27d240ae": {
+    "en": "3 Previous Address",
+    "type": "llm",
+    "note": "Write your complete previous address in Japan, or if moving from overseas, write your foreign address"
+  },
+  "1d0af76ce90175a2511f6bbe3c5acde2": {
+    "en": "Shinjuku Ward",
+    "type": "llm",
+    "note": "This appears to be written in Korean characters - if you're in Shinjuku, write \"新宿区\" in Japanese or \"Shinjuku-ku\" in Roman letters instead."
+  },
+  "2d8248a6966fedf4c1fec4985e7b9449": {
+    "en": "4. Registered domicile",
+    "type": "llm",
+    "note": "Write your legal domicile/permanent address from your home country's official records"
+  },
+  "2710ba3d79b01b0e201348d1d17f0e5e": {
+    "en": "(Japanese nationals only)",
+    "type": "llm",
+    "note": "N/A - this is an instruction indicating the field/section is only for Japanese citizens"
+  },
+  "14b92a4ca64018315b82bcc65929f7c2": {
+    "en": "Head of household name",
+    "type": "llm",
+    "note": "Write the full name of the person designated as the head of the household in the family register"
+  },
+  "74b0b1eb28be57f31c40d29c7bbef927": {
+    "en": "5. Names and dates of birth of all persons moving out",
+    "type": "llm",
+    "note": "List the full names and birth dates of everyone who is moving out of the current address, including family members and dependents."
+  },
+  "b90386ad5e3b9b65af88577c284a9c03": {
+    "en": "Furigana (phonetic reading)",
+    "type": "llm",
+    "note": "Write the phonetic reading of your name in hiragana or katakana characters above the kanji version of your name"
+  },
+  "2e574021d8f8527ecae5db8aca372134": {
+    "en": "Name                      Date of Birth       Year     Month     Day",
+    "type": "llm",
+    "note": "This appears to be Korean text on a Japanese form - fill in your full name as written in Korean characters and your birth date in the provided format."
+  },
+  "1abca437cc6e03ce04e7ad9fe6bd9030": {
+    "en": "6. Applicant's name (limited to the person themselves)",
+    "type": "llm",
+    "note": "Only the person moving can sign as the applicant; family members or representatives typically cannot file on your behalf"
+  },
+  "679872b8493c704d161b179b6bf13670": {
+    "en": "(Signature)",
+    "type": "llm",
+    "note": "Sign your name as it appears on your residence card or passport"
+  },
+  "999c75a8f554d36ba3c63bf267198813": {
+    "en": "If there is no signature, you must print your name and affix your seal.",
+    "type": "llm",
+    "note": "Either sign your name or print it clearly and stamp with your registered personal seal (hanko)."
+  },
+  "b8080d1abdb21f837a0c8b08fe5e471a": {
+    "en": "7. Contact phone number (Please be sure to fill in a contact number where you can be reached during daytime hours)",
+    "type": "llm",
+    "note": "Provide a phone number where you can be reliably contacted during business hours (9 AM - 5 PM), such as your mobile phone or workplace number."
+  },
+  "_vision_explanations:Who Is Filing:b7d49f7f2b245d19dd8a3f065b7cfdec": {
+    "1": "This is an instruction telling you to fill out the form using Japanese characters (hiragana, katakana, or kanji) or Latin alphabet letters only. Avoid using other scripts like Korean hangul, Chinese simplified characters, or Arabic numerals where Japanese characters are expected.",
+    "2": "This indicates the section is for a transfer notification (moving report) for postal mail forwarding services. You would fill this out when you want Japan Post to forward your mail from your old address to your new address.",
+    "3": "Write the date you are submitting this form in the format year/month/day. Use the Japanese calendar year (Reiwa era) or Western calendar year as indicated on the form."
+  }
+}
