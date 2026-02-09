@@ -765,6 +765,103 @@
         "bank_account_corporate"
       ],
       "confidence": "verified"
+    },
+    "kiso_nenkin_bango": {
+      "kanji": "基礎年金番号",
+      "reading": "きそねんきんばんごう",
+      "romaji": "Kiso nenkin bangō",
+      "english": "Basic Pension Number",
+      "category": "pension",
+      "tip_en": "10-digit number on your Pension Handbook (年金手帳) or Basic Pension Number Notice. Format: 4 digits + 6 digits.",
+      "appears_on": [
+        "pension_withdrawal"
+      ],
+      "confidence": "verified"
+    },
+    "nenkin_techo_kigou_bango": {
+      "kanji": "年金手帳記号番号",
+      "reading": "ねんきんてちょう きごうばんごう",
+      "romaji": "Nenkin techō kigō bangō",
+      "english": "Pension Handbook Symbol Number",
+      "category": "pension",
+      "tip_en": "Symbol number printed in your Pension Handbook. Can be left blank if you only have the Basic Pension Number.",
+      "appears_on": [
+        "pension_withdrawal"
+      ],
+      "confidence": "verified"
+    },
+    "kaigai_jusho": {
+      "kanji": "海外住所",
+      "reading": "かいがいじゅうしょ",
+      "romaji": "Kaigai jūsho",
+      "english": "Overseas Address",
+      "category": "address",
+      "tip_en": "Your address outside Japan where JPS can reach you by mail. Write in roman letters. Must be reliable — JPS communicates only by post.",
+      "appears_on": [
+        "pension_withdrawal"
+      ],
+      "confidence": "verified"
+    },
+    "ginko_mei": {
+      "kanji": "銀行名",
+      "reading": "ぎんこうめい",
+      "romaji": "Ginkō mei",
+      "english": "Bank Name",
+      "category": "financial",
+      "tip_en": "Full official name of your bank. For overseas banks, write in English (e.g. 'Wells Fargo Bank').",
+      "appears_on": [
+        "pension_withdrawal"
+      ],
+      "confidence": "verified"
+    },
+    "shiten_mei": {
+      "kanji": "支店名",
+      "reading": "してんめい",
+      "romaji": "Shiten mei",
+      "english": "Branch Name",
+      "category": "financial",
+      "tip_en": "Bank branch name and full address. For overseas banks, include the branch address.",
+      "appears_on": [
+        "pension_withdrawal",
+        "bank_account"
+      ],
+      "confidence": "verified"
+    },
+    "swift_code": {
+      "kanji": "SWIFTコード",
+      "reading": "すいふとこーど",
+      "romaji": "SWIFT kōdo",
+      "english": "SWIFT Code",
+      "category": "financial",
+      "tip_en": "8 or 11 character code identifying your bank internationally. Required for overseas transfers. Find it on your bank's website or statements.",
+      "appears_on": [
+        "pension_withdrawal"
+      ],
+      "confidence": "verified"
+    },
+    "iban": {
+      "kanji": "IBAN",
+      "reading": "あいばん",
+      "romaji": "IBAN",
+      "english": "IBAN",
+      "category": "financial",
+      "tip_en": "International Bank Account Number. Required for European banks. US, Australia, and Japan do not use IBAN — leave blank if not applicable.",
+      "appears_on": [
+        "pension_withdrawal"
+      ],
+      "confidence": "verified"
+    },
+    "seikyuu_ishi_kakunin": {
+      "kanji": "請求の意思確認",
+      "reading": "せいきゅうのいしかくにん",
+      "romaji": "Seikyū no ishi kakunin",
+      "english": "Confirmation of Intent to Claim",
+      "category": "pension",
+      "tip_en": "Circle '請求する' (I claim). This acknowledges that claiming forfeits your pension enrollment period permanently — it cannot be used for totalization.",
+      "appears_on": [
+        "pension_withdrawal"
+      ],
+      "confidence": "verified"
     }
   }
 }

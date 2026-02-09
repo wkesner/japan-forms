@@ -1554,17 +1554,26 @@ def generate_template_walkthrough(form_template, dictionary, output_path):
 
     current_page = [0]
 
-    # Count total pages: cover + bank comparison + what-to-bring + fields(1-2) +
-    # mistakes/middle-name + counter phrases + after submission
+    # Count total pages: cover + bank comparison + what-to-bring + process timeline +
+    # fields(1-2) + mistakes/middle-name + screening tips + rejection handling +
+    # totalization countries + counter phrases + after submission
     total_pages = 1  # cover
-    if form_template.get("bank_comparison"):
+    if form_template.get("bank_comparison") or form_template.get("bank_comparison_corporate"):
         total_pages += 1
     if form_template.get("scenarios"):
+        total_pages += 1
+    if form_template.get("process_timeline"):
         total_pages += 1
     if form_template.get("sections"):
         total_pages += 2  # field guide often spans 2 pages
     if form_template.get("common_mistakes"):
         total_pages += 1  # mistakes + middle name guide
+    if form_template.get("screening_tips"):
+        total_pages += 1
+    if form_template.get("rejection_handling"):
+        total_pages += 1
+    if form_template.get("totalization_countries"):
+        total_pages += 1
     if form_template.get("counter_phrases"):
         total_pages += 1
     if form_template.get("after_submission"):
@@ -1661,34 +1670,44 @@ def generate_template_walkthrough(form_template, dictionary, output_path):
     # Legal basis box
     legal = form_template.get("legal_basis", {})
     if legal:
-        box_h = 55
+        max_text_w = WIDTH - 2 * margin - 20
+        bx = margin + 8
+
+        # Pre-compute all lines to size the box dynamically
+        law_en = legal.get("law_en", "")
+        law_lines = wrap_text(law_en, font_en, 7, max_text_w) if law_en else []
+        deadline = legal.get("deadline_description_en", "N/A")
+        deadline_lines = wrap_text(f"Deadline: {deadline}", font_en, 7, max_text_w)
+        cost_note = legal.get("cost_note_en", f"Cost: ¥{legal.get('cost', 0)}")
+        cost_lines = wrap_text(cost_note, font_en, 7, max_text_w)
+
+        box_h = 16 + (len(law_lines) + len(deadline_lines) + len(cost_lines)) * 10 + 4
         c.setFillColor(LIGHT)
         c.rect(margin, y - box_h, WIDTH - 2 * margin, box_h, fill=True, stroke=False)
         c.setStrokeColor(BLUE)
         c.setLineWidth(2)
         c.line(margin, y - box_h, margin, y)
 
-        bx = margin + 8
         by = y - 13
         c.setFillColor(NAVY)
         c.setFont(font_en, 8)
         c.drawString(bx, by, "LEGAL BASIS")
         by -= 12
         c.setFillColor(GRAY)
-        law_en = legal.get("law_en", "")
-        if law_en:
-            for line in wrap_text(law_en, font_en, 7, WIDTH - 2 * margin - 20):
-                pick_font(line, 7)
-                c.drawString(bx, by, line)
-                by -= 10
-
         c.setFont(font_en, 7)
+        for line in law_lines:
+            pick_font(line, 7)
+            c.drawString(bx, by, line)
+            by -= 10
+
         c.setFillColor(NAVY)
-        deadline = legal.get("deadline_description_en", "N/A")
-        c.drawString(bx, by, f"Deadline: {deadline}")
-        by -= 10
-        cost_note = legal.get("cost_note_en", f"Cost: ¥{legal.get('cost', 0)}")
-        c.drawString(bx, by, cost_note)
+        c.setFont(font_en, 7)
+        for line in deadline_lines:
+            c.drawString(bx, by, line)
+            by -= 10
+        for line in cost_lines:
+            c.drawString(bx, by, line)
+            by -= 10
 
         y -= box_h + 15
 
@@ -1707,6 +1726,21 @@ def generate_template_walkthrough(form_template, dictionary, output_path):
                     y -= 11
                 y -= 4
 
+        # List-based requirements (pension template style)
+        for req in elig.get("requirements_en", []):
+            if y < 60:
+                new_page()
+                y = HEIGHT - 60
+            c.setFillColor(NAVY)
+            c.setFont(font_en, 6)
+            c.drawString(margin + 5, y + 2, "\u2022")
+            c.setFillColor(NAVY)
+            for line in wrap_text(req, font_en, 7.5, WIDTH - 2 * margin - 20):
+                pick_font(line, 7.5)
+                c.drawString(margin + 15, y, line)
+                y -= 11
+            y -= 3
+
         for exc in elig.get("exceptions", []):
             c.setFillColor(GREEN)
             c.setFont(font_en, 6)
@@ -1718,16 +1752,231 @@ def generate_template_walkthrough(form_template, dictionary, output_path):
                 y -= 10
             y -= 3
 
+        # Eligibility warnings (pension template)
+        for warn_key in ("important_warning_en", "totalization_warning_en"):
+            warn_text = elig.get(warn_key, "")
+            if warn_text and y > 60:
+                box_w = WIDTH - 2 * margin
+                warn_lines = wrap_text(warn_text, font_en, 7, box_w - 20)
+                box_h = 10 + len(warn_lines) * 10
+                if y - box_h < 40:
+                    new_page()
+                    y = HEIGHT - 60
+                c.setFillColor(HexColor("#fdecea"))
+                c.rect(margin, y - box_h, box_w, box_h, fill=True, stroke=False)
+                c.setStrokeColor(RED)
+                c.setLineWidth(2)
+                c.line(margin, y - box_h, margin, y)
+                bx = margin + 8
+                by = y - 11
+                c.setFillColor(RED)
+                c.setFont(font_en, 7)
+                for line in warn_lines:
+                    c.drawString(bx, by, line)
+                    by -= 10
+                y -= box_h + 6
+
+    # Overview (difficulty warning + strategy)
+    overview = form_template.get("overview", {})
+    if overview:
+        difficulty = overview.get("difficulty_en", "")
+        if difficulty:
+            # Red-accented warning box
+            box_w = WIDTH - 2 * margin
+            diff_lines = wrap_text(difficulty, font_en, 7.5, box_w - 20)
+            box_h = 10 + len(diff_lines) * 11
+            c.setFillColor(HexColor("#fdecea"))
+            c.rect(margin, y - box_h, box_w, box_h, fill=True, stroke=False)
+            c.setStrokeColor(RED)
+            c.setLineWidth(2)
+            c.line(margin, y - box_h, margin, y)
+            bx = margin + 8
+            by = y - 12
+            c.setFillColor(RED)
+            c.setFont(font_en, 7.5)
+            for line in diff_lines:
+                c.drawString(bx, by, line)
+                by -= 11
+            y -= box_h + 8
+
+        # Timing + strategy as bullet points
+        for key in ("timing_en", "strategy_en"):
+            text = overview.get(key, "")
+            if text:
+                c.setFillColor(NAVY)
+                c.setFont(font_en, 6)
+                c.drawString(margin + 5, y + 2, "\u2022")
+                c.setFillColor(GRAY)
+                for line in wrap_text(text, font_en, 7, WIDTH - 2 * margin - 20):
+                    pick_font(line, 7)
+                    c.drawString(margin + 15, y, line)
+                    y -= 10
+                y -= 3
+
+    # Pension Types
+    pension_types = form_template.get("pension_types", {})
+    if pension_types:
+        if y < 120:
+            new_page()
+            y = HEIGHT - 60
+        y = section_heading(y, "PENSION TYPES", 130)
+
+        for ptype_key, ptype in pension_types.items():
+            if y < 80:
+                new_page()
+                y = HEIGHT - 60
+            box_w = WIDTH - 2 * margin
+            ja_name = ptype.get("ja", "")
+            en_name = ptype.get("en", "")
+            who = ptype.get("who", "")
+            lump_note = ptype.get("lump_sum_note", "")
+
+            content_lines = []
+            if who:
+                content_lines.extend(wrap_text(f"Who: {who}", font_en, 7, box_w - 20))
+            if lump_note:
+                content_lines.extend(wrap_text(lump_note, font_en, 7, box_w - 20))
+
+            box_h = 18 + len(content_lines) * 10
+            c.setFillColor(LIGHT)
+            c.rect(margin, y - box_h, box_w, box_h, fill=True, stroke=False)
+            c.setStrokeColor(BLUE)
+            c.setLineWidth(2)
+            c.line(margin, y - box_h, margin, y)
+
+            bx = margin + 8
+            by = y - 13
+            c.setFillColor(NAVY)
+            c.setFont(font_ja, 9)
+            c.drawString(bx, by, ja_name)
+            ja_w = pdfmetrics.stringWidth(ja_name, font_ja, 9)
+            c.setFillColor(BLUE)
+            c.setFont(font_en, 8)
+            c.drawString(bx + ja_w + 10, by, en_name)
+            by -= 14
+            c.setFillColor(GRAY)
+            c.setFont(font_en, 7)
+            for line in content_lines:
+                c.drawString(bx, by, line)
+                by -= 10
+            y -= box_h + 8
+
+    # Payment Amounts
+    payment = form_template.get("payment_amounts", {})
+    if payment:
+        if y < 120:
+            new_page()
+            y = HEIGHT - 60
+        y = section_heading(y, "PAYMENT AMOUNTS", 160)
+
+        for note_key in ("national_pension_note", "employee_pension_note"):
+            note_text = payment.get(note_key, "")
+            if note_text:
+                c.setFillColor(GRAY)
+                for line in wrap_text(note_text, font_en, 7, WIDTH - 2 * margin - 10):
+                    pick_font(line, 7)
+                    c.drawString(margin + 5, y, line)
+                    y -= 10
+                y -= 4
+
+        # Maximum months highlighted box
+        max_months = payment.get("maximum_months", "")
+        max_note = payment.get("maximum_months_note", "")
+        if max_months or max_note:
+            box_w = WIDTH - 2 * margin
+            cap_text = f"Maximum: {max_months} months"
+            cap_lines = [cap_text]
+            if max_note:
+                cap_lines.extend(wrap_text(max_note, font_en, 7, box_w - 20))
+            box_h = 8 + len(cap_lines) * 11
+            c.setFillColor(HexColor("#fdecea"))
+            c.rect(margin, y - box_h, box_w, box_h, fill=True, stroke=False)
+            c.setStrokeColor(RED)
+            c.setLineWidth(2)
+            c.line(margin, y - box_h, margin, y)
+            bx = margin + 8
+            by = y - 11
+            c.setFillColor(RED)
+            c.setFont(font_en, 8)
+            c.drawString(bx, by, cap_lines[0])
+            by -= 12
+            c.setFillColor(HexColor("#444444"))
+            c.setFont(font_en, 7)
+            for line in cap_lines[1:]:
+                c.drawString(bx, by, line)
+                by -= 11
+            y -= box_h + 6
+
+        # Reform note
+        reform_note = payment.get("reform_note_en", "")
+        if reform_note:
+            c.setFillColor(BLUE)
+            for line in wrap_text(reform_note, font_en, 7, WIDTH - 2 * margin - 10):
+                pick_font(line, 7)
+                c.drawString(margin + 5, y, line)
+                y -= 10
+            y -= 4
+
+    # Business Manager Visa Context
+    visa_ctx = form_template.get("business_manager_visa_context", {})
+    if visa_ctx:
+        if y < 140:
+            new_page()
+            y = HEIGHT - 60
+        y = section_heading(y, "BUSINESS MANAGER VISA CONTEXT", 260)
+        box_w = WIDTH - 2 * margin
+        info_items = [
+            ("Capital requirement", visa_ctx.get("capital_requirement", "")),
+            ("Capital note", visa_ctx.get("capital_note_en", "")),
+            ("Employee requirement", visa_ctx.get("employee_requirement", "")),
+            ("Japanese ability", visa_ctx.get("japanese_ability_note", "")),
+            ("Physical office", visa_ctx.get("physical_office_note", "")),
+        ]
+        # Info box with blue accent
+        c.setFillColor(LIGHT)
+        # Estimate height
+        info_h = 8
+        for label, val in info_items:
+            if val:
+                info_h += 12 + len(wrap_text(val, font_en, 6.5, box_w - 80)) * 9
+        c.rect(margin, y - info_h, box_w, info_h, fill=True, stroke=False)
+        c.setStrokeColor(BLUE)
+        c.setLineWidth(2)
+        c.line(margin, y - info_h, margin, y)
+        bx = margin + 8
+        by = y - 5
+        for label, val in info_items:
+            if val:
+                c.setFillColor(NAVY)
+                c.setFont(font_en, 7)
+                c.drawString(bx, by, f"{label}:")
+                by -= 10
+                c.setFillColor(GRAY)
+                for line in wrap_text(val, font_en, 6.5, box_w - 20):
+                    pick_font(line, 6.5)
+                    c.drawString(bx + 5, by, line)
+                    by -= 9
+                by -= 3
+        y -= info_h + 10
+
     # ═══ PAGE 2: Bank Comparison Table ═══
-    banks = form_template.get("bank_comparison", [])
+    banks = form_template.get("bank_comparison", []) or form_template.get("bank_comparison_corporate", [])
     if banks:
         new_page()
         y = HEIGHT - 60
         y = section_heading(y, "BANK COMPARISON", 170)
 
-        # Table header
-        cols = [margin, margin + 95, margin + 195, margin + 265, margin + 310, margin + 350]
-        headers = ["Bank", "English Support", "Min. Residency", "Hanko?", "Debit?", "Best For"]
+        # Detect column layout: corporate has approval_difficulty/screening_time/note;
+        # personal has min_residency/hanko_required/debit_card/best_for
+        is_corporate = "approval_difficulty" in banks[0]
+
+        if is_corporate:
+            cols = [margin, margin + 95, margin + 185, margin + 240, margin + 310]
+            headers = ["Bank", "English Support", "Difficulty", "Screening", "Note"]
+        else:
+            cols = [margin, margin + 95, margin + 195, margin + 265, margin + 310, margin + 350]
+            headers = ["Bank", "English Support", "Min. Residency", "Hanko?", "Debit?", "Best For"]
+
         c.setFillColor(NAVY)
         c.rect(margin, y - 2, WIDTH - 2 * margin, 14, fill=True, stroke=False)
         c.setFillColor(WHITE)
@@ -1736,14 +1985,13 @@ def generate_template_walkthrough(form_template, dictionary, output_path):
             c.drawString(cols[i] + 3, y + 1, h)
         y -= 16
 
-        for bank in banks:
+        for idx, bank in enumerate(banks):
             if y < 60:
                 new_page()
                 y = HEIGHT - 60
 
             row_h = 26
             # Alternating row background
-            idx = banks.index(bank)
             if idx % 2 == 0:
                 c.setFillColor(LGRAY)
                 c.rect(margin, y - row_h + 10, WIDTH - 2 * margin, row_h, fill=True, stroke=False)
@@ -1759,32 +2007,52 @@ def generate_template_walkthrough(form_template, dictionary, output_path):
             # English support (wrap in narrow column)
             c.setFillColor(GRAY)
             c.setFont(font_en, 5.5)
-            support_lines = wrap_text(bank.get("english_support", ""), font_en, 5.5, 95)
+            support_lines = wrap_text(bank.get("english_support", ""), font_en, 5.5, 85)
             for j, sl in enumerate(support_lines[:2]):
                 c.drawString(cols[1] + 3, y + 2 - j * 9, sl)
 
-            # Min residency
-            c.setFillColor(NAVY)
-            c.setFont(font_en, 7)
-            c.drawString(cols[2] + 3, y + 2, bank.get("min_residency", ""))
+            if is_corporate:
+                # Approval difficulty
+                diff = bank.get("approval_difficulty", "")
+                diff_color = RED if "High" in diff or "Very" in diff else NAVY
+                c.setFillColor(diff_color)
+                c.setFont(font_en, 7)
+                c.drawString(cols[2] + 3, y + 2, diff)
 
-            # Hanko
-            hanko = bank.get("hanko_required", False)
-            c.setFillColor(RED if hanko else GREEN)
-            c.setFont(font_en, 7)
-            c.drawString(cols[3] + 3, y + 2, "Yes" if hanko else "No")
+                # Screening time
+                c.setFillColor(NAVY)
+                c.setFont(font_en, 6.5)
+                c.drawString(cols[3] + 3, y + 2, bank.get("screening_time", ""))
 
-            # Debit card
-            debit = bank.get("debit_card", False)
-            c.setFillColor(GREEN if debit else GRAY)
-            c.drawString(cols[4] + 3, y + 2, "Yes" if debit else "No")
+                # Note (wrap)
+                c.setFillColor(GRAY)
+                c.setFont(font_en, 5.5)
+                note_lines = wrap_text(bank.get("note", ""), font_en, 5.5, WIDTH - cols[4] - margin - 5)
+                for j, nl in enumerate(note_lines[:3]):
+                    c.drawString(cols[4] + 3, y + 2 - j * 8, nl)
+            else:
+                # Min residency
+                c.setFillColor(NAVY)
+                c.setFont(font_en, 7)
+                c.drawString(cols[2] + 3, y + 2, bank.get("min_residency", ""))
 
-            # Best for
-            c.setFillColor(GRAY)
-            c.setFont(font_en, 5.5)
-            best_lines = wrap_text(bank.get("best_for", ""), font_en, 5.5, WIDTH - cols[5] - margin - 5)
-            for j, bl in enumerate(best_lines[:2]):
-                c.drawString(cols[5] + 3, y + 2 - j * 9, bl)
+                # Hanko
+                hanko = bank.get("hanko_required", False)
+                c.setFillColor(RED if hanko else GREEN)
+                c.setFont(font_en, 7)
+                c.drawString(cols[3] + 3, y + 2, "Yes" if hanko else "No")
+
+                # Debit card
+                debit = bank.get("debit_card", False)
+                c.setFillColor(GREEN if debit else GRAY)
+                c.drawString(cols[4] + 3, y + 2, "Yes" if debit else "No")
+
+                # Best for
+                c.setFillColor(GRAY)
+                c.setFont(font_en, 5.5)
+                best_lines = wrap_text(bank.get("best_for", ""), font_en, 5.5, WIDTH - cols[5] - margin - 5)
+                for j, bl in enumerate(best_lines[:2]):
+                    c.drawString(cols[5] + 3, y + 2 - j * 9, bl)
 
             y -= row_h + 2
 
@@ -1845,7 +2113,100 @@ def generate_template_walkthrough(form_template, dictionary, output_path):
                 c.drawString(WIDTH - margin - 100, y + 10, doc.get("ja", ""))
 
                 y -= 4
+
+            # Additional documents (e.g. tax refund scenario)
+            additional = scenario.get("additional_documents", [])
+            if additional:
+                y -= 4
+                if y < 80:
+                    new_page()
+                    y = HEIGHT - 60
+                c.setFillColor(BLUE)
+                c.setFont(font_en, 8)
+                c.drawString(margin + 10, y, "Additional Documents for This Scenario:")
+                y -= 14
+
+                for doc in additional:
+                    if y < 60:
+                        new_page()
+                        y = HEIGHT - 60
+
+                    req = doc.get("required", False)
+                    marker = "\u2713" if req else "\u25cb"
+                    c.setFillColor(RED if req else GRAY)
+                    c.setFont(font_ja, 7.5)
+                    c.drawString(margin + 10, y, marker)
+
+                    c.setFillColor(NAVY if req else GRAY)
+                    en_text = doc["en"]
+                    cond = doc.get("condition_en", "")
+                    if cond:
+                        en_text += f"  ({cond})"
+                    for line in wrap_text(en_text, font_en, 7.5, WIDTH - 2 * margin - 130):
+                        pick_font(line, 7.5)
+                        c.drawString(margin + 22, y, line)
+                        y -= 10
+
+                    c.setFillColor(GRAY)
+                    c.setFont(font_ja, 7)
+                    c.drawString(WIDTH - margin - 100, y + 10, doc.get("ja", ""))
+
+                    y -= 4
+
             y -= 12
+
+    # ═══ Process Timeline Page ═══
+    timeline = form_template.get("process_timeline", [])
+    if timeline:
+        new_page()
+        y = HEIGHT - 60
+        y = section_heading(y, "PREPARATION TIMELINE", 210)
+
+        for step_data in timeline:
+            if y < 100:
+                new_page()
+                y = HEIGHT - 60
+
+            step_num = step_data.get("step", "")
+            when = step_data.get("when", "")
+            title_en = step_data.get("title_en", "")
+            title_ja = step_data.get("title_ja", "")
+            details = step_data.get("details_en", "")
+
+            # Step number circle
+            cx = margin + 10
+            cy = y + 3
+            c.setFillColor(BLUE)
+            c.circle(cx, cy, 10, fill=True, stroke=False)
+            c.setFillColor(WHITE)
+            c.setFont(font_en, 9)
+            c.drawCentredString(cx, cy - 3, str(step_num))
+
+            # When label
+            c.setFillColor(BLUE)
+            c.setFont(font_en, 7)
+            c.drawString(margin + 25, y + 6, when)
+
+            # Title (en + ja)
+            c.setFillColor(NAVY)
+            c.setFont(font_en, 9)
+            c.drawString(margin + 25, y - 6, title_en)
+            c.setFillColor(GRAY)
+            c.setFont(font_ja, 7)
+            c.drawString(margin + 25 + pdfmetrics.stringWidth(title_en, font_en, 9) + 10, y - 5, title_ja)
+            y -= 20
+
+            # Details (wrapped)
+            if details:
+                c.setFillColor(HexColor("#444444"))
+                for line in wrap_text(details, font_en, 7, WIDTH - 2 * margin - 35):
+                    if y < 50:
+                        new_page()
+                        y = HEIGHT - 60
+                    pick_font(line, 7)
+                    c.drawString(margin + 30, y, line)
+                    y -= 10
+            y -= 10
 
     # ═══ PAGE 4+: Field-by-Field Translation ═══
     sections = form_template.get("sections", [])
@@ -1896,6 +2257,7 @@ def generate_template_walkthrough(form_template, dictionary, output_path):
                 kanji = field.get("kanji", fid)
                 romaji_f = field.get("romaji", "")
                 english = field.get("english", fid)
+                context_label = field_ref.get("context_label_en", "")
                 tip = field.get("tip_en", "")
 
                 # Field row
@@ -1920,11 +2282,16 @@ def generate_template_walkthrough(form_template, dictionary, output_path):
                 pick_font(romaji_f, 7)
                 c.drawString(margin + 25 + kanji_w + 8, y + 1, romaji_f)
 
-                # English
+                # English + context label
                 c.setFillColor(BLUE)
                 c.setFont(font_en, 8)
-                c.drawString(margin + 200, y + 1, english)
-                y -= 13
+                en_display = english
+                if context_label:
+                    en_display = f"{english} ({context_label})"
+                en_lines = wrap_text(en_display, font_en, 8, WIDTH - margin - 205)
+                for el in en_lines:
+                    c.drawString(margin + 200, y + 1, el)
+                    y -= 13
 
                 # Tip
                 if tip:
@@ -1993,6 +2360,62 @@ def generate_template_walkthrough(form_template, dictionary, output_path):
                 y -= 10
             y -= 10
 
+    # ═══ Totalization Countries Page ═══
+    totalization = form_template.get("totalization_countries", {})
+    if totalization:
+        new_page()
+        y = HEIGHT - 60
+        y = section_heading(y, "TOTALIZATION COUNTRIES", 210)
+
+        # Explanation intro
+        explanation = totalization.get("explanation_en", "")
+        if explanation:
+            box_w = WIDTH - 2 * margin
+            exp_lines = wrap_text(explanation, font_en, 7.5, box_w - 20)
+            box_h = 10 + len(exp_lines) * 11
+            c.setFillColor(HexColor("#fdecea"))
+            c.rect(margin, y - box_h, box_w, box_h, fill=True, stroke=False)
+            c.setStrokeColor(RED)
+            c.setLineWidth(2)
+            c.line(margin, y - box_h, margin, y)
+            bx = margin + 8
+            by = y - 11
+            c.setFillColor(RED)
+            c.setFont(font_en, 7.5)
+            for line in exp_lines:
+                c.drawString(bx, by, line)
+                by -= 11
+            y -= box_h + 12
+
+        # Country list in 3 columns
+        countries = totalization.get("countries", [])
+        if countries:
+            col_w = (WIDTH - 2 * margin) / 3
+            col_x = [margin + col_w * i for i in range(3)]
+            rows = (len(countries) + 2) // 3  # ceil division
+
+            for row_idx in range(rows):
+                if y < 50:
+                    new_page()
+                    y = HEIGHT - 60
+                for col_idx in range(3):
+                    ci = row_idx * 3 + col_idx
+                    if ci < len(countries):
+                        c.setFillColor(NAVY)
+                        c.setFont(font_en, 7.5)
+                        c.drawString(col_x[col_idx] + 5, y, f"\u2022 {countries[ci]}")
+                y -= 12
+
+        # Footer note
+        note = totalization.get("note_en", "")
+        if note:
+            y -= 6
+            c.setFillColor(GRAY)
+            for line in wrap_text(note, font_en, 7, WIDTH - 2 * margin - 10):
+                pick_font(line, 7)
+                c.drawString(margin + 5, y, line)
+                y -= 10
+
     # ═══ Middle Name Guide ═══
     mng = form_template.get("middle_name_guide", {})
     if mng:
@@ -2039,6 +2462,97 @@ def generate_template_walkthrough(form_template, dictionary, output_path):
                     c.drawString(margin + 15, y, line)
                     y -= 9
             y -= 8
+
+    # ═══ Screening Tips Page ═══
+    screening_tips = form_template.get("screening_tips", [])
+    if screening_tips:
+        new_page()
+        y = HEIGHT - 60
+        y = section_heading(y, "SCREENING TIPS", 150)
+
+        for i, tip in enumerate(screening_tips):
+            if y < 100:
+                new_page()
+                y = HEIGHT - 60
+
+            # Tip heading (bold-style)
+            c.setFillColor(NAVY)
+            c.setFont(font_en, 8.5)
+            tip_heading = f"{i + 1}. {tip['tip_en']}"
+            for line in wrap_text(tip_heading, font_en, 8.5, WIDTH - 2 * margin - 15):
+                c.drawString(margin, y, line)
+                y -= 12
+            y -= 2
+
+            # Detail
+            c.setFillColor(HexColor("#444444"))
+            for line in wrap_text(tip["detail_en"], font_en, 7, WIDTH - 2 * margin - 25):
+                pick_font(line, 7)
+                c.drawString(margin + 15, y, line)
+                y -= 10
+            y -= 10
+
+    # ═══ Rejection Handling Page ═══
+    rejection = form_template.get("rejection_handling", {})
+    if rejection:
+        new_page()
+        y = HEIGHT - 60
+        y = section_heading(y, "REJECTION HANDLING", 180)
+
+        # Explanation intro
+        explanation = rejection.get("explanation_en", "")
+        if explanation:
+            c.setFillColor(GRAY)
+            for line in wrap_text(explanation, font_en, 7.5, WIDTH - 2 * margin - 10):
+                pick_font(line, 7.5)
+                c.drawString(margin + 5, y, line)
+                y -= 11
+            y -= 10
+
+        # Common reasons — numbered list
+        reasons = rejection.get("common_reasons", [])
+        if reasons:
+            c.setFillColor(NAVY)
+            c.setFont(font_en, 9)
+            c.drawString(margin, y, "Common reasons for rejection:")
+            y -= 16
+
+            for i, reason in enumerate(reasons):
+                if y < 60:
+                    new_page()
+                    y = HEIGHT - 60
+                c.setFillColor(RED)
+                c.setFont(font_en, 7.5)
+                c.drawString(margin + 5, y, f"{i + 1}.")
+                c.setFillColor(NAVY)
+                for line in wrap_text(reason, font_en, 7.5, WIDTH - 2 * margin - 30):
+                    pick_font(line, 7.5)
+                    c.drawString(margin + 20, y, line)
+                    y -= 11
+                y -= 4
+            y -= 8
+
+        # Next steps — bulleted action list
+        next_steps = rejection.get("next_steps", [])
+        if next_steps:
+            c.setFillColor(NAVY)
+            c.setFont(font_en, 9)
+            c.drawString(margin, y, "Next steps:")
+            y -= 16
+
+            for step in next_steps:
+                if y < 60:
+                    new_page()
+                    y = HEIGHT - 60
+                c.setFillColor(GREEN)
+                c.setFont(font_en, 7)
+                c.drawString(margin + 5, y + 2, "\u25b6")
+                c.setFillColor(HexColor("#444444"))
+                for line in wrap_text(step, font_en, 7, WIDTH - 2 * margin - 25):
+                    pick_font(line, 7)
+                    c.drawString(margin + 18, y, line)
+                    y -= 10
+                y -= 4
 
     # ═══ Counter Phrases Page ═══
     phrases = form_template.get("counter_phrases", [])
@@ -2124,6 +2638,60 @@ def generate_template_walkthrough(form_template, dictionary, output_path):
                 c.drawString(margin + 25, y, line)
                 y -= 10
             y -= 8
+
+        # Mailing address
+        mailing = form_template.get("mailing_address", {})
+        if mailing:
+            if y < 100:
+                new_page()
+                y = HEIGHT - 60
+            y -= 5
+            c.setFillColor(NAVY)
+            c.setFont(font_en, 9)
+            c.drawString(margin, y, "MAILING ADDRESS")
+            y -= 14
+
+            box_w = WIDTH - 2 * margin
+            addr_ja = mailing.get("ja", "")
+            addr_en = mailing.get("en", "")
+            ja_lines = addr_ja.split("\n") if addr_ja else []
+            en_lines = addr_en.split("\n") if addr_en else []
+            box_h = 14 + (len(ja_lines) + len(en_lines)) * 12
+            c.setFillColor(LIGHT)
+            c.rect(margin, y - box_h, box_w, box_h, fill=True, stroke=False)
+            c.setStrokeColor(BLUE)
+            c.setLineWidth(2)
+            c.line(margin, y - box_h, margin, y)
+            bx = margin + 8
+            by = y - 12
+            c.setFillColor(NAVY)
+            c.setFont(font_ja, 9)
+            for line in ja_lines:
+                c.drawString(bx, by, line)
+                by -= 12
+            by -= 4
+            c.setFillColor(GRAY)
+            c.setFont(font_en, 8)
+            for line in en_lines:
+                c.drawString(bx, by, line)
+                by -= 12
+            y -= box_h + 10
+
+        # Download / Info URLs
+        download_url = form_template.get("download_url", "")
+        jps_info_url = form_template.get("jps_info_url", "")
+        if download_url or jps_info_url:
+            if y < 60:
+                new_page()
+                y = HEIGHT - 60
+            c.setFillColor(BLUE)
+            c.setFont(font_en, 7.5)
+            if download_url:
+                c.drawString(margin, y, f"Download form: {download_url}")
+                y -= 12
+            if jps_info_url:
+                c.drawString(margin, y, f"More info: {jps_info_url}")
+                y -= 12
 
     c.save()
     print(f"    Generated {output_path.name}")

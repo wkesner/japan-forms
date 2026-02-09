@@ -1,0 +1,339 @@
+{
+  "_meta": {
+    "form_id": "pension_lump_sum_withdrawal",
+    "version": "0.1.0",
+    "last_updated": "2026-02-09",
+    "confidence": "verified"
+  },
+
+  "names": {
+    "en": "Lump-sum Withdrawal Payment Claim (Pension Refund)",
+    "ja": "脱退一時金請求書",
+    "reading": "だったい いちじきん せいきゅうしょ",
+    "romaji": "Dattai Ichijikin Seikyūsho",
+    "aliases_ja": ["脱退一時金裁定請求書", "年金脱退一時金"],
+    "aliases_en": ["Pension Refund Application", "Pension Lump-sum Withdrawal", "Nenkin Refund"]
+  },
+
+  "legal_basis": {
+    "law": "国民年金法 / 厚生年金保険法",
+    "law_en": "National Pension Act / Employees' Pension Insurance Act",
+    "deadline_days": 730,
+    "deadline_description_en": "Must claim within 2 years of losing your address in Japan (submitting move-out notification). Miss this deadline and you lose the right to claim permanently.",
+    "penalty_en": "No penalty, but failure to claim within 2 years = forfeiture of all pension contributions.",
+    "cost": 0,
+    "cost_note_en": "Free to apply. 20.42% income tax withheld from payment (refundable via tax representative)."
+  },
+
+  "overview": {
+    "difficulty_en": "MEDIUM — The form itself is straightforward, but the overall process has multiple steps spread across months: (1) move-out notification, (2) mail the claim form after departure, (3) wait 3-6 months, (4) receive 80% payment, (5) have tax representative file for the remaining 20%. Many people lose money by making mistakes in steps 4-5. NOTE: June 2025 reform extends the maximum payout period from 60 to 96 months (phased in over 4 years).",
+    "timing_en": "Prepare BEFORE leaving Japan. Submit the move-out notification (転出届) to your ward office ~2 weeks before departure. Mail the claim form to JPS after your planned departure date. You cannot apply while you still have a Japanese address.",
+    "strategy_en": "Designate your tax representative BEFORE leaving Japan. Prepare all documents in advance. Mail the application on or just after your departure date. Use a friend or professional — do NOT skip the 20% tax refund step."
+  },
+
+  "eligibility": {
+    "requirements_en": [
+      "You are NOT a Japanese citizen",
+      "You no longer have an address in Japan (submitted move-out notification)",
+      "You paid National Pension or Employee Pension premiums for 6+ months",
+      "You have NOT qualified for the Old-age Pension (requires 10+ years / 120+ months of contributions)",
+      "You have NEVER received a pension payment (including disability allowance)",
+      "Less than 2 years have passed since you lost your Japanese address"
+    ],
+    "important_warning_en": "If you have 10+ years of pension contributions, you are eligible for the Japanese Old-age Pension at age 60+, which may be worth significantly more than the lump-sum withdrawal. Calculate both amounts before deciding. The lump-sum caps at 60 months of contributions — anything beyond that is lost.",
+    "totalization_warning_en": "Japan has pension totalization agreements with 20+ countries (including USA, UK, Germany, Australia, France, Canada). If you claim the lump-sum withdrawal, those enrollment periods CANNOT be used for totalization. Check if totalization is better for you before claiming."
+  },
+
+  "pension_types": {
+    "national_pension": {
+      "ja": "国民年金",
+      "reading": "こくみん ねんきん",
+      "en": "National Pension (Kokumin Nenkin)",
+      "who": "Self-employed, freelancers, unemployed residents, and student visa holders",
+      "lump_sum_note": "Fixed amounts based on months contributed. See payment table on JPS website."
+    },
+    "employee_pension": {
+      "ja": "厚生年金",
+      "reading": "こうせい ねんきん",
+      "en": "Employee Pension (Kousei Nenkin)",
+      "who": "Company employees — premiums deducted from salary (split 50/50 with employer)",
+      "lump_sum_note": "Amount based on average monthly salary × payment rate × months contributed. Generally larger than National Pension refund."
+    }
+  },
+
+  "process_timeline": [
+    {
+      "step": 1,
+      "when": "2-4 weeks before departure",
+      "title_en": "Prepare documents and designate tax representative",
+      "title_ja": "書類準備・納税管理人の届出",
+      "details_en": "Gather your pension handbook, passport copies, bank details. File the Tax Representative Declaration (納税管理人の届出書) at your local tax office. Get your residence certificate (住民票) with Resident Register Code."
+    },
+    {
+      "step": 2,
+      "when": "~2 weeks before departure",
+      "title_en": "Submit move-out notification at ward office",
+      "title_ja": "転出届の提出",
+      "details_en": "Go to your ward/city office and submit 転出届 (tenshutsu todoke). This officially removes your Japanese address. Ask for a copy of your 住民票 with 住民票コード before they process the move-out."
+    },
+    {
+      "step": 3,
+      "when": "On or after departure date",
+      "title_en": "Mail the claim form to Japan Pension Service",
+      "title_ja": "脱退一時金請求書の郵送",
+      "details_en": "Mail the completed form with all supporting documents to JPS. The form MUST arrive after your planned departure date. You can mail it from overseas or drop it in a Japanese mailbox on your way to the airport."
+    },
+    {
+      "step": 4,
+      "when": "3-6 months after submission",
+      "title_en": "Receive 80% payment",
+      "title_ja": "80%の支給",
+      "details_en": "JPS reviews your application (3-6 months). If approved, 80% of the lump-sum is deposited into your overseas bank account. 20.42% is withheld as income tax. You also receive a Payment Determination Notice (脱退一時金支給決定通知書) by mail."
+    },
+    {
+      "step": 5,
+      "when": "After receiving Payment Determination Notice",
+      "title_en": "Tax representative files for 20% refund",
+      "title_ja": "納税管理人が確定申告",
+      "details_en": "Send the original Payment Determination Notice to your tax representative in Japan. They file a tax return (確定申告書) at your former local tax office. The remaining ~20% is refunded to the tax representative's Japanese bank account, who then transfers it to you."
+    }
+  ],
+
+  "sections": [
+    {
+      "section_id": "pension_number",
+      "title_ja": "基礎年金番号",
+      "title_en": "Basic Pension Number",
+      "section_number": 1,
+      "fields": [
+        {"field_id": "kiso_nenkin_bango", "required": true, "note_en": "10-digit number from your Pension Handbook or Basic Pension Number Notice"},
+        {"field_id": "nenkin_techo_kigou_bango", "required": false, "note_en": "Symbol number from Pension Handbook, if applicable. Can be left blank for most applicants."}
+      ]
+    },
+    {
+      "section_id": "personal_info",
+      "title_ja": "請求者情報",
+      "title_en": "Claimant Information",
+      "section_number": 2,
+      "note_en": "Write EVERYTHING in CAPITAL ROMAN LETTERS",
+      "fields": [
+        {"field_id": "shimei", "required": true, "note_en": "Full name as it appears on your passport. Write in CAPITAL LETTERS."},
+        {"field_id": "seinengappi", "required": true},
+        {"field_id": "kokuseki", "required": true},
+        {"field_id": "kaigai_jusho", "required": true, "note_en": "Your address OUTSIDE Japan where JPS can reach you by mail. Critical — if they can't reach you, your claim stalls."},
+        {"field_id": "denwa_bango", "required": true, "note_en": "International phone number including country code"}
+      ]
+    },
+    {
+      "section_id": "bank_transfer",
+      "title_ja": "振込先口座情報",
+      "title_en": "Bank Account for Payment Transfer",
+      "section_number": 3,
+      "note_en": "For overseas accounts, payment is in foreign currency. For Japanese accounts, payment is in yen. The account MUST be in YOUR name.",
+      "fields": [
+        {"field_id": "ginko_mei", "required": true},
+        {"field_id": "shiten_mei", "required": true, "note_en": "Branch name AND full address"},
+        {"field_id": "koza_bango", "required": true, "note_en": "Your account number"},
+        {"field_id": "koza_meigi", "required": true, "note_en": "Account holder name — must match the claimant name exactly"},
+        {"field_id": "swift_code", "required": true, "note_en": "Required for overseas banks. 8 or 11 characters."},
+        {"field_id": "iban", "required": false, "note_en": "Required for European banks. US/Australia/Japan don't use IBAN."}
+      ]
+    },
+    {
+      "section_id": "claim_confirmation",
+      "title_ja": "請求の意思確認",
+      "title_en": "Confirmation of Intent",
+      "section_number": 4,
+      "note_en": "You must circle '請求する' (I claim the payment). This acknowledges that claiming forfeits your pension enrollment period — it cannot be used for future pension benefits or totalization agreements.",
+      "fields": [
+        {"field_id": "seikyuu_ishi_kakunin", "required": true},
+        {"field_id": "shomei", "required": true, "note_en": "Sign your name as it appears on your passport"}
+      ]
+    }
+  ],
+
+  "scenarios": {
+    "standard_departure": {
+      "title_en": "Standard Departure (Leaving Japan Permanently)",
+      "title_ja": "通常の帰国",
+      "documents_required": [
+        {"ja": "脱退一時金請求書", "en": "Lump-sum Withdrawal Payment Claim Form (download from JPS website)", "required": true},
+        {"ja": "パスポートのコピー", "en": "Passport copy — page showing name, DOB, nationality, signature, residence status, AND departure stamp", "required": true},
+        {"ja": "年金手帳または基礎年金番号通知書のコピー", "en": "Copy of Pension Handbook or Basic Pension Number Notice", "required": true},
+        {"ja": "銀行口座の証明", "en": "Bank account verification: bankbook copy, bank stamp on form, OR recent bank statement", "required": true},
+        {"ja": "転出届の写し（任意）", "en": "Copy of move-out notification (optional but recommended — proves you left Japan)", "required": false},
+        {"ja": "住民票コード記載の住民票", "en": "Residence certificate with Resident Register Code (get this BEFORE submitting move-out)", "required": false, "condition_en": "Strongly recommended — speeds up processing"}
+      ]
+    },
+    "with_tax_refund": {
+      "title_en": "Full Process Including 20% Tax Refund",
+      "title_ja": "20%税金還付を含む手続き",
+      "additional_documents": [
+        {"ja": "納税管理人の届出書", "en": "Tax Representative Declaration Form (filed at your local tax office BEFORE leaving)", "required": true},
+        {"ja": "脱退一時金支給決定通知書（原本）", "en": "Payment Determination Notice (original — sent to you after 80% payment, forward to tax rep)", "required": true},
+        {"ja": "確定申告書", "en": "Tax Return Forms (第一表, 第二表, 第三表) — your tax representative files these", "required": true},
+        {"ja": "パスポートのコピー", "en": "Passport copy (for tax representative to submit)", "required": true},
+        {"ja": "マイナンバー記載の住民票", "en": "Residence certificate showing My Number (get before leaving)", "required": true}
+      ]
+    }
+  },
+
+  "counter_phrases": [
+    {
+      "situation_en": "At the pension office — requesting the form",
+      "ja": "脱退一時金の請求書をください",
+      "romaji": "Dattai ichijikin no seikyūsho wo kudasai",
+      "en": "Please give me the lump-sum withdrawal claim form"
+    },
+    {
+      "situation_en": "Explaining you're leaving Japan",
+      "ja": "来月日本を離れるので、年金の脱退一時金を請求したいです",
+      "romaji": "Raigetsu nihon wo hanareru node, nenkin no dattai ichijikin wo seikyū shitai desu",
+      "en": "I'm leaving Japan next month and want to claim my pension lump-sum withdrawal"
+    },
+    {
+      "situation_en": "Asking about your pension number",
+      "ja": "基礎年金番号を確認したいのですが",
+      "romaji": "Kiso nenkin bangō wo kakunin shitai no desu ga",
+      "en": "I'd like to confirm my Basic Pension Number"
+    },
+    {
+      "situation_en": "Asking about the tax representative",
+      "ja": "納税管理人の届出書はどこで入手できますか？",
+      "romaji": "Nōzei kanrinin no todokesho wa doko de nyūshu dekimasu ka?",
+      "en": "Where can I get the Tax Representative Declaration form?"
+    },
+    {
+      "situation_en": "Asking about totalization agreements",
+      "ja": "私の国と日本の間に年金の通算協定はありますか？",
+      "romaji": "Watashi no kuni to nihon no aida ni nenkin no tsūsan kyōtei wa arimasu ka?",
+      "en": "Is there a pension totalization agreement between my country and Japan?"
+    },
+    {
+      "situation_en": "Asking how much you'll receive",
+      "ja": "脱退一時金はいくらぐらいもらえますか？",
+      "romaji": "Dattai ichijikin wa ikura gurai moraemasu ka?",
+      "en": "Roughly how much will I receive from the lump-sum withdrawal?"
+    },
+    {
+      "situation_en": "At the ward office — submitting move-out notification",
+      "ja": "転出届を出したいです。あと、住民票コード付きの住民票もお願いします",
+      "romaji": "Tenshutsu todoke wo dashitai desu. Ato, jūminhyō kōdo tsuki no jūminhyō mo onegai shimasu",
+      "en": "I'd like to submit a move-out notification. Also, a residence certificate with the Resident Register Code please."
+    },
+    {
+      "situation_en": "At the tax office — filing tax representative form",
+      "ja": "納税管理人の届出をしたいのですが",
+      "romaji": "Nōzei kanrinin no todokede wo shitai no desu ga",
+      "en": "I'd like to file a Tax Representative Declaration"
+    }
+  ],
+
+  "after_submission": [
+    {
+      "step": 1,
+      "ja": "日本年金機構で審査（3〜6ヶ月）",
+      "en": "JPS reviews your application — typically 3-6 months. They may send questions by mail to your overseas address."
+    },
+    {
+      "step": 2,
+      "ja": "80%の脱退一時金が海外口座に振込",
+      "en": "80% of the lump-sum is deposited to your bank account (20.42% withheld as tax)."
+    },
+    {
+      "step": 3,
+      "ja": "脱退一時金支給決定通知書が届く",
+      "en": "Payment Determination Notice (脱退一時金支給決定通知書) arrives by mail. KEEP THE ORIGINAL — you need it for the tax refund."
+    },
+    {
+      "step": 4,
+      "ja": "原本を日本の納税管理人に送付",
+      "en": "Send the original notice to your tax representative in Japan."
+    },
+    {
+      "step": 5,
+      "ja": "納税管理人が確定申告を提出",
+      "en": "Tax representative files a tax return (確定申告) at your former local tax office."
+    },
+    {
+      "step": 6,
+      "ja": "残りの約20%が納税管理人の口座に還付",
+      "en": "The ~20% tax refund is deposited into tax representative's Japanese bank account (1-4 months after filing)."
+    },
+    {
+      "step": 7,
+      "ja": "納税管理人があなたの海外口座に送金",
+      "en": "Tax representative transfers the refund to your overseas account."
+    }
+  ],
+
+  "common_mistakes": [
+    {
+      "mistake_en": "Applying before leaving Japan",
+      "fix_en": "You CANNOT apply while you still have an address in Japan. Submit the move-out notification first, then mail the form on or after your departure date."
+    },
+    {
+      "mistake_en": "Waiting more than 2 years to apply",
+      "fix_en": "The 2-year deadline is absolute. Set a calendar reminder. You lose everything if you miss it."
+    },
+    {
+      "mistake_en": "Not designating a tax representative before leaving",
+      "fix_en": "Without a tax representative, you forfeit the 20% tax refund (~20% of your entire pension refund). File the 納税管理人の届出書 at your local tax office BEFORE departure."
+    },
+    {
+      "mistake_en": "Providing an unreliable overseas address",
+      "fix_en": "JPS communicates ONLY by postal mail. If they can't reach you (wrong address, you moved), your claim stalls indefinitely. Use a stable address or a mail forwarding service."
+    },
+    {
+      "mistake_en": "Bank account name doesn't match passport name",
+      "fix_en": "The name on your bank account must EXACTLY match your name on the claim form and passport. Middle name mismatches are the #1 cause of payment delays."
+    },
+    {
+      "mistake_en": "Not getting the bank stamp on the form",
+      "fix_en": "The form has a section for your bank's official stamp (銀行証明印). If you can't get the stamp, attach a copy of your bankbook or recent statement instead."
+    },
+    {
+      "mistake_en": "Claiming when totalization would be better",
+      "fix_en": "Japan has pension totalization agreements with 20+ countries. If you've contributed to pensions in both Japan and your home country, totalization might give you a MUCH larger benefit at retirement than the lump-sum. Check before you claim — this decision is irreversible."
+    },
+    {
+      "mistake_en": "Losing the Payment Determination Notice",
+      "fix_en": "This original document (脱退一時金支給決定通知書) is required for the 20% tax refund. Make a copy before sending the original to your tax representative."
+    },
+    {
+      "mistake_en": "Forgetting the departure stamp in passport copy",
+      "fix_en": "JPS wants to see your departure stamp. Make sure you go through manned immigration (not automated gates) on your last departure, or request a stamp."
+    },
+    {
+      "mistake_en": "Not getting 住民票 with 住民票コード before submitting move-out",
+      "fix_en": "Request your residence certificate WITH Resident Register Code at the ward office BEFORE they process your move-out. You can't get it after. This speeds up JPS processing."
+    }
+  ],
+
+  "totalization_countries": {
+    "explanation_en": "Japan has social security agreements (pension totalization) with these countries. Pension periods in Japan can be combined with periods in these countries to qualify for benefits. If you claim the lump-sum withdrawal, you LOSE these periods permanently.",
+    "countries": [
+      "Germany", "USA", "Belgium", "France", "Canada", "Australia",
+      "Netherlands", "Czech Republic", "Spain", "Ireland", "Brazil",
+      "Switzerland", "Hungary", "India", "Luxembourg", "Philippines",
+      "Slovakia", "Finland", "Sweden", "China", "Italy", "United Kingdom"
+    ],
+    "note_en": "Agreements vary by country. Some only cover specific pension types. Check the JPS website or contact your home country's social security agency for details."
+  },
+
+  "payment_amounts": {
+    "national_pension_note": "Fixed amounts based on months contributed. As of FY2024: 6-11 months = ¥50,940; 12-17 months = ¥101,880; up to 60 months maximum.",
+    "employee_pension_note": "Calculated as: Average Standard Remuneration × Payment Rate (18.3% × 0.5 × months). Example: ¥300,000 average salary × 3 years = approximately ¥990,000 before tax.",
+    "maximum_months": 96,
+    "maximum_months_note": "The lump-sum caps at 96 months (8 years) of contributions as of the June 2025 reform. Any contributions beyond 96 months are NOT refunded. This is the biggest reason to consider totalization if you've worked in Japan for many years.",
+    "reform_note_en": "June 2025 pension reform: The maximum payout period was extended from 60 months (5 years) to 96 months (8 years). This change is being phased in over 4 years. Check the JPS website for the current applicable cap based on when you file."
+  },
+
+  "mailing_address": {
+    "ja": "〒168-8505 東京都杉並区高井戸西3丁目5番24号\n日本年金機構（外国業務グループ）",
+    "en": "Japan Pension Service (Foreign Business Group)\n3-5-24 Takaido-Nishi, Suginami-ku, Tokyo 168-8505\nJAPAN"
+  },
+
+  "download_url": "https://www.nenkin.go.jp/international/japanese-system/withdrawalpayment/payment.files/A.pdf",
+  "jps_info_url": "https://www.nenkin.go.jp/international/japanese-system/withdrawalpayment/payment.html"
+}

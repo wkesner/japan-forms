@@ -136,10 +136,12 @@ WARDS = {
     "kita": {
         "name_ja": "北区",
         "name_en": "Kita Ward",
-        "domain": "https://www.city.kita.tokyo.jp",
-        "download_index": "https://www.city.kita.tokyo.jp/koseki/kurashi/koseki/hikkoshi/jusho.html",
-        "direct_pdfs": [],
-        "notes": "",
+        "domain": "https://www.city.kita.lg.jp",
+        "download_index": "https://www.city.kita.lg.jp/living/registration/1001564/1001568.html",
+        "direct_pdfs": [
+            "https://www.city.kita.lg.jp/_res/projects/default_project/_page_/001/001/568/idoutodokdesyo20260105.pdf",
+        ],
+        "notes": "Domain changed from city.kita.tokyo.jp to city.kita.lg.jp",
     },
     "koto": {
         "name_ja": "江東区",
@@ -225,9 +227,12 @@ WARDS = {
         "name_ja": "杉並区",
         "name_en": "Suginami Ward",
         "domain": "https://www.city.suginami.tokyo.jp",
-        "download_index": "https://www.city.suginami.tokyo.jp/guide/annai/hikkoshi/index.html",
-        "direct_pdfs": [],
-        "notes": "",
+        "download_index": "https://www.city.suginami.tokyo.jp/shinseisho/koseki/tenshutsu/1005939.html",
+        "direct_pdfs": [
+            "https://www.city.suginami.tokyo.jp/documents/8731/todokedesyo1229.pdf",
+            "https://www.city.suginami.tokyo.jp/documents/8731/kinyurei1229.pdf",
+        ],
+        "notes": "Domain migrating to suginami.lg.jp but old domain still serves files",
     },
     "sumida": {
         "name_ja": "墨田区",
