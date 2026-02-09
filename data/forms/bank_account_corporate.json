@@ -2,7 +2,7 @@
   "_meta": {
     "form_id": "bank_account_corporate",
     "version": "0.1.0",
-    "last_updated": "2025-02-07",
+    "last_updated": "2026-02-09",
     "confidence": "verified"
   },
 
@@ -32,11 +32,10 @@
   },
 
   "business_manager_visa_context": {
-    "capital_requirement_current": "¥5,000,000 (until October 2025)",
-    "capital_requirement_new": "¥30,000,000 (from October 2025)",
+    "capital_requirement": "¥30,000,000 (raised from ¥5,000,000 in October 2025)",
     "capital_note_en": "The capital must be deposited into your personal account first (as proof of funds during incorporation), then transferred to the corporate account after registration. Banks and immigration both want to see this paper trail.",
-    "employee_requirement": "2+ full-time employees (from October 2025, previously 'or' with capital requirement, now both required)",
-    "japanese_ability_note": "JLPT N2 or equivalent now required for at least the applicant or one full-time employee (from October 2025)",
+    "employee_requirement": "2+ full-time employees (both capital AND employee requirements must be met since October 2025)",
+    "japanese_ability_note": "JLPT N2 or equivalent required for at least the applicant or one full-time employee (since October 2025)",
     "physical_office_note": "Banks strongly prefer a dedicated physical office. Virtual offices and residential addresses are frequently rejected. Lease agreement will be requested."
   },
 

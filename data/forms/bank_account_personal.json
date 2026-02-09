@@ -2,7 +2,7 @@
   "_meta": {
     "form_id": "bank_account_personal",
     "version": "0.1.0",
-    "last_updated": "2025-02-07",
+    "last_updated": "2026-02-09",
     "confidence": "verified"
   },
 
@@ -57,7 +57,7 @@
     {
       "bank_ja": "ソニー銀行",
       "bank_en": "Sony Bank",
-      "english_support": "English app signup, English live chat. Note: new English applications stopped June 2025.",
+      "english_support": "English live chat available. Note: English app signup discontinued since June 2025.",
       "min_residency": "6 months",
       "hanko_required": false,
       "debit_card": true,
