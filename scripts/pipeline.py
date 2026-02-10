@@ -33,12 +33,15 @@ OUTPUT_DIR = BASE_DIR / "output" / "walkthroughs"
 CACHE_PATH = BASE_DIR / "translations_cache.json"
 
 # ── Form zones for 住民異動届 (pdfplumber y-coordinates) ──
+# A4 page height is ~842 points. Extended to capture full page content.
 DEFAULT_ZONES = [
     {"name": "Header & Dates",   "title_en": "Header & Dates",   "title_ja": "タイトル・届出日",    "y_min": 0,   "y_max": 65},
     {"name": "Who Is Filing",    "title_en": "Who Is Filing",     "title_ja": "届出人情報",          "y_min": 65,  "y_max": 145},
     {"name": "Addresses",        "title_en": "Addresses",         "title_ja": "住所",                "y_min": 140, "y_max": 255},
     {"name": "Person Table",     "title_en": "Person Table",      "title_ja": "異動者",              "y_min": 250, "y_max": 500},
-    {"name": "Staff Section",    "title_en": "Staff Section",     "title_ja": "職員記入欄",          "y_min": 500, "y_max": 600},
+    {"name": "ID & Documents",   "title_en": "ID & Documents",    "title_ja": "本人確認書類",        "y_min": 500, "y_max": 650},
+    {"name": "Instructions",     "title_en": "Instructions",      "title_ja": "記入方法・注意事項",  "y_min": 650, "y_max": 750},
+    {"name": "Footer & Notes",   "title_en": "Footer & Notes",    "title_ja": "備考・その他",        "y_min": 750, "y_max": 900},
 ]
 
 

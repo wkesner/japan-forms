@@ -1,0 +1,12 @@
+# Core PDF processing
+pdfplumber>=0.10.0
+pdf2image>=1.16.0
+Pillow>=10.0.0
+reportlab>=4.0.0
+
+# LLM translation
+anthropic>=0.18.0
+
+# Scraping (optional)
+requests>=2.31.0
+beautifulsoup4>=4.12.0

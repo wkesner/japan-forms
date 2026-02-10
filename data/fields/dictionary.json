@@ -862,6 +862,138 @@
         "pension_withdrawal"
       ],
       "confidence": "verified"
+    },
+    "honnin_kakunin_shorui": {
+      "kanji": "本人確認書類",
+      "reading": "ほんにんかくにんしょるい",
+      "romaji": "Honnin kakunin shorui",
+      "english": "Identity verification documents",
+      "category": "identification",
+      "tip_en": "Documents that prove your identity. Primary: Residence Card, Passport, My Number Card. Secondary: Health Insurance Card, Driver's License.",
+      "appears_on": [
+        "residence_registration",
+        "juminhyo_request",
+        "seal_registration"
+      ],
+      "confidence": "verified"
+    },
+    "ido_kubun": {
+      "kanji": "異動区分",
+      "reading": "いどうくぶん",
+      "romaji": "Idō kubun",
+      "english": "Type of address change",
+      "category": "move_type",
+      "tip_en": "Circle the type of move: 転入 (moving in), 転出 (moving out), 転居 (within municipality).",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "verified"
+    },
+    "setainushi": {
+      "kanji": "世帯主",
+      "reading": "せたいぬし",
+      "romaji": "Setainushi",
+      "english": "Head of household",
+      "category": "household",
+      "tip_en": "The primary person in a household for registration purposes. If you live alone, you are the head of household.",
+      "appears_on": [
+        "residence_registration",
+        "juminhyo_request"
+      ],
+      "confidence": "verified"
+    },
+    "yuso_todokede_yo": {
+      "kanji": "郵送届出用",
+      "reading": "ゆうそうとどけでよう",
+      "romaji": "Yūsō todokede yō",
+      "english": "For postal submission",
+      "category": "instructions",
+      "tip_en": "Indicates this form or section is for mailing in. Follow postal submission instructions carefully.",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "verified"
+    },
+    "tenshutsu_shomeisho": {
+      "kanji": "転出証明書",
+      "reading": "てんしゅつしょうめいしょ",
+      "romaji": "Tenshutsu shōmeisho",
+      "english": "Certificate of Moving Out",
+      "category": "documents",
+      "tip_en": "Document issued by your previous ward when you move out. Required when registering at your new ward (転入届).",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "verified"
+    },
+    "my_number_card": {
+      "kanji": "マイナンバーカード",
+      "reading": "まいなんばーかーど",
+      "romaji": "Mainanbā kādo",
+      "english": "My Number Card",
+      "category": "identification",
+      "tip_en": "Plastic IC card with your 12-digit Individual Number. Can be used as primary ID. Apply at your ward office after receiving the notification letter.",
+      "appears_on": [
+        "residence_registration",
+        "juminhyo_request"
+      ],
+      "confidence": "verified",
+      "aliases": [
+        "個人番号カード"
+      ]
+    },
+    "zairyu_card": {
+      "kanji": "在留カード",
+      "reading": "ざいりゅうかーど",
+      "romaji": "Zairyū kādo",
+      "english": "Residence Card",
+      "category": "identification",
+      "tip_en": "ID card for foreign residents with mid- to long-term visas. Issued at the airport or immigration office. Must carry at all times.",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "official"
+    },
+    "biko": {
+      "kanji": "備考",
+      "reading": "びこう",
+      "romaji": "Bikō",
+      "english": "Remarks / Notes",
+      "category": "other",
+      "tip_en": "Space for additional information or special circumstances. Usually optional.",
+      "appears_on": [
+        "residence_registration",
+        "bank_account"
+      ],
+      "confidence": "verified"
+    },
+    "kinyu_rei": {
+      "kanji": "記入例",
+      "reading": "きにゅうれい",
+      "romaji": "Kinyū rei",
+      "english": "Example of how to fill in",
+      "category": "instructions",
+      "tip_en": "Sample form showing how to complete each field. Study this before filling your own form.",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "verified"
+    },
+    "shokuinran": {
+      "kanji": "職員記入欄",
+      "reading": "しょくいんきにゅうらん",
+      "romaji": "Shokuin kinyū ran",
+      "english": "Staff use only / Office use only",
+      "category": "instructions",
+      "tip_en": "Section for ward office staff. Do not write anything here.",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "verified",
+      "aliases": [
+        "係員記入欄",
+        "事務処理欄"
+      ]
     }
   }
 }
