@@ -45,6 +45,56 @@ DEFAULT_ZONES = [
 ]
 
 
+def create_dynamic_zones_for_fields(fields, page_height_pts, max_fields_per_zone=15):
+    """
+    Create zones dynamically based on actual field positions.
+
+    Used for OCR pages where predefined A4 zones don't apply.
+    Groups fields by y-position into chunks of max_fields_per_zone.
+
+    Args:
+        fields: List of field dicts with y0, y1 coordinates
+        page_height_pts: Page height in points
+        max_fields_per_zone: Max fields per zone (for readable output)
+
+    Returns:
+        List of zone dicts with y_min, y_max based on actual field positions
+    """
+    if not fields:
+        return []
+
+    # Sort fields by y position
+    sorted_fields = sorted(fields, key=lambda f: f.get("y0", 0))
+
+    zones = []
+    zone_num = 1
+
+    # Group into chunks
+    for i in range(0, len(sorted_fields), max_fields_per_zone):
+        chunk = sorted_fields[i:i + max_fields_per_zone]
+        if not chunk:
+            continue
+
+        # Get y bounds for this chunk
+        y_min = min(f.get("y0", 0) for f in chunk)
+        y_max = max(f.get("y1", f.get("y0", 0) + 20) for f in chunk)
+
+        # Add padding
+        y_min = max(0, y_min - 15)
+        y_max = min(page_height_pts, y_max + 15)
+
+        zones.append({
+            "name": f"Section {zone_num}",
+            "title_en": f"Section {zone_num}",
+            "title_ja": f"セクション {zone_num}",
+            "y_min": y_min,
+            "y_max": y_max,
+        })
+        zone_num += 1
+
+    return zones
+
+
 # ═══════════════════════════════════════════
 # DATA LOADING
 # ═══════════════════════════════════════════
@@ -131,6 +181,39 @@ def register_fonts():
 # ═══════════════════════════════════════════
 # TEXT EXTRACTION
 # ═══════════════════════════════════════════
+
+def classify_pdf_pages(pdf_path, min_chars=50):
+    """
+    Classify each page of a PDF as 'text' or 'image' based on extractable
+    character count.
+
+    Args:
+        pdf_path: Path to PDF file
+        min_chars: Minimum extractable characters to consider a page text-based
+
+    Returns:
+        List of dicts: [{"page": 0, "type": "text"|"image", "char_count": 152}, ...]
+    """
+    import pdfplumber
+
+    results = []
+    try:
+        with pdfplumber.open(pdf_path) as pdf:
+            for i, page in enumerate(pdf.pages):
+                char_count = len(page.chars)
+                page_type = "text" if char_count >= min_chars else "image"
+                results.append({
+                    "page": i,
+                    "type": page_type,
+                    "char_count": char_count,
+                    "width_pts": float(page.width),
+                    "height_pts": float(page.height),
+                })
+    except Exception as e:
+        print(f"  WARN: Could not classify PDF: {e}")
+
+    return results
+
 
 def find_best_page(pdf_path, min_chars=50):
     """
@@ -282,11 +365,19 @@ def fields_in_zone(fields, zone, padding=10):
 
     Args:
         padding: Extra points to add to zone boundaries to catch edge cases.
+
+    If zone has a 'page' attribute, only fields from that page are considered.
     """
     result = []
     y_min = zone["y_min"] - padding
     y_max = zone["y_max"] + padding
+    zone_page = zone.get("page")  # None for non-page-specific zones
+
     for f in fields:
+        # If zone is page-specific, skip fields from other pages
+        if zone_page is not None and f.get("page") != zone_page:
+            continue
+
         y_center = (f["y0"] + f["y1"]) / 2
         if y_min <= y_center <= y_max:
             result.append(f)
@@ -326,6 +417,11 @@ def collect_unassigned_fields(fields, zones, padding=10):
 
 def ocr_with_vision(page_image, page_height_pts=842):
     """
+    DEPRECATED: Use ocr_extract_translate_locate() instead.
+
+    This function tries to extract text AND positions in one shot,
+    which breaks for non-A4 aspect ratios.
+
     Use Claude vision to OCR text from a scanned PDF page image.
 
     Returns list of field groups similar to cluster_fields output.
@@ -434,6 +530,119 @@ Return ONLY the JSON array, no other text."""
     except Exception as e:
         print(f"  WARN: OCR failed: {e}")
         return []
+
+
+def ocr_extract_translate_locate(
+    page_image,
+    page_width_pts=595,
+    page_height_pts=842,
+    dictionary=None,
+    cache=None,
+    use_llm=True
+):
+    """
+    New OCR workflow: Extract text+positions → Translate.
+
+    Uses a single Vision API call to get both text and positions,
+    then translates. Works with any aspect ratio.
+
+    Args:
+        page_image: PIL Image of the page
+        page_width_pts: PDF page width in points
+        page_height_pts: PDF page height in points
+        dictionary: Field dictionary for translation
+        cache: Translation cache
+        use_llm: Whether to use LLM for unknown terms
+
+    Returns:
+        Tuple of (fields, translation_stats)
+        fields: List of field dicts with text, positions, and translations
+        translation_stats: Dict with dict_hits, frag_hits, llm_hits, unknown counts
+    """
+    if page_image is None:
+        return [], {"dict_hits": 0, "frag_hits": 0, "llm_hits": 0, "unknown": 0}
+
+    # Import OCR module
+    try:
+        from ocr import extract_text_from_image
+    except ImportError:
+        # Try relative import
+        import sys
+        scripts_dir = Path(__file__).parent
+        if str(scripts_dir) not in sys.path:
+            sys.path.insert(0, str(scripts_dir))
+        from ocr import extract_text_from_image
+
+    stats = {"dict_hits": 0, "frag_hits": 0, "llm_hits": 0, "unknown": 0}
+
+    # Step 1: Extract Japanese text WITH positions (easyOCR + dictionary + Vision)
+    print("    OCR: Extracting text and positions...")
+    items = extract_text_from_image(page_image, include_positions=True,
+                                    dictionary=dictionary)
+
+    if not items:
+        print("    OCR: No text found")
+        return [], stats
+
+    print(f"    OCR: Found {len(items)} text items with positions")
+
+    # Step 2: Translate and build fields
+    print("    OCR: Translating...")
+    fields = []
+
+    for item in items:
+        ja_text = item.get("text", "").strip()
+        if not ja_text or len(ja_text) < 2:
+            continue
+
+        # Convert percentage positions to PDF points
+        x_pct = item.get("x_pct", 50)
+        y_pct = item.get("y_pct", 50)
+        w_pct = item.get("w_pct", 5)  # Width percentage
+        h_pct = item.get("h_pct", 2)  # Height percentage
+
+        # Calculate bounding box from center + size
+        width_pts = (w_pct / 100) * page_width_pts
+        height_pts = (h_pct / 100) * page_height_pts
+        x_center = (x_pct / 100) * page_width_pts
+        y_center = (y_pct / 100) * page_height_pts
+
+        x0 = x_center - width_pts / 2
+        y0 = y_center - height_pts / 2
+        x1 = x_center + width_pts / 2
+        y1 = y_center + height_pts / 2
+
+        # Translate
+        result = translate_field(ja_text, cache, dictionary, use_llm=use_llm)
+
+        # Track stats
+        t = result.get("type", "")
+        if t == "dictionary":
+            stats["dict_hits"] += 1
+        elif t == "fragment":
+            stats["frag_hits"] += 1
+        elif t == "llm":
+            stats["llm_hits"] += 1
+        elif t == "unknown":
+            stats["unknown"] += 1
+
+        fields.append({
+            "text": ja_text,
+            "x0": x0,
+            "y0": y0,
+            "x1": x1,
+            "y1": y1,
+            "char_count": len(ja_text),
+            "translation": {
+                "ja": ja_text,
+                "en": result.get("en", ""),
+                "type": result.get("type", "unknown"),
+                "note": result.get("note", ""),
+            },
+        })
+
+    print(f"    OCR: Processed {len(fields)} fields")
+    return fields, stats
 
 
 # ═══════════════════════════════════════════
@@ -867,8 +1076,18 @@ def annotate_section_image(cropped_image, zone_translations, zone, page_height_p
     # First pass: compute field pixel positions and place circles
     placements = []  # list of (cx, cy, field_x, field_y, entry)
     for idx, entry in enumerate(sorted_trans):
-        field_y_px = entry.get("y0", 0) * scale - crop_y_top_px + 4
-        field_x_px = entry.get("x0", 0) * scale
+        # Use center of field if bounding box available, otherwise use x0/y0
+        if "x1" in entry and "y1" in entry:
+            # OCR fields with bounding box - use center
+            field_y_pts = (entry.get("y0", 0) + entry.get("y1", 0)) / 2
+            field_x_pts = (entry.get("x0", 0) + entry.get("x1", 0)) / 2
+        else:
+            # Text-based fields - use x0/y0 (top-left)
+            field_y_pts = entry.get("y0", 0)
+            field_x_pts = entry.get("x0", 0)
+
+        field_y_px = field_y_pts * scale - crop_y_top_px + 4
+        field_x_px = field_x_pts * scale
         # Clamp field position to image bounds
         field_x_px = int(max(2, min(img_w - 2, field_x_px)))
         field_y_px = int(max(2, min(img_h - 2, field_y_px)))
@@ -3044,39 +3263,71 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
 
     num_pages = 1
     page_heights = []
+    page_widths = []
     try:
         with pdfplumber.open(pdf_path) as pdf:
             num_pages = len(pdf.pages)
             page_heights = [float(p.height) for p in pdf.pages]
+            page_widths = [float(p.width) for p in pdf.pages]
     except Exception:
         page_heights = [842]  # A4 default
+        page_widths = [595]   # A4 default
 
     # Extract and cluster fields from each page
-    all_fields = []  # List of (page_num, fields_list)
+    all_fields = []  # List of (page_num, fields_list, is_ocr)
+    ocr_translations = {}  # Pre-computed translations from OCR workflow
     total_chars = 0
+    ocr_stats = {"dict_hits": 0, "frag_hits": 0, "llm_hits": 0, "unknown": 0}
+
+    # Classify pages upfront (text vs image)
+    MIN_CHARS_FOR_TEXT = 50
+    page_classifications = classify_pdf_pages(pdf_path, min_chars=MIN_CHARS_FOR_TEXT)
+    text_pages = sum(1 for p in page_classifications if p["type"] == "text")
+    image_pages = sum(1 for p in page_classifications if p["type"] == "image")
+    print(f"    Page classification: {text_pages} text-based, {image_pages} image-based")
 
     for page_num in range(num_pages):
         chars = extract_text(pdf_path, page_num=page_num)
         page_height_pts = page_heights[page_num] if page_num < len(page_heights) else 842
+        page_width_pts = page_widths[page_num] if page_num < len(page_widths) else 595
+        is_ocr_page = False
 
-        if not chars:
-            # Try OCR for this page
+        # Use OCR if page is classified as image-based (< MIN_CHARS_FOR_TEXT chars)
+        if len(chars) < MIN_CHARS_FOR_TEXT:
             page_image_for_ocr = render_page_image(pdf_path, page_num=page_num, dpi=200)
             if page_image_for_ocr and use_llm:
-                print(f"    Page {page_num + 1}: OCR extracting...")
-                fields = ocr_with_vision(page_image_for_ocr, page_height_pts)
+                page_label = f"image ({len(chars)} chars)" if chars else "image"
+                print(f"    Page {page_num + 1} [{page_label}]: Using OCR workflow...")
+                fields, page_stats = ocr_extract_translate_locate(
+                    page_image_for_ocr,
+                    page_width_pts=page_width_pts,
+                    page_height_pts=page_height_pts,
+                    dictionary=dictionary,
+                    cache=cache,
+                    use_llm=use_llm
+                )
+                is_ocr_page = True
+                # Accumulate OCR stats
+                for k in ocr_stats:
+                    ocr_stats[k] += page_stats.get(k, 0)
+                # Store pre-computed translations
+                for f in fields:
+                    if "translation" in f:
+                        ocr_translations[f["text"]] = f["translation"]
             else:
                 fields = []
         else:
+            print(f"    Page {page_num + 1} [text ({len(chars)} chars)]: Extracting fields...")
             fields = cluster_fields(chars)
 
         if fields:
-            # Keep original y-coordinates, just track page number
+            # Keep original y-coordinates, just track page number and OCR flag
             for f in fields:
                 f["page"] = page_num
+                f["is_ocr"] = is_ocr_page
             all_fields.append((page_num, fields, page_height_pts))
-            total_chars += len(chars)
-            print(f"    Page {page_num + 1}: {len(chars)} chars, {len(fields)} fields")
+            total_chars += len(chars) if chars else sum(f.get("char_count", 0) for f in fields)
+            print(f"    Page {page_num + 1}: {len(chars) if chars else 'OCR'}, {len(fields)} fields")
 
     # Combine all fields for translation
     fields = []
@@ -3095,13 +3346,42 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
     # Use first page height for zone mapping (zones are relative to page)
     page_height_pts = page_heights[0] if page_heights else 842
 
+    # Check if we have OCR fields - if so, use dynamic zones instead of predefined
+    has_ocr_fields = any(f.get("is_ocr", False) for f in fields)
+    if has_ocr_fields:
+        # Create dynamic zones based on actual field positions
+        # Group fields by page first
+        fields_by_page = {}
+        for f in fields:
+            page = f.get("page", 0)
+            if page not in fields_by_page:
+                fields_by_page[page] = []
+            fields_by_page[page].append(f)
+
+        # Create zones for each page's fields
+        dynamic_zones = []
+        for page_num in sorted(fields_by_page.keys()):
+            page_fields = fields_by_page[page_num]
+            page_h = page_heights[page_num] if page_num < len(page_heights) else 842
+            page_zones = create_dynamic_zones_for_fields(page_fields, page_h, max_fields_per_zone=12)
+            # Tag zones with page number
+            for z in page_zones:
+                z["page"] = page_num
+                z["name"] = f"Page {page_num + 1} - {z['name']}"
+            dynamic_zones.extend(page_zones)
+
+        if dynamic_zones:
+            zones = dynamic_zones
+            print(f"    Using {len(zones)} dynamic zones for OCR content")
+
     # Step 4: Translate fields by zone
+    # Use pre-computed translations for OCR fields, regular translation for text-based
     print(f"    Translating fields...")
     translations_by_zone = {}
-    dict_hits = 0
-    frag_hits = 0
-    llm_hits = 0
-    unknown = 0
+    dict_hits = ocr_stats["dict_hits"]  # Start with OCR stats
+    frag_hits = ocr_stats["frag_hits"]
+    llm_hits = ocr_stats["llm_hits"]
+    unknown = ocr_stats["unknown"]
 
     for zone in zones:
         zone_fields = fields_in_zone(fields, zone)
@@ -3112,7 +3392,25 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
             if not text or len(text) < 2:
                 continue
 
-            result = translate_field(text, cache, dictionary, use_llm=use_llm)
+            # Check for pre-computed OCR translation first
+            if text in ocr_translations:
+                result = ocr_translations[text]
+            elif field.get("translation"):
+                # Translation embedded in field from OCR workflow
+                result = field["translation"]
+            else:
+                # Regular translation for text-based fields
+                result = translate_field(text, cache, dictionary, use_llm=use_llm)
+                t = result.get("type", "")
+                if t == "dictionary":
+                    dict_hits += 1
+                elif t == "fragment":
+                    frag_hits += 1
+                elif t == "llm":
+                    llm_hits += 1
+                elif t == "unknown":
+                    unknown += 1
+
             zone_translations.append({
                 "ja": text,
                 "en": result.get("en", ""),
@@ -3121,17 +3419,8 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
                 "x0": field["x0"],
                 "y0": field["y0"],
                 "page": field.get("page", 0),
+                "is_ocr": field.get("is_ocr", False),
             })
-
-            t = result.get("type", "")
-            if t == "dictionary":
-                dict_hits += 1
-            elif t == "fragment":
-                frag_hits += 1
-            elif t == "llm":
-                llm_hits += 1
-            elif t == "unknown":
-                unknown += 1
 
         translations_by_zone[zone["name"]] = zone_translations
 
@@ -3144,7 +3433,24 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
             text = field["text"].strip()
             if not text or len(text) < 2:
                 continue
-            result = translate_field(text, cache, dictionary, use_llm=use_llm)
+
+            # Check for pre-computed OCR translation first
+            if text in ocr_translations:
+                result = ocr_translations[text]
+            elif field.get("translation"):
+                result = field["translation"]
+            else:
+                result = translate_field(text, cache, dictionary, use_llm=use_llm)
+                t = result.get("type", "")
+                if t == "dictionary":
+                    dict_hits += 1
+                elif t == "fragment":
+                    frag_hits += 1
+                elif t == "llm":
+                    llm_hits += 1
+                elif t == "unknown":
+                    unknown += 1
+
             zone_translations.append({
                 "ja": text,
                 "en": result.get("en", ""),
@@ -3153,16 +3459,8 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
                 "x0": field["x0"],
                 "y0": field["y0"],
                 "page": field.get("page", 0),
+                "is_ocr": field.get("is_ocr", False),
             })
-            t = result.get("type", "")
-            if t == "dictionary":
-                dict_hits += 1
-            elif t == "fragment":
-                frag_hits += 1
-            elif t == "llm":
-                llm_hits += 1
-            elif t == "unknown":
-                unknown += 1
         if zone_translations:
             translations_by_zone[catch_zone["name"]] = zone_translations
             zones = zones + [catch_zone]  # Add to zones list for rendering

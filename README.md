@@ -89,4 +89,5 @@ This is a community project and not affiliated with any Japanese government enti
 
 ## Acknowledgments
 
- Translations cross-referenced with official ward office materials and community contributions.
+- Translations cross-referenced with official ward office materials and community contributions.
+- OCR text detection powered by [EasyOCR](https://github.com/JaidedAI/EasyOCR) (Apache 2.0).
