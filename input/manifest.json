@@ -1,0 +1,418 @@
+{
+  "wards": {
+    "adachi": {
+      "name_en": "Adachi Ward",
+      "name_ja": "足立区",
+      "pdfs": [
+        {
+          "filename": "0020-0020yuusoutennsyutu20260106.pdf",
+          "path": "downloads/tokyo/adachi/0020-0020yuusoutennsyutu20260106.pdf",
+          "size_kb": 297.5,
+          "md5": "5e193aa0cf55aa8b8209da0dbff7f22d"
+        }
+      ]
+    },
+    "arakawa": {
+      "name_en": "Arakawa Ward",
+      "name_ja": "荒川区",
+      "pdfs": [
+        {
+          "filename": "r4tenshutsuyuuso.pdf",
+          "path": "downloads/tokyo/arakawa/r4tenshutsuyuuso.pdf",
+          "size_kb": 113.0,
+          "md5": "c713f4c971be7a11015dcf8543788dac"
+        },
+        {
+          "filename": "tenshutsuyuso-kinyurei.pdf",
+          "path": "downloads/tokyo/arakawa/tenshutsuyuso-kinyurei.pdf",
+          "size_kb": 158.3,
+          "md5": "b32501d8b3cfb325d9c7f96ace9ab251"
+        }
+      ]
+    },
+    "bunkyo": {
+      "name_en": "Bunkyo Ward",
+      "name_ja": "文京区",
+      "pdfs": [
+        {
+          "filename": "20217211109.pdf",
+          "path": "downloads/tokyo/bunkyo/20217211109.pdf",
+          "size_kb": 146.2,
+          "md5": "da2f07a1de052d6d51f19e6622ac67b1"
+        },
+        {
+          "filename": "202299101946.pdf",
+          "path": "downloads/tokyo/bunkyo/202299101946.pdf",
+          "size_kb": 346.1,
+          "md5": "dadcc808c977f5724083630f00973fcf"
+        }
+      ]
+    },
+    "chiyoda": {
+      "name_en": "Chiyoda Ward",
+      "name_ja": "千代田区",
+      "pdfs": [
+        {
+          "filename": "tenshutsutodoke-yusoyo.pdf",
+          "path": "downloads/tokyo/chiyoda/tenshutsutodoke-yusoyo.pdf",
+          "size_kb": 144.7,
+          "md5": "ecc8770e6d4600b94a9fbf38f332fa1e"
+        }
+      ]
+    },
+    "chuo": {
+      "name_en": "Chuo Ward",
+      "name_ja": "中央区",
+      "pdfs": [
+        {
+          "filename": "idoutodoke.pdf",
+          "path": "downloads/tokyo/chuo/idoutodoke.pdf",
+          "size_kb": 433.1,
+          "md5": "5f7c01cdc0c5544ecf7dd5b017d36042"
+        }
+      ]
+    },
+    "edogawa": {
+      "name_en": "Edogawa Ward",
+      "name_ja": "江戸川区",
+      "pdfs": [
+        {
+          "filename": "20250201_juminido.pdf",
+          "path": "downloads/tokyo/edogawa/20250201_juminido.pdf",
+          "size_kb": 252.2,
+          "md5": "f7861ce0aeb888a6d84a4f509820ea7c"
+        },
+        {
+          "filename": "20250201_juminidorei.pdf",
+          "path": "downloads/tokyo/edogawa/20250201_juminidorei.pdf",
+          "size_kb": 451.8,
+          "md5": "a84118d477cfea144b61002b5b6ec27e"
+        }
+      ]
+    },
+    "itabashi": {
+      "name_en": "Itabashi Ward",
+      "name_ja": "板橋区",
+      "pdfs": [
+        {
+          "filename": "idotodoke.pdf",
+          "path": "downloads/tokyo/itabashi/idotodoke.pdf",
+          "size_kb": 246.4,
+          "md5": "e7f02746e2cb0f821bf9e9319c0c2978"
+        },
+        {
+          "filename": "idotodokeeigo.pdf",
+          "path": "downloads/tokyo/itabashi/idotodokeeigo.pdf",
+          "size_kb": 276.9,
+          "md5": "c3c1eac1b7a33898443661aa1094a6d5"
+        },
+        {
+          "filename": "yusotensyutu.pdf",
+          "path": "downloads/tokyo/itabashi/yusotensyutu.pdf",
+          "size_kb": 667.9,
+          "md5": "ae8215704a090a5a82ddabb1efb5aabc"
+        },
+        {
+          "filename": "yusotensyutukinyurei.pdf",
+          "path": "downloads/tokyo/itabashi/yusotensyutukinyurei.pdf",
+          "size_kb": 759.6,
+          "md5": "c4b0c702e26622969fc02f685b0ae916"
+        }
+      ]
+    },
+    "katsushika": {
+      "name_en": "Katsushika Ward",
+      "name_ja": "葛飾区",
+      "pdfs": [
+        {
+          "filename": "ido.pdf",
+          "path": "downloads/tokyo/katsushika/ido.pdf",
+          "size_kb": 200.0,
+          "md5": "9a9d090f50bebb6d689a9897a337541d"
+        }
+      ]
+    },
+    "kita": {
+      "name_en": "Kita Ward",
+      "name_ja": "北区",
+      "pdfs": [
+        {
+          "filename": "idoutodokdesyo20260105.pdf",
+          "path": "downloads/tokyo/kita/idoutodokdesyo20260105.pdf",
+          "size_kb": 154.5,
+          "md5": "9cfe49a1566b339b2f1aa0218f5e11a1"
+        }
+      ]
+    },
+    "koto": {
+      "name_en": "Koto Ward",
+      "name_ja": "江東区",
+      "pdfs": [
+        {
+          "filename": "20251217171915.pdf",
+          "path": "downloads/tokyo/koto/20251217171915.pdf",
+          "size_kb": 407.9,
+          "md5": "d79d7941c5716bebfa6818bc33b696f7"
+        },
+        {
+          "filename": "20251217171938.pdf",
+          "path": "downloads/tokyo/koto/20251217171938.pdf",
+          "size_kb": 571.7,
+          "md5": "9bc748728b1758b17fdc3fba598e5973"
+        },
+        {
+          "filename": "20251217171956.pdf",
+          "path": "downloads/tokyo/koto/20251217171956.pdf",
+          "size_kb": 454.6,
+          "md5": "9f42947c1f49121f2cacf0539dc9128b"
+        },
+        {
+          "filename": "tennyuu_1.pdf",
+          "path": "downloads/tokyo/koto/tennyuu_1.pdf",
+          "size_kb": 651.0,
+          "md5": "2fa247d7b204f66c366916d87ee775ab"
+        }
+      ]
+    },
+    "meguro": {
+      "name_en": "Meguro Ward",
+      "name_ja": "目黒区",
+      "pdfs": [
+        {
+          "filename": "yuusou.pdf",
+          "path": "downloads/tokyo/meguro/yuusou.pdf",
+          "size_kb": 56.1,
+          "md5": "a81454622115c31dc23f3913e4e84ddd"
+        },
+        {
+          "filename": "yuusou_kakikata.pdf",
+          "path": "downloads/tokyo/meguro/yuusou_kakikata.pdf",
+          "size_kb": 130.6,
+          "md5": "6833e87be4eaa62e6967433fa05449af"
+        }
+      ]
+    },
+    "minato": {
+      "name_en": "Minato Ward",
+      "name_ja": "港区",
+      "pdfs": [
+        {
+          "filename": "idouenglish.pdf",
+          "path": "downloads/tokyo/minato/idouenglish.pdf",
+          "size_kb": 881.2,
+          "md5": "ad6991e08bcb48de8bd877b2990b0e58"
+        },
+        {
+          "filename": "idoujapan.pdf",
+          "path": "downloads/tokyo/minato/idoujapan.pdf",
+          "size_kb": 893.5,
+          "md5": "672fad6b359d8d0e636e5f4394de6deb"
+        }
+      ]
+    },
+    "nakano": {
+      "name_en": "Nakano Ward",
+      "name_ja": "中野区",
+      "pdfs": [
+        {
+          "filename": "HP.pdf",
+          "path": "downloads/tokyo/nakano/HP.pdf",
+          "size_kb": 381.5,
+          "md5": "2a06e755fcef27d75a5f1b941af55cca"
+        },
+        {
+          "filename": "HPEnglish.pdf",
+          "path": "downloads/tokyo/nakano/HPEnglish.pdf",
+          "size_kb": 276.3,
+          "md5": "2dc780a31e5f746f6740aaa95ab871fc"
+        }
+      ]
+    },
+    "nerima": {
+      "name_en": "Nerima Ward",
+      "name_ja": "練馬区",
+      "pdfs": [
+        {
+          "filename": "R7.12.4_tensyutu-yuusou.pdf",
+          "path": "downloads/tokyo/nerima/R7.12.4_tensyutu-yuusou.pdf",
+          "size_kb": 41.6,
+          "md5": "f42ead90dddf879b1f3b7f098c151408"
+        },
+        {
+          "filename": "R7.12.4_tensyutu_sample.pdf",
+          "path": "downloads/tokyo/nerima/R7.12.4_tensyutu_sample.pdf",
+          "size_kb": 52.4,
+          "md5": "cb6bfdac7f0cb22232059754b548c475"
+        },
+        {
+          "filename": "R7.8.26_tensyutu-todoke.pdf",
+          "path": "downloads/tokyo/nerima/R7.8.26_tensyutu-todoke.pdf",
+          "size_kb": 470.0,
+          "md5": "d8e8850aa19b43a5af15d903a5b6afe3"
+        }
+      ]
+    },
+    "ota": {
+      "name_en": "Ota Ward",
+      "name_ja": "大田区",
+      "pdfs": [
+        {
+          "filename": "tensyutsu_yuso.pdf",
+          "path": "downloads/tokyo/ota/tensyutsu_yuso.pdf",
+          "size_kb": 110.6,
+          "md5": "c9fb8efe6b5e00a87d0137e93ed0f94a"
+        },
+        {
+          "filename": "tensyutsu_yuso_mynumber.pdf",
+          "path": "downloads/tokyo/ota/tensyutsu_yuso_mynumber.pdf",
+          "size_kb": 130.3,
+          "md5": "e8a247fb3068221cb3e6390cec141b88"
+        }
+      ]
+    },
+    "setagaya": {
+      "name_en": "Setagaya Ward",
+      "name_ja": "世田谷区",
+      "pdfs": [
+        {
+          "filename": "juuminidoutodoke.pdf",
+          "path": "downloads/tokyo/setagaya/juuminidoutodoke.pdf",
+          "size_kb": 1943.1,
+          "md5": "be66a381f8b82eb29aa3733e6f9a4b86"
+        }
+      ]
+    },
+    "shibuya": {
+      "name_en": "Shibuya Ward",
+      "name_ja": "渋谷区",
+      "pdfs": [
+        {
+          "filename": "mynumber_sinsei.pdf",
+          "path": "downloads/tokyo/shibuya/mynumber_sinsei.pdf",
+          "size_kb": 834.4,
+          "md5": "edeae996b51ee520ff791fa0a375123e"
+        }
+      ]
+    },
+    "shinagawa": {
+      "name_en": "Shinagawa Ward",
+      "name_ja": "品川区",
+      "pdfs": [
+        {
+          "filename": "20250206184722_1.pdf",
+          "path": "downloads/tokyo/shinagawa/20250206184722_1.pdf",
+          "size_kb": 614.9,
+          "md5": "ad7e52ef3f009a89f1c3a3a078802e48"
+        }
+      ]
+    },
+    "shinjuku": {
+      "name_en": "Shinjuku Ward",
+      "name_ja": "新宿区",
+      "pdfs": [
+        {
+          "filename": "000253160.pdf",
+          "path": "downloads/tokyo/shinjuku/000253160.pdf",
+          "size_kb": 117.4,
+          "md5": "8c3a651ebc9a9a4d21dbd008d8caf90e"
+        },
+        {
+          "filename": "000253161.pdf",
+          "path": "downloads/tokyo/shinjuku/000253161.pdf",
+          "size_kb": 127.1,
+          "md5": "fc9f3098c91e5467e58266772aa7162c"
+        },
+        {
+          "filename": "000253172.pdf",
+          "path": "downloads/tokyo/shinjuku/000253172.pdf",
+          "size_kb": 499.0,
+          "md5": "38e7f50f57eddbb33dab9eaf7f89ff81"
+        },
+        {
+          "filename": "000253173.pdf",
+          "path": "downloads/tokyo/shinjuku/000253173.pdf",
+          "size_kb": 567.8,
+          "md5": "4090fb71fcc79d1e08d0c6ae2f77955a"
+        },
+        {
+          "filename": "000415350.pdf",
+          "path": "downloads/tokyo/shinjuku/000415350.pdf",
+          "size_kb": 419.8,
+          "md5": "cbb33207b6f5df8d12276653c9c4df0e"
+        }
+      ]
+    },
+    "suginami": {
+      "name_en": "Suginami Ward",
+      "name_ja": "杉並区",
+      "pdfs": [
+        {
+          "filename": "kinyurei1229.pdf",
+          "path": "downloads/tokyo/suginami/kinyurei1229.pdf",
+          "size_kb": 167.0,
+          "md5": "713fa923df07c951c6485824d528ab86"
+        },
+        {
+          "filename": "todokedesyo1229.pdf",
+          "path": "downloads/tokyo/suginami/todokedesyo1229.pdf",
+          "size_kb": 119.5,
+          "md5": "49a8b49620bd57277d912e7730111acb"
+        },
+        {
+          "filename": "yusoutensyutukankatu.pdf",
+          "path": "downloads/tokyo/suginami/yusoutensyutukankatu.pdf",
+          "size_kb": 277.2,
+          "md5": "fe822cff96c56829e0bf5a865818d684"
+        }
+      ]
+    },
+    "sumida": {
+      "name_en": "Sumida Ward",
+      "name_ja": "墨田区",
+      "pdfs": [
+        {
+          "filename": "tetuduki1.pdf",
+          "path": "downloads/tokyo/sumida/tetuduki1.pdf",
+          "size_kb": 203.5,
+          "md5": "3e149e46c45a6c5f20ae9a5e2ad5325a"
+        },
+        {
+          "filename": "tetuduki2.pdf",
+          "path": "downloads/tokyo/sumida/tetuduki2.pdf",
+          "size_kb": 231.3,
+          "md5": "8c101e1f77ff187f869040a1414f67fc"
+        },
+        {
+          "filename": "tetuduki3.pdf",
+          "path": "downloads/tokyo/sumida/tetuduki3.pdf",
+          "size_kb": 580.7,
+          "md5": "3ae910701de0763e1c58855108a5d932"
+        }
+      ]
+    },
+    "taito": {
+      "name_en": "Taito Ward",
+      "name_ja": "台東区",
+      "pdfs": [
+        {
+          "filename": "mynatensyutsu.pdf",
+          "path": "downloads/tokyo/taito/mynatensyutsu.pdf",
+          "size_kb": 778.1,
+          "md5": "3f1f49ffcdf52a8f080b3d64f4d15a5b"
+        }
+      ]
+    },
+    "toshima": {
+      "name_en": "Toshima Ward",
+      "name_ja": "豊島区",
+      "pdfs": [
+        {
+          "filename": "hpyoutodokedesho.pdf",
+          "path": "downloads/tokyo/toshima/hpyoutodokedesho.pdf",
+          "size_kb": 148.7,
+          "md5": "4cd6c363ecbf20b468fdf5c2233a4e71"
+        }
+      ]
+    }
+  }
+}

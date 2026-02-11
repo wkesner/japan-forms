@@ -15,8 +15,8 @@ export ANTHROPIC_API_KEY="your-key-here"
 python scripts/scraper.py --scrape --manifest
 ```
 Downloads Japanese government form PDFs from all 23 Tokyo ward websites.
-- Output: `downloads/tokyo/{ward}/*.pdf`
-- Manifest: `downloads/manifest.json`
+- Output: `input/tokyo/{ward}/*.pdf`
+- Manifest: `input/manifest.json`
 
 **Note:** Only process Japanese-language PDFs. Skip Chinese (中国語), Korean (韓国語),
 and English versions to avoid redundant translations.
@@ -25,7 +25,7 @@ and English versions to avoid redundant translations.
 ```bash
 python scripts/scraper.py --generate
 # Or run pipeline directly on specific PDFs:
-python scripts/pipeline.py downloads/tokyo/bunkyo/*.pdf
+python scripts/pipeline.py input/tokyo/bunkyo/*.pdf
 ```
 Generates bilingual walkthrough PDFs with translations from dictionary + LLM fallback.
 - Output: `output/walkthroughs/tokyo/{ward}/*_walkthrough.pdf`
@@ -95,7 +95,7 @@ japan-forms/
 │   │   └── dictionary.json    # Universal field translations (583+ entries)
 │   ├── forms/                 # Form templates (JSON)
 │   └── municipalities/        # Ward metadata
-├── downloads/
+├── input/
 │   ├── tokyo/{ward}/*.pdf     # Source PDFs (not committed)
 │   └── manifest.json          # Download metadata
 ├── output/

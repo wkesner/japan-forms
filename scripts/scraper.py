@@ -32,9 +32,9 @@ except ImportError:
 
 # ── Paths ──
 BASE_DIR = Path(__file__).parent.parent
-DOWNLOADS_DIR = BASE_DIR / "downloads" / "tokyo"
+DOWNLOADS_DIR = BASE_DIR / "input" / "tokyo"
 OUTPUT_DIR = BASE_DIR / "output" / "walkthroughs"
-MANIFEST_PATH = BASE_DIR / "downloads" / "manifest.json"
+MANIFEST_PATH = BASE_DIR / "input" / "manifest.json"
 
 # ── Search terms ──
 # Japanese form names we look for in page text and PDF link text

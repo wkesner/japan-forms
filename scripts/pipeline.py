@@ -100,9 +100,11 @@ def register_fonts():
     from reportlab.pdfbase import pdfmetrics
     from reportlab.pdfbase.ttfonts import TTFont
 
-    # Try Windows MS Gothic first, then Linux IPA Gothic
+    # Try Windows MS Gothic, macOS Arial Unicode, then Linux IPA Gothic
     candidates = [
         ("C:/Windows/Fonts/msgothic.ttc", 0),  # Windows MS Gothic (TTC index 0)
+        ("/System/Library/Fonts/Supplemental/Arial Unicode.ttf", None),  # macOS Arial Unicode
+        ("/System/Library/Fonts/STHeiti Medium.ttc", 0),  # macOS STHeiti fallback
         ("/usr/share/fonts/opentype/ipafont-gothic/ipag.ttf", None),
         ("/usr/share/fonts/truetype/fonts-japanese-gothic.ttf", None),
     ]
@@ -129,6 +131,34 @@ def register_fonts():
 # ═══════════════════════════════════════════
 # TEXT EXTRACTION
 # ═══════════════════════════════════════════
+
+def find_best_page(pdf_path, min_chars=50):
+    """
+    Find the page with the most extractable text content.
+
+    For multi-page PDFs where page 1 might be instructions or mostly blank,
+    this finds the page that likely contains the actual form.
+
+    Returns (page_num, char_count) tuple.
+    """
+    import pdfplumber
+
+    best_page = 0
+    best_count = 0
+
+    with pdfplumber.open(pdf_path) as pdf:
+        for i, page in enumerate(pdf.pages):
+            char_count = len(page.chars)
+            if char_count > best_count:
+                best_count = char_count
+                best_page = i
+
+    # If page 0 has very few chars but another page has more, use that
+    if best_page != 0 and best_count > min_chars:
+        return best_page, best_count
+
+    return 0, best_count
+
 
 def extract_text(pdf_path, page_num=0):
     """
@@ -217,14 +247,193 @@ def _make_field_group(char_list):
     }
 
 
-def fields_in_zone(fields, zone):
-    """Return field groups whose y-center falls within a zone's y-range."""
+def deduplicate_fields(fields, position_threshold=15):
+    """Remove duplicate fields that occupy similar positions.
+
+    If two fields have similar x0/y0 coordinates (within threshold),
+    keep only the one with more characters (likely more complete).
+    """
+    if not fields:
+        return []
+
+    # Sort by position for consistent ordering
+    sorted_fields = sorted(fields, key=lambda f: (f["y0"], f["x0"]))
+
+    kept = []
+    for field in sorted_fields:
+        is_duplicate = False
+        for i, existing in enumerate(kept):
+            # Check if positions are very close
+            if (abs(field["x0"] - existing["x0"]) < position_threshold and
+                abs(field["y0"] - existing["y0"]) < position_threshold):
+                # Keep the one with more characters
+                if field["char_count"] > existing["char_count"]:
+                    kept[i] = field
+                is_duplicate = True
+                break
+        if not is_duplicate:
+            kept.append(field)
+
+    return kept
+
+
+def fields_in_zone(fields, zone, padding=10):
+    """Return field groups whose y-center falls within a zone's y-range.
+
+    Args:
+        padding: Extra points to add to zone boundaries to catch edge cases.
+    """
     result = []
+    y_min = zone["y_min"] - padding
+    y_max = zone["y_max"] + padding
     for f in fields:
         y_center = (f["y0"] + f["y1"]) / 2
-        if zone["y_min"] <= y_center <= zone["y_max"]:
+        if y_min <= y_center <= y_max:
             result.append(f)
     return result
+
+
+def collect_unassigned_fields(fields, zones, padding=10):
+    """Find fields that don't fall into any defined zone.
+
+    Returns a synthetic zone dict and list of unassigned fields.
+    Useful for capturing content outside standard zone definitions.
+    """
+    assigned = set()
+    for zone in zones:
+        y_min = zone["y_min"] - padding
+        y_max = zone["y_max"] + padding
+        for i, f in enumerate(fields):
+            y_center = (f["y0"] + f["y1"]) / 2
+            if y_min <= y_center <= y_max:
+                assigned.add(i)
+
+    unassigned = [f for i, f in enumerate(fields) if i not in assigned]
+    if not unassigned:
+        return None, []
+
+    # Create a catch-all zone
+    y_coords = [f["y0"] for f in unassigned] + [f["y1"] for f in unassigned]
+    catch_zone = {
+        "name": "Other Fields",
+        "title_en": "Other Fields",
+        "title_ja": "その他",
+        "y_min": min(y_coords) - 5,
+        "y_max": max(y_coords) + 5,
+    }
+    return catch_zone, unassigned
+
+
+def ocr_with_vision(page_image, page_height_pts=842):
+    """
+    Use Claude vision to OCR text from a scanned PDF page image.
+
+    Returns list of field groups similar to cluster_fields output.
+    Falls back gracefully if API unavailable.
+    """
+    if page_image is None:
+        return []
+
+    try:
+        import anthropic
+        import base64
+        import json
+        import io
+    except ImportError:
+        print("  WARN: anthropic package not installed. Skipping OCR.")
+        return []
+
+    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    if not api_key:
+        return []
+
+    # Convert image to base64
+    img_buf = io.BytesIO()
+    page_image.save(img_buf, format="PNG")
+    img_buf.seek(0)
+    img_b64 = base64.b64encode(img_buf.getvalue()).decode("utf-8")
+
+    # Scale factor: image pixels to PDF points
+    img_height = page_image.size[1]
+    scale = page_height_pts / img_height
+
+    client = anthropic.Anthropic(api_key=api_key)
+
+    try:
+        print("    OCR: Extracting text from scanned form...")
+        response = client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=4096,
+            messages=[{
+                "role": "user",
+                "content": [
+                    {
+                        "type": "image",
+                        "source": {
+                            "type": "base64",
+                            "media_type": "image/png",
+                            "data": img_b64,
+                        },
+                    },
+                    {
+                        "type": "text",
+                        "text": """This is a Japanese government form. Extract ALL Japanese text you can see, with approximate positions.
+
+Return a JSON array where each item has:
+- "text": the Japanese text (field labels, not filled-in values)
+- "y_pct": approximate vertical position as percentage from top (0-100)
+- "x_pct": approximate horizontal position as percentage from left (0-100)
+
+Focus on form field labels like: 届出人, 氏名, 住所, 転出先, 届出日, 世帯主, 続柄, 生年月日, etc.
+Skip decorative text, page numbers, and pre-filled example values.
+
+Return ONLY the JSON array, no other text."""
+                    }
+                ],
+            }],
+        )
+
+        # Parse response
+        text = response.content[0].text.strip()
+        # Handle markdown code blocks
+        if text.startswith("```"):
+            text = text.split("```")[1]
+            if text.startswith("json"):
+                text = text[4:]
+
+        items = json.loads(text)
+
+        # Convert to field groups format
+        fields = []
+        img_width, img_height = page_image.size
+
+        for item in items:
+            if not item.get("text"):
+                continue
+
+            # Convert percentages to approximate PDF coordinates
+            y_pct = float(item.get("y_pct", 50))
+            x_pct = float(item.get("x_pct", 50))
+
+            # Estimate field bounds (approximate)
+            y0 = (y_pct / 100) * page_height_pts
+            x0 = (x_pct / 100) * (page_height_pts * img_width / img_height)  # Approximate width
+
+            fields.append({
+                "text": item["text"],
+                "x0": x0,
+                "y0": y0,
+                "x1": x0 + 50,  # Approximate width
+                "y1": y0 + 12,  # Approximate height
+                "char_count": len(item["text"]),
+            })
+
+        print(f"    OCR: Found {len(fields)} text fields")
+        return fields
+
+    except Exception as e:
+        print(f"  WARN: OCR failed: {e}")
+        return []
 
 
 # ═══════════════════════════════════════════
@@ -507,10 +716,14 @@ def crop_section(page_image, zone, page_height_pts, image_height_px):
     y_top_px = int(zone["y_min"] * scale)
     y_bottom_px = int(zone["y_max"] * scale)
 
-    # Add padding
-    padding = 10
+    # Add padding to prevent text cutoff at zone boundaries
+    padding = 20
     y_top_px = max(0, y_top_px - padding)
     y_bottom_px = min(image_height_px, y_bottom_px + padding)
+
+    # Check for invalid coordinates (can happen with multi-page offset)
+    if y_bottom_px <= y_top_px or y_top_px >= image_height_px or y_bottom_px <= 0:
+        return None
 
     return page_image.crop((0, y_top_px, page_image.width, y_bottom_px))
 
@@ -548,7 +761,8 @@ def annotate_section_image(cropped_image, zone_translations, zone, page_height_p
     DARK_THRESHOLD = 230  # pixels darker than this are "content"
 
     scale = image_height_px / page_height_pts
-    crop_y_top_px = max(0, int(zone["y_min"] * scale) - 10)
+    # Padding must match crop_section (20px) for accurate arrow placement
+    crop_y_top_px = max(0, int(zone["y_min"] * scale) - 20)
 
     # Sort fields by (y0, x0) for natural reading order
     sorted_trans = sorted(zone_translations, key=lambda t: (t.get("y0", 0), t.get("x0", 0)))
@@ -947,38 +1161,61 @@ def resolve_explanations(numbered_entries, zone_name, dictionary, cache,
 def _split_zone_into_chunks(zone, zone_translations, max_fields=15):
     """Split a dense zone into smaller chunks for readable guide pages.
 
-    If the zone has <= max_fields translations, returns it unchanged.
-    Otherwise, sorts by y0 and splits into chunks of max_fields, each
-    with a sub-zone whose y_min/y_max are derived from that chunk's fields.
+    For multi-page forms, groups fields by page first to ensure each chunk
+    only contains fields from a single page (critical for correct arrow placement).
+
+    Within each page group, sorts by y0 and splits into chunks of max_fields,
+    with sub-zone y_min/y_max derived from that chunk's field positions.
     """
     if len(zone_translations) <= max_fields:
-        return [(zone, zone_translations)]
+        # Check if all fields are from the same page
+        pages = set(t.get("page", 0) for t in zone_translations)
+        if len(pages) <= 1:
+            return [(zone, zone_translations)]
 
-    sorted_trans = sorted(zone_translations, key=lambda t: t.get("y0", 0))
+    # Group fields by page first (critical for multi-page forms)
+    from collections import defaultdict
+    by_page = defaultdict(list)
+    for t in zone_translations:
+        by_page[t.get("page", 0)].append(t)
+
     chunks = []
-    for i in range(0, len(sorted_trans), max_fields):
-        chunk_trans = sorted_trans[i:i + max_fields]
-        # Derive sub-zone y bounds from field positions (with padding)
-        y_positions = [t.get("y0", 0) for t in chunk_trans]
-        padding = 5
-        sub_zone = dict(zone)  # shallow copy
-        sub_zone["y_min"] = max(0, min(y_positions) - padding)
-        sub_zone["y_max"] = max(y_positions) + padding
-        chunks.append((sub_zone, chunk_trans))
+    # Process each page's fields separately
+    for page_num in sorted(by_page.keys()):
+        page_fields = by_page[page_num]
+        # Sort by y position within this page
+        sorted_trans = sorted(page_fields, key=lambda t: t.get("y0", 0))
+
+        # Split into chunks of max_fields
+        for i in range(0, len(sorted_trans), max_fields):
+            chunk_trans = sorted_trans[i:i + max_fields]
+            # Derive sub-zone y bounds from field positions (with padding)
+            y_positions = [t.get("y0", 0) for t in chunk_trans]
+            padding = 5
+            sub_zone = dict(zone)  # shallow copy
+            sub_zone["y_min"] = max(0, min(y_positions) - padding)
+            sub_zone["y_max"] = max(y_positions) + padding
+            chunks.append((sub_zone, chunk_trans))
+
     return chunks
 
 
 def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
-                   page_image=None, page_height_pts=842, zones=None,
-                   dictionary=None, cache=None, use_llm=True, ward_name=""):
+                   page_image=None, page_images=None, page_height_pts=842,
+                   page_heights=None, zones=None, dictionary=None, cache=None,
+                   use_llm=True, ward_name=""):
     """
     Generate the multi-page bilingual PDF guide.
 
     Pages:
-    1. Original form (embedded untouched)
-    2. Cover page — what to bring, common mistakes, what happens after
-    3-7. Zoomed form sections — annotated cropped image + numbered explanations
-    8. Counter phrases
+    1-N. Original form pages (embedded untouched)
+    N+1. Cover page — what to bring, common mistakes, what happens after
+    N+2-M. Zoomed form sections — annotated cropped image + numbered explanations
+    M+1. Counter phrases
+
+    Args:
+        page_images: List of (page_num, PIL.Image) tuples for all source pages
+        page_heights: List of page heights in points for each source page
     """
     from reportlab.lib.pagesizes import A4
     from reportlab.lib.colors import HexColor
@@ -1072,33 +1309,28 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
         c.drawString(15, 10,
             f"Generated {date.today().isoformat()} from github.com/wkesner/japan-forms  |  Not an official government document")
 
-    # ═══ PAGE 1: Original Form (embedded) ═══
-    next_page()
+    # ═══ PAGES 1-N: Original Form (all pages embedded) ═══
+    # Use page_images if available, fall back to single page_image
+    images_to_embed = page_images if page_images else ([(0, page_image)] if page_image else [])
 
-    try:
-        from pypdf import PdfReader, PdfWriter
-        reader = PdfReader(pdf_path)
-        if reader.pages:
-            # Save first page as temp PDF, then embed via reportlab
-            writer = PdfWriter()
-            writer.add_page(reader.pages[0])
-            temp_buf = io.BytesIO()
-            writer.write(temp_buf)
-            temp_buf.seek(0)
+    if images_to_embed:
+        for page_idx, (src_page_num, img) in enumerate(images_to_embed):
+            if page_idx > 0:
+                c.showPage()
+            next_page()
+            draw_header()
+            draw_footer()
 
-            # Embed as full-page image instead (more reliable rendering)
-            if page_image:
-                draw_header()
-                draw_footer()
+            try:
                 img_buf = io.BytesIO()
-                page_image.save(img_buf, format="PNG")
+                img.save(img_buf, format="PNG")
                 img_buf.seek(0)
                 img_reader = ImageReader(img_buf)
 
                 # Scale to fit within margins
                 avail_w = WIDTH - 2 * margin
                 avail_h = HEIGHT - 80  # header + footer
-                img_w, img_h = page_image.size
+                img_w, img_h = img.size
                 scale = min(avail_w / img_w, avail_h / img_h)
                 draw_w = img_w * scale
                 draw_h = img_h * scale
@@ -1106,20 +1338,19 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
                 y = 25  # above footer
 
                 c.drawImage(img_reader, x, y, width=draw_w, height=draw_h)
-            else:
-                # No image available — just add a note
-                draw_header()
-                draw_footer()
-                c.setFont(font_en, 14)
+            except Exception as e:
+                c.setFont(font_en, 12)
                 c.setFillColor(GRAY)
-                c.drawCentredString(WIDTH / 2, HEIGHT / 2,
-                    "Original form — print the source PDF separately")
-    except Exception as e:
+                c.drawCentredString(WIDTH / 2, HEIGHT / 2, f"Could not embed page {src_page_num + 1}: {e}")
+    else:
+        # No images available — just add a note
+        next_page()
         draw_header()
         draw_footer()
-        c.setFont(font_en, 12)
+        c.setFont(font_en, 14)
         c.setFillColor(GRAY)
-        c.drawCentredString(WIDTH / 2, HEIGHT / 2, f"Could not embed original form: {e}")
+        c.drawCentredString(WIDTH / 2, HEIGHT / 2,
+            "Original form — print the source PDF separately")
 
     # ═══ PAGE 2: Cover Page ═══
     if form_template:
@@ -1272,15 +1503,34 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
             y -= 10
 
             # Crop and annotate the section image
+            # For multi-page forms, determine which page this zone's fields are from
             cropped = None
             annotated_img = None
             numbered_entries = []
-            if page_image:
-                cropped = crop_section(page_image, chunk_zone, page_height_pts, page_image.height)
+
+            # Find the source page for this chunk's translations
+            chunk_page_nums = set(t.get("page", 0) for t in chunk_translations if "page" in t)
+            source_page = min(chunk_page_nums) if chunk_page_nums else 0
+
+            # Select the appropriate page image
+            selected_image = None
+            selected_height = page_height_pts
+            if page_images:
+                for pg_num, pg_img in page_images:
+                    if pg_num == source_page:
+                        selected_image = pg_img
+                        if page_heights and source_page < len(page_heights):
+                            selected_height = page_heights[source_page]
+                        break
+            elif page_image:
+                selected_image = page_image
+
+            if selected_image:
+                cropped = crop_section(selected_image, chunk_zone, selected_height, selected_image.height)
 
             if cropped:
                 annotated_img, numbered_entries = annotate_section_image(
-                    cropped, chunk_translations, chunk_zone, page_height_pts, page_image.height
+                    cropped, chunk_translations, chunk_zone, selected_height, selected_image.height
                 )
                 display_img = annotated_img if annotated_img else cropped
 
@@ -1306,6 +1556,41 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
                 c.setStrokeColor(HexColor("#cccccc"))
                 c.setLineWidth(0.5)
                 c.rect(margin - 2, y - draw_h - 4, draw_w + 4, draw_h + 4, fill=False, stroke=True)
+
+                # Mini-map: show location on full form page
+                if selected_image:
+                    mini_h = 80  # thumbnail height
+                    mini_scale = mini_h / selected_image.height
+                    mini_w = selected_image.width * mini_scale
+
+                    # Position in bottom right
+                    mini_x = WIDTH - margin - mini_w
+                    mini_y = 25  # above footer
+
+                    # Draw thumbnail
+                    thumb = selected_image.copy()
+                    thumb.thumbnail((int(mini_w * 2), int(mini_h * 2)))  # 2x for quality
+                    thumb_buf = io.BytesIO()
+                    thumb.save(thumb_buf, format="PNG")
+                    thumb_buf.seek(0)
+                    thumb_reader = ImageReader(thumb_buf)
+                    c.drawImage(thumb_reader, mini_x, mini_y, width=mini_w, height=mini_h)
+
+                    # Draw rectangle showing cropped region
+                    crop_scale = mini_h / selected_image.height
+                    crop_y_top = chunk_zone["y_min"] * (selected_image.height / selected_height) * crop_scale
+                    crop_y_bottom = chunk_zone["y_max"] * (selected_image.height / selected_height) * crop_scale
+                    rect_y = mini_y + mini_h - crop_y_bottom
+                    rect_h = crop_y_bottom - crop_y_top
+
+                    c.setStrokeColor(RED)
+                    c.setLineWidth(1.5)
+                    c.rect(mini_x, rect_y, mini_w, rect_h, fill=False, stroke=True)
+
+                    # Page indicator
+                    c.setFont(font_en, 6)
+                    c.setFillColor(GRAY)
+                    c.drawString(mini_x, mini_y - 8, f"Form p.{source_page + 1}")
 
                 y -= draw_h + 20
 
@@ -2727,7 +3012,7 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
         zones = DEFAULT_ZONES
 
     pdf_name = Path(pdf_path).stem
-    # Extract city and ward from path (e.g., downloads/tokyo/katsushika/ido.pdf)
+    # Extract city and ward from path (e.g., input/tokyo/katsushika/ido.pdf)
     ward_name = ""
     city_name = ""
     parts = Path(pdf_path).parts
@@ -2753,27 +3038,62 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
     if not form_template:
         print(f"    WARN: Form template '{form_id}' not found. Generating without template content.")
 
-    # Step 1: Extract text
+    # Step 1: Get page count and extract text from ALL pages
     print(f"    Extracting text...")
-    chars = extract_text(pdf_path)
-    print(f"    Found {len(chars)} characters")
+    import pdfplumber
 
-    if not chars:
-        print(f"    WARN: No text found in PDF. May be image-only.")
+    num_pages = 1
+    page_heights = []
+    try:
+        with pdfplumber.open(pdf_path) as pdf:
+            num_pages = len(pdf.pages)
+            page_heights = [float(p.height) for p in pdf.pages]
+    except Exception:
+        page_heights = [842]  # A4 default
 
-    # Step 2: Cluster into fields
-    fields = cluster_fields(chars)
+    # Extract and cluster fields from each page
+    all_fields = []  # List of (page_num, fields_list)
+    total_chars = 0
+
+    for page_num in range(num_pages):
+        chars = extract_text(pdf_path, page_num=page_num)
+        page_height_pts = page_heights[page_num] if page_num < len(page_heights) else 842
+
+        if not chars:
+            # Try OCR for this page
+            page_image_for_ocr = render_page_image(pdf_path, page_num=page_num, dpi=200)
+            if page_image_for_ocr and use_llm:
+                print(f"    Page {page_num + 1}: OCR extracting...")
+                fields = ocr_with_vision(page_image_for_ocr, page_height_pts)
+            else:
+                fields = []
+        else:
+            fields = cluster_fields(chars)
+
+        if fields:
+            # Keep original y-coordinates, just track page number
+            for f in fields:
+                f["page"] = page_num
+            all_fields.append((page_num, fields, page_height_pts))
+            total_chars += len(chars)
+            print(f"    Page {page_num + 1}: {len(chars)} chars, {len(fields)} fields")
+
+    # Combine all fields for translation
+    fields = []
+    for page_num, page_fields, _ in all_fields:
+        fields.extend(page_fields)
+
+    # Deduplicate fields that occupy similar positions (prevents duplicate annotations)
+    fields_before = len(fields)
+    fields = deduplicate_fields(fields)
+    if len(fields) < fields_before:
+        print(f"    Deduplicated: {fields_before} → {len(fields)} fields")
+
+    print(f"    Found {total_chars} characters across {num_pages} page(s)")
     print(f"    Clustered into {len(fields)} field groups")
 
-    # Step 3: Get page height for coordinate mapping
-    page_height_pts = 842  # A4 default
-    try:
-        import pdfplumber
-        with pdfplumber.open(pdf_path) as pdf:
-            if pdf.pages:
-                page_height_pts = float(pdf.pages[0].height)
-    except Exception:
-        pass
+    # Use first page height for zone mapping (zones are relative to page)
+    page_height_pts = page_heights[0] if page_heights else 842
 
     # Step 4: Translate fields by zone
     print(f"    Translating fields...")
@@ -2800,6 +3120,7 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
                 "note": result.get("note", ""),
                 "x0": field["x0"],
                 "y0": field["y0"],
+                "page": field.get("page", 0),
             })
 
             t = result.get("type", "")
@@ -2814,19 +3135,58 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
 
         translations_by_zone[zone["name"]] = zone_translations
 
+    # Collect any fields that fell outside defined zones
+    catch_zone, unassigned = collect_unassigned_fields(fields, zones)
+    if unassigned:
+        print(f"    Found {len(unassigned)} fields outside defined zones")
+        zone_translations = []
+        for field in unassigned:
+            text = field["text"].strip()
+            if not text or len(text) < 2:
+                continue
+            result = translate_field(text, cache, dictionary, use_llm=use_llm)
+            zone_translations.append({
+                "ja": text,
+                "en": result.get("en", ""),
+                "type": result.get("type", "unknown"),
+                "note": result.get("note", ""),
+                "x0": field["x0"],
+                "y0": field["y0"],
+                "page": field.get("page", 0),
+            })
+            t = result.get("type", "")
+            if t == "dictionary":
+                dict_hits += 1
+            elif t == "fragment":
+                frag_hits += 1
+            elif t == "llm":
+                llm_hits += 1
+            elif t == "unknown":
+                unknown += 1
+        if zone_translations:
+            translations_by_zone[catch_zone["name"]] = zone_translations
+            zones = zones + [catch_zone]  # Add to zones list for rendering
+
     total = dict_hits + frag_hits + llm_hits + unknown
     print(f"    Translations: {dict_hits} dictionary, {frag_hits} fragment, {llm_hits} LLM, {unknown} unknown (of {total})")
 
     # Save cache after translating
     save_translation_cache(cache)
 
-    # Step 5: Render page image
-    print(f"    Rendering page image...")
-    page_image = render_page_image(pdf_path, page_num=0, dpi=200)
-    if page_image:
-        print(f"    Image: {page_image.size[0]}x{page_image.size[1]} px")
-    else:
-        print(f"    WARN: Could not render page image (poppler may not be installed)")
+    # Step 5: Render page images for ALL pages
+    print(f"    Rendering page image(s)...")
+    page_images = []
+    for page_num in range(num_pages):
+        img = render_page_image(pdf_path, page_num=page_num, dpi=200)
+        if img:
+            page_images.append((page_num, img))
+            print(f"    Page {page_num + 1}: {img.size[0]}x{img.size[1]} px")
+
+    if not page_images:
+        print(f"    WARN: Could not render any page images (poppler may not be installed)")
+
+    # For backward compatibility, use first image as primary
+    page_image = page_images[0][1] if page_images else None
 
     # Step 6: Generate guide PDF
     print(f"    Generating guide PDF...")
@@ -2836,7 +3196,9 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
         form_template=form_template,
         output_path=output_path,
         page_image=page_image,
+        page_images=page_images,  # Pass all page images
         page_height_pts=page_height_pts,
+        page_heights=page_heights,  # Pass all page heights
         zones=zones,
         dictionary=dictionary,
         cache=cache,
