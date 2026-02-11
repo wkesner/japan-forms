@@ -490,8 +490,45 @@ def generate_manifest():
 # BATCH GENERATE
 # ═══════════════════════════════════════════════════════════════
 
+# Skip PDFs that are non-Japanese (English, Chinese, Korean versions)
+NON_JAPANESE_PATTERNS = [
+    r'english',
+    r'eigo',
+    r'英語',
+    r'chinese',
+    r'中国語',
+    r'chuugoku',
+    r'korean',
+    r'韓国語',
+    r'kankoku',
+]
+
+# Specific filenames to exclude (non-Japanese without language markers in filename)
+NON_JAPANESE_FILES = {
+    # Koto - English and Chinese proxy forms
+    "20251217171938.pdf",  # English version
+    "20251217171956.pdf",  # Chinese version
+    # Shinjuku - Korean/Chinese versions
+    "000415350.pdf",       # Korean/Chinese
+    "000253173.pdf",       # Chinese/Korean
+}
+
+
+def is_japanese_only_pdf(filename):
+    """Check if PDF is Japanese-only (not English/Chinese/Korean version)."""
+    # Check explicit exclusion list
+    if filename in NON_JAPANESE_FILES:
+        return False
+    # Check patterns in filename
+    name_lower = filename.lower()
+    for pattern in NON_JAPANESE_PATTERNS:
+        if re.search(pattern, name_lower, re.IGNORECASE):
+            return False
+    return True
+
+
 def run_generate():
-    """Run the translation pipeline on all downloaded PDFs."""
+    """Run the translation pipeline on all downloaded PDFs (Japanese only)."""
     try:
         from pipeline import process_pdf
     except ImportError:
@@ -503,22 +540,28 @@ def run_generate():
         ward_dir = DOWNLOADS_DIR / ward_key
         if not ward_dir.exists():
             continue
-        pdfs = sorted(ward_dir.glob("*.pdf"))
+        all_pdfs = sorted(ward_dir.glob("*.pdf"))
+        # Filter to Japanese-only PDFs
+        pdfs = [p for p in all_pdfs if is_japanese_only_pdf(p.name)]
+        skipped = len(all_pdfs) - len(pdfs)
+
         if not pdfs:
             continue
 
         name = WARDS[ward_key]["name_en"]
         print(f"\n{'='*60}")
         print(f"  Generating guides for {name}")
+        if skipped:
+            print(f"  (Skipping {skipped} non-Japanese PDF(s))")
         print(f"{'='*60}")
 
-        out_dir = OUTPUT_DIR / ward_key
-        out_dir.mkdir(parents=True, exist_ok=True)
+        # Pipeline will create tokyo/{ward} subdirectory based on input path
+        OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
         for pdf_path in pdfs:
             print(f"  Processing: {pdf_path.name}")
             try:
-                process_pdf(str(pdf_path), str(out_dir))
+                process_pdf(str(pdf_path), str(OUTPUT_DIR))
             except Exception as e:
                 print(f"    ERROR: {e}")
 
