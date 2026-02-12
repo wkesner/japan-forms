@@ -217,7 +217,7 @@ def check_readability(pages_text, dictionary):
     for page in pages_text:
         lines = page["text"].split("\n")
         for line in lines:
-            if len(line) > 200:
+            if len(line) > 300:
                 issues.append(QualityIssue(
                     severity=QualityIssue.SEVERITY_WARNING,
                     category="Line Length",

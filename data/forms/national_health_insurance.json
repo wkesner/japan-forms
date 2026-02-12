@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "form_id": "national_health_insurance",
+    "version": "0.1.0",
+    "last_updated": "2026-02-11",
+    "confidence": "draft"
+  },
+
+  "names": {
+    "en": "National Health Insurance Application",
+    "ja": "国民健康保険異動届出書",
+    "reading": "こくみん けんこう ほけん いどう とどけでしょ",
+    "romaji": "Kokumin Kenkō Hoken Idō Todokedesho",
+    "aliases_ja": ["国民健康保険被保険者資格取得届", "国民健康保険被保険者資格喪失届", "国保異動届", "国民健康保険適用開始届"],
+    "aliases_en": ["NHI Enrollment Form", "NHI Disenrollment Form", "National Health Insurance Change Notification"]
+  },
+
+  "legal_basis": {
+    "law": "国民健康保険法",
+    "law_en": "National Health Insurance Act",
+    "deadline_days": 14,
+    "deadline_description_en": "Must be submitted within 14 days of the qualifying event (losing employer insurance, moving in, birth, etc.)",
+    "penalty_en": "Late enrollment means you still owe premiums from the eligibility date, and medical costs incurred before enrollment are not covered.",
+    "cost": 0,
+    "cost_note_en": "Free to file. Monthly premiums are billed separately based on income."
+  },
+
+  "scenarios": {
+    "enroll_after_job": {
+      "title_en": "Enrolling after leaving employer insurance",
+      "title_ja": "退職後の加入",
+      "documents_required": [
+        { "ja": "健康保険資格喪失証明書", "en": "Certificate of Health Insurance Loss (from former employer)", "required": true },
+        { "ja": "在留カード", "en": "Residence Card", "required": true },
+        { "ja": "マイナンバーカード", "en": "My Number Card (or My Number notification)", "required": true },
+        { "ja": "通帳・届出印", "en": "Bank passbook & registered seal (for auto-debit setup)", "required": false }
+      ]
+    },
+    "enroll_after_moving": {
+      "title_en": "Enrolling after moving to a new ward",
+      "title_ja": "転入後の加入",
+      "documents_required": [
+        { "ja": "在留カード", "en": "Residence Card", "required": true },
+        { "ja": "マイナンバーカード", "en": "My Number Card", "required": true },
+        { "ja": "転出証明書", "en": "Moving-Out Certificate (from previous ward)", "required": false, "condition_en": "If also doing residence registration" }
+      ]
+    },
+    "disenroll_for_job": {
+      "title_en": "Leaving NHI (got employer insurance)",
+      "title_ja": "社会保険加入による脱退",
+      "documents_required": [
+        { "ja": "新しい健康保険証", "en": "New health insurance card (from employer)", "required": true },
+        { "ja": "国民健康保険資格確認書", "en": "NHI qualification confirmation document", "required": true },
+        { "ja": "マイナンバーカード", "en": "My Number Card", "required": true }
+      ]
+    }
+  },
+
+  "common_mistakes": [
+    {
+      "mistake_en": "Not enrolling within 14 days",
+      "fix_en": "You owe premiums retroactively from the eligibility date, but medical expenses during the gap are not covered."
+    },
+    {
+      "mistake_en": "Forgetting to disenroll from NHI after getting employer insurance",
+      "fix_en": "You will be double-billed for premiums. NHI does not automatically cancel."
+    },
+    {
+      "mistake_en": "Not bringing the Certificate of Health Insurance Loss",
+      "fix_en": "The ward office cannot process your enrollment. Ask your former employer to issue this document."
+    }
+  ],
+
+  "after_submission": [
+    {
+      "step": 1,
+      "ja": "資格確認書を受け取ります",
+      "en": "You receive a qualification confirmation document (資格確認書) — keep this as proof of insurance"
+    },
+    {
+      "step": 2,
+      "ja": "保険料の通知が届きます",
+      "en": "Monthly premium notices arrive by mail. Pay at convenience stores, banks, or set up auto-debit"
+    },
+    {
+      "step": 3,
+      "ja": "扶養家族も同じ届出書で加入できます",
+      "en": "Dependents can be enrolled on the same form — list all household members"
+    },
+    {
+      "step": 4,
+      "ja": "保険料は前年の所得に基づいて計算されます",
+      "en": "Premiums are calculated based on your previous year's income"
+    }
+  ],
+
+  "counter_phrases": [
+    {
+      "situation_en": "Finding the counter",
+      "ja": "すみません、国民健康保険の窓口はどこですか？",
+      "romaji": "Sumimasen, kokumin kenkō hoken no madoguchi wa doko desu ka?",
+      "en": "Excuse me, where is the National Health Insurance counter?"
+    },
+    {
+      "situation_en": "Enrolling",
+      "ja": "国民健康保険に加入したいのですが",
+      "romaji": "Kokumin kenkō hoken ni kanyū shitai no desu ga",
+      "en": "I would like to enroll in National Health Insurance"
+    },
+    {
+      "situation_en": "Cancelling",
+      "ja": "国民健康保険をやめたいのですが",
+      "romaji": "Kokumin kenkō hoken wo yametai no desu ga",
+      "en": "I would like to cancel my National Health Insurance"
+    },
+    {
+      "situation_en": "Showing proof",
+      "ja": "資格喪失証明書を持っています",
+      "romaji": "Shikaku sōshitsu shōmeisho wo motteimasu",
+      "en": "I have my Certificate of Health Insurance Loss"
+    },
+    {
+      "situation_en": "Asking about premiums",
+      "ja": "保険料はいくらですか",
+      "romaji": "Hokenryō wa ikura desu ka?",
+      "en": "How much is the insurance premium?"
+    },
+    {
+      "situation_en": "Left previous job",
+      "ja": "会社を辞めたので、国保に切り替えたいです",
+      "romaji": "Kaisha wo yameta node, kokuho ni kirikae tai desu",
+      "en": "I left my company and want to switch to National Health Insurance"
+    }
+  ]
+}

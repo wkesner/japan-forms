@@ -3231,16 +3231,39 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
         zones = DEFAULT_ZONES
 
     pdf_name = Path(pdf_path).stem
-    # Extract city and ward from path (e.g., input/tokyo/katsushika/ido.pdf)
+    # Extract city and ward from path (e.g., input/tokyo/katsushika/ido.pdf
+    # or input/tokyo_nhi/adachi/form.pdf)
     ward_name = ""
     city_name = ""
+    CITY_PREFIXES = ("tokyo", "osaka", "kyoto", "nagoya")
     parts = Path(pdf_path).parts
     for i, part in enumerate(parts):
-        if part.lower() in ("tokyo", "osaka", "kyoto", "nagoya") and i + 1 < len(parts) - 1:
-            city_name = part.lower()
-            ward_name = parts[i + 1]
-            break
-    if city_name and ward_name:
+        part_lower = part.lower()
+        # Match exact city names and prefixed variants (e.g., tokyo_nhi)
+        if any(part_lower == c or part_lower.startswith(c + "_") for c in CITY_PREFIXES):
+            if i + 1 < len(parts) - 1:
+                city_name = part_lower.split("_")[0]  # tokyo_nhi -> tokyo
+                ward_name = parts[i + 1]
+                break
+
+    # Form-type-aware output naming
+    # Map form IDs to short filename labels
+    FORM_FILE_LABELS = {
+        "national_health_insurance": "NHIapp",
+        "residence_registration": "Residence",
+    }
+    form_label = FORM_FILE_LABELS.get(form_id)
+
+    if city_name and ward_name and form_label:
+        # New naming: Ward_NHIapp_v1.PDF
+        ward_dir = output_dir / city_name / ward_name
+        ward_dir.mkdir(parents=True, exist_ok=True)
+        ward_title = ward_name.replace("-", " ").title().replace(" ", "")
+        # Auto-increment version based on existing files
+        existing = sorted(ward_dir.glob(f"{ward_title}_{form_label}_v*.PDF"))
+        version = len(existing) + 1
+        output_path = ward_dir / f"{ward_title}_{form_label}_v{version}.PDF"
+    elif city_name and ward_name:
         ward_dir = output_dir / city_name / ward_name
         ward_dir.mkdir(parents=True, exist_ok=True)
         output_path = ward_dir / f"{pdf_name}_walkthrough.pdf"
