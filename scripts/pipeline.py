@@ -49,8 +49,9 @@ def create_dynamic_zones_for_fields(fields, page_height_pts, max_fields_per_zone
     """
     Create zones dynamically based on actual field positions.
 
-    Used for OCR pages where predefined A4 zones don't apply.
-    Groups fields by y-position into chunks of max_fields_per_zone.
+    Used for OCR pages and non-residence form types where predefined
+    A4 zones don't apply. Groups fields by y-position into chunks of
+    max_fields_per_zone with non-overlapping boundaries.
 
     Args:
         fields: List of field dicts with y0, y1 coordinates
@@ -66,31 +67,39 @@ def create_dynamic_zones_for_fields(fields, page_height_pts, max_fields_per_zone
     # Sort fields by y position
     sorted_fields = sorted(fields, key=lambda f: f.get("y0", 0))
 
-    zones = []
-    zone_num = 1
-
-    # Group into chunks
+    # Build raw chunks first, then compute non-overlapping boundaries
+    raw_chunks = []
     for i in range(0, len(sorted_fields), max_fields_per_zone):
         chunk = sorted_fields[i:i + max_fields_per_zone]
         if not chunk:
             continue
-
-        # Get y bounds for this chunk
         y_min = min(f.get("y0", 0) for f in chunk)
         y_max = max(f.get("y1", f.get("y0", 0) + 20) for f in chunk)
+        raw_chunks.append((y_min, y_max))
 
-        # Add padding
-        y_min = max(0, y_min - 15)
-        y_max = min(page_height_pts, y_max + 15)
+    # Create non-overlapping zones using midpoints between chunks
+    zones = []
+    for idx, (y_min, y_max) in enumerate(raw_chunks):
+        if idx == 0:
+            zone_y_min = max(0, y_min - 5)
+        else:
+            # Midpoint between previous chunk's max and this chunk's min
+            prev_max = raw_chunks[idx - 1][1]
+            zone_y_min = (prev_max + y_min) / 2
+
+        if idx == len(raw_chunks) - 1:
+            zone_y_max = min(page_height_pts, y_max + 5)
+        else:
+            next_min = raw_chunks[idx + 1][0]
+            zone_y_max = (y_max + next_min) / 2
 
         zones.append({
-            "name": f"Section {zone_num}",
-            "title_en": f"Section {zone_num}",
-            "title_ja": f"セクション {zone_num}",
-            "y_min": y_min,
-            "y_max": y_max,
+            "name": f"Section {idx + 1}",
+            "title_en": f"Section {idx + 1}",
+            "title_ja": f"セクション {idx + 1}",
+            "y_min": zone_y_min,
+            "y_max": zone_y_max,
         })
-        zone_num += 1
 
     return zones
 
@@ -1726,6 +1735,8 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
             cropped = None
             annotated_img = None
             numbered_entries = []
+            img_bytes = None
+            draw_w = draw_h = 0
 
             # Find the source page for this chunk's translations
             chunk_page_nums = set(t.get("page", 0) for t in chunk_translations if "page" in t)
@@ -1755,8 +1766,8 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
 
                 img_buf = io.BytesIO()
                 display_img.save(img_buf, format="PNG")
-                img_buf.seek(0)
-                img_reader = ImageReader(img_buf)
+                img_bytes = img_buf.getvalue()  # save bytes for continuation pages
+                img_reader = ImageReader(io.BytesIO(img_bytes))
 
                 # Scale annotated image to fit page width
                 avail_w = WIDTH - 2 * margin
@@ -1843,7 +1854,7 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
             circle_r = 8
             line_spacing = 7  # extra spacing between entries
 
-            for number, entry, explanation in explanations:
+            for exp_idx, (number, entry, explanation) in enumerate(explanations):
                 ja_text = entry.get("ja", "")
                 en_text = entry.get("en", "")
                 # Replace fullwidth spaces (from Japanese form layout) with regular spaces
@@ -1877,8 +1888,12 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
                 if en_on_next_line:
                     entry_height += 12
 
-                # Page break if not enough room
-                if y - entry_height < 45:
+                # Page break if not enough room.
+                # Reduce bottom margin for last few entries to avoid orphan
+                # continuation pages with just 1-2 fields.
+                entries_remaining = len(explanations) - exp_idx - 1
+                bottom_margin = 15 if entries_remaining <= 2 else 45
+                if y - entry_height < bottom_margin:
                     c.showPage()
                     next_page()
                     draw_header()
@@ -1893,7 +1908,18 @@ def generate_guide(pdf_path, translations_by_zone, form_template, output_path,
                     c.setStrokeColor(RED)
                     c.setLineWidth(1.5)
                     c.line(margin, y, WIDTH - margin, y)
-                    y -= 15
+                    y -= 10
+
+                    # Redraw crop image so numbered circles are visible
+                    if img_bytes and draw_w and draw_h:
+                        cont_reader = ImageReader(io.BytesIO(img_bytes))
+                        c.setFillColor(LGRAY)
+                        c.rect(margin - 2, y - draw_h - 4, draw_w + 4, draw_h + 4, fill=True, stroke=False)
+                        c.drawImage(cont_reader, margin, y - draw_h, width=draw_w, height=draw_h)
+                        c.setStrokeColor(HexColor("#cccccc"))
+                        c.setLineWidth(0.5)
+                        c.rect(margin - 2, y - draw_h - 4, draw_w + 4, draw_h + 4, fill=False, stroke=True)
+                        y -= draw_h + 20
 
                 # Draw red circle with number
                 cx = margin + circle_r + 2
@@ -3227,8 +3253,15 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    # DEFAULT_ZONES are calibrated for residence registration layout only.
+    # Other form types use dynamic zones based on actual field positions.
+    use_dynamic_zones = False
     if zones is None:
-        zones = DEFAULT_ZONES
+        if form_id == "residence_registration":
+            zones = DEFAULT_ZONES
+        else:
+            use_dynamic_zones = True
+            zones = DEFAULT_ZONES  # placeholder until fields are extracted
 
     pdf_name = Path(pdf_path).stem
     # Extract city and ward from path (e.g., input/tokyo/katsushika/ido.pdf
@@ -3369,9 +3402,9 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
     # Use first page height for zone mapping (zones are relative to page)
     page_height_pts = page_heights[0] if page_heights else 842
 
-    # Check if we have OCR fields - if so, use dynamic zones instead of predefined
+    # Use dynamic zones for OCR fields or non-residence form types
     has_ocr_fields = any(f.get("is_ocr", False) for f in fields)
-    if has_ocr_fields:
+    if has_ocr_fields or use_dynamic_zones:
         # Create dynamic zones based on actual field positions
         # Group fields by page first
         fields_by_page = {}
@@ -3386,7 +3419,10 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
         for page_num in sorted(fields_by_page.keys()):
             page_fields = fields_by_page[page_num]
             page_h = page_heights[page_num] if page_num < len(page_heights) else 842
-            page_zones = create_dynamic_zones_for_fields(page_fields, page_h, max_fields_per_zone=12)
+            # OCR forms need smaller zones (fields are noisier); text-based forms
+            # can use larger zones to avoid excessive page count
+            zone_size = 12 if has_ocr_fields else 20
+            page_zones = create_dynamic_zones_for_fields(page_fields, page_h, max_fields_per_zone=zone_size)
             # Tag zones with page number
             for z in page_zones:
                 z["page"] = page_num
@@ -3395,7 +3431,8 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
 
         if dynamic_zones:
             zones = dynamic_zones
-            print(f"    Using {len(zones)} dynamic zones for OCR content")
+            reason = "OCR content" if has_ocr_fields else f"non-residence form ({form_id})"
+            print(f"    Using {len(zones)} dynamic zones for {reason}")
 
     # Step 4: Translate fields by zone
     # Use pre-computed translations for OCR fields, regular translation for text-based
@@ -3413,6 +3450,10 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
         for field in zone_fields:
             text = field["text"].strip()
             if not text or len(text) < 2:
+                continue
+            # Skip short fragments without kanji (e.g. "す。", "くだ", "の世")
+            # Useful short fields like "氏名", "住所" always contain kanji
+            if len(text) <= 3 and not any('\u4e00' <= ch <= '\u9fff' for ch in text):
                 continue
 
             # Check for pre-computed OCR translation first

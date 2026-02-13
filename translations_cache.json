@@ -22518,5 +22518,38 @@
   "_vision_explanations:Page 1 - Section 1:dd023d13db5441287d9e7ed8e62acc5c": {
     "3": "This is a header for the information coordination section of the form - no action needed from you as it's just a label for the administrative processing area below.",
     "9": "Check one of the boxes to indicate the confirmation status: □ エラー (Error) if there were issues with verification, or □ 未反映 (Not Reflected) if the information hasn't been processed yet - this is typically filled by the office staff, not the applicant."
+  },
+  "_vision_explanations:Page 1 - Section 2:84f32dac1127fe3f998e489488d2cb41": {
+    "7": "This indicates 'Page B' or the back side of the form. No writing is needed here - this is just a reference marker for the form structure.",
+    "10": "This is an 'office use only' section for official record updates. Leave this blank as it will be filled by government staff processing your application.",
+    "15": "This appears to be an official code (8801) related to residence record maintenance and deletion authority. This is for administrative use only - do not write anything in this field as it's handled by immigration officials."
+  },
+  "_vision_explanations:Page 1 - Section 2:6141ba6df79fef5e2d1a46325a91a164": {
+    "2": "This appears to be part of a polite request phrase in Japanese, likely 'kudasai' (please). You don't need to fill this in as it's pre-printed text that's part of the form's instructions or request language."
+  },
+  "_vision_explanations:Page 1 - Section 3:fd691eb2a4b8c5929de40aaf4bd376ec": {
+    "1": "This appears to be part of instructional text that says 'please' - likely indicating you should fill out the form carefully or follow the instructions provided. As a foreign resident, simply follow the guidance given in the surrounding text for completing this section of the form."
+  },
+  "_vision_explanations:Page 1 - Section 4:40d0fdda6250e2204424a354db6631f5": {
+    "7": "This is a checklist section - review and check off the boxes for required documents or conditions that apply to your situation before submitting the form.",
+    "10": "Enter the date in Japanese calendar format (Heisei era), specify gender (male/female), and indicate employment status such as part-time work or other occupation type.",
+    "12": "Check the appropriate boxes to indicate reasons for record changes (acquisition/loss) and attach required supporting documents like qualification certificates or notification forms as specified."
+  },
+  "_vision_explanations:Page 1 - Section 5:7a3f50be42f0c8b038bccde0ce9d5fe4": {
+    "7": "This appears to be part of a checkbox or selection field related to personal information categories. As a foreign resident, you would typically check the appropriate box based on your specific situation or the type of documentation you're providing, following the instructions given in the form or by the office staff."
+  },
+  "_vision_explanations:Page 1 - Section 5:c8d7f5ede119ca0a5747b56e0f31a5ae": {
+    "4": "Write the name of your local ward citizens affairs office (区民事務所) where you plan to submit this form or handle your national health insurance matters. You can find this information by checking your ward's website or calling your local government office to confirm which office serves your address."
+  },
+  "_vision_explanations:Page 1 - Section 6:3dcb3d93da0a4a3459425c40ab138ec7": {
+    "2": "Write the name of your local ward citizens affairs office or the national health insurance division where you're submitting this form. You can find this information on previous correspondence from your ward office or by checking your ward's website.",
+    "9": "These appear to be selection dots/checkboxes for choosing between options. Mark the appropriate dot based on the context of the question being asked in this section."
+  },
+  "_vision_explanations:Page 1 - Section 6:e7d1d5e402073bdcb8d6878340ff9775": {
+    "5": "This is a notification/notice section that typically contains important instructions or information about the form. You should read this carefully as it may contain specific guidance about required documents, deadlines, or special procedures that apply to your situation as a foreign resident."
+  },
+  "_vision_explanations:Addresses:6e40da9215254966b2ca1135885c57c4": {
+    "4": "Check '有' (yes) if you have children, spouse, or parents moving with you, or '無' (no) if moving alone. If you check the phone contact option, the office will call you after processing your move-out procedures.",
+    "5": "This note explains that you'll need to present your residence card at your new municipality when completing move-in procedures - no action required in this field, it's just informational text."
   }
 }
