@@ -850,13 +850,10 @@ def discover_and_scrape(muni_key, muni_cfg, form_type, prefecture, max_pages=50)
         # Validate
         if validate_fn:
             try:
-                status, msg = validate_fn(str(dest))
-                if status == "PASS":
+                passed, msg = validate_fn(str(dest))
+                if passed:
                     print(f"    VALID: {msg}")
                     results["ok"].append((str(dest), c["score"]))
-                elif status == "SKIP":
-                    print(f"    SKIP (image-based): {msg}")
-                    results["flagged"].append((str(dest), f"image-based PDF: {msg}"))
                 else:
                     print(f"    FAIL validation: {msg}")
                     results["flagged"].append((str(dest), f"validation failed: {msg}"))
