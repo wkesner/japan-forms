@@ -912,5 +912,1449 @@
   },
   "_vision_explanations:Footer & Notes:02156fa549a1b2e6fbf88fe2b4f2075e": {
     "3": "Circle or check the appropriate method for how this form will be handled - whether it's being hand-delivered (手渡し), mailed (郵送), being corrected (修正), collected (回収), or if an envelope has been provided (封筒渡済). This is typically marked by office staff rather than the applicant."
+  },
+  "13821f4f2ed10172d951287bac2bc4d6": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "9503774b7a23ada8a904620bd0caee52": {
+    "en": "Moving/Relocation",
+    "type": "fragment",
+    "note": "Matched: 引越し"
+  },
+  "33f6c15e184793c5706ec7587ecb1ec4": {
+    "en": "Moving in (from another municipality or abroad) / Moving out / Special provision",
+    "type": "fragment",
+    "note": "Matched: 転入, 転出, 特例"
+  },
+  "0d1c68071aa1e98c7bd143e95873ee9d": {
+    "en": "My Number Card / My Number Card / My Number",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, マイナン"
+  },
+  "e449b24e9caf06ddaa9d7fc3e9d5fce6": {
+    "en": "Signature",
+    "type": "fragment",
+    "note": "Matched: 署名"
+  },
+  "7cce4daf5842fb5415f4a47e4d418883": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "cf6dfb76bc1d1afe81f8a7fe1f98c030": {
+    "en": "Address / From",
+    "type": "fragment",
+    "note": "Matched: 住所, から"
+  },
+  "ef3964d4445f9e1b3394031f6720fd52": {
+    "en": "My Number Card / My Number Card / My Number",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, マイナン"
+  },
+  "cee5f0f0d5e9748b953539cac29aa645": {
+    "en": "My Number Card / My Number Card / My Number",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, マイナン"
+  },
+  "5c31e0f7f43c5d8150758634554d7d74": {
+    "en": "My Number Card / My Number Card / My Number",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, マイナン"
+  },
+  "eb9b993c8a58653d66c2b77abf7f9859": {
+    "en": "National Health Insurance / Yes/There is / National Pension",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, あります。, 国民年金"
+  },
+  "e22f2deb009b165789a5711cf1b48411": {
+    "en": "Moving/Relocation",
+    "type": "fragment",
+    "note": "Matched: 引越し"
+  },
+  "a41deaef132b97de1fc2e155fe30f31d": {
+    "en": "Identity verification documents / Driver's license / Health insurance card",
+    "type": "fragment",
+    "note": "Matched: 本人確認書類, 運転免許証, 保険証"
+  },
+  "d037aa15abab8f1d8c19d0031cb79276": {
+    "en": "Health insurance card / Copy",
+    "type": "fragment",
+    "note": "Matched: 保険証, 写し"
+  },
+  "61bc4172e28ac0dc4fc8dd8738256870": {
+    "en": "Address / Postage stamp / From",
+    "type": "fragment",
+    "note": "Matched: 住所, 切手, から"
+  },
+  "a1bf44ae9cd0366a8a1b9b2979031bb4": {
+    "en": "Certificate of Moving Out / Moving out / .",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 転出, す。"
+  },
+  "0a364f2fe18d567def00e36c449d1719": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "08f3607046f88a3ddf0e50476ef5db02": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "cdc82b6b8486b9fbc255f5a5ca50198e": {
+    "en": "Document",
+    "type": "fragment",
+    "note": "Matched: 書を"
+  },
+  "1e68d66ab6f67e968dd6bcaaf819465d": {
+    "en": "National Health Insurance / Yes/There is / National Pension",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, あります。, 国民年金"
+  },
+  "53bd3865c47c6deebd27f21635a2da68": {
+    "en": "Mailing Address List",
+    "type": "llm",
+    "note": ""
+  },
+  "8176041e7d59e7647790cd4502f16625": {
+    "en": "Addressed to / Recipient",
+    "type": "llm",
+    "note": "Leave blank - this field is for the municipal office to fill in internally"
+  },
+  "134a686becdc0968e37302f4f7afd316": {
+    "en": "Postal code",
+    "type": "llm",
+    "note": "Enter your 7-digit Japanese postal code (e.g., 123-4567)"
+  },
+  "f64b3c54bc36baeeb88127131ccd7ead": {
+    "en": "Mailing address",
+    "type": "llm",
+    "note": "Enter the address where you want official documents and notifications to be sent (can be different from your registered residence address)"
+  },
+  "696df3ce8840f84e497660f06d25f772": {
+    "en": "〒230-0051",
+    "type": "llm",
+    "note": "This is a pre-printed postal code for the municipal office address - do not fill in or change this field."
+  },
+  "798b2af8071d74a825ca196a07d4858a": {
+    "en": "3-20-1 Tsurumi-Chuo, Tsurumi-ku",
+    "type": "llm",
+    "note": "This is a sample address format - write your address following this pattern: [district]-[area name], [ward/city]"
+  },
+  "18a6225a8fd6340d054c607de9afa4a4": {
+    "en": "Tsurumi Ward Office",
+    "type": "llm",
+    "note": ""
+  },
+  "1f56ee772c18bf8345a3e80066e46fdd": {
+    "en": "Family Registry Division",
+    "type": "llm",
+    "note": ""
+  },
+  "44005992794ab369b074d91caeeb0ba2": {
+    "en": "Please black out or otherwise make it invisible before sending.",
+    "type": "llm",
+    "note": "This instruction tells you to redact/cover sensitive information on documents before submitting them."
+  },
+  "16917a4c9136f31634bcf7dc78f9d85f": {
+    "en": "〒221-0824",
+    "type": "llm",
+    "note": ""
+  },
+  "0ca15d96621a54ceb1c3a52b81668eb4": {
+    "en": "3-8 Hirodai Ota-cho, Kanagawa-ku",
+    "type": "llm",
+    "note": "This is an example address format - write your actual address following this structure: district number-building number, town name, ward/city name"
+  },
+  "bf8d55ea1f1f4d3c3c5f197ac69bc3d5": {
+    "en": "Kanagawa Ward Office",
+    "type": "llm",
+    "note": ""
+  },
+  "861b91679b722d225a7e7cabcbbb24f3": {
+    "en": "〒220-0051",
+    "type": "llm",
+    "note": "This is a pre-printed postal code for the municipal office - do not fill in or change this field."
+  },
+  "793d7ecbe2565f122df156c91ec127bb": {
+    "en": "5-10, Chuo 1-chome, Nishi-ku",
+    "type": "llm",
+    "note": "This is a sample address format - enter your actual address using this structure: district/ward, neighborhood + block number, building number"
+  },
+  "4438b6502583215215ab14ed883617b1": {
+    "en": "Nishi Ward Office",
+    "type": "llm",
+    "note": ""
+  },
+  "26eb5ebe1f0dc6e467e47cc92b5bf016": {
+    "en": "〒231-0021",
+    "type": "llm",
+    "note": "This is a pre-printed postal code for the municipal office address - leave as is, no filling required."
+  },
+  "c2371c33a00b020343cacdf629a6ba31": {
+    "en": "35 Nihon-odori, Naka-ku",
+    "type": "llm",
+    "note": "This is a sample address format - enter your actual address using the same structure (district, street name, building number)"
+  },
+  "cbd64a97853e7549b51b91580c09768c": {
+    "en": "Naka Ward Office",
+    "type": "llm",
+    "note": ""
+  },
+  "7b70b63d7a04ba1da50ce4fdce1a83a0": {
+    "en": "Yokohama City _____ Ward Mayor",
+    "type": "llm",
+    "note": "This is a header showing the form is addressed to the ward mayor - you don't fill this part in"
+  },
+  "1d76a94628c2d3af86e2348588e6e681": {
+    "en": "〒232-0024",
+    "type": "llm",
+    "note": "This is a postal code example - enter your actual 7-digit Japanese postal code in this format"
+  },
+  "17bc0635c123b2e043c044ec6121d7db": {
+    "en": "2-33 Urafune-cho, Minami-ku",
+    "type": "llm",
+    "note": "This appears to be a pre-printed address example - replace with your actual address using the same format: [district]-ku [neighborhood name] [chome number]-[block number]"
+  },
+  "f69f5f96324e1a4e17c28da61b7ffe6d": {
+    "en": "Minami Ward Office",
+    "type": "llm",
+    "note": ""
+  },
+  "52379a65631f680ac149320d9ce185f6": {
+    "en": "(Date of completion)",
+    "type": "llm",
+    "note": "Write the date you filled out this form, not the date you moved or want to register the change."
+  },
+  "1278b41b27afbed74c3c5f18674b7667": {
+    "en": "〒233-0003",
+    "type": "llm",
+    "note": "This is a postal code example - enter your actual 7-digit Japanese postal code in this format."
+  },
+  "d4953ab5dce8b325fc7077a7033326d2": {
+    "en": "4-2-10 Konan, Konan-ku",
+    "type": "llm",
+    "note": "This is an example address format - replace with your actual district, neighborhood, and building numbers"
+  },
+  "045e210e7fa7401ef44404e71b376334": {
+    "en": "Konan Ward Office",
+    "type": "llm",
+    "note": ""
+  },
+  "cd4c4fc37a4199347b953c6a08eb9f51": {
+    "en": "Contact Information",
+    "type": "llm",
+    "note": "Fill in your phone number and/or email address where the municipal office can reach you regarding this registration"
+  },
+  "30af7a8e0fd5dc303fac3d5c3a4546a1": {
+    "en": "Please be sure to fill in the destination.",
+    "type": "llm",
+    "note": "Write your new address where you're moving to, including postal code, prefecture, city, and building details."
+  },
+  "61c481daba9fc31dd0ca8715c55b8048": {
+    "en": "〒240-0001",
+    "type": "llm",
+    "note": "This is a postal code example - replace with your actual 7-digit Japanese postal code"
+  },
+  "eabd9888a22f76e82e94de7d1b0fadb3": {
+    "en": "2-9 Kawabe-cho, Hodogaya-ku",
+    "type": "llm",
+    "note": "This is an example address format - replace with your actual address including ward (ku), district/town (cho/machi), and building numbers"
+  },
+  "efa77a8fbe78132d13c2a0ab2f5aec83": {
+    "en": "Hodogaya Ward Office Family Registration Division",
+    "type": "llm",
+    "note": ""
+  },
+  "ed77605c584babff99daa0de91f8e3e2": {
+    "en": "(※Notification by proxy/representative",
+    "type": "llm",
+    "note": "Check this section if someone else is submitting the form on your behalf"
+  },
+  "f0c0002012912a74785c02e9259b0481": {
+    "en": "〒241-0022",
+    "type": "llm",
+    "note": "This is a Japanese postal code - leave as-is if this matches your address, otherwise replace with your actual 7-digit postal code"
+  },
+  "513f31511f6d13d6e555fbaef6e67ff2": {
+    "en": "4-12 Tsurugamine 1-chome, Asahi Ward",
+    "type": "llm",
+    "note": "This is an example address format - replace with your actual address using the same structure (Ward/District, neighborhood, block number-building number)"
+  },
+  "3d1c28aae794780ccff8cd0b92d4ee56": {
+    "en": "Asahi Ward Office",
+    "type": "llm",
+    "note": ""
+  },
+  "d9cc0b358bf3d8bbc5e2f2e436aed521": {
+    "en": "only in the case of)",
+    "type": "llm",
+    "note": ""
+  },
+  "a226deaafab2bcfc38ee7d2a9412a15b": {
+    "en": "〒235-0016",
+    "type": "llm",
+    "note": "This is a postal code example - enter your actual 7-digit postal code starting with 〒"
+  },
+  "81a61db2d8be1a7218d5c923190b641d": {
+    "en": "5-1 Isogo 3-chome, Isogo-ku",
+    "type": "llm",
+    "note": "This is a sample address format - replace with your actual address using the same structure: house number, chome (district), ward/city name."
+  },
+  "37823cab326bd7794d9ed5ddea275a94": {
+    "en": "Isogo Ward Office",
+    "type": "llm",
+    "note": ""
+  },
+  "64ff02ff4188dcffb89a7785cf20d959": {
+    "en": "〒236-0021",
+    "type": "llm",
+    "note": "This is a Japanese postal code format - enter your 7-digit postal code here (the 〒 symbol indicates postal code)"
+  },
+  "b8fd0f54823311bd7f80e237758f674a": {
+    "en": "2-9-1 Deikame, Kanazawa-ku",
+    "type": "llm",
+    "note": "This appears to be a pre-filled address example - replace with your actual Japanese address using the same format: district/ward, neighborhood + chome + ban + gou number"
+  },
+  "4f978754cccbe7ec86c9ffd4c78e2764": {
+    "en": "Kanazawa Ward Office",
+    "type": "llm",
+    "note": ""
+  },
+  "2ae0ad3273cb3e94cab3353c2f21aa50": {
+    "en": "Yokohama City _______ Ward",
+    "type": "llm",
+    "note": "Write the name of your ward (district) in Yokohama City in the blank space (e.g., Nishi, Minami, Kohoku, etc.)"
+  },
+  "376ca42f3db4d8c4ae25e141f5babee0": {
+    "en": "〒222-0032",
+    "type": "llm",
+    "note": ""
+  },
+  "104529cc1d36cd9af591f63776d5eb33": {
+    "en": "26-1 Mameda-cho, Kohoku-ku",
+    "type": "llm",
+    "note": "This appears to be a sample address format - enter your complete Japanese address including district (ku/shi), town (cho/machi), block number (banchi), and building number"
+  },
+  "6fc7e8400ae2a0b3135fcfdfde7ee4b0": {
+    "en": "Kohoku Ward Office",
+    "type": "llm",
+    "note": ""
+  },
+  "50b2c081ac274d64e772782880f83454": {
+    "en": "Transfer No.",
+    "type": "llm",
+    "note": "Leave blank - this number will be assigned by the municipal office staff when processing your residence transfer."
+  },
+  "128059a2703a2b4cca0b2cd1411d4565": {
+    "en": "FURIGANA",
+    "type": "llm",
+    "note": "Write the phonetic reading of your name in katakana characters in the spaces above your actual name"
+  },
+  "688c4114e661aac660bd93275777c27f": {
+    "en": "〒226-0013",
+    "type": "llm",
+    "note": "This is a postal code example - enter your actual 7-digit Japanese postal code starting with 〒"
+  },
+  "6f2db4dd1c413f6085cf38bf6e62a213": {
+    "en": "118 Terayama-cho, Midori-ku",
+    "type": "llm",
+    "note": "This is an example address format - replace with your actual address using the same structure (house number + district + ward/city)"
+  },
+  "21a6ae10357155cccef8c40ff8a85617": {
+    "en": "Midori Ward Office",
+    "type": "llm",
+    "note": ""
+  },
+  "6e3d05aa50f6d92917476267306c088b": {
+    "en": "Taisho",
+    "type": "llm",
+    "note": "This refers to the Taisho era (1912-1926) for birth date - select if you were born during this period (highly unlikely for most current residents)"
+  },
+  "14249d3e3d63ca8f53e9dcafcb4d8814": {
+    "en": "〒225-0024",
+    "type": "llm",
+    "note": "This is a postal code (ZIP code equivalent) - enter your 7-digit Japanese postal code in the format ###-####"
+  },
+  "59bc765a16919870b150eafc22d29920": {
+    "en": "31-4 Ichigao-cho, Aoba-ku",
+    "type": "llm",
+    "note": "This appears to be a pre-filled address example - replace with your actual address in the same format: [house number]-[apartment number] [town name], [ward name]"
+  },
+  "563022b721551ed77160b7d960ecaed0": {
+    "en": "Aoba Ward Office",
+    "type": "llm",
+    "note": ""
+  },
+  "ad052133ec4f1265addac1221bbac541": {
+    "en": "Person 1",
+    "type": "llm",
+    "note": "This indicates the first person section - fill in details for the primary person being registered or whose registration is changing."
+  },
+  "fe0f7a3aed05d7cf456db44ac8c0bf13": {
+    "en": "Heisei (era)",
+    "type": "llm",
+    "note": "This refers to the Heisei era (1989-2019). If filling in dates, use the appropriate Japanese era year or convert to Western calendar year as required."
+  },
+  "e99395af14968e79696b332b870b630e": {
+    "en": "〒224-0032",
+    "type": "llm",
+    "note": "This is a postal code - enter your 7-digit Japanese postal code in the format shown (〒 followed by numbers with hyphen)"
+  },
+  "a3d04c48d5f8f3a2879cd6305c11d7e6": {
+    "en": "32-1 Chigasaki Chuo, Tsuzuki Ward",
+    "type": "llm",
+    "note": "This appears to be a sample address format - enter your address following this Japanese addressing convention (ward/district, area name, block number-building number)"
+  },
+  "ce4cb2f4ec85898f1249d2ea8a0e2cc2": {
+    "en": "Tsuzuki Ward Office",
+    "type": "llm",
+    "note": ""
+  },
+  "cd0c6440ea7f367b452d57af92497b09": {
+    "en": "Showa",
+    "type": "llm",
+    "note": "If your birth year was during the Showa era (1926-1989), select this option and write the corresponding Showa year (e.g., Showa 50 for 1975)"
+  },
+  "753e81d44b74341e9c84f03718572a4b": {
+    "en": "〒244-0003",
+    "type": "llm",
+    "note": "This is a postal code example - enter your actual 7-digit Japanese postal code here"
+  },
+  "b7b8a17603b4fb0a4c731f8c115767a5": {
+    "en": "16-17 Totsuka-cho, Totsuka-ku",
+    "type": "llm",
+    "note": "This is an example address format - enter your actual address using this structure (district-ward, town/neighborhood, block number-building number)"
+  },
+  "a348bfb200ddef5ad7ebe6721951cd79": {
+    "en": "Totsuka Ward Office",
+    "type": "llm",
+    "note": ""
+  },
+  "b415f8af613ee374b5678d603d758821": {
+    "en": "Reiwa (era name)",
+    "type": "llm",
+    "note": "This refers to the current Japanese era period that began in 2019 - you'll need to convert Western calendar years when filling dates on the form"
+  },
+  "8309c1f5244dc7cad261405ebf7eeb14": {
+    "en": "〒247-0005",
+    "type": "llm",
+    "note": "This is a postal code - enter your 7-digit Japanese postal code in the format shown (〒xxx-xxxx)"
+  },
+  "cf367d4fee397b5b79fba11f80dd8e57": {
+    "en": "303-19 Katsura-cho, Sakae-ku",
+    "type": "llm",
+    "note": "This is a sample address format - replace with your actual district, town/neighborhood name, and building numbers"
+  },
+  "5682dbb73ef61b2cda8b6599d736bdca": {
+    "en": "Sakae Ward Office",
+    "type": "llm",
+    "note": ""
+  },
+  "b5e388149c8843b2ced46081c1cf72e0": {
+    "en": "〒245-0024",
+    "type": "llm",
+    "note": "This is a postal code - leave as-is if it matches your address, or replace with your actual Japanese postal code"
+  },
+  "102d936d5f08f58157884fcec287444d": {
+    "en": "5-1-1 Izumi Chuo Kita, Izumi-ku",
+    "type": "llm",
+    "note": "This is a sample address format - write your actual address using the same structure (district-street-block-building number)"
+  },
+  "39e3845b5fc641788dcc65c0d794d024": {
+    "en": "Izumi Ward Office",
+    "type": "llm",
+    "note": ""
+  },
+  "81edd312fb86e7a08e3749f5ea0127b1": {
+    "en": "Postal code 246-0021",
+    "type": "llm",
+    "note": ""
+  },
+  "687183ea8ee10dae135ce107cd6fef37": {
+    "en": "190 Futatsuhashi-cho, Seya-ku",
+    "type": "llm",
+    "note": "This is a sample address format - enter your actual address using this structure: [number] [town name], [ward name]"
+  },
+  "11e2812d22cc2a4388730179c1d53e7c": {
+    "en": "Seya Ward Office",
+    "type": "llm",
+    "note": "N/A if it's just instructions/layout text"
+  },
+  "_vision_explanations:Header & Dates:68c4445e6b059a6818b85d9f0a73b7ff": {
+    "1": "This is a header section explaining the mail-in method for submitting a moving-out notification (転出届). As a foreign resident, you don't need to write anything here - this is just instructional text explaining that you should fill out this form and mail it to your current ward/city office before moving.",
+    "2": "This is also instructional text, not a field to fill out. It's explaining that you should complete this form and mail it along with other required documents to your current municipal office before relocating.",
+    "3": "This appears to be a continuation of the instructions above. No action is required from you as this is explanatory text about the mail-in procedure for the moving-out notification process."
+  },
+  "_vision_explanations:Header & Dates:2034d00cd5564d8cc5ad2792215cb85c": {
+    "1": "This is a header section titled 'Mailing Address List' - you don't need to write anything here as it's just the title of the form section. This indicates the form will contain fields below for entering mailing addresses of recipients."
+  },
+  "_vision_explanations:Who Is Filing:f3d8714a16d91a78420384e5f80b46be": {
+    "3": "This shows Tsurumi Ward Office as a pre-filled option. Select this if you live in Tsurumi Ward or need services from this specific ward office.",
+    "4": "This indicates the Family Registry Division (koseki-ka), which handles birth certificates, marriage registration, and other family record documents. This section would be pre-selected based on your document type.",
+    "5": "This is the postal code for the ward office address. These codes are typically pre-filled and don't require input from you.",
+    "7": "This shows Kanagawa Ward Office as another option. Choose this if you reside in Kanagawa Ward or your matter falls under their jurisdiction.",
+    "8": "Another Family Registry Division option corresponding to Kanagawa Ward Office. Select based on which ward office you're submitting your documents to.",
+    "11": "This represents Nishi Ward Office as a third option. Pick this if you live in Nishi Ward or need to file documents with this particular office.",
+    "12": "The Family Registry Division for Nishi Ward Office. Choose the division that matches your selected ward office and document type."
+  },
+  "_vision_explanations:Addresses:770502ef27b8177b11bf1556e8a090d5": {
+    "2": "This is the title section for 'Moving Out Notification by Mail'. You don't need to fill anything in this red circle area - it's just the form header indicating this is for submitting a moving out notification via postal mail."
+  },
+  "_vision_explanations:Addresses:4123d285cf0e08133c2d34406628ed94": {
+    "3": "Select this if your address is in Nishi Ward (西区). Check your residence card or utility bills to confirm which ward you live in.",
+    "4": "This indicates the Family Registry Division which handles birth, marriage, death certificates and family record matters. This is pre-filled and shows which department will process your request.",
+    "7": "Select this if your address is in Naka Ward (中区). Foreign residents should check their address carefully as ward boundaries can be confusing in large cities.",
+    "8": "This indicates the Family Registry Division for Naka Ward. As a foreign resident, you'll interact with this office for family-related documentation and certificates.",
+    "11": "Select this if your address is in Minami Ward (南区). Double-check your ward by looking at official documents or asking your landlord if unsure.",
+    "12": "This indicates the Family Registry Division for Minami Ward. This office handles official family documentation which foreign residents may need for visa applications or other legal matters.",
+    "15": "Select this if your address is in Konan Ward (港南区). Note that some wards have similar names, so verify carefully using your official address documents."
+  },
+  "_vision_explanations:Addresses:e71271f8382db305afe3927d39fb0222": {
+    "1": "This indicates the department handling the form - '戸籍課' (Family Registry Division). This field is likely pre-filled or you should write '戸籍課' to specify that this document should be processed by the Family Registry Division, which handles birth certificates, marriage certificates, and other vital records."
+  },
+  "_vision_explanations:Person Table:6c274b5cbbed41ce1525376b4a535bc3": {
+    "4": "Enter the date you are moving out of your current address in year/month/day format. If you haven't moved out yet, enter your planned moving date.",
+    "8": "This field is for the address of the person submitting the form, but only needs to be filled out if someone else (a representative) is submitting this form on your behalf rather than you submitting it yourself."
+  },
+  "_vision_explanations:Person Table:788c676c77aba4e3480932ec63dd1395": {
+    "3": "This field shows the ward office name (Konan Ward Office). If you live in Konan ward, this would be your local government office for family registry matters.",
+    "4": "This indicates the Family Registry Division, which is the department that handles birth certificates, marriage certificates, and other family registration documents.",
+    "7": "This shows Hodogaya Ward Office Family Registration Division. This would be the office to contact if you live in Hodogaya ward and need family registry services.",
+    "10": "This field shows Asahi Ward Office, which would be your local government office if you reside in Asahi ward of Yokohama city.",
+    "11": "This indicates the Family Registry Division again. This department handles all official family status documentation and certificates.",
+    "14": "This shows Isogo Ward Office, which serves residents of Isogo ward for government services including family registration matters.",
+    "15": "This is the Family Registry Division designation. Contact this division for services like obtaining family registry certificates or updating family status information."
+  },
+  "_vision_explanations:Person Table:42f742c5b681cedacca5dd98bb28d800": {
+    "3": "This shows 'Kanazawa Ward Office' - this field indicates which municipal ward office handles your family registry matters based on your registered address.",
+    "4": "This shows 'Family Registry Division' (Koseki-ka) - this indicates the specific department within the ward office that processes birth, death, marriage, and other family status documents.",
+    "5": "This shows the postal code '〒222-0032' - this is the official postal code for the corresponding ward office address listed in the form.",
+    "7": "This shows 'Kohoku Ward Office' - similar to field 3, this indicates another ward office jurisdiction for family registry services.",
+    "8": "This shows 'Family Registry Division' - same as field 4, indicating the koseki department within Kohoku Ward Office.",
+    "11": "This shows 'Midori Ward Office' - another ward office listed for family registry jurisdiction purposes.",
+    "12": "This shows 'Family Registry Division' - the koseki department within Midori Ward Office that handles family registry documentation.",
+    "15": "This shows 'Aoba Ward Office' - another municipal ward office that provides family registry services for residents in that district."
+  },
+  "_vision_explanations:Person Table:5a66fcbbb12a7067653a2975dba4d0e9": {
+    "1": "This field indicates the government office division that handles family registry matters (koseki). As a foreign resident, you typically don't need to fill this out as it's usually pre-printed or filled by the office staff, since most foreign residents are registered in the resident registry (jūminhyō) rather than the family registry system."
+  },
+  "_vision_explanations:ID & Documents:ee5989d50130d77f80319e8795fed640": {
+    "3": "This field shows 'Tsuzuki Ward Office' - this is pre-printed and indicates which municipal office handles family registry matters for this address. No action needed from you.",
+    "4": "This shows 'Family Registry Division' (koseki-ka) - the specific department within the ward office that manages birth, death, marriage, and family records. This is pre-printed information.",
+    "7": "This field shows 'Totsuka Ward Office' - another pre-printed ward office name indicating the responsible municipal office for family registry services in this area.",
+    "8": "This shows 'Family Registry Division' for Totsuka Ward - the department that handles all family registry documentation and procedures. No input required as this is pre-printed.",
+    "11": "This displays 'Sakae Ward Office' - a pre-printed field showing which ward office serves residents in this district for official family registry matters.",
+    "12": "This shows 'Family Registry Division' for Sakae Ward - the specific section within the ward office that processes koseki (family registry) documents and applications.",
+    "15": "This field shows 'Izumi Ward Office' - pre-printed information indicating the municipal office responsible for family registry services in the Izumi ward area."
+  },
+  "_vision_explanations:ID & Documents:16689551ea260fb5cfcc005bd68c1ad6": {
+    "1": "This shows the department name 'Family Registry Division' - this is pre-printed and indicates which government office handles this form, no action needed from you.",
+    "2": "This is a pre-printed postal code (246-0021) for the government office location - you don't need to write anything here as it's already filled in.",
+    "5": "This is another pre-printed reference to the Family Registry Division department - like field 1, this is for administrative reference and requires no input from you."
+  },
+  "_vision_explanations:Instructions:29a63da10a86c15e109ddae5adf6af14": {
+    "1": "This is a pre-printed postal code (246-0021) for the government office - you don't need to write anything here as it's already filled in.",
+    "4": "This shows the department name 'Family Registry Division' (戸籍課) - this is also pre-printed and indicates which office section handles this form, so no action needed from you."
+  },
+  "_vision_explanations:Footer & Notes:ae5969ea3ef8b7fde45f51243851512c": {
+    "1": "This is a note stating that if you mail this notification form, you must include contact information where you can be reached during weekday business hours. Make sure to provide a phone number where you or someone who can assist you can answer calls during regular daytime hours (typically 9 AM to 5 PM on weekdays)."
+  },
+  "36dd4021f4cd41b57f1e0c5a731122ce": {
+    "en": "※Daytime contact information where you can be reached ( )",
+    "type": "llm",
+    "note": "Provide a phone number where you can be contacted during business hours (typically your mobile phone or work number)."
+  },
+  "d7d664ddab1a7e39717ae02a326b5365": {
+    "en": "(※By proxy/representative",
+    "type": "llm",
+    "note": "This indicates a section for when someone else is filling out the form on your behalf - you'll need proper authorization documentation"
+  },
+  "822be3d24ce56e7dd36d75967d92bf7e": {
+    "en": "Furigana (phonetic reading)",
+    "type": "llm",
+    "note": "Write the phonetic pronunciation of your name in hiragana characters above or next to where you write your name in kanji/katakana"
+  },
+  "19b9873b783971003596a4048453eb05": {
+    "en": "Name 2",
+    "type": "llm",
+    "note": "Write the name of the second person if registering multiple family members on the same form."
+  },
+  "_vision_explanations:Who Is Filing:071300e456a538ce31f5d6cbf940bab9": {
+    "6": "Write the name of the ward office or municipal office where you are submitting this form. This should match the jurisdiction where your family registry matters are handled.",
+    "7": "Write the specific department or division within the office, typically '戸籍課' (Family Registry Division) for family registry matters, or the appropriate department name for your specific request."
+  },
+  "_vision_explanations:Addresses:9e191f4b83923f8fc4d7fa1c0326ec58": {
+    "5": "Enter the date you plan to move out of your current address or the actual date you moved out if it already happened. Use the Japanese date format (year/month/day) and consider using the Japanese calendar year (Reiwa era) if the form requires it."
+  },
+  "_vision_explanations:Addresses:a1e8c54b1b441f486ead64e5c118ecc3": {
+    "3": "This field shows 'Asahi Ward Office' - this is pre-printed and indicates which ward office handles matters for residents of Asahi Ward. No action needed.",
+    "4": "This shows 'Family Registry Division' - the department within the ward office that handles family registration matters. This is pre-printed information.",
+    "7": "This field shows 'Izumi Ward Office' - pre-printed information indicating the ward office for Izumi Ward residents. No filling required.",
+    "8": "This shows 'Family Registry Division' - the specific department handling family registry services. This is already printed on the form.",
+    "11": "This field shows 'Isogo Ward Office' - pre-printed designation of the ward office serving Isogo Ward. No input needed from you.",
+    "12": "This shows 'Family Registry Division' - the department responsible for family registration matters. This information is already provided.",
+    "13": "This shows a postal code (〒221-0824) - this is pre-printed information for the specific address. You don't need to write anything here.",
+    "15": "This field shows 'Kanagawa Ward Office' - pre-printed information indicating the relevant ward office. This is reference information only."
+  },
+  "_vision_explanations:Person Table:41958901389ba2ff4c3acd2c9f7f6685": {
+    "1": "This is a pre-printed postal code (〒221-0824) for Kanagawa Ward Office - you don't need to fill this in as it's already provided.",
+    "3": "This shows 'Kanagawa Ward Office' as the destination office - this is pre-printed information indicating where this section of the form will be processed.",
+    "4": "This indicates the 'Family Registry Division' (戸籍課) - the specific department that handles family registration matters, no action needed as it's pre-printed.",
+    "7": "This shows 'Kanazawa Ward Office' as another processing location - pre-printed information for administrative routing purposes.",
+    "8": "Another 'Family Registry Division' designation - pre-printed to show which department in Kanazawa Ward will handle related matters.",
+    "11": "This shows 'Konan Ward Office' as a third processing location - pre-printed administrative information.",
+    "12": "Family Registry Division for Konan Ward - pre-printed departmental information, no input required from you.",
+    "13": "This is a pre-printed postal code (〒222-0032) for Kohoku Ward Office - already filled in for administrative purposes.",
+    "15": "This shows 'Kohoku Ward Office' as the final processing location listed - pre-printed information for administrative routing."
+  },
+  "_vision_explanations:Person Table:87572bf15bc972adafafccf5de2ea42e": {
+    "1": "This field shows '戸籍課' (Family Registry Division), which is the government department that handles birth, death, marriage, and family registration records. As a foreign resident, you would typically interact with this division for marriage registration with a Japanese citizen or other family-related legal matters.",
+    "4": "This shows '栄区役所' (Sakae Ward Office), which is the local government office for Sakae Ward in Yokohama City. You would visit or contact this office if you live in the Sakae Ward area for various administrative procedures.",
+    "5": "This indicates the '戸籍課' (Family Registry Division) within the ward office. This is the specific department within the ward office that handles family registration matters, separate from other departments like residence registration or tax affairs.",
+    "6": "This is the postal code '〒246-0021' for the Sakae Ward Office location. Japanese postal codes use this 7-digit format and are essential for mail delivery and identifying specific areas within cities.",
+    "9": "Another '戸籍課' (Family Registry Division) entry, indicating this department exists in multiple ward offices. Each ward has its own family registry division to serve residents in that specific area.",
+    "12": "This shows '都筑区役所' (Tsuzuki Ward Office), which serves residents of Tsuzuki Ward in Yokohama City. You would use this office if you live in the Tsuzuki Ward area for local government services.",
+    "13": "This indicates the '戸籍課' (Family Registry Division) at Tsuzuki Ward Office. Like other wards, Tsuzuki has its own family registry department to handle family registration matters for local residents."
+  },
+  "_vision_explanations:Person Table:94ffd0cf2082b6a78d3c5109708d8f3f": {
+    "1": "This field shows the ward office location (Tsurumi Ward Office in this case). As a foreign resident, you don't need to write anything here - this is pre-printed to indicate which ward office the form is associated with.",
+    "2": "This indicates the Family Registry Division, which handles official family records and certificates. This is also pre-printed information showing which department within the ward office processes this type of form."
+  },
+  "_vision_explanations:ID & Documents:cddb4b42cdef032ca56d00c146570c15": {
+    "3": "This shows Tsurumi Ward Office - this field is pre-filled and indicates which ward office handles this particular address or case.",
+    "4": "This shows Family Registry Division (戸籍課) - this is pre-filled and indicates the specific department within the ward office that manages family registry matters.",
+    "7": "This shows Totsuka Ward Office - like field 3, this is pre-filled to indicate the relevant ward office for this entry.",
+    "8": "This shows Family Registry Division - same as field 4, this pre-filled field indicates the department handling family registry services.",
+    "11": "This shows Naka Ward Office - another pre-filled ward office designation for the corresponding address or case.",
+    "12": "This shows Family Registry Division - pre-filled department name indicating where family registry matters are handled.",
+    "15": "This shows Nishi Ward Office - pre-filled field indicating the ward office responsible for this particular entry or address."
+  },
+  "_vision_explanations:ID & Documents:e7e95f0cb9765fbe69a160fd1994331d": {
+    "1": "This field shows '戸籍課' (Family Registry Division) - this is pre-printed and indicates the government department handling family registration matters. No action needed as this is already filled in.",
+    "4": "This shows '保土ケ谷区役所戸籍課' (Hodogaya Ward Office Family Registration Division) - another pre-printed department designation. This indicates which specific ward office's family registry division is involved.",
+    "7": "This displays '緑区役所' (Midori Ward Office) - a pre-printed field showing the ward office name. This identifies the local government office jurisdiction for this entry.",
+    "8": "This shows '戸籍課' (Family Registry Division) again - pre-printed department name. All these department fields are reference information and don't require input from you."
+  },
+  "_vision_explanations:Instructions:0042e58c0dcde8690cb84a1d6eca19f6": {
+    "3": "Write the name of the ward office where you need to submit this form or conduct your business. If you live in Midori Ward, write '緑区役所' (Midori Ward Office).",
+    "4": "Write the specific department within the ward office that handles your request. For family registry matters like birth/death certificates or marriage registration, write '戸籍課' (Family Registry Division).",
+    "7": "Write the name of another relevant ward office if your case involves multiple wards or if you're transferring records. For Minami Ward, write '南区役所' (Minami Ward Office).",
+    "8": "Write the department name for the second office listed above. For family registry-related transfers or cross-ward procedures, write '戸籍課' (Family Registry Division)."
+  },
+  "_vision_explanations:Page 1 - Section 1:6b6a410be3034c902efc5c47ea658e7a": {
+    "1": "This is just a header explaining the method for moving out notification by mail - no action needed here.",
+    "10": "Enter the planned date you will move out of your current address in year/month/day format (e.g., 2024/03/15). This should be your actual planned moving date, not just an estimate."
+  },
+  "_vision_explanations:Page 2 - Section 1:860b1c9adc11ded4c7656e8f043e219c": {
+    "1": "This is the header 'Mailing Address List' - no entry needed, it's just the form title indicating this section lists where documents will be sent.",
+    "7": "This pre-printed field shows 'Aoba Ward Office' as the destination office. No entry needed as it's already filled in by the government.",
+    "8": "This pre-printed field shows 'Family Registry Division' as the specific department. No entry needed as it's already filled in.",
+    "11": "This pre-printed field shows 'Asahi Ward Office' as another destination office. No entry needed as it's already filled in.",
+    "12": "This pre-printed field shows 'Family Registry Division' as the department. No entry needed as it's already filled in.",
+    "15": "This pre-printed field shows 'Izumi Ward Office' as another destination office. No entry needed as it's already filled in."
+  },
+  "_vision_explanations:Page 2 - Section 1:fba481190ec22ae93df53dd6586d1e05": {
+    "1": "This field shows '戸籍課' (Family Registry Division), which is the government department that handles family registration records. As a foreign resident, you would typically leave this field as-is since it indicates which department processes this type of documentation.",
+    "4": "This shows '磯子区役所' (Isogo Ward Office), indicating the specific municipal ward office location. Foreign residents should verify this matches the ward office in their area of residence, as different wards handle registrations for their respective districts.",
+    "5": "This is another '戸籍課' (Family Registry Division) field, likely indicating the destination department for processing. Foreign residents typically don't need to modify this pre-filled administrative routing information."
+  },
+  "_vision_explanations:Page 2 - Section 2:5c1d415a656c66217b1caee62319c51e": {
+    "1": "This is a pre-printed postal code (〒221-0824) for Kanagawa Ward Office. You don't need to write anything here as it's already filled in.",
+    "3": "This shows 'Kanagawa Ward Office' - it's pre-printed information indicating which ward office this row refers to. No action needed from you.",
+    "4": "This shows 'Family Registry Division' (戸籍課) - the specific department within the ward office. This is pre-printed, so no input required.",
+    "7": "This shows 'Kanazawa Ward Office' - another pre-printed ward office name for reference. You don't need to fill this in.",
+    "8": "This shows 'Family Registry Division' for Kanazawa Ward - pre-printed department information that requires no input from you.",
+    "11": "This shows 'Konan Ward Office' - pre-printed ward office information. No writing required in this field.",
+    "12": "This shows 'Family Registry Division' for Konan Ward - pre-printed department name that you don't need to fill in.",
+    "13": "This is a pre-printed postal code (〒222-0032) for another ward office. It's already completed, so no input needed.",
+    "15": "This shows 'Kohoku Ward Office' - pre-printed information about this ward office. You don't need to write anything here."
+  },
+  "_vision_explanations:Page 2 - Section 2:513b6e9fae83dbf67eb121f055daadbb": {
+    "1": "Write the department name that issued or will handle your family registry documents, typically '戸籍課' (Family Registry Division) of the relevant ward office.",
+    "4": "Enter the name of the ward office that has jurisdiction over your address or family registry, following the format '[Ward Name]区役所' such as '港北区役所' for Kohoku Ward Office.",
+    "5": "Write '戸籍課' (Family Registry Division) as this is the specific department within the ward office that handles family registry matters like birth certificates, marriage certificates, and family register copies."
+  },
+  "_vision_explanations:Page 2 - Section 3:4cf9642451722c4cf240163744ae53a7": {
+    "1": "This is a pre-printed postal code (〒246-0021) for Seya Ward, Yokohama City. You don't need to write anything here as it's already filled in.",
+    "4": "This shows 'Family Registry Division' (戸籍課) which is the department handling family registration matters. This is pre-printed information indicating which office section to contact.",
+    "7": "This indicates 'Tsuzuki Ward Office' (都筑区役所) as the responsible government office. Foreign residents should note this is where they would need to go for services in Tsuzuki Ward.",
+    "8": "Another pre-printed 'Family Registry Division' (戸籍課) label. This department handles birth certificates, marriage registration, and other family status documents.",
+    "11": "This shows 'Tsurumi Ward Office' (鶴見区役所) as the local government office. If you live in Tsurumi Ward, this would be your local ward office for various administrative procedures.",
+    "12": "Pre-printed 'Family Registry Division' (戸籍課) designation. Foreign residents getting married to Japanese citizens or having children in Japan would interact with this division.",
+    "15": "This indicates 'Totsuka Ward Office' (戸塚区役所). Each ward office serves residents in that specific area of Yokohama City for local government services."
+  },
+  "_vision_explanations:Page 2 - Section 3:6768a26f12c830a27bf3268829e1db9d": {
+    "1": "Write '戸籍課' (Family Registry Division) - this indicates the specific department within the ward office that handles family registration matters.",
+    "4": "Write the name of your local ward office (ku yakusho) - for example '中区役所' means Naka Ward Office. Use the ward office that covers your registered address.",
+    "5": "Write '戸籍課' (Family Registry Division) again - this confirms which department at the ward office you need to contact for this family registry-related matter."
+  },
+  "_vision_explanations:Page 2 - Section 4:012acfc512db897ea77e9049e89d30d0": {
+    "3": "Write the name of the ward office where you need to submit documents or conduct business - in this case 'Nishi Ward Office' is already filled in.",
+    "4": "Specify the department you're dealing with - 'Family Registry Division' handles birth certificates, marriage registration, and family record matters.",
+    "7": "This shows 'Hodogaya Ward Office Family Registration Division' - the specific office location that handles family registry services for Hodogaya ward residents.",
+    "10": "Enter 'Midori Ward Office' - this is the municipal office serving the Midori (Green) ward area of the city.",
+    "11": "Write 'Family Registry Division' (戸籍課) - this department processes all official family documentation including certificates needed for visa applications.",
+    "14": "Fill in 'Minami Ward Office' - the local government office responsible for serving residents in the Minami (South) ward.",
+    "15": "Enter 'Family Registry Division' - the same department name that handles birth, death, marriage, and divorce registrations at each ward office."
+  },
+  "bc72613c06afc9da2afd614b1414646e": {
+    "en": "Resident Registration Change Notification",
+    "type": "llm",
+    "note": "This is the form title - you'll need to fill out the sections below to register address changes, moving in/out, or household composition changes"
+  },
+  "915e4e65bf10b221fe9d98028583bdf1": {
+    "en": "Reason for Change",
+    "type": "llm",
+    "note": "Select the reason for your address change (e.g., moving in, moving out, change of address within the municipality)"
+  },
+  "57e3f1a422fca42657af29dfc0aa2728": {
+    "en": "Type of Change/Movement Category",
+    "type": "llm",
+    "note": "Select the type of residential change (moving in, moving out, address change within city, etc.)"
+  },
+  "ac0307ab7f4d135eeab8b1b46aa29d0c": {
+    "en": "Section Chief/Director Verification, Processing, Reception",
+    "type": "llm",
+    "note": ""
+  },
+  "e1bca4349fc4a02d0c43238c10ef5c8e": {
+    "en": "Summary Court",
+    "type": "llm",
+    "note": "N/A if it's just instructions/layout text"
+  },
+  "ac45c105ebba71e098469eda69faaad6": {
+    "en": "My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 個人番号"
+  },
+  "a1a117c061d6705563969b0f21c50b10": {
+    "en": "(Former surname)",
+    "type": "llm",
+    "note": "Fill in your previous family name if you changed it due to marriage, divorce, or adoption after initially registering in Japan"
+  },
+  "381ad36756a9ac78e2e34cd05086137a": {
+    "en": "Pension Insurance Change Notification (appears to be garbled/duplicated text)",
+    "type": "llm",
+    "note": "N/A - this appears to be corrupted form text that should be clarified with municipal office staff"
+  },
+  "77a4825f3a556ce03ef1bc18e0e51c2b": {
+    "en": "Moving in (from another municipality or abroad)",
+    "type": "fragment",
+    "note": "Matched: 転入"
+  },
+  "88918e4c2f72b89ab03e601b044700bd": {
+    "en": "All/Complete - All/Complete - All/Complete - All/Complete - All/Complete - All/Complete",
+    "type": "llm",
+    "note": "N/A - this appears to be a formatting placeholder or template marking rather than a field requiring input"
+  },
+  "4e553cca63dd5751a7de7dbec3348bc0": {
+    "en": "National Health Insurance, Long-term Care Insurance (National Health Insurance, Long-term Care Insurance)",
+    "type": "llm",
+    "note": "Check the boxes that apply to your current insurance coverage - typically both for residents enrolled in the municipal system."
+  },
+  "b9bdd5652fdeb3100da1a64a1138d851": {
+    "en": "Name display/Name deletion",
+    "type": "llm",
+    "note": "Check appropriate box to indicate whether you want your name displayed or deleted from public records/voter registration lists"
+  },
+  "dcdd289e56e8c80cb184be7c10f0935e": {
+    "en": "Record/Change/Delete",
+    "type": "llm",
+    "note": "This indicates the type of registration action - check the appropriate box for whether you're making a new record, changing existing information, or deleting a registration."
+  },
+  "316bc462a6a9eb7942990e2e75b131d1": {
+    "en": "[This appears to be corrupted/encoded text that cannot be properly translated]",
+    "type": "llm",
+    "note": ""
+  },
+  "1b4a2cbeb29bfda0de1d74b9035122e8": {
+    "en": "Please fill out by hand (signature).",
+    "type": "llm",
+    "note": "Use handwritten signature, not typed or printed name."
+  },
+  "fbfc4d352b7a7b4764b8490648a9fa73": {
+    "en": "Record/Update/Remove",
+    "type": "llm",
+    "note": "These are the three main types of residence registration changes - select the appropriate option based on whether you're registering a new address, updating existing information, or removing a registration."
+  },
+  "4c9983b2379067a43e1e7ca498ae8130": {
+    "en": "Ward/District Section All-1 All-1",
+    "type": "llm",
+    "note": "N/A (appears to be administrative coding or layout markers for the form structure)"
+  },
+  "872e376e02a7b0ed9207097adcd02432": {
+    "en": "Entry Entry Entry Registration Determination Acquisition) Residence Departure Departure Departure Issuance) Change Merger Separation Change) Cancellation Recovery) Correction) Record Removal Birth Death) Record Removal",
+    "type": "llm",
+    "note": "N/A - This appears to be corrupted or fragmented text, possibly from form field labels or categories that didn't display properly. Check the original form for the correct readable text."
+  },
+  "c8379663ddb5a428a8de5259aaa98150": {
+    "en": "Regarding application for late-stage elderly medical care (individual)",
+    "type": "llm",
+    "note": "Check this box if you're 75+ years old or have certain disabilities and need to apply for or update late-stage elderly medical insurance coverage."
+  },
+  "332196c6e8b2d3603cf4913b22866c73": {
+    "en": "To the Mayor of Katsushika Ward",
+    "type": "llm",
+    "note": ""
+  },
+  "cccce21fcc23d34c7a3b8c159a22a4e9": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "159ba9cff12de1cded206379e775ecd5": {
+    "en": "Reiwa _____ year _____ month _____ day",
+    "type": "llm",
+    "note": "Fill in the current date using the Japanese Reiwa era calendar (Reiwa 1 = 2019, Reiwa 2 = 2020, etc.)"
+  },
+  "f97339265c3172463feb41499bedfa14": {
+    "en": "Head of household",
+    "type": "fragment",
+    "note": "Matched: 世帯主"
+  },
+  "eb43a2606081fdfc9d6d4b876f99366a": {
+    "en": "Date of notification",
+    "type": "llm",
+    "note": "Write the date you are submitting this form to the municipal office (format: year/month/day)"
+  },
+  "3202a021772e8566afc647abbd1f5ff7": {
+    "en": "My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 個人番号"
+  },
+  "89b22b9dcb6f4df04adda8da789eedd1": {
+    "en": "Head of household",
+    "type": "fragment",
+    "note": "Matched: 世帯主"
+  },
+  "b6d48b53f362de3b9cf47bb1a199ff1d": {
+    "en": "Place of employment / Employer / Mobile phone / To do/perform",
+    "type": "fragment",
+    "note": "Matched: 勤務先, 携帯, する"
+  },
+  "25cc1dad6323b73420b3ce65394db4f9": {
+    "en": "Full name",
+    "type": "fragment",
+    "note": "Matched: 氏名"
+  },
+  "681835c3bcf536dfce2f6b6a9d18fc0b": {
+    "en": "Please put a circle (○) on",
+    "type": "llm",
+    "note": "Circle the appropriate option from the choices provided (this text appears incomplete - usually followed by options to select from)"
+  },
+  "f2c24b304ab12603c68aa9a8d7071ccd": {
+    "en": "Head of household",
+    "type": "fragment",
+    "note": "Matched: 世帯主"
+  },
+  "b2ab1c923a975a1811735822ee859cc0": {
+    "en": "My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 個人番号"
+  },
+  "ac39a06213dcf18d4f6382666f7e21e0": {
+    "en": "Allowance/Medical",
+    "type": "llm",
+    "note": "This likely refers to a section for allowances and medical benefits - leave blank unless you receive specific municipal allowances or have special medical coverage to report."
+  },
+  "30c179503ff26f874b4faa5c660abc3a": {
+    "en": "My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 個人番号"
+  },
+  "f23ccb619c830db74fd5ba1241d703df": {
+    "en": "Late-stage elderly (referring to the Late-stage Elderly Healthcare System)",
+    "type": "llm",
+    "note": "Check this box if you are 75 or older and enrolled in the late-stage elderly healthcare insurance system"
+  },
+  "ab067036c67554bdcc90f172c032220a": {
+    "en": "Name",
+    "type": "llm",
+    "note": "Write your full name as it appears on your residence card or passport"
+  },
+  "518049adb7252ffaea1fbd0c889162d6": {
+    "en": "Card-related matters",
+    "type": "llm",
+    "note": "This section covers IC residence card and My Number card updates - check boxes that apply to your situation"
+  },
+  "bc24e4435c81ddf3f7c54417d5348502": {
+    "en": "Seal (inkan / hanko)",
+    "type": "dictionary",
+    "note": "Personal seal stamp. Most ward offices accept a written signature for foreigners instead.",
+    "field_id": "in"
+  },
+  "7887897bb110591f5cc5562c4eb602a4": {
+    "en": "Long-term Care Insurance",
+    "type": "dictionary",
+    "note": "Insurance for elderly care services. Mandatory for residents 40+. Premiums deducted with health insurance.",
+    "field_id": "kaigo_hoken"
+  },
+  "413b738061f6a5148fa3704c5c5bdca9": {
+    "en": "School",
+    "type": "llm",
+    "note": "Write the name of the school you or your family members attend (elementary, junior high, high school, or university)"
+  },
+  "f146f3121c28f580739693470962aac2": {
+    "en": "Individual・Resident Registration",
+    "type": "llm",
+    "note": "This is likely a section header - no action needed, just indicates the individual/personal information section of the resident registration system"
+  },
+  "4c3db431935b19fd8941bd0eb035600a": {
+    "en": "Registration application availability/eligibility status",
+    "type": "llm",
+    "note": "N/A - this appears to be a garbled or corrupted text fragment that doesn't match standard form terminology"
+  },
+  "be99f00eb9b9c770aaa580f97a98acb5": {
+    "en": "School transfer",
+    "type": "llm",
+    "note": "Check this box if any school-age children in your family need to transfer schools due to this address change"
+  },
+  "f3b828ca055194b15f05184e5dd6b511": {
+    "en": "Western calendar",
+    "type": "fragment",
+    "note": "Matched: 西暦"
+  },
+  "7f38bb7c4c35432e77812d89ac02ffcf": {
+    "en": "Yes/No",
+    "type": "llm",
+    "note": "Circle \"有\" (yes) or \"無\" (no) as appropriate for the question being asked"
+  },
+  "9d650c025b22c69208da46327a16044c": {
+    "en": "Has elementary/middle school children",
+    "type": "llm",
+    "note": "Check this box if you have children in elementary or middle school who will need to transfer schools due to your address change"
+  },
+  "b767253d2af7144588f297555fa76ea7": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "36662dec9fe5b404eaaa843aeef8ca52": {
+    "en": "None, Grade/Academic Year・None",
+    "type": "llm",
+    "note": "Select this option if you have no formal education or if the education level categories don't apply to your situation"
+  },
+  "f1e9ad662b2fa312623fc90d25daa9ac": {
+    "en": "(    years old)",
+    "type": "llm",
+    "note": "Write your age in numbers in the parentheses"
+  },
+  "fe19757bb3b5c5fccd5b700ad5ebe505": {
+    "en": "National Health Insurance・Long-term Care・Late-stage Elderly Medical Care",
+    "type": "llm",
+    "note": "This section relates to healthcare insurance programs - staff will typically handle these portions based on your age and eligibility"
+  },
+  "b393f10e2db1f010f6e4371c357cb3ac": {
+    "en": "None, Grade/Academic Year・",
+    "type": "llm",
+    "note": "Leave blank if not applicable to your situation, or write the grade level if you're a student"
+  },
+  "75b788074ec0f7130383a40206c1c25d": {
+    "en": "Applicant / Person filing the form / Letter of proxy / Power of attorney / .",
+    "type": "fragment",
+    "note": "Matched: 届出人, 委任状, す。"
+  },
+  "9fe65d8a26d22fc7223ffa4e787851ab": {
+    "en": "Name",
+    "type": "llm",
+    "note": "Write your full legal name as it appears on your passport or residence card"
+  },
+  "a50f02e83218228ec98534dfa0c81057": {
+    "en": "Relationship to head of household",
+    "type": "fragment",
+    "note": "Matched: 続柄"
+  },
+  "2a99085e41256f063a77e9cbf476910c": {
+    "en": "Passbook / bankbook",
+    "type": "fragment",
+    "note": "Matched: 通帳"
+  },
+  "fd27333a9c9e48d3aea784e6e3362fd4": {
+    "en": "Relationship to head of household",
+    "type": "fragment",
+    "note": "Matched: 続柄"
+  },
+  "cae9e444f0108233225186747c3a2cce": {
+    "en": "Address",
+    "type": "fragment",
+    "note": "Matched: 住所"
+  },
+  "11e94f4afe2b87ed0f1d3ee83edf84ee": {
+    "en": "Certificate of Moving Out / Relationship to head of household / Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 続柄, 転出"
+  },
+  "_vision_explanations:Page 1 - Section 1:948456ed8b9110cc7a95b418af018785": {
+    "4": "This section is for official use only by municipal staff - leave blank. The section chief or director will stamp and initial here after reviewing your application.",
+    "10": "Check the appropriate box that describes your moving situation, such as moving from another city/prefecture within Japan, moving from abroad, or other status changes. Choose only one option that best fits your circumstances.",
+    "14": "This appears to be corrupted text in the image and cannot be accurately translated. If you encounter unclear text on the actual form, ask the municipal office staff for clarification on what information is required here."
+  },
+  "_vision_explanations:Page 1 - Section 1:00488b9efa7b5950665f71829df6bc46": {
+    "5": "This field is pre-printed and indicates the form is addressed to the Mayor of Katsushika Ward - no action needed from you.",
+    "6": "This appears to be part of a pre-printed statement about providing your My Number (individual number) - this is informational text that requires no input from you."
+  },
+  "_vision_explanations:Page 1 - Section 2:f77666df55a8adb6c66816c17daf7e32": {
+    "2": "This field is pre-printed and indicates the form is addressed 'To the Mayor of Katsushika Ward' - no action needed from you.",
+    "3": "This appears to be part of a privacy notice about providing personal identification numbers - this is informational text that requires no input from you."
+  },
+  "_vision_explanations:Page 1 - Section 3:3388b71657c6a68f73c366c5c2c24ad2": {
+    "4": "This field relates to document collection when moving out of your residence. If you're not currently moving out, select '無' (None). If you are moving out and have been given a collection number for document retrieval, select '有' (Yes) and write the number provided by the municipal office."
+  },
+  "_vision_explanations:Page 1 - Section 4:c04f0b84303bdd505d29905bb305eee4": {
+    "5": "Select '有' (yes) if you have a transfer collection number from when you moved out of your previous address, or '無' (no) if you don't have one. Most people will select '無' unless they were specifically given a collection number by their previous municipal office."
+  },
+  "_vision_explanations:Page 1 - Section 5:108f040ef3a05afefdff90d1973f5ecc": {
+    "9": "Select '有' (yes) or '無' (no) regarding whether you need to return a collection number when moving out. This typically relates to returning official documents or ID numbers to the municipal office - most foreign residents should select '無' (no) unless specifically instructed otherwise by city hall."
+  },
+  "_vision_explanations:Page 1 - Section 6:a403d3d20f5ec5edb1fe2f7b1948d968": {
+    "9": "This field relates to documentation for moving out of your current address. If you are moving out and have been issued a collection number for document retrieval, write that number; otherwise, select '無' (none) if this doesn't apply to your situation."
+  },
+  "_vision_explanations:Page 1 - Section 7:a63f1948ef423fb13e91f8cc78c142cb": {
+    "12": "This field relates to moving out documentation and collection numbers for elderly services. If you are not moving out of your current address or don't have any elderly service collection numbers, you would typically circle '無' (none/no)."
+  },
+  "_vision_explanations:Page 1 - Section 8:df9592efb0b8b772164df699ad5eb2e5": {
+    "2": "Circle '無' (none) unless you are moving out and have been given a specific collection number by the municipal office for senior citizen services.",
+    "13": "Circle '無' (none) unless you are moving out and have been given a specific collection number by the municipal office for senior citizen services."
+  },
+  "_vision_explanations:Page 1 - Section 9:2ffb9f2335d358c5d91f3d9d3ddec90c": {
+    "4": "This field asks about moving out (転出) - mark 有 (yes) if you are moving out of the current municipality, or 無 (no) if you are not moving out. If marking 有, you may need to provide a collection number (回収No.) related to the moving-out process."
+  },
+  "c958a079f3ab814497719b1968a2b981": {
+    "en": "Example of how to fill in",
+    "type": "dictionary",
+    "note": "Sample form showing how to complete each field. Study this before filling your own form.",
+    "field_id": "kinyu_rei"
+  },
+  "6b6baeabc9285658e3e10708737130f6": {
+    "en": "Special provision",
+    "type": "dictionary",
+    "note": "Check this box if special circumstances apply to your registration",
+    "field_id": "auto_6b6baeab"
+  },
+  "98d60b87dacf3211a20fb3d72d985590": {
+    "en": "Moving in (from another municipality or abroad)",
+    "type": "dictionary",
+    "note": "",
+    "field_id": "tennyu"
+  },
+  "a92ecb6f4060ccbdbc1447ca4dabdd3d": {
+    "en": "Moving out",
+    "type": "dictionary",
+    "note": "",
+    "field_id": "tenshutsu"
+  },
+  "02dc6cd1237074eb2e78fdd0dc7b1832": {
+    "en": "Single⇒All Single⇒All Separation Method Writing Section Section Position Elimination",
+    "type": "llm",
+    "note": "N/A (appears to be fragmented form layout/formatting text rather than a field to complete)"
+  },
+  "db0f05f83cf197229427193c05db28f5": {
+    "en": "Within the ward",
+    "type": "llm",
+    "note": "Check this box if you're moving within the same ward/district, leave unchecked if moving from outside the ward"
+  },
+  "b13c4bd957aa8123d99dcf1a9873b783": {
+    "en": "Change of household (head of household change, merge, split)",
+    "type": "dictionary",
+    "note": "",
+    "field_id": "setai_henko"
+  },
+  "cb13178a3c994a90249fb87e00286e5b": {
+    "en": "Official entry/notation by authority",
+    "type": "llm",
+    "note": "N/A (this indicates information filled in by municipal office staff, not by applicants)"
+  },
+  "424ae3391113e4b814f031a1229d27b3": {
+    "en": "Household Code",
+    "type": "llm",
+    "note": "This field is typically filled in by municipal office staff - leave blank when submitting your form"
+  },
+  "ea8b6fccc02a1faff27b2014cd1395c2": {
+    "en": "Resident Registration Change Notification",
+    "type": "llm",
+    "note": "This is the form title - you'll need to fill out this form when moving, changing address, or updating household composition in Japan."
+  },
+  "5c69a6ae39975141d8c95bedb8e0c096": {
+    "en": "To the Ward Mayor",
+    "type": "llm",
+    "note": ""
+  },
+  "70be8dec6616631e466bfc8df47dcd18": {
+    "en": "Employment Record",
+    "type": "llm",
+    "note": "Write your current job title or occupation; if unemployed, write \"無職\" (unemployed)"
+  },
+  "69728cb80f46efa49d09d77af2088acf": {
+    "en": "All within one country abroad",
+    "type": "llm",
+    "note": "This likely refers to moves between addresses within the same foreign country - check this option if you moved from one address to another within the same country outside Japan."
+  },
+  "061210f4b77fb9fc1f0467ab92c2dfb5": {
+    "en": "Transfer Article 30, Withdrawal, Acquisition, Cancellation Article 46",
+    "type": "llm",
+    "note": "N/A - this appears to be administrative reference codes for different types of residence registration procedures"
+  },
+  "6e5dfe53261e42cedae71580968804f7": {
+    "en": "Complete one occupation/job training",
+    "type": "llm",
+    "note": "N/A - this appears to be a form section header or formatting text rather than a fillable field"
+  },
+  "1afb2837b3998b2e11878eaca2d80089": {
+    "en": "Address",
+    "type": "fragment",
+    "note": "Matched: 住所"
+  },
+  "cd64d72cef34045fe5e123fc1e0b544d": {
+    "en": "Transfer principal change → → Merger Article 30-48",
+    "type": "llm",
+    "note": "N/A (this appears to be reference text indicating form sections and legal article numbers)"
+  },
+  "1c24b32e531a27a287eed7deed84ee1f": {
+    "en": "Article 30, Section 47",
+    "type": "llm",
+    "note": "N/A - this appears to be a reference number or legal citation for administrative purposes"
+  },
+  "898f7512bdd555820a391881eaf43815": {
+    "en": "Date of move / change",
+    "type": "fragment",
+    "note": "Matched: 異動日"
+  },
+  "b98a14614113ea42412cb52e93342cb3": {
+    "en": "Head of household / Relationship to head of household / Change",
+    "type": "fragment",
+    "note": "Matched: 世帯主, 続柄, 変更"
+  },
+  "c7db1fcb03fc4e9a035fc46cf6f4ce9b": {
+    "en": "Head of household name / Head of household / Full name",
+    "type": "fragment",
+    "note": "Matched: 世帯主氏名, 世帯主, 氏名"
+  },
+  "e1fb654d7caa8bc6c6776b3b0b0c38df": {
+    "en": "c/o Chiba City, Chuo Ward, Chiba Port 1-1",
+    "type": "llm",
+    "note": "This appears to be a pre-printed address example or office address - don't copy this unless it's actually your address."
+  },
+  "a3bbe3a7bf92d9f392a9691bb6a4715e": {
+    "en": "New household",
+    "type": "llm",
+    "note": "Check this box if you're establishing a new household (e.g., moving out from family to live alone or starting a new family unit)"
+  },
+  "7860a8b36761107e12aa6c995ddbafdc": {
+    "en": "Former/Previous Household",
+    "type": "llm",
+    "note": "Enter information about your previous household before the move or change in household composition."
+  },
+  "7f9a143d1914775473c85f4dc8bbd861": {
+    "en": "Location details (apartment/condominium name, room number, etc.) (Required・Application)",
+    "type": "llm",
+    "note": "Write your apartment or condominium name and room number in this field - this is a required field as indicated by (強)"
+  },
+  "31716b9f7c710397a5c0fe9b26e1f6c8": {
+    "en": "Chiba Taro",
+    "type": "llm",
+    "note": "This is an example name showing the format: write your family name first, then given name, separated by a space."
+  },
+  "7f61405327d92db54911482322668562": {
+    "en": "Minato Heim #303",
+    "type": "llm",
+    "note": "This appears to be part of an apartment address - fill in your building name and apartment number in this format"
+  },
+  "55335a2f03b5773a06026f9f4c731318": {
+    "en": "Tokyo",
+    "type": "fragment",
+    "note": "Matched: 東京"
+  },
+  "17a5a0dee2fa7ef49b15591a91571f81": {
+    "en": "Head of household name / Head of household / Full name",
+    "type": "fragment",
+    "note": "Matched: 世帯主氏名, 世帯主, 氏名"
+  },
+  "5308801e74bf73223944b6f1f0bd7d08": {
+    "en": "Address (apartment/condominium name, room number, etc.)",
+    "type": "llm",
+    "note": "Write your full address including building name and room/unit number if you live in an apartment or mansion"
+  },
+  "ae69c64a7226213ace93736f235d2ca8": {
+    "en": "Symbol/Code",
+    "type": "llm",
+    "note": "Leave blank unless you have a specific identification symbol or code number assigned by the municipality"
+  },
+  "d04d5b3ec72a67ce20d75b2d95da5152": {
+    "en": "Number",
+    "type": "llm",
+    "note": "Enter your residence card number or other relevant identification number as specified in the form instructions."
+  },
+  "7cd2d8b85bcc641e7c44084b13ff0dc5": {
+    "en": "(Settlement Payment Notice)",
+    "type": "llm",
+    "note": "N/A - this is a reference to a separate document for tax/fee payments"
+  },
+  "d5fdd8ae7326975a208231bb84240b8e": {
+    "en": "Partial",
+    "type": "fragment",
+    "note": "Matched: 一部"
+  },
+  "a905cc3b2d6b3347a90be13c4b4c1ac3": {
+    "en": "Head of family register / Full name",
+    "type": "fragment",
+    "note": "Matched: 筆頭者, 氏名"
+  },
+  "5d406c8bea3701b4f103ad11f6c26cd8": {
+    "en": "New number guaranteed person",
+    "type": "llm",
+    "note": "N/A - this appears to be a form field label rather than something you would fill out"
+  },
+  "20c294627aa1b650c15264236f15213b": {
+    "en": "Registered address: 1-1 Chibako, Chuo-ku, Chiba City",
+    "type": "llm",
+    "note": "This shows your official registered address from your family register (koseki) - copy exactly from your residence card or koseki documents."
+  },
+  "99eb29fca7c829c433b67c2592a6c2b7": {
+    "en": "Pension",
+    "type": "fragment",
+    "note": "Matched: 年金"
+  },
+  "995887c58f965cf11eaf95c958de5253": {
+    "en": "Qualification",
+    "type": "fragment",
+    "note": "Matched: 資格"
+  },
+  "45fd1f688929e8a1781610456f434ce6": {
+    "en": "Full name / Person who",
+    "type": "fragment",
+    "note": "Matched: 氏名, る方"
+  },
+  "228d87d14b2ce163f0e4f0684cd5faaf": {
+    "en": "Child/Elementary School Notification Individual Residence Information",
+    "type": "llm",
+    "note": "This section relates to school enrollment notifications for children - provide information about elementary school-age children who will need enrollment notifications sent to schools due to the address change."
+  },
+  "245f08ca70861ce194eb5bb2336ddc37": {
+    "en": "Date of birth",
+    "type": "fragment",
+    "note": "Matched: 生年月日"
+  },
+  "63ccc24175b1033ebdee788de22924c1": {
+    "en": "Moving in (from another municipality or abroad)",
+    "type": "fragment",
+    "note": "Matched: 転入"
+  },
+  "01f020dd9a36943ba60b6ff199a88be5": {
+    "en": "Occupation",
+    "type": "fragment",
+    "note": "Matched: 職業"
+  },
+  "56bf6357b4294c94f77fc5a4e4632dbe": {
+    "en": "Date of acquisition",
+    "type": "llm",
+    "note": "Enter the date you obtained Japanese nationality or status (format: year/month/day)"
+  },
+  "9809f211053308811576303eee5cf06b": {
+    "en": "Insured Person Number",
+    "type": "llm",
+    "note": "Enter your health insurance member number found on your insurance card (国民健康保険証 or employee insurance card)"
+  },
+  "4d9c380c2a33258edeb7657cd71e86ba": {
+    "en": "Chiba (Prefecture)",
+    "type": "llm",
+    "note": "Write \"Chiba\" if your address is in Chiba Prefecture"
+  },
+  "373bd25dcdfd82cf849c25d3e0b9befa": {
+    "en": "Taro (example name in furigana and kanji)",
+    "type": "llm",
+    "note": "This shows the format for writing your name - hiragana reading above/beside the kanji characters"
+  },
+  "56824dbafe921acc8eb63a280a54a50d": {
+    "en": "Head of household / Yes/No/Unknown",
+    "type": "fragment",
+    "note": "Matched: 世帯主, 有無未"
+  },
+  "8238a04b0c1e7d0e25510fdb6bab335e": {
+    "en": "Notification No. 1",
+    "type": "llm",
+    "note": "N/A (this is a form number/identifier, not a field to fill)"
+  },
+  "4503df49e90ddd373f81a13629ea82d6": {
+    "en": "Yes No Yes No Yes No Insurance Qualification",
+    "type": "llm",
+    "note": "Check boxes to indicate whether you have various insurance qualifications (likely health insurance, pension, etc.) - consult the full form context to determine which specific insurances are being asked about."
+  },
+  "216269572e17229a0bb77a17c487d3b1": {
+    "en": "• (bullet points/list markers)",
+    "type": "llm",
+    "note": ""
+  },
+  "570f366eb8eb7849ade3d1c96008073f": {
+    "en": "Yes/No/Unknown",
+    "type": "fragment",
+    "note": "Matched: 有無未"
+  },
+  "f04c85dca97ee4935b95c0e50aa567a2": {
+    "en": ", departure is 12th",
+    "type": "llm",
+    "note": "This appears to be a partial date or reference number - you may need to see the full context or adjacent fields to complete this entry properly."
+  },
+  "aeb7efde79f1f452230b749b8c506a0e": {
+    "en": "Female, age 62, Showa 3rd year, 6th month",
+    "type": "llm",
+    "note": "This appears to be sample data showing format - enter gender, age, era/year, and birth month"
+  },
+  "afe2e8bfaf91cab3b3125b22922d6c2b": {
+    "en": "Chiba Prefecture",
+    "type": "llm",
+    "note": "Write the name of your prefecture if you live in Chiba Prefecture"
+  },
+  "69b4dbbc139c38ef65a0552fa10d4ce9": {
+    "en": "Hanako",
+    "type": "llm",
+    "note": "This is an example name showing how to write Japanese names with furigana (pronunciation guide) above the kanji characters."
+  },
+  "0ee805f230df62ba137eadd3cbd2d842": {
+    "en": "within 3 days",
+    "type": "llm",
+    "note": "This refers to the deadline - you must submit this form within 3 days of moving/changing residence."
+  },
+  "4c3338602f73f3bcd05af91fd632e822": {
+    "en": "Yes/No/Unknown",
+    "type": "fragment",
+    "note": "Matched: 有無未"
+  },
+  "a6ac342b6f1f6e9aef43c3ab9b069815": {
+    "en": "Father Mother Name Name",
+    "type": "llm",
+    "note": "Write your father's name in the first field and your mother's name in the second field"
+  },
+  "ba1b886107946e29d2ea72246098a345": {
+    "en": "Departure (moved out)",
+    "type": "llm",
+    "note": "Check this box if you are moving out of this municipality to register your departure from the current address"
+  },
+  "c1c8f8602084c9722ebf638fafa31101": {
+    "en": "Yes/No/Unknown",
+    "type": "fragment",
+    "note": "Matched: 有無未"
+  },
+  "926921d63c16b649a252e993ae25db18": {
+    "en": ") Not yet",
+    "type": "llm",
+    "note": ""
+  },
+  "51ff709d792f601e090ec76cd0f47ef2": {
+    "en": "Idasaku 5",
+    "type": "llm",
+    "note": "This appears to be a pre-printed address part (likely \"Idasaku district/area, house number 5\") - you would typically circle or check this if it matches your address, or cross it out if it doesn't apply to you."
+  },
+  "a2a04a1e3128fc1e1c7c8a49c49c9142": {
+    "en": "Head of household / Relationship to head of household / Moving out",
+    "type": "fragment",
+    "note": "Matched: 世帯主, 続柄, 転出"
+  },
+  "3ba33606d8b835dd9be3443a8350e90d": {
+    "en": "Driver's license / .",
+    "type": "fragment",
+    "note": "Matched: 運転免許証, す。"
+  },
+  "c64760bcb1589d92d4fd09be917c13f1": {
+    "en": "My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 個人番号"
+  },
+  "959ac709869a2538d65833d8896577d2": {
+    "en": "Notification Card",
+    "type": "llm",
+    "note": "This refers to the residence notification card (jūminhyō) - check this box or fill in details if you need to receive/update your residence certificate card."
+  },
+  "b6614c3b9ff50895b557395a356c0dbf": {
+    "en": "Driver's license / Passbook / bankbook",
+    "type": "fragment",
+    "note": "Matched: 運転免許証, 通帳"
+  },
+  "eee3cc7a6716418046fb6ff4f9fb9da8": {
+    "en": "Do not / Seal (inkan / hanko)",
+    "type": "fragment",
+    "note": "Matched: しない, 印"
+  },
+  "41a83142b12291ee66d71b1d8e037be9": {
+    "en": "Household head and family member identification documents □□□□□ residence card □□□ permanent resident card □□□ passport □ driver's license □ birth certificate □ credit card □ pension book □ benefit certificate □ certificate □ (power of attorney □ employee ID □ hearing □ other □ student ID) individual residence card",
+    "type": "llm",
+    "note": "Present one of the listed identification documents to verify your identity when submitting the residence registration form."
+  },
+  "06cdab51266ef7b29cddb87e7eeb2560": {
+    "en": "Phone number",
+    "type": "fragment",
+    "note": "Matched: 電話番号"
+  },
+  "ed2ca8bafcb219d8f87fae4e0a8fa206": {
+    "en": ") Reading/Pronunciation",
+    "type": "llm",
+    "note": "Write the phonetic reading (furigana) of your name in katakana if you are a foreign resident"
+  },
+  "ff91347389fec39c6a6d02551bb9b99f": {
+    "en": "Residence Card",
+    "type": "llm",
+    "note": "Enter your residence card number if you are a foreign national"
+  },
+  "b1dfc79a55f181f64d620b14a4af1006": {
+    "en": "090-",
+    "type": "llm",
+    "note": "This is the start of a Japanese mobile phone number format - enter your cell phone number starting with 090, 080, or 070"
+  },
+  "6da39c9f0bd25a1cacd2d6054934d033": {
+    "en": "9999-9999",
+    "type": "llm",
+    "note": ""
+  },
+  "938966d4a5e9ee0b663c7b41a6a32c32": {
+    "en": "Email address",
+    "type": "fragment",
+    "note": "Matched: メールアドレス"
+  },
+  "3ded26047963ffeda651782b9c05361b": {
+    "en": "@123456789aa",
+    "type": "llm",
+    "note": ""
+  },
+  "4389869b3989f0097dc92e0afecd2e94": {
+    "en": "Chiba",
+    "type": "llm",
+    "note": "This refers to Chiba Prefecture - if this is a field to fill out, enter the name of your prefecture/administrative division."
+  },
+  "fd3c9eaf7bbdc5a2de6244a7081ef79f": {
+    "en": "National Health Insurance Card",
+    "type": "llm",
+    "note": "Bring your national health insurance card if you have one, or indicate if you need to enroll in the system"
+  },
+  "_vision_explanations:Page 1 - Section 1:fb67e182b3b11f9ec7db24a0a847fbbb": {
+    "4": "Check this box if you are moving into this ward from another municipality in Japan or from abroad. This is the most common selection for foreign residents establishing residence in a new area.",
+    "5": "Check this box if you are moving out of this ward to another municipality or abroad. You would fill this section when leaving your current address permanently.",
+    "7": "Check this box for changes within your household such as changing the head of household, combining households, or splitting into separate households. This doesn't involve moving addresses but changes the household structure.",
+    "11": "This indicates the form is addressed to the ward mayor (ku-chō) and is typically pre-printed. No action needed - this shows which official will process your residential registration."
+  },
+  "_vision_explanations:Page 1 - Section 4:ec467fe795b08e761d12b74fc4d2380e": {
+    "10": "This field is only for people moving into this municipality from another city/town in Japan or from abroad. If you're already a resident of this municipality and just moving within it, leave this section blank."
+  },
+  "_vision_explanations:Page 1 - Section 5:3837adc37b140a65141dd802432063be": {
+    "1": "This section is only for people who are moving into this municipality from another city/town or from abroad. If you're already a resident updating your information, leave this blank.",
+    "12": "These are bullet point markers for listing items. You would write information in the spaces after these dots, likely related to your previous address or moving details if you're transferring from another municipality."
+  },
+  "_vision_explanations:Page 1 - Section 5:c85c42e2e455aaff5987630aaf283319": {
+    "4": "Write the birth date in Japanese era format using dots as separators (e.g., 昭和62・3・6 for March 6, 1987). Convert your Western calendar birth date to the appropriate Japanese era year.",
+    "10": "Write the birth date in Japanese era format using dots as separators (e.g., 平成元・9・21 for September 21, 1989). This appears to be for a second person, so use the same era conversion method as field 4."
+  },
+  "_vision_explanations:Page 1 - Section 6:0b00dc77ab80031fa6615f21f9e94680": {
+    "5": "Enter the day portion of a date using Arabic numerals (1-31). This appears to be part of a date field where you fill in the specific day.",
+    "9": "Enter the day portion of another date using Arabic numerals (1-31). This is likely for a different date field than field 5, possibly an end date or second reference date.",
+    "10": "Check this box or circle if the condition described is 'not yet' applicable or incomplete. This is typically used for pending status or incomplete processes.",
+    "14": "Enter the day portion of a date using Arabic numerals (1-31). This appears to be another date field, possibly related to application or processing dates."
+  },
+  "_vision_explanations:Page 1 - Section 7:dab7b1e3dc8a313fcd1cfb276c1a5756": {
+    "11": "Write your phone number in the format shown (4 digits - 4 digits). Use hyphens to separate the numbers, not parentheses like some countries use.",
+    "13": "Enter your email address after the @ symbol that's already printed. Make sure to include the full domain name (like gmail.com or yahoo.co.jp)."
+  },
+  "_vision_explanations:Page 1 - Section 8:5a3e7b5ce1f7bbb309c67c0e44bbe9f6": {
+    "1": "Write your email address in the format shown, starting with @ symbol followed by your actual email address. Make sure to use a valid email address as this may be used for official communications or verification purposes."
   }
 }
