@@ -224,6 +224,54 @@ def classify_pdf_pages(pdf_path, min_chars=50):
     return results
 
 
+def validate_pdf_for_form(pdf_path, form_template):
+    """
+    Pre-flight check: does this PDF contain terms expected for this form type?
+
+    Returns: (passed: bool, detail: str)
+      - passed=True if >=1 validation term found, or if PDF is image-based (unverifiable)
+      - passed=False if text was extracted but no terms matched
+    """
+    import pdfplumber
+
+    # Get validation terms: explicit field first, fall back to names.ja + aliases_ja
+    terms = form_template.get("validation_terms")
+    if not terms:
+        names = form_template.get("names", {})
+        terms = []
+        if names.get("ja"):
+            terms.append(names["ja"])
+        terms.extend(names.get("aliases_ja", []))
+
+    if not terms:
+        return (True, "no validation terms defined — skipping")
+
+    # Extract all text from all pages
+    all_text = ""
+    try:
+        with pdfplumber.open(pdf_path) as pdf:
+            for page in pdf.pages:
+                text = page.extract_text() or ""
+                all_text += text
+    except Exception as e:
+        return (True, f"could not read PDF — skipping validation ({e})")
+
+    total_chars = len(all_text)
+
+    # Image-based PDFs have very little extractable text
+    if total_chars < 50:
+        return (True, f"image-based ({total_chars} chars) — skipping validation")
+
+    # Check if any validation term appears in the text
+    # Also check with spaces stripped, since some PDFs space-separate kanji
+    all_text_nospace = all_text.replace(" ", "").replace("\u3000", "")
+    for term in terms:
+        if term in all_text or term in all_text_nospace:
+            return (True, f"matched: {term}")
+
+    return (False, f"no validation terms found in {total_chars} chars of text")
+
+
 def find_best_page(pdf_path, min_chars=50):
     """
     Find the page with the most extractable text content.
@@ -3226,6 +3274,26 @@ def generate_template_walkthrough(form_template, dictionary, output_path):
                 c.drawString(margin, y, f"More info: {jps_info_url}")
                 y -= 12
 
+    # Source attribution (from _meta.source)
+    source_note = form_template.get("_meta", {}).get("source", "")
+    if source_note:
+        if y < 80:
+            new_page()
+            y = HEIGHT - 60
+        y -= 10
+        c.setStrokeColor(HexColor("#bdc3c7"))
+        c.setLineWidth(0.5)
+        c.line(margin, y, WIDTH - margin, y)
+        y -= 14
+        c.setFillColor(GRAY)
+        c.setFont(font_en, 6.5)
+        c.drawString(margin, y, "SOURCE ATTRIBUTION")
+        y -= 12
+        c.setFont(font_en, 6)
+        for line in wrap_text(source_note, font_en, 6, WIDTH - 2 * margin):
+            c.drawString(margin, y, line)
+            y -= 9
+
     c.save()
     print(f"    Generated {output_path.name}")
     return output_path
@@ -3312,6 +3380,15 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
 
     if not form_template:
         print(f"    WARN: Form template '{form_id}' not found. Generating without template content.")
+
+    # Pre-flight: validate PDF matches expected form type
+    if form_template:
+        passed, detail = validate_pdf_for_form(pdf_path, form_template)
+        if not passed:
+            print(f"    SKIP: PDF does not match form type '{form_id}' — {detail}")
+            return None
+        else:
+            print(f"    Validated: {detail}")
 
     # Step 1: Get page count and extract text from ALL pages
     print(f"    Extracting text...")
@@ -3600,6 +3677,8 @@ def main():
                         help="DPI for page rendering (default: 200)")
     parser.add_argument("--template-only", action="store_true",
                         help="Generate walkthrough from template only (no PDF input)")
+    parser.add_argument("--validate", action="store_true",
+                        help="Validate PDF(s) match the form type, then exit (no generation)")
 
     args = parser.parse_args()
 
@@ -3628,6 +3707,53 @@ def main():
             print(f"\nFailed to generate walkthrough.")
             sys.exit(1)
         return
+
+    # ── Validate-only mode ──
+    if args.validate:
+        if not args.input:
+            parser.error("input PDF or directory is required with --validate")
+
+        form_template = load_form_template(args.form)
+        if not form_template:
+            print(f"ERROR: Form template '{args.form}' not found in {FORMS_DIR}")
+            sys.exit(1)
+
+        input_path = Path(args.input)
+        if input_path.is_dir():
+            pdf_files = sorted(input_path.rglob("*.pdf")) + sorted(input_path.rglob("*.PDF"))
+        elif input_path.is_file():
+            pdf_files = [input_path]
+        else:
+            print(f"ERROR: Input not found: {args.input}")
+            sys.exit(1)
+
+        if not pdf_files:
+            print(f"No PDF files found in {input_path}")
+            sys.exit(1)
+
+        print(f"Validating {len(pdf_files)} PDF(s) against form type '{args.form}'")
+        print()
+
+        passed_count = 0
+        failed_count = 0
+        skipped_count = 0
+
+        for pdf_file in pdf_files:
+            passed, detail = validate_pdf_for_form(str(pdf_file), form_template)
+            rel_path = pdf_file.relative_to(input_path) if input_path.is_dir() else pdf_file.name
+            if not passed:
+                print(f"  FAIL  {rel_path} — {detail}")
+                failed_count += 1
+            elif "skipping" in detail:
+                print(f"  SKIP  {rel_path} — {detail}")
+                skipped_count += 1
+            else:
+                print(f"  OK    {rel_path} — {detail}")
+                passed_count += 1
+
+        print()
+        print(f"Results: {passed_count} passed, {failed_count} FAILED, {skipped_count} skipped (image-based)")
+        sys.exit(1 if failed_count > 0 else 0)
 
     # ── Normal PDF mode ──
     if not args.input:
