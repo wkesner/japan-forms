@@ -3321,16 +3321,6 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    # DEFAULT_ZONES are calibrated for residence registration layout only.
-    # Other form types use dynamic zones based on actual field positions.
-    use_dynamic_zones = False
-    if zones is None:
-        if form_id == "residence_registration":
-            zones = DEFAULT_ZONES
-        else:
-            use_dynamic_zones = True
-            zones = DEFAULT_ZONES  # placeholder until fields are extracted
-
     pdf_name = Path(pdf_path).stem
     # Extract city/prefecture and ward from path (e.g., input/tokyo/katsushika/ido.pdf
     # or input/tokyo_nhi/adachi/form.pdf or input/kanagawa/yokohama-naka/form.pdf)
@@ -3357,6 +3347,14 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
                 ward_name = parts[i + 1]
                 break
 
+    # Zone selection: always use dynamic zones based on actual field positions.
+    # DEFAULT_ZONES were originally calibrated for Tokyo residence forms only,
+    # but dynamic zones adapt to any form layout automatically.
+    use_dynamic_zones = False
+    if zones is None:
+        use_dynamic_zones = True
+        zones = DEFAULT_ZONES  # placeholder until fields are extracted
+
     # Form-type-aware output naming
     # Map form IDs to short filename labels
     FORM_FILE_LABELS = {
@@ -3366,14 +3364,16 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
     form_label = FORM_FILE_LABELS.get(form_id)
 
     if city_name and ward_name and form_label:
-        # New naming: Ward_NHIapp_v1.PDF
+        # Naming: Ward_FormLabel_SourcePdf_v1.PDF
         ward_dir = output_dir / city_name / ward_name
         ward_dir.mkdir(parents=True, exist_ok=True)
         ward_title = ward_name.replace("-", " ").title().replace(" ", "")
+        # Include source PDF stem to differentiate multiple source files
+        base = f"{ward_title}_{form_label}_{pdf_name}"
         # Auto-increment version based on existing files
-        existing = sorted(ward_dir.glob(f"{ward_title}_{form_label}_v*.PDF"))
+        existing = sorted(ward_dir.glob(f"{base}_v*.PDF"))
         version = len(existing) + 1
-        output_path = ward_dir / f"{ward_title}_{form_label}_v{version}.PDF"
+        output_path = ward_dir / f"{base}_v{version}.PDF"
     elif city_name and ward_name:
         ward_dir = output_dir / city_name / ward_name
         ward_dir.mkdir(parents=True, exist_ok=True)
