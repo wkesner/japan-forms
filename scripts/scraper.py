@@ -27,6 +27,7 @@ import sys
 import time
 import hashlib
 import xml.etree.ElementTree as ET
+import heapq
 from collections import deque
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
@@ -348,16 +349,29 @@ def get_downloads_dir(form_type, prefecture):
 # SCRAPER
 # ═══════════════════════════════════════════════════════════════
 
-def fetch_page(url):
-    """Fetch a page and return BeautifulSoup object, or None on failure."""
+_page_cache = {}
+
+def fetch_page(url, use_cache=True):
+    """Fetch a page and return BeautifulSoup object, or None on failure.
+
+    Uses a simple in-memory cache to avoid re-fetching the same URL
+    across multiple discovery phases.
+    """
+    if use_cache and url in _page_cache:
+        return _page_cache[url]
     try:
         resp = requests.get(url, headers=HEADERS, timeout=TIMEOUT, allow_redirects=True)
         resp.raise_for_status()
         # Try to detect encoding from content-type or meta tags
         resp.encoding = resp.apparent_encoding or "utf-8"
-        return BeautifulSoup(resp.text, "html.parser")
+        soup = BeautifulSoup(resp.text, "html.parser")
+        if use_cache:
+            _page_cache[url] = soup
+        return soup
     except requests.RequestException as e:
         print(f"    FAIL: {e}")
+        if use_cache:
+            _page_cache[url] = None
         return None
 
 
@@ -397,6 +411,8 @@ def matches_search_terms(pdf_info, search_terms=None):
 SUBPAGE_KEYWORDS = [
     "住民異動", "転入", "転出", "転居", "引越", "引っ越",
     "届出", "届け出", "ダウンロード", "申請書", "様式",
+    "手続き", "各種届出", "住民票", "戸籍", "暮らし", "申請",
+    "届出書", "届出様式", "届出用紙",
 ]
 
 
@@ -490,7 +506,16 @@ def find_relevant_subpages(soup, base_url, domain, subpage_keywords=None):
             continue
         # Check if link text contains relevant keywords
         text = a.get_text(strip=True)
-        if any(kw in text for kw in subpage_keywords):
+        text_match = any(kw in text for kw in subpage_keywords)
+        # Also check URL path for form-related segments — but only the
+        # relative portion (new segments not in the parent page URL) to avoid
+        # false matches when the domain/base path contains a keyword
+        # (e.g. Kawaguchi's /kurashi_tetsuzuki/ contains "tetsuzuki")
+        base_path = urlparse(base_url).path.lower()
+        link_path = urlparse(full_url).path.lower()
+        relative_path = link_path[len(base_path):] if link_path.startswith(base_path) else link_path
+        path_match = any(seg in relative_path for seg in FORM_PATH_SEGMENTS)
+        if text_match or path_match:
             seen.add(full_url)
             subpages.append({"url": full_url, "text": text})
     return subpages
@@ -634,6 +659,12 @@ FORM_PATH_SEGMENTS = [
     "todokede", "shinseisho", "download", "kurashi", "tetsuzuki",
     "hoken", "kokuho", "koseki", "jumin", "hikkoshi", "tensyutsu",
     "tennyu", "shinsei", "yoshiki", "dl",
+    "kurashi_tetsuzuki",  # Kawaguchi-style underscore variant
+    "g_info",             # Yokosuka general info pages
+    "madoguchi",          # Window/counter services
+    "juminhyo",           # Resident certificate
+    "hikkoshi-portal",    # Moving portal pages
+    "shinseisho_menu",    # Sagamihara-style form menu
 ]
 
 # Context keywords that boost candidate scores
@@ -641,6 +672,141 @@ DOWNLOAD_CONTEXT_KEYWORDS = [
     "ダウンロード", "申請書", "様式", "届出書", "届け出",
     "PDF", "書式", "用紙",
 ]
+
+# Common URL path patterns on Japanese municipal websites, per form type.
+# Used in Phase 2 (Seed URL Patterns) to probe likely pages before BFS.
+MUNICIPAL_SEED_PATTERNS = {
+    "residence": [
+        # Semantic path variants (most common)
+        "/kurashi/todokede/",
+        "/kurashi/koseki/jumin/",
+        "/kurashi/koseki/",
+        "/kurashi/todokede/hikkoshi/",
+        "/kurashi/jumin/hikkoshi/",
+        "/kurashi/jumin/",
+        "/kurashi/jumin/todokede/",
+        "/kurashi/todokede/koseki/",
+        "/tetsuzuki/todokede/",
+        "/tetsuzuki/koseki/",
+        "/tetsuzuki/jumin/",
+        "/shinseisho/",
+        "/yoshiki/",
+        "/dl/kurashi/",
+        "/dl/koseki/",
+        "/download/kurashi/",
+        "/download/koseki/",
+        "/kurashi/shinseisho/",
+        "/smph/kurashi/todokede/",
+        "/life/todokede/",
+        "/life/koseki/",
+        "/soshiki/shimin/",
+        # Underscore-joined paths (Kawaguchi-style)
+        "/kurashi_tetsuzuki/",
+        # Moving portal pages (Yokosuka-style)
+        "/hikkoshi-portal/",
+        # Numbered subcategory paths (Funabashi-style: 002=住民登録)
+        "/kurashi/koseki/002/",
+        "/kurashi/koseki/001/",
+        # Application form menu pages (Sagamihara-style)
+        "/shinseisho_menu/",
+        "/shinseisho_menu/koseki/",
+    ],
+    "nhi": [
+        "/kurashi/hoken/kokuho/",
+        "/kurashi/kokuho/",
+        "/tetsuzuki/hoken/",
+        "/tetsuzuki/kokuho/",
+        "/kenko/kokuho/",
+        "/hoken/kokuho/",
+        "/shinseisho/kokuho/",
+        "/dl/hoken/",
+        "/kurashi_tetsuzuki/kokuho/",
+    ],
+}
+
+# Japanese keywords indicating irrelevant content — penalize candidates
+NEGATIVE_KEYWORDS = [
+    "消防", "防災", "ごみ", "環境", "動物", "水道", "道路",
+    "桜", "花見", "イベント", "観光", "祭り", "スポーツ",
+    "図書館", "公園", "選挙", "議会", "入札", "契約",
+    "農業", "林業", "漁業", "商工", "都市計画",
+]
+
+# URL path segments indicating irrelevant sections — penalize candidates
+NEGATIVE_PATH_SEGMENTS = [
+    "shobo", "bousai", "gomi", "kankyo", "doubutsu", "suidou",
+    "douro", "sakura", "kanko", "matsuri", "sports", "toshokan",
+    "koen", "senkyo", "gikai", "nyusatsu", "keiyaku",
+    "nogyo", "ringyo", "shoko", "toshikeikaku",
+    "fire", "disaster", "garbage", "tourism", "library",
+]
+
+# Google search terms per form type for site:-scoped queries
+GOOGLE_SEARCH_TERMS = {
+    "residence": "住民異動届 PDF",
+    "nhi": "国民健康保険 届出書 PDF",
+}
+
+
+def generate_seed_urls(domain, form_type):
+    """Generate candidate URLs by appending common municipal path patterns to the domain.
+
+    Returns list of URLs to probe. Patterns are form-type-specific.
+    """
+    patterns = MUNICIPAL_SEED_PATTERNS.get(form_type, [])
+    base = domain.rstrip("/")
+    urls = []
+    for pattern in patterns:
+        urls.append(base + pattern)
+    return urls
+
+
+def google_site_search(domain, form_type, max_results=10):
+    """Search Google with site: scoping to find form pages.
+
+    Mimics what a human would do: search for the form name on the specific site.
+    Returns list of URLs from search results. Falls back gracefully if Google blocks.
+    """
+    search_term = GOOGLE_SEARCH_TERMS.get(form_type, "届出書 PDF")
+    parsed = urlparse(domain)
+    site_host = parsed.netloc or parsed.path.strip("/")
+    query = f"site:{site_host} {search_term}"
+
+    try:
+        from urllib.parse import quote_plus
+        search_url = f"https://www.google.com/search?q={quote_plus(query)}&num={max_results}&hl=ja"
+        resp = requests.get(search_url, headers={
+            "User-Agent": HEADERS["User-Agent"],
+            "Accept-Language": "ja,en;q=0.9",
+        }, timeout=TIMEOUT)
+        resp.raise_for_status()
+
+        soup = BeautifulSoup(resp.text, "html.parser")
+        urls = []
+        # Google result links are in <a> tags; filter to ones pointing at the target site
+        for a in soup.find_all("a", href=True):
+            href = a["href"]
+            # Google wraps results in /url?q=... redirects
+            if href.startswith("/url?"):
+                from urllib.parse import parse_qs
+                params = parse_qs(urlparse(href).query)
+                actual = params.get("q", [None])[0]
+                if actual and site_host in actual:
+                    urls.append(actual)
+            elif site_host in href and href.startswith("http"):
+                urls.append(href)
+
+        # Deduplicate while preserving order
+        seen = set()
+        unique = []
+        for u in urls:
+            if u not in seen:
+                seen.add(u)
+                unique.append(u)
+        return unique[:max_results]
+    except Exception as e:
+        print(f"    Google search failed (non-fatal): {e}")
+        return []
 
 
 def parse_sitemap(domain):
@@ -685,7 +851,11 @@ def parse_sitemap(domain):
 
 
 def score_candidate(pdf_info, search_terms):
-    """Score a PDF candidate 0-100 based on relevance signals."""
+    """Score a PDF candidate 0-100 based on relevance signals.
+
+    Positive signals: search term matches, form-related path segments, download context.
+    Negative signals: irrelevant keywords (消防, 動物...) and path segments (shobo, gomi...).
+    """
     score = 0
     combined = pdf_info["link_text"] + " " + pdf_info["context"]
     url_path = urlparse(pdf_info["url"]).path.lower()
@@ -695,7 +865,7 @@ def score_candidate(pdf_info, search_terms):
         if term in combined:
             score += 30
 
-    # URL path keywords
+    # URL path keywords (positive)
     for seg in FORM_PATH_SEGMENTS:
         if seg in url_path:
             score += 5
@@ -705,13 +875,55 @@ def score_candidate(pdf_info, search_terms):
         if kw in combined:
             score += 10
 
-    return min(score, 100)
+    # Negative: irrelevant Japanese keywords in text
+    for kw in NEGATIVE_KEYWORDS:
+        if kw in combined:
+            score -= 20
+
+    # Negative: irrelevant path segments in URL
+    for seg in NEGATIVE_PATH_SEGMENTS:
+        if seg in url_path:
+            score -= 10
+
+    return max(0, min(score, 100))
+
+
+def _has_strong_candidates(candidates, threshold=50):
+    """Check if any candidates score at or above the threshold.
+
+    Default threshold of 50 requires at least one search term match (+30)
+    plus some supporting context, avoiding false positives from generic
+    form keywords alone.
+    """
+    return any(c["score"] >= threshold for c in candidates)
+
+
+def _collect_pdfs_from_page(url, soup, search_terms, candidates, seen_pdfs):
+    """Extract and score PDFs from a page, appending to candidates list."""
+    pdfs = find_pdf_links(soup, url)
+    added = 0
+    for pdf in pdfs:
+        if pdf["url"] not in seen_pdfs:
+            pdf["score"] = score_candidate(pdf, search_terms)
+            pdf["found_on"] = url
+            if pdf["score"] > 0:
+                candidates.append(pdf)
+                seen_pdfs.add(pdf["url"])
+                added += 1
+    return added
 
 
 def crawl_for_forms(domain, form_type, max_pages=50):
     """Crawl a municipality site looking for form PDFs.
 
-    Tries sitemap.xml first, then BFS crawl (depth 3).
+    Uses a 4-phase cascade — each phase only runs if the previous one
+    didn't find candidates scoring >= 30:
+
+      Phase 1: Sitemap (parse sitemap.xml, filter by FORM_PATH_SEGMENTS)
+      Phase 2: Seed URL Patterns (probe common municipal paths)
+      Phase 3: Google Site Search (site:-scoped query)
+      Phase 4: BFS crawl (depth 5, last resort)
+
     Returns list of candidate PDFs sorted by score (highest first).
     """
     ft = FORM_TYPES[form_type]
@@ -721,8 +933,11 @@ def crawl_for_forms(domain, form_type, max_pages=50):
     seen_urls = set()
     seen_pdfs = set()
 
-    # Phase 1: Try sitemap
-    print(f"  Checking sitemap.xml...")
+    # Clear page cache between municipality crawls
+    _page_cache.clear()
+
+    # ── Phase 1: Sitemap ──
+    print(f"  Phase 1: Checking sitemap.xml...")
     sitemap_urls = parse_sitemap(domain)
     if sitemap_urls:
         print(f"    Found {len(sitemap_urls)} form-related URLs in sitemap")
@@ -733,58 +948,159 @@ def crawl_for_forms(domain, form_type, max_pages=50):
             soup = fetch_page(url)
             if not soup:
                 continue
-            pdfs = find_pdf_links(soup, url)
-            for pdf in pdfs:
-                if pdf["url"] not in seen_pdfs:
-                    pdf["score"] = score_candidate(pdf, search_terms)
-                    pdf["found_on"] = url
-                    if pdf["score"] > 0:
-                        candidates.append(pdf)
-                        seen_pdfs.add(pdf["url"])
+            _collect_pdfs_from_page(url, soup, search_terms, candidates, seen_pdfs)
             time.sleep(1)
+        if _has_strong_candidates(candidates):
+            best = max(c["score"] for c in candidates)
+            print(f"    Found strong candidates (best score: {best}), skipping later phases")
     else:
-        print(f"    No sitemap found, falling back to BFS crawl")
+        print(f"    No sitemap found")
 
-    # Phase 2: BFS crawl from homepage (if sitemap didn't yield enough)
-    if len(candidates) < 3:
-        print(f"  BFS crawling from {domain}...")
-        queue = deque([(domain, 0)])  # (url, depth)
-        pages_visited = len(seen_urls)
-
-        while queue and pages_visited < max_pages:
-            url, depth = queue.popleft()
-            if url in seen_urls or depth > 3:
+    # ── Phase 2: Seed URL Patterns ──
+    # Probe common municipal paths, then do a focused mini-BFS (depth 4)
+    # from each responding seed page. This is much more effective than
+    # homepage BFS because it starts in the right site section.
+    if not _has_strong_candidates(candidates):
+        seed_urls = generate_seed_urls(domain, form_type)
+        print(f"  Phase 2: Probing {len(seed_urls)} common URL patterns...")
+        responding_seeds = []
+        for url in seed_urls:
+            if url in seen_urls:
                 continue
             seen_urls.add(url)
-            pages_visited += 1
+            soup = fetch_page(url)
+            if not soup:
+                continue
+            responding_seeds.append((url, soup))
+            _collect_pdfs_from_page(url, soup, search_terms, candidates, seen_pdfs)
+            time.sleep(0.5)
+
+        if responding_seeds:
+            print(f"    {len(responding_seeds)} seed pages responded, running focused crawl...")
+            # Mini-BFS from each responding seed (depth 4, budget 30 pages per seed)
+            for seed_url, seed_soup in responding_seeds:
+                seed_queue = deque()
+                # Seed the queue with subpage links from this seed page
+                for sp in find_relevant_subpages(seed_soup, seed_url, domain, subpage_kw):
+                    if sp["url"] not in seen_urls:
+                        seed_queue.append((sp["url"], 1))
+                seed_pages = 0
+                while seed_queue and seed_pages < 30:
+                    url, depth = seed_queue.popleft()
+                    if url in seen_urls or depth > 4:
+                        continue
+                    seen_urls.add(url)
+                    seed_pages += 1
+                    soup = fetch_page(url)
+                    if not soup:
+                        continue
+                    _collect_pdfs_from_page(url, soup, search_terms, candidates, seen_pdfs)
+                    if depth < 4:
+                        for sp in find_relevant_subpages(soup, url, domain, subpage_kw):
+                            if sp["url"] not in seen_urls:
+                                seed_queue.append((sp["url"], depth + 1))
+                    time.sleep(0.5)
+                print(f"    Seed {seed_url.replace(domain, '')}: crawled {seed_pages} pages")
+                if _has_strong_candidates(candidates):
+                    break
+            print(f"    {len(candidates)} candidates after seed crawl")
+        else:
+            print(f"    0 seed pages responded")
+        if _has_strong_candidates(candidates):
+            best = max(c["score"] for c in candidates)
+            print(f"    Found strong candidates (best score: {best}), skipping later phases")
+
+    # ── Phase 3: Google Site Search ──
+    if not _has_strong_candidates(candidates):
+        print(f"  Phase 3: Google site search...")
+        time.sleep(2)  # Politeness delay before Google query
+        google_urls = google_site_search(domain, form_type)
+        if google_urls:
+            print(f"    Got {len(google_urls)} result(s) from Google")
+            for url in google_urls:
+                if url in seen_urls:
+                    continue
+                seen_urls.add(url)
+                soup = fetch_page(url)
+                if not soup:
+                    continue
+                _collect_pdfs_from_page(url, soup, search_terms, candidates, seen_pdfs)
+                # Also follow subpage links from Google result pages
+                subpages = find_relevant_subpages(soup, url, domain, subpage_kw)
+                for sp in subpages[:5]:
+                    if sp["url"] in seen_urls:
+                        continue
+                    seen_urls.add(sp["url"])
+                    sub_soup = fetch_page(sp["url"])
+                    if sub_soup:
+                        _collect_pdfs_from_page(sp["url"], sub_soup, search_terms, candidates, seen_pdfs)
+                    time.sleep(0.5)
+                time.sleep(1)
+            if _has_strong_candidates(candidates):
+                best = max(c["score"] for c in candidates)
+                print(f"    Found strong candidates (best score: {best}), skipping BFS")
+        else:
+            print(f"    No Google results (may be blocked)")
+
+    # ── Phase 4: Best-first crawl (last resort) ──
+    # Uses a priority queue instead of plain BFS so the most relevant-looking
+    # links are explored first. This prevents budget exhaustion on breadth
+    # when forms are buried 4+ levels deep.
+    if not _has_strong_candidates(candidates):
+        print(f"  Phase 4: Best-first crawl from {domain} (depth 5)...")
+        # Priority queue: (negative_priority, depth, url)
+        # Lower priority value = explored first; negate so higher relevance = lower value
+        pq = [(-100, 0, domain)]  # Homepage gets highest priority
+        bfs_visited = 0
+
+        while pq and bfs_visited < max_pages:
+            neg_pri, depth, url = heapq.heappop(pq)
+            if url in seen_urls or depth > 5:
+                continue
+            seen_urls.add(url)
+            bfs_visited += 1
 
             soup = fetch_page(url)
             if not soup:
                 continue
 
-            # Collect PDFs
-            pdfs = find_pdf_links(soup, url)
-            for pdf in pdfs:
-                if pdf["url"] not in seen_pdfs:
-                    pdf["score"] = score_candidate(pdf, search_terms)
-                    pdf["found_on"] = url
-                    if pdf["score"] > 0:
-                        candidates.append(pdf)
-                        seen_pdfs.add(pdf["url"])
+            _collect_pdfs_from_page(url, soup, search_terms, candidates, seen_pdfs)
 
-            # Queue relevant subpages
-            if depth < 3:
+            # Queue relevant subpages with priority scoring
+            if depth < 5:
                 subpages = find_relevant_subpages(soup, url, domain, subpage_kw)
                 for sp in subpages:
                     if sp["url"] not in seen_urls:
-                        queue.append((sp["url"], depth + 1))
+                        # Score link relevance for priority ordering
+                        link_pri = 0
+                        sp_text = sp.get("text", "")
+                        sp_path = urlparse(sp["url"]).path.lower()
+                        for kw in subpage_kw:
+                            if kw in sp_text:
+                                link_pri += 10
+                        for seg in FORM_PATH_SEGMENTS:
+                            if seg in sp_path:
+                                link_pri += 5
+                        for kw in NEGATIVE_KEYWORDS:
+                            if kw in sp_text:
+                                link_pri -= 20
+                        for seg in NEGATIVE_PATH_SEGMENTS:
+                            if seg in sp_path:
+                                link_pri -= 10
+                        heapq.heappush(pq, (-link_pri, depth + 1, sp["url"]))
 
             time.sleep(1)
 
-        print(f"    Visited {pages_visited} pages")
+            if _has_strong_candidates(candidates):
+                best = max(c["score"] for c in candidates)
+                print(f"    Found strong candidate (score: {best}), stopping early")
+                break
+
+        print(f"    Crawled {bfs_visited} pages")
 
     # Sort by score descending
     candidates.sort(key=lambda c: c["score"], reverse=True)
+    print(f"  Cascade complete: {len(candidates)} candidates found")
     return candidates
 
 
@@ -831,8 +1147,14 @@ def discover_and_scrape(muni_key, muni_cfg, form_type, prefecture, max_pages=50)
         print(f"       Text: {c['link_text'][:60]}")
         print(f"       URL:  {c['url']}")
 
-    # Download top candidates (max 5)
-    for c in candidates[:5]:
+    # Download top candidates (max 5, score >= 20 only)
+    download_candidates = [c for c in candidates if c["score"] >= 20][:5]
+    if not download_candidates and candidates:
+        print(f"  No candidates scored >= 20 (best: {candidates[0]['score']})")
+        results["flagged"].append((None, f"best score too low ({candidates[0]['score']})"))
+        return results
+
+    for c in download_candidates:
         filename = urlparse(c["url"]).path.split("/")[-1]
         if not filename.endswith(".pdf"):
             filename += ".pdf"
