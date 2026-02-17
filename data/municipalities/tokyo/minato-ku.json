@@ -149,6 +149,17 @@
       "last_verified": "2025-02-07"
     }
   },
+  "scraping": {
+    "domain": "https://www.city.minato.tokyo.jp",
+    "residence": {
+      "index_url": "https://www.city.minato.tokyo.jp/shibamadochou/kurashi/todokede/juminhyo.html",
+      "direct_pdfs": []
+    },
+    "nhi": {
+      "index_url": "https://www.city.minato.tokyo.jp/shikaku/kurashi/hoken/kenkohoken/todokede.html",
+      "direct_pdfs": []
+    }
+  },
   "useful_links": {
     "official_website": "https://www.city.minato.tokyo.jp/",
     "living_guide_en": "https://www.city.minato.tokyo.jp/easyjp/en/index.html",

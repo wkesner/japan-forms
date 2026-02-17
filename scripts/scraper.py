@@ -1,18 +1,22 @@
 #!/usr/bin/env python3
 """
-Ward PDF scraper and batch pipeline runner for japan-forms.
+Municipality PDF scraper and batch pipeline runner for japan-forms.
 
-Downloads Japanese government form PDFs from all 23 Tokyo special ward websites,
+Downloads Japanese government form PDFs from municipality websites,
 then optionally runs the translation pipeline on each.
 
 Usage:
-    python scraper.py --list                          # Show all configured wards
-    python scraper.py --scrape                        # Download residence PDFs from all wards
-    python scraper.py --scrape --form-type nhi        # Download NHI PDFs from all wards
-    python scraper.py --scrape --ward adachi          # Single ward
-    python scraper.py --generate                      # Run pipeline on all downloaded PDFs
-    python scraper.py --scrape --generate --manifest  # Full pipeline + manifest
-    python scraper.py --status                        # Regenerate STATUS.md
+    python scraper.py --list                                    # Show configured municipalities
+    python scraper.py --list --prefecture kanagawa              # Show Kanagawa municipalities
+    python scraper.py --scrape                                  # Download residence PDFs (Tokyo)
+    python scraper.py --scrape --form-type nhi                  # Download NHI PDFs (Tokyo)
+    python scraper.py --scrape --ward adachi                    # Single ward
+    python scraper.py --scrape --prefecture kanagawa            # All Kanagawa municipalities
+    python scraper.py --scrape --prefecture kanagawa --municipality yokohama-naka
+    python scraper.py --discover --prefecture kanagawa --form-type residence
+    python scraper.py --generate                                # Run pipeline on downloaded PDFs
+    python scraper.py --scrape --generate --manifest            # Full pipeline + manifest
+    python scraper.py --status                                  # Regenerate STATUS.md
 """
 
 import argparse
@@ -20,7 +24,10 @@ import json
 import os
 import re
 import sys
+import time
 import hashlib
+import xml.etree.ElementTree as ET
+from collections import deque
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
@@ -34,7 +41,6 @@ except ImportError:
 
 # ── Paths ──
 BASE_DIR = Path(__file__).parent.parent
-DOWNLOADS_DIR = BASE_DIR / "input" / "tokyo"
 OUTPUT_DIR = BASE_DIR / "output" / "walkthroughs"
 MANIFEST_PATH = BASE_DIR / "input" / "manifest.json"
 
@@ -59,7 +65,7 @@ HEADERS = {
 TIMEOUT = 30
 
 # ═══════════════════════════════════════════════════════════════
-# WARD CONFIGURATIONS
+# WARD CONFIGURATIONS (Tokyo fallback — used when JSON registry is empty)
 # ═══════════════════════════════════════════════════════════════
 # Each ward has:
 #   name_ja/name_en: Display names
@@ -69,6 +75,7 @@ TIMEOUT = 30
 #   notes: Special handling notes
 #
 # URLs change frequently — test with --scrape and fix as needed.
+# These are kept as fallback; canonical data lives in data/municipalities/tokyo/*.json
 
 WARDS = {
     "adachi": {
@@ -264,6 +271,80 @@ WARDS = {
 
 
 # ═══════════════════════════════════════════════════════════════
+# JSON REGISTRY
+# ═══════════════════════════════════════════════════════════════
+
+def load_registry(prefecture):
+    """Load municipality configs from JSON files for a given prefecture.
+
+    Returns dict of {muni_key: config} compatible with scrape_ward().
+    Falls back to hardcoded WARDS dict for Tokyo if no JSON scraping data found.
+    """
+    registry = {}
+    muni_dir = BASE_DIR / "data" / "municipalities" / prefecture
+    if not muni_dir.exists():
+        return registry
+
+    for json_path in sorted(muni_dir.glob("*.json")):
+        if json_path.name.startswith("_"):
+            continue
+        try:
+            with open(json_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except (json.JSONDecodeError, KeyError, OSError):
+            continue
+
+        scraping = data.get("scraping")
+        if not scraping or not scraping.get("domain"):
+            continue
+
+        # Derive key from filename — strip -ku for special wards (backward compat)
+        key = json_path.stem
+        if data.get("type") == "special_ward" and key.endswith("-ku"):
+            key = key[:-3]
+
+        residence = scraping.get("residence", {})
+        nhi = scraping.get("nhi", {})
+
+        registry[key] = {
+            "name_ja": data["names"]["ja"],
+            "name_en": data["names"]["en"],
+            "domain": scraping["domain"],
+            # Backward-compatible keys for scrape_ward()
+            "download_index": residence.get("index_url"),
+            "direct_pdfs": residence.get("direct_pdfs", []),
+            # Per-form-type scraping config
+            "scraping": {
+                "residence": residence,
+                "nhi": nhi,
+            },
+            "notes": data.get("population_note", ""),
+        }
+
+    return registry
+
+
+def get_active_registry(prefecture):
+    """Get the active municipality registry for a prefecture.
+
+    Tries JSON files first, falls back to hardcoded WARDS for Tokyo.
+    """
+    registry = load_registry(prefecture)
+    if registry:
+        return registry
+    if prefecture == "tokyo":
+        return WARDS
+    return {}
+
+
+def get_downloads_dir(form_type, prefecture):
+    """Get the input downloads directory for a form type and prefecture."""
+    if form_type == "nhi":
+        return BASE_DIR / "input" / f"{prefecture}_nhi"
+    return BASE_DIR / "input" / prefecture
+
+
+# ═══════════════════════════════════════════════════════════════
 # SCRAPER
 # ═══════════════════════════════════════════════════════════════
 
@@ -323,14 +404,14 @@ SUBPAGE_KEYWORDS = [
 # FORM TYPE CONFIGURATIONS
 # ═══════════════════════════════════════════════════════════════
 # Each form type defines search terms for matching PDFs, subpage keywords
-# for crawling, and the downloads subdirectory under input/.
+# for crawling. Downloads subdirectory is now computed dynamically via
+# get_downloads_dir(form_type, prefecture).
 
 FORM_TYPES = {
     "residence": {
         "label": "Residence Registration (住民異動届)",
         "search_terms": SEARCH_TERMS,
         "subpage_keywords": SUBPAGE_KEYWORDS,
-        "downloads_subdir": "tokyo",
         "form_id": "residence_registration",
     },
     "nhi": {
@@ -348,12 +429,11 @@ FORM_TYPES = {
             "加入", "資格", "届出", "届け出",
             "ダウンロード", "申請書", "様式",
         ],
-        "downloads_subdir": "tokyo_nhi",
         "form_id": "national_health_insurance",
     },
 }
 
-# Per-ward NHI index pages (analogous to download_index for residence)
+# Per-ward NHI index pages — Tokyo fallback (canonical data in JSON files)
 NHI_WARD_INDEX = {
     "adachi": "https://www.city.adachi.tokyo.jp/on-line/shinsesho/kokuho.html",
     "arakawa": "https://www.city.arakawa.tokyo.jp/a031/kenkouhoken/kokuho/todokede.html",
@@ -436,8 +516,8 @@ def download_pdf(url, dest_path):
         return False
 
 
-def scrape_ward(ward_key, ward_cfg, form_type="residence"):
-    """Scrape PDFs for a single ward. Returns list of downloaded file paths."""
+def scrape_ward(ward_key, ward_cfg, form_type="residence", downloads_dir=None):
+    """Scrape PDFs for a single municipality. Returns list of downloaded file paths."""
     ft = FORM_TYPES[form_type]
     name = f"{ward_cfg['name_en']} ({ward_cfg['name_ja']})"
     print(f"\n{'='*60}")
@@ -445,32 +525,39 @@ def scrape_ward(ward_key, ward_cfg, form_type="residence"):
     print(f"{'='*60}")
 
     downloaded = []
-    downloads_dir = BASE_DIR / "input" / ft["downloads_subdir"]
+    if downloads_dir is None:
+        downloads_dir = get_downloads_dir(form_type, "tokyo")
     ward_dir = downloads_dir / ward_key
     search_terms = ft["search_terms"]
     subpage_kw = ft["subpage_keywords"]
 
-    # 1. Direct PDFs first (only for residence — NHI has no pre-known direct URLs)
-    if form_type == "residence":
-        for pdf_url in ward_cfg.get("direct_pdfs", []):
-            print(f"  Direct: {pdf_url}")
-            filename = urlparse(pdf_url).path.split("/")[-1]
-            if not filename.endswith(".pdf"):
-                filename += ".pdf"
-            dest = ward_dir / filename
-            if dest.exists():
-                print(f"    SKIP: already downloaded")
-                downloaded.append(dest)
-            elif download_pdf(pdf_url, dest):
-                downloaded.append(dest)
+    # Get form-type-specific scraping config (new JSON style)
+    ft_cfg = ward_cfg.get("scraping", {}).get(form_type, {})
 
-    # 2. Get index URL based on form type
-    if form_type == "residence":
-        index_url = ward_cfg.get("download_index")
-    elif form_type == "nhi":
-        index_url = NHI_WARD_INDEX.get(ward_key)
-    else:
-        index_url = None
+    # 1. Direct PDFs — check form-type-specific config first, then legacy
+    direct_pdfs = ft_cfg.get("direct_pdfs", [])
+    if not direct_pdfs and form_type == "residence":
+        direct_pdfs = ward_cfg.get("direct_pdfs", [])
+
+    for pdf_url in direct_pdfs:
+        print(f"  Direct: {pdf_url}")
+        filename = urlparse(pdf_url).path.split("/")[-1]
+        if not filename.endswith(".pdf"):
+            filename += ".pdf"
+        dest = ward_dir / filename
+        if dest.exists():
+            print(f"    SKIP: already downloaded")
+            downloaded.append(dest)
+        elif download_pdf(pdf_url, dest):
+            downloaded.append(dest)
+
+    # 2. Get index URL — check form-type-specific config first, then legacy
+    index_url = ft_cfg.get("index_url")
+    if not index_url:
+        if form_type == "residence":
+            index_url = ward_cfg.get("download_index")
+        elif form_type == "nhi":
+            index_url = NHI_WARD_INDEX.get(ward_key)
 
     if index_url:
         print(f"  Index:  {index_url}")
@@ -539,14 +626,274 @@ def scrape_ward(ward_key, ward_cfg, form_type="residence"):
 
 
 # ═══════════════════════════════════════════════════════════════
+# DISCOVERY MODE
+# ═══════════════════════════════════════════════════════════════
+
+# Path segments that suggest form-related pages
+FORM_PATH_SEGMENTS = [
+    "todokede", "shinseisho", "download", "kurashi", "tetsuzuki",
+    "hoken", "kokuho", "koseki", "jumin", "hikkoshi", "tensyutsu",
+    "tennyu", "shinsei", "yoshiki", "dl",
+]
+
+# Context keywords that boost candidate scores
+DOWNLOAD_CONTEXT_KEYWORDS = [
+    "ダウンロード", "申請書", "様式", "届出書", "届け出",
+    "PDF", "書式", "用紙",
+]
+
+
+def parse_sitemap(domain):
+    """Fetch and parse sitemap.xml, return list of URLs filtered to form-related paths."""
+    urls = []
+    sitemap_url = f"{domain.rstrip('/')}/sitemap.xml"
+    try:
+        resp = requests.get(sitemap_url, headers=HEADERS, timeout=TIMEOUT)
+        resp.raise_for_status()
+        # Handle both urlset and sitemapindex
+        root = ET.fromstring(resp.content)
+        ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+
+        # Check if this is a sitemap index
+        sitemaps = root.findall(".//sm:sitemap/sm:loc", ns)
+        if sitemaps:
+            # It's an index — fetch child sitemaps
+            for sitemap_loc in sitemaps[:5]:  # Limit to avoid fetching too many
+                try:
+                    sub_resp = requests.get(sitemap_loc.text, headers=HEADERS, timeout=TIMEOUT)
+                    sub_resp.raise_for_status()
+                    sub_root = ET.fromstring(sub_resp.content)
+                    for url_elem in sub_root.findall(".//sm:url/sm:loc", ns):
+                        urls.append(url_elem.text)
+                    time.sleep(0.5)
+                except Exception:
+                    continue
+        else:
+            # Direct urlset
+            for url_elem in root.findall(".//sm:url/sm:loc", ns):
+                urls.append(url_elem.text)
+    except Exception:
+        return []
+
+    # Filter to form-related paths
+    filtered = []
+    for url in urls:
+        path = urlparse(url).path.lower()
+        if any(seg in path for seg in FORM_PATH_SEGMENTS):
+            filtered.append(url)
+    return filtered
+
+
+def score_candidate(pdf_info, search_terms):
+    """Score a PDF candidate 0-100 based on relevance signals."""
+    score = 0
+    combined = pdf_info["link_text"] + " " + pdf_info["context"]
+    url_path = urlparse(pdf_info["url"]).path.lower()
+
+    # Search term matches in link text/context (strongest signal)
+    for term in search_terms:
+        if term in combined:
+            score += 30
+
+    # URL path keywords
+    for seg in FORM_PATH_SEGMENTS:
+        if seg in url_path:
+            score += 5
+
+    # Download-related context
+    for kw in DOWNLOAD_CONTEXT_KEYWORDS:
+        if kw in combined:
+            score += 10
+
+    return min(score, 100)
+
+
+def crawl_for_forms(domain, form_type, max_pages=50):
+    """Crawl a municipality site looking for form PDFs.
+
+    Tries sitemap.xml first, then BFS crawl (depth 3).
+    Returns list of candidate PDFs sorted by score (highest first).
+    """
+    ft = FORM_TYPES[form_type]
+    search_terms = ft["search_terms"]
+    subpage_kw = ft["subpage_keywords"]
+    candidates = []
+    seen_urls = set()
+    seen_pdfs = set()
+
+    # Phase 1: Try sitemap
+    print(f"  Checking sitemap.xml...")
+    sitemap_urls = parse_sitemap(domain)
+    if sitemap_urls:
+        print(f"    Found {len(sitemap_urls)} form-related URLs in sitemap")
+        for url in sitemap_urls[:max_pages]:
+            if url in seen_urls:
+                continue
+            seen_urls.add(url)
+            soup = fetch_page(url)
+            if not soup:
+                continue
+            pdfs = find_pdf_links(soup, url)
+            for pdf in pdfs:
+                if pdf["url"] not in seen_pdfs:
+                    pdf["score"] = score_candidate(pdf, search_terms)
+                    pdf["found_on"] = url
+                    if pdf["score"] > 0:
+                        candidates.append(pdf)
+                        seen_pdfs.add(pdf["url"])
+            time.sleep(1)
+    else:
+        print(f"    No sitemap found, falling back to BFS crawl")
+
+    # Phase 2: BFS crawl from homepage (if sitemap didn't yield enough)
+    if len(candidates) < 3:
+        print(f"  BFS crawling from {domain}...")
+        queue = deque([(domain, 0)])  # (url, depth)
+        pages_visited = len(seen_urls)
+
+        while queue and pages_visited < max_pages:
+            url, depth = queue.popleft()
+            if url in seen_urls or depth > 3:
+                continue
+            seen_urls.add(url)
+            pages_visited += 1
+
+            soup = fetch_page(url)
+            if not soup:
+                continue
+
+            # Collect PDFs
+            pdfs = find_pdf_links(soup, url)
+            for pdf in pdfs:
+                if pdf["url"] not in seen_pdfs:
+                    pdf["score"] = score_candidate(pdf, search_terms)
+                    pdf["found_on"] = url
+                    if pdf["score"] > 0:
+                        candidates.append(pdf)
+                        seen_pdfs.add(pdf["url"])
+
+            # Queue relevant subpages
+            if depth < 3:
+                subpages = find_relevant_subpages(soup, url, domain, subpage_kw)
+                for sp in subpages:
+                    if sp["url"] not in seen_urls:
+                        queue.append((sp["url"], depth + 1))
+
+            time.sleep(1)
+
+        print(f"    Visited {pages_visited} pages")
+
+    # Sort by score descending
+    candidates.sort(key=lambda c: c["score"], reverse=True)
+    return candidates
+
+
+def discover_and_scrape(muni_key, muni_cfg, form_type, prefecture, max_pages=50):
+    """Full discovery pipeline: crawl -> download -> validate.
+
+    Returns dict with results per file:
+      {"ok": [(path, score)], "flagged": [(path, reason)]}
+    """
+    ft = FORM_TYPES[form_type]
+    name = f"{muni_cfg['name_en']} ({muni_cfg['name_ja']})"
+    print(f"\n{'='*60}")
+    print(f"  DISCOVER: {name} — {ft['label']}")
+    print(f"{'='*60}")
+
+    domain = muni_cfg["domain"]
+    downloads_dir = get_downloads_dir(form_type, prefecture)
+    muni_dir = downloads_dir / muni_key
+    results = {"ok": [], "flagged": []}
+
+    # Try to import validation from pipeline
+    validate_fn = None
+    try:
+        sys.path.insert(0, str(BASE_DIR / "scripts"))
+        from pipeline import validate_pdf_for_form, load_form_template
+        form_template = load_form_template(ft["form_id"])
+        if form_template:
+            validate_fn = lambda pdf_path: validate_pdf_for_form(pdf_path, form_template)
+    except ImportError:
+        print("  WARN: pipeline.py not available, skipping validation")
+
+    # Crawl for candidates
+    candidates = crawl_for_forms(domain, form_type, max_pages)
+
+    if not candidates:
+        print(f"  No candidates found for {muni_key}")
+        results["flagged"].append((None, "no candidates found"))
+        return results
+
+    print(f"\n  Top candidates ({len(candidates)} total):")
+    for i, c in enumerate(candidates[:10]):
+        filename = urlparse(c["url"]).path.split("/")[-1]
+        print(f"    {i+1}. [{c['score']}] {filename}")
+        print(f"       Text: {c['link_text'][:60]}")
+        print(f"       URL:  {c['url']}")
+
+    # Download top candidates (max 5)
+    for c in candidates[:5]:
+        filename = urlparse(c["url"]).path.split("/")[-1]
+        if not filename.endswith(".pdf"):
+            filename += ".pdf"
+        dest = muni_dir / filename
+
+        if dest.exists():
+            print(f"\n  SKIP: {filename} (already downloaded)")
+            # Still validate existing files
+        else:
+            print(f"\n  Downloading [{c['score']}]: {filename}")
+            if not download_pdf(c["url"], dest):
+                results["flagged"].append((filename, "download failed"))
+                continue
+
+        # Validate
+        if validate_fn:
+            try:
+                status, msg = validate_fn(str(dest))
+                if status == "PASS":
+                    print(f"    VALID: {msg}")
+                    results["ok"].append((str(dest), c["score"]))
+                elif status == "SKIP":
+                    print(f"    SKIP (image-based): {msg}")
+                    results["flagged"].append((str(dest), f"image-based PDF: {msg}"))
+                else:
+                    print(f"    FAIL validation: {msg}")
+                    results["flagged"].append((str(dest), f"validation failed: {msg}"))
+            except Exception as e:
+                print(f"    WARN: validation error: {e}")
+                results["flagged"].append((str(dest), f"validation error: {e}"))
+        else:
+            # No validation available — accept based on score
+            if c["score"] >= 30:
+                results["ok"].append((str(dest), c["score"]))
+            else:
+                results["flagged"].append((str(dest), f"low score ({c['score']})"))
+
+    # Summary
+    print(f"\n  DISCOVERY SUMMARY for {muni_key}:")
+    print(f"    OK: {len(results['ok'])} downloaded and validated")
+    for path, score in results["ok"]:
+        print(f"      + {Path(path).name} (score={score})")
+    if results["flagged"]:
+        print(f"    FLAGGED: {len(results['flagged'])} need review")
+        for path, reason in results["flagged"]:
+            fname = Path(path).name if path else "(none)"
+            print(f"      ! {fname}: {reason}")
+
+    return results
+
+
+# ═══════════════════════════════════════════════════════════════
 # MANIFEST
 # ═══════════════════════════════════════════════════════════════
 
 def generate_manifest():
     """Generate a manifest of all downloaded PDFs."""
+    downloads_dir = get_downloads_dir("residence", "tokyo")
     manifest = {"wards": {}}
     for ward_key in sorted(WARDS.keys()):
-        ward_dir = DOWNLOADS_DIR / ward_key
+        ward_dir = downloads_dir / ward_key
         if not ward_dir.exists():
             continue
         pdfs = sorted(ward_dir.glob("*.pdf"))
@@ -588,6 +935,7 @@ def generate_status():
         classify_pdf_pages = None
 
     STATUS_PATH = BASE_DIR / "STATUS.md"
+    downloads_dir = get_downloads_dir("residence", "tokyo")
     trash_dir = BASE_DIR / "input" / "tokyo_trash"
 
     # Gather per-ward data
@@ -597,7 +945,7 @@ def generate_status():
 
     for ward_key in sorted(WARDS.keys()):
         ward = WARDS[ward_key]
-        ward_dir = DOWNLOADS_DIR / ward_key
+        ward_dir = downloads_dir / ward_key
         out_dir = OUTPUT_DIR / "tokyo" / ward_key
 
         # Count source PDFs
@@ -668,7 +1016,7 @@ def generate_status():
             trash_missing.append(WARDS[ward_key]["name_en"].replace(" Ward", ""))
 
     # NHI coverage
-    nhi_dir = BASE_DIR / "input" / "tokyo_nhi"
+    nhi_dir = get_downloads_dir("nhi", "tokyo")
     nhi_sourced = []
     nhi_not_sourced = []
     for ward_key in sorted(WARDS.keys()):
@@ -875,7 +1223,7 @@ def is_japanese_only_pdf(filename):
     return True
 
 
-def run_generate(form_type="residence"):
+def run_generate(form_type="residence", prefecture="tokyo", registry=None):
     """Run the translation pipeline on all downloaded PDFs (Japanese only)."""
     try:
         from pipeline import process_pdf
@@ -884,13 +1232,16 @@ def run_generate(form_type="residence"):
         print("  Place pipeline.py in the scripts/ directory.")
         return
 
-    ft = FORM_TYPES[form_type]
-    downloads_dir = BASE_DIR / "input" / ft["downloads_subdir"]
+    if registry is None:
+        registry = get_active_registry(prefecture)
 
-    for ward_key in sorted(WARDS.keys()):
+    ft = FORM_TYPES[form_type]
+    downloads_dir = get_downloads_dir(form_type, prefecture)
+
+    for ward_key in sorted(registry.keys()):
         # Skip wards with official English forms for NHI
         if form_type == "nhi" and ward_key in NHI_ENGLISH_WARDS:
-            print(f"\n  SKIP: {WARDS[ward_key]['name_en']} — has official English NHI forms")
+            print(f"\n  SKIP: {registry[ward_key]['name_en']} — has official English NHI forms")
             continue
 
         ward_dir = downloads_dir / ward_key
@@ -904,14 +1255,14 @@ def run_generate(form_type="residence"):
         if not pdfs:
             continue
 
-        name = WARDS[ward_key]["name_en"]
+        name = registry[ward_key]["name_en"]
         print(f"\n{'='*60}")
         print(f"  Generating guides for {name} — {ft['label']}")
         if skipped:
             print(f"  (Skipping {skipped} non-Japanese PDF(s))")
         print(f"{'='*60}")
 
-        # Pipeline will create tokyo/{ward} subdirectory based on input path
+        # Pipeline will create {prefecture}/{ward} subdirectory based on input path
         OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
         for pdf_path in pdfs:
@@ -926,19 +1277,30 @@ def run_generate(form_type="residence"):
 # LIST
 # ═══════════════════════════════════════════════════════════════
 
-def list_wards():
-    """Print a summary of all configured wards."""
-    print(f"\n{'Ward':<14} {'Name':<20} {'Japanese':<8} {'Domain':<40} {'Notes'}")
-    print("-" * 110)
-    for key in sorted(WARDS.keys()):
-        w = WARDS[key]
+def list_wards(prefecture="tokyo", registry=None):
+    """Print a summary of all configured municipalities for a prefecture."""
+    if registry is None:
+        registry = get_active_registry(prefecture)
+
+    if not registry:
+        print(f"\n  No municipalities configured for prefecture: {prefecture}")
+        print(f"  Add JSON files to data/municipalities/{prefecture}/")
+        return
+
+    downloads_dir = get_downloads_dir("residence", prefecture)
+    print(f"\n  Prefecture: {prefecture}")
+    print(f"\n{'Ward':<22} {'Name':<24} {'Japanese':<10} {'Domain':<40} {'Notes'}")
+    print("-" * 130)
+    for key in sorted(registry.keys()):
+        w = registry[key]
         # Check if any PDFs already downloaded
-        ward_dir = DOWNLOADS_DIR / key
+        ward_dir = downloads_dir / key
         pdf_count = len(list(ward_dir.glob("*.pdf"))) if ward_dir.exists() else 0
         dl = f"[{pdf_count} PDF]" if pdf_count else ""
         notes = w.get("notes", "")
-        print(f"  {key:<12} {w['name_en']:<20} {w['name_ja']:<8} {w['domain']:<40} {dl} {notes}")
-    print(f"\n  Total: {len(WARDS)} wards configured")
+        domain = w.get("domain", "")
+        print(f"  {key:<20} {w['name_en']:<24} {w['name_ja']:<10} {domain:<40} {dl} {notes}")
+    print(f"\n  Total: {len(registry)} municipalities configured")
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -947,11 +1309,16 @@ def list_wards():
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Scrape Japanese government form PDFs from Tokyo ward websites"
+        description="Scrape Japanese government form PDFs from municipality websites"
     )
-    parser.add_argument("--list", action="store_true", help="List all configured wards")
-    parser.add_argument("--scrape", action="store_true", help="Download PDFs from ward websites")
-    parser.add_argument("--ward", type=str, help="Scrape only this ward (use with --scrape)")
+    parser.add_argument("--list", action="store_true", help="List all configured municipalities")
+    parser.add_argument("--scrape", action="store_true", help="Download PDFs from municipality websites")
+    parser.add_argument("--discover", action="store_true",
+                        help="Crawl municipality sites to find form PDFs automatically")
+    parser.add_argument("--ward", type=str, help="Target municipality (Tokyo shorthand)")
+    parser.add_argument("--municipality", type=str, help="Target municipality key")
+    parser.add_argument("--prefecture", type=str, default="tokyo",
+                        help="Prefecture to operate on (default: tokyo)")
     parser.add_argument("--form-type", type=str, default="residence",
                         choices=list(FORM_TYPES.keys()),
                         help="Form type to scrape/generate (default: residence)")
@@ -959,50 +1326,102 @@ def main():
     parser.add_argument("--manifest", action="store_true", help="Generate manifest of downloaded PDFs")
     parser.add_argument("--status", action="store_true", help="Regenerate STATUS.md from current project state")
     parser.add_argument("--dry-run", action="store_true", help="Show what would be scraped without downloading")
+    parser.add_argument("--max-pages", type=int, default=50,
+                        help="Max pages to crawl in discovery mode (default: 50)")
+    parser.add_argument("--domain", type=str,
+                        help="Override domain for discovery (useful for testing)")
     args = parser.parse_args()
 
     form_type = getattr(args, 'form_type', 'residence')
+    prefecture = args.prefecture
 
-    if not any([args.list, args.scrape, args.generate, args.manifest, args.status]):
+    # Resolve --ward as alias for --municipality
+    muni_filter = args.municipality or args.ward
+
+    if not any([args.list, args.scrape, args.generate, args.manifest, args.status, args.discover]):
         parser.print_help()
         return
 
+    # Load registry for the active prefecture
+    registry = get_active_registry(prefecture)
+
     if args.list:
-        list_wards()
+        list_wards(prefecture, registry)
+        return
+
+    if args.discover:
+        if not registry:
+            print(f"No municipalities configured for {prefecture}")
+            print(f"  Add JSON files to data/municipalities/{prefecture}/")
+            return
+
+        ft_label = FORM_TYPES[form_type]["label"]
+        print(f"\nDiscovery mode: {ft_label} — {prefecture}")
+        all_results = {}
+
+        if muni_filter:
+            muni_key = muni_filter.lower().replace("-ku", "").replace(" ", "")
+            if muni_key not in registry:
+                print(f"Unknown municipality: '{muni_filter}'")
+                print(f"Available: {', '.join(sorted(registry.keys()))}")
+                return
+            cfg = dict(registry[muni_key])
+            if args.domain:
+                cfg["domain"] = args.domain
+            all_results[muni_key] = discover_and_scrape(
+                muni_key, cfg, form_type, prefecture, args.max_pages)
+        else:
+            for muni_key in sorted(registry.keys()):
+                cfg = registry[muni_key]
+                if not cfg.get("domain"):
+                    continue
+                all_results[muni_key] = discover_and_scrape(
+                    muni_key, cfg, form_type, prefecture, args.max_pages)
+
+        # Final summary
+        total_ok = sum(len(r["ok"]) for r in all_results.values())
+        total_flagged = sum(len(r["flagged"]) for r in all_results.values())
+        print(f"\n{'='*60}")
+        print(f"  DISCOVERY COMPLETE — {prefecture} {ft_label}")
+        print(f"{'='*60}")
+        print(f"  OK: {total_ok} PDFs downloaded and validated")
+        print(f"  FLAGGED: {total_flagged} need review")
         return
 
     if args.scrape:
         ft_label = FORM_TYPES[form_type]["label"]
+        downloads_dir = get_downloads_dir(form_type, prefecture)
         print(f"\nForm type: {ft_label}")
+        print(f"Prefecture: {prefecture}")
         results = {}
-        if args.ward:
-            ward_key = args.ward.lower().replace("-ku", "").replace(" ", "")
-            if ward_key not in WARDS:
-                print(f"Unknown ward: '{args.ward}'")
-                print(f"Available: {', '.join(sorted(WARDS.keys()))}")
+        if muni_filter:
+            ward_key = muni_filter.lower().replace("-ku", "").replace(" ", "")
+            if ward_key not in registry:
+                print(f"Unknown municipality: '{muni_filter}'")
+                print(f"Available: {', '.join(sorted(registry.keys()))}")
                 return
-            results[ward_key] = scrape_ward(ward_key, WARDS[ward_key], form_type)
+            results[ward_key] = scrape_ward(ward_key, registry[ward_key], form_type, downloads_dir)
         else:
-            for ward_key in sorted(WARDS.keys()):
-                results[ward_key] = scrape_ward(ward_key, WARDS[ward_key], form_type)
+            for ward_key in sorted(registry.keys()):
+                results[ward_key] = scrape_ward(ward_key, registry[ward_key], form_type, downloads_dir)
 
         # Summary
         print(f"\n{'='*60}")
-        print(f"  SCRAPE SUMMARY — {ft_label}")
+        print(f"  SCRAPE SUMMARY — {ft_label} ({prefecture})")
         print(f"{'='*60}")
         success = sum(1 for v in results.values() if v)
         total = len(results)
-        print(f"  {success}/{total} wards yielded PDFs\n")
+        print(f"  {success}/{total} municipalities yielded PDFs\n")
         for ward_key in sorted(results.keys()):
             count = len(results[ward_key])
             status = f"{count} PDF(s)" if count else "NONE"
-            print(f"  {ward_key:<14} {status}")
+            print(f"  {ward_key:<22} {status}")
 
     if args.manifest:
         generate_manifest()
 
     if args.generate:
-        run_generate(form_type)
+        run_generate(form_type, prefecture, registry)
 
     # Update STATUS.md only on explicit --status (slow — classifies all PDFs)
     if args.status:

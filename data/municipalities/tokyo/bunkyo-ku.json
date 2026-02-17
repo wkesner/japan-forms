@@ -59,6 +59,17 @@
       "last_verified": null
     }
   },
+  "scraping": {
+    "domain": "https://www.city.bunkyo.lg.jp",
+    "residence": {
+      "index_url": "https://www.city.bunkyo.lg.jp/b013/p000260/index.html",
+      "direct_pdfs": []
+    },
+    "nhi": {
+      "index_url": "https://www.city.bunkyo.lg.jp/b021/p000478/index.html",
+      "direct_pdfs": []
+    }
+  },
   "useful_links": {
     "official_website": "https://www.city.bunkyo.lg.jp/",
     "living_guide_en": null,

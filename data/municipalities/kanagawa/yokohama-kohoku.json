@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "version": "0.1.0",
+    "last_updated": "2026-02-16",
+    "confidence": "draft",
+    "needs_verification": "Scraping URLs, office hours, English support level need verification."
+  },
+  "municipality_id": "kanagawa/yokohama-kohoku",
+  "names": {
+    "ja": "港北区",
+    "reading": "こうほくく",
+    "romaji": "Kohoku-ku",
+    "en": "Kohoku Ward"
+  },
+  "prefecture": {
+    "ja": "神奈川県",
+    "en": "Kanagawa"
+  },
+  "type": "designated_city_ward",
+  "parent_city": {
+    "ja": "横浜市",
+    "en": "Yokohama"
+  },
+  "offices": [],
+  "forms_available": {
+    "residence_registration": {
+      "has_english_version": null,
+      "pdf_download_url_ja": null,
+      "pdf_download_url_en": null,
+      "online_submission": false,
+      "local_field_additions": [],
+      "local_tips": [],
+      "last_verified": null,
+      "verified_by": null
+    }
+  },
+  "scraping": {
+    "domain": "https://www.city.yokohama.lg.jp",
+    "residence": {
+      "index_url": null,
+      "direct_pdfs": []
+    },
+    "nhi": {
+      "index_url": null,
+      "direct_pdfs": []
+    }
+  },
+  "useful_links": {
+    "official_website": "https://www.city.yokohama.lg.jp/",
+    "living_guide_en": null,
+    "living_guide_ja": null
+  },
+  "contributors": [],
+  "last_updated": "2026-02-16"
+}

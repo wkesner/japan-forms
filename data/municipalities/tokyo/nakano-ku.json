@@ -59,6 +59,17 @@
       "last_verified": null
     }
   },
+  "scraping": {
+    "domain": "https://www.city.tokyo-nakano.lg.jp",
+    "residence": {
+      "index_url": "https://www.city.tokyo-nakano.lg.jp/kurashi/koseki/yuusou/yuso-tensyutsu.html",
+      "direct_pdfs": []
+    },
+    "nhi": {
+      "index_url": "https://www.city.tokyo-nakano.lg.jp/kurashi/hoken/tetsuduki/index.html",
+      "direct_pdfs": []
+    }
+  },
   "useful_links": {
     "official_website": "https://www.city.tokyo-nakano.lg.jp/",
     "living_guide_en": null,

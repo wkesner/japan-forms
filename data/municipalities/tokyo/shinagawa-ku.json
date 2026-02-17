@@ -59,6 +59,17 @@
       "last_verified": null
     }
   },
+  "scraping": {
+    "domain": "https://www.city.shinagawa.tokyo.jp",
+    "residence": {
+      "index_url": "https://www.city.shinagawa.tokyo.jp/PC/procedure/procedure-zyuumin_inkan/procedure-zyuumin_inkan-zyuumin/procedure-zyuumin_inkan-zyuumin-todoke/index.html",
+      "direct_pdfs": []
+    },
+    "nhi": {
+      "index_url": "https://www.city.shinagawa.tokyo.jp/PC/procedure/procedure-kenkouhoken/procedure-kenkouhoken-todokede/20200325095605.html",
+      "direct_pdfs": []
+    }
+  },
   "useful_links": {
     "official_website": "https://www.city.shinagawa.tokyo.jp/",
     "living_guide_en": null,

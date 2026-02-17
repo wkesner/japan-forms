@@ -3332,16 +3332,26 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
             zones = DEFAULT_ZONES  # placeholder until fields are extracted
 
     pdf_name = Path(pdf_path).stem
-    # Extract city and ward from path (e.g., input/tokyo/katsushika/ido.pdf
-    # or input/tokyo_nhi/adachi/form.pdf)
+    # Extract city/prefecture and ward from path (e.g., input/tokyo/katsushika/ido.pdf
+    # or input/tokyo_nhi/adachi/form.pdf or input/kanagawa/yokohama-naka/form.pdf)
     ward_name = ""
     city_name = ""
-    CITY_PREFIXES = ("tokyo", "osaka", "kyoto", "nagoya")
+    # Detect prefectures dynamically from input/ directory contents
+    input_dir = Path(pdf_path).parent
+    while input_dir.name and input_dir.name != "input":
+        input_dir = input_dir.parent
+    if input_dir.name == "input":
+        city_prefixes = tuple(
+            d.name.split("_")[0] for d in input_dir.iterdir()
+            if d.is_dir() and not d.name.startswith(".")
+        )
+    else:
+        city_prefixes = ("tokyo", "osaka", "kyoto", "nagoya")
     parts = Path(pdf_path).parts
     for i, part in enumerate(parts):
         part_lower = part.lower()
-        # Match exact city names and prefixed variants (e.g., tokyo_nhi)
-        if any(part_lower == c or part_lower.startswith(c + "_") for c in CITY_PREFIXES):
+        # Match exact prefecture names and prefixed variants (e.g., tokyo_nhi)
+        if any(part_lower == c or part_lower.startswith(c + "_") for c in city_prefixes):
             if i + 1 < len(parts) - 1:
                 city_name = part_lower.split("_")[0]  # tokyo_nhi -> tokyo
                 ward_name = parts[i + 1]

@@ -59,6 +59,19 @@
       "last_verified": null
     }
   },
+  "scraping": {
+    "domain": "https://www.city.kita.lg.jp",
+    "residence": {
+      "index_url": "https://www.city.kita.lg.jp/living/registration/1001564/1001568.html",
+      "direct_pdfs": [
+        "https://www.city.kita.lg.jp/_res/projects/default_project/_page_/001/001/568/idoutodokdesyo20260105.pdf"
+      ]
+    },
+    "nhi": {
+      "index_url": "https://www.city.kita.lg.jp/living/insurance-pension/1001703/1001712/1001721.html",
+      "direct_pdfs": []
+    }
+  },
   "useful_links": {
     "official_website": "https://www.city.kita.tokyo.jp/",
     "living_guide_en": null,

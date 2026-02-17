@@ -59,6 +59,20 @@
       "last_verified": null
     }
   },
+  "scraping": {
+    "domain": "https://www.city.suginami.tokyo.jp",
+    "residence": {
+      "index_url": "https://www.city.suginami.tokyo.jp/shinseisho/koseki/tenshutsu/1005939.html",
+      "direct_pdfs": [
+        "https://www.city.suginami.tokyo.jp/documents/8731/todokedesyo1229.pdf",
+        "https://www.city.suginami.tokyo.jp/documents/8731/kinyurei1229.pdf"
+      ]
+    },
+    "nhi": {
+      "index_url": "https://www.city.suginami.tokyo.jp/s035/shinseisho/8716.html",
+      "direct_pdfs": []
+    }
+  },
   "useful_links": {
     "official_website": "https://www.city.suginami.tokyo.jp/",
     "living_guide_en": null,

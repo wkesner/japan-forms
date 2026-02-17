@@ -59,6 +59,17 @@
       "last_verified": null
     }
   },
+  "scraping": {
+    "domain": "https://www.city.katsushika.lg.jp",
+    "residence": {
+      "index_url": "https://www.city.katsushika.lg.jp/kurashi/1000046/1001401/1001438.html",
+      "direct_pdfs": []
+    },
+    "nhi": {
+      "index_url": "https://www.city.katsushika.lg.jp/kurashi/1000049/1001690/1001699.html",
+      "direct_pdfs": []
+    }
+  },
   "useful_links": {
     "official_website": "https://www.city.katsushika.lg.jp/",
     "living_guide_en": null,

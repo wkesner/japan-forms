@@ -59,6 +59,17 @@
       "last_verified": null
     }
   },
+  "scraping": {
+    "domain": "https://www.city.itabashi.tokyo.jp",
+    "residence": {
+      "index_url": "https://www.city.itabashi.tokyo.jp/tetsuduki/koseki/shomeisho/1001602.html",
+      "direct_pdfs": []
+    },
+    "nhi": {
+      "index_url": "https://www.city.itabashi.tokyo.jp/kenko/kokuho/kokuho/1003171.html",
+      "direct_pdfs": []
+    }
+  },
   "useful_links": {
     "official_website": "https://www.city.itabashi.tokyo.jp/",
     "living_guide_en": null,

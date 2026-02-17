@@ -59,6 +59,17 @@
       "last_verified": null
     }
   },
+  "scraping": {
+    "domain": "https://www.city.ota.tokyo.jp",
+    "residence": {
+      "index_url": "https://www.city.ota.tokyo.jp/download/koseki/tenshututodoke.html",
+      "direct_pdfs": []
+    },
+    "nhi": {
+      "index_url": "https://www.city.ota.tokyo.jp/seikatsu/kokunen/kokuho/kanyuu.html",
+      "direct_pdfs": []
+    }
+  },
   "useful_links": {
     "official_website": "https://www.city.ota.tokyo.jp/",
     "living_guide_en": null,

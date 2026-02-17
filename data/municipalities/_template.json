@@ -52,6 +52,12 @@
     }
   },
 
+  "scraping": {
+    "domain": "",
+    "residence": { "index_url": null, "direct_pdfs": [] },
+    "nhi": { "index_url": null, "direct_pdfs": [] }
+  },
+
   "useful_links": {
     "official_website": "",
     "living_guide_en": null,
