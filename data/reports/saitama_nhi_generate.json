@@ -1,0 +1,49 @@
+{
+  "prefecture": "saitama",
+  "form_type": "nhi",
+  "summary": {
+    "generated": 11,
+    "failed": 0,
+    "skipped": 1
+  },
+  "wards": {
+    "kawagoe": {
+      "generated": [
+        "Kawagoe_NHIapp_kanyuutodoke20241202_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "kawaguchi": {
+      "generated": [
+        "Kawaguchi_NHIapp_jyusinnannnaipannhuretto_v1.PDF",
+        "Kawaguchi_NHIapp_kinyuureitodokedesyo_v1.PDF",
+        "Kawaguchi_NHIapp_sanzensango_v1.PDF",
+        "Kawaguchi_NHIapp_sanzensangotodokedesho_v1.PDF",
+        "Kawaguchi_NHIapp_shikakusyutokusousitutodoke_saishin1_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "koshigaya": {
+      "generated": [
+        "Koshigaya_NHIapp_3rddetahelth1220_v1.PDF",
+        "Koshigaya_NHIapp_japanese_v1.PDF",
+        "Koshigaya_NHIapp_vietnamese_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "saitama-chuo": {
+      "generated": [
+        "SaitamaChuo_NHIapp_idoutodoke_v1.PDF",
+        "SaitamaChuo_NHIapp_idoutodoke_rei_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "example.pdf"
+      ]
+    }
+  },
+  "timestamp": "2026-02-18T11:19:29"
+}

@@ -1,0 +1,92 @@
+{
+  "prefecture": "saitama",
+  "form_type": "nhi",
+  "timestamp": "2026-02-18T11:14:46",
+  "summary": {
+    "ok": 9,
+    "failed": 1,
+    "skipped": 2
+  },
+  "results": {
+    "kawagoe": {
+      "name_en": "Kawagoe City",
+      "files": [
+        {
+          "filename": "kanyuutodoke20241202.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "kawaguchi": {
+      "name_en": "Kawaguchi City",
+      "files": [
+        {
+          "filename": "jyusinnannnaipannhuretto.pdf",
+          "status": "skipped",
+          "detail": "image-based (0 chars) — skipping validation"
+        },
+        {
+          "filename": "kinyuureitodokedesyo.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "sanzensango.pdf",
+          "status": "skipped",
+          "detail": "image-based (47 chars) — skipping validation"
+        },
+        {
+          "filename": "sanzensangotodokedesho.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "shikakusyutokusousitutodoke_saishin1.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "koshigaya": {
+      "name_en": "Koshigaya City",
+      "files": [
+        {
+          "filename": "3rddetahelth1220.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "japanese.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "vietnamese.pdf",
+          "status": "ok",
+          "detail": "matched: 国保"
+        }
+      ]
+    },
+    "saitama-chuo": {
+      "name_en": "Chuo Ward",
+      "files": [
+        {
+          "filename": "example.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 956 chars of text"
+        },
+        {
+          "filename": "idoutodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "idoutodoke_rei.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    }
+  }
+}

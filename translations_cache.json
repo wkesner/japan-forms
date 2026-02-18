@@ -10296,5 +10296,1240 @@
     "type": "dictionary",
     "note": "Staff use only - do not fill in",
     "field_id": "auto_37d747f6"
+  },
+  "a40d1d8cf739fdc7aef1f6174229cbfc": {
+    "en": "National Health Insurance / Qualification",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, 資格"
+  },
+  "306f2e311912a6b5a5fdd775a362d0d9": {
+    "en": "Submission destination",
+    "type": "fragment",
+    "note": "Matched: （提出先）"
+  },
+  "17c501a5779ddaf750388e438c9aa957": {
+    "en": "National Health Insurance / . / To do/perform",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, す。, する"
+  },
+  "6db08d2d784197af2c7f42e1ae9f0e82": {
+    "en": "Applicant / Person filing the form",
+    "type": "fragment",
+    "note": "Matched: 届出人"
+  },
+  "08e5c66bf28138fbc7a8364d43a6351c": {
+    "en": "Phone number / Mobile phone / Home address",
+    "type": "fragment",
+    "note": "Matched: 電話番号, 携帯, 自宅"
+  },
+  "488c0b6d94774b70b639fb2726350722": {
+    "en": "Date of filing",
+    "type": "fragment",
+    "note": "Matched: 届出日"
+  },
+  "be028d7f9bcfdc3cc790955c0931b741": {
+    "en": "Full name",
+    "type": "fragment",
+    "note": "Matched: 氏名"
+  },
+  "92ad7dc612246b89c363e11c32a2e0e6": {
+    "en": "Head of household / Address",
+    "type": "fragment",
+    "note": "Matched: 世帯主, 住所"
+  },
+  "24ec5d702d229fa6c3242b52ad3ea3a6": {
+    "en": "My Number (Individual Number) / Head of household",
+    "type": "fragment",
+    "note": "Matched: 個人番号, 世帯主"
+  },
+  "916b898886baed77683bdb4718cf0095": {
+    "en": "National Health Insurance / To do/perform / Person who",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, する, る方"
+  },
+  "ca18b06c173e777f3bd1032b1acfa3dc": {
+    "en": "Health insurance card",
+    "type": "fragment",
+    "note": "Matched: 保険証"
+  },
+  "60699c1b5213c2af81fde65e5a92bee6": {
+    "en": "Yes / No",
+    "type": "dictionary",
+    "note": "Circle or check the appropriate option",
+    "field_id": "auto_60699c1b"
+  },
+  "6f54c0fb723821f15fcb9ebb5b245be8": {
+    "en": "Copy / Qualification",
+    "type": "fragment",
+    "note": "Matched: 写し, 資格"
+  },
+  "6582e821ecea295f581106e2409cb9e0": {
+    "en": "To do/perform / Person who",
+    "type": "fragment",
+    "note": "Matched: する, る方"
+  },
+  "f037f36ebc4091b20706d10d88320bf8": {
+    "en": "My Number Card / My Number Card / Driver's license",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, 運転免許証"
+  },
+  "41e43ea7d4c40130083d11fa03bd893a": {
+    "en": "Qualification",
+    "type": "fragment",
+    "note": "Matched: 資格"
+  },
+  "87c9b2f899da93e884b86b516c3ba3a5": {
+    "en": "Qualification",
+    "type": "fragment",
+    "note": "Matched: 資格"
+  },
+  "0c005821e26cf884b95ad175c561d91c": {
+    "en": "My Number (Individual Number) / .",
+    "type": "fragment",
+    "note": "Matched: 個人番号, す。"
+  },
+  "7f036ade8d32c8c5ba8aa745688e6900": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "8332e3c1134f4ea7ccbb749d5aadeba9": {
+    "en": "Qualification",
+    "type": "fragment",
+    "note": "Matched: 資格"
+  },
+  "7126b193f8b67a9f9ef3abaa15a20690": {
+    "en": "My Number Card / My Number Card / My Number Card",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカードの, マイナンバーカード, バーカード"
+  },
+  "7b92632fd9f9679f08f7a74b628c75a8": {
+    "en": "Head of household / . / Qualification",
+    "type": "fragment",
+    "note": "Matched: 世帯主, す。, 資格"
+  },
+  "98ffe54be50a53df2afdb3ae9e0d2306": {
+    "en": "My Number Card / My Number Card / My Number Card",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカードの, マイナンバーカード, バーカード"
+  },
+  "d06d794f951d12c2daf29ebdf6f39f24": {
+    "en": "Head of household / . / Qualification",
+    "type": "fragment",
+    "note": "Matched: 世帯主, す。, 資格"
+  },
+  "f5b1dd883c294ece951a8207f0e96a9a": {
+    "en": "Application method",
+    "type": "dictionary",
+    "note": "Indicates how you're submitting this form (in person, by mail, online, etc.)",
+    "field_id": "auto_f5b1dd88"
+  },
+  "30438ef2e56a539ebf765a68a3657a94": {
+    "en": "Qualification",
+    "type": "fragment",
+    "note": "Matched: 資格"
+  },
+  "f49a36f4bd029f13d99e9d7b00d8c0ed": {
+    "en": "Reason for change / Type of move / Qualification",
+    "type": "fragment",
+    "note": "Matched: 異動事由, 資格"
+  },
+  "eea509c2f382d9263056dc5056c3cf6b": {
+    "en": "Health insurance card / .",
+    "type": "fragment",
+    "note": "Matched: 保険証, す。"
+  },
+  "89d8c2963f1e597deb3e9d6770768419": {
+    "en": "Health insurance card / Copy",
+    "type": "fragment",
+    "note": "Matched: 保険証, 写し"
+  },
+  "3497b497a32380fe01578ec2c5703a7c": {
+    "en": "Change",
+    "type": "fragment",
+    "note": "Matched: 変更"
+  },
+  "4ebaaab1a6971c43d21215341971277c": {
+    "en": "Place of employment / Employer / Mobile phone / Home address",
+    "type": "fragment",
+    "note": "Matched: 勤務先, 携帯, 自宅"
+  },
+  "f1d8f2e784ded4c66bba9e8cda909653": {
+    "en": "Copy",
+    "type": "fragment",
+    "note": "Matched: 写し"
+  },
+  "63e48c7ea86be6dda09aef04fd20661f": {
+    "en": "Address",
+    "type": "fragment",
+    "note": "Matched: 住所"
+  },
+  "427357c4d5a7d264624f890c82e799f0": {
+    "en": "Identity verification documents / Driver's license / Passport",
+    "type": "fragment",
+    "note": "Matched: 本人確認書類, 運転免許証, パスポート"
+  },
+  "b4bf6265a09e65d221a10f61c8caac40": {
+    "en": "Period of stay / Place of employment / Employer",
+    "type": "fragment",
+    "note": "Matched: 在留期間, 勤務先"
+  },
+  "01bf5995d1bcff13d1e0cbe0bc226c56": {
+    "en": "My Number / Copy",
+    "type": "fragment",
+    "note": "Matched: マイナン, 写し"
+  },
+  "37f498b501b6bd9cca0d677a19375728": {
+    "en": "Other",
+    "type": "fragment",
+    "note": "Matched: その他"
+  },
+  "6e147d8dda7b7b749abd050d15a18e99": {
+    "en": "Gender / Relationship to head of household",
+    "type": "fragment",
+    "note": "Matched: 性別, 続柄"
+  },
+  "8a7af4a3b6f208e45870823126321435": {
+    "en": "My Number (Individual Number) / From",
+    "type": "fragment",
+    "note": "Matched: 個人番号, から"
+  },
+  "7b57f4cec1f36b9464c5ce850affa427": {
+    "en": "Yes/There is / .",
+    "type": "fragment",
+    "note": "Matched: あります。, す。"
+  },
+  "0fc0bb7287654ec9f25e8e6253cd0eb6": {
+    "en": "My Number (Individual Number) / Change",
+    "type": "fragment",
+    "note": "Matched: 個人番号, 変更"
+  },
+  "9f319bbb353511b3ee404eefcdd12404": {
+    "en": "Verification / Cross-check",
+    "type": "fragment",
+    "note": "Matched: 照合"
+  },
+  "ca259a950b38295257a6e0443ac9b193": {
+    "en": "Reception / Received",
+    "type": "fragment",
+    "note": "Matched: 受付"
+  },
+  "a21b42d6a531932444a8dbba86beb280": {
+    "en": "Return/surrender",
+    "type": "fragment",
+    "note": "Matched: 返納"
+  },
+  "fd0aae32c405f06481e6961bce1aa044": {
+    "en": "Health insurance card / Qualification",
+    "type": "fragment",
+    "note": "Matched: 保険証, 資格"
+  },
+  "1520a841168e80bb763056343e797ef6": {
+    "en": "Online",
+    "type": "dictionary",
+    "note": "Indicates this form can be submitted online or relates to online services",
+    "field_id": "auto_1520a841"
+  },
+  "70cc1c9965e55b7c276f22b64b6df85b": {
+    "en": "National Health Insurance / . / To do/perform",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, す。, する"
+  },
+  "d5a133b2e97ec036d1e2af6d525c0e27": {
+    "en": "Full name",
+    "type": "fragment",
+    "note": "Matched: 氏名"
+  },
+  "20848e911548140b30b9c5138afae2d7": {
+    "en": "Date of birth",
+    "type": "fragment",
+    "note": "Matched: 生年月日"
+  },
+  "4e04c6ec5e5571afe0fb8625ec3517e9": {
+    "en": "Head of household",
+    "type": "fragment",
+    "note": "Matched: 世帯主"
+  },
+  "8da9c8d4e70d4406cc912c38d975d8dc": {
+    "en": "Address",
+    "type": "fragment",
+    "note": "Matched: 住所"
+  },
+  "eed7a8528da9bece7ea52401a66f5068": {
+    "en": "My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 個人番号"
+  },
+  "179bb4c393a8fe1611f1d5270e18c412": {
+    "en": "Phone number",
+    "type": "fragment",
+    "note": "Matched: 電話番号"
+  },
+  "2f002589673d3d4b7799df12f1550342": {
+    "en": "Head of household / To do/perform",
+    "type": "fragment",
+    "note": "Matched: 世帯主, する"
+  },
+  "0b3e4e8cc63c06d2f61bfca7cf09fd59": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "7261ce7cf9d27a142716b0efa5a9c46e": {
+    "en": "To do/perform / Document",
+    "type": "fragment",
+    "note": "Matched: する, 書を"
+  },
+  "0c8a23dd3916a9950291862cc3d32f67": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "af0f69a85c8cd813aa35780b5e38a635": {
+    "en": "Processing",
+    "type": "fragment",
+    "note": "Matched: 処理"
+  },
+  "e84145cbe6240db87341117fb6876ea0": {
+    "en": "Seal (inkan / hanko)",
+    "type": "fragment",
+    "note": "Matched: 印"
+  },
+  "5e6597d29f1a02331833632f57229a3d": {
+    "en": "Date of filing",
+    "type": "fragment",
+    "note": "Matched: 届出日"
+  },
+  "cde4c3002a5d7ea9cb7b4db644b42ec2": {
+    "en": "Other",
+    "type": "fragment",
+    "note": "Matched: その他"
+  },
+  "78dd845aed812a7160dd3d48d6c75865": {
+    "en": "National Health Insurance / Qualification",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, 資格"
+  },
+  "61a30864b4c17441e8b2b6a6110d15c6": {
+    "en": "Reason for change / Type of move / Qualification",
+    "type": "fragment",
+    "note": "Matched: 異動事由, 資格"
+  },
+  "2ed1cf3b78342cbe96d8c4c53e834565": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "1225b57f5181fef102370ebd0c872afe": {
+    "en": "Other ( / Other",
+    "type": "fragment",
+    "note": "Matched: その他（, その他"
+  },
+  "18e73425f090226e1354593a2d69c0a6": {
+    "en": "Change",
+    "type": "fragment",
+    "note": "Matched: 変更"
+  },
+  "a959770ca236b8a716316f1d76a48645": {
+    "en": "Place of employment / Employer / Mobile phone / Home address",
+    "type": "fragment",
+    "note": "Matched: 勤務先, 携帯, 自宅"
+  },
+  "549b5b2c5bdfdcd3aa4e993800952e75": {
+    "en": "All / Partial",
+    "type": "fragment",
+    "note": "Matched: 全部, 一部"
+  },
+  "fb0659d9170b2e37323b0b7fee421717": {
+    "en": "Current address / Address",
+    "type": "fragment",
+    "note": "Matched: 現住所, 住所"
+  },
+  "b85ea540019b92b8977cc04717bfb187": {
+    "en": "Head of household name / Head of household / Full name",
+    "type": "fragment",
+    "note": "Matched: 世帯主氏名, 世帯主, 氏名"
+  },
+  "17d58cc2de45fef9e59d96aafda6cd77": {
+    "en": "Previous address",
+    "type": "dictionary",
+    "note": "If coming from abroad, write your country name (e.g. アメリカ合衆国).",
+    "field_id": "kyu_jusho"
+  },
+  "836446d603278f57f6e205bd10d77215": {
+    "en": "Head of household name / Head of household / Full name",
+    "type": "fragment",
+    "note": "Matched: 世帯主氏名, 世帯主, 氏名"
+  },
+  "c56bc3bcfe5172bdf24e66a4069d6e22": {
+    "en": "Presence/absence of",
+    "type": "fragment",
+    "note": "Matched: の有無"
+  },
+  "d78b2a4df906c421db93b5762b1437d4": {
+    "en": "Western calendar",
+    "type": "fragment",
+    "note": "Matched: 西暦"
+  },
+  "7ce135976da679858fba5130230682ea": {
+    "en": "My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 個人番号"
+  },
+  "5a2bb4996a068765affbc4e4bd145c80": {
+    "en": "Return/surrender",
+    "type": "fragment",
+    "note": "Matched: 返納"
+  },
+  "4f71706ee31b0eb7b2a0e3bbb5b34d92": {
+    "en": "My Number Card / My Number Card / My Number",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, マイナン"
+  },
+  "180ef8478144e4e427eb33bbe4fbdb4a": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "8cd37c15076fbc332e1fcc6fd31b49d9": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "e762e9af00201e33626746fdc30327d7": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "20f70e71da352377fe46f7ed46581658": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "1c3687292320d1b8d21e93f7dfb8a817": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "34b182a7ffb2e58826b635a06c142331": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "43b1ef712ad5b5fc7437b977d20af681": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "8eed6cdaecf0aeaaff6d1bb4863a0d22": {
+    "en": "Late-stage elderly (75+)",
+    "type": "fragment",
+    "note": "Matched: 後期高齢者"
+  },
+  "57e069a46d339bf3c62dc2314c3190c8": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "047857bf3c98239cf75f0b9e0ce14aff": {
+    "en": "Long-term Care Insurance",
+    "type": "fragment",
+    "note": "Matched: 介護保険"
+  },
+  "9f37db06bd6c529ebf1da9243a8f998e": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "0e41a49791764120461ddd24a7730498": {
+    "en": "National Health Insurance / Late-stage elderly (75+)",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, 後期高齢者"
+  },
+  "975c69222ad435077648b03d9e75fa78": {
+    "en": "National Health Insurance / .",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, す。"
+  },
+  "829dd254d3dc8e1dd70c3fa51539db6a": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "368a64771f674230f1c42c659e174028": {
+    "en": "National Health Insurance / .",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, す。"
+  },
+  "1e6807451d618284818b433c8d6cf605": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "ff1e9cb0c2c5cd0dd952a36c548c0e13": {
+    "en": "From",
+    "type": "fragment",
+    "note": "Matched: から"
+  },
+  "a0c64ea32a2f20a9fd5141b512004c8d": {
+    "en": "National Health Insurance / To do/perform",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, する"
+  },
+  "8a0684d398a172d5ce8f2dbacc1eb3b7": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "54b5504fffed8b5aba4e9f00924f0bf7": {
+    "en": "Pension",
+    "type": "fragment",
+    "note": "Matched: 年金"
+  },
+  "e4889ce53a3fb5d9402f55e65b5817c2": {
+    "en": "Pension",
+    "type": "fragment",
+    "note": "Matched: 年金"
+  },
+  "9be9e4e678683d66b6157292efc38e6e": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "63ed8eefead12f0d3721d99059e335ab": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "d1c59272e7435c0975eaca4fb572c616": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "9614a3291b1c37feee8fae2d1ca7c451": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "deb2d0adf37b93706316e0a8c5751c7b": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "171e9527387b9e9c36371c4df036ccf6": {
+    "en": "From",
+    "type": "fragment",
+    "note": "Matched: から"
+  },
+  "33140ff828caf0ce0e253ba634efeb4b": {
+    "en": "From",
+    "type": "fragment",
+    "note": "Matched: から"
+  },
+  "beb95a5a91f41c35ea7caddde574babb": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "49db0b5ce97279e102104521874ad723": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "f1b82a4c008ee1ec70cbcd1392f53478": {
+    "en": "Change / To do/perform",
+    "type": "fragment",
+    "note": "Matched: 変更, する"
+  },
+  "a8b883e759a9a584a18d9f822cf79105": {
+    "en": "From",
+    "type": "fragment",
+    "note": "Matched: から"
+  },
+  "d90d8a0b99c71605aa6ea585361bbe79": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "b3fefe65eb9d54e560b6d21d6a59a995": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "a17e0e596f9e3b963dcc8e7c2c50618b": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "110306832dac77c4360fbffb771ba2c6": {
+    "en": "From",
+    "type": "fragment",
+    "note": "Matched: から"
+  },
+  "1d949d20a9e99d7d01e454d803a596ca": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "240d6a8b6710351b09c59fb4deccf8ff": {
+    "en": "From",
+    "type": "fragment",
+    "note": "Matched: から"
+  },
+  "1f5df3af0b5daf26e741e1f7e7363354": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "f5778a997c095c8783dedda6851f31b8": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "3b9da46f09b5bd31635530843ddb154f": {
+    "en": "Do not / To do/perform",
+    "type": "fragment",
+    "note": "Matched: しない, する"
+  },
+  "265b09b4e5a41695a0727e9f1fe253d0": {
+    "en": "Do not / To do/perform",
+    "type": "fragment",
+    "note": "Matched: しない, する"
+  },
+  "ed776b50e980c2c3fee9705aa61e490e": {
+    "en": "Do not / To do/perform",
+    "type": "fragment",
+    "note": "Matched: しない, する"
+  },
+  "382c71c8401a564002739e5b7396808a": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "150e8db8f8a49d14ddeac0c104b68188": {
+    "en": "From",
+    "type": "fragment",
+    "note": "Matched: から"
+  },
+  "6324a56a5e3f47e1fd59fa874b10c61b": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "7e436e809a91d0bcfa2bb7a5f1250eb6": {
+    "en": ". / To do/perform",
+    "type": "fragment",
+    "note": "Matched: す。, する"
+  },
+  "517925a23a5f6d1f61c7324d122a6f4a": {
+    "en": ". / From",
+    "type": "fragment",
+    "note": "Matched: す。, から"
+  },
+  "bb01a880e830218516549ad832987a3a": {
+    "en": ". / From",
+    "type": "fragment",
+    "note": "Matched: す。, から"
+  },
+  "d9b892084f2bff75c95073b86a254087": {
+    "en": "From",
+    "type": "fragment",
+    "note": "Matched: から"
+  },
+  "1adca33f4e2ae9154d9fde99090d8469": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "ab53559f8750bb3fb82ca055554ade9d": {
+    "en": "Do not / To do/perform",
+    "type": "fragment",
+    "note": "Matched: しない, する"
+  },
+  "8f26d1ab56772895295f83d71c1d0687": {
+    "en": "From",
+    "type": "fragment",
+    "note": "Matched: から"
+  },
+  "86c354aae70cbd750b05daa67682f914": {
+    "en": "Other",
+    "type": "fragment",
+    "note": "Matched: その他"
+  },
+  "9ac397f344ee30a3d5419fa03c724d6f": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "e1f239fcafaec7e1e165f5b449ac0bdf": {
+    "en": "Reception / Received / From",
+    "type": "fragment",
+    "note": "Matched: 受付, から"
+  },
+  "7c5be3088289edd1acb131054b55ee11": {
+    "en": ". / To do/perform",
+    "type": "fragment",
+    "note": "Matched: す。, する"
+  },
+  "78a0db5211409358fe13493865e49e6f": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "bde6f776043566d97af769ca3e2bc7cf": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "3662b26790f63338a8f0fb3fc74f1d12": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "20ea16612099cc73a7b2aa3b08a060a1": {
+    "en": "From",
+    "type": "fragment",
+    "note": "Matched: から"
+  },
+  "d195791f0aebdef1ba9a36b39ee11f19": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "4344a701e9da2dcab2b908d30f5a3594": {
+    "en": "From",
+    "type": "fragment",
+    "note": "Matched: から"
+  },
+  "1908a6e5821c37c96fec8fb59df00e2f": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "a318163a563befafe92b54c8c25beda0": {
+    "en": "From",
+    "type": "fragment",
+    "note": "Matched: から"
+  },
+  "dba5519d4488d6d8c65a6fe4a78993eb": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "042a6829c84c970c8258f7005b0ba649": {
+    "en": "From",
+    "type": "fragment",
+    "note": "Matched: から"
+  },
+  "d271fefac0e66e9ee72dd35bcfaa8c12": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "02bc2c22b48bc8bcc5df555f048573a3": {
+    "en": "Long-term Care Insurance",
+    "type": "fragment",
+    "note": "Matched: 介護保険"
+  },
+  "231b3574c52a76231456d511fe772633": {
+    "en": "Do not",
+    "type": "fragment",
+    "note": "Matched: しない"
+  },
+  "e7734e05a9b60ec48abbe3bc513ad483": {
+    "en": "Do not",
+    "type": "fragment",
+    "note": "Matched: しない"
+  },
+  "3bfdab09855423a0ca3fe5f6f2a7a250": {
+    "en": "Qualification",
+    "type": "fragment",
+    "note": "Matched: 資格"
+  },
+  "57e39fc484fb15a44bf8b4d355049c0f": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "101205bc7d05fc003fb1c320aa8c2820": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "fac7d232bd5103ca9679bde9c2789bca": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "6db8533d00bdc3c2c4c45487b22b0a9d": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "758f427df2a708ec037c68ab80ebd625": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "d92df97d8e99c5dfa9104ad949792f63": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "d78a8b743c92f0cb18304521e7264160": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "51dfa3da1d03dd54071bc4b5cce47815": {
+    "en": "Prefecture / To do/perform",
+    "type": "fragment",
+    "note": "Matched: 府県, する"
+  },
+  "bcd76d8d57be804c875aa75d698c9e89": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "8f4b0949bebff96f7f29ab7d850eaef3": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "d7979a1d75662def9b8df5f6cdec8e5b": {
+    "en": "From",
+    "type": "fragment",
+    "note": "Matched: から"
+  },
+  "3dbdafec86244e0fcbdb9d454b97ee63": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "d43babd5957cfddb7b1fc40267be67b1": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "bd76c9a5831d72709fedd648ffcfdc57": {
+    "en": ". / To do/perform",
+    "type": "fragment",
+    "note": "Matched: す。, する"
+  },
+  "c11176f169f2b28a97ebc35786170365": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "60f95af4d7fde2f7d443b1d26be1bec1": {
+    "en": "From",
+    "type": "fragment",
+    "note": "Matched: から"
+  },
+  "1c8bc0d93be055e9dc4f6547a48f18cc": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "13a6630ab1eb0c47e55a872442e410bc": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "a86d555754917156218f9270c84937a2": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "8a402ee155f4ece48963c2aff77c2269": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "8d53354bd8aab1c2965ccb20973234f6": {
+    "en": "From",
+    "type": "fragment",
+    "note": "Matched: から"
+  },
+  "828cf75278f44c935d8a9825a2c5c547": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "70d6afd2ee333f12edaad8c110ab36b6": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "87249d0db06e00559991cf852d2b2bfb": {
+    "en": "Person who",
+    "type": "fragment",
+    "note": "Matched: る方"
+  },
+  "b6175a4e626ee8f0ed152ebe96bad030": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "7d4c147e7857101a2fa66d16f8c1f1a9": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "d823cc027c0d090cd09abaac234dccb5": {
+    "en": "To do/perform / Person who",
+    "type": "fragment",
+    "note": "Matched: する, る方"
+  },
+  "10ab3a0a51b097ece8186b60f23ef10f": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "ed90ffd66b3a6f082246393cff22c00a": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "5084418e784e3f8c15a280f1b3585b05": {
+    "en": "National Health Insurance / To do/perform",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, する"
+  },
+  "1d542ef9dd3177b1575caab99cdf4490": {
+    "en": "Pension",
+    "type": "fragment",
+    "note": "Matched: 年金"
+  },
+  "37163c17be4e3b66824e51a26d5078a4": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "76e33900d9cf45abed0966075dca28fc": {
+    "en": "From",
+    "type": "fragment",
+    "note": "Matched: から"
+  },
+  "15c4c04cd522455905d324bdf0ead021": {
+    "en": "Pension",
+    "type": "fragment",
+    "note": "Matched: 年金"
+  },
+  "f5f6163e262a144d1a50aa773bab6368": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "5e6fd90e2160398a8b6510e807f5649a": {
+    "en": "Late-stage elderly (75+)",
+    "type": "fragment",
+    "note": "Matched: 後期高齢者"
+  },
+  "672b712f277dbbfc7d2e2c3a2a09702a": {
+    "en": "National Health Insurance / Late-stage elderly (75+) / Long-term Care Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, 後期高齢者, 介護保険"
+  },
+  "a67cca054a3ac5197957fc582e16b85d": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "9cc1ff024939aec45105f8d71923b44a": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "e972026ccde01fa4d919768ff85c6e25": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "b3ce00f0365310917e9f62e8c3831146": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "38425bddff3517857f43324182db8c43": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "bfdeb8f0d79dba1a44c106924d681597": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "0f7eeffd4ec3fed233a8b5d147077d37": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "cef53671b69a4ad8d13de91852fb50b1": {
+    "en": "National Health Insurance / .",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, す。"
+  },
+  "533b3158a2345e2c7b5aebb1fa2324ca": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "12e87df0dbb6875db9ea16a9234ce457": {
+    "en": "National Health Insurance / Head of household / .",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, 世帯主, す。"
+  },
+  "fca2451f9ae40bf8735d185f05c0c9bf": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "a2b085005a01558f9d4db0b68057f0cc": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "28a4c7a907bcaf944049e18ee645cb65": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "9c80a23bc9ce9d5c7a5812fad7e301b9": {
+    "en": "Presence/absence of",
+    "type": "fragment",
+    "note": "Matched: の有無"
+  },
+  "1a5a267e3ba73307668dbd34884fcc3d": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "ae6ad8d4bfd4c34972ad96c93c0ac291": {
+    "en": ". / Pension / From",
+    "type": "fragment",
+    "note": "Matched: す。, 年金, から"
+  },
+  "91b32489eca9d62eb187d493dd5288c5": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "8eaddecf7c3b505263426e8bc815fd73": {
+    "en": "From",
+    "type": "fragment",
+    "note": "Matched: から"
+  },
+  "a25dbc587ce4d0f8c962c46d7bfc321a": {
+    "en": "National Health Insurance / . / From",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, す。, から"
+  },
+  "3db940fa164bda98180b90cf15fd4798": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "ee0896efbbe18f55bb4c49dadd3b5ff9": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "ed36669ee3009f3ab76bf453e2e3b848": {
+    "en": ". / To do/perform",
+    "type": "fragment",
+    "note": "Matched: す。, する"
+  },
+  "d1c2e93cf0a82f1c537578c197b91164": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "ae5ddf1cad37874ceeaa13395f16a5d8": {
+    "en": "National Health Insurance / Health insurance card / To do/perform",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, 保険証, する"
+  },
+  "bb70f1ed3498d33ffefe697345ead1ba": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "6d9fb3f031f605f94c6923e2ad4c1c7b": {
+    "en": "Yes/There is / .",
+    "type": "fragment",
+    "note": "Matched: あります。, す。"
+  },
+  "11680667fa94c896c392642fe333963a": {
+    "en": "Health insurance card",
+    "type": "fragment",
+    "note": "Matched: 保険証"
+  },
+  "d5db03d4eb15902676e96e02e27b78b7": {
+    "en": "Pension",
+    "type": "fragment",
+    "note": "Matched: 年金"
+  },
+  "b72b5ea00bdeea1696bc0c8c3307fc6c": {
+    "en": "Pension",
+    "type": "fragment",
+    "note": "Matched: 年金"
+  },
+  "1715dc8c34c70dcccefcc359bc8eb8c1": {
+    "en": "Applicant / Person filing the form",
+    "type": "fragment",
+    "note": "Matched: 届出人"
+  },
+  "16436e2b72c436f32514857dc171b9ba": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "b0d73c4f51713cf118cf208a3940c116": {
+    "en": "Driver's license",
+    "type": "fragment",
+    "note": "Matched: 運転免許証"
+  },
+  "f698d9a4257a5038d61be47d90e0a910": {
+    "en": "Qualification",
+    "type": "fragment",
+    "note": "Matched: 資格"
+  },
+  "1a6caec24f4a5770814e86aefe8a7022": {
+    "en": "Qualification",
+    "type": "fragment",
+    "note": "Matched: 資格"
+  },
+  "996e9d09a1567ee171506abb7f10b347": {
+    "en": "Pension / Qualification",
+    "type": "fragment",
+    "note": "Matched: 年金, 資格"
+  },
+  "6f4309e5c3de5b7725a2cadd6004a6db": {
+    "en": "Other ( / Other",
+    "type": "fragment",
+    "note": "Matched: その他（, その他"
+  },
+  "cbe3ffeb1a4a4b4c777cdc4440820a91": {
+    "en": "Head of household",
+    "type": "fragment",
+    "note": "Matched: 世帯主"
+  },
+  "e1c406ec4336162e0e01b3be57cdf403": {
+    "en": "Reception / Received / Pension",
+    "type": "fragment",
+    "note": "Matched: 受付, 年金"
+  },
+  "39cd0f396bee6c55b3577e4ec97d210c": {
+    "en": "Qualification",
+    "type": "fragment",
+    "note": "Matched: 資格"
+  },
+  "9b46a09ed467bfca17129df7d20461fc": {
+    "en": "Other",
+    "type": "fragment",
+    "note": "Matched: その他"
+  },
+  "43278026bfdcc04687124d539a3462af": {
+    "en": "Reason for change / Type of move",
+    "type": "dictionary",
+    "note": "Why you are filing this notification (moving in, moving out, address change within municipality).",
+    "field_id": "idou_jiyu"
+  },
+  "952343a3e43e3e0080f696476ee07e0d": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "ea20bb8d5214ba305e2bd146c9c63ee5": {
+    "en": "Phone number",
+    "type": "fragment",
+    "note": "Matched: 電話番号"
+  },
+  "006e1ce7b17580031769f91ee3de0c1e": {
+    "en": "Address / Special provision",
+    "type": "fragment",
+    "note": "Matched: 住所, 特例"
+  },
+  "889d3dae182d72327279ce8b173f747e": {
+    "en": "Head of household",
+    "type": "fragment",
+    "note": "Matched: 世帯主"
+  },
+  "d42ccf76dcc39523c8a946f6b1e8a411": {
+    "en": "Period of stay",
+    "type": "fragment",
+    "note": "Matched: 在留期間"
+  },
+  "e11dca40e4d26fbb591cc67a2063a23f": {
+    "en": "Head of household",
+    "type": "fragment",
+    "note": "Matched: 世帯主"
+  },
+  "5b08c1b8fd99e92502f5b28ab297b6d5": {
+    "en": "Pension",
+    "type": "fragment",
+    "note": "Matched: 年金"
+  },
+  "5b75a3efaa2cc19f7d1fa88c29c60528": {
+    "en": "Phone number / No./Number",
+    "type": "fragment",
+    "note": "Matched: 電話番号, だい"
+  },
+  "a1c2c88cce99e2923c469c9e8e01b4b4": {
+    "en": "Address",
+    "type": "fragment",
+    "note": "Matched: 住所"
+  },
+  "c53bbc9bc7537fe2708750fa3ae42a90": {
+    "en": "National Health Insurance / Head of household",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, 世帯主"
+  },
+  "f2b864fe36f7d661a379aca6e7ab2258": {
+    "en": "Date of birth / My Number / Full name",
+    "type": "fragment",
+    "note": "Matched: 生年月日, マイナン, 氏名"
+  },
+  "d0a65064d85b426584e6f74b1f90c4b0": {
+    "en": "Gender / Relationship to head of household",
+    "type": "fragment",
+    "note": "Matched: 性別, 続柄"
+  },
+  "bdb8a2faa96823531c1dc54c9d506b31": {
+    "en": "My Number",
+    "type": "fragment",
+    "note": "Matched: マイナン"
+  },
+  "705acb2eafa874482862e4050516bd36": {
+    "en": "From",
+    "type": "fragment",
+    "note": "Matched: から"
+  },
+  "3a2d2cab6c2359e9d11fb5055d6438ea": {
+    "en": "Phone number / Head of household / Full name",
+    "type": "fragment",
+    "note": "Matched: 電話番号, 世帯主, 氏名"
+  },
+  "9f3663d5145959c487e7bbd5477df7cf": {
+    "en": "My Number",
+    "type": "fragment",
+    "note": "Matched: マイナン"
+  },
+  "76516058761d68aef107669983c72aed": {
+    "en": "Head of household",
+    "type": "fragment",
+    "note": "Matched: 世帯主"
+  },
+  "58e18c0c9d1c6966110cda4dbd4ba49b": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "3fe9227630e7bb423a4924e24be6fc8a": {
+    "en": "Phone number / No./Number",
+    "type": "fragment",
+    "note": "Matched: 電話番号, だい"
   }
 }
