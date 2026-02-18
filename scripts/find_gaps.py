@@ -134,7 +134,7 @@ def translate_with_claude(text, existing_dictionary):
                 {
                     "role": "user",
                     "content": f"""Translate this Japanese government form text to English.
-Context: This appears on municipal forms like residence registration (住民異動届).
+Context: This appears on Japanese municipal government forms (residence registration 住民異動届, national health insurance 国民健康保険, etc.).
 
 Similar translations in our dictionary:
 {context}
@@ -209,7 +209,7 @@ def generate_field_id(text):
     return f"auto_{hashlib.md5(text.encode()).hexdigest()[:8]}"
 
 
-def add_to_dictionary(dictionary, text, translation):
+def add_to_dictionary(dictionary, text, translation, source_files=None):
     """Add a new translation to the dictionary."""
     fields = dictionary.get("fields", {})
 
@@ -221,13 +221,24 @@ def add_to_dictionary(dictionary, text, translation):
         field_id = f"{base_id}_{counter}"
         counter += 1
 
+    # Infer appears_on from source filenames
+    appears_on = set()
+    if source_files:
+        for f in source_files:
+            if "_NHIapp_" in f:
+                appears_on.add("national_health_insurance")
+            else:
+                appears_on.add("residence_registration")
+    if not appears_on:
+        appears_on.add("residence_registration")
+
     fields[field_id] = {
         "kanji": text,
         "reading": translation.get("reading", ""),
         "english": translation.get("english", text),
         "category": translation.get("category", "administrative"),
         "tip_en": translation.get("tip", ""),
-        "appears_on": ["residence_registration"],
+        "appears_on": sorted(appears_on),
         "confidence": "draft",
         "notes": "Auto-translated by find_gaps.py"
     }
@@ -240,7 +251,17 @@ def scan_all_walkthroughs():
     """Scan all walkthrough PDFs and collect untranslated gaps."""
     all_gaps = {}  # text -> list of files it appears in
 
-    pdf_files = list(OUTPUT_DIR.rglob("*_walkthrough.pdf"))
+    pdf_files = sorted(
+        list(OUTPUT_DIR.rglob("*.PDF")) + list(OUTPUT_DIR.rglob("*.pdf"))
+    )
+    # Deduplicate in case filesystem is case-insensitive
+    seen = set()
+    unique = []
+    for p in pdf_files:
+        if p not in seen:
+            seen.add(p)
+            unique.append(p)
+    pdf_files = unique
     print(f"Scanning {len(pdf_files)} walkthrough PDFs...")
 
     for pdf_path in pdf_files:
@@ -302,7 +323,7 @@ def main():
             result = translate_with_claude(text, dictionary)
 
             if result:
-                field_id = add_to_dictionary(dictionary, text, result)
+                field_id = add_to_dictionary(dictionary, text, result, source_files=files)
                 print(f"  -> {result['english']} (id: {field_id})")
                 translated += 1
             else:

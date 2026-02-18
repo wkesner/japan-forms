@@ -733,6 +733,16 @@ NEGATIVE_KEYWORDS = [
     "桜", "花見", "イベント", "観光", "祭り", "スポーツ",
     "図書館", "公園", "選挙", "議会", "入札", "契約",
     "農業", "林業", "漁業", "商工", "都市計画",
+    "委任状",       # Power of attorney
+    "封筒",         # Envelope
+    "戸籍",         # Family register (not residence registration)
+    "改葬",         # Reburial permit
+    "土地",         # Land/property
+    "占用",         # Road occupancy permit
+    "排水",         # Drainage permit
+    "産業廃棄物",   # Industrial waste
+    "臨時運行",     # Temporary vehicle permit
+    "枝葉",         # Yard waste
 ]
 
 # URL path segments indicating irrelevant sections — penalize candidates
@@ -742,6 +752,7 @@ NEGATIVE_PATH_SEGMENTS = [
     "koen", "senkyo", "gikai", "nyusatsu", "keiyaku",
     "nogyo", "ringyo", "shoko", "toshikeikaku",
     "fire", "disaster", "garbage", "tourism", "library",
+    "koseki", "inkantodoke", "nochi", "kaiso", "haiki", "rinjiunko",
 ]
 
 # Google search terms per form type for site:-scoped queries
@@ -853,11 +864,12 @@ def parse_sitemap(domain):
     return filtered
 
 
-def score_candidate(pdf_info, search_terms):
+def score_candidate(pdf_info, search_terms, form_type=None):
     """Score a PDF candidate 0-100 based on relevance signals.
 
     Positive signals: search term matches, form-related path segments, download context.
     Negative signals: irrelevant keywords (消防, 動物...) and path segments (shobo, gomi...).
+    Cross-form penalties: when scoring for one form type, penalize terms from other types.
     """
     score = 0
     combined = pdf_info["link_text"] + " " + pdf_info["context"]
@@ -888,6 +900,16 @@ def score_candidate(pdf_info, search_terms):
         if seg in url_path:
             score -= 10
 
+    # Cross-form-type penalties: penalize terms from the wrong form type
+    if form_type == "residence":
+        for term in ["国民健康保険", "国保", "健康保険料"]:
+            if term in combined:
+                score -= 20
+    elif form_type == "nhi":
+        for term in ["住民異動届", "転入届", "転出届", "転居届"]:
+            if term in combined:
+                score -= 20
+
     return max(0, min(score, 100))
 
 
@@ -901,13 +923,19 @@ def _has_strong_candidates(candidates, threshold=50):
     return any(c["score"] >= threshold for c in candidates)
 
 
-def _collect_pdfs_from_page(url, soup, search_terms, candidates, seen_pdfs):
+def _has_search_term_match(pdf_info, search_terms):
+    """Check if at least one search term appears in the PDF's link text or context."""
+    combined = pdf_info["link_text"] + " " + pdf_info["context"]
+    return any(term in combined for term in search_terms)
+
+
+def _collect_pdfs_from_page(url, soup, search_terms, candidates, seen_pdfs, form_type=None):
     """Extract and score PDFs from a page, appending to candidates list."""
     pdfs = find_pdf_links(soup, url)
     added = 0
     for pdf in pdfs:
         if pdf["url"] not in seen_pdfs:
-            pdf["score"] = score_candidate(pdf, search_terms)
+            pdf["score"] = score_candidate(pdf, search_terms, form_type=form_type)
             pdf["found_on"] = url
             if pdf["score"] > 0:
                 candidates.append(pdf)
@@ -951,7 +979,7 @@ def crawl_for_forms(domain, form_type, max_pages=50):
             soup = fetch_page(url)
             if not soup:
                 continue
-            _collect_pdfs_from_page(url, soup, search_terms, candidates, seen_pdfs)
+            _collect_pdfs_from_page(url, soup, search_terms, candidates, seen_pdfs, form_type=form_type)
             time.sleep(1)
         if _has_strong_candidates(candidates):
             best = max(c["score"] for c in candidates)
@@ -975,7 +1003,7 @@ def crawl_for_forms(domain, form_type, max_pages=50):
             if not soup:
                 continue
             responding_seeds.append((url, soup))
-            _collect_pdfs_from_page(url, soup, search_terms, candidates, seen_pdfs)
+            _collect_pdfs_from_page(url, soup, search_terms, candidates, seen_pdfs, form_type=form_type)
             time.sleep(0.5)
 
         if responding_seeds:
@@ -997,7 +1025,7 @@ def crawl_for_forms(domain, form_type, max_pages=50):
                     soup = fetch_page(url)
                     if not soup:
                         continue
-                    _collect_pdfs_from_page(url, soup, search_terms, candidates, seen_pdfs)
+                    _collect_pdfs_from_page(url, soup, search_terms, candidates, seen_pdfs, form_type=form_type)
                     if depth < 4:
                         for sp in find_relevant_subpages(soup, url, domain, subpage_kw):
                             if sp["url"] not in seen_urls:
@@ -1027,7 +1055,7 @@ def crawl_for_forms(domain, form_type, max_pages=50):
                 soup = fetch_page(url)
                 if not soup:
                     continue
-                _collect_pdfs_from_page(url, soup, search_terms, candidates, seen_pdfs)
+                _collect_pdfs_from_page(url, soup, search_terms, candidates, seen_pdfs, form_type=form_type)
                 # Also follow subpage links from Google result pages
                 subpages = find_relevant_subpages(soup, url, domain, subpage_kw)
                 for sp in subpages[:5]:
@@ -1036,7 +1064,7 @@ def crawl_for_forms(domain, form_type, max_pages=50):
                     seen_urls.add(sp["url"])
                     sub_soup = fetch_page(sp["url"])
                     if sub_soup:
-                        _collect_pdfs_from_page(sp["url"], sub_soup, search_terms, candidates, seen_pdfs)
+                        _collect_pdfs_from_page(sp["url"], sub_soup, search_terms, candidates, seen_pdfs, form_type=form_type)
                     time.sleep(0.5)
                 time.sleep(1)
             if _has_strong_candidates(candidates):
@@ -1067,7 +1095,7 @@ def crawl_for_forms(domain, form_type, max_pages=50):
             if not soup:
                 continue
 
-            _collect_pdfs_from_page(url, soup, search_terms, candidates, seen_pdfs)
+            _collect_pdfs_from_page(url, soup, search_terms, candidates, seen_pdfs, form_type=form_type)
 
             # Queue relevant subpages with priority scoring
             if depth < 5:
@@ -1150,10 +1178,14 @@ def discover_and_scrape(muni_key, muni_cfg, form_type, prefecture, max_pages=50)
         print(f"       Text: {c['link_text'][:60]}")
         print(f"       URL:  {c['url']}")
 
-    # Download top candidates (max 5, score >= 20 only)
-    download_candidates = [c for c in candidates if c["score"] >= 20][:5]
+    # Download top candidates (max 5, score >= 30, must have search term match)
+    search_terms = ft["search_terms"]
+    download_candidates = [
+        c for c in candidates
+        if c["score"] >= 30 and _has_search_term_match(c, search_terms)
+    ][:5]
     if not download_candidates and candidates:
-        print(f"  No candidates scored >= 20 (best: {candidates[0]['score']})")
+        print(f"  No candidates scored >= 30 with search term match (best: {candidates[0]['score']})")
         results["flagged"].append((None, f"best score too low ({candidates[0]['score']})"))
         return results
 
@@ -1248,260 +1280,97 @@ def generate_manifest():
 # STATUS GENERATION
 # ═══════════════════════════════════════════════════════════════
 
-def generate_status():
-    """Generate STATUS.md from current project state."""
-    from datetime import date
-    try:
-        from pipeline import classify_pdf_pages
-    except ImportError:
-        classify_pdf_pages = None
+KNOWN_PREFECTURES = ["tokyo", "kanagawa", "chiba", "saitama", "ibaraki", "tochigi", "gunma"]
 
-    STATUS_PATH = BASE_DIR / "STATUS.md"
-    downloads_dir = get_downloads_dir("residence", "tokyo")
-    trash_dir = BASE_DIR / "input" / "tokyo_trash"
 
-    # Gather per-ward data
-    ward_rows = []
-    total_walkthroughs = 0
-    total_source_pdfs = 0
+def generate_status(prefecture=None, form_type=None):
+    """Print coverage status to terminal.
 
-    for ward_key in sorted(WARDS.keys()):
-        ward = WARDS[ward_key]
-        ward_dir = downloads_dir / ward_key
-        out_dir = OUTPUT_DIR / "tokyo" / ward_key
+    Args:
+        prefecture: Single prefecture to report, or None for all known prefectures.
+        form_type: "residence" or "nhi" (default: "residence").
+    """
+    if form_type is None:
+        form_type = "residence"
 
-        # Count source PDFs
-        source_pdfs = sorted(ward_dir.glob("*.pdf")) if ward_dir.exists() else []
-        num_source = len(source_pdfs)
-        total_source_pdfs += num_source
+    walkthrough_glob = "*_Residence_*.PDF" if form_type == "residence" else "*_NHIapp_*.PDF"
+    ft_label = FORM_TYPES[form_type]["label"]
 
-        # Count walkthroughs
-        walkthroughs = sorted(out_dir.glob("*_walkthrough.pdf")) if out_dir.exists() else []
-        num_walks = len(walkthroughs)
-        total_walkthroughs += num_walks
+    prefectures = [prefecture] if prefecture else KNOWN_PREFECTURES
 
-        # Detect source type (text vs OCR)
-        source_type = "—"
-        if source_pdfs and classify_pdf_pages:
-            try:
-                pages = classify_pdf_pages(str(source_pdfs[0]))
-                image_pages = sum(1 for p in pages if p["type"] == "image")
-                text_pages = sum(1 for p in pages if p["type"] == "text")
-                if image_pages > text_pages:
-                    source_type = "OCR"
-                else:
-                    source_type = "Text"
-            except Exception:
-                source_type = "?"
+    print(f"\n{'='*60}")
+    print(f"  STATUS: {ft_label}")
+    print(f"{'='*60}")
 
-        # Quality heuristic
-        if num_walks == 0:
-            quality = "—"
-        elif num_walks >= 3:
-            quality = "Good"
-        elif num_walks >= 2:
-            quality = "Good"
-        else:
-            quality = "OK"
+    grand_total_inputs = 0
+    grand_total_walks = 0
+    grand_munis_with_inputs = 0
+    grand_munis_with_walks = 0
 
-        ward_rows.append({
-            "key": ward_key,
-            "name_ja": ward["name_ja"],
-            "name_en": ward["name_en"].replace(" Ward", ""),
-            "source_pdfs": num_source,
-            "walkthroughs": num_walks,
-            "source_type": source_type,
-            "quality": quality,
-        })
+    for pref in prefectures:
+        registry = get_active_registry(pref)
+        if not registry:
+            continue
 
-    # Trash guide coverage
-    trash_text = []
-    trash_scanned = []
-    trash_missing = []
-    for ward_key in sorted(WARDS.keys()):
-        trash_ward_dir = trash_dir / ward_key
-        if trash_ward_dir.exists() and list(trash_ward_dir.glob("*.pdf")):
-            # Quick check if text or scanned
-            pdfs = list(trash_ward_dir.glob("*.pdf"))
-            if classify_pdf_pages:
-                try:
-                    pages = classify_pdf_pages(str(pdfs[0]))
-                    if any(p["type"] == "text" for p in pages):
-                        trash_text.append(WARDS[ward_key]["name_en"].replace(" Ward", ""))
-                    else:
-                        trash_scanned.append(WARDS[ward_key]["name_en"].replace(" Ward", ""))
-                except Exception:
-                    trash_text.append(WARDS[ward_key]["name_en"].replace(" Ward", ""))
+        downloads_dir = get_downloads_dir(form_type, pref)
+        pref_inputs = 0
+        pref_walks = 0
+        munis_with_inputs = 0
+        munis_with_walks = 0
+        gaps = []
+
+        for muni_key in sorted(registry.keys()):
+            # Count input PDFs (Japanese-only)
+            muni_input_dir = downloads_dir / muni_key
+            if muni_input_dir.exists():
+                input_pdfs = [
+                    f for f in muni_input_dir.glob("*.pdf")
+                    if is_japanese_only_pdf(f.name)
+                ]
+                num_inputs = len(input_pdfs)
             else:
-                trash_text.append(WARDS[ward_key]["name_en"].replace(" Ward", ""))
-        else:
-            trash_missing.append(WARDS[ward_key]["name_en"].replace(" Ward", ""))
+                num_inputs = 0
 
-    # NHI coverage
-    nhi_dir = get_downloads_dir("nhi", "tokyo")
-    nhi_sourced = []
-    nhi_not_sourced = []
-    for ward_key in sorted(WARDS.keys()):
-        nhi_ward_dir = nhi_dir / ward_key
-        if nhi_ward_dir.exists() and list(nhi_ward_dir.glob("*.pdf")):
-            nhi_sourced.append(WARDS[ward_key]["name_en"].replace(" Ward", ""))
-        else:
-            nhi_not_sourced.append(WARDS[ward_key]["name_en"].replace(" Ward", ""))
-    nhi_configured = sum(1 for k in WARDS if k in NHI_WARD_INDEX)
+            # Count walkthroughs
+            muni_output_dir = OUTPUT_DIR / pref / muni_key
+            if muni_output_dir.exists():
+                walks = list(muni_output_dir.glob(walkthrough_glob))
+                num_walks = len(walks)
+            else:
+                num_walks = 0
 
-    # Load dictionary count
-    dict_count = 0
-    dict_path = BASE_DIR / "data" / "fields" / "dictionary.json"
-    if dict_path.exists():
-        try:
-            import json as _json
-            data = _json.load(open(dict_path, "r", encoding="utf-8"))
-            dict_count = len(data.get("fields", data))
-        except Exception:
-            pass
+            if num_inputs > 0:
+                munis_with_inputs += 1
+                pref_inputs += num_inputs
+            if num_walks > 0:
+                munis_with_walks += 1
+                pref_walks += num_walks
+            if num_inputs > 0 and num_walks == 0:
+                gaps.append(muni_key)
 
-    # Build STATUS.md
-    lines = []
-    lines.append("# Project Status")
-    lines.append("")
-    lines.append(f"*Last updated: {date.today().isoformat()}*")
-    lines.append("")
-    lines.append("## Overview")
-    lines.append("")
-    lines.append("| Metric | Count |")
-    lines.append("|--------|-------|")
-    lines.append(f"| Walkthroughs generated | {total_walkthroughs} |")
-    lines.append(f"| Wards covered | {sum(1 for w in ward_rows if w['walkthroughs'] > 0)} (Tokyo) |")
-    lines.append(f"| Dictionary entries | {dict_count} |")
-    lines.append("")
-    lines.append("## Document Types")
-    lines.append("")
-    lines.append("| Document Type | Status | Notes |")
-    lines.append("|---------------|--------|-------|")
-    lines.append("| Residence Registration (住民異動届) | **Active** | All 23 Tokyo wards, primary focus |")
-    lines.append(f"| Trash Disposal Guides (ゴミの出し方) | **Sourced** | {len(trash_text) + len(trash_scanned)} wards downloaded, pipeline adaptation needed |")
-    nhi_status = "Sourced" if nhi_sourced else "Configured" if nhi_configured else "Planned"
-    nhi_note = f"{len(nhi_sourced)}/23 wards downloaded" if nhi_sourced else f"{nhi_configured}/23 wards configured, not yet scraped"
-    lines.append(f"| National Health Insurance (国民健康保険) | **{nhi_status}** | {nhi_note} |")
-    lines.append("| Bank Account (口座開設) | **Done** | JP Post personal + corporate |")
-    lines.append("| Pension Withdrawal (脱退一時金) | **Done** | National form, single walkthrough |")
-    lines.append("| Seal Registration (印鑑登録) | **Planned** | Not yet sourced |")
-    lines.append("")
-    lines.append("## Tokyo Special Wards (23区) — Residence Registration")
-    lines.append("")
-    lines.append("All 23 wards have at least one walkthrough. Quality varies by source PDF type.")
-    lines.append("")
-    lines.append("| Ward | Walkthroughs | Source Type | Quality | Notes |")
-    lines.append("|------|:-----------:|:-----------:|:-------:|-------|")
-    for w in ward_rows:
-        notes = ""
-        if w["source_type"] == "OCR":
-            notes = "Scanned form, easyOCR positioning"
-        lines.append(f"| {w['name_ja']} {w['name_en']} | {w['walkthroughs']} | {w['source_type']} | {w['quality']} | {notes} |")
+        if munis_with_inputs == 0 and munis_with_walks == 0:
+            continue
 
-    lines.append("")
-    lines.append("## Trash Disposal Guides (ゴミの出し方)")
-    lines.append("")
-    lines.append(f"Downloaded for {len(trash_text) + len(trash_scanned)}/23 Tokyo wards. Pipeline adaptation needed before translation.")
-    lines.append("")
-    lines.append("| Status | Wards |")
-    lines.append("|--------|-------|")
-    lines.append(f"| **Text-based ({len(trash_text)})** | {', '.join(trash_text)} |")
-    if trash_scanned:
-        lines.append(f"| **Scanned ({len(trash_scanned)})** | {', '.join(trash_scanned)} |")
-    lines.append(f"| **Not sourced ({len(trash_missing)})** | {', '.join(trash_missing)} |")
-    lines.append("| **Translated** | *None yet* |")
-    lines.append("")
-    lines.append("## National Health Insurance (国民健康保険)")
-    lines.append("")
-    lines.append(f"Scraping targets configured for {nhi_configured}/23 Tokyo wards. Applications are ward-specific, similar to residence registration.")
-    lines.append("")
-    if nhi_sourced:
-        lines.append("| Status | Wards |")
-        lines.append("|--------|-------|")
-        lines.append(f"| **Downloaded ({len(nhi_sourced)})** | {', '.join(nhi_sourced)} |")
-        lines.append(f"| **Not yet scraped ({len(nhi_not_sourced)})** | {', '.join(nhi_not_sourced)} |")
-        lines.append("| **Translated** | *None yet* |")
-    else:
-        lines.append(f"Use `python scraper.py --scrape --form-type nhi` to download NHI forms.")
-    lines.append("")
-    lines.append("## Regional Coverage Roadmap")
-    lines.append("")
-    lines.append("### Phase 1: Tokyo (東京都) — In Progress")
-    lines.append("")
+        coverage_pct = round(munis_with_walks / munis_with_inputs * 100) if munis_with_inputs else 0
 
-    wards_with_coverage = sum(1 for w in ward_rows if w["walkthroughs"] > 0)
-    pct_residence = round(wards_with_coverage / 23 * 100)
-    pct_total_tokyo = round(wards_with_coverage / 53 * 100)
+        print(f"\n  {pref.upper()}")
+        print(f"    Municipalities with inputs: {munis_with_inputs}")
+        print(f"    Input PDFs: {pref_inputs}")
+        print(f"    Walkthroughs: {pref_walks}")
+        print(f"    Coverage: {munis_with_walks}/{munis_with_inputs} ({coverage_pct}%)")
+        if gaps:
+            print(f"    Gaps ({len(gaps)}): {', '.join(gaps)}")
 
-    nhi_count = len(nhi_sourced)
-    lines.append("| Area | Municipalities | Residence | Trash | NHI | Coverage |")
-    lines.append("|------|:-:|:-:|:-:|:-:|:-:|")
-    lines.append(f"| **23 Special Wards** | 23 | {wards_with_coverage}/23 | 0/23 | {nhi_count}/23 | **{pct_residence}%** |")
-    lines.append("| Tama Region (多摩地域) | 30 | 0 | 0 | 0 | 0% |")
-    lines.append(f"| **Tokyo Total** | 53 | {wards_with_coverage}/53 | 0/53 | {nhi_count}/53 | **{pct_total_tokyo}%** |")
-    lines.append("")
-    lines.append("### Phase 2: Kanto Region (関東) — Planned")
-    lines.append("")
-    lines.append("| Prefecture | Capital | Municipalities | Status |")
-    lines.append("|-----------|---------|:-:|--------|")
-    lines.append("| 東京都 Tokyo | — | 53 | **Phase 1** |")
-    lines.append("| 神奈川県 Kanagawa | Yokohama | 33 | Not started |")
-    lines.append("| 埼玉県 Saitama | Saitama | 63 | Not started |")
-    lines.append("| 千葉県 Chiba | Chiba | 54 | Not started |")
-    lines.append("| 茨城県 Ibaraki | Mito | 44 | Not started |")
-    lines.append("| 栃木県 Tochigi | Utsunomiya | 25 | Not started |")
-    lines.append("| 群馬県 Gunma | Maebashi | 35 | Not started |")
-    kanto_total = 307
-    kanto_pct = round(wards_with_coverage / kanto_total * 100)
-    lines.append(f"| **Kanto Total** | — | **{kanto_total}** | **{kanto_pct}%** |")
-    lines.append("")
-    lines.append("### Phase 3: Kansai Region (関西) — Planned")
-    lines.append("")
-    lines.append("| Prefecture | Capital | Municipalities | Status |")
-    lines.append("|-----------|---------|:-:|--------|")
-    lines.append("| 大阪府 Osaka | Osaka | 43 | Not started |")
-    lines.append("| 京都府 Kyoto | Kyoto | 26 | Not started |")
-    lines.append("| 兵庫県 Hyogo | Kobe | 41 | Not started |")
-    lines.append("| 奈良県 Nara | Nara | 39 | Not started |")
-    lines.append("| 滋賀県 Shiga | Otsu | 19 | Not started |")
-    lines.append("| 和歌山県 Wakayama | Wakayama | 30 | Not started |")
-    lines.append("| **Kansai Total** | — | **198** | **0%** |")
-    lines.append("")
-    lines.append("### Phase 4: Remaining Regions — Future")
-    lines.append("")
-    lines.append("| Region | Prefectures | Municipalities (approx.) | Status |")
-    lines.append("|--------|:-:|:-:|--------|")
-    lines.append("| Chubu (中部) | 9 | ~270 | Not started |")
-    lines.append("| Kyushu (九州) | 8 | ~230 | Not started |")
-    lines.append("| Tohoku (東北) | 6 | ~220 | Not started |")
-    lines.append("| Chugoku (中国) | 5 | ~110 | Not started |")
-    lines.append("| Shikoku (四国) | 4 | ~95 | Not started |")
-    lines.append("| Hokkaido (北海道) | 1 | ~180 | Not started |")
-    lines.append("| Okinawa (沖縄) | 1 | ~41 | Not started |")
-    lines.append("")
-    lines.append("### National Summary")
-    lines.append("")
-    lines.append("| Metric | Count |")
-    lines.append("|--------|-------|")
-    lines.append("| Total municipalities in Japan | ~1,741 |")
-    lines.append(f"| Municipalities with any coverage | {wards_with_coverage} |")
-    nat_pct = round(wards_with_coverage / 1741 * 100, 1)
-    lines.append(f"| **National coverage** | **{nat_pct}%** |")
-    lines.append("")
-    lines.append("## Technical Notes")
-    lines.append("")
-    lines.append("- **OCR pipeline**: easyOCR for positioning + dictionary pre-filter + Claude Vision for classification")
-    lines.append("- **Auto page classification**: Pages with <50 extractable characters route to OCR automatically")
-    lines.append("- **Translation hierarchy**: Dictionary (free) → Fragment match (free) → Claude Sonnet (API)")
-    lines.append("")
+        grand_total_inputs += pref_inputs
+        grand_total_walks += pref_walks
+        grand_munis_with_inputs += munis_with_inputs
+        grand_munis_with_walks += munis_with_walks
 
-    content = "\n".join(lines)
-    with open(STATUS_PATH, "w", encoding="utf-8") as f:
-        f.write(content)
-
-    print(f"\nSTATUS.md updated ({total_walkthroughs} walkthroughs, {wards_with_coverage} wards)")
-    print(f"  Written to: {STATUS_PATH.relative_to(BASE_DIR)}")
+    grand_pct = round(grand_munis_with_walks / grand_munis_with_inputs * 100) if grand_munis_with_inputs else 0
+    print(f"\n{'='*60}")
+    print(f"  TOTAL: {grand_total_walks} walkthroughs, "
+          f"{grand_munis_with_walks}/{grand_munis_with_inputs} municipalities ({grand_pct}%)")
+    print(f"{'='*60}")
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -1962,8 +1831,8 @@ def main():
                         help="Run quality checks on generated walkthrough PDFs")
     parser.add_argument("--ward", type=str, help="Target municipality (Tokyo shorthand)")
     parser.add_argument("--municipality", type=str, help="Target municipality key")
-    parser.add_argument("--prefecture", type=str, default="tokyo",
-                        help="Prefecture to operate on (default: tokyo)")
+    parser.add_argument("--prefecture", type=str, default=None,
+                        help="Prefecture to operate on (default: tokyo for most modes, all for --status)")
     parser.add_argument("--form-type", type=str, default="residence",
                         choices=list(FORM_TYPES.keys()),
                         help="Form type to scrape/generate (default: residence)")
@@ -1979,7 +1848,7 @@ def main():
     args = parser.parse_args()
 
     form_type = getattr(args, 'form_type', 'residence')
-    prefecture = args.prefecture
+    prefecture = args.prefecture or "tokyo"
 
     # Resolve --ward as alias for --municipality
     muni_filter = args.municipality or args.ward
@@ -2095,9 +1964,8 @@ def main():
     if args.generate:
         run_generate(form_type, prefecture, registry, dry_run=args.dry_run)
 
-    # Update STATUS.md only on explicit --status (slow — classifies all PDFs)
     if args.status:
-        generate_status()
+        generate_status(prefecture=args.prefecture, form_type=form_type)
 
 
 if __name__ == "__main__":

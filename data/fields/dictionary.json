@@ -7200,6 +7200,1216 @@
       ],
       "confidence": "draft",
       "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_b200dce5": {
+      "kanji": "明･大･昭･平･令",
+      "reading": "めい・たい・しょう・へい・れい",
+      "english": "Era abbreviations (Meiji/Taisho/Showa/Heisei/Reiwa)",
+      "category": "date",
+      "tip_en": "Circle the era corresponding to your birth year: 明=Meiji (1868-1912), 大=Taisho (1912-1926), 昭=Showa (1926-1989), 平=Heisei (1989-2019), 令=Reiwa (2019-present)",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_545862f1": {
+      "kanji": "※外国人の方のみ",
+      "reading": "がいこくじんのかたのみ",
+      "english": "※Foreign nationals only",
+      "category": "administrative",
+      "tip_en": "This section or field applies only to non-Japanese citizens",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_2e7d4dd4": {
+      "kanji": "〇・〇・〇",
+      "reading": "",
+      "english": "Circle one",
+      "category": "administrative",
+      "tip_en": "Mark the circle (〇) next to your applicable choice",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_fbfaf0ec": {
+      "kanji": "年 月 日生",
+      "reading": "ねん がつ にちせい",
+      "english": "Date of birth",
+      "category": "personal",
+      "tip_en": "Fill in your birth year, month, and day in the format: YYYY年MM月DD日生",
+      "appears_on": [
+        "national_health_insurance",
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_11e55027": {
+      "kanji": "(通称)(Aliases) ※外国籍の方のみ",
+      "reading": "つうしょう",
+      "english": "Aliases",
+      "category": "personal",
+      "tip_en": "For foreign nationals only - enter any commonly used names different from your official name",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_7614e69a": {
+      "kanji": "相 模 太 郎",
+      "reading": "さがみたろう",
+      "english": "Sagami Taro",
+      "category": "personal",
+      "tip_en": "This is an example name - replace with your actual name",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_2d44f1c6": {
+      "kanji": "大 ・ 昭",
+      "reading": "たいしょう・しょうわ",
+      "english": "Taishō · Shōwa",
+      "category": "date",
+      "tip_en": "Japanese era names - checkboxes for birth year era period",
+      "appears_on": [
+        "national_health_insurance",
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_14426e15": {
+      "kanji": "サガミ タロウ",
+      "reading": "さがみ たろう",
+      "english": "SAGAMI TAROU",
+      "category": "personal",
+      "tip_en": "This is an example name showing the katakana format required",
+      "appears_on": [
+        "national_health_insurance",
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_6f61069f": {
+      "kanji": "喪無",
+      "reading": "もむ",
+      "english": "No mourning period",
+      "category": "administrative",
+      "tip_en": "Check if you are not observing a mourning period that would affect registration timing",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_61cc95d9": {
+      "kanji": "通 年度",
+      "reading": "つうねんど",
+      "english": "Current fiscal year",
+      "category": "administrative",
+      "tip_en": "Staff use only - do not fill in",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_3df91bd3": {
+      "kanji": "年 月",
+      "reading": "ねん がつ",
+      "english": "Year Month",
+      "category": "date",
+      "tip_en": "Write the year and month in numbers (e.g., 2024年3月)",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_63cb57bc": {
+      "kanji": "得有 平・令",
+      "reading": "とくゆう へい・れい",
+      "english": "Heisei/Reiwa era",
+      "category": "date",
+      "tip_en": "Check appropriate box for era period when date occurred",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_f66b1952": {
+      "kanji": "★（口・鼻）",
+      "reading": "くち・はな",
+      "english": "Mouth/Nose",
+      "category": "other",
+      "tip_en": "Medical form checkbox - mark applicable body parts for examination or symptoms",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_e715743a": {
+      "kanji": "アパート・マンション名等（ ）",
+      "reading": "あぱーと・まんしょんめいとう",
+      "english": "Apartment/mansion name, etc. ( )",
+      "category": "address",
+      "tip_en": "Write the name of your apartment building or condominium. Leave blank if living in a detached house.",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_69fecbef": {
+      "kanji": "年 月 日 女",
+      "reading": "ねん がつ にち じょ",
+      "english": "Year Month Day Female",
+      "category": "personal",
+      "tip_en": "Date format fields followed by gender marker - write dates as numbers and check if female",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_9dfd1938": {
+      "kanji": "年度",
+      "reading": "ねんど",
+      "english": "Fiscal year",
+      "category": "administrative",
+      "tip_en": "Japanese fiscal year runs from April 1 to March 31",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_19e52081": {
+      "kanji": "フ リ ガ ナ",
+      "reading": "ふりがな",
+      "english": "Phonetic reading (katakana)",
+      "category": "personal",
+      "tip_en": "Write your name in katakana characters above the corresponding kanji/hiragana in your name",
+      "appears_on": [
+        "national_health_insurance",
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_b71dab33": {
+      "kanji": "年 月 日女",
+      "reading": "ねん がつ にち おんな",
+      "english": "Date of birth (female)",
+      "category": "personal",
+      "tip_en": "Fill in your birth date in the format YYYY MM DD and check if you are female",
+      "appears_on": [
+        "national_health_insurance",
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_e718274e": {
+      "kanji": "課長",
+      "reading": "かちょう",
+      "english": "Section chief",
+      "category": "administrative",
+      "tip_en": "Staff use only - do not fill in",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_1f56ee77": {
+      "kanji": "戸籍課",
+      "reading": "こせきか",
+      "english": "Family Registry Office",
+      "category": "administrative",
+      "tip_en": "This indicates which municipal office department handles family registration documents",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_21d76338": {
+      "kanji": "担当",
+      "reading": "たんとう",
+      "english": "Staff in charge",
+      "category": "administrative",
+      "tip_en": "Staff use only - do not fill in",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_72babcc9": {
+      "kanji": "係長",
+      "reading": "かかりちょう",
+      "english": "Section chief",
+      "category": "administrative",
+      "tip_en": "Staff use only - do not fill in",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_d34d77fb": {
+      "kanji": "▽▽○○年○○月○○日生",
+      "reading": "",
+      "english": "Born ○○/○○/○○○○",
+      "category": "date",
+      "tip_en": "Fill in your birth date in the format: day/month/year",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_60eb7176": {
+      "kanji": "委任事項",
+      "reading": "いにんじこう",
+      "english": "Matters to be delegated",
+      "category": "administrative",
+      "tip_en": "List specific tasks you're authorizing someone else to handle on your behalf",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_7a623742": {
+      "kanji": "【委任事項の例】",
+      "reading": "いにんじこうのれい",
+      "english": "Examples of delegated matters",
+      "category": "administrative",
+      "tip_en": "This section shows sample tasks that can be delegated to someone else to handle on your behalf",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_bc50c6a0": {
+      "kanji": "▽▽○○年○○月○○日",
+      "reading": "",
+      "english": "Year __ Month __ Day __",
+      "category": "date",
+      "tip_en": "Fill in the blanks with numbers for year, month, and day in Japanese calendar format",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_3315b16d": {
+      "kanji": "子・父・母",
+      "reading": "こ・ちち・はは",
+      "english": "Child・Father・Mother",
+      "category": "household",
+      "tip_en": "Select your relationship to the household head or primary applicant",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_b9e69903": {
+      "kanji": "習志野 太郎",
+      "reading": "ならしの たろう",
+      "english": "Narashino Taro",
+      "category": "personal",
+      "tip_en": "This appears to be a sample name - replace with your actual full name",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_16ecd7e2": {
+      "kanji": "交付を願い",
+      "reading": "こうふをねがい",
+      "english": "Request issuance",
+      "category": "administrative",
+      "tip_en": "This typically appears before checkboxes for documents you want issued (residence certificate, etc.)",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_c8b8b5b9": {
+      "kanji": "（使用目的）",
+      "reading": "しようもくてき",
+      "english": "Purpose of use",
+      "category": "administrative",
+      "tip_en": "Explain why you need this document or service (e.g., 'employment', 'visa application', 'bank account opening')",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_245a7517": {
+      "kanji": "２つ以上の提示で可",
+      "reading": "ふたついじょうのていじでか",
+      "english": "Two or more documents acceptable",
+      "category": "document",
+      "tip_en": "You can provide any combination of 2+ acceptable documents instead of a single specific document",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_bcfc38b6": {
+      "kanji": "サガミ ハナコ",
+      "reading": "",
+      "english": "SAGAMI HANAKO",
+      "category": "personal",
+      "tip_en": "This is an example name showing the katakana format required for the phonetic reading field",
+      "appears_on": [
+        "national_health_insurance",
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_ca2595d8": {
+      "kanji": "□該当 □非該当",
+      "reading": "がいとう ひがいとう",
+      "english": "☐ Applicable ☐ Not applicable",
+      "category": "administrative",
+      "tip_en": "Check one box based on whether the condition or requirement applies to your situation",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_284e5bfa": {
+      "kanji": "入住",
+      "reading": "にゅうじゅう",
+      "english": "Move-in",
+      "category": "administrative",
+      "tip_en": "Check this if you are moving into a new residence",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_6e66e540": {
+      "kanji": "相模原市 中央区 中央2丁目11番15号 中央ハイツ101",
+      "reading": "さがみはらし ちゅうおうく ちゅうお2ちょうめ11ばん15ごう ちゅうおうハイツ101",
+      "english": "2-11-15 Chuo, Chuo-ku, Sagamihara City, Chuo Heights 101",
+      "category": "address",
+      "tip_en": "Write your complete address including apartment/building name and room number",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_5187fe1f": {
+      "kanji": "に者3",
+      "reading": "",
+      "english": "Person 3",
+      "category": "personal",
+      "tip_en": "Third person listed on the form (if registering multiple people)",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_83ca8c50": {
+      "kanji": "相 模 一 郎",
+      "reading": "さがみいちろう",
+      "english": "Sagami Ichiro",
+      "category": "personal",
+      "tip_en": "This appears to be a sample name - replace with your actual full name",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_3e224522": {
+      "kanji": "年(Y) 月(M) 日(D) 女(F) 他（ ）",
+      "reading": "",
+      "english": "Year(Y) Month(M) Day(D) Female(F) Other( )",
+      "category": "personal",
+      "tip_en": "Standard date format and gender options - F for Female, fill in Other field if applicable",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_71d25387": {
+      "kanji": "済・未済",
+      "reading": "さい・みさい",
+      "english": "Completed/Not completed",
+      "category": "administrative",
+      "tip_en": "Staff use only - do not fill in",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "kakunin_3074": {
+      "kanji": "確認",
+      "reading": "かくにん",
+      "english": "Confirmation",
+      "category": "administrative",
+      "tip_en": "Staff use only - do not fill in",
+      "appears_on": [
+        "national_health_insurance",
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_5241d4e6": {
+      "kanji": "所在地",
+      "reading": "しょざいち",
+      "english": "Location",
+      "category": "address",
+      "tip_en": "Used for business/organization address or property location rather than personal residence",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_e8f0f584": {
+      "kanji": "男(M) 本人・妻・夫・",
+      "reading": "だん（エム） ほんにん・つま・おっと・",
+      "english": "Male (M) Self・Spouse (wife)・Spouse (husband)・",
+      "category": "personal",
+      "tip_en": "Check the box for your gender and relationship status. The list continues with other family relationships.",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_e1cfee3a": {
+      "kanji": "番地",
+      "reading": "ばんち",
+      "english": "Street number",
+      "category": "address",
+      "tip_en": "Write the building/house number portion of your address (e.g., '123' from '123 Main Street')",
+      "appears_on": [
+        "national_health_insurance",
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_a0558fe2": {
+      "kanji": "号籍※日本人の方のみ",
+      "reading": "こうせき",
+      "english": "Family register number ※Japanese citizens only",
+      "category": "document",
+      "tip_en": "Leave blank - this field is only for Japanese citizens",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_de23a880": {
+      "kanji": "方は",
+      "reading": "かたは",
+      "english": "Person who",
+      "category": "personal",
+      "tip_en": "This is typically followed by additional text specifying which person or category of person the section applies to",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_6fd6321b": {
+      "kanji": "(マンション・アパート名等)",
+      "reading": "",
+      "english": "(Apartment/mansion name, etc.)",
+      "category": "address",
+      "tip_en": "Include apartment/condo building name and room number if applicable",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_524d21bd": {
+      "kanji": "電話043-284-6109",
+      "reading": "でんわ",
+      "english": "Phone 043-284-6109",
+      "category": "administrative",
+      "tip_en": "This is the office phone number for inquiries - do not fill in",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_3296d30f": {
+      "kanji": "若葉区市民総合窓口課",
+      "reading": "わかばくしみんそうごうまどぐちか",
+      "english": "Wakaba Ward Citizen Services Counter",
+      "category": "administrative",
+      "tip_en": "This is the department name - you may need to visit this office for residence-related procedures",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_7ce6d8cc": {
+      "kanji": "有 平・令",
+      "reading": "ゆう へい・れい",
+      "english": "Heisei era / Reiwa era",
+      "category": "date",
+      "tip_en": "Checkboxes for Japanese era periods - select Heisei (1989-2019) or Reiwa (2019-present) based on your date",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_74856dca": {
+      "kanji": "お手続きの必要はありません。",
+      "reading": "おてつづきのひつようはありません",
+      "english": "No procedure required",
+      "category": "administrative",
+      "tip_en": "This means no action is needed from you for this item",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_d20f9f98": {
+      "kanji": "住民 太郎",
+      "reading": "じゅうみん たろう",
+      "english": "Resident Taro",
+      "category": "personal",
+      "tip_en": "This appears to be a sample name - replace with your actual name",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_c4fd585e": {
+      "kanji": "□ なし",
+      "reading": "",
+      "english": "None",
+      "category": "administrative",
+      "tip_en": "Check this box if the item does not apply to you or if you have none of the requested item",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_303c1d9c": {
+      "kanji": "丁目",
+      "reading": "ちょうめ",
+      "english": "Block number",
+      "category": "address",
+      "tip_en": "Part of Japanese address system - the district block number (e.g., 1-chome, 2-chome)",
+      "appears_on": [
+        "national_health_insurance",
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_2fabfb02": {
+      "kanji": "１得",
+      "reading": "いちとく",
+      "english": "1. Income",
+      "category": "administrative",
+      "tip_en": "This likely refers to income information or income type classification",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_3ac7a870": {
+      "kanji": "登録済",
+      "reading": "とうろくずみ",
+      "english": "Already registered",
+      "category": "administrative",
+      "tip_en": "Staff use only - do not fill in",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_77450879": {
+      "kanji": "未登録",
+      "reading": "みとうろく",
+      "english": "Not registered",
+      "category": "administrative",
+      "tip_en": "This indicates the person/item is not yet registered in the system",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_59268fb2": {
+      "kanji": "名 称",
+      "reading": "めいしょう",
+      "english": "Name/Title",
+      "category": "personal",
+      "tip_en": "For organizations or businesses - use official registered name",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_631eb6fa": {
+      "kanji": "昭・平・令",
+      "reading": "しょう・へい・れい",
+      "english": "Showa/Heisei/Reiwa",
+      "category": "date",
+      "tip_en": "Circle the era corresponding to your birth year or relevant date",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_a44fb0ef": {
+      "kanji": "大・昭・平・令",
+      "reading": "たい・しょう・へい・れい",
+      "english": "Era abbreviations (Taisho/Showa/Heisei/Reiwa)",
+      "category": "date",
+      "tip_en": "Circle the era corresponding to your birth year or the date being entered",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_955d77c4": {
+      "kanji": "男M",
+      "reading": "",
+      "english": "Male",
+      "category": "personal",
+      "tip_en": "Check this box if you are male",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_5428aed5": {
+      "kanji": "取得喪失",
+      "reading": "しゅとくそうしつ",
+      "english": "Acquisition/Loss",
+      "category": "administrative",
+      "tip_en": "Check acquisition box when gaining benefits/status, loss box when losing them",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_9380d140": {
+      "kanji": "水戸 太郎",
+      "reading": "みと たろう",
+      "english": "Mito Taro",
+      "category": "personal",
+      "tip_en": "This is an example name - replace with your actual full name",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_b413e2d4": {
+      "kanji": "を除く",
+      "reading": "をのぞく",
+      "english": "excluding",
+      "category": "administrative",
+      "tip_en": "This indicates certain items or people should be excluded from the section",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_f1093fb5": {
+      "kanji": "第１号様式（第３条関係）",
+      "reading": "だいいちごうようしき（だいさんじょうかんけい）",
+      "english": "Form No. 1 (Article 3)",
+      "category": "administrative",
+      "tip_en": "Form header - indicates this is the first standardized form template related to Article 3 of the relevant regulation",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_b7163734": {
+      "kanji": "（あて先）川崎市 区長",
+      "reading": "かわさきし くちょう",
+      "english": "To: Kawasaki City Ward Mayor",
+      "category": "administrative",
+      "tip_en": "This indicates the recipient - typically pre-printed on forms",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_241b84d5": {
+      "kanji": "※太枠の中だけ記入してください。",
+      "reading": "ふとわくのなかだけきにゅうしてください",
+      "english": "Fill in only the thick-bordered sections",
+      "category": "administrative",
+      "tip_en": "Only write in areas surrounded by thick black lines - leave other sections blank",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_b4d70c97": {
+      "kanji": "納付義務者",
+      "reading": "のうふぎむしゃ",
+      "english": "Payer/Person liable for payment",
+      "category": "administrative",
+      "tip_en": "The person legally responsible for paying fees, taxes, or insurance premiums",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_9db66a6e": {
+      "kanji": "西 暦",
+      "reading": "せいれき",
+      "english": "Western calendar",
+      "category": "date",
+      "tip_en": "Use Western year format (e.g., 2024) instead of Japanese era year",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_5b9502b2": {
+      "kanji": "窓 口 に",
+      "reading": "まどぐちに",
+      "english": "At counter",
+      "category": "administrative",
+      "tip_en": "Staff use only - do not fill in",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_0992b686": {
+      "kanji": "○ 窓口にこられた方は、自身を証明できるもの（公的証明書等）を提示してください。",
+      "reading": "まどぐちにこられたかたは、じしんをしょうめいできるもの（こうてきしょうめいしょとう）をていじしてください。",
+      "english": "○ Persons visiting the counter must present identification (official documents, etc.) to verify their identity.",
+      "category": "administrative",
+      "tip_en": "Bring valid photo ID such as residence card, driver's license, or passport when submitting forms in person",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_c6633539": {
+      "kanji": "☑在留申請・更新手続き",
+      "reading": "ざいりゅうしんせい・こうしんてつづき",
+      "english": "Residence status application/renewal procedures",
+      "category": "administrative",
+      "tip_en": "Check this box if you need help with visa/residence status procedures",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_a0067602": {
+      "kanji": "必要な納付年 年度",
+      "reading": "ひつようなのうふねん ねんど",
+      "english": "Required tax year",
+      "category": "administrative",
+      "tip_en": "Enter the fiscal year for which payment or documentation is needed (e.g., 2023, 2024)",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_28e0bd90": {
+      "kanji": "認 （書類名： ）",
+      "reading": "にん",
+      "english": "Seal/Stamp (Document name: )",
+      "category": "administrative",
+      "tip_en": "Official seal or stamp area - typically for municipal office use",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_9be5dd7c": {
+      "kanji": "（書類名： ）",
+      "reading": "しょるいめい",
+      "english": "Document name:",
+      "category": "administrative",
+      "tip_en": "Staff use only - do not fill in",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_86f7ff30": {
+      "kanji": "※納付証明は、確定申告や年末調整には使えませんのでご注意ください。",
+      "reading": "のうふしょうめいは、かくていしんこくやねんまつちょうせいにはつかえませんのでごちゅういください。",
+      "english": "※Please note that payment certificates cannot be used for tax returns or year-end tax adjustments.",
+      "category": "administrative",
+      "tip_en": "This is an important notice about limitations of the payment certificate you may receive",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_b246dc4d": {
+      "kanji": "□交付 □未交付",
+      "reading": "こうふ みこうふ",
+      "english": "□Issued □Not issued",
+      "category": "document",
+      "tip_en": "Check the appropriate box to indicate whether a document has been issued to you or not",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_3336a57e": {
+      "kanji": "適用・減額対象者",
+      "reading": "てきよう・げんがくたいしょうしゃ",
+      "english": "Eligible person for application/reduction",
+      "category": "administrative",
+      "tip_en": "Check if you qualify for fee reductions or exemptions based on income or other criteria",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_794cc676": {
+      "kanji": "長期 入院日数 年 月 日～ 年 月 日（ 日間）",
+      "reading": "ちょうき にゅういんにっすう ねん がつ にち から ねん がつ にち ( にちかん )",
+      "english": "Long-term hospitalization period: Year Month Day ~ Year Month Day ( days)",
+      "category": "date",
+      "tip_en": "Fill in start and end dates of hospitalization periods longer than 30 days, then calculate total days",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_1a1be52f": {
+      "kanji": "保険医療機関",
+      "reading": "ほけんいりょうきかん",
+      "english": "Medical institution",
+      "category": "administrative",
+      "tip_en": "Enter the name of your doctor's office, clinic, or hospital",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_da02c1bd": {
+      "kanji": "長期 入院日数の合計",
+      "reading": "ちょうき にゅういんにっすうの ごうけい",
+      "english": "Total days of long-term hospitalization",
+      "category": "administrative",
+      "tip_en": "Enter the total number of days you were hospitalized for extended periods during the relevant time frame",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_0821048f": {
+      "kanji": "日間",
+      "reading": "にちかん",
+      "english": "days",
+      "category": "date",
+      "tip_en": "Usually follows a number to indicate duration in days",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_4c988852": {
+      "kanji": "認定証",
+      "reading": "にんていしょう",
+      "english": "Certificate",
+      "category": "document",
+      "tip_en": "Refers to official certificates like income certificate, tax exemption certificate, etc.",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "kakunin_ece7": {
+      "kanji": "□ 課税Ｏ/Ｌ確認 □ 証明書等の添付",
+      "reading": "かぜいオーエルかくにん しょうめいしょとうのてんぷ",
+      "english": "☐ Tax O/L verification ☐ Supporting documents attached",
+      "category": "administrative",
+      "tip_en": "Staff use only - do not fill in",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_dc100b26": {
+      "kanji": "発 効 期 日 ・ ・",
+      "reading": "はっこうきじつ",
+      "english": "Effective date",
+      "category": "date",
+      "tip_en": "Enter the date when the registration change takes effect (usually the date you moved or the date you submit the form)",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_623cf835": {
+      "kanji": "※記入不要※",
+      "reading": "きにゅうふよう",
+      "english": "Do not fill in",
+      "category": "administrative",
+      "tip_en": "Staff use only - do not fill in",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_1d66ca43": {
+      "kanji": "氏(フ リガ ナ名)",
+      "reading": "し フリガナ な",
+      "english": "Full name (Phonetic reading)",
+      "category": "personal",
+      "tip_en": "Write your full name in kanji/hiragana, then the phonetic reading in katakana",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_b08f692c": {
+      "kanji": "相 模 みどり",
+      "reading": "さがみ みどり",
+      "english": "Sagami Midori",
+      "category": "personal",
+      "tip_en": "This appears to be an example name showing proper spacing format",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_8d9636ea": {
+      "kanji": "大 ・ 昭 ・ 平",
+      "reading": "たいしょう・しょうわ・へいせい",
+      "english": "Taishō ・ Shōwa ・ Heisei",
+      "category": "date",
+      "tip_en": "Circle the era your birth year falls in: Taishō (1912-1926), Shōwa (1926-1989), or Heisei (1989-2019)",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_c9dc14f2": {
+      "kanji": "記号・番号",
+      "reading": "きごう・ばんごう",
+      "english": "Symbol/Number",
+      "category": "document",
+      "tip_en": "Enter the symbol and number from your insurance card or other identification document",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_767afcfe": {
+      "kanji": "こくみんけんこうほけん",
+      "reading": "",
+      "english": "National Health Insurance",
+      "category": "administrative",
+      "tip_en": "Japan's public health insurance system for residents not covered by employee health insurance",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_31db9d14": {
+      "kanji": "びょういん",
+      "reading": "",
+      "english": "Hospital",
+      "category": "other",
+      "tip_en": "",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "kakunin_c409": {
+      "kanji": "人確認書□□□□□住個旅在特カカ券カ永ーーー証ドドド□ □ □クキ生年証レャ保金書ジッ受手カシ給帳ーュ証・ド・明□□□（委社聴そ 任員聞の 状証他 □ 学 生 証）個住人カカ",
+      "reading": "",
+      "english": "Identity verification documents",
+      "category": "document",
+      "tip_en": "Check boxes for documents you're bringing (driver's license, passport, residence card, etc.)",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_07ba1b2f": {
+      "kanji": "世と続帯の柄主",
+      "reading": "よとぞくたいのえぬし",
+      "english": "Head of household and dependents",
+      "category": "household",
+      "tip_en": "List the household head first, followed by all dependents/family members",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_9b0e4783": {
+      "kanji": "11..22かか月月(cid:12690)(cid:12690)(cid:12708)(cid:12708)",
+      "reading": "",
+      "english": "11..22 months",
+      "category": "other",
+      "tip_en": "",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_a1d1ec67": {
+      "kanji": "個人",
+      "reading": "こじん",
+      "english": "Individual",
+      "category": "administrative",
+      "tip_en": "Used to distinguish individual applications from household or corporate ones",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_4e4e8451": {
+      "kanji": "年 月 日女F",
+      "reading": "じょ",
+      "english": "Female",
+      "category": "personal",
+      "tip_en": "Check this box if female (F indicates female gender option)",
+      "appears_on": [
+        "national_health_insurance"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_db72ffba": {
+      "kanji": "男(M)",
+      "reading": "だん",
+      "english": "Male (M)",
+      "category": "personal",
+      "tip_en": "Check this box if you are male",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_e5f8854a": {
+      "kanji": "女(F)",
+      "reading": "",
+      "english": "Female (F)",
+      "category": "personal",
+      "tip_en": "Select if you are female",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_3531687b": {
+      "kanji": "世帯番号",
+      "reading": "せたいばんごう",
+      "english": "Household number",
+      "category": "household",
+      "tip_en": "This number is assigned by the municipal office to identify your household unit",
+      "appears_on": [
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
+    },
+    "auto_54cd00e3": {
+      "kanji": "ふ り が な",
+      "reading": "ふりがな",
+      "english": "Phonetic reading (hiragana)",
+      "category": "personal",
+      "tip_en": "Write your name in hiragana characters to show pronunciation",
+      "appears_on": [
+        "national_health_insurance",
+        "residence_registration"
+      ],
+      "confidence": "draft",
+      "notes": "Auto-translated by find_gaps.py"
     }
   }
 }
