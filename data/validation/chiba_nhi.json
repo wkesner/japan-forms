@@ -1,0 +1,157 @@
+{
+  "prefecture": "chiba",
+  "form_type": "nhi",
+  "timestamp": "2026-02-18T11:33:08",
+  "summary": {
+    "ok": 16,
+    "failed": 7,
+    "skipped": 0
+  },
+  "results": {
+    "chiba-chuo": {
+      "name_en": "Chuo Ward",
+      "files": [
+        {
+          "filename": "202502nihongo.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "itibuhutannkinngennmenntoriatukaiyoukou.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "r7_kokuhonoshiori.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "yuuyokisaireigennnenn1.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "yuuyokisaireikanenn1.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "funabashi": {
+      "name_en": "Funabashi City",
+      "files": [
+        {
+          "filename": "atenadaishi.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 1511 chars of text"
+        },
+        {
+          "filename": "fukudairinin-ininzyo.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 649 chars of text"
+        },
+        {
+          "filename": "hospitalfacecertification.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 149 chars of text"
+        },
+        {
+          "filename": "tegaki-kofu-shinseisho.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 2136 chars of text"
+        },
+        {
+          "filename": "under15facecertification.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 148 chars of text"
+        }
+      ]
+    },
+    "ichikawa": {
+      "name_en": "Ichikawa City",
+      "files": [
+        {
+          "filename": "000014491.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "0000405890.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 76 chars of text"
+        },
+        {
+          "filename": "0000406262.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "0000459270.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "000278242.pdf",
+          "status": "ok",
+          "detail": "matched: 被保険者"
+        }
+      ]
+    },
+    "matsudo": {
+      "name_en": "Matsudo City",
+      "files": [
+        {
+          "filename": "R7_guidebook.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "konbinikouhu_manual.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 1142 chars of text"
+        },
+        {
+          "filename": "tagengogaido.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "narashino": {
+      "name_en": "Narashino City",
+      "files": [
+        {
+          "filename": "R0612kanyukikan.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "R7tebiki.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "narita": {
+      "name_en": "Narita City",
+      "files": [
+        {
+          "filename": "000165404.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "000167256.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "000188163.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    }
+  }
+}

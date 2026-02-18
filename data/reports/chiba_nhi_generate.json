@@ -1,0 +1,73 @@
+{
+  "prefecture": "chiba",
+  "form_type": "nhi",
+  "summary": {
+    "generated": 16,
+    "failed": 0,
+    "skipped": 7
+  },
+  "wards": {
+    "chiba-chuo": {
+      "generated": [
+        "ChibaChuo_NHIapp_202502nihongo_v1.PDF",
+        "ChibaChuo_NHIapp_itibuhutannkinngennmenntoriatukaiyoukou_v1.PDF",
+        "ChibaChuo_NHIapp_r7_kokuhonoshiori_v1.PDF",
+        "ChibaChuo_NHIapp_yuuyokisaireigennnenn1_v1.PDF",
+        "ChibaChuo_NHIapp_yuuyokisaireikanenn1_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "funabashi": {
+      "generated": [],
+      "failed": [],
+      "skipped": [
+        "atenadaishi.pdf",
+        "fukudairinin-ininzyo.pdf",
+        "hospitalfacecertification.pdf",
+        "tegaki-kofu-shinseisho.pdf",
+        "under15facecertification.pdf"
+      ]
+    },
+    "ichikawa": {
+      "generated": [
+        "Ichikawa_NHIapp_000014491_v1.PDF",
+        "Ichikawa_NHIapp_0000406262_v1.PDF",
+        "Ichikawa_NHIapp_0000459270_v1.PDF",
+        "Ichikawa_NHIapp_000278242_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "0000405890.pdf"
+      ]
+    },
+    "matsudo": {
+      "generated": [
+        "Matsudo_NHIapp_R7_guidebook_v1.PDF",
+        "Matsudo_NHIapp_tagengogaido_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "konbinikouhu_manual.pdf"
+      ]
+    },
+    "narashino": {
+      "generated": [
+        "Narashino_NHIapp_R0612kanyukikan_v1.PDF",
+        "Narashino_NHIapp_R7tebiki_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "narita": {
+      "generated": [
+        "Narita_NHIapp_000165404_v1.PDF",
+        "Narita_NHIapp_000167256_v1.PDF",
+        "Narita_NHIapp_000188163_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    }
+  },
+  "timestamp": "2026-02-18T11:35:28"
+}
