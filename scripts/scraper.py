@@ -1293,7 +1293,11 @@ def generate_status(prefecture=None, form_type=None):
     if form_type is None:
         form_type = "residence"
 
-    walkthrough_glob = "*_Residence_*.PDF" if form_type == "residence" else "*_NHIapp_*.PDF"
+    # Match both new-style (*_Residence_*.PDF) and old-style (*_walkthrough.pdf) naming
+    if form_type == "residence":
+        walkthrough_globs = ["*_Residence_*.PDF", "*_walkthrough.pdf"]
+    else:
+        walkthrough_globs = ["*_NHIapp_*.PDF"]
     ft_label = FORM_TYPES[form_type]["label"]
 
     prefectures = [prefecture] if prefecture else KNOWN_PREFECTURES
@@ -1331,11 +1335,13 @@ def generate_status(prefecture=None, form_type=None):
             else:
                 num_inputs = 0
 
-            # Count walkthroughs
+            # Count walkthroughs (union of all glob patterns, deduplicated)
             muni_output_dir = OUTPUT_DIR / pref / muni_key
             if muni_output_dir.exists():
-                walks = list(muni_output_dir.glob(walkthrough_glob))
-                num_walks = len(walks)
+                walk_set = set()
+                for g in walkthrough_globs:
+                    walk_set.update(muni_output_dir.glob(g))
+                num_walks = len(walk_set)
             else:
                 num_walks = 0
 
