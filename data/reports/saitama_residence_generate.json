@@ -2,16 +2,16 @@
   "prefecture": "saitama",
   "form_type": "residence",
   "summary": {
-    "generated": 23,
+    "generated": 27,
     "failed": 0,
-    "skipped": 56
+    "skipped": 64
   },
   "wards": {
     "ageo": {
       "generated": [
-        "Ageo_Residence_111971_v1.PDF",
-        "Ageo_Residence_115523_v1.PDF",
-        "Ageo_Residence_403250_1117718_misc_v1.PDF"
+        "Ageo_Residence_111971_v2.PDF",
+        "Ageo_Residence_115523_v2.PDF",
+        "Ageo_Residence_403250_1117718_misc_v2.PDF"
       ],
       "failed": [],
       "skipped": [
@@ -21,7 +21,7 @@
     },
     "asaka": {
       "generated": [
-        "Asaka_Residence_86246_v1.PDF"
+        "Asaka_Residence_86246_v2.PDF"
       ],
       "failed": [],
       "skipped": [
@@ -44,7 +44,7 @@
     },
     "kawagoe": {
       "generated": [
-        "Kawagoe_Residence_tenshutu_v1.PDF"
+        "Kawagoe_Residence_tenshutu_v2.PDF"
       ],
       "failed": [],
       "skipped": [
@@ -54,7 +54,7 @@
     },
     "kawaguchi": {
       "generated": [
-        "Kawaguchi_Residence_202103shinzyuuminnidoutodokeyuusouyou_v2.PDF"
+        "Kawaguchi_Residence_202103shinzyuuminnidoutodokeyuusouyou_v3.PDF"
       ],
       "failed": [],
       "skipped": [
@@ -66,15 +66,15 @@
     },
     "koshigaya": {
       "generated": [
-        "Koshigaya_Residence_yuusou1_v1.PDF"
+        "Koshigaya_Residence_yuusou1_v2.PDF"
       ],
       "failed": [],
       "skipped": []
     },
     "kumagaya": {
       "generated": [
-        "Kumagaya_Residence_tennsyututodokeyuusou_v1.PDF",
-        "Kumagaya_Residence_tennsyututodokeyuusourei_v1.PDF"
+        "Kumagaya_Residence_tennsyututodokeyuusou_v2.PDF",
+        "Kumagaya_Residence_tennsyututodokeyuusourei_v2.PDF"
       ],
       "failed": [],
       "skipped": [
@@ -84,10 +84,10 @@
     },
     "niiza": {
       "generated": [
-        "Niiza_Residence_45660_v1.PDF",
-        "Niiza_Residence_45662_v1.PDF",
-        "Niiza_Residence_62624_v1.PDF",
-        "Niiza_Residence_62626_v1.PDF"
+        "Niiza_Residence_45660_v2.PDF",
+        "Niiza_Residence_45662_v2.PDF",
+        "Niiza_Residence_62624_v2.PDF",
+        "Niiza_Residence_62626_v2.PDF"
       ],
       "failed": [],
       "skipped": [
@@ -96,7 +96,7 @@
     },
     "saitama-chuo": {
       "generated": [
-        "SaitamaChuo_Residence_yuusou-tennsyutu_v1.PDF"
+        "SaitamaChuo_Residence_yuusou-tennsyutu_v2.PDF"
       ],
       "failed": [],
       "skipped": [
@@ -108,7 +108,7 @@
     },
     "saitama-iwatsuki": {
       "generated": [
-        "SaitamaIwatsuki_Residence_yuusou-tennsyutu_v1.PDF"
+        "SaitamaIwatsuki_Residence_yuusou-tennsyutu_v2.PDF"
       ],
       "failed": [],
       "skipped": [
@@ -120,7 +120,7 @@
     },
     "saitama-kita": {
       "generated": [
-        "SaitamaKita_Residence_yuusou-tennsyutu_v1.PDF"
+        "SaitamaKita_Residence_yuusou-tennsyutu_v2.PDF"
       ],
       "failed": [],
       "skipped": [
@@ -132,7 +132,7 @@
     },
     "saitama-midori": {
       "generated": [
-        "SaitamaMidori_Residence_yuusou-tennsyutu_v1.PDF"
+        "SaitamaMidori_Residence_yuusou-tennsyutu_v2.PDF"
       ],
       "failed": [],
       "skipped": [
@@ -144,7 +144,7 @@
     },
     "saitama-minami": {
       "generated": [
-        "SaitamaMinami_Residence_yuusou-tennsyutu_v1.PDF"
+        "SaitamaMinami_Residence_yuusou-tennsyutu_v2.PDF"
       ],
       "failed": [],
       "skipped": [
@@ -156,7 +156,7 @@
     },
     "saitama-minuma": {
       "generated": [
-        "SaitamaMinuma_Residence_yuusou-tennsyutu_v1.PDF"
+        "SaitamaMinuma_Residence_yuusou-tennsyutu_v2.PDF"
       ],
       "failed": [],
       "skipped": [
@@ -168,7 +168,7 @@
     },
     "saitama-nishi": {
       "generated": [
-        "SaitamaNishi_Residence_yuusou-tennsyutu_v1.PDF"
+        "SaitamaNishi_Residence_yuusou-tennsyutu_v2.PDF"
       ],
       "failed": [],
       "skipped": [
@@ -180,7 +180,7 @@
     },
     "saitama-omiya": {
       "generated": [
-        "SaitamaOmiya_Residence_yuusou-tennsyutu_v1.PDF"
+        "SaitamaOmiya_Residence_yuusou-tennsyutu_v2.PDF"
       ],
       "failed": [],
       "skipped": [
@@ -192,7 +192,7 @@
     },
     "saitama-sakura": {
       "generated": [
-        "SaitamaSakura_Residence_yuusou-tennsyutu_v1.PDF"
+        "SaitamaSakura_Residence_yuusou-tennsyutu_v2.PDF"
       ],
       "failed": [],
       "skipped": [
@@ -204,11 +204,38 @@
     },
     "saitama-urawa": {
       "generated": [
-        "SaitamaUrawa_Residence_yuusou-tennsyutu_v2.PDF"
+        "SaitamaUrawa_Residence_yuusou-tennsyutu_v3.PDF"
       ],
       "failed": [],
-      "skipped": []
+      "skipped": [
+        "10tenpu.pdf",
+        "example.pdf",
+        "kihennkoutodokedeikasika.pdf",
+        "sinseisyokisairei.pdf"
+      ]
+    },
+    "soka": {
+      "generated": [
+        "Soka_Residence_202512yuusoutennshutuyoushiki_v1.PDF",
+        "Soka_Residence_202601yuusoutennshutukinyuurei_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "gijyutsusyahenkou05-14.pdf",
+        "gijyutsusyakakikae05-13.pdf",
+        "massyousinsei.pdf"
+      ]
+    },
+    "tokorozawa": {
+      "generated": [
+        "Tokorozawa_Residence_5tennsyutuyuusou_v1.PDF",
+        "Tokorozawa_Residence_6tennsyutumihon_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "sinseisyo.pdf"
+      ]
     }
   },
-  "timestamp": "2026-02-18T10:51:46"
+  "timestamp": "2026-02-18T14:23:49"
 }

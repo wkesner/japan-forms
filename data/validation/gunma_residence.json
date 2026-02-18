@@ -1,7 +1,7 @@
 {
   "prefecture": "gunma",
   "form_type": "residence",
-  "timestamp": "2026-02-18T10:53:22",
+  "timestamp": "2026-02-18T13:50:57",
   "summary": {
     "ok": 9,
     "failed": 11,
@@ -12,29 +12,29 @@
       "name_en": "Isesaki City",
       "files": [
         {
-          "filename": "edahashinnseikinyuureipdf.pdf",
+          "filename": "onestophenkoutodokedesyo_202406.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 501 chars of text"
-        },
-        {
-          "filename": "edahashinnseishopdf.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 429 chars of text"
+          "detail": "validation failed: no validation terms found in 472 chars of text"
         },
         {
           "filename": "honninntourokumousikomi.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1871 chars of text"
+          "detail": "validation failed: no validation terms found in 1871 chars of text"
         },
         {
           "filename": "honninntourokumousikomimihon.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1965 chars of text"
+          "detail": "validation failed: no validation terms found in 1965 chars of text"
         },
         {
-          "filename": "onestophenkoutodokedesyo_202406.pdf",
+          "filename": "edahashinnseishopdf.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 472 chars of text"
+          "detail": "validation failed: no validation terms found in 429 chars of text"
+        },
+        {
+          "filename": "edahashinnseikinyuureipdf.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 501 chars of text"
         }
       ]
     },
@@ -42,29 +42,29 @@
       "name_en": "Maebashi City",
       "files": [
         {
-          "filename": "1-2-1kisairei2.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 4646 chars of text"
-        },
-        {
           "filename": "kisairei1-1.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 855 chars of text"
+          "detail": "validation failed: no validation terms found in 855 chars of text"
+        },
+        {
+          "filename": "1-2-1kisairei2.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 4646 chars of text"
         },
         {
           "filename": "kisairei1-2-2.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 3521 chars of text"
+          "detail": "validation failed: no validation terms found in 3521 chars of text"
         },
         {
-          "filename": "yousiki-jumin-inkan.pdf",
+          "filename": "shinnsei-rei.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 947 chars of text"
+          "detail": "validation failed: no validation terms found in 474 chars of text"
         },
         {
           "filename": "zyukyo-hyouji.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 390 chars of text"
+          "detail": "validation failed: no validation terms found in 390 chars of text"
         }
       ]
     },
@@ -74,27 +74,27 @@
         {
           "filename": "14420.pdf",
           "status": "ok",
-          "detail": "matched: 住民異動届"
-        },
-        {
-          "filename": "17536.pdf",
-          "status": "ok",
-          "detail": "matched: 住民異動届"
-        },
-        {
-          "filename": "4615.pdf",
-          "status": "ok",
-          "detail": "matched: 住民異動届"
+          "detail": "score=40"
         },
         {
           "filename": "7383.pdf",
           "status": "ok",
-          "detail": "matched: 住民異動届"
+          "detail": "score=40"
+        },
+        {
+          "filename": "4615.pdf",
+          "status": "ok",
+          "detail": "score=40"
         },
         {
           "filename": "7384.pdf",
           "status": "ok",
-          "detail": "matched: 住民異動届"
+          "detail": "score=40"
+        },
+        {
+          "filename": "17536.pdf",
+          "status": "ok",
+          "detail": "score=40"
         }
       ]
     },
@@ -102,29 +102,29 @@
       "name_en": "Takasaki City",
       "files": [
         {
-          "filename": "19672.pdf",
+          "filename": "35885.pdf",
           "status": "ok",
-          "detail": "matched: 転入届"
-        },
-        {
-          "filename": "19673.pdf",
-          "status": "ok",
-          "detail": "matched: 転入届"
+          "detail": "score=40"
         },
         {
           "filename": "26133.pdf",
           "status": "ok",
-          "detail": "matched: 転入届"
+          "detail": "score=40"
+        },
+        {
+          "filename": "19672.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
+          "filename": "19673.pdf",
+          "status": "ok",
+          "detail": "score=40"
         },
         {
           "filename": "31211.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1493 chars of text"
-        },
-        {
-          "filename": "35885.pdf",
-          "status": "ok",
-          "detail": "matched: 転入届"
+          "detail": "validation failed: no validation terms found in 1493 chars of text"
         }
       ]
     }

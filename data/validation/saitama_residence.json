@@ -1,40 +1,40 @@
 {
   "prefecture": "saitama",
   "form_type": "residence",
-  "timestamp": "2026-02-18T10:50:27",
+  "timestamp": "2026-02-18T14:15:54",
   "summary": {
-    "ok": 21,
-    "failed": 56,
-    "skipped": 2
+    "ok": 27,
+    "failed": 66,
+    "skipped": 0
   },
   "results": {
     "ageo": {
       "name_en": "Ageo City",
       "files": [
         {
-          "filename": "111971.pdf",
+          "filename": "115523.pdf",
           "status": "ok",
-          "detail": "matched: 転入届"
+          "detail": "score=50"
         },
         {
-          "filename": "115523.pdf",
-          "status": "skipped",
-          "detail": "image-based (0 chars) — skipping validation"
+          "filename": "111971.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
+          "filename": "403250_1117718_misc.pdf",
+          "status": "ok",
+          "detail": "score=20"
         },
         {
           "filename": "40257.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 402 chars of text"
-        },
-        {
-          "filename": "403250_1117718_misc.pdf",
-          "status": "skipped",
-          "detail": "image-based (0 chars) — skipping validation"
+          "detail": "validation failed: no validation terms found in 402 chars of text"
         },
         {
           "filename": "403250_1117728_misc.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 751 chars of text"
+          "detail": "validation failed: no validation terms found in 751 chars of text"
         }
       ]
     },
@@ -42,29 +42,29 @@
       "name_en": "Asaka City",
       "files": [
         {
-          "filename": "100437.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 717 chars of text"
-        },
-        {
           "filename": "86246.pdf",
           "status": "ok",
-          "detail": "matched: 転出届"
-        },
-        {
-          "filename": "89259.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 1296 chars of text"
+          "detail": "score=40"
         },
         {
           "filename": "89260.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1296 chars of text"
+          "detail": "validation failed: no validation terms found in 1296 chars of text"
+        },
+        {
+          "filename": "89259.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 1296 chars of text"
+        },
+        {
+          "filename": "100437.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 717 chars of text"
         },
         {
           "filename": "89261.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1296 chars of text"
+          "detail": "validation failed: no validation terms found in 1296 chars of text"
         }
       ]
     },
@@ -74,27 +74,27 @@
         {
           "filename": "20260105-1-soufusaki-todokede.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1111 chars of text"
+          "detail": "validation failed: no validation terms found in 1111 chars of text"
         },
         {
           "filename": "20260105-2-soufusaki-todokede-settei.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1243 chars of text"
+          "detail": "validation failed: no validation terms found in 1243 chars of text"
         },
         {
           "filename": "20260105-3-soufusaki-todokede-henkou.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1303 chars of text"
+          "detail": "validation failed: no validation terms found in 1303 chars of text"
         },
         {
           "filename": "20260105-4-soufusaki-todokede-torisage.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1262 chars of text"
+          "detail": "validation failed: no validation terms found in 1262 chars of text"
         },
         {
           "filename": "R5_Kozo2_genmenshinseisyo.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1206 chars of text"
+          "detail": "validation failed: no validation terms found in 1206 chars of text"
         }
       ]
     },
@@ -102,19 +102,19 @@
       "name_en": "Kawagoe City",
       "files": [
         {
+          "filename": "tenshutu.pdf",
+          "status": "ok",
+          "detail": "score=20"
+        },
+        {
           "filename": "juminhyou.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 809 chars of text"
+          "detail": "validation failed: no validation terms found in 809 chars of text"
         },
         {
           "filename": "kaisou.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 388 chars of text"
-        },
-        {
-          "filename": "tenshutu.pdf",
-          "status": "ok",
-          "detail": "matched: 転入届"
+          "detail": "validation failed: no validation terms found in 388 chars of text"
         }
       ]
     },
@@ -122,29 +122,29 @@
       "name_en": "Kawaguchi City",
       "files": [
         {
-          "filename": "010507kokujijikouhennkoutodokedesyokinyuurei.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 427 chars of text"
-        },
-        {
           "filename": "202103shinzyuuminnidoutodokeyuusouyou.pdf",
           "status": "ok",
-          "detail": "matched: 住民異動届"
-        },
-        {
-          "filename": "R60401sp.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 2025 chars of text"
-        },
-        {
-          "filename": "saikensaimusyartourokusinseisyo.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 950 chars of text"
+          "detail": "score=70"
         },
         {
           "filename": "sizaiokiba_kizontodokedesho.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 365 chars of text"
+          "detail": "validation failed: no validation terms found in 365 chars of text"
+        },
+        {
+          "filename": "R60401sp.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 2025 chars of text"
+        },
+        {
+          "filename": "010507kokujijikouhennkoutodokedesyokinyuurei.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 427 chars of text"
+        },
+        {
+          "filename": "saikensaimusyartourokusinseisyo.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 950 chars of text"
         }
       ]
     },
@@ -154,7 +154,7 @@
         {
           "filename": "yuusou1.pdf",
           "status": "ok",
-          "detail": "matched: 転出届"
+          "detail": "score=50"
         }
       ]
     },
@@ -162,24 +162,24 @@
       "name_en": "Kumagaya City",
       "files": [
         {
-          "filename": "kouikijuuminnhyou2026.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 514 chars of text"
-        },
-        {
-          "filename": "kouikijuuminnhyoukinyuurei2026.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 559 chars of text"
-        },
-        {
           "filename": "tennsyututodokeyuusou.pdf",
           "status": "ok",
-          "detail": "matched: 転入届"
+          "detail": "score=50"
         },
         {
           "filename": "tennsyututodokeyuusourei.pdf",
           "status": "ok",
-          "detail": "matched: 転入届"
+          "detail": "score=50"
+        },
+        {
+          "filename": "kouikijuuminnhyou2026.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 514 chars of text"
+        },
+        {
+          "filename": "kouikijuuminnhyoukinyuurei2026.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 559 chars of text"
         }
       ]
     },
@@ -187,29 +187,29 @@
       "name_en": "Niiza City",
       "files": [
         {
-          "filename": "39395.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 475 chars of text"
-        },
-        {
           "filename": "45660.pdf",
           "status": "ok",
-          "detail": "matched: 転入届"
+          "detail": "score=50"
         },
         {
           "filename": "45662.pdf",
           "status": "ok",
-          "detail": "matched: 転入届"
+          "detail": "score=50"
         },
         {
           "filename": "62624.pdf",
           "status": "ok",
-          "detail": "matched: 転入届"
+          "detail": "score=50"
         },
         {
           "filename": "62626.pdf",
           "status": "ok",
-          "detail": "matched: 転入届"
+          "detail": "score=50"
+        },
+        {
+          "filename": "39395.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 475 chars of text"
         }
       ]
     },
@@ -217,29 +217,29 @@
       "name_en": "Chuo Ward",
       "files": [
         {
+          "filename": "yuusou-tennsyutu.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
           "filename": "10tenpu.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1536 chars of text"
-        },
-        {
-          "filename": "example.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 956 chars of text"
-        },
-        {
-          "filename": "kihennkoutodokedeikasika.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 497 chars of text"
+          "detail": "validation failed: no validation terms found in 1536 chars of text"
         },
         {
           "filename": "sinseisyokisairei.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1340 chars of text"
+          "detail": "validation failed: no validation terms found in 1340 chars of text"
         },
         {
-          "filename": "yuusou-tennsyutu.pdf",
-          "status": "ok",
-          "detail": "matched: 転入届"
+          "filename": "example.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 956 chars of text"
+        },
+        {
+          "filename": "kihennkoutodokedeikasika.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 497 chars of text"
         }
       ]
     },
@@ -247,29 +247,29 @@
       "name_en": "Iwatsuki Ward",
       "files": [
         {
+          "filename": "yuusou-tennsyutu.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
           "filename": "10tenpu.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1536 chars of text"
-        },
-        {
-          "filename": "example.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 956 chars of text"
-        },
-        {
-          "filename": "kihennkoutodokedeikasika.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 497 chars of text"
+          "detail": "validation failed: no validation terms found in 1536 chars of text"
         },
         {
           "filename": "sinseisyokisairei.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1340 chars of text"
+          "detail": "validation failed: no validation terms found in 1340 chars of text"
         },
         {
-          "filename": "yuusou-tennsyutu.pdf",
-          "status": "ok",
-          "detail": "matched: 転入届"
+          "filename": "example.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 956 chars of text"
+        },
+        {
+          "filename": "kihennkoutodokedeikasika.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 497 chars of text"
         }
       ]
     },
@@ -277,29 +277,29 @@
       "name_en": "Kita Ward",
       "files": [
         {
+          "filename": "yuusou-tennsyutu.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
           "filename": "10tenpu.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1536 chars of text"
-        },
-        {
-          "filename": "example.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 956 chars of text"
-        },
-        {
-          "filename": "kihennkoutodokedeikasika.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 497 chars of text"
+          "detail": "validation failed: no validation terms found in 1536 chars of text"
         },
         {
           "filename": "sinseisyokisairei.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1340 chars of text"
+          "detail": "validation failed: no validation terms found in 1340 chars of text"
         },
         {
-          "filename": "yuusou-tennsyutu.pdf",
-          "status": "ok",
-          "detail": "matched: 転入届"
+          "filename": "example.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 956 chars of text"
+        },
+        {
+          "filename": "kihennkoutodokedeikasika.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 497 chars of text"
         }
       ]
     },
@@ -307,29 +307,29 @@
       "name_en": "Midori Ward",
       "files": [
         {
+          "filename": "yuusou-tennsyutu.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
           "filename": "10tenpu.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1536 chars of text"
-        },
-        {
-          "filename": "example.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 956 chars of text"
-        },
-        {
-          "filename": "kihennkoutodokedeikasika.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 497 chars of text"
+          "detail": "validation failed: no validation terms found in 1536 chars of text"
         },
         {
           "filename": "sinseisyokisairei.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1340 chars of text"
+          "detail": "validation failed: no validation terms found in 1340 chars of text"
         },
         {
-          "filename": "yuusou-tennsyutu.pdf",
-          "status": "ok",
-          "detail": "matched: 転入届"
+          "filename": "example.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 956 chars of text"
+        },
+        {
+          "filename": "kihennkoutodokedeikasika.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 497 chars of text"
         }
       ]
     },
@@ -337,29 +337,29 @@
       "name_en": "Minami Ward",
       "files": [
         {
+          "filename": "yuusou-tennsyutu.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
           "filename": "10tenpu.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1536 chars of text"
-        },
-        {
-          "filename": "example.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 956 chars of text"
-        },
-        {
-          "filename": "kihennkoutodokedeikasika.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 497 chars of text"
+          "detail": "validation failed: no validation terms found in 1536 chars of text"
         },
         {
           "filename": "sinseisyokisairei.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1340 chars of text"
+          "detail": "validation failed: no validation terms found in 1340 chars of text"
         },
         {
-          "filename": "yuusou-tennsyutu.pdf",
-          "status": "ok",
-          "detail": "matched: 転入届"
+          "filename": "example.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 956 chars of text"
+        },
+        {
+          "filename": "kihennkoutodokedeikasika.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 497 chars of text"
         }
       ]
     },
@@ -367,29 +367,29 @@
       "name_en": "Minuma Ward",
       "files": [
         {
+          "filename": "yuusou-tennsyutu.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
           "filename": "10tenpu.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1536 chars of text"
-        },
-        {
-          "filename": "example.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 956 chars of text"
-        },
-        {
-          "filename": "kihennkoutodokedeikasika.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 497 chars of text"
+          "detail": "validation failed: no validation terms found in 1536 chars of text"
         },
         {
           "filename": "sinseisyokisairei.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1340 chars of text"
+          "detail": "validation failed: no validation terms found in 1340 chars of text"
         },
         {
-          "filename": "yuusou-tennsyutu.pdf",
-          "status": "ok",
-          "detail": "matched: 転入届"
+          "filename": "example.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 956 chars of text"
+        },
+        {
+          "filename": "kihennkoutodokedeikasika.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 497 chars of text"
         }
       ]
     },
@@ -397,29 +397,29 @@
       "name_en": "Nishi Ward",
       "files": [
         {
+          "filename": "yuusou-tennsyutu.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
           "filename": "10tenpu.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1536 chars of text"
-        },
-        {
-          "filename": "example.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 956 chars of text"
-        },
-        {
-          "filename": "kihennkoutodokedeikasika.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 497 chars of text"
+          "detail": "validation failed: no validation terms found in 1536 chars of text"
         },
         {
           "filename": "sinseisyokisairei.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1340 chars of text"
+          "detail": "validation failed: no validation terms found in 1340 chars of text"
         },
         {
-          "filename": "yuusou-tennsyutu.pdf",
-          "status": "ok",
-          "detail": "matched: 転入届"
+          "filename": "example.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 956 chars of text"
+        },
+        {
+          "filename": "kihennkoutodokedeikasika.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 497 chars of text"
         }
       ]
     },
@@ -427,29 +427,29 @@
       "name_en": "Omiya Ward",
       "files": [
         {
+          "filename": "yuusou-tennsyutu.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
           "filename": "10tenpu.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1536 chars of text"
-        },
-        {
-          "filename": "example.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 956 chars of text"
-        },
-        {
-          "filename": "kihennkoutodokedeikasika.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 497 chars of text"
+          "detail": "validation failed: no validation terms found in 1536 chars of text"
         },
         {
           "filename": "sinseisyokisairei.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1340 chars of text"
+          "detail": "validation failed: no validation terms found in 1340 chars of text"
         },
         {
-          "filename": "yuusou-tennsyutu.pdf",
-          "status": "ok",
-          "detail": "matched: 転入届"
+          "filename": "example.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 956 chars of text"
+        },
+        {
+          "filename": "kihennkoutodokedeikasika.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 497 chars of text"
         }
       ]
     },
@@ -457,29 +457,29 @@
       "name_en": "Sakura Ward",
       "files": [
         {
+          "filename": "yuusou-tennsyutu.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
           "filename": "10tenpu.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1536 chars of text"
-        },
-        {
-          "filename": "example.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 956 chars of text"
-        },
-        {
-          "filename": "kihennkoutodokedeikasika.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 497 chars of text"
+          "detail": "validation failed: no validation terms found in 1536 chars of text"
         },
         {
           "filename": "sinseisyokisairei.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1340 chars of text"
+          "detail": "validation failed: no validation terms found in 1340 chars of text"
         },
         {
-          "filename": "yuusou-tennsyutu.pdf",
-          "status": "ok",
-          "detail": "matched: 転入届"
+          "filename": "example.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 956 chars of text"
+        },
+        {
+          "filename": "kihennkoutodokedeikasika.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 497 chars of text"
         }
       ]
     },
@@ -489,7 +489,87 @@
         {
           "filename": "yuusou-tennsyutu.pdf",
           "status": "ok",
-          "detail": "matched: 転入届"
+          "detail": "score=40"
+        },
+        {
+          "filename": "10tenpu.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 1536 chars of text"
+        },
+        {
+          "filename": "sinseisyokisairei.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 1340 chars of text"
+        },
+        {
+          "filename": "example.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 956 chars of text"
+        },
+        {
+          "filename": "kihennkoutodokedeikasika.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 497 chars of text"
+        }
+      ]
+    },
+    "soka": {
+      "name_en": "Soka City",
+      "files": [
+        {
+          "filename": "202512yuusoutennshutuyoushiki.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
+          "filename": "202601yuusoutennshutukinyuurei.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
+          "filename": "gijyutsusyakakikae05-13.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 352 chars of text"
+        },
+        {
+          "filename": "gijyutsusyahenkou05-14.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 318 chars of text"
+        },
+        {
+          "filename": "massyousinsei.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 309 chars of text"
+        }
+      ]
+    },
+    "tokorozawa": {
+      "name_en": "Tokorozawa City",
+      "files": [
+        {
+          "filename": "5tennsyutuyuusou.pdf",
+          "status": "ok",
+          "detail": "score=45"
+        },
+        {
+          "filename": "6tennsyutumihon.pdf",
+          "status": "ok",
+          "detail": "score=45"
+        },
+        {
+          "filename": "sinseisyo.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 1431 chars of text"
+        },
+        {
+          "filename": "sinseisyo.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 1431 chars of text"
+        },
+        {
+          "filename": "sinseisyo.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 1431 chars of text"
         }
       ]
     }

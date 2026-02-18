@@ -1,10 +1,10 @@
 {
   "prefecture": "tochigi",
   "form_type": "residence",
-  "timestamp": "2026-02-18T10:53:18",
+  "timestamp": "2026-02-18T13:45:01",
   "summary": {
     "ok": 3,
-    "failed": 7,
+    "failed": 8,
     "skipped": 0
   },
   "results": {
@@ -14,27 +14,27 @@
         {
           "filename": "1694136174_doc_9_0.pdf",
           "status": "ok",
-          "detail": "matched: 住民異動届"
-        },
-        {
-          "filename": "1694137611_doc_9_0.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 905 chars of text"
+          "detail": "score=60"
         },
         {
           "filename": "1695350482_doc_5_0.pdf",
           "status": "ok",
-          "detail": "matched: 住民異動届"
-        },
-        {
-          "filename": "1695351032_doc_5_0.pdf",
-          "status": "failed",
-          "detail": "no validation terms found in 3693 chars of text"
+          "detail": "score=40"
         },
         {
           "filename": "1709685081_doc_59_0.pdf",
           "status": "ok",
-          "detail": "matched: 住民異動届"
+          "detail": "score=40"
+        },
+        {
+          "filename": "1694137611_doc_9_0.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 905 chars of text"
+        },
+        {
+          "filename": "1695351032_doc_5_0.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 3693 chars of text"
         }
       ]
     },
@@ -42,29 +42,39 @@
       "name_en": "Tochigi City",
       "files": [
         {
-          "filename": "48794.pdf",
+          "filename": "envelope.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 2403 chars of text"
+          "detail": "validation failed: no validation terms found in 1678 chars of text"
         },
         {
-          "filename": "57519.pdf",
+          "filename": "48794.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1752 chars of text"
+          "detail": "validation failed: no validation terms found in 2403 chars of text"
         },
         {
           "filename": "66107.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 2295 chars of text"
+          "detail": "validation failed: no validation terms found in 2295 chars of text"
         },
         {
           "filename": "66108.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1352 chars of text"
+          "detail": "validation failed: no validation terms found in 1352 chars of text"
         },
         {
-          "filename": "envelope.pdf",
+          "filename": "57519.pdf",
           "status": "failed",
-          "detail": "no validation terms found in 1678 chars of text"
+          "detail": "validation failed: no validation terms found in 1752 chars of text"
+        }
+      ]
+    },
+    "utsunomiya": {
+      "name_en": "Utsunomiya City",
+      "files": [
+        {
+          "filename": "(none)",
+          "status": "failed",
+          "detail": "no candidates found"
         }
       ]
     }
