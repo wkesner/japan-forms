@@ -8856,5 +8856,995 @@
     "en": "Cash card (ATM card) / Passbook / bankbook",
     "type": "fragment",
     "note": "Matched: キャッシュカード, 通帳"
+  },
+  "c9dfff5b239963289f648490214f3085": {
+    "en": "Moving out / Special provision",
+    "type": "fragment",
+    "note": "Matched: 転出, 特例"
+  },
+  "672db6d5fc968b0995ca24ea278a5801": {
+    "en": "Moving out / . / Special provision",
+    "type": "fragment",
+    "note": "Matched: 転出, す。, 特例"
+  },
+  "aeed1fe06f72b10a6ab7202459b5faa6": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "f575103f43d095a13ad14d9b2c5793ef": {
+    "en": "Applicant / Person filing the form",
+    "type": "fragment",
+    "note": "Matched: 届出人"
+  },
+  "ada1a177cb22f5227fd02df3c91a4251": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "e5b7416f1cd01adffac52c2fb025f016": {
+    "en": "Prefecture",
+    "type": "dictionary",
+    "note": "Select your prefecture from the dropdown or write the full prefecture name",
+    "field_id": "auto_e5b7416f"
+  },
+  "aa00fcf4fc48f55cb20c68671398a995": {
+    "en": "New address / Address",
+    "type": "fragment",
+    "note": "Matched: 新住所, 住所"
+  },
+  "f9a6acce57265c8f3730f69213a3a9d1": {
+    "en": "Yes / No",
+    "type": "fragment",
+    "note": "Matched: 有 ・ 無"
+  },
+  "0d35b2e61cd7328fe70572dae6bf4051": {
+    "en": "Identity verification documents / Cannot/Not possible / Cannot/Not possible",
+    "type": "fragment",
+    "note": "Matched: 本人確認書類, できません。, できません"
+  },
+  "b48084908b66a1151c27e7de2b773627": {
+    "en": "National Health Insurance / Yes/There is / Long-term Care Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, あります。, 介護保険"
+  },
+  "81afa08c3ad807edc0f70adb2e42c99a": {
+    "en": "Cannot/Not possible / Cannot/Not possible / Letter of proxy / Power of attorney",
+    "type": "fragment",
+    "note": "Matched: できません。, できません, 委任状"
+  },
+  "049fdd576a6670c406bdfdfc7be81252": {
+    "en": "Moving out / Special provision / Person who",
+    "type": "fragment",
+    "note": "Matched: 転出, 特例, る方"
+  },
+  "992db7015a2b21ef3b6e7d40a02bf1fd": {
+    "en": "My Number Card / My Number Card / My Number",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, マイナン"
+  },
+  "e9f6a83c7d68184700fd03cb415cdcb5": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "b04da19ed3e49301afcb51fb3a972f3b": {
+    "en": "Moving in (from another municipality or abroad) / To do/perform / From",
+    "type": "fragment",
+    "note": "Matched: 転入, する, から"
+  },
+  "6af8d4a6c3cc19a8c288ffe06020d716": {
+    "en": "Moving out / From",
+    "type": "fragment",
+    "note": "Matched: 転出, から"
+  },
+  "936da1e66c48bf4d406c545c19d05a6a": {
+    "en": "My Number Card / My Number Card / My Number",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, マイナン"
+  },
+  "eb612c7927a23c2788bf427712727e64": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "40355f87b1423d19e85040881cce9d4c": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "69d59528ca19fbcdf90250644aeccebb": {
+    "en": "Certificate of Moving Out / Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 転出"
+  },
+  "6ad5b08968cf80eed280d35442d11193": {
+    "en": "My Number Card / My Number Card / My Number",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, マイナン"
+  },
+  "ab642cec0c0b54d0e6d0d99532ded434": {
+    "en": ". / To do/perform / Person who",
+    "type": "fragment",
+    "note": "Matched: す。, する, る方"
+  },
+  "6581d28e3b94fd67b1f2646d792006ce": {
+    "en": "Moving out / Special provision",
+    "type": "fragment",
+    "note": "Matched: 転出, 特例"
+  },
+  "a8fd1804efbfc40fe0ba18d9a5bc5626": {
+    "en": "Moving out / Special provision",
+    "type": "fragment",
+    "note": "Matched: 転出, 特例"
+  },
+  "b01c46f0bc92060aa6092abba3257b51": {
+    "en": "Identity verification documents / Applicant / Person filing the form / Copy",
+    "type": "fragment",
+    "note": "Matched: 本人確認書類, 届出人, 写し"
+  },
+  "2503351c1c67475bd45f5f83923de04f": {
+    "en": "Passport",
+    "type": "fragment",
+    "note": "Matched: パスポート"
+  },
+  "aebf9c91974ac00477bc8cf62183193d": {
+    "en": "Identity verification documents / Copy",
+    "type": "fragment",
+    "note": "Matched: 本人確認書類, 写し"
+  },
+  "2ab2b44e77634a8f3e9930cec4e4bacd": {
+    "en": "Long-term Care Insurance / Health insurance card / Pension",
+    "type": "fragment",
+    "note": "Matched: 介護保険, 保険証, 年金"
+  },
+  "c44087217b154e1e8afcf51fdfa95150": {
+    "en": "Certificate of Moving Out / Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 転出"
+  },
+  "58129ff4be21489dcffa669291589738": {
+    "en": "Moving out / Special provision",
+    "type": "fragment",
+    "note": "Matched: 転出, 特例"
+  },
+  "8691b7d5ba8c6cc93e589fab298930ee": {
+    "en": "Postage stamp",
+    "type": "fragment",
+    "note": "Matched: 切手"
+  },
+  "154d83176b1d4e0da3ccd6f7ce821fd9": {
+    "en": "National Health Insurance / Long-term Care Insurance / Health insurance card",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, 介護保険, 保険証"
+  },
+  "b932bc4a2ed3701d90957ded1c70c764": {
+    "en": "Moving out / To do/perform",
+    "type": "fragment",
+    "note": "Matched: 転出, する"
+  },
+  "9128789bff5f91da30adfed24699a496": {
+    "en": "My Number Card / My Number Card / My Number",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, マイナン"
+  },
+  "de98351837948c5cd7040cce1f9c988f": {
+    "en": "My Number Card / My Number Card / My Number",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, マイナン"
+  },
+  "9de5ca193ac395736efbaad03cd8056a": {
+    "en": "Certificate of Moving Out / Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 転出"
+  },
+  "bcca4871afa2b06a706ca5260f5a9393": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "240c22e08f65767ebe1ce317bb750a63": {
+    "en": "Certificate of Moving Out / My Number / Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, マイナン, 転出"
+  },
+  "4f4a33c485bed038182428daf956e417": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "0995819e04ccd1db016dca6b9623f9d8": {
+    "en": "Date of birth / Full name / Moving out",
+    "type": "fragment",
+    "note": "Matched: 生年月日, 氏名, 転出"
+  },
+  "3d107f974745ac47f10094d877c8fa68": {
+    "en": "Western calendar",
+    "type": "fragment",
+    "note": "Matched: 西暦"
+  },
+  "d68709fe7def37bc66ae6255ad3a178c": {
+    "en": "Date of move / change / Address / To do/perform",
+    "type": "fragment",
+    "note": "Matched: 異動日, 住所, する"
+  },
+  "3164afd3473e6c9b6c7d4920e1731162": {
+    "en": "Moving in (from another municipality or abroad) / From",
+    "type": "fragment",
+    "note": "Matched: 転入, から"
+  },
+  "b1c3f7191c0e3e71276e9a5c42c0e976": {
+    "en": "Moving in (from another municipality or abroad)",
+    "type": "fragment",
+    "note": "Matched: 転入"
+  },
+  "8c1f583cc32d6dc2d41da5ab56218f47": {
+    "en": "My Number Card",
+    "type": "fragment",
+    "note": "Matched: バーカード"
+  },
+  "ecca51e6ccf41d4fb2c12e9e0d08c93c": {
+    "en": "Date of filing",
+    "type": "fragment",
+    "note": "Matched: 届出日"
+  },
+  "2da187330a30d7a24dbc93c3fa81ba88": {
+    "en": "My Number",
+    "type": "fragment",
+    "note": "Matched: マイナン"
+  },
+  "4d540c42c032144ee0e544e67b4c78cb": {
+    "en": "Moving out / Mobile phone",
+    "type": "fragment",
+    "note": "Matched: 転出, 携帯"
+  },
+  "f7c21c3a2528c8b9046e0f42c90131d1": {
+    "en": "Driver's license / Address / Front side",
+    "type": "fragment",
+    "note": "Matched: 運転免許証, 住所, 表面"
+  },
+  "cb5bbaab65d29c25d14251301a0f63d0": {
+    "en": "My Number Card / My Number Card / My Number",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, マイナン"
+  },
+  "b270d0350861fc594ef0afd3205548a3": {
+    "en": "Certificate of Moving Out / Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 転出"
+  },
+  "988e4fbee01d84956df979e74c097195": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "eee277c66e2bf1b6ad98991ea4a7bb61": {
+    "en": "Identity verification documents / Copy",
+    "type": "fragment",
+    "note": "Matched: 本人確認書類, 写し"
+  },
+  "03403fcba625f0fdafe069005b5c425c": {
+    "en": "Postage stamp",
+    "type": "fragment",
+    "note": "Matched: 切手"
+  },
+  "ad98264cf39e140a08fb41285c346ff0": {
+    "en": "Moving out / . / Special provision",
+    "type": "fragment",
+    "note": "Matched: 転出, す。, 特例"
+  },
+  "faee0c36e8641913b5ac0b1da1e5442c": {
+    "en": "Head of household",
+    "type": "fragment",
+    "note": "Matched: 世帯主"
+  },
+  "fb3b34e64c2775b4608f9180b6ff4066": {
+    "en": "Prefecture",
+    "type": "dictionary",
+    "note": "Select your prefecture (e.g., Tokyo-to, Osaka-fu, Kyoto-fu, or other -ken)",
+    "field_id": "auto_fb3b34e6"
+  },
+  "3413c180d47cae53ff435321e846fc58": {
+    "en": "Phonetic reading (katakana) / Full name",
+    "type": "fragment",
+    "note": "Matched: フリガナ, 氏名"
+  },
+  "64857c316c8087d6f34ebb9022ec6feb": {
+    "en": "Relationship to head of household",
+    "type": "fragment",
+    "note": "Matched: 続柄"
+  },
+  "3a849c9eb8983385da4c7ecded4b6fa6": {
+    "en": "Western calendar",
+    "type": "fragment",
+    "note": "Matched: 西暦"
+  },
+  "ee2ee9a87a5e57e11413257da84349cf": {
+    "en": "Head of household / Moving out / To do/perform",
+    "type": "fragment",
+    "note": "Matched: 世帯主, 転出, する"
+  },
+  "93f03ab07f3785d0b55520b74b407f08": {
+    "en": "Head of household / .",
+    "type": "fragment",
+    "note": "Matched: 世帯主, す。"
+  },
+  "80cfd98869a7cec6b6d93745db6b5e9d": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "a631f2359b2b91e3f6140842c2dcd1c7": {
+    "en": "My Number Card / My Number Card / My Number",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, マイナン"
+  },
+  "effda4b1b6400d4e868db3ce6f3058f5": {
+    "en": "Yes/There is / Moving out / .",
+    "type": "fragment",
+    "note": "Matched: あります。, 転出, す。"
+  },
+  "8867328e4631050a85223077775db221": {
+    "en": "Certificate of Moving Out / Moving out / To do/perform",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 転出, する"
+  },
+  "e60cb5a195ad46994be05963fdaaf326": {
+    "en": "Certificate of Moving Out / Moving in (from another municipality or abroad) / Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 転入, 転出"
+  },
+  "30b8f274573e187e73a3fee62d0a220f": {
+    "en": "Certificate of Moving Out / Moving out / .",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 転出, す。"
+  },
+  "9b6a3840e1cec85e8c30bf7f9cfc5189": {
+    "en": "Moving out / Special provision",
+    "type": "fragment",
+    "note": "Matched: 転出, 特例"
+  },
+  "280c0cafb30fe17d16803e262df31360": {
+    "en": "Cannot/Not possible / Cannot/Not possible / Date of move / change",
+    "type": "fragment",
+    "note": "Matched: できません。, できません, 異動日"
+  },
+  "4f1246af78c89ce06bef0cb924e4c088": {
+    "en": "Certificate of Moving Out / Moving out / .",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 転出, す。"
+  },
+  "bb38d1e4bdedb62bd891e611a641afbd": {
+    "en": "Date of move / change / Address / Moving in (from another municipality or abroad)",
+    "type": "fragment",
+    "note": "Matched: 異動日, 住所, 転入"
+  },
+  "f57440bc8a4f88e975460547abcb525b": {
+    "en": "Please proceed with / Address / Moving in (from another municipality or abroad)",
+    "type": "fragment",
+    "note": "Matched: を行ってください。, 住所, 転入"
+  },
+  "b9de7845ee4973e00c471ae42f9e69bc": {
+    "en": "My Number Card / My Number Card / My Number",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, マイナン"
+  },
+  "035463c317eca93ee723073f0ca1bf3e": {
+    "en": "Certificate of Moving Out / Moving out / Special provision",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 転出, 特例"
+  },
+  "56b688824de185307c9a967c72d933e5": {
+    "en": "My Number Card / My Number Card / My Number",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, マイナン"
+  },
+  "e4130d79b6ffb0dd61fc20a34dd01698": {
+    "en": "My Number Card / My Number Card / My Number Card",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカードの, マイナンバーカード, バーカード"
+  },
+  "86c4e0bcc36ec430b2990e5e6ab524cd": {
+    "en": "My Number Card / My Number Card / PIN (4-digit personal identification number)",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, 暗証番号"
+  },
+  "c80d81db9b52e51cbcaad18683bdfea1": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "481431d722a406b14d926de4609c6153": {
+    "en": "New address / Address / Moving out",
+    "type": "fragment",
+    "note": "Matched: 新住所, 住所, 転出"
+  },
+  "da3d77d1d7fe74c0f79434157038ef58": {
+    "en": "Applicant / Person filing the form / Moving out",
+    "type": "fragment",
+    "note": "Matched: 届出人, 転出"
+  },
+  "93d4c039e861db7b4feea1964dcd844b": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "ea5f3cb0739cbb318db724e87bd2dfad": {
+    "en": "Head of household",
+    "type": "fragment",
+    "note": "Matched: 世帯主"
+  },
+  "f6830c38000ed478773dbab1c5fc5a34": {
+    "en": "Building name / room number",
+    "type": "fragment",
+    "note": "Matched: 方書"
+  },
+  "36c7e90ce7723f997da5577d373e14e8": {
+    "en": "Head of household",
+    "type": "fragment",
+    "note": "Matched: 世帯主"
+  },
+  "d3fe4a03f63c63a6858f953a5c8a0818": {
+    "en": "Relationship to head of household",
+    "type": "dictionary",
+    "note": "Write your relationship to the head of household (e.g., 本人 for self, 妻 for wife, 子 for child)",
+    "field_id": "auto_d3fe4a03"
+  },
+  "b47839c685138a2d2e21327186b78434": {
+    "en": "Applicant / Person filing the form / Moving out / To do/perform",
+    "type": "fragment",
+    "note": "Matched: 届出人, 転出, する"
+  },
+  "eca762f120b6fb844002f5bf92f53487": {
+    "en": "Moving out / Special provision / From",
+    "type": "fragment",
+    "note": "Matched: 転出, 特例, から"
+  },
+  "f42a710579717fb066b8acb71eb77b78": {
+    "en": "Moving out / From",
+    "type": "fragment",
+    "note": "Matched: 転出, から"
+  },
+  "40d74cf21f2fb03a761be37391013616": {
+    "en": ". / To do/perform",
+    "type": "fragment",
+    "note": "Matched: す。, する"
+  },
+  "cf54ee170065a8b4d24ad8973efce0e9": {
+    "en": "Moving out / Special provision / To do/perform",
+    "type": "fragment",
+    "note": "Matched: 転出, 特例, する"
+  },
+  "afd89dcca50cb926925176aca4ed0086": {
+    "en": "My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 個人番号"
+  },
+  "68c56f5c54ab98b4addf48aa926dcfc9": {
+    "en": "My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 個人番号"
+  },
+  "1c07e5861cdeee29dcbdbad9c2c7a620": {
+    "en": "Copy",
+    "type": "fragment",
+    "note": "Matched: 写し"
+  },
+  "5ae5f4e91f05738b351614345a806045": {
+    "en": "Moving in (from another municipality or abroad)",
+    "type": "fragment",
+    "note": "Matched: 転入"
+  },
+  "6ca7a5767207755ffcd5159ca7bbd074": {
+    "en": "PIN (4-digit personal identification number) / Data entry / .",
+    "type": "fragment",
+    "note": "Matched: 暗証番号, 入力, す。"
+  },
+  "509eed473d9173c8316cb9a7ea8ae759": {
+    "en": "Cannot/Not possible / Cannot/Not possible / Moving in (from another municipality or abroad)",
+    "type": "fragment",
+    "note": "Matched: できません。, できません, 転入"
+  },
+  "4d8679758bb53a5af2b36eb1750373d7": {
+    "en": "Identity verification documents / Driver's license / My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 本人確認書類, 運転免許証, 個人番号"
+  },
+  "2403fd5a0e8148b1a585ca6744b46456": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "c49e4f5d2db73307ebff29a29eadf77b": {
+    "en": "Head of household / From",
+    "type": "fragment",
+    "note": "Matched: 世帯主, から"
+  },
+  "06966aefcc291a04da00dc80752880a9": {
+    "en": "Head of household",
+    "type": "fragment",
+    "note": "Matched: 世帯主"
+  },
+  "0a7d8304be30f269fbeeae748a3d14fc": {
+    "en": "Building name / room number",
+    "type": "fragment",
+    "note": "Matched: 方書"
+  },
+  "3d6825c41b9051fbfb7fa210e54ab50a": {
+    "en": "Full name / Moving out / To do/perform",
+    "type": "fragment",
+    "note": "Matched: 氏名, 転出, する"
+  },
+  "583a2dae34e415c5a532b9a077759c09": {
+    "en": "Moving out / .",
+    "type": "fragment",
+    "note": "Matched: 転出, す。"
+  },
+  "2f9e702a6b0f72dd47deb7365a3e7f61": {
+    "en": "Certificate of Moving Out / Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 転出"
+  },
+  "6a01e184ca3f959ffbfa6f20c950fccd": {
+    "en": "Certificate of Moving Out / Moving out / Person who",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 転出, る方"
+  },
+  "85e1224bbb9c3dc6d5818605d71691a2": {
+    "en": "My Number Card / My Number Card / My Number Card",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカードを, マイナンバーカード, バーカード"
+  },
+  "a63ba973f7f50c72e7b9da9306c25742": {
+    "en": "Certificate of Moving Out / Moving out / .",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 転出, す。"
+  },
+  "26e75bbda7cedfbb975c8c48c4514228": {
+    "en": "Moving out / Special provision",
+    "type": "fragment",
+    "note": "Matched: 転出, 特例"
+  },
+  "b12be99d71c371e082d77851b0028c7e": {
+    "en": "PIN (4-digit personal identification number) / Moving in (from another municipality or abroad) / .",
+    "type": "fragment",
+    "note": "Matched: 暗証番号, 転入, す。"
+  },
+  "89b2045492ee5e9a04f2379faaa23ee1": {
+    "en": "Identity verification documents / .",
+    "type": "fragment",
+    "note": "Matched: 本人確認書類, す。"
+  },
+  "82b9060f8487346e2aea847bb245f6b8": {
+    "en": "My Number Card / Residence Card / My Number Card",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, 在留カード, バーカード"
+  },
+  "cd247fcafc9c4c16d3db7dad2724c111": {
+    "en": "Pension / Qualification",
+    "type": "fragment",
+    "note": "Matched: 年金, 資格"
+  },
+  "2180f937ff618b4e6a21847a19425f34": {
+    "en": "Moving out / . / Postage stamp",
+    "type": "fragment",
+    "note": "Matched: 転出, す。, 切手"
+  },
+  "03ac3a8c5324701616353003fb5ee5c5": {
+    "en": "New address / Previous address / Address",
+    "type": "fragment",
+    "note": "Matched: 新住所, 旧住所, 住所"
+  },
+  "df47b99e0f8cabc5241705570e72a54e": {
+    "en": "Postage stamp",
+    "type": "fragment",
+    "note": "Matched: 切手"
+  },
+  "fa648a7f2c5355854970ffa2162957e5": {
+    "en": "National Health Insurance / Qualification",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, 資格"
+  },
+  "383be81a1c1aa9d5d8fb220850b9b8a8": {
+    "en": "My Number Card / Cannot/Not possible / My Number Card",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, できません。, バーカード"
+  },
+  "10c9db63796f279bdb08133d498b10e8": {
+    "en": "Certificate of Moving Out / Moving out / .",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 転出, す。"
+  },
+  "5ceac5f0ea024ab9d9986e7aba91bd08": {
+    "en": "Building name / room number",
+    "type": "fragment",
+    "note": "Matched: 方書"
+  },
+  "8881f71a6ff10a4c034cfba6bc4f1ba9": {
+    "en": "Seal (inkan / hanko)",
+    "type": "fragment",
+    "note": "Matched: 印"
+  },
+  "499d5355534ea5bc98a4bd0f4c0995a4": {
+    "en": "Seal (inkan / hanko)",
+    "type": "fragment",
+    "note": "Matched: 印"
+  },
+  "8b85cd9e916e49cafb5978102b27cbfd": {
+    "en": "Address",
+    "type": "fragment",
+    "note": "Matched: 住所"
+  },
+  "b38cdf332035ec66b0024af678e99727": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "45124f62e8c699d9a9a75a071f7d6a33": {
+    "en": "Head of household name / Head of household / Full name",
+    "type": "fragment",
+    "note": "Matched: 世帯主氏名, 世帯主, 氏名"
+  },
+  "24a7e23c98a56320300bed835fd8e41d": {
+    "en": "Phonetic reading (katakana)",
+    "type": "fragment",
+    "note": "Matched: フリガナ"
+  },
+  "68c88e9956ffc5a527c61852733b48c4": {
+    "en": "Moving out / To do/perform / Person who",
+    "type": "fragment",
+    "note": "Matched: 転出, する, る方"
+  },
+  "62a0ca370bb246c2a156e1885be1a997": {
+    "en": "My Number Card",
+    "type": "dictionary",
+    "note": "Plastic IC card with your 12-digit Individual Number. Can be used as primary ID. Apply at your ward office after receiving the notification letter.",
+    "field_id": "my_number_card"
+  },
+  "e37755f1bad701bf1388a1076467b77e": {
+    "en": "Basic Resident Registration Card",
+    "type": "dictionary",
+    "note": "This refers to the old resident card system discontinued in 2015. If you have one, you may need to present it or indicate possession on the form.",
+    "field_id": "auto_e37755f1"
+  },
+  "ae2f1f7f62fee7b33f687a8d8f299bb0": {
+    "en": "Male ・ Female",
+    "type": "fragment",
+    "note": "Matched: 男 ・ 女"
+  },
+  "c161f09e69d8827edaaa825a83012d6c": {
+    "en": "My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 個人番号"
+  },
+  "b6b60c7ccca72d770f636f7cc83c40e2": {
+    "en": "Certificate of Moving Out / Moving out / .",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 転出, す。"
+  },
+  "f4d6ace7125bac413f30a8d9bfdcf6bf": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "da4d6a65e9c6983e0e6be7085f4173fd": {
+    "en": "Certificate of Moving Out / Moving out / .",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 転出, す。"
+  },
+  "a20a22b93bac35a0646c50b754c52669": {
+    "en": "Moving out / To do/perform",
+    "type": "fragment",
+    "note": "Matched: 転出, する"
+  },
+  "56a5cceefaa47baea074aea34afda6e9": {
+    "en": "Cannot/Not possible / Cannot/Not possible / My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: できません。, できません, 個人番号"
+  },
+  "077157bfeb8ebe36b2673bff3a02dcdd": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "2dc2acce22821b634a4ca4e9e42e842c": {
+    "en": "Moving out / To do/perform / Person who",
+    "type": "fragment",
+    "note": "Matched: 転出, する, る方"
+  },
+  "67677687a7117ccf13c7c3a992ccf4bc": {
+    "en": "Phone number",
+    "type": "fragment",
+    "note": "Matched: 電話番号"
+  },
+  "3433919b87ed5ddcaa008c3b36a8b0f5": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "cfa061a367eff6a0e1fc0425b4761f7d": {
+    "en": "Driver's license / Passport / My Number (Individual Number)",
+    "type": "fragment",
+    "note": "Matched: 運転免許証, パスポート, 個人番号"
+  },
+  "06e8f788330884fd9465770c38a3547f": {
+    "en": "Identity verification documents",
+    "type": "fragment",
+    "note": "Matched: 本人確認書類"
+  },
+  "3433b56e28b0381af7257d2cb00e2139": {
+    "en": "Health insurance card / Passbook / bankbook / Pension",
+    "type": "fragment",
+    "note": "Matched: 保険証, 通帳, 年金"
+  },
+  "88603b4c3f65c995e879a688879254a1": {
+    "en": "Certificate of Moving Out / Full name / Address",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 氏名, 住所"
+  },
+  "d7f236c246bb26768e1f6591844b7ebf": {
+    "en": "Postage stamp",
+    "type": "fragment",
+    "note": "Matched: 切手"
+  },
+  "b07d5625b8cecc6a009e7814f2574fff": {
+    "en": "Moving out / To do/perform",
+    "type": "fragment",
+    "note": "Matched: 転出, する"
+  },
+  "99b421cdeb994e8a2fed47a08975820c": {
+    "en": "Seal (inkan / hanko)",
+    "type": "fragment",
+    "note": "Matched: 印"
+  },
+  "c78645dce48e117d78cf9824e39ef1f6": {
+    "en": "Phonetic reading (katakana)",
+    "type": "fragment",
+    "note": "Matched: フリガナ"
+  },
+  "83006ca4e3bfeb15353b6e345923ed4b": {
+    "en": "Male ・ Female / Head of household",
+    "type": "fragment",
+    "note": "Matched: 男 ・ 女, 世帯主"
+  },
+  "df3418b84720381fbf9570ad1cb550a4": {
+    "en": "Phonetic reading (katakana)",
+    "type": "fragment",
+    "note": "Matched: フリガナ"
+  },
+  "7a6791da77f4c890d4583efb8d029a6a": {
+    "en": "Male ・ Female",
+    "type": "fragment",
+    "note": "Matched: 男 ・ 女"
+  },
+  "4c7772d701628fdf33e48ba05610d439": {
+    "en": "Phonetic reading (katakana)",
+    "type": "fragment",
+    "note": "Matched: フリガナ"
+  },
+  "be78c3ffd12fa7553102db56ef12ac78": {
+    "en": "Male ・ Female",
+    "type": "fragment",
+    "note": "Matched: 男 ・ 女"
+  },
+  "ed6e2e3570ce0f12d05d1fcf6922f24a": {
+    "en": "My Number Card / My Number Card / My Number",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, マイナン"
+  },
+  "40264bea514f6ca98d7a27e12b1ec5ca": {
+    "en": "Head of household",
+    "type": "fragment",
+    "note": "Matched: 世 帯 主"
+  },
+  "6b8df840f19bcc2e06047066c5d96832": {
+    "en": "Full name / To do/perform",
+    "type": "fragment",
+    "note": "Matched: 氏名, する"
+  },
+  "bc13a3e8dc63f1a6e19b20b40f9a7526": {
+    "en": "Date of birth / Year Month Day",
+    "type": "fragment",
+    "note": "Matched: 生 年 月 日, 年 月 日"
+  },
+  "5542bca677569075b10b54af693abfa0": {
+    "en": "Male・Female",
+    "type": "fragment",
+    "note": "Matched: 男・女"
+  },
+  "c379412088c645d3cc4fc1bd6c62c790": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "ae9a9a16d82aae4a6ba934fcc092f0d0": {
+    "en": "Identity verification documents / Copy",
+    "type": "fragment",
+    "note": "Matched: 本人確認書類, 写し"
+  },
+  "b8a83135c2674c462268dc1e4c02bed0": {
+    "en": "My Number Card / My Number Card / Driver's license",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, 運転免許証"
+  },
+  "a2ff0222c6d0bf7b924cf09b489ebb86": {
+    "en": "National Health Insurance / National Pension / Long-term Care Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, 国民年金, 介護保険"
+  },
+  "9cc4f8ad4698780d9492ecafab44be67": {
+    "en": "My Number Card / My Number Card / My Number",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, マイナン"
+  },
+  "5c607d37640a69dc62f3f0b855aa1829": {
+    "en": "New address / Date of move / change / Address",
+    "type": "fragment",
+    "note": "Matched: 新住所, 異動日, 住所"
+  },
+  "679f08d7d00785cdae172d70fb84c8b4": {
+    "en": "Male・Female",
+    "type": "fragment",
+    "note": "Matched: 男・女"
+  },
+  "e53c344e31a2a3ddc9160cd7d5e63b75": {
+    "en": "Male・Female",
+    "type": "fragment",
+    "note": "Matched: 男・女"
+  },
+  "43aa845e1080f5f699b42f072cfada64": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "dabd72ad3b205fa3d9dd2c90da13dd2f": {
+    "en": "Certificate of Moving Out / My Number / Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, マイナン, 転出"
+  },
+  "b2a9696133e95ad687598f17b3d86e8f": {
+    "en": "Identity verification documents / Copy",
+    "type": "fragment",
+    "note": "Matched: 本人確認書類, 写し"
+  },
+  "44c046531400d025f322044afcba293c": {
+    "en": "Residence Card / Driver's license / Passport",
+    "type": "fragment",
+    "note": "Matched: 在留カード, 運転免許証, パスポート"
+  },
+  "2bf0658a6cfe7304bb1352bbd16db156": {
+    "en": "Moving out / Person who / Seal (inkan / hanko)",
+    "type": "fragment",
+    "note": "Matched: 転出, る方, 印"
+  },
+  "9730e112bde89ffbaea07112a68945d8": {
+    "en": "My Number Card / Those who have / My Number Card",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, をお持ちの方は、, バーカード"
+  },
+  "8a553484d4336f3b1bb7aba5e5a36834": {
+    "en": "National Health Insurance / National Pension / Long-term Care Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, 国民年金, 介護保険"
+  },
+  "d9198a38c4fa94af8b06c90b2d9d5f5d": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "7be20b7b80c255171d21d965968ebbdd": {
+    "en": "My Number Card / My Number Card / Driver's license",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, 運転免許証"
+  },
+  "8d389abefd44cd5a2b0e30079fc051c4": {
+    "en": "Copy",
+    "type": "fragment",
+    "note": "Matched: 写し"
+  },
+  "0dfdbe49f3fde8669be24c0edcf8918a": {
+    "en": "Certificate of Moving Out / Moving out / Postage stamp",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 転出, 切手"
+  },
+  "a78c52ac3aaf31e810079e9fc8bbf9fa": {
+    "en": "Previous address / Address / Postage stamp",
+    "type": "fragment",
+    "note": "Matched: 旧住所, 住所, 切手"
+  },
+  "96aaaa2fc7be34f1a5672b9dfc7b9cf7": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
+  },
+  "252568f3ee4b7124fd84aa46843bba7c": {
+    "en": "Previous address / Address",
+    "type": "fragment",
+    "note": "Matched: 旧住所, 住所"
+  },
+  "25d43f8a6f77e71e55bba5559c8216f9": {
+    "en": "Certificate of Moving Out / Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, 転出"
+  },
+  "f793a4742ccce9f8cd65cfd75ab69115": {
+    "en": "My Number Card / My Number Card / My Number Card",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカードを, マイナンバーカード, バーカード"
+  },
+  "ccfe79782ddc4452a9e3e8e3ff865dc9": {
+    "en": "Certificate of Moving Out / Cannot/Not possible / Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出証明書, できません, 転出"
+  },
+  "b58bcfd9bccdedc6f786bc47044f2f8a": {
+    "en": "My Number Card / My Number Card / My Number Card",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカードの, マイナンバーカード, バーカード"
+  },
+  "b218aa1ac8a287d4ce65aed000cafb4c": {
+    "en": "Previous address / Address",
+    "type": "fragment",
+    "note": "Matched: 旧住所, 住所"
+  },
+  "185ebafead342f233de5edffb7c46359": {
+    "en": "Date of birth / Full name / Gender",
+    "type": "fragment",
+    "note": "Matched: 生年月日, 氏名, 性別"
+  },
+  "f4d5d06e2de87c35f18ca2c9e2b1954e": {
+    "en": "Western calendar",
+    "type": "fragment",
+    "note": "Matched: 西暦"
+  },
+  "70cf6b45b2f4cd274a7340c9bbb448aa": {
+    "en": "New address / Address / Moving out",
+    "type": "fragment",
+    "note": "Matched: 新住所, 住所, 転出"
+  },
+  "c172437f682c6ea46d714a36cdf0a3d4": {
+    "en": "Prefecture",
+    "type": "fragment",
+    "note": "Matched: 府県"
+  },
+  "0af3efed912baa44f3570a6805c5b895": {
+    "en": "New address / Date of move / change / Address",
+    "type": "fragment",
+    "note": "Matched: 新住所, 異動日, 住所"
+  },
+  "4afa8359b6d091b97b3c0927441fea61": {
+    "en": "My Number Card / My Number Card / Cannot/Not possible",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, できません"
+  },
+  "2dc27c169bc6dd902fc91fc40deb6300": {
+    "en": "Date of filing",
+    "type": "fragment",
+    "note": "Matched: 届出日"
+  },
+  "3f55ef5034d0e3eb1d7b8c49fc01d45e": {
+    "en": "Previous address / Head of household / Address",
+    "type": "fragment",
+    "note": "Matched: 旧住所, 世帯主, 住所"
+  },
+  "9d359914f5726e62d690447cbd8db2da": {
+    "en": "Previous address / Address",
+    "type": "fragment",
+    "note": "Matched: 旧住所, 住所"
+  },
+  "300251b0a4e18141ca7a3267525a0011": {
+    "en": "Applicant / Person filing the form / Full name / Signature",
+    "type": "fragment",
+    "note": "Matched: 届出人, 氏名, 署名"
+  },
+  "dacdefc5045e13dc619163c2e8f8700e": {
+    "en": "Place of employment / Employer / Home address",
+    "type": "fragment",
+    "note": "Matched: 勤務先, 自宅"
+  },
+  "33a9752887206f4cdcb5a83e0c25c800": {
+    "en": "Moving out",
+    "type": "fragment",
+    "note": "Matched: 転出"
   }
 }

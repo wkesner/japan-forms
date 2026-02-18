@@ -1,0 +1,214 @@
+{
+  "prefecture": "saitama",
+  "form_type": "residence",
+  "summary": {
+    "generated": 23,
+    "failed": 0,
+    "skipped": 56
+  },
+  "wards": {
+    "ageo": {
+      "generated": [
+        "Ageo_Residence_111971_v1.PDF",
+        "Ageo_Residence_115523_v1.PDF",
+        "Ageo_Residence_403250_1117718_misc_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "40257.pdf",
+        "403250_1117728_misc.pdf"
+      ]
+    },
+    "asaka": {
+      "generated": [
+        "Asaka_Residence_86246_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "100437.pdf",
+        "89259.pdf",
+        "89260.pdf",
+        "89261.pdf"
+      ]
+    },
+    "kasukabe": {
+      "generated": [],
+      "failed": [],
+      "skipped": [
+        "20260105-1-soufusaki-todokede.pdf",
+        "20260105-2-soufusaki-todokede-settei.pdf",
+        "20260105-3-soufusaki-todokede-henkou.pdf",
+        "20260105-4-soufusaki-todokede-torisage.pdf",
+        "R5_Kozo2_genmenshinseisyo.pdf"
+      ]
+    },
+    "kawagoe": {
+      "generated": [
+        "Kawagoe_Residence_tenshutu_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "juminhyou.pdf",
+        "kaisou.pdf"
+      ]
+    },
+    "kawaguchi": {
+      "generated": [
+        "Kawaguchi_Residence_202103shinzyuuminnidoutodokeyuusouyou_v2.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "010507kokujijikouhennkoutodokedesyokinyuurei.pdf",
+        "R60401sp.pdf",
+        "saikensaimusyartourokusinseisyo.pdf",
+        "sizaiokiba_kizontodokedesho.pdf"
+      ]
+    },
+    "koshigaya": {
+      "generated": [
+        "Koshigaya_Residence_yuusou1_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "kumagaya": {
+      "generated": [
+        "Kumagaya_Residence_tennsyututodokeyuusou_v1.PDF",
+        "Kumagaya_Residence_tennsyututodokeyuusourei_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "kouikijuuminnhyou2026.pdf",
+        "kouikijuuminnhyoukinyuurei2026.pdf"
+      ]
+    },
+    "niiza": {
+      "generated": [
+        "Niiza_Residence_45660_v1.PDF",
+        "Niiza_Residence_45662_v1.PDF",
+        "Niiza_Residence_62624_v1.PDF",
+        "Niiza_Residence_62626_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "39395.pdf"
+      ]
+    },
+    "saitama-chuo": {
+      "generated": [
+        "SaitamaChuo_Residence_yuusou-tennsyutu_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "10tenpu.pdf",
+        "example.pdf",
+        "kihennkoutodokedeikasika.pdf",
+        "sinseisyokisairei.pdf"
+      ]
+    },
+    "saitama-iwatsuki": {
+      "generated": [
+        "SaitamaIwatsuki_Residence_yuusou-tennsyutu_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "10tenpu.pdf",
+        "example.pdf",
+        "kihennkoutodokedeikasika.pdf",
+        "sinseisyokisairei.pdf"
+      ]
+    },
+    "saitama-kita": {
+      "generated": [
+        "SaitamaKita_Residence_yuusou-tennsyutu_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "10tenpu.pdf",
+        "example.pdf",
+        "kihennkoutodokedeikasika.pdf",
+        "sinseisyokisairei.pdf"
+      ]
+    },
+    "saitama-midori": {
+      "generated": [
+        "SaitamaMidori_Residence_yuusou-tennsyutu_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "10tenpu.pdf",
+        "example.pdf",
+        "kihennkoutodokedeikasika.pdf",
+        "sinseisyokisairei.pdf"
+      ]
+    },
+    "saitama-minami": {
+      "generated": [
+        "SaitamaMinami_Residence_yuusou-tennsyutu_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "10tenpu.pdf",
+        "example.pdf",
+        "kihennkoutodokedeikasika.pdf",
+        "sinseisyokisairei.pdf"
+      ]
+    },
+    "saitama-minuma": {
+      "generated": [
+        "SaitamaMinuma_Residence_yuusou-tennsyutu_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "10tenpu.pdf",
+        "example.pdf",
+        "kihennkoutodokedeikasika.pdf",
+        "sinseisyokisairei.pdf"
+      ]
+    },
+    "saitama-nishi": {
+      "generated": [
+        "SaitamaNishi_Residence_yuusou-tennsyutu_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "10tenpu.pdf",
+        "example.pdf",
+        "kihennkoutodokedeikasika.pdf",
+        "sinseisyokisairei.pdf"
+      ]
+    },
+    "saitama-omiya": {
+      "generated": [
+        "SaitamaOmiya_Residence_yuusou-tennsyutu_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "10tenpu.pdf",
+        "example.pdf",
+        "kihennkoutodokedeikasika.pdf",
+        "sinseisyokisairei.pdf"
+      ]
+    },
+    "saitama-sakura": {
+      "generated": [
+        "SaitamaSakura_Residence_yuusou-tennsyutu_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "10tenpu.pdf",
+        "example.pdf",
+        "kihennkoutodokedeikasika.pdf",
+        "sinseisyokisairei.pdf"
+      ]
+    },
+    "saitama-urawa": {
+      "generated": [
+        "SaitamaUrawa_Residence_yuusou-tennsyutu_v2.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    }
+  },
+  "timestamp": "2026-02-18T10:51:46"
+}
