@@ -1,0 +1,43 @@
+{
+  "prefecture": "gunma",
+  "form_type": "nhi",
+  "summary": {
+    "generated": 9,
+    "failed": 0,
+    "skipped": 3
+  },
+  "wards": {
+    "isesaki": {
+      "generated": [
+        "Isesaki_NHIapp_kokuminkenkouhokennihairuhito_japanese_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "kokuminkenkouhokennihairuhito_portuguese.pdf",
+        "kokuminkenkouhokennihairuhito_spanish.pdf",
+        "kokuminkenkouhokennihairuhito_vietnamese.pdf"
+      ]
+    },
+    "maebashi": {
+      "generated": [
+        "Maebashi_NHIapp_KAKUNINSYO_KOUHUSHINSEI_v1.PDF",
+        "Maebashi_NHIapp_KOKUHOSHIKAKUTODOKE_KISAIREI_v1.PDF",
+        "Maebashi_NHIapp_YUUSOU_KOKUHOSHIKAKUTODOKE_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "takasaki": {
+      "generated": [
+        "Takasaki_NHIapp_28859_v1.PDF",
+        "Takasaki_NHIapp_28863_v1.PDF",
+        "Takasaki_NHIapp_28865_v1.PDF",
+        "Takasaki_NHIapp_32287_v1.PDF",
+        "Takasaki_NHIapp_32288_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    }
+  },
+  "timestamp": "2026-02-18T11:45:52"
+}

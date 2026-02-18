@@ -1,0 +1,87 @@
+{
+  "prefecture": "gunma",
+  "form_type": "nhi",
+  "timestamp": "2026-02-18T11:45:33",
+  "summary": {
+    "ok": 9,
+    "failed": 3,
+    "skipped": 0
+  },
+  "results": {
+    "isesaki": {
+      "name_en": "Isesaki City",
+      "files": [
+        {
+          "filename": "kokuminkenkouhokennihairuhito_japanese.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "kokuminkenkouhokennihairuhito_portuguese.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 2604 chars of text"
+        },
+        {
+          "filename": "kokuminkenkouhokennihairuhito_spanish.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 2554 chars of text"
+        },
+        {
+          "filename": "kokuminkenkouhokennihairuhito_vietnamese.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 2442 chars of text"
+        }
+      ]
+    },
+    "maebashi": {
+      "name_en": "Maebashi City",
+      "files": [
+        {
+          "filename": "KAKUNINSYO_KOUHUSHINSEI.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "KOKUHOSHIKAKUTODOKE_KISAIREI.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "YUUSOU_KOKUHOSHIKAKUTODOKE.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "takasaki": {
+      "name_en": "Takasaki City",
+      "files": [
+        {
+          "filename": "28859.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "28863.pdf",
+          "status": "ok",
+          "detail": "matched: 国保"
+        },
+        {
+          "filename": "28865.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "32287.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "32288.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "prefecture": "tochigi",
+  "form_type": "nhi",
+  "summary": {
+    "generated": 4,
+    "failed": 0,
+    "skipped": 1
+  },
+  "wards": {
+    "oyama": {
+      "generated": [
+        "Oyama_NHIapp_1689727269_doc_9_0_v1.PDF",
+        "Oyama_NHIapp_1689727273_doc_9_0_v1.PDF",
+        "Oyama_NHIapp_1695541889_doc_9_0_v1.PDF",
+        "Oyama_NHIapp_1695541893_doc_9_0_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "1694137611_doc_9_0.pdf"
+      ]
+    }
+  },
+  "timestamp": "2026-02-18T11:45:53"
+}

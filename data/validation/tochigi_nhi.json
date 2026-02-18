@@ -1,0 +1,42 @@
+{
+  "prefecture": "tochigi",
+  "form_type": "nhi",
+  "timestamp": "2026-02-18T11:45:31",
+  "summary": {
+    "ok": 4,
+    "failed": 1,
+    "skipped": 0
+  },
+  "results": {
+    "oyama": {
+      "name_en": "Oyama City",
+      "files": [
+        {
+          "filename": "1689727269_doc_9_0.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "1689727273_doc_9_0.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "1694137611_doc_9_0.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 905 chars of text"
+        },
+        {
+          "filename": "1695541889_doc_9_0.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "1695541893_doc_9_0.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    }
+  }
+}

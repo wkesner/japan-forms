@@ -1,0 +1,57 @@
+{
+  "prefecture": "ibaraki",
+  "form_type": "nhi",
+  "timestamp": "2026-02-18T11:45:30",
+  "summary": {
+    "ok": 7,
+    "failed": 0,
+    "skipped": 0
+  },
+  "results": {
+    "hitachi": {
+      "name_en": "Hitachi City",
+      "files": [
+        {
+          "filename": "saikouhu1.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "saikouhu1_rei.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "shinseisyo2.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "shinseisyo2_rei.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "tokuteisippei.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "tsukuba": {
+      "name_en": "Tsukuba City",
+      "files": [
+        {
+          "filename": "kaigairyouyouhi_checkrist3.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "koujosyoumeisinnseisyo.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    }
+  }
+}

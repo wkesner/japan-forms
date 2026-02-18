@@ -13749,5 +13749,345 @@
     "en": "Passport / Other",
     "type": "fragment",
     "note": "Matched: パスポート, その他"
+  },
+  "cb856ba48629c371227eb1f8a25d4051": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "673fd4abf60d5b2c9e0647d6c2d7eea7": {
+    "en": "Other ( / Other",
+    "type": "fragment",
+    "note": "Matched: その他（, その他"
+  },
+  "d93b19a4ef74c8a64d2814baee15279c": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "35356c173b403436abbb7fac6bc9e7c2": {
+    "en": "My Number Card / My Number Card / Driver's license",
+    "type": "fragment",
+    "note": "Matched: マイナンバーカード, バーカード, 運転免許証"
+  },
+  "c44e9b569814ada2ba7970b7b8d0d0a0": {
+    "en": "Western calendar",
+    "type": "fragment",
+    "note": "Matched: 西暦"
+  },
+  "2232a37475b4c5c88ff489ba3886e1ae": {
+    "en": "Western calendar",
+    "type": "fragment",
+    "note": "Matched: 西暦"
+  },
+  "5ba0b733092c57c5133eaf0631539df8": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "d480c2b6a936027422805a2f7072eb61": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "b4534186eb9ed924145cb0183af056d0": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "b54641a3c0aba5a0d39bb0baf1df5cf1": {
+    "en": "National Health Insurance / Head of household",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, 世帯主"
+  },
+  "759cc66a05fd7f9c1b8df36e034679a6": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "31fbafc8626b8a10955bfa0157f0f1e6": {
+    "en": "National Health Insurance / Pension / From",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, 年金, から"
+  },
+  "71765cff19c97c4145b57b47d9aff26f": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "d8346495fef7005808654f49d9b2fa87": {
+    "en": ". / Pension / From",
+    "type": "fragment",
+    "note": "Matched: す。, 年金, から"
+  },
+  "6a747744e8cad5bdf46e049f43a76444": {
+    "en": ". / Pension",
+    "type": "fragment",
+    "note": "Matched: す。, 年金"
+  },
+  "0ba145da8737338c4b96a1598ad62149": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "fa6475da1e2b5d74cc27245106298fa5": {
+    "en": "Pension",
+    "type": "fragment",
+    "note": "Matched: 年金"
+  },
+  "27dadad784cbbaedd1710c2dfe1f60c9": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "edc0817dc260bbecff73bffdedc425f3": {
+    "en": "National Health Insurance / . / Change",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, す。, 変更"
+  },
+  "2c748378bff2293eeff8013bc2714119": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "79dab0a3f54efaea83d97480ba668731": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "0d9a96daca553bada2c2da07ee234b01": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "8583dfa2ae49c74950b0037600a1fc4b": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "76e32895858f0bb6625db45e17cb78c8": {
+    "en": ". / Person who",
+    "type": "fragment",
+    "note": "Matched: す。, る方"
+  },
+  "e6db839950324df545e62758ea854f0e": {
+    "en": "Cannot/Not possible / .",
+    "type": "fragment",
+    "note": "Matched: できません, す。"
+  },
+  "aa2ce8fb7b629ed4dfdf9bf45d1efd2e": {
+    "en": ". / Special provision",
+    "type": "fragment",
+    "note": "Matched: す。, 特例"
+  },
+  "459b5eb7d76339e5199b7c14d1d8115d": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "984e410ed4ef08cff91aa42246f41a8c": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "426af86de659f63419d75fde812764a3": {
+    "en": "National Health Insurance / .",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, す。"
+  },
+  "b70cd5e6742d0ee16f59997060770476": {
+    "en": "Late-stage elderly (75+) / .",
+    "type": "fragment",
+    "note": "Matched: 後期高齢者, す。"
+  },
+  "8ead5b96d9102e4fce522d6264e02ed9": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "e5248d80d3bd275942d1180aa58dee98": {
+    "en": "No./Number",
+    "type": "fragment",
+    "note": "Matched: だい"
+  },
+  "5ab56c615421ea9f45c314c508bf4813": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "4f4c30bf672845218d3580c2132a5fb8": {
+    "en": "Processing / No./Number",
+    "type": "fragment",
+    "note": "Matched: 処理, だい"
+  },
+  "5ba7ce5334c493bc06bcb9f368f18327": {
+    "en": ". / Pension / From",
+    "type": "fragment",
+    "note": "Matched: す。, 年金, から"
+  },
+  "ef9eeae4a2bf18808d814fab01b31808": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "7d4a0c8a65cb2808b36dbb2f739adf66": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "b5f612f686c4dc16f75c9e00295155b6": {
+    "en": "To do/perform",
+    "type": "fragment",
+    "note": "Matched: する"
+  },
+  "1743dd86ca6e7edc3a83723425359e90": {
+    "en": "National Health Insurance / Head of household / Full name",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, 世帯主, 氏名"
+  },
+  "ad36b49fcebeafb63fe7e60f3b03337d": {
+    "en": "Head of household",
+    "type": "fragment",
+    "note": "Matched: 世帯主"
+  },
+  "83a1f9b07df7886c9611c8fdd2508ce8": {
+    "en": "National Health Insurance / . / Pension",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, す。, 年金"
+  },
+  "70fd25a75dc64302b6725901368f6652": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "7bfb938a2432208ea2095ba54c35f9d1": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "4bfe662b302245d081f8a47b50705042": {
+    "en": "National Health Insurance / Pension",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, 年金"
+  },
+  "a8adc7eedb0281be885f2f39f1aaa4cb": {
+    "en": "Head of household / Address / .",
+    "type": "fragment",
+    "note": "Matched: 世帯主, 住所, す。"
+  },
+  "90a6023c814ad912e02008aa871a39c4": {
+    "en": "National Health Insurance / Head of household / Person who",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, 世帯主, る方"
+  },
+  "e399433d507c3d8cc236d1a31e3ff39f": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "7e986ea7d1256bb938ad062932ab37f0": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "f747159f28b77bba8d45c63b9e74de53": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "a9e05f42e6132f87dd0ebe7e2794ba3d": {
+    "en": ".",
+    "type": "fragment",
+    "note": "Matched: す。"
+  },
+  "8390490bf3038901718c4cc60d464d07": {
+    "en": ". / Pension / From",
+    "type": "fragment",
+    "note": "Matched: す。, 年金, から"
+  },
+  "51c05f6d097778ba8ed34e8c93650490": {
+    "en": "National Health Insurance / Address / .",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, 住所, す。"
+  },
+  "e4b59d774513feed70902a1e93b9968d": {
+    "en": ". / Pension / To do/perform",
+    "type": "fragment",
+    "note": "Matched: す。, 年金, する"
+  },
+  "c807edd036da510321418be4f69924c4": {
+    "en": ". / Pension / From",
+    "type": "fragment",
+    "note": "Matched: す。, 年金, から"
+  },
+  "005fdd9806bd2acfc31d8f7f8f1dc317": {
+    "en": "Pension",
+    "type": "fragment",
+    "note": "Matched: 年金"
+  },
+  "8fc23dc6f29e1500186d1008ed607737": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "a0819e62e03a82f36220c2fed8a97439": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "943f4d09e82ae9bc5272409104959710": {
+    "en": "National Health Insurance / .",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険, す。"
+  },
+  "b956869bb6da526025d081ca79603d6b": {
+    "en": "Full name",
+    "type": "fragment",
+    "note": "Matched: 氏名"
+  },
+  "dbdce058d35490ddb3a0f919fc10eb4c": {
+    "en": "Seal (inkan / hanko)",
+    "type": "fragment",
+    "note": "Matched: 印"
+  },
+  "60fc9e24e4bb3a1cadad5ec59050ac7e": {
+    "en": "Seal (inkan / hanko)",
+    "type": "fragment",
+    "note": "Matched: 印"
+  },
+  "3e15d530f65e5c5ef741dcafe26b13dd": {
+    "en": "Comb",
+    "type": "fragment",
+    "note": "Matched: くし"
+  },
+  "7003bf28a93419912da760f005ed907a": {
+    "en": "Seal (inkan / hanko)",
+    "type": "fragment",
+    "note": "Matched: 印"
+  },
+  "489cea5d201a221add9e03d918902781": {
+    "en": "No./Number",
+    "type": "fragment",
+    "note": "Matched: だい"
+  },
+  "0d3f6887be6d95c9aecd501810936e6f": {
+    "en": "Comb",
+    "type": "fragment",
+    "note": "Matched: くし"
+  },
+  "a2c91bdc3778a0884c082283538e0de5": {
+    "en": "Comb",
+    "type": "fragment",
+    "note": "Matched: くし"
+  },
+  "6b6eebe311dd052834cd20a04b1efdf5": {
+    "en": "National Health Insurance",
+    "type": "fragment",
+    "note": "Matched: 国民健康保険"
+  },
+  "3b2c8cbdbf0b4bb6e9c3083915e861b6": {
+    "en": "Address",
+    "type": "fragment",
+    "note": "Matched: 住所"
   }
 }

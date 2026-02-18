@@ -1,0 +1,31 @@
+{
+  "prefecture": "ibaraki",
+  "form_type": "nhi",
+  "summary": {
+    "generated": 7,
+    "failed": 0,
+    "skipped": 0
+  },
+  "wards": {
+    "hitachi": {
+      "generated": [
+        "Hitachi_NHIapp_saikouhu1_v1.PDF",
+        "Hitachi_NHIapp_saikouhu1_rei_v1.PDF",
+        "Hitachi_NHIapp_shinseisyo2_v1.PDF",
+        "Hitachi_NHIapp_shinseisyo2_rei_v1.PDF",
+        "Hitachi_NHIapp_tokuteisippei_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "tsukuba": {
+      "generated": [
+        "Tsukuba_NHIapp_kaigairyouyouhi_checkrist3_v1.PDF",
+        "Tsukuba_NHIapp_koujosyoumeisinnseisyo_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    }
+  },
+  "timestamp": "2026-02-18T11:45:44"
+}
