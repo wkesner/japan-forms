@@ -1,0 +1,287 @@
+{
+  "prefecture": "tokyo",
+  "form_type": "nhi",
+  "timestamp": "2026-02-18T10:20:15",
+  "summary": {
+    "ok": 33,
+    "failed": 1,
+    "skipped": 2
+  },
+  "results": {
+    "adachi": {
+      "name_en": "Adachi Ward",
+      "files": [
+        {
+          "filename": "1.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 80 chars of text"
+        },
+        {
+          "filename": "202412kokuminnkennkouhokennsikakusousitutodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "arakawa": {
+      "name_en": "Arakawa Ward",
+      "files": [
+        {
+          "filename": "tekiyousyuryoutodokekaisei.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "chuo": {
+      "name_en": "Chuo Ward",
+      "files": [
+        {
+          "filename": "56gotodokedesho.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "56gotodokedeshokinyurei.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "edogawa": {
+      "name_en": "Edogawa Ward",
+      "files": [
+        {
+          "filename": "sikakukaisitodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "sousitutodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "itabashi": {
+      "name_en": "Itabashi Ward",
+      "files": [
+        {
+          "filename": "madoguchi20241202.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "yuusou20241202.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "yuusoukinyuurei20241212.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "katsushika": {
+      "name_en": "Katsushika Ward",
+      "files": [
+        {
+          "filename": "sousitutodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 資格取得"
+        },
+        {
+          "filename": "sousitutodokemihon.pdf",
+          "status": "ok",
+          "detail": "matched: 資格取得"
+        }
+      ]
+    },
+    "kita": {
+      "name_en": "Kita Ward",
+      "files": [
+        {
+          "filename": "idoutodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "idoutodokekinyuurei.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "koto": {
+      "name_en": "Koto Ward",
+      "files": [
+        {
+          "filename": "shikakushutoku.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "shikakusoushitsu.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "meguro": {
+      "name_en": "Meguro Ward",
+      "files": [
+        {
+          "filename": "shikakuidoutodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "minato": {
+      "name_en": "Minato Ward",
+      "files": [
+        {
+          "filename": "20250930112721.pdf",
+          "status": "skipped",
+          "detail": "image-based (0 chars) — skipping validation"
+        }
+      ]
+    },
+    "nakano": {
+      "name_en": "Nakano Ward",
+      "files": [
+        {
+          "filename": "kanyurei.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "kanyusoshitu.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "nerima": {
+      "name_en": "Nerima Ward",
+      "files": [
+        {
+          "filename": "R70418kanyu.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "ota": {
+      "name_en": "Ota Ward",
+      "files": [
+        {
+          "filename": "kanyutodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "kanyutodokekakikata.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "sousitsutodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "sousitsutodokekakikata.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "setagaya": {
+      "name_en": "Setagaya Ward",
+      "files": [
+        {
+          "filename": "idou.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "shinagawa": {
+      "name_en": "Shinagawa Ward",
+      "files": [
+        {
+          "filename": "idoutodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "suginami": {
+      "name_en": "Suginami Ward",
+      "files": [
+        {
+          "filename": "kaishi.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "kaishiyuusou.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "kisaireikaishi.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "sumida": {
+      "name_en": "Sumida Ward",
+      "files": [
+        {
+          "filename": "sikakusyutokutodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "taito": {
+      "name_en": "Taito Ward",
+      "files": [
+        {
+          "filename": "ridatsutodoke_202512.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        }
+      ]
+    },
+    "toshima": {
+      "name_en": "Toshima Ward",
+      "files": [
+        {
+          "filename": "tekiyoukaisi_sikakusyutoku_omote.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "tekiyoukaisi_sikakusyutoku_ura.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "tekiyousyuuryou_sikakusousitu_omte.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "tekiyousyuuryou_sikakusousitu_ura.pdf",
+          "status": "skipped",
+          "detail": "image-based (0 chars) — skipping validation"
+        }
+      ]
+    }
+  }
+}

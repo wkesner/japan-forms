@@ -1,0 +1,327 @@
+{
+  "prefecture": "tokyo",
+  "form_type": "residence",
+  "timestamp": "2026-02-18T10:19:59",
+  "summary": {
+    "ok": 33,
+    "failed": 1,
+    "skipped": 6
+  },
+  "results": {
+    "adachi": {
+      "name_en": "Adachi Ward",
+      "files": [
+        {
+          "filename": "0020-0020yuusoutennsyutu20260106.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        }
+      ]
+    },
+    "arakawa": {
+      "name_en": "Arakawa Ward",
+      "files": [
+        {
+          "filename": "r4tenshutsuyuuso.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        },
+        {
+          "filename": "tenshutsuyuso-kinyurei.pdf",
+          "status": "skipped",
+          "detail": "image-based (0 chars) — skipping validation"
+        }
+      ]
+    },
+    "bunkyo": {
+      "name_en": "Bunkyo Ward",
+      "files": [
+        {
+          "filename": "20217211109.pdf",
+          "status": "skipped",
+          "detail": "image-based (0 chars) — skipping validation"
+        },
+        {
+          "filename": "202299101946.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "chiyoda": {
+      "name_en": "Chiyoda Ward",
+      "files": [
+        {
+          "filename": "tenshutsutodoke-yusoyo.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        }
+      ]
+    },
+    "chuo": {
+      "name_en": "Chuo Ward",
+      "files": [
+        {
+          "filename": "idoutodoke.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 2398 chars of text"
+        }
+      ]
+    },
+    "edogawa": {
+      "name_en": "Edogawa Ward",
+      "files": [
+        {
+          "filename": "20250201_juminido.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "20250201_juminidorei.pdf",
+          "status": "skipped",
+          "detail": "image-based (0 chars) — skipping validation"
+        }
+      ]
+    },
+    "itabashi": {
+      "name_en": "Itabashi Ward",
+      "files": [
+        {
+          "filename": "idotodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "yusotensyutu.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        },
+        {
+          "filename": "yusotensyutukinyurei.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        }
+      ]
+    },
+    "katsushika": {
+      "name_en": "Katsushika Ward",
+      "files": [
+        {
+          "filename": "ido.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "kita": {
+      "name_en": "Kita Ward",
+      "files": [
+        {
+          "filename": "idoutodokdesyo20260105.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "koto": {
+      "name_en": "Koto Ward",
+      "files": [
+        {
+          "filename": "20251217171915.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        },
+        {
+          "filename": "tennyuu_1.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        }
+      ]
+    },
+    "meguro": {
+      "name_en": "Meguro Ward",
+      "files": [
+        {
+          "filename": "yuusou.pdf",
+          "status": "ok",
+          "detail": "matched: 転出届"
+        },
+        {
+          "filename": "yuusou_kakikata.pdf",
+          "status": "ok",
+          "detail": "matched: 転出届"
+        }
+      ]
+    },
+    "minato": {
+      "name_en": "Minato Ward",
+      "files": [
+        {
+          "filename": "idoujapan.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "nakano": {
+      "name_en": "Nakano Ward",
+      "files": [
+        {
+          "filename": "HP.pdf",
+          "status": "ok",
+          "detail": "matched: 転出届"
+        }
+      ]
+    },
+    "nerima": {
+      "name_en": "Nerima Ward",
+      "files": [
+        {
+          "filename": "R7.12.4_tensyutu-yuusou.pdf",
+          "status": "ok",
+          "detail": "matched: 転出届"
+        },
+        {
+          "filename": "R7.12.4_tensyutu_sample.pdf",
+          "status": "ok",
+          "detail": "matched: 転出届"
+        },
+        {
+          "filename": "R7.8.26_tensyutu-todoke.pdf",
+          "status": "skipped",
+          "detail": "image-based (0 chars) — skipping validation"
+        }
+      ]
+    },
+    "ota": {
+      "name_en": "Ota Ward",
+      "files": [
+        {
+          "filename": "tensyutsu_yuso.pdf",
+          "status": "ok",
+          "detail": "matched: 転出届"
+        },
+        {
+          "filename": "tensyutsu_yuso_mynumber.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        }
+      ]
+    },
+    "setagaya": {
+      "name_en": "Setagaya Ward",
+      "files": [
+        {
+          "filename": "juuminidoutodoke.pdf",
+          "status": "skipped",
+          "detail": "image-based (9 chars) — skipping validation"
+        },
+        {
+          "filename": "tenshutsu.pdf",
+          "status": "skipped",
+          "detail": "image-based (9 chars) — skipping validation"
+        }
+      ]
+    },
+    "shibuya": {
+      "name_en": "Shibuya Ward",
+      "files": [
+        {
+          "filename": "mynumber_sinsei.pdf",
+          "status": "ok",
+          "detail": "matched: 転出届"
+        }
+      ]
+    },
+    "shinagawa": {
+      "name_en": "Shinagawa Ward",
+      "files": [
+        {
+          "filename": "20250206184722_1.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        }
+      ]
+    },
+    "shinjuku": {
+      "name_en": "Shinjuku Ward",
+      "files": [
+        {
+          "filename": "000253160.pdf",
+          "status": "ok",
+          "detail": "matched: 転出届"
+        },
+        {
+          "filename": "000253161.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        },
+        {
+          "filename": "000253172.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "suginami": {
+      "name_en": "Suginami Ward",
+      "files": [
+        {
+          "filename": "kinyurei1229.pdf",
+          "status": "ok",
+          "detail": "matched: 転出届"
+        },
+        {
+          "filename": "todokedesyo1229.pdf",
+          "status": "ok",
+          "detail": "matched: 転出届"
+        },
+        {
+          "filename": "yusoutensyutukankatu.pdf",
+          "status": "ok",
+          "detail": "matched: 転出届"
+        }
+      ]
+    },
+    "sumida": {
+      "name_en": "Sumida Ward",
+      "files": [
+        {
+          "filename": "idoutodoke_japanese.pdf",
+          "status": "ok",
+          "detail": "matched: 住所異動届"
+        }
+      ]
+    },
+    "taito": {
+      "name_en": "Taito Ward",
+      "files": [
+        {
+          "filename": "mynatensyutsu.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        },
+        {
+          "filename": "tenshutsu_tokurei.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        },
+        {
+          "filename": "tenshutsu_yuso.pdf",
+          "status": "ok",
+          "detail": "matched: 転出届"
+        }
+      ]
+    },
+    "toshima": {
+      "name_en": "Toshima Ward",
+      "files": [
+        {
+          "filename": "hpyoutodokedesho.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    }
+  }
+}

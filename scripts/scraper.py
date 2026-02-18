@@ -14,7 +14,10 @@ Usage:
     python scraper.py --scrape --prefecture kanagawa            # All Kanagawa municipalities
     python scraper.py --scrape --prefecture kanagawa --municipality yokohama-naka
     python scraper.py --discover --prefecture kanagawa --form-type residence
+    python scraper.py --validate --prefecture chiba --form-type residence
     python scraper.py --generate                                # Run pipeline on downloaded PDFs
+    python scraper.py --generate --dry-run                      # Preview without generating
+    python scraper.py --qa --prefecture tokyo --form-type residence
     python scraper.py --scrape --generate --manifest            # Full pipeline + manifest
     python scraper.py --status                                  # Regenerate STATUS.md
 """
@@ -844,7 +847,7 @@ def parse_sitemap(domain):
     # Filter to form-related paths
     filtered = []
     for url in urls:
-        path = urlparse(url).path.lower()
+        path = urlparse(url if isinstance(url, str) else url.decode()).path.lower()
         if any(seg in path for seg in FORM_PATH_SEGMENTS):
             filtered.append(url)
     return filtered
@@ -1542,20 +1545,63 @@ def is_japanese_only_pdf(filename):
     return True
 
 
-def run_generate(form_type="residence", prefecture="tokyo", registry=None):
-    """Run the translation pipeline on all downloaded PDFs (Japanese only)."""
-    try:
-        from pipeline import process_pdf
-    except ImportError:
-        print("ERROR: pipeline.py not found. Cannot run --generate.")
-        print("  Place pipeline.py in the scripts/ directory.")
-        return
+def _find_existing_walkthrough(ward_key, pdf_stem, prefecture):
+    """Check if a walkthrough already exists for this ward/PDF combination."""
+    ward_output = OUTPUT_DIR / prefecture / ward_key
+    if not ward_output.exists():
+        return None
+    # Walkthroughs follow pattern: {Ward}_{FormLabel}_{pdf_stem}_v{N}.PDF
+    matches = list(ward_output.glob(f"*_{pdf_stem}_v*.PDF")) + \
+              list(ward_output.glob(f"*_{pdf_stem}_v*.pdf"))
+    if matches:
+        return matches[-1]  # Latest version
+    return None
+
+
+def _save_generation_report(prefecture, form_type, report_data):
+    """Persist generation results to data/reports/{prefecture}_{form_type}_generate.json."""
+    from datetime import datetime
+
+    reports_dir = BASE_DIR / "data" / "reports"
+    reports_dir.mkdir(parents=True, exist_ok=True)
+
+    report_data["timestamp"] = datetime.now().isoformat(timespec="seconds")
+    out_path = reports_dir / f"{prefecture}_{form_type}_generate.json"
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(report_data, f, indent=2, ensure_ascii=False)
+
+    print(f"\n  Generation report saved to {out_path.relative_to(BASE_DIR)}")
+    return out_path
+
+
+def run_generate(form_type="residence", prefecture="tokyo", registry=None,
+                 dry_run=False):
+    """Run the translation pipeline on all downloaded PDFs (Japanese only).
+
+    When dry_run=True, previews what would be generated without calling process_pdf().
+    Tracks results per-ward and persists a generation report.
+    """
+    if not dry_run:
+        try:
+            from pipeline import process_pdf
+        except ImportError:
+            print("ERROR: pipeline.py not found. Cannot run --generate.")
+            print("  Place pipeline.py in the scripts/ directory.")
+            return
 
     if registry is None:
         registry = get_active_registry(prefecture)
 
     ft = FORM_TYPES[form_type]
     downloads_dir = get_downloads_dir(form_type, prefecture)
+
+    # Track results across all wards
+    all_ward_results = {}
+    totals = {"generated": 0, "failed": 0, "skipped": 0}
+
+    if dry_run:
+        print(f"\n  DRY RUN: {ft['label']} — {prefecture}")
+        print(f"  (No walkthroughs will be generated)\n")
 
     for ward_key in sorted(registry.keys()):
         # Skip wards with official English forms for NHI
@@ -1569,27 +1615,303 @@ def run_generate(form_type="residence", prefecture="tokyo", registry=None):
         all_pdfs = sorted(ward_dir.glob("*.pdf"))
         # Filter to Japanese-only PDFs
         pdfs = [p for p in all_pdfs if is_japanese_only_pdf(p.name)]
-        skipped = len(all_pdfs) - len(pdfs)
+        non_jp_count = len(all_pdfs) - len(pdfs)
 
         if not pdfs:
             continue
 
         name = registry[ward_key]["name_en"]
-        print(f"\n{'='*60}")
-        print(f"  Generating guides for {name} — {ft['label']}")
-        if skipped:
-            print(f"  (Skipping {skipped} non-Japanese PDF(s))")
-        print(f"{'='*60}")
+        ward_results = {"generated": [], "failed": [], "skipped": []}
 
-        # Pipeline will create {prefecture}/{ward} subdirectory based on input path
-        OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+        if dry_run:
+            print(f"  {name}:")
+            for pdf_path in pdfs:
+                existing = _find_existing_walkthrough(ward_key, pdf_path.stem, prefecture)
+                if existing:
+                    print(f"    ALREADY EXISTS: {pdf_path.name} → {existing.name}")
+                    ward_results["skipped"].append(pdf_path.name)
+                    totals["skipped"] += 1
+                else:
+                    print(f"    WOULD GENERATE: {pdf_path.name}")
+                    ward_results["generated"].append(pdf_path.name)
+                    totals["generated"] += 1
+            if non_jp_count:
+                print(f"    (skipped {non_jp_count} non-Japanese PDF(s))")
+        else:
+            print(f"\n{'='*60}")
+            print(f"  Generating guides for {name} — {ft['label']}")
+            if non_jp_count:
+                print(f"  (Skipping {non_jp_count} non-Japanese PDF(s))")
+            print(f"{'='*60}")
+
+            OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+            for pdf_path in pdfs:
+                print(f"  Processing: {pdf_path.name}")
+                try:
+                    result = process_pdf(str(pdf_path), str(OUTPUT_DIR), form_id=ft["form_id"])
+                    if result:
+                        output_name = Path(result).name
+                        ward_results["generated"].append(output_name)
+                        totals["generated"] += 1
+                        print(f"    OK: {output_name}")
+                    else:
+                        ward_results["skipped"].append(pdf_path.name)
+                        totals["skipped"] += 1
+                except Exception as e:
+                    print(f"    ERROR: {e}")
+                    ward_results["failed"].append(pdf_path.name)
+                    totals["failed"] += 1
+
+            # Per-ward summary
+            g, f, s = len(ward_results["generated"]), len(ward_results["failed"]), len(ward_results["skipped"])
+            print(f"  → {name}: {g} generated, {f} failed, {s} skipped")
+
+        all_ward_results[ward_key] = ward_results
+
+    # Final summary
+    mode_label = "DRY RUN" if dry_run else "GENERATION"
+    print(f"\n{'='*60}")
+    print(f"  {mode_label} SUMMARY — {ft['label']} ({prefecture})")
+    print(f"{'='*60}")
+    if dry_run:
+        print(f"    Would generate: {totals['generated']}")
+        print(f"    Already exist:  {totals['skipped']}")
+    else:
+        print(f"    Generated: {totals['generated']}")
+        print(f"    Failed:    {totals['failed']}")
+        print(f"    Skipped:   {totals['skipped']}")
+
+        # Persist generation report (not for dry-run)
+        report = {
+            "prefecture": prefecture,
+            "form_type": form_type,
+            "summary": totals,
+            "wards": all_ward_results,
+        }
+        _save_generation_report(prefecture, form_type, report)
+
+
+# ═══════════════════════════════════════════════════════════════
+# VALIDATION
+# ═══════════════════════════════════════════════════════════════
+
+def _save_validation_results(prefecture, form_type, results_by_ward):
+    """Persist validation results to data/validation/{prefecture}_{form_type}.json."""
+    from datetime import datetime
+
+    validation_dir = BASE_DIR / "data" / "validation"
+    validation_dir.mkdir(parents=True, exist_ok=True)
+
+    summary = {"ok": 0, "failed": 0, "skipped": 0}
+    for ward_data in results_by_ward.values():
+        for f in ward_data.get("files", []):
+            status = f["status"]
+            if status in summary:
+                summary[status] += 1
+
+    output = {
+        "prefecture": prefecture,
+        "form_type": form_type,
+        "timestamp": datetime.now().isoformat(timespec="seconds"),
+        "summary": summary,
+        "results": results_by_ward,
+    }
+
+    out_path = validation_dir / f"{prefecture}_{form_type}.json"
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
+
+    print(f"\n  Validation results saved to {out_path.relative_to(BASE_DIR)}")
+    return out_path
+
+
+def run_validate(form_type="residence", prefecture="tokyo", registry=None):
+    """Validate all downloaded PDFs for a form type without generating walkthroughs.
+
+    Iterates PDFs in the downloads directory, applies Japanese-only and
+    NHI English ward filters, then runs validate_pdf_for_form() from pipeline.py.
+    Prints per-file results and persists to data/validation/.
+    """
+    try:
+        sys.path.insert(0, str(BASE_DIR / "scripts"))
+        from pipeline import validate_pdf_for_form, load_form_template
+    except ImportError:
+        print("ERROR: pipeline.py not found. Cannot run --validate.")
+        return
+
+    if registry is None:
+        registry = get_active_registry(prefecture)
+
+    ft = FORM_TYPES[form_type]
+    form_template = load_form_template(ft["form_id"])
+    if not form_template:
+        print(f"ERROR: No form template found for '{ft['form_id']}'")
+        return
+
+    downloads_dir = get_downloads_dir(form_type, prefecture)
+    ft_label = ft["label"]
+    print(f"\n  Validating: {ft_label} — {prefecture}")
+    print(f"  Input dir: {downloads_dir.relative_to(BASE_DIR)}")
+
+    results_by_ward = {}
+    totals = {"ok": 0, "failed": 0, "skipped": 0}
+
+    for ward_key in sorted(registry.keys()):
+        # Skip wards with official English forms for NHI
+        if form_type == "nhi" and ward_key in NHI_ENGLISH_WARDS:
+            print(f"\n  SKIP: {registry[ward_key]['name_en']} — has official English NHI forms")
+            continue
+
+        ward_dir = downloads_dir / ward_key
+        if not ward_dir.exists():
+            continue
+
+        all_pdfs = sorted(ward_dir.glob("*.pdf"))
+        # Filter to Japanese-only PDFs
+        pdfs = [p for p in all_pdfs if is_japanese_only_pdf(p.name)]
+        non_jp = len(all_pdfs) - len(pdfs)
+
+        if not pdfs:
+            continue
+
+        name_en = registry[ward_key]["name_en"]
+        print(f"\n  {name_en}:")
+        ward_files = []
 
         for pdf_path in pdfs:
-            print(f"  Processing: {pdf_path.name}")
+            passed, detail = validate_pdf_for_form(str(pdf_path), form_template)
+
+            # Determine status category
+            if "image-based" in detail:
+                status = "skipped"
+                label = "SKIP"
+            elif passed:
+                status = "ok"
+                label = "OK"
+            else:
+                status = "failed"
+                label = "FAIL"
+
+            totals[status] += 1
+            ward_files.append({
+                "filename": pdf_path.name,
+                "status": status,
+                "detail": detail,
+            })
+            print(f"    {label:>4}: {pdf_path.name} — {detail}")
+
+        if non_jp:
+            print(f"    (skipped {non_jp} non-Japanese PDF(s))")
+
+        results_by_ward[ward_key] = {
+            "name_en": name_en,
+            "files": ward_files,
+        }
+
+    # Summary
+    print(f"\n{'='*60}")
+    print(f"  VALIDATION SUMMARY — {ft_label} ({prefecture})")
+    print(f"{'='*60}")
+    print(f"    OK:      {totals['ok']}")
+    print(f"    FAILED:  {totals['failed']}")
+    print(f"    SKIPPED: {totals['skipped']}")
+
+    # Persist results
+    _save_validation_results(prefecture, form_type, results_by_ward)
+
+
+# ═══════════════════════════════════════════════════════════════
+# QA MODE
+# ═══════════════════════════════════════════════════════════════
+
+def run_qa(form_type="residence", prefecture="tokyo", registry=None):
+    """Run quality checks on generated walkthrough PDFs.
+
+    Finds walkthroughs in output/{prefecture}/, runs quality_check.py checks,
+    aggregates issues by severity, and prints a summary.
+    """
+    try:
+        sys.path.insert(0, str(BASE_DIR / "scripts"))
+        from quality_check import run_checks, load_dictionary
+    except ImportError:
+        print("ERROR: quality_check.py not found. Cannot run --qa.")
+        return
+
+    if registry is None:
+        registry = get_active_registry(prefecture)
+
+    ft = FORM_TYPES[form_type]
+    # Determine naming pattern to filter by form type
+    # pipeline.py uses these labels: residence → "Residence", nhi → "NHIapp"
+    FORM_LABEL_MAP = {"residence": "_Residence_", "nhi": "_NHIapp_"}
+    name_pattern = FORM_LABEL_MAP.get(form_type)
+
+    dictionary = load_dictionary()
+    pref_output = OUTPUT_DIR / prefecture
+    if not pref_output.exists():
+        print(f"\n  No walkthroughs found in {pref_output.relative_to(BASE_DIR)}")
+        return
+
+    print(f"\n  QA: {ft['label']} — {prefecture}")
+    print(f"  Output dir: {pref_output.relative_to(BASE_DIR)}")
+
+    total_files = 0
+    total_errors = 0
+    total_warnings = 0
+    total_info = 0
+    files_with_issues = 0
+
+    for ward_key in sorted(registry.keys()):
+        ward_dir = pref_output / ward_key
+        if not ward_dir.exists():
+            continue
+
+        walkthroughs = sorted(ward_dir.glob("*.PDF")) + sorted(ward_dir.glob("*.pdf"))
+        # Filter by form type naming pattern
+        if name_pattern:
+            walkthroughs = [w for w in walkthroughs if name_pattern in w.name]
+        if not walkthroughs:
+            continue
+
+        name_en = registry[ward_key]["name_en"]
+        print(f"\n  {name_en}:")
+
+        for wt in walkthroughs:
+            total_files += 1
             try:
-                process_pdf(str(pdf_path), str(OUTPUT_DIR), form_id=ft["form_id"])
+                issues = run_checks(str(wt), dictionary)
             except Exception as e:
-                print(f"    ERROR: {e}")
+                print(f"    ERROR checking {wt.name}: {e}")
+                total_errors += 1
+                files_with_issues += 1
+                continue
+
+            errors = sum(1 for i in issues if i.severity == "ERROR")
+            warnings = sum(1 for i in issues if i.severity == "WARNING")
+            infos = sum(1 for i in issues if i.severity == "INFO")
+            total_errors += errors
+            total_warnings += warnings
+            total_info += infos
+
+            if errors or warnings:
+                files_with_issues += 1
+                print(f"    {wt.name}: {errors}E {warnings}W {infos}I")
+                for issue in issues:
+                    if issue.severity in ("ERROR", "WARNING"):
+                        print(f"      [{issue.severity}] {issue.category}: {issue.message}")
+            else:
+                print(f"    {wt.name}: OK ({infos} info)")
+
+    # Summary
+    print(f"\n{'='*60}")
+    print(f"  QA SUMMARY — {ft['label']} ({prefecture})")
+    print(f"{'='*60}")
+    print(f"    Files checked:    {total_files}")
+    print(f"    Files with issues: {files_with_issues}")
+    print(f"    Errors:   {total_errors}")
+    print(f"    Warnings: {total_warnings}")
+    print(f"    Info:     {total_info}")
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -1634,6 +1956,10 @@ def main():
     parser.add_argument("--scrape", action="store_true", help="Download PDFs from municipality websites")
     parser.add_argument("--discover", action="store_true",
                         help="Crawl municipality sites to find form PDFs automatically")
+    parser.add_argument("--validate", action="store_true",
+                        help="Validate downloaded PDFs against form template (no generation)")
+    parser.add_argument("--qa", action="store_true",
+                        help="Run quality checks on generated walkthrough PDFs")
     parser.add_argument("--ward", type=str, help="Target municipality (Tokyo shorthand)")
     parser.add_argument("--municipality", type=str, help="Target municipality key")
     parser.add_argument("--prefecture", type=str, default="tokyo",
@@ -1644,7 +1970,8 @@ def main():
     parser.add_argument("--generate", action="store_true", help="Run translation pipeline on downloaded PDFs")
     parser.add_argument("--manifest", action="store_true", help="Generate manifest of downloaded PDFs")
     parser.add_argument("--status", action="store_true", help="Regenerate STATUS.md from current project state")
-    parser.add_argument("--dry-run", action="store_true", help="Show what would be scraped without downloading")
+    parser.add_argument("--dry-run", action="store_true",
+                        help="Preview what --generate would do without running pipeline")
     parser.add_argument("--max-pages", type=int, default=50,
                         help="Max pages to crawl in discovery mode (default: 50)")
     parser.add_argument("--domain", type=str,
@@ -1657,7 +1984,8 @@ def main():
     # Resolve --ward as alias for --municipality
     muni_filter = args.municipality or args.ward
 
-    if not any([args.list, args.scrape, args.generate, args.manifest, args.status, args.discover]):
+    if not any([args.list, args.scrape, args.generate, args.manifest,
+                args.status, args.discover, args.validate, args.qa]):
         parser.print_help()
         return
 
@@ -1705,6 +2033,25 @@ def main():
         print(f"{'='*60}")
         print(f"  OK: {total_ok} PDFs downloaded and validated")
         print(f"  FLAGGED: {total_flagged} need review")
+
+        # Persist discovery results in validation format
+        validation_by_ward = {}
+        for muni_key, result in all_results.items():
+            name_en = registry.get(muni_key, {}).get("name_en", muni_key)
+            files = []
+            for path, score in result.get("ok", []):
+                fname = Path(path).name if path else "(none)"
+                files.append({"filename": fname, "status": "ok",
+                              "detail": f"score={score}"})
+            for path, reason in result.get("flagged", []):
+                fname = Path(path).name if path else "(none)"
+                files.append({"filename": fname, "status": "failed",
+                              "detail": reason})
+            if files:
+                validation_by_ward[muni_key] = {"name_en": name_en, "files": files}
+        if validation_by_ward:
+            _save_validation_results(prefecture, form_type, validation_by_ward)
+
         return
 
     if args.scrape:
@@ -1736,11 +2083,17 @@ def main():
             status = f"{count} PDF(s)" if count else "NONE"
             print(f"  {ward_key:<22} {status}")
 
+    if args.validate:
+        run_validate(form_type, prefecture, registry)
+
+    if args.qa:
+        run_qa(form_type, prefecture, registry)
+
     if args.manifest:
         generate_manifest()
 
     if args.generate:
-        run_generate(form_type, prefecture, registry)
+        run_generate(form_type, prefecture, registry, dry_run=args.dry_run)
 
     # Update STATUS.md only on explicit --status (slow — classifies all PDFs)
     if args.status:
