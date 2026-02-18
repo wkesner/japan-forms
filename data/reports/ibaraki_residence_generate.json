@@ -1,0 +1,47 @@
+{
+  "prefecture": "ibaraki",
+  "form_type": "residence",
+  "summary": {
+    "generated": 6,
+    "failed": 0,
+    "skipped": 8
+  },
+  "wards": {
+    "hitachi": {
+      "generated": [
+        "Hitachi_Residence_henkoutodokedekisairei2_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "kougakusinnseisyo.pdf",
+        "ryouyouhi.pdf",
+        "shinseisyo2.pdf",
+        "tiryouyousougu.pdf"
+      ]
+    },
+    "mito": {
+      "generated": [
+        "Mito_Residence_56286_v2.PDF",
+        "Mito_Residence_63325_v2.PDF",
+        "Mito_Residence_63330_v2.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "44369.pdf"
+      ]
+    },
+    "tsukuba": {
+      "generated": [
+        "Tsukuba_Residence_mainatensyutu_v1.PDF",
+        "Tsukuba_Residence_yuusouyou_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "seishintechoshinseisho.pdf",
+        "seishintsuinshinseisho.pdf",
+        "youshiki_20250701.pdf"
+      ]
+    }
+  },
+  "timestamp": "2026-02-18T10:54:07"
+}

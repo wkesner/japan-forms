@@ -1,0 +1,97 @@
+{
+  "prefecture": "ibaraki",
+  "form_type": "residence",
+  "timestamp": "2026-02-18T10:53:17",
+  "summary": {
+    "ok": 4,
+    "failed": 8,
+    "skipped": 2
+  },
+  "results": {
+    "hitachi": {
+      "name_en": "Hitachi City",
+      "files": [
+        {
+          "filename": "henkoutodokedekisairei2.pdf",
+          "status": "skipped",
+          "detail": "image-based (0 chars) — skipping validation"
+        },
+        {
+          "filename": "kougakusinnseisyo.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 920 chars of text"
+        },
+        {
+          "filename": "ryouyouhi.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 797 chars of text"
+        },
+        {
+          "filename": "shinseisyo2.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 715 chars of text"
+        },
+        {
+          "filename": "tiryouyousougu.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 765 chars of text"
+        }
+      ]
+    },
+    "mito": {
+      "name_en": "Mito City",
+      "files": [
+        {
+          "filename": "44369.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 1026 chars of text"
+        },
+        {
+          "filename": "56286.pdf",
+          "status": "ok",
+          "detail": "matched: 転居届"
+        },
+        {
+          "filename": "63325.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        },
+        {
+          "filename": "63330.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        }
+      ]
+    },
+    "tsukuba": {
+      "name_en": "Tsukuba City",
+      "files": [
+        {
+          "filename": "mainatensyutu.pdf",
+          "status": "ok",
+          "detail": "matched: 転出届"
+        },
+        {
+          "filename": "seishintechoshinseisho.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 1276 chars of text"
+        },
+        {
+          "filename": "seishintsuinshinseisho.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 1230 chars of text"
+        },
+        {
+          "filename": "youshiki_20250701.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 1490 chars of text"
+        },
+        {
+          "filename": "yuusouyou.pdf",
+          "status": "skipped",
+          "detail": "image-based (0 chars) — skipping validation"
+        }
+      ]
+    }
+  }
+}

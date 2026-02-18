@@ -1,0 +1,57 @@
+{
+  "prefecture": "gunma",
+  "form_type": "residence",
+  "summary": {
+    "generated": 9,
+    "failed": 0,
+    "skipped": 11
+  },
+  "wards": {
+    "isesaki": {
+      "generated": [],
+      "failed": [],
+      "skipped": [
+        "edahashinnseikinyuureipdf.pdf",
+        "edahashinnseishopdf.pdf",
+        "honninntourokumousikomi.pdf",
+        "honninntourokumousikomimihon.pdf",
+        "onestophenkoutodokedesyo_202406.pdf"
+      ]
+    },
+    "maebashi": {
+      "generated": [],
+      "failed": [],
+      "skipped": [
+        "1-2-1kisairei2.pdf",
+        "kisairei1-1.pdf",
+        "kisairei1-2-2.pdf",
+        "yousiki-jumin-inkan.pdf",
+        "zyukyo-hyouji.pdf"
+      ]
+    },
+    "ota": {
+      "generated": [
+        "Ota_Residence_14420_v1.PDF",
+        "Ota_Residence_17536_v1.PDF",
+        "Ota_Residence_4615_v1.PDF",
+        "Ota_Residence_7383_v1.PDF",
+        "Ota_Residence_7384_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "takasaki": {
+      "generated": [
+        "Takasaki_Residence_19672_v1.PDF",
+        "Takasaki_Residence_19673_v1.PDF",
+        "Takasaki_Residence_26133_v1.PDF",
+        "Takasaki_Residence_35885_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "31211.pdf"
+      ]
+    }
+  },
+  "timestamp": "2026-02-18T10:53:45"
+}

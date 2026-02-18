@@ -1,0 +1,35 @@
+{
+  "prefecture": "tochigi",
+  "form_type": "residence",
+  "summary": {
+    "generated": 3,
+    "failed": 0,
+    "skipped": 7
+  },
+  "wards": {
+    "oyama": {
+      "generated": [
+        "Oyama_Residence_1694136174_doc_9_0_v1.PDF",
+        "Oyama_Residence_1695350482_doc_5_0_v1.PDF",
+        "Oyama_Residence_1709685081_doc_59_0_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "1694137611_doc_9_0.pdf",
+        "1695351032_doc_5_0.pdf"
+      ]
+    },
+    "tochigi-city": {
+      "generated": [],
+      "failed": [],
+      "skipped": [
+        "48794.pdf",
+        "57519.pdf",
+        "66107.pdf",
+        "66108.pdf",
+        "envelope.pdf"
+      ]
+    }
+  },
+  "timestamp": "2026-02-18T10:53:33"
+}
