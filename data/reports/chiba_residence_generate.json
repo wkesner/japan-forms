@@ -1,0 +1,165 @@
+{
+  "prefecture": "chiba",
+  "form_type": "residence",
+  "summary": {
+    "generated": 28,
+    "failed": 0,
+    "skipped": 31
+  },
+  "wards": {
+    "chiba-chuo": {
+      "generated": [
+        "ChibaChuo_Residence_jyumin_idou_todoke_v2.PDF",
+        "ChibaChuo_Residence_jyumin_idou_todoke_kisairei_v2.PDF",
+        "ChibaChuo_Residence_yuso_tensyutsu_v2.PDF",
+        "ChibaChuo_Residence_yuso_tensyutsu_071226_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "shussan_shinseisho.pdf",
+        "sousai_shinseisho.pdf"
+      ]
+    },
+    "chiba-hanamigawa": {
+      "generated": [
+        "ChibaHanamigawa_Residence_jyumin_idou_todoke_kisairei_v1.PDF",
+        "ChibaHanamigawa_Residence_yuso_tensyutsu_071226_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "shussan_shinseisho.pdf",
+        "sousai_shinseisho.pdf"
+      ]
+    },
+    "chiba-inage": {
+      "generated": [
+        "ChibaInage_Residence_jyumin_idou_todoke_v1.PDF",
+        "ChibaInage_Residence_jyumin_idou_todoke_kisairei_v1.PDF",
+        "ChibaInage_Residence_yuso_tensyutsu_071226_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "shussan_shinseisho.pdf",
+        "sousai_shinseisho.pdf"
+      ]
+    },
+    "chiba-midori": {
+      "generated": [
+        "ChibaMidori_Residence_jyumin_idou_todoke_v1.PDF",
+        "ChibaMidori_Residence_jyumin_idou_todoke_kisairei_v1.PDF",
+        "ChibaMidori_Residence_yuso_tensyutsu_071226_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "shussan_shinseisho.pdf",
+        "sousai_shinseisho.pdf"
+      ]
+    },
+    "chiba-mihama": {
+      "generated": [
+        "ChibaMihama_Residence_jyumin_idou_todoke_v1.PDF",
+        "ChibaMihama_Residence_jyumin_idou_todoke_kisairei_v1.PDF",
+        "ChibaMihama_Residence_yuso_tensyutsu_071226_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "shussan_shinseisho.pdf",
+        "sousai_shinseisho.pdf"
+      ]
+    },
+    "chiba-wakaba": {
+      "generated": [
+        "ChibaWakaba_Residence_jyumin_idou_todoke_v1.PDF",
+        "ChibaWakaba_Residence_jyumin_idou_todoke_kisairei_v1.PDF",
+        "ChibaWakaba_Residence_yuso_tensyutsu_071226_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "shussan_shinseisho.pdf",
+        "sousai_shinseisho.pdf"
+      ]
+    },
+    "funabashi": {
+      "generated": [],
+      "failed": [],
+      "skipped": [
+        "huuutou.pdf"
+      ]
+    },
+    "ichikawa": {
+      "generated": [],
+      "failed": [],
+      "skipped": [
+        "0000493589.pdf",
+        "0000493605.pdf",
+        "000120773.pdf",
+        "000198496.pdf",
+        "000314124.pdf"
+      ]
+    },
+    "kashiwa": {
+      "generated": [],
+      "failed": [],
+      "skipped": [
+        "ininzyou.pdf",
+        "kinyuu.pdf",
+        "sinseisyokinyuunotyuui.pdf"
+      ]
+    },
+    "matsudo": {
+      "generated": [
+        "Matsudo_Residence_mainannberdennsisyoumeiiraisyo_v1.PDF",
+        "Matsudo_Residence_mynumber_yuuou2_v1.PDF",
+        "Matsudo_Residence_yuusou_tennsyutu3_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "sinseisyo.pdf"
+      ]
+    },
+    "narashino": {
+      "generated": [
+        "Narashino_Residence_moveinex_v1.PDF",
+        "Narashino_Residence_movetoex_v1.PDF",
+        "Narashino_Residence_moving_v1.PDF",
+        "Narashino_Residence_movingex_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "Kouikikosekishinseisho2024.pdf"
+      ]
+    },
+    "narita": {
+      "generated": [
+        "Narita_Residence_000210593_v1.PDF",
+        "Narita_Residence_000211027_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "000068174.pdf",
+        "000116190.pdf",
+        "000116193.pdf"
+      ]
+    },
+    "urayasu": {
+      "generated": [],
+      "failed": [],
+      "skipped": [
+        "%E7%94%B3%E8%AB%8B%E6%9B%B8%E9%80%81%E4%BB%98%E7%94%A8%E5%AE%9B%E5%90%8D%E5%8F%B0%E7%B4%99%E5%B0%81%E7%AD%92.pdf",
+        "na.pdf",
+        "sinseisyo2.pdf",
+        "uji.pdf"
+      ]
+    },
+    "yachiyo": {
+      "generated": [
+        "Yachiyo_Residence_43948_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "25587.pdf"
+      ]
+    }
+  },
+  "timestamp": "2026-02-18T10:45:09"
+}

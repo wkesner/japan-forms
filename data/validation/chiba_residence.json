@@ -1,0 +1,377 @@
+{
+  "prefecture": "chiba",
+  "form_type": "residence",
+  "timestamp": "2026-02-18T10:42:49",
+  "summary": {
+    "ok": 28,
+    "failed": 31,
+    "skipped": 0
+  },
+  "results": {
+    "chiba-chuo": {
+      "name_en": "Chuo Ward",
+      "files": [
+        {
+          "filename": "jyumin_idou_todoke.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "jyumin_idou_todoke_kisairei.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "shussan_shinseisho.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 747 chars of text"
+        },
+        {
+          "filename": "sousai_shinseisho.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 995 chars of text"
+        },
+        {
+          "filename": "yuso_tensyutsu.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "yuso_tensyutsu_071226.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "chiba-hanamigawa": {
+      "name_en": "Hanamigawa Ward",
+      "files": [
+        {
+          "filename": "jyumin_idou_todoke_kisairei.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "shussan_shinseisho.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 747 chars of text"
+        },
+        {
+          "filename": "sousai_shinseisho.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 995 chars of text"
+        },
+        {
+          "filename": "yuso_tensyutsu_071226.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "chiba-inage": {
+      "name_en": "Inage Ward",
+      "files": [
+        {
+          "filename": "jyumin_idou_todoke.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "jyumin_idou_todoke_kisairei.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "shussan_shinseisho.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 747 chars of text"
+        },
+        {
+          "filename": "sousai_shinseisho.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 995 chars of text"
+        },
+        {
+          "filename": "yuso_tensyutsu_071226.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "chiba-midori": {
+      "name_en": "Midori Ward",
+      "files": [
+        {
+          "filename": "jyumin_idou_todoke.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "jyumin_idou_todoke_kisairei.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "shussan_shinseisho.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 747 chars of text"
+        },
+        {
+          "filename": "sousai_shinseisho.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 995 chars of text"
+        },
+        {
+          "filename": "yuso_tensyutsu_071226.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "chiba-mihama": {
+      "name_en": "Mihama Ward",
+      "files": [
+        {
+          "filename": "jyumin_idou_todoke.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "jyumin_idou_todoke_kisairei.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "shussan_shinseisho.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 747 chars of text"
+        },
+        {
+          "filename": "sousai_shinseisho.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 995 chars of text"
+        },
+        {
+          "filename": "yuso_tensyutsu_071226.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "chiba-wakaba": {
+      "name_en": "Wakaba Ward",
+      "files": [
+        {
+          "filename": "jyumin_idou_todoke.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "jyumin_idou_todoke_kisairei.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "shussan_shinseisho.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 747 chars of text"
+        },
+        {
+          "filename": "sousai_shinseisho.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 995 chars of text"
+        },
+        {
+          "filename": "yuso_tensyutsu_071226.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "funabashi": {
+      "name_en": "Funabashi City",
+      "files": [
+        {
+          "filename": "huuutou.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 302 chars of text"
+        }
+      ]
+    },
+    "ichikawa": {
+      "name_en": "Ichikawa City",
+      "files": [
+        {
+          "filename": "0000493589.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 1053 chars of text"
+        },
+        {
+          "filename": "0000493605.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 16057 chars of text"
+        },
+        {
+          "filename": "000120773.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 1313 chars of text"
+        },
+        {
+          "filename": "000198496.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 262 chars of text"
+        },
+        {
+          "filename": "000314124.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 677 chars of text"
+        }
+      ]
+    },
+    "kashiwa": {
+      "name_en": "Kashiwa City",
+      "files": [
+        {
+          "filename": "ininzyou.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 516 chars of text"
+        },
+        {
+          "filename": "kinyuu.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 1165 chars of text"
+        },
+        {
+          "filename": "sinseisyokinyuunotyuui.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 407 chars of text"
+        }
+      ]
+    },
+    "matsudo": {
+      "name_en": "Matsudo City",
+      "files": [
+        {
+          "filename": "mainannberdennsisyoumeiiraisyo.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        },
+        {
+          "filename": "mynumber_yuuou2.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "sinseisyo.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 1886 chars of text"
+        },
+        {
+          "filename": "yuusou_tennsyutu3.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "narashino": {
+      "name_en": "Narashino City",
+      "files": [
+        {
+          "filename": "Kouikikosekishinseisho2024.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 783 chars of text"
+        },
+        {
+          "filename": "moveinex.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "movetoex.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "moving.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "movingex.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "narita": {
+      "name_en": "Narita City",
+      "files": [
+        {
+          "filename": "000068174.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 2417 chars of text"
+        },
+        {
+          "filename": "000116190.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 2100 chars of text"
+        },
+        {
+          "filename": "000116193.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 469 chars of text"
+        },
+        {
+          "filename": "000210593.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        },
+        {
+          "filename": "000211027.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        }
+      ]
+    },
+    "urayasu": {
+      "name_en": "Urayasu City",
+      "files": [
+        {
+          "filename": "%E7%94%B3%E8%AB%8B%E6%9B%B8%E9%80%81%E4%BB%98%E7%94%A8%E5%AE%9B%E5%90%8D%E5%8F%B0%E7%B4%99%E5%B0%81%E7%AD%92.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 1511 chars of text"
+        },
+        {
+          "filename": "na.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 726 chars of text"
+        },
+        {
+          "filename": "sinseisyo2.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 506 chars of text"
+        },
+        {
+          "filename": "uji.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 749 chars of text"
+        }
+      ]
+    },
+    "yachiyo": {
+      "name_en": "Yachiyo City",
+      "files": [
+        {
+          "filename": "25587.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 276 chars of text"
+        },
+        {
+          "filename": "43948.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        }
+      ]
+    }
+  }
+}
