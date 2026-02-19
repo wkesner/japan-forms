@@ -281,6 +281,7 @@ def main():
     parser = argparse.ArgumentParser(description="Find and translate gaps in walkthrough PDFs")
     parser.add_argument("--translate", action="store_true", help="Translate gaps using Claude API")
     parser.add_argument("--limit", type=int, default=100, help="Max gaps to translate (default: 100)")
+    parser.add_argument("--min-freq", type=int, default=1, help="Only translate gaps appearing in at least N files (default: 1)")
     parser.add_argument("--dry-run", action="store_true", help="Show what would be translated without making changes")
     args = parser.parse_args()
 
@@ -299,8 +300,11 @@ def main():
     print(f"\nFound {len(all_gaps)} total bracketed Japanese items")
     print(f"Of those, {len(new_gaps)} are not in the dictionary\n")
 
-    # Sort by frequency (most common first)
+    # Sort by frequency (most common first), filter by min-freq
     sorted_gaps = sorted(new_gaps.items(), key=lambda x: len(x[1]), reverse=True)
+    if args.min_freq > 1:
+        sorted_gaps = [(t, f) for t, f in sorted_gaps if len(f) >= args.min_freq]
+        print(f"Filtered to {len(sorted_gaps)} gaps appearing in {args.min_freq}+ files\n")
 
     # Show top gaps
     print("Top untranslated gaps by frequency:")
