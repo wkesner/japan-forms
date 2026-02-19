@@ -9,29 +9,128 @@
   "wards": {
     "higashiosaka": {
       "generated": [
-        "Higashiosaka_NHIapp_R4kokuhonouhuhouhouhenkoumousidesho_v1.PDF",
-        "Higashiosaka_NHIapp_R8kokuhokoukinouhushoumeishonegai_v1.PDF",
-        "Higashiosaka_NHIapp_R8kokuhonouhushoumeishomihon_v1.PDF",
-        "Higashiosaka_NHIapp_kokuhokimekata_v1.PDF",
-        "Higashiosaka_NHIapp_kokuhosyoubyouteatesinseisyo_v1.PDF"
+        {
+          "file": "Higashiosaka_NHIapp_R4kokuhonouhuhouhouhenkoumousidesho_v2.PDF",
+          "stats": {
+            "dictionary": 6,
+            "fragment": 17,
+            "llm": 7,
+            "unknown": 0,
+            "total": 30
+          }
+        },
+        {
+          "file": "Higashiosaka_NHIapp_R8kokuhokoukinouhushoumeishonegai_v2.PDF",
+          "stats": {
+            "dictionary": 8,
+            "fragment": 16,
+            "llm": 30,
+            "unknown": 0,
+            "total": 54
+          }
+        },
+        {
+          "file": "Higashiosaka_NHIapp_R8kokuhonouhushoumeishomihon_v2.PDF",
+          "stats": {
+            "dictionary": 12,
+            "fragment": 17,
+            "llm": 29,
+            "unknown": 0,
+            "total": 58
+          }
+        },
+        {
+          "file": "Higashiosaka_NHIapp_kokuhokimekata_v2.PDF",
+          "stats": {
+            "dictionary": 4,
+            "fragment": 65,
+            "llm": 27,
+            "unknown": 0,
+            "total": 96
+          }
+        },
+        {
+          "file": "Higashiosaka_NHIapp_kokuhosyoubyouteatesinseisyo_v2.PDF",
+          "stats": {
+            "dictionary": 13,
+            "fragment": 22,
+            "llm": 12,
+            "unknown": 0,
+            "total": 47
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "ibaraki-osaka": {
       "generated": [
-        "IbarakiOsaka_NHIapp_kokuminnenkinhihokensyakankeitodokesyo_v1.PDF",
-        "IbarakiOsaka_NHIapp_saihakkou_2025_v1.PDF",
-        "IbarakiOsaka_NHIapp_sougu_v1.PDF",
-        "IbarakiOsaka_NHIapp_sousitutodoke_v1.PDF",
-        "IbarakiOsaka_NHIapp_tekiyoujyogai_v1.PDF"
+        {
+          "file": "IbarakiOsaka_NHIapp_kokuminnenkinhihokensyakankeitodokesyo_v2.PDF",
+          "stats": {
+            "dictionary": 25,
+            "fragment": 136,
+            "llm": 46,
+            "unknown": 0,
+            "total": 207
+          }
+        },
+        {
+          "file": "IbarakiOsaka_NHIapp_saihakkou_2025_v2.PDF",
+          "stats": {
+            "dictionary": 2,
+            "fragment": 20,
+            "llm": 20,
+            "unknown": 0,
+            "total": 42
+          }
+        },
+        {
+          "file": "IbarakiOsaka_NHIapp_sougu_v2.PDF",
+          "stats": {
+            "dictionary": 12,
+            "fragment": 15,
+            "llm": 17,
+            "unknown": 0,
+            "total": 44
+          }
+        },
+        {
+          "file": "IbarakiOsaka_NHIapp_sousitutodoke_v2.PDF",
+          "stats": {
+            "dictionary": 20,
+            "fragment": 15,
+            "llm": 62,
+            "unknown": 0,
+            "total": 97
+          }
+        },
+        {
+          "file": "IbarakiOsaka_NHIapp_tekiyoujyogai_v2.PDF",
+          "stats": {
+            "dictionary": 12,
+            "fragment": 11,
+            "llm": 2,
+            "unknown": 0,
+            "total": 25
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "neyagawa": {
       "generated": [
-        "Neyagawa_NHIapp_kaigai20231004_v1.PDF"
+        {
+          "file": "Neyagawa_NHIapp_kaigai20231004_v2.PDF",
+          "stats": {
+            "dictionary": 0,
+            "fragment": 17,
+            "llm": 12,
+            "unknown": 0,
+            "total": 29
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -40,36 +139,108 @@
     },
     "sakai": {
       "generated": [
-        "Sakai_NHIapp_enroll23_v1.PDF"
+        {
+          "file": "Sakai_NHIapp_enroll23_v2.PDF",
+          "stats": {
+            "dictionary": 36,
+            "fragment": 44,
+            "llm": 52,
+            "unknown": 0,
+            "total": 132
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "suita": {
       "generated": [
-        "Suita_NHIapp_saikohu_v1.PDF"
+        {
+          "file": "Suita_NHIapp_saikohu_v2.PDF",
+          "stats": {
+            "dictionary": 13,
+            "fragment": 44,
+            "llm": 21,
+            "unknown": 0,
+            "total": 78
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "toyonaka": {
       "generated": [
-        "Toyonaka_NHIapp_kaijyosinsei20241028_v1.PDF"
+        {
+          "file": "Toyonaka_NHIapp_kaijyosinsei20241028_v2.PDF",
+          "stats": {
+            "dictionary": 11,
+            "fragment": 28,
+            "llm": 6,
+            "unknown": 0,
+            "total": 45
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "yao": {
       "generated": [
-        "Yao_NHIapp_20260212-2_v1.PDF",
-        "Yao_NHIapp_itijikinr5.4.1_v1.PDF",
-        "Yao_NHIapp_seikatsu_v1.PDF",
-        "Yao_NHIapp_shokuji_v1.PDF",
-        "Yao_NHIapp_sousaihisinseisyo_v1.PDF"
+        {
+          "file": "Yao_NHIapp_20260212-2_v2.PDF",
+          "stats": {
+            "dictionary": 34,
+            "fragment": 50,
+            "llm": 58,
+            "unknown": 0,
+            "total": 142
+          }
+        },
+        {
+          "file": "Yao_NHIapp_itijikinr5.4.1_v2.PDF",
+          "stats": {
+            "dictionary": 26,
+            "fragment": 16,
+            "llm": 11,
+            "unknown": 0,
+            "total": 53
+          }
+        },
+        {
+          "file": "Yao_NHIapp_seikatsu_v2.PDF",
+          "stats": {
+            "dictionary": 28,
+            "fragment": 23,
+            "llm": 15,
+            "unknown": 0,
+            "total": 66
+          }
+        },
+        {
+          "file": "Yao_NHIapp_shokuji_v2.PDF",
+          "stats": {
+            "dictionary": 27,
+            "fragment": 23,
+            "llm": 16,
+            "unknown": 0,
+            "total": 66
+          }
+        },
+        {
+          "file": "Yao_NHIapp_sousaihisinseisyo_v2.PDF",
+          "stats": {
+            "dictionary": 17,
+            "fragment": 15,
+            "llm": 3,
+            "unknown": 0,
+            "total": 35
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     }
   },
-  "timestamp": "2026-02-18T16:13:22"
+  "timestamp": "2026-02-19T11:42:50"
 }
