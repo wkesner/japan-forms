@@ -3661,10 +3661,19 @@ def process_pdf(pdf_path, output_dir, form_id="residence_registration",
     if result:
         size_kb = output_path.stat().st_size / 1024
         print(f"    OK: {output_path.name} ({size_kb:.0f} KB)")
+        return {
+            "path": str(output_path),
+            "stats": {
+                "dictionary": dict_hits,
+                "fragment": frag_hits,
+                "llm": llm_hits,
+                "unknown": unknown,
+                "total": total,
+            }
+        }
     else:
         print(f"    FAIL: Could not generate guide")
-
-    return str(output_path) if result else None
+        return None
 
 
 # ═══════════════════════════════════════════

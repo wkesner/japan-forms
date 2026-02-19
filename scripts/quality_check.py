@@ -201,7 +201,6 @@ def check_readability(pages_text, dictionary):
     # Check for unhelpful tips
     unhelpful_patterns = [
         (r'Staff use only', QualityIssue.SEVERITY_INFO, "Staff-only fields should be clearly marked 'DO NOT FILL IN'"),
-        (r'\[Japanese text\]', QualityIssue.SEVERITY_ERROR, "Untranslated Japanese text found"),
     ]
 
     for pattern, severity, suggestion in unhelpful_patterns:
@@ -288,6 +287,34 @@ def check_dictionary_consistency(dictionary):
     return issues
 
 
+def check_translation_coverage(pages_text):
+    """Check for untranslated fields (bracketed Japanese text)."""
+    issues = []
+    # Match [text containing CJK characters] — these are unknown translation fallbacks
+    bracket_pattern = re.compile(r'\[([^\]]*[\u3000-\u9fff\uff00-\uffef][^\]]*)\]')
+
+    untranslated = []
+    for page in pages_text:
+        matches = bracket_pattern.findall(page["text"])
+        for m in matches:
+            if len(m) >= 2:  # Skip single-char noise
+                untranslated.append(m)
+
+    if untranslated:
+        count = len(untranslated)
+        severity = QualityIssue.SEVERITY_ERROR if count > 10 else QualityIssue.SEVERITY_WARNING
+        samples = untranslated[:5]
+        issues.append(QualityIssue(
+            severity=severity,
+            category="Untranslated Fields",
+            message=f"{count} untranslated field(s) found",
+            context=", ".join(f"[{s}]" for s in samples),
+            suggestion="Add translations to dictionary or enable LLM fallback"
+        ))
+
+    return issues
+
+
 def run_checks(pdf_path, dictionary):
     """Run all quality checks on a single PDF."""
     all_issues = []
@@ -299,6 +326,7 @@ def run_checks(pdf_path, dictionary):
     all_issues.extend(check_translation_quality(full_text, dictionary))
     all_issues.extend(check_formatting(pages_text))
     all_issues.extend(check_readability(pages_text, dictionary))
+    all_issues.extend(check_translation_coverage(pages_text))
 
     return all_issues
 

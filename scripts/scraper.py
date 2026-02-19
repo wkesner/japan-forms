@@ -1529,8 +1529,11 @@ def run_generate(form_type="residence", prefecture="tokyo", registry=None,
                 try:
                     result = process_pdf(str(pdf_path), str(OUTPUT_DIR), form_id=ft["form_id"])
                     if result:
-                        output_name = Path(result).name
-                        ward_results["generated"].append(output_name)
+                        output_name = Path(result["path"]).name
+                        entry = {"file": output_name}
+                        if result.get("stats"):
+                            entry["stats"] = result["stats"]
+                        ward_results["generated"].append(entry)
                         totals["generated"] += 1
                         print(f"    OK: {output_name}")
                     else:
@@ -1544,6 +1547,14 @@ def run_generate(form_type="residence", prefecture="tokyo", registry=None,
             # Per-ward summary
             g, f, s = len(ward_results["generated"]), len(ward_results["failed"]), len(ward_results["skipped"])
             print(f"  → {name}: {g} generated, {f} failed, {s} skipped")
+
+            # Coverage warnings for generated files
+            for entry in ward_results["generated"]:
+                stats = entry.get("stats") if isinstance(entry, dict) else None
+                if stats and stats.get("total", 0) > 0:
+                    unknown_pct = stats["unknown"] / stats["total"]
+                    if unknown_pct > 0.40:
+                        print(f"    ⚠ Low coverage: {entry['file']} — {unknown_pct:.0%} unknown ({stats['unknown']}/{stats['total']})")
 
         all_ward_results[ward_key] = ward_results
 
