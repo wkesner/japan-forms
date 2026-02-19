@@ -1,0 +1,52 @@
+{
+  "prefecture": "hyogo",
+  "form_type": "nhi",
+  "summary": {
+    "generated": 14,
+    "failed": 0,
+    "skipped": 1
+  },
+  "wards": {
+    "akashi": {
+      "generated": [
+        "Akashi_NHIapp_h30hpchirashi-cleaned_v1.PDF",
+        "Akashi_NHIapp_kokugakuryoyohi_shikyuukouza_hennkou202602_v1.PDF",
+        "Akashi_NHIapp_kokugakuryoyohi_shikyuukouza_hennkou_kinyurei202602_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "ashiya": {
+      "generated": [
+        "Ashiya_NHIapp_kinyuurei_saikoufu_shinseisho_r6_12_1_v1.PDF",
+        "Ashiya_NHIapp_saikoufu_shinseisho_r6_12_1_v1.PDF",
+        "Ashiya_NHIapp_sousaihishinnseisyo_v1.PDF",
+        "Ashiya_NHIapp_tokuteishippeininnteishinnseisyo_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "sousaihishinnseisyokinyuurei.pdf"
+      ]
+    },
+    "himeji": {
+      "generated": [
+        "Himeji_NHIapp_marugakumaruennsinseisyo_v1.PDF",
+        "Himeji_NHIapp_marugakumaruensinnseisyokinyuurei_v1.PDF",
+        "Himeji_NHIapp_saikoufu_v1.PDF",
+        "Himeji_NHIapp_saikoufukakikata_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "itami": {
+      "generated": [
+        "Itami_NHIapp_KAISI_v1.PDF",
+        "Itami_NHIapp_O_v1.PDF",
+        "Itami_NHIapp_R7_tebiki_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    }
+  },
+  "timestamp": "2026-02-18T16:12:02"
+}

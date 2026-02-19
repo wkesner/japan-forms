@@ -1,0 +1,52 @@
+{
+  "prefecture": "shiga",
+  "form_type": "nhi",
+  "summary": {
+    "generated": 13,
+    "failed": 0,
+    "skipped": 2
+  },
+  "wards": {
+    "hikone": {
+      "generated": [
+        "Hikone_NHIapp_5061202_kokuho_syokuji_v1.PDF",
+        "Hikone_NHIapp_kokuho_gendogaku_v1.PDF",
+        "Hikone_NHIapp_kokuho_gendogaku02_v1.PDF",
+        "Hikone_NHIapp_kokuho_sippei_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "kokuho_enkakuti_2025.pdf"
+      ]
+    },
+    "kusatsu": {
+      "generated": [
+        "Kusatsu_NHIapp_503sisin_v1.PDF",
+        "Kusatsu_NHIapp_504shishinnkokusho_v1.PDF",
+        "Kusatsu_NHIapp_505shinnkokusho_v1.PDF",
+        "Kusatsu_NHIapp_506shinnkokusyo_v1.PDF",
+        "Kusatsu_NHIapp_507sisin_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "moriyama": {
+      "generated": [],
+      "failed": [],
+      "skipped": [
+        "2025kyuyosyotokusyaidoutodoke.pdf"
+      ]
+    },
+    "otsu": {
+      "generated": [
+        "Otsu_NHIapp_01_20241202_kokuho_sousitu_3_v1.PDF",
+        "Otsu_NHIapp_02_20241202_kokuho_116zyou_v1.PDF",
+        "Otsu_NHIapp_14_20241202_kanrentuti_sohusaki_2_v1.PDF",
+        "Otsu_NHIapp_soufusaki_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    }
+  },
+  "timestamp": "2026-02-18T16:13:49"
+}

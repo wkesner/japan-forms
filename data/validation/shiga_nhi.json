@@ -1,0 +1,107 @@
+{
+  "prefecture": "shiga",
+  "form_type": "nhi",
+  "timestamp": "2026-02-18T16:05:14",
+  "summary": {
+    "ok": 13,
+    "failed": 2,
+    "skipped": 0
+  },
+  "results": {
+    "hikone": {
+      "name_en": "Hikone City",
+      "files": [
+        {
+          "filename": "kokuho_gendogaku02.pdf",
+          "status": "ok",
+          "detail": "score=55"
+        },
+        {
+          "filename": "kokuho_gendogaku.pdf",
+          "status": "ok",
+          "detail": "score=55"
+        },
+        {
+          "filename": "5061202_kokuho_syokuji.pdf",
+          "status": "ok",
+          "detail": "score=55"
+        },
+        {
+          "filename": "kokuho_sippei.pdf",
+          "status": "ok",
+          "detail": "score=55"
+        },
+        {
+          "filename": "kokuho_enkakuti_2025.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 263 chars of text"
+        }
+      ]
+    },
+    "kusatsu": {
+      "name_en": "Kusatsu City",
+      "files": [
+        {
+          "filename": "507sisin.pdf",
+          "status": "ok",
+          "detail": "score=45"
+        },
+        {
+          "filename": "506shinnkokusyo.pdf",
+          "status": "ok",
+          "detail": "score=45"
+        },
+        {
+          "filename": "504shishinnkokusho.pdf",
+          "status": "ok",
+          "detail": "score=45"
+        },
+        {
+          "filename": "505shinnkokusho.pdf",
+          "status": "ok",
+          "detail": "score=45"
+        },
+        {
+          "filename": "503sisin.pdf",
+          "status": "ok",
+          "detail": "score=45"
+        }
+      ]
+    },
+    "moriyama": {
+      "name_en": "Moriyama City",
+      "files": [
+        {
+          "filename": "2025kyuyosyotokusyaidoutodoke.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 329 chars of text"
+        }
+      ]
+    },
+    "otsu": {
+      "name_en": "Otsu City",
+      "files": [
+        {
+          "filename": "01_20241202_kokuho_sousitu_3.pdf",
+          "status": "ok",
+          "detail": "score=75"
+        },
+        {
+          "filename": "02_20241202_kokuho_116zyou.pdf",
+          "status": "ok",
+          "detail": "score=55"
+        },
+        {
+          "filename": "soufusaki.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "14_20241202_kanrentuti_sohusaki_2.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "prefecture": "kyoto",
+  "form_type": "nhi",
+  "summary": {
+    "generated": 2,
+    "failed": 0,
+    "skipped": 1
+  },
+  "wards": {
+    "nagaokakyo": {
+      "generated": [
+        "Nagaokakyo_NHIapp_saikoufu_v1.PDF",
+        "Nagaokakyo_NHIapp_saikouhu_2025111315494788_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "3idoutodoke.pdf"
+      ]
+    }
+  },
+  "timestamp": "2026-02-18T16:11:09"
+}

@@ -1,0 +1,97 @@
+{
+  "prefecture": "nara",
+  "form_type": "nhi",
+  "timestamp": "2026-02-18T16:06:07",
+  "summary": {
+    "ok": 11,
+    "failed": 1,
+    "skipped": 0
+  },
+  "results": {
+    "ikoma": {
+      "name_en": "Ikoma City",
+      "files": [
+        {
+          "filename": "todoke.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "saikouhu.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "saikouhu.rei.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        }
+      ]
+    },
+    "kashihara": {
+      "name_en": "Kashihara City",
+      "files": [
+        {
+          "filename": "(none)",
+          "status": "failed",
+          "detail": "best score too low (40)"
+        }
+      ]
+    },
+    "nara": {
+      "name_en": "Nara City",
+      "files": [
+        {
+          "filename": "179506.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "179502.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        }
+      ]
+    },
+    "tenri": {
+      "name_en": "Tenri City",
+      "files": [
+        {
+          "filename": "R7IDOUTODOKE.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "89232829.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "itibuhutankinyoukou.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
+          "filename": "idoutodokedesyo.pdf",
+          "status": "ok",
+          "detail": "score=35"
+        }
+      ]
+    },
+    "yamatokoriyama": {
+      "name_en": "Yamatokoriyama City",
+      "files": [
+        {
+          "filename": "kokuho_kyuhu_r7-4.pdf",
+          "status": "ok",
+          "detail": "score=85"
+        },
+        {
+          "filename": "kokuho_kyuhu_r7-4kinyurei.pdf",
+          "status": "ok",
+          "detail": "score=85"
+        }
+      ]
+    }
+  }
+}

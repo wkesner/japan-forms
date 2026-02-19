@@ -1,0 +1,43 @@
+{
+  "prefecture": "wakayama",
+  "form_type": "nhi",
+  "summary": {
+    "generated": 11,
+    "failed": 0,
+    "skipped": 1
+  },
+  "wards": {
+    "hashimoto": {
+      "generated": [
+        "Hashimoto_NHIapp_futuucyousyuumoushikomisyo_v1.PDF",
+        "Hashimoto_NHIapp_hizihatushinnkokusyo_v1.PDF",
+        "Hashimoto_NHIapp_kokuhoidoushinnseisyo_v1.PDF",
+        "Hashimoto_NHIapp_koureishosaikoufushinnseisyo_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "tanabe": {
+      "generated": [
+        "Tanabe_NHIapp_20240401ryouyouhi_v1.PDF",
+        "Tanabe_NHIapp_3gouyousiki_v1.PDF",
+        "Tanabe_NHIapp_4gouyousiki_v1.PDF",
+        "Tanabe_NHIapp_R7kokuho_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "R7_idoutodoke.pdf"
+      ]
+    },
+    "wakayama": {
+      "generated": [
+        "Wakayama_NHIapp_20240331de-taherusukiekakusyo_v1.PDF",
+        "Wakayama_NHIapp_ri-huretto0215_v1.PDF",
+        "Wakayama_NHIapp_todokede0215_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    }
+  },
+  "timestamp": "2026-02-18T16:15:29"
+}

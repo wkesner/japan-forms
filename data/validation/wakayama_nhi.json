@@ -1,0 +1,87 @@
+{
+  "prefecture": "wakayama",
+  "form_type": "nhi",
+  "timestamp": "2026-02-18T16:04:49",
+  "summary": {
+    "ok": 11,
+    "failed": 1,
+    "skipped": 0
+  },
+  "results": {
+    "hashimoto": {
+      "name_en": "Hashimoto City",
+      "files": [
+        {
+          "filename": "koureishosaikoufushinnseisyo.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "kokuhoidoushinnseisyo.pdf",
+          "status": "ok",
+          "detail": "score=45"
+        },
+        {
+          "filename": "hizihatushinnkokusyo.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
+          "filename": "futuucyousyuumoushikomisyo.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        }
+      ]
+    },
+    "tanabe": {
+      "name_en": "Tanabe City",
+      "files": [
+        {
+          "filename": "3gouyousiki.pdf",
+          "status": "ok",
+          "detail": "score=55"
+        },
+        {
+          "filename": "4gouyousiki.pdf",
+          "status": "ok",
+          "detail": "score=55"
+        },
+        {
+          "filename": "20240401ryouyouhi.pdf",
+          "status": "ok",
+          "detail": "score=45"
+        },
+        {
+          "filename": "R7kokuho.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
+          "filename": "R7_idoutodoke.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 2253 chars of text"
+        }
+      ]
+    },
+    "wakayama": {
+      "name_en": "Wakayama City",
+      "files": [
+        {
+          "filename": "todokede0215.pdf",
+          "status": "ok",
+          "detail": "score=55"
+        },
+        {
+          "filename": "20240331de-taherusukiekakusyo.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
+          "filename": "ri-huretto0215.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        }
+      ]
+    }
+  }
+}

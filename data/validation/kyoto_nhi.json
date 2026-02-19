@@ -1,0 +1,72 @@
+{
+  "prefecture": "kyoto",
+  "form_type": "nhi",
+  "timestamp": "2026-02-18T16:04:01",
+  "summary": {
+    "ok": 2,
+    "failed": 5,
+    "skipped": 0
+  },
+  "results": {
+    "joyo": {
+      "name_en": "Joyo City",
+      "files": [
+        {
+          "filename": "(none)",
+          "status": "failed",
+          "detail": "no candidates found"
+        }
+      ]
+    },
+    "kameoka": {
+      "name_en": "Kameoka City",
+      "files": [
+        {
+          "filename": "(none)",
+          "status": "failed",
+          "detail": "best score too low (10)"
+        }
+      ]
+    },
+    "muko": {
+      "name_en": "Muko City",
+      "files": [
+        {
+          "filename": "(none)",
+          "status": "failed",
+          "detail": "no candidates found"
+        }
+      ]
+    },
+    "nagaokakyo": {
+      "name_en": "Nagaokakyo City",
+      "files": [
+        {
+          "filename": "saikouhu_2025111315494788.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "saikoufu.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
+          "filename": "3idoutodoke.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 2818 chars of text"
+        }
+      ]
+    },
+    "uji": {
+      "name_en": "Uji City",
+      "files": [
+        {
+          "filename": "(none)",
+          "status": "failed",
+          "detail": "no candidates found"
+        }
+      ]
+    }
+  }
+}

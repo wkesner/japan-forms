@@ -1,0 +1,75 @@
+{
+  "prefecture": "osaka",
+  "form_type": "nhi",
+  "summary": {
+    "generated": 19,
+    "failed": 0,
+    "skipped": 1
+  },
+  "wards": {
+    "higashiosaka": {
+      "generated": [
+        "Higashiosaka_NHIapp_R4kokuhonouhuhouhouhenkoumousidesho_v1.PDF",
+        "Higashiosaka_NHIapp_R8kokuhokoukinouhushoumeishonegai_v1.PDF",
+        "Higashiosaka_NHIapp_R8kokuhonouhushoumeishomihon_v1.PDF",
+        "Higashiosaka_NHIapp_kokuhokimekata_v1.PDF",
+        "Higashiosaka_NHIapp_kokuhosyoubyouteatesinseisyo_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "ibaraki-osaka": {
+      "generated": [
+        "IbarakiOsaka_NHIapp_kokuminnenkinhihokensyakankeitodokesyo_v1.PDF",
+        "IbarakiOsaka_NHIapp_saihakkou_2025_v1.PDF",
+        "IbarakiOsaka_NHIapp_sougu_v1.PDF",
+        "IbarakiOsaka_NHIapp_sousitutodoke_v1.PDF",
+        "IbarakiOsaka_NHIapp_tekiyoujyogai_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "neyagawa": {
+      "generated": [
+        "Neyagawa_NHIapp_kaigai20231004_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "2025idoutodoke.pdf"
+      ]
+    },
+    "sakai": {
+      "generated": [
+        "Sakai_NHIapp_enroll23_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "suita": {
+      "generated": [
+        "Suita_NHIapp_saikohu_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "toyonaka": {
+      "generated": [
+        "Toyonaka_NHIapp_kaijyosinsei20241028_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yao": {
+      "generated": [
+        "Yao_NHIapp_20260212-2_v1.PDF",
+        "Yao_NHIapp_itijikinr5.4.1_v1.PDF",
+        "Yao_NHIapp_seikatsu_v1.PDF",
+        "Yao_NHIapp_shokuji_v1.PDF",
+        "Yao_NHIapp_sousaihisinseisyo_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    }
+  },
+  "timestamp": "2026-02-18T16:13:22"
+}

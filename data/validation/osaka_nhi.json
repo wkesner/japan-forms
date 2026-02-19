@@ -1,0 +1,177 @@
+{
+  "prefecture": "osaka",
+  "form_type": "nhi",
+  "timestamp": "2026-02-18T16:09:11",
+  "summary": {
+    "ok": 19,
+    "failed": 4,
+    "skipped": 0
+  },
+  "results": {
+    "higashiosaka": {
+      "name_en": "Higashiosaka City",
+      "files": [
+        {
+          "filename": "kokuhosyoubyouteatesinseisyo.pdf",
+          "status": "ok",
+          "detail": "score=55"
+        },
+        {
+          "filename": "R8kokuhokoukinouhushoumeishonegai.pdf",
+          "status": "ok",
+          "detail": "score=45"
+        },
+        {
+          "filename": "R8kokuhonouhushoumeishomihon.pdf",
+          "status": "ok",
+          "detail": "score=45"
+        },
+        {
+          "filename": "R4kokuhonouhuhouhouhenkoumousidesho.pdf",
+          "status": "ok",
+          "detail": "score=45"
+        },
+        {
+          "filename": "kokuhokimekata.pdf",
+          "status": "ok",
+          "detail": "score=45"
+        }
+      ]
+    },
+    "hirakata": {
+      "name_en": "Hirakata City",
+      "files": [
+        {
+          "filename": "(none)",
+          "status": "failed",
+          "detail": "no candidates found"
+        }
+      ]
+    },
+    "ibaraki-osaka": {
+      "name_en": "Ibaraki City",
+      "files": [
+        {
+          "filename": "sousitutodoke.pdf",
+          "status": "ok",
+          "detail": "score=100"
+        },
+        {
+          "filename": "saihakkou_2025.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "sougu.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "kokuminnenkinhihokensyakankeitodokesyo.pdf",
+          "status": "ok",
+          "detail": "score=45"
+        },
+        {
+          "filename": "tekiyoujyogai.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        }
+      ]
+    },
+    "kishiwada": {
+      "name_en": "Kishiwada City",
+      "files": [
+        {
+          "filename": "(none)",
+          "status": "failed",
+          "detail": "no candidates found"
+        }
+      ]
+    },
+    "neyagawa": {
+      "name_en": "Neyagawa City",
+      "files": [
+        {
+          "filename": "kaigai20231004.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
+          "filename": "2025idoutodoke.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 2083 chars of text"
+        }
+      ]
+    },
+    "sakai": {
+      "name_en": "Sakai City",
+      "files": [
+        {
+          "filename": "enroll23.pdf",
+          "status": "ok",
+          "detail": "score=85"
+        }
+      ]
+    },
+    "suita": {
+      "name_en": "Suita City",
+      "files": [
+        {
+          "filename": "saikohu.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        }
+      ]
+    },
+    "takatsuki": {
+      "name_en": "Takatsuki City",
+      "files": [
+        {
+          "filename": "(none)",
+          "status": "failed",
+          "detail": "no candidates found"
+        }
+      ]
+    },
+    "toyonaka": {
+      "name_en": "Toyonaka City",
+      "files": [
+        {
+          "filename": "kaijyosinsei20241028.pdf",
+          "status": "ok",
+          "detail": "score=60"
+        }
+      ]
+    },
+    "yao": {
+      "name_en": "Yao City",
+      "files": [
+        {
+          "filename": "itijikinr5.4.1.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "sousaihisinseisyo.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "shokuji.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "seikatsu.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "20260212-2.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        }
+      ]
+    }
+  }
+}

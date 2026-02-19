@@ -1,0 +1,47 @@
+{
+  "prefecture": "nara",
+  "form_type": "nhi",
+  "summary": {
+    "generated": 11,
+    "failed": 0,
+    "skipped": 0
+  },
+  "wards": {
+    "ikoma": {
+      "generated": [
+        "Ikoma_NHIapp_saikouhu_v1.PDF",
+        "Ikoma_NHIapp_saikouhu.rei_v1.PDF",
+        "Ikoma_NHIapp_todoke_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "nara": {
+      "generated": [
+        "Nara_NHIapp_179502_v1.PDF",
+        "Nara_NHIapp_179506_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "tenri": {
+      "generated": [
+        "Tenri_NHIapp_89232829_v1.PDF",
+        "Tenri_NHIapp_R7IDOUTODOKE_v1.PDF",
+        "Tenri_NHIapp_idoutodokedesyo_v1.PDF",
+        "Tenri_NHIapp_itibuhutankinyoukou_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yamatokoriyama": {
+      "generated": [
+        "Yamatokoriyama_NHIapp_kokuho_kyuhu_r7-4_v1.PDF",
+        "Yamatokoriyama_NHIapp_kokuho_kyuhu_r7-4kinyurei_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    }
+  },
+  "timestamp": "2026-02-18T16:14:07"
+}

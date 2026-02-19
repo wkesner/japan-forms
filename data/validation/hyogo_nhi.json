@@ -1,0 +1,147 @@
+{
+  "prefecture": "hyogo",
+  "form_type": "nhi",
+  "timestamp": "2026-02-18T16:09:49",
+  "summary": {
+    "ok": 14,
+    "failed": 5,
+    "skipped": 0
+  },
+  "results": {
+    "akashi": {
+      "name_en": "Akashi City",
+      "files": [
+        {
+          "filename": "kokugakuryoyohi_shikyuukouza_hennkou202602.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "kokugakuryoyohi_shikyuukouza_hennkou_kinyurei202602.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "h30hpchirashi-cleaned.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        }
+      ]
+    },
+    "amagasaki": {
+      "name_en": "Amagasaki City",
+      "files": [
+        {
+          "filename": "(none)",
+          "status": "failed",
+          "detail": "best score too low (30)"
+        }
+      ]
+    },
+    "ashiya": {
+      "name_en": "Ashiya City",
+      "files": [
+        {
+          "filename": "saikoufu_shinseisho_r6_12_1.pdf",
+          "status": "ok",
+          "detail": "score=60"
+        },
+        {
+          "filename": "kinyuurei_saikoufu_shinseisho_r6_12_1.pdf",
+          "status": "ok",
+          "detail": "score=60"
+        },
+        {
+          "filename": "sousaihishinnseisyo.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "tokuteishippeininnteishinnseisyo.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "sousaihishinnseisyokinyuurei.pdf",
+          "status": "failed",
+          "detail": "validation failed: no validation terms found in 166 chars of text"
+        }
+      ]
+    },
+    "himeji": {
+      "name_en": "Himeji City",
+      "files": [
+        {
+          "filename": "marugakumaruennsinseisyo.pdf",
+          "status": "ok",
+          "detail": "score=65"
+        },
+        {
+          "filename": "marugakumaruensinnseisyokinyuurei.pdf",
+          "status": "ok",
+          "detail": "score=65"
+        },
+        {
+          "filename": "saikoufu.pdf",
+          "status": "ok",
+          "detail": "score=45"
+        },
+        {
+          "filename": "saikoufukakikata.pdf",
+          "status": "ok",
+          "detail": "score=45"
+        }
+      ]
+    },
+    "itami": {
+      "name_en": "Itami City",
+      "files": [
+        {
+          "filename": "KAISI.pdf",
+          "status": "ok",
+          "detail": "score=70"
+        },
+        {
+          "filename": "O.pdf",
+          "status": "ok",
+          "detail": "score=70"
+        },
+        {
+          "filename": "R7_tebiki.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        }
+      ]
+    },
+    "kakogawa": {
+      "name_en": "Kakogawa City",
+      "files": [
+        {
+          "filename": "(none)",
+          "status": "failed",
+          "detail": "no candidates found"
+        }
+      ]
+    },
+    "nishinomiya": {
+      "name_en": "Nishinomiya City",
+      "files": [
+        {
+          "filename": "(none)",
+          "status": "failed",
+          "detail": "no candidates found"
+        }
+      ]
+    },
+    "takarazuka": {
+      "name_en": "Takarazuka City",
+      "files": [
+        {
+          "filename": "(none)",
+          "status": "failed",
+          "detail": "no candidates found"
+        }
+      ]
+    }
+  }
+}
