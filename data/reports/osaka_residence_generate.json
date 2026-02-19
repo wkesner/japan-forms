@@ -1,0 +1,58 @@
+{
+  "prefecture": "osaka",
+  "form_type": "residence",
+  "summary": {
+    "generated": 10,
+    "failed": 0,
+    "skipped": 0
+  },
+  "wards": {
+    "higashiosaka": {
+      "generated": [
+        "Higashiosaka_Residence_(tenkyo)idoutodke_v1.PDF",
+        "Higashiosaka_Residence_(tennyu)idoutodoke_v1.PDF",
+        "Higashiosaka_Residence_(tensyutu)idoutodoke_v1.PDF",
+        "Higashiosaka_Residence_idoutodoke_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "hirakata": {
+      "generated": [
+        "Hirakata_Residence_sonotanotetuduki_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "kishiwada": {
+      "generated": [
+        "Kishiwada_Residence_73464_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "neyagawa": {
+      "generated": [
+        "Neyagawa_Residence_tensyutsu_yuso_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "sakai": {
+      "generated": [
+        "Sakai_Residence_tenshutu_260105_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "suita": {
+      "generated": [
+        "Suita_Residence_gaiyouban_v1.PDF",
+        "Suita_Residence_syousaiban_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    }
+  },
+  "timestamp": "2026-02-18T15:58:24"
+}

@@ -1,0 +1,36 @@
+{
+  "prefecture": "nara",
+  "form_type": "residence",
+  "summary": {
+    "generated": 6,
+    "failed": 0,
+    "skipped": 0
+  },
+  "wards": {
+    "nara": {
+      "generated": [
+        "Nara_Residence_205687_v1.PDF",
+        "Nara_Residence_205697_v1.PDF",
+        "Nara_Residence_205700_v1.PDF",
+        "Nara_Residence_205796_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "tenri": {
+      "generated": [
+        "Tenri_Residence_42517478_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yamatokoriyama": {
+      "generated": [
+        "Yamatokoriyama_Residence_yusou-tensyutu-2011_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    }
+  },
+  "timestamp": "2026-02-18T15:58:17"
+}

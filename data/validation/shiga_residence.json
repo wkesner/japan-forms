@@ -1,0 +1,62 @@
+{
+  "prefecture": "shiga",
+  "form_type": "residence",
+  "timestamp": "2026-02-18T15:46:11",
+  "summary": {
+    "ok": 5,
+    "failed": 1,
+    "skipped": 0
+  },
+  "results": {
+    "hikone": {
+      "name_en": "Hikone City",
+      "files": [
+        {
+          "filename": "(none)",
+          "status": "failed",
+          "detail": "best score too low (35)"
+        }
+      ]
+    },
+    "kusatsu": {
+      "name_en": "Kusatsu City",
+      "files": [
+        {
+          "filename": "tenshutsu_card.pdf",
+          "status": "ok",
+          "detail": "score=60"
+        },
+        {
+          "filename": "tensyutu_nocard.pdf",
+          "status": "ok",
+          "detail": "score=60"
+        }
+      ]
+    },
+    "moriyama": {
+      "name_en": "Moriyama City",
+      "files": [
+        {
+          "filename": "tenshutsu_yusou.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
+          "filename": "tenshutsu_yusou.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        }
+      ]
+    },
+    "otsu": {
+      "name_en": "Otsu City",
+      "files": [
+        {
+          "filename": "tensyutu.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        }
+      ]
+    }
+  }
+}

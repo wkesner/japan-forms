@@ -1,0 +1,92 @@
+{
+  "prefecture": "osaka",
+  "form_type": "residence",
+  "timestamp": "2026-02-18T15:57:45",
+  "summary": {
+    "ok": 10,
+    "failed": 0,
+    "skipped": 0
+  },
+  "results": {
+    "higashiosaka": {
+      "name_en": "Higashiosaka City",
+      "files": [
+        {
+          "filename": "(tenkyo)idoutodke.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "(tennyu)idoutodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "(tensyutu)idoutodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "idoutodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "hirakata": {
+      "name_en": "Hirakata City",
+      "files": [
+        {
+          "filename": "sonotanotetuduki.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "kishiwada": {
+      "name_en": "Kishiwada City",
+      "files": [
+        {
+          "filename": "73464.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "neyagawa": {
+      "name_en": "Neyagawa City",
+      "files": [
+        {
+          "filename": "tensyutsu_yuso.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        }
+      ]
+    },
+    "sakai": {
+      "name_en": "Sakai City",
+      "files": [
+        {
+          "filename": "tenshutu_260105.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        }
+      ]
+    },
+    "suita": {
+      "name_en": "Suita City",
+      "files": [
+        {
+          "filename": "gaiyouban.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        },
+        {
+          "filename": "syousaiban.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        }
+      ]
+    }
+  }
+}

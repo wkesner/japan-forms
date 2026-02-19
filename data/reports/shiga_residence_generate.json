@@ -1,0 +1,34 @@
+{
+  "prefecture": "shiga",
+  "form_type": "residence",
+  "summary": {
+    "generated": 4,
+    "failed": 0,
+    "skipped": 0
+  },
+  "wards": {
+    "kusatsu": {
+      "generated": [
+        "Kusatsu_Residence_tenshutsu_card_v1.PDF",
+        "Kusatsu_Residence_tensyutu_nocard_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "moriyama": {
+      "generated": [
+        "Moriyama_Residence_tenshutsu_yusou_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "otsu": {
+      "generated": [
+        "Otsu_Residence_tensyutu_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    }
+  },
+  "timestamp": "2026-02-18T15:58:14"
+}

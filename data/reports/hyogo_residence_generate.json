@@ -1,0 +1,62 @@
+{
+  "prefecture": "hyogo",
+  "form_type": "residence",
+  "summary": {
+    "generated": 12,
+    "failed": 0,
+    "skipped": 1
+  },
+  "wards": {
+    "akashi": {
+      "generated": [
+        "Akashi_Residence_yusoutensyutu_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "amagasaki": {
+      "generated": [
+        "Amagasaki_Residence_idoutodokeR801_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "ashiya": {
+      "generated": [
+        "Ashiya_Residence_yuusouniyorutennshutsutodoke-tokureir0712_v1.PDF",
+        "Ashiya_Residence_yuusouniyorutenshutsutodoker0712_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": [
+        "honninkakunin_yuusoutenshutsu_6.pdf"
+      ]
+    },
+    "himeji": {
+      "generated": [
+        "Himeji_Residence_2019920105555_v1.PDF",
+        "Himeji_Residence_2024103_v1.PDF",
+        "Himeji_Residence_20241126_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "itami": {
+      "generated": [
+        "Itami_Residence_45565871_v1.PDF",
+        "Itami_Residence_64484204_v1.PDF",
+        "Itami_Residence_66800220_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "takarazuka": {
+      "generated": [
+        "Takarazuka_Residence_2103_kinyuurei_v1.PDF",
+        "Takarazuka_Residence_2103_tenshututodoke_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    }
+  },
+  "timestamp": "2026-02-18T15:58:44"
+}

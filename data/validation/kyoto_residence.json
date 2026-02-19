@@ -1,0 +1,97 @@
+{
+  "prefecture": "kyoto",
+  "form_type": "residence",
+  "timestamp": "2026-02-18T15:46:29",
+  "summary": {
+    "ok": 12,
+    "failed": 0,
+    "skipped": 0
+  },
+  "results": {
+    "joyo": {
+      "name_en": "Joyo City",
+      "files": [
+        {
+          "filename": "tennsyutu_20240401.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
+          "filename": "tennnyu.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
+          "filename": "tennkyo2_20240401.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        }
+      ]
+    },
+    "kameoka": {
+      "name_en": "Kameoka City",
+      "files": [
+        {
+          "filename": "13959.pdf",
+          "status": "ok",
+          "detail": "score=90"
+        }
+      ]
+    },
+    "muko": {
+      "name_en": "Muko City",
+      "files": [
+        {
+          "filename": "14366.pdf",
+          "status": "ok",
+          "detail": "score=70"
+        },
+        {
+          "filename": "14367.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
+          "filename": "14368.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        }
+      ]
+    },
+    "nagaokakyo": {
+      "name_en": "Nagaokakyo City",
+      "files": [
+        {
+          "filename": "mynumber_tensyutu.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
+          "filename": "tenshutsu.pdf",
+          "status": "ok",
+          "detail": "score=30"
+        }
+      ]
+    },
+    "uji": {
+      "name_en": "Uji City",
+      "files": [
+        {
+          "filename": "21597.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "44718.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
+          "filename": "45151.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        }
+      ]
+    }
+  }
+}

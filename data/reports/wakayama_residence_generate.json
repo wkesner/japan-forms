@@ -1,0 +1,19 @@
+{
+  "prefecture": "wakayama",
+  "form_type": "residence",
+  "summary": {
+    "generated": 1,
+    "failed": 0,
+    "skipped": 0
+  },
+  "wards": {
+    "tanabe": {
+      "generated": [
+        "Tanabe_Residence_kojin-yuusou-tenshutu-maina3_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    }
+  },
+  "timestamp": "2026-02-18T15:58:12"
+}

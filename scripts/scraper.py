@@ -1280,7 +1280,10 @@ def generate_manifest():
 # STATUS GENERATION
 # ═══════════════════════════════════════════════════════════════
 
-KNOWN_PREFECTURES = ["tokyo", "kanagawa", "chiba", "saitama", "ibaraki", "tochigi", "gunma"]
+KNOWN_PREFECTURES = [
+    "tokyo", "kanagawa", "chiba", "saitama", "ibaraki", "tochigi", "gunma",
+    "osaka", "kyoto", "hyogo", "nara", "shiga", "wakayama",
+]
 
 
 def generate_status(prefecture=None, form_type=None):

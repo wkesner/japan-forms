@@ -1,0 +1,68 @@
+{
+  "_meta": {
+    "version": "0.1.0",
+    "last_updated": "2026-02-18",
+    "confidence": "draft"
+  },
+  "municipality_id": "hyogo/nishinomiya",
+  "names": {
+    "ja": "西宮市",
+    "reading": "にしのみやし",
+    "romaji": "Nishinomiya",
+    "en": "Nishinomiya City"
+  },
+  "prefecture": {
+    "ja": "兵庫県",
+    "en": "Hyogo"
+  },
+  "type": "city",
+  "offices": [
+    {
+      "name_ja": "西宮市役所",
+      "name_en": "Nishinomiya City Hall",
+      "is_main": true,
+      "address_ja": "",
+      "address_en": "",
+      "postal_code": "",
+      "phone": "",
+      "hours": {
+        "weekday": "8:30-17:00",
+        "saturday": null,
+        "sunday": null,
+        "note_en": "Closed weekends and national holidays."
+      },
+      "english_support": null,
+      "english_support_note": ""
+    }
+  ],
+  "forms_available": {
+    "residence_registration": {
+      "has_english_version": null,
+      "pdf_download_url_ja": null,
+      "pdf_download_url_en": null,
+      "online_submission": false,
+      "local_field_additions": [],
+      "local_tips": [],
+      "last_verified": null,
+      "verified_by": null
+    }
+  },
+  "scraping": {
+    "domain": "https://www.city.nishinomiya.lg.jp",
+    "residence": {
+      "index_url": null,
+      "direct_pdfs": []
+    },
+    "nhi": {
+      "index_url": null,
+      "direct_pdfs": []
+    }
+  },
+  "useful_links": {
+    "official_website": "https://www.city.nishinomiya.lg.jp/",
+    "living_guide_en": null,
+    "living_guide_ja": null
+  },
+  "contributors": [],
+  "last_updated": "2026-02-18"
+}

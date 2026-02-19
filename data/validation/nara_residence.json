@@ -1,0 +1,77 @@
+{
+  "prefecture": "nara",
+  "form_type": "residence",
+  "timestamp": "2026-02-18T15:49:08",
+  "summary": {
+    "ok": 6,
+    "failed": 2,
+    "skipped": 0
+  },
+  "results": {
+    "ikoma": {
+      "name_en": "Ikoma City",
+      "files": [
+        {
+          "filename": "(none)",
+          "status": "failed",
+          "detail": "best score too low (35)"
+        }
+      ]
+    },
+    "kashihara": {
+      "name_en": "Kashihara City",
+      "files": [
+        {
+          "filename": "(none)",
+          "status": "failed",
+          "detail": "best score too low (10)"
+        }
+      ]
+    },
+    "nara": {
+      "name_en": "Nara City",
+      "files": [
+        {
+          "filename": "205697.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "205796.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        },
+        {
+          "filename": "205687.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        },
+        {
+          "filename": "205700.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        }
+      ]
+    },
+    "tenri": {
+      "name_en": "Tenri City",
+      "files": [
+        {
+          "filename": "42517478.pdf",
+          "status": "ok",
+          "detail": "score=50"
+        }
+      ]
+    },
+    "yamatokoriyama": {
+      "name_en": "Yamatokoriyama City",
+      "files": [
+        {
+          "filename": "yusou-tensyutu-2011.pdf",
+          "status": "ok",
+          "detail": "score=40"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "_meta": {
+    "version": "0.1.0",
+    "last_updated": "2026-02-18",
+    "confidence": "draft"
+  },
+  "municipality_id": "osaka/toyonaka",
+  "names": {
+    "ja": "豊中市",
+    "reading": "とよなかし",
+    "romaji": "Toyonaka",
+    "en": "Toyonaka City"
+  },
+  "prefecture": {
+    "ja": "大阪府",
+    "en": "Osaka"
+  },
+  "type": "city",
+  "offices": [
+    {
+      "name_ja": "豊中市役所",
+      "name_en": "Toyonaka City Hall",
+      "is_main": true,
+      "address_ja": "",
+      "address_en": "",
+      "postal_code": "",
+      "phone": "",
+      "hours": {
+        "weekday": "8:30-17:00",
+        "saturday": null,
+        "sunday": null,
+        "note_en": "Closed weekends and national holidays."
+      },
+      "english_support": null,
+      "english_support_note": ""
+    }
+  ],
+  "forms_available": {
+    "residence_registration": {
+      "has_english_version": null,
+      "pdf_download_url_ja": null,
+      "pdf_download_url_en": null,
+      "online_submission": false,
+      "local_field_additions": [],
+      "local_tips": [],
+      "last_verified": null,
+      "verified_by": null
+    }
+  },
+  "scraping": {
+    "domain": "https://www.city.toyonaka.osaka.jp",
+    "residence": {
+      "index_url": null,
+      "direct_pdfs": []
+    },
+    "nhi": {
+      "index_url": null,
+      "direct_pdfs": []
+    }
+  },
+  "useful_links": {
+    "official_website": "https://www.city.toyonaka.osaka.jp/",
+    "living_guide_en": null,
+    "living_guide_ja": null
+  },
+  "contributors": [],
+  "last_updated": "2026-02-18"
+}

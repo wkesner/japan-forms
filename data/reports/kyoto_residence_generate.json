@@ -1,0 +1,54 @@
+{
+  "prefecture": "kyoto",
+  "form_type": "residence",
+  "summary": {
+    "generated": 12,
+    "failed": 0,
+    "skipped": 0
+  },
+  "wards": {
+    "joyo": {
+      "generated": [
+        "Joyo_Residence_tennkyo2_20240401_v1.PDF",
+        "Joyo_Residence_tennnyu_v1.PDF",
+        "Joyo_Residence_tennsyutu_20240401_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "kameoka": {
+      "generated": [
+        "Kameoka_Residence_13959_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "muko": {
+      "generated": [
+        "Muko_Residence_14366_v1.PDF",
+        "Muko_Residence_14367_v1.PDF",
+        "Muko_Residence_14368_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "nagaokakyo": {
+      "generated": [
+        "Nagaokakyo_Residence_mynumber_tensyutu_v1.PDF",
+        "Nagaokakyo_Residence_tenshutsu_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "uji": {
+      "generated": [
+        "Uji_Residence_21597_v1.PDF",
+        "Uji_Residence_44718_v1.PDF",
+        "Uji_Residence_45151_v1.PDF"
+      ],
+      "failed": [],
+      "skipped": []
+    }
+  },
+  "timestamp": "2026-02-18T15:58:28"
+}
