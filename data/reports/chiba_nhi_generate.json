@@ -9,11 +9,56 @@
   "wards": {
     "chiba-chuo": {
       "generated": [
-        "ChibaChuo_NHIapp_202502nihongo_v1.PDF",
-        "ChibaChuo_NHIapp_itibuhutannkinngennmenntoriatukaiyoukou_v1.PDF",
-        "ChibaChuo_NHIapp_r7_kokuhonoshiori_v1.PDF",
-        "ChibaChuo_NHIapp_yuuyokisaireigennnenn1_v1.PDF",
-        "ChibaChuo_NHIapp_yuuyokisaireikanenn1_v1.PDF"
+        {
+          "file": "ChibaChuo_NHIapp_202502nihongo_v2.PDF",
+          "stats": {
+            "dictionary": 94,
+            "fragment": 101,
+            "llm": 106,
+            "unknown": 0,
+            "total": 301
+          }
+        },
+        {
+          "file": "ChibaChuo_NHIapp_itibuhutannkinngennmenntoriatukaiyoukou_v2.PDF",
+          "stats": {
+            "dictionary": 14,
+            "fragment": 88,
+            "llm": 72,
+            "unknown": 0,
+            "total": 174
+          }
+        },
+        {
+          "file": "ChibaChuo_NHIapp_r7_kokuhonoshiori_v2.PDF",
+          "stats": {
+            "dictionary": 14,
+            "fragment": 127,
+            "llm": 103,
+            "unknown": 0,
+            "total": 244
+          }
+        },
+        {
+          "file": "ChibaChuo_NHIapp_yuuyokisaireigennnenn1_v2.PDF",
+          "stats": {
+            "dictionary": 38,
+            "fragment": 46,
+            "llm": 26,
+            "unknown": 0,
+            "total": 110
+          }
+        },
+        {
+          "file": "ChibaChuo_NHIapp_yuuyokisaireikanenn1_v2.PDF",
+          "stats": {
+            "dictionary": 56,
+            "fragment": 49,
+            "llm": 45,
+            "unknown": 0,
+            "total": 150
+          }
+        }
       ],
       "failed": [],
       "skipped": []
@@ -31,10 +76,46 @@
     },
     "ichikawa": {
       "generated": [
-        "Ichikawa_NHIapp_000014491_v1.PDF",
-        "Ichikawa_NHIapp_0000406262_v1.PDF",
-        "Ichikawa_NHIapp_0000459270_v1.PDF",
-        "Ichikawa_NHIapp_000278242_v1.PDF"
+        {
+          "file": "Ichikawa_NHIapp_000014491_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 3,
+            "llm": 68,
+            "unknown": 0,
+            "total": 74
+          }
+        },
+        {
+          "file": "Ichikawa_NHIapp_0000406262_v2.PDF",
+          "stats": {
+            "dictionary": 13,
+            "fragment": 15,
+            "llm": 15,
+            "unknown": 0,
+            "total": 43
+          }
+        },
+        {
+          "file": "Ichikawa_NHIapp_0000459270_v2.PDF",
+          "stats": {
+            "dictionary": 9,
+            "fragment": 15,
+            "llm": 17,
+            "unknown": 0,
+            "total": 41
+          }
+        },
+        {
+          "file": "Ichikawa_NHIapp_000278242_v2.PDF",
+          "stats": {
+            "dictionary": 9,
+            "fragment": 14,
+            "llm": 12,
+            "unknown": 0,
+            "total": 35
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -43,8 +124,26 @@
     },
     "matsudo": {
       "generated": [
-        "Matsudo_NHIapp_R7_guidebook_v1.PDF",
-        "Matsudo_NHIapp_tagengogaido_v1.PDF"
+        {
+          "file": "Matsudo_NHIapp_R7_guidebook_v2.PDF",
+          "stats": {
+            "dictionary": 24,
+            "fragment": 146,
+            "llm": 116,
+            "unknown": 0,
+            "total": 286
+          }
+        },
+        {
+          "file": "Matsudo_NHIapp_tagengogaido_v2.PDF",
+          "stats": {
+            "dictionary": 22,
+            "fragment": 43,
+            "llm": 521,
+            "unknown": 0,
+            "total": 586
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -53,21 +152,66 @@
     },
     "narashino": {
       "generated": [
-        "Narashino_NHIapp_R0612kanyukikan_v1.PDF",
-        "Narashino_NHIapp_R7tebiki_v1.PDF"
+        {
+          "file": "Narashino_NHIapp_R0612kanyukikan_v2.PDF",
+          "stats": {
+            "dictionary": 18,
+            "fragment": 17,
+            "llm": 32,
+            "unknown": 0,
+            "total": 67
+          }
+        },
+        {
+          "file": "Narashino_NHIapp_R7tebiki_v2.PDF",
+          "stats": {
+            "dictionary": 21,
+            "fragment": 145,
+            "llm": 122,
+            "unknown": 0,
+            "total": 288
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "narita": {
       "generated": [
-        "Narita_NHIapp_000165404_v1.PDF",
-        "Narita_NHIapp_000167256_v1.PDF",
-        "Narita_NHIapp_000188163_v1.PDF"
+        {
+          "file": "Narita_NHIapp_000165404_v2.PDF",
+          "stats": {
+            "dictionary": 17,
+            "fragment": 23,
+            "llm": 14,
+            "unknown": 0,
+            "total": 54
+          }
+        },
+        {
+          "file": "Narita_NHIapp_000167256_v2.PDF",
+          "stats": {
+            "dictionary": 17,
+            "fragment": 33,
+            "llm": 17,
+            "unknown": 0,
+            "total": 67
+          }
+        },
+        {
+          "file": "Narita_NHIapp_000188163_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 21,
+            "llm": 6,
+            "unknown": 0,
+            "total": 37
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     }
   },
-  "timestamp": "2026-02-18T11:35:28"
+  "timestamp": "2026-02-19T17:22:16"
 }

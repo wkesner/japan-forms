@@ -2,17 +2,53 @@
   "prefecture": "chiba",
   "form_type": "residence",
   "summary": {
-    "generated": 28,
+    "generated": 31,
     "failed": 0,
-    "skipped": 31
+    "skipped": 32
   },
   "wards": {
     "chiba-chuo": {
       "generated": [
-        "ChibaChuo_Residence_jyumin_idou_todoke_v2.PDF",
-        "ChibaChuo_Residence_jyumin_idou_todoke_kisairei_v2.PDF",
-        "ChibaChuo_Residence_yuso_tensyutsu_v2.PDF",
-        "ChibaChuo_Residence_yuso_tensyutsu_071226_v1.PDF"
+        {
+          "file": "ChibaChuo_Residence_jyumin_idou_todoke_v3.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 37,
+            "llm": 51,
+            "unknown": 0,
+            "total": 98
+          }
+        },
+        {
+          "file": "ChibaChuo_Residence_jyumin_idou_todoke_kisairei_v3.PDF",
+          "stats": {
+            "dictionary": 9,
+            "fragment": 35,
+            "llm": 84,
+            "unknown": 0,
+            "total": 128
+          }
+        },
+        {
+          "file": "ChibaChuo_Residence_yuso_tensyutsu_v3.PDF",
+          "stats": {
+            "dictionary": 22,
+            "fragment": 52,
+            "llm": 17,
+            "unknown": 0,
+            "total": 91
+          }
+        },
+        {
+          "file": "ChibaChuo_Residence_yuso_tensyutsu_071226_v2.PDF",
+          "stats": {
+            "dictionary": 22,
+            "fragment": 52,
+            "llm": 17,
+            "unknown": 0,
+            "total": 91
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -22,8 +58,36 @@
     },
     "chiba-hanamigawa": {
       "generated": [
-        "ChibaHanamigawa_Residence_jyumin_idou_todoke_kisairei_v1.PDF",
-        "ChibaHanamigawa_Residence_yuso_tensyutsu_071226_v1.PDF"
+        {
+          "file": "ChibaHanamigawa_Residence_jyumin_idou_todoke_v1.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 37,
+            "llm": 51,
+            "unknown": 0,
+            "total": 98
+          }
+        },
+        {
+          "file": "ChibaHanamigawa_Residence_jyumin_idou_todoke_kisairei_v2.PDF",
+          "stats": {
+            "dictionary": 9,
+            "fragment": 35,
+            "llm": 84,
+            "unknown": 0,
+            "total": 128
+          }
+        },
+        {
+          "file": "ChibaHanamigawa_Residence_yuso_tensyutsu_071226_v2.PDF",
+          "stats": {
+            "dictionary": 22,
+            "fragment": 52,
+            "llm": 17,
+            "unknown": 0,
+            "total": 91
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -33,9 +97,36 @@
     },
     "chiba-inage": {
       "generated": [
-        "ChibaInage_Residence_jyumin_idou_todoke_v1.PDF",
-        "ChibaInage_Residence_jyumin_idou_todoke_kisairei_v1.PDF",
-        "ChibaInage_Residence_yuso_tensyutsu_071226_v1.PDF"
+        {
+          "file": "ChibaInage_Residence_jyumin_idou_todoke_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 37,
+            "llm": 51,
+            "unknown": 0,
+            "total": 98
+          }
+        },
+        {
+          "file": "ChibaInage_Residence_jyumin_idou_todoke_kisairei_v2.PDF",
+          "stats": {
+            "dictionary": 9,
+            "fragment": 35,
+            "llm": 84,
+            "unknown": 0,
+            "total": 128
+          }
+        },
+        {
+          "file": "ChibaInage_Residence_yuso_tensyutsu_071226_v2.PDF",
+          "stats": {
+            "dictionary": 22,
+            "fragment": 52,
+            "llm": 17,
+            "unknown": 0,
+            "total": 91
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -45,9 +136,36 @@
     },
     "chiba-midori": {
       "generated": [
-        "ChibaMidori_Residence_jyumin_idou_todoke_v1.PDF",
-        "ChibaMidori_Residence_jyumin_idou_todoke_kisairei_v1.PDF",
-        "ChibaMidori_Residence_yuso_tensyutsu_071226_v1.PDF"
+        {
+          "file": "ChibaMidori_Residence_jyumin_idou_todoke_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 37,
+            "llm": 51,
+            "unknown": 0,
+            "total": 98
+          }
+        },
+        {
+          "file": "ChibaMidori_Residence_jyumin_idou_todoke_kisairei_v2.PDF",
+          "stats": {
+            "dictionary": 9,
+            "fragment": 35,
+            "llm": 84,
+            "unknown": 0,
+            "total": 128
+          }
+        },
+        {
+          "file": "ChibaMidori_Residence_yuso_tensyutsu_071226_v2.PDF",
+          "stats": {
+            "dictionary": 22,
+            "fragment": 52,
+            "llm": 17,
+            "unknown": 0,
+            "total": 91
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -57,9 +175,36 @@
     },
     "chiba-mihama": {
       "generated": [
-        "ChibaMihama_Residence_jyumin_idou_todoke_v1.PDF",
-        "ChibaMihama_Residence_jyumin_idou_todoke_kisairei_v1.PDF",
-        "ChibaMihama_Residence_yuso_tensyutsu_071226_v1.PDF"
+        {
+          "file": "ChibaMihama_Residence_jyumin_idou_todoke_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 37,
+            "llm": 51,
+            "unknown": 0,
+            "total": 98
+          }
+        },
+        {
+          "file": "ChibaMihama_Residence_jyumin_idou_todoke_kisairei_v2.PDF",
+          "stats": {
+            "dictionary": 9,
+            "fragment": 35,
+            "llm": 84,
+            "unknown": 0,
+            "total": 128
+          }
+        },
+        {
+          "file": "ChibaMihama_Residence_yuso_tensyutsu_071226_v2.PDF",
+          "stats": {
+            "dictionary": 22,
+            "fragment": 52,
+            "llm": 17,
+            "unknown": 0,
+            "total": 91
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -69,9 +214,36 @@
     },
     "chiba-wakaba": {
       "generated": [
-        "ChibaWakaba_Residence_jyumin_idou_todoke_v1.PDF",
-        "ChibaWakaba_Residence_jyumin_idou_todoke_kisairei_v1.PDF",
-        "ChibaWakaba_Residence_yuso_tensyutsu_071226_v1.PDF"
+        {
+          "file": "ChibaWakaba_Residence_jyumin_idou_todoke_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 37,
+            "llm": 51,
+            "unknown": 0,
+            "total": 98
+          }
+        },
+        {
+          "file": "ChibaWakaba_Residence_jyumin_idou_todoke_kisairei_v2.PDF",
+          "stats": {
+            "dictionary": 9,
+            "fragment": 35,
+            "llm": 84,
+            "unknown": 0,
+            "total": 128
+          }
+        },
+        {
+          "file": "ChibaWakaba_Residence_yuso_tensyutsu_071226_v2.PDF",
+          "stats": {
+            "dictionary": 22,
+            "fragment": 52,
+            "llm": 17,
+            "unknown": 0,
+            "total": 91
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -80,7 +252,28 @@
       ]
     },
     "funabashi": {
-      "generated": [],
+      "generated": [
+        {
+          "file": "Funabashi_Residence_nagare_v1.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 52,
+            "llm": 13,
+            "unknown": 0,
+            "total": 68
+          }
+        },
+        {
+          "file": "Funabashi_Residence_yuusou_v1.PDF",
+          "stats": {
+            "dictionary": 18,
+            "fragment": 82,
+            "llm": 30,
+            "unknown": 0,
+            "total": 130
+          }
+        }
+      ],
       "failed": [],
       "skipped": [
         "huuutou.pdf"
@@ -90,6 +283,7 @@
       "generated": [],
       "failed": [],
       "skipped": [
+        "0000468567.pdf",
         "0000493589.pdf",
         "0000493605.pdf",
         "000120773.pdf",
@@ -108,9 +302,36 @@
     },
     "matsudo": {
       "generated": [
-        "Matsudo_Residence_mainannberdennsisyoumeiiraisyo_v1.PDF",
-        "Matsudo_Residence_mynumber_yuuou2_v1.PDF",
-        "Matsudo_Residence_yuusou_tennsyutu3_v1.PDF"
+        {
+          "file": "Matsudo_Residence_mainannberdennsisyoumeiiraisyo_v2.PDF",
+          "stats": {
+            "dictionary": 1,
+            "fragment": 41,
+            "llm": 4,
+            "unknown": 0,
+            "total": 46
+          }
+        },
+        {
+          "file": "Matsudo_Residence_mynumber_yuuou2_v2.PDF",
+          "stats": {
+            "dictionary": 31,
+            "fragment": 56,
+            "llm": 10,
+            "unknown": 0,
+            "total": 97
+          }
+        },
+        {
+          "file": "Matsudo_Residence_yuusou_tennsyutu3_v2.PDF",
+          "stats": {
+            "dictionary": 36,
+            "fragment": 33,
+            "llm": 15,
+            "unknown": 0,
+            "total": 84
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -119,10 +340,46 @@
     },
     "narashino": {
       "generated": [
-        "Narashino_Residence_moveinex_v1.PDF",
-        "Narashino_Residence_movetoex_v1.PDF",
-        "Narashino_Residence_moving_v1.PDF",
-        "Narashino_Residence_movingex_v1.PDF"
+        {
+          "file": "Narashino_Residence_moveinex_v2.PDF",
+          "stats": {
+            "dictionary": 42,
+            "fragment": 59,
+            "llm": 34,
+            "unknown": 0,
+            "total": 135
+          }
+        },
+        {
+          "file": "Narashino_Residence_movetoex_v2.PDF",
+          "stats": {
+            "dictionary": 41,
+            "fragment": 60,
+            "llm": 35,
+            "unknown": 0,
+            "total": 136
+          }
+        },
+        {
+          "file": "Narashino_Residence_moving_v2.PDF",
+          "stats": {
+            "dictionary": 40,
+            "fragment": 53,
+            "llm": 33,
+            "unknown": 0,
+            "total": 126
+          }
+        },
+        {
+          "file": "Narashino_Residence_movingex_v2.PDF",
+          "stats": {
+            "dictionary": 42,
+            "fragment": 59,
+            "llm": 34,
+            "unknown": 0,
+            "total": 135
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -131,8 +388,26 @@
     },
     "narita": {
       "generated": [
-        "Narita_Residence_000210593_v1.PDF",
-        "Narita_Residence_000211027_v1.PDF"
+        {
+          "file": "Narita_Residence_000210593_v2.PDF",
+          "stats": {
+            "dictionary": 19,
+            "fragment": 31,
+            "llm": 14,
+            "unknown": 0,
+            "total": 64
+          }
+        },
+        {
+          "file": "Narita_Residence_000211027_v2.PDF",
+          "stats": {
+            "dictionary": 11,
+            "fragment": 47,
+            "llm": 13,
+            "unknown": 0,
+            "total": 71
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -153,7 +428,16 @@
     },
     "yachiyo": {
       "generated": [
-        "Yachiyo_Residence_43948_v1.PDF"
+        {
+          "file": "Yachiyo_Residence_43948_v2.PDF",
+          "stats": {
+            "dictionary": 14,
+            "fragment": 49,
+            "llm": 11,
+            "unknown": 0,
+            "total": 74
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -161,5 +445,5 @@
       ]
     }
   },
-  "timestamp": "2026-02-18T10:45:09"
+  "timestamp": "2026-02-19T16:17:51"
 }
