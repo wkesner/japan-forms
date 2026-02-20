@@ -1,0 +1,1060 @@
+{
+  "prefecture": "kanagawa",
+  "form_type": "residence",
+  "summary": {
+    "generated": 82,
+    "failed": 0,
+    "skipped": 0
+  },
+  "wards": {
+    "atsugi": {
+      "generated": [
+        {
+          "file": "Atsugi_Residence_yusou_tensyutu_v2.PDF",
+          "stats": {
+            "dictionary": 22,
+            "fragment": 24,
+            "llm": 9,
+            "unknown": 0,
+            "total": 55
+          }
+        },
+        {
+          "file": "Atsugi_Residence_yusou_tensyutu_mihon_v2.PDF",
+          "stats": {
+            "dictionary": 19,
+            "fragment": 36,
+            "llm": 18,
+            "unknown": 0,
+            "total": 73
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "chigasaki": {
+      "generated": [
+        {
+          "file": "Chigasaki_Residence_tokurei_v2.PDF",
+          "stats": {
+            "dictionary": 26,
+            "fragment": 39,
+            "llm": 10,
+            "unknown": 0,
+            "total": 75
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "ebina": {
+      "generated": [
+        {
+          "file": "Ebina_Residence_jumin-ido-todoke_v2.PDF",
+          "stats": {
+            "dictionary": 29,
+            "fragment": 42,
+            "llm": 27,
+            "unknown": 0,
+            "total": 98
+          }
+        },
+        {
+          "file": "Ebina_Residence_yusouyoutensyututodoke_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 31,
+            "llm": 10,
+            "unknown": 0,
+            "total": 51
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "fujisawa": {
+      "generated": [
+        {
+          "file": "Fujisawa_Residence_20251222181513_v2.PDF",
+          "stats": {
+            "dictionary": 24,
+            "fragment": 73,
+            "llm": 39,
+            "unknown": 0,
+            "total": 136
+          }
+        },
+        {
+          "file": "Fujisawa_Residence_20251224142330_v2.PDF",
+          "stats": {
+            "dictionary": 13,
+            "fragment": 57,
+            "llm": 23,
+            "unknown": 0,
+            "total": 93
+          }
+        },
+        {
+          "file": "Fujisawa_Residence_20251224142413_v2.PDF",
+          "stats": {
+            "dictionary": 13,
+            "fragment": 57,
+            "llm": 23,
+            "unknown": 0,
+            "total": 93
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "hadano": {
+      "generated": [
+        {
+          "file": "Hadano_Residence_yuusoutensyutu_v2.PDF",
+          "stats": {
+            "dictionary": 29,
+            "fragment": 27,
+            "llm": 42,
+            "unknown": 0,
+            "total": 98
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "kamakura": {
+      "generated": [
+        {
+          "file": "Kamakura_Residence_tenshutuword_v2.PDF",
+          "stats": {
+            "dictionary": 2,
+            "fragment": 31,
+            "llm": 2,
+            "unknown": 0,
+            "total": 35
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "kawasaki-asao": {
+      "generated": [
+        {
+          "file": "KawasakiAsao_Residence_20250101tenshutu_v2.PDF",
+          "stats": {
+            "dictionary": 26,
+            "fragment": 27,
+            "llm": 8,
+            "unknown": 0,
+            "total": 61
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "kawasaki-kawasaki": {
+      "generated": [
+        {
+          "file": "KawasakiKawasaki_Residence_20250101tenshutu_v2.PDF",
+          "stats": {
+            "dictionary": 26,
+            "fragment": 27,
+            "llm": 8,
+            "unknown": 0,
+            "total": 61
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "kawasaki-miyamae": {
+      "generated": [
+        {
+          "file": "KawasakiMiyamae_Residence_20250101tenshutu_v2.PDF",
+          "stats": {
+            "dictionary": 26,
+            "fragment": 27,
+            "llm": 8,
+            "unknown": 0,
+            "total": 61
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "kawasaki-nakahara": {
+      "generated": [
+        {
+          "file": "KawasakiNakahara_Residence_20250101tenshutu_v2.PDF",
+          "stats": {
+            "dictionary": 26,
+            "fragment": 27,
+            "llm": 8,
+            "unknown": 0,
+            "total": 61
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "kawasaki-saiwai": {
+      "generated": [
+        {
+          "file": "KawasakiSaiwai_Residence_20250101tenshutu_v2.PDF",
+          "stats": {
+            "dictionary": 26,
+            "fragment": 27,
+            "llm": 8,
+            "unknown": 0,
+            "total": 61
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "kawasaki-takatsu": {
+      "generated": [
+        {
+          "file": "KawasakiTakatsu_Residence_20250101tenshutu_v2.PDF",
+          "stats": {
+            "dictionary": 26,
+            "fragment": 27,
+            "llm": 8,
+            "unknown": 0,
+            "total": 61
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "kawasaki-tama": {
+      "generated": [
+        {
+          "file": "KawasakiTama_Residence_20250101tenshutu_v2.PDF",
+          "stats": {
+            "dictionary": 26,
+            "fragment": 27,
+            "llm": 8,
+            "unknown": 0,
+            "total": 61
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "odawara": {
+      "generated": [
+        {
+          "file": "Odawara_Residence_1-20210323194124_v2.PDF",
+          "stats": {
+            "dictionary": 17,
+            "fragment": 41,
+            "llm": 4,
+            "unknown": 0,
+            "total": 62
+          }
+        },
+        {
+          "file": "Odawara_Residence_1-20210323194151_v2.PDF",
+          "stats": {
+            "dictionary": 25,
+            "fragment": 56,
+            "llm": 16,
+            "unknown": 0,
+            "total": 97
+          }
+        },
+        {
+          "file": "Odawara_Residence_1-20210324202455_v2.PDF",
+          "stats": {
+            "dictionary": 17,
+            "fragment": 41,
+            "llm": 4,
+            "unknown": 0,
+            "total": 62
+          }
+        },
+        {
+          "file": "Odawara_Residence_1-20251128111003_b6929047b96e3e_v2.PDF",
+          "stats": {
+            "dictionary": 20,
+            "fragment": 43,
+            "llm": 3,
+            "unknown": 0,
+            "total": 66
+          }
+        },
+        {
+          "file": "Odawara_Residence_1-20251128111318_b6929053e63a64_v2.PDF",
+          "stats": {
+            "dictionary": 18,
+            "fragment": 52,
+            "llm": 14,
+            "unknown": 0,
+            "total": 84
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "sagamihara-chuo": {
+      "generated": [
+        {
+          "file": "SagamiharaChuo_Residence_tenkyotodoke_rei_s_v2.PDF",
+          "stats": {
+            "dictionary": 36,
+            "fragment": 18,
+            "llm": 28,
+            "unknown": 0,
+            "total": 82
+          }
+        },
+        {
+          "file": "SagamiharaChuo_Residence_tennyuutodoke_rei_s_v2.PDF",
+          "stats": {
+            "dictionary": 34,
+            "fragment": 19,
+            "llm": 31,
+            "unknown": 0,
+            "total": 84
+          }
+        },
+        {
+          "file": "SagamiharaChuo_Residence_tensyutsutodoke_rei_s_v2.PDF",
+          "stats": {
+            "dictionary": 35,
+            "fragment": 20,
+            "llm": 28,
+            "unknown": 0,
+            "total": 83
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "sagamihara-midori": {
+      "generated": [
+        {
+          "file": "SagamiharaMidori_Residence_tenkyotodoke_rei_s_v2.PDF",
+          "stats": {
+            "dictionary": 36,
+            "fragment": 18,
+            "llm": 28,
+            "unknown": 0,
+            "total": 82
+          }
+        },
+        {
+          "file": "SagamiharaMidori_Residence_tennyuutodoke_rei_s_v2.PDF",
+          "stats": {
+            "dictionary": 34,
+            "fragment": 19,
+            "llm": 31,
+            "unknown": 0,
+            "total": 84
+          }
+        },
+        {
+          "file": "SagamiharaMidori_Residence_tensyutsutodoke_rei_s_v2.PDF",
+          "stats": {
+            "dictionary": 35,
+            "fragment": 20,
+            "llm": 28,
+            "unknown": 0,
+            "total": 83
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "sagamihara-minami": {
+      "generated": [
+        {
+          "file": "SagamiharaMinami_Residence_tenkyotodoke_rei_s_v2.PDF",
+          "stats": {
+            "dictionary": 36,
+            "fragment": 18,
+            "llm": 28,
+            "unknown": 0,
+            "total": 82
+          }
+        },
+        {
+          "file": "SagamiharaMinami_Residence_tennyuutodoke_rei_s_v2.PDF",
+          "stats": {
+            "dictionary": 34,
+            "fragment": 19,
+            "llm": 31,
+            "unknown": 0,
+            "total": 84
+          }
+        },
+        {
+          "file": "SagamiharaMinami_Residence_tensyutsutodoke_rei_s_v2.PDF",
+          "stats": {
+            "dictionary": 35,
+            "fragment": 20,
+            "llm": 28,
+            "unknown": 0,
+            "total": 83
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yamato": {
+      "generated": [
+        {
+          "file": "Yamato_Residence_000135087_v2.PDF",
+          "stats": {
+            "dictionary": 23,
+            "fragment": 68,
+            "llm": 70,
+            "unknown": 0,
+            "total": 161
+          }
+        },
+        {
+          "file": "Yamato_Residence_ido1_v2.PDF",
+          "stats": {
+            "dictionary": 9,
+            "fragment": 55,
+            "llm": 74,
+            "unknown": 0,
+            "total": 138
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yokohama-aoba": {
+      "generated": [
+        {
+          "file": "YokohamaAoba_Residence_0011_20250317_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 16,
+            "llm": 1,
+            "unknown": 0,
+            "total": 22
+          }
+        },
+        {
+          "file": "YokohamaAoba_Residence_tenshututodoke_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 11,
+            "llm": 105,
+            "unknown": 0,
+            "total": 119
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yokohama-asahi": {
+      "generated": [
+        {
+          "file": "YokohamaAsahi_Residence_0011_20250317_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 16,
+            "llm": 1,
+            "unknown": 0,
+            "total": 22
+          }
+        },
+        {
+          "file": "YokohamaAsahi_Residence_tenshututodoke_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 11,
+            "llm": 105,
+            "unknown": 0,
+            "total": 119
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yokohama-hodogaya": {
+      "generated": [
+        {
+          "file": "YokohamaHodogaya_Residence_0011_20250317_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 16,
+            "llm": 1,
+            "unknown": 0,
+            "total": 22
+          }
+        },
+        {
+          "file": "YokohamaHodogaya_Residence_tenshututodoke_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 11,
+            "llm": 105,
+            "unknown": 0,
+            "total": 119
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yokohama-isogo": {
+      "generated": [
+        {
+          "file": "YokohamaIsogo_Residence_0011_20250317_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 16,
+            "llm": 1,
+            "unknown": 0,
+            "total": 22
+          }
+        },
+        {
+          "file": "YokohamaIsogo_Residence_tenshututodoke_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 11,
+            "llm": 105,
+            "unknown": 0,
+            "total": 119
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yokohama-izumi": {
+      "generated": [
+        {
+          "file": "YokohamaIzumi_Residence_0011_20250317_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 16,
+            "llm": 1,
+            "unknown": 0,
+            "total": 22
+          }
+        },
+        {
+          "file": "YokohamaIzumi_Residence_tenshututodoke_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 11,
+            "llm": 105,
+            "unknown": 0,
+            "total": 119
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yokohama-kanagawa": {
+      "generated": [
+        {
+          "file": "YokohamaKanagawa_Residence_0011_20250317_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 16,
+            "llm": 1,
+            "unknown": 0,
+            "total": 22
+          }
+        },
+        {
+          "file": "YokohamaKanagawa_Residence_tenshututodoke_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 11,
+            "llm": 105,
+            "unknown": 0,
+            "total": 119
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yokohama-kanazawa": {
+      "generated": [
+        {
+          "file": "YokohamaKanazawa_Residence_0011_20250317_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 16,
+            "llm": 1,
+            "unknown": 0,
+            "total": 22
+          }
+        },
+        {
+          "file": "YokohamaKanazawa_Residence_tenshututodoke_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 11,
+            "llm": 105,
+            "unknown": 0,
+            "total": 119
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yokohama-kohoku": {
+      "generated": [
+        {
+          "file": "YokohamaKohoku_Residence_0011_20250317_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 16,
+            "llm": 1,
+            "unknown": 0,
+            "total": 22
+          }
+        },
+        {
+          "file": "YokohamaKohoku_Residence_0022_20240205_v2.PDF",
+          "stats": {
+            "dictionary": 4,
+            "fragment": 12,
+            "llm": 113,
+            "unknown": 0,
+            "total": 129
+          }
+        },
+        {
+          "file": "YokohamaKohoku_Residence_0023_20240206_v2.PDF",
+          "stats": {
+            "dictionary": 4,
+            "fragment": 12,
+            "llm": 113,
+            "unknown": 0,
+            "total": 129
+          }
+        },
+        {
+          "file": "YokohamaKohoku_Residence_0028_20250514_v2.PDF",
+          "stats": {
+            "dictionary": 4,
+            "fragment": 7,
+            "llm": 17,
+            "unknown": 0,
+            "total": 28
+          }
+        },
+        {
+          "file": "YokohamaKohoku_Residence_0029_20250514_v2.PDF",
+          "stats": {
+            "dictionary": 12,
+            "fragment": 14,
+            "llm": 7,
+            "unknown": 0,
+            "total": 33
+          }
+        },
+        {
+          "file": "YokohamaKohoku_Residence_tenshututodoke_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 11,
+            "llm": 105,
+            "unknown": 0,
+            "total": 119
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yokohama-konan": {
+      "generated": [
+        {
+          "file": "YokohamaKonan_Residence_0011_20250317_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 16,
+            "llm": 1,
+            "unknown": 0,
+            "total": 22
+          }
+        },
+        {
+          "file": "YokohamaKonan_Residence_tenshututodoke_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 11,
+            "llm": 105,
+            "unknown": 0,
+            "total": 119
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yokohama-midori": {
+      "generated": [
+        {
+          "file": "YokohamaMidori_Residence_0011_20250317_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 16,
+            "llm": 1,
+            "unknown": 0,
+            "total": 22
+          }
+        },
+        {
+          "file": "YokohamaMidori_Residence_tenshututodoke_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 11,
+            "llm": 105,
+            "unknown": 0,
+            "total": 119
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yokohama-minami": {
+      "generated": [
+        {
+          "file": "YokohamaMinami_Residence_0011_20250317_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 16,
+            "llm": 1,
+            "unknown": 0,
+            "total": 22
+          }
+        },
+        {
+          "file": "YokohamaMinami_Residence_tenshututodoke_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 11,
+            "llm": 105,
+            "unknown": 0,
+            "total": 119
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yokohama-naka": {
+      "generated": [
+        {
+          "file": "YokohamaNaka_Residence_0011_20250317_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 16,
+            "llm": 1,
+            "unknown": 0,
+            "total": 22
+          }
+        },
+        {
+          "file": "YokohamaNaka_Residence_0012_20250317_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 16,
+            "llm": 1,
+            "unknown": 0,
+            "total": 22
+          }
+        },
+        {
+          "file": "YokohamaNaka_Residence_0022_20240205_v3.PDF",
+          "stats": {
+            "dictionary": 4,
+            "fragment": 12,
+            "llm": 113,
+            "unknown": 0,
+            "total": 129
+          }
+        },
+        {
+          "file": "YokohamaNaka_Residence_0023_20240206_v3.PDF",
+          "stats": {
+            "dictionary": 4,
+            "fragment": 12,
+            "llm": 113,
+            "unknown": 0,
+            "total": 129
+          }
+        },
+        {
+          "file": "YokohamaNaka_Residence_0028_20250514_v2.PDF",
+          "stats": {
+            "dictionary": 4,
+            "fragment": 7,
+            "llm": 17,
+            "unknown": 0,
+            "total": 28
+          }
+        },
+        {
+          "file": "YokohamaNaka_Residence_0029_20250514_v2.PDF",
+          "stats": {
+            "dictionary": 12,
+            "fragment": 14,
+            "llm": 7,
+            "unknown": 0,
+            "total": 33
+          }
+        },
+        {
+          "file": "YokohamaNaka_Residence_tenshututodoke_v4.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 11,
+            "llm": 105,
+            "unknown": 0,
+            "total": 119
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yokohama-nishi": {
+      "generated": [
+        {
+          "file": "YokohamaNishi_Residence_0011_20250317_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 16,
+            "llm": 1,
+            "unknown": 0,
+            "total": 22
+          }
+        },
+        {
+          "file": "YokohamaNishi_Residence_tenshututodoke_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 11,
+            "llm": 105,
+            "unknown": 0,
+            "total": 119
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yokohama-sakae": {
+      "generated": [
+        {
+          "file": "YokohamaSakae_Residence_0011_20250317_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 16,
+            "llm": 1,
+            "unknown": 0,
+            "total": 22
+          }
+        },
+        {
+          "file": "YokohamaSakae_Residence_tenshututodoke_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 11,
+            "llm": 105,
+            "unknown": 0,
+            "total": 119
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yokohama-seya": {
+      "generated": [
+        {
+          "file": "YokohamaSeya_Residence_0011_20250317_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 16,
+            "llm": 1,
+            "unknown": 0,
+            "total": 22
+          }
+        },
+        {
+          "file": "YokohamaSeya_Residence_tenshututodoke_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 11,
+            "llm": 105,
+            "unknown": 0,
+            "total": 119
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yokohama-totsuka": {
+      "generated": [
+        {
+          "file": "YokohamaTotsuka_Residence_0011_20250317_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 16,
+            "llm": 1,
+            "unknown": 0,
+            "total": 22
+          }
+        },
+        {
+          "file": "YokohamaTotsuka_Residence_tenshututodoke_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 11,
+            "llm": 105,
+            "unknown": 0,
+            "total": 119
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yokohama-tsurumi": {
+      "generated": [
+        {
+          "file": "YokohamaTsurumi_Residence_0011_20250317_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 16,
+            "llm": 1,
+            "unknown": 0,
+            "total": 22
+          }
+        },
+        {
+          "file": "YokohamaTsurumi_Residence_tenshututodoke_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 11,
+            "llm": 105,
+            "unknown": 0,
+            "total": 119
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yokohama-tsuzuki": {
+      "generated": [
+        {
+          "file": "YokohamaTsuzuki_Residence_0011_20250317_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 16,
+            "llm": 1,
+            "unknown": 0,
+            "total": 22
+          }
+        },
+        {
+          "file": "YokohamaTsuzuki_Residence_tenshututodoke_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 11,
+            "llm": 105,
+            "unknown": 0,
+            "total": 119
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yokosuka": {
+      "generated": [
+        {
+          "file": "Yokosuka_Residence_20241202_tensyutu_yuusou_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 55,
+            "llm": 15,
+            "unknown": 0,
+            "total": 80
+          }
+        },
+        {
+          "file": "Yokosuka_Residence_20241202_yuusoutennsyutu_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 55,
+            "llm": 15,
+            "unknown": 0,
+            "total": 80
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "zama": {
+      "generated": [
+        {
+          "file": "Zama_Residence_tenshutsu202601_v2.PDF",
+          "stats": {
+            "dictionary": 12,
+            "fragment": 24,
+            "llm": 23,
+            "unknown": 0,
+            "total": 59
+          }
+        },
+        {
+          "file": "Zama_Residence_tenshutsumihon202601_v2.PDF",
+          "stats": {
+            "dictionary": 15,
+            "fragment": 33,
+            "llm": 25,
+            "unknown": 0,
+            "total": 73
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    }
+  },
+  "timestamp": "2026-02-19T15:24:01"
+}
