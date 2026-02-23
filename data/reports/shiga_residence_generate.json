@@ -9,26 +9,62 @@
   "wards": {
     "kusatsu": {
       "generated": [
-        "Kusatsu_Residence_tenshutsu_card_v1.PDF",
-        "Kusatsu_Residence_tensyutu_nocard_v1.PDF"
+        {
+          "file": "Kusatsu_Residence_tenshutsu_card_v2.PDF",
+          "stats": {
+            "dictionary": 17,
+            "fragment": 27,
+            "llm": 9,
+            "unknown": 0,
+            "total": 53
+          }
+        },
+        {
+          "file": "Kusatsu_Residence_tensyutu_nocard_v2.PDF",
+          "stats": {
+            "dictionary": 17,
+            "fragment": 28,
+            "llm": 9,
+            "unknown": 0,
+            "total": 54
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "moriyama": {
       "generated": [
-        "Moriyama_Residence_tenshutsu_yusou_v1.PDF"
+        {
+          "file": "Moriyama_Residence_tenshutsu_yusou_v2.PDF",
+          "stats": {
+            "dictionary": 24,
+            "fragment": 21,
+            "llm": 13,
+            "unknown": 0,
+            "total": 58
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "otsu": {
       "generated": [
-        "Otsu_Residence_tensyutu_v1.PDF"
+        {
+          "file": "Otsu_Residence_tensyutu_v2.PDF",
+          "stats": {
+            "dictionary": 21,
+            "fragment": 42,
+            "llm": 11,
+            "unknown": 0,
+            "total": 74
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     }
   },
-  "timestamp": "2026-02-18T15:58:14"
+  "timestamp": "2026-02-20T09:59:02"
 }

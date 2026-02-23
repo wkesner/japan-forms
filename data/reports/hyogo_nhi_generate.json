@@ -9,19 +9,82 @@
   "wards": {
     "akashi": {
       "generated": [
-        "Akashi_NHIapp_h30hpchirashi-cleaned_v1.PDF",
-        "Akashi_NHIapp_kokugakuryoyohi_shikyuukouza_hennkou202602_v1.PDF",
-        "Akashi_NHIapp_kokugakuryoyohi_shikyuukouza_hennkou_kinyurei202602_v1.PDF"
+        {
+          "file": "Akashi_NHIapp_h30hpchirashi-cleaned_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 49,
+            "llm": 28,
+            "unknown": 0,
+            "total": 80
+          }
+        },
+        {
+          "file": "Akashi_NHIapp_kokugakuryoyohi_shikyuukouza_hennkou202602_v2.PDF",
+          "stats": {
+            "dictionary": 6,
+            "fragment": 26,
+            "llm": 21,
+            "unknown": 0,
+            "total": 53
+          }
+        },
+        {
+          "file": "Akashi_NHIapp_kokugakuryoyohi_shikyuukouza_hennkou_kinyurei202602_v2.PDF",
+          "stats": {
+            "dictionary": 8,
+            "fragment": 27,
+            "llm": 21,
+            "unknown": 0,
+            "total": 56
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "ashiya": {
       "generated": [
-        "Ashiya_NHIapp_kinyuurei_saikoufu_shinseisho_r6_12_1_v1.PDF",
-        "Ashiya_NHIapp_saikoufu_shinseisho_r6_12_1_v1.PDF",
-        "Ashiya_NHIapp_sousaihishinnseisyo_v1.PDF",
-        "Ashiya_NHIapp_tokuteishippeininnteishinnseisyo_v1.PDF"
+        {
+          "file": "Ashiya_NHIapp_kinyuurei_saikoufu_shinseisho_r6_12_1_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 48,
+            "llm": 7,
+            "unknown": 0,
+            "total": 65
+          }
+        },
+        {
+          "file": "Ashiya_NHIapp_saikoufu_shinseisho_r6_12_1_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 39,
+            "llm": 7,
+            "unknown": 0,
+            "total": 51
+          }
+        },
+        {
+          "file": "Ashiya_NHIapp_sousaihishinnseisyo_v2.PDF",
+          "stats": {
+            "dictionary": 15,
+            "fragment": 31,
+            "llm": 18,
+            "unknown": 0,
+            "total": 64
+          }
+        },
+        {
+          "file": "Ashiya_NHIapp_tokuteishippeininnteishinnseisyo_v2.PDF",
+          "stats": {
+            "dictionary": 11,
+            "fragment": 6,
+            "llm": 6,
+            "unknown": 0,
+            "total": 23
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -30,23 +93,86 @@
     },
     "himeji": {
       "generated": [
-        "Himeji_NHIapp_marugakumaruennsinseisyo_v1.PDF",
-        "Himeji_NHIapp_marugakumaruensinnseisyokinyuurei_v1.PDF",
-        "Himeji_NHIapp_saikoufu_v1.PDF",
-        "Himeji_NHIapp_saikoufukakikata_v1.PDF"
+        {
+          "file": "Himeji_NHIapp_marugakumaruennsinseisyo_v2.PDF",
+          "stats": {
+            "dictionary": 21,
+            "fragment": 12,
+            "llm": 16,
+            "unknown": 0,
+            "total": 49
+          }
+        },
+        {
+          "file": "Himeji_NHIapp_marugakumaruensinnseisyokinyuurei_v2.PDF",
+          "stats": {
+            "dictionary": 17,
+            "fragment": 14,
+            "llm": 18,
+            "unknown": 0,
+            "total": 49
+          }
+        },
+        {
+          "file": "Himeji_NHIapp_saikoufu_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 27,
+            "llm": 15,
+            "unknown": 0,
+            "total": 47
+          }
+        },
+        {
+          "file": "Himeji_NHIapp_saikoufukakikata_v2.PDF",
+          "stats": {
+            "dictionary": 7,
+            "fragment": 31,
+            "llm": 14,
+            "unknown": 0,
+            "total": 52
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "itami": {
       "generated": [
-        "Itami_NHIapp_KAISI_v1.PDF",
-        "Itami_NHIapp_O_v1.PDF",
-        "Itami_NHIapp_R7_tebiki_v1.PDF"
+        {
+          "file": "Itami_NHIapp_KAISI_v2.PDF",
+          "stats": {
+            "dictionary": 40,
+            "fragment": 35,
+            "llm": 42,
+            "unknown": 0,
+            "total": 117
+          }
+        },
+        {
+          "file": "Itami_NHIapp_O_v2.PDF",
+          "stats": {
+            "dictionary": 38,
+            "fragment": 52,
+            "llm": 31,
+            "unknown": 0,
+            "total": 121
+          }
+        },
+        {
+          "file": "Itami_NHIapp_R7_tebiki_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 107,
+            "llm": 108,
+            "unknown": 0,
+            "total": 225
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     }
   },
-  "timestamp": "2026-02-18T16:12:02"
+  "timestamp": "2026-02-20T14:06:26"
 }

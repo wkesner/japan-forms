@@ -9,7 +9,16 @@
   "wards": {
     "hitachi": {
       "generated": [
-        "Hitachi_Residence_henkoutodokedekisairei2_v1.PDF"
+        {
+          "file": "Hitachi_Residence_henkoutodokedekisairei2_v2.PDF",
+          "stats": {
+            "dictionary": 52,
+            "fragment": 14,
+            "llm": 16,
+            "unknown": 0,
+            "total": 82
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -21,9 +30,36 @@
     },
     "mito": {
       "generated": [
-        "Mito_Residence_56286_v2.PDF",
-        "Mito_Residence_63325_v2.PDF",
-        "Mito_Residence_63330_v2.PDF"
+        {
+          "file": "Mito_Residence_56286_v3.PDF",
+          "stats": {
+            "dictionary": 31,
+            "fragment": 69,
+            "llm": 30,
+            "unknown": 1,
+            "total": 131
+          }
+        },
+        {
+          "file": "Mito_Residence_63325_v3.PDF",
+          "stats": {
+            "dictionary": 28,
+            "fragment": 43,
+            "llm": 23,
+            "unknown": 0,
+            "total": 94
+          }
+        },
+        {
+          "file": "Mito_Residence_63330_v3.PDF",
+          "stats": {
+            "dictionary": 28,
+            "fragment": 43,
+            "llm": 23,
+            "unknown": 0,
+            "total": 94
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -32,8 +68,26 @@
     },
     "tsukuba": {
       "generated": [
-        "Tsukuba_Residence_mainatensyutu_v1.PDF",
-        "Tsukuba_Residence_yuusouyou_v1.PDF"
+        {
+          "file": "Tsukuba_Residence_mainatensyutu_v2.PDF",
+          "stats": {
+            "dictionary": 11,
+            "fragment": 16,
+            "llm": 12,
+            "unknown": 0,
+            "total": 39
+          }
+        },
+        {
+          "file": "Tsukuba_Residence_yuusouyou_v2.PDF",
+          "stats": {
+            "dictionary": 17,
+            "fragment": 9,
+            "llm": 3,
+            "unknown": 0,
+            "total": 29
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -43,5 +97,5 @@
       ]
     }
   },
-  "timestamp": "2026-02-18T10:54:07"
+  "timestamp": "2026-02-20T10:06:09"
 }

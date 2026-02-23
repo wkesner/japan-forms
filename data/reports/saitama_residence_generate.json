@@ -9,9 +9,36 @@
   "wards": {
     "ageo": {
       "generated": [
-        "Ageo_Residence_111971_v2.PDF",
-        "Ageo_Residence_115523_v2.PDF",
-        "Ageo_Residence_403250_1117718_misc_v2.PDF"
+        {
+          "file": "Ageo_Residence_111971_v2.PDF",
+          "stats": {
+            "dictionary": 26,
+            "fragment": 48,
+            "llm": 19,
+            "unknown": 0,
+            "total": 93
+          }
+        },
+        {
+          "file": "Ageo_Residence_115523_v2.PDF",
+          "stats": {
+            "dictionary": 0,
+            "fragment": 0,
+            "llm": 0,
+            "unknown": 0,
+            "total": 0
+          }
+        },
+        {
+          "file": "Ageo_Residence_403250_1117718_misc_v2.PDF",
+          "stats": {
+            "dictionary": 31,
+            "fragment": 5,
+            "llm": 10,
+            "unknown": 0,
+            "total": 46
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -21,7 +48,16 @@
     },
     "asaka": {
       "generated": [
-        "Asaka_Residence_86246_v2.PDF"
+        {
+          "file": "Asaka_Residence_86246_v2.PDF",
+          "stats": {
+            "dictionary": 2,
+            "fragment": 31,
+            "llm": 11,
+            "unknown": 1,
+            "total": 45
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -44,7 +80,16 @@
     },
     "kawagoe": {
       "generated": [
-        "Kawagoe_Residence_tenshutu_v2.PDF"
+        {
+          "file": "Kawagoe_Residence_tenshutu_v2.PDF",
+          "stats": {
+            "dictionary": 16,
+            "fragment": 39,
+            "llm": 17,
+            "unknown": 0,
+            "total": 72
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -54,7 +99,16 @@
     },
     "kawaguchi": {
       "generated": [
-        "Kawaguchi_Residence_202103shinzyuuminnidoutodokeyuusouyou_v3.PDF"
+        {
+          "file": "Kawaguchi_Residence_202103shinzyuuminnidoutodokeyuusouyou_v3.PDF",
+          "stats": {
+            "dictionary": 11,
+            "fragment": 40,
+            "llm": 6,
+            "unknown": 0,
+            "total": 57
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -66,15 +120,42 @@
     },
     "koshigaya": {
       "generated": [
-        "Koshigaya_Residence_yuusou1_v2.PDF"
+        {
+          "file": "Koshigaya_Residence_yuusou1_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 37,
+            "llm": 27,
+            "unknown": 0,
+            "total": 74
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "kumagaya": {
       "generated": [
-        "Kumagaya_Residence_tennsyututodokeyuusou_v2.PDF",
-        "Kumagaya_Residence_tennsyututodokeyuusourei_v2.PDF"
+        {
+          "file": "Kumagaya_Residence_tennsyututodokeyuusou_v2.PDF",
+          "stats": {
+            "dictionary": 7,
+            "fragment": 42,
+            "llm": 17,
+            "unknown": 0,
+            "total": 66
+          }
+        },
+        {
+          "file": "Kumagaya_Residence_tennsyututodokeyuusourei_v2.PDF",
+          "stats": {
+            "dictionary": 9,
+            "fragment": 45,
+            "llm": 24,
+            "unknown": 0,
+            "total": 78
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -84,10 +165,46 @@
     },
     "niiza": {
       "generated": [
-        "Niiza_Residence_45660_v2.PDF",
-        "Niiza_Residence_45662_v2.PDF",
-        "Niiza_Residence_62624_v2.PDF",
-        "Niiza_Residence_62626_v2.PDF"
+        {
+          "file": "Niiza_Residence_45660_v2.PDF",
+          "stats": {
+            "dictionary": 9,
+            "fragment": 28,
+            "llm": 12,
+            "unknown": 0,
+            "total": 49
+          }
+        },
+        {
+          "file": "Niiza_Residence_45662_v2.PDF",
+          "stats": {
+            "dictionary": 19,
+            "fragment": 27,
+            "llm": 15,
+            "unknown": 0,
+            "total": 61
+          }
+        },
+        {
+          "file": "Niiza_Residence_62624_v2.PDF",
+          "stats": {
+            "dictionary": 12,
+            "fragment": 31,
+            "llm": 14,
+            "unknown": 0,
+            "total": 57
+          }
+        },
+        {
+          "file": "Niiza_Residence_62626_v2.PDF",
+          "stats": {
+            "dictionary": 24,
+            "fragment": 29,
+            "llm": 16,
+            "unknown": 0,
+            "total": 69
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -96,7 +213,16 @@
     },
     "saitama-chuo": {
       "generated": [
-        "SaitamaChuo_Residence_yuusou-tennsyutu_v2.PDF"
+        {
+          "file": "SaitamaChuo_Residence_yuusou-tennsyutu_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 34,
+            "llm": 0,
+            "unknown": 0,
+            "total": 44
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -108,7 +234,16 @@
     },
     "saitama-iwatsuki": {
       "generated": [
-        "SaitamaIwatsuki_Residence_yuusou-tennsyutu_v2.PDF"
+        {
+          "file": "SaitamaIwatsuki_Residence_yuusou-tennsyutu_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 34,
+            "llm": 0,
+            "unknown": 0,
+            "total": 44
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -120,7 +255,16 @@
     },
     "saitama-kita": {
       "generated": [
-        "SaitamaKita_Residence_yuusou-tennsyutu_v2.PDF"
+        {
+          "file": "SaitamaKita_Residence_yuusou-tennsyutu_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 34,
+            "llm": 0,
+            "unknown": 0,
+            "total": 44
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -132,7 +276,16 @@
     },
     "saitama-midori": {
       "generated": [
-        "SaitamaMidori_Residence_yuusou-tennsyutu_v2.PDF"
+        {
+          "file": "SaitamaMidori_Residence_yuusou-tennsyutu_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 34,
+            "llm": 0,
+            "unknown": 0,
+            "total": 44
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -144,7 +297,16 @@
     },
     "saitama-minami": {
       "generated": [
-        "SaitamaMinami_Residence_yuusou-tennsyutu_v2.PDF"
+        {
+          "file": "SaitamaMinami_Residence_yuusou-tennsyutu_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 34,
+            "llm": 0,
+            "unknown": 0,
+            "total": 44
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -156,7 +318,16 @@
     },
     "saitama-minuma": {
       "generated": [
-        "SaitamaMinuma_Residence_yuusou-tennsyutu_v2.PDF"
+        {
+          "file": "SaitamaMinuma_Residence_yuusou-tennsyutu_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 34,
+            "llm": 0,
+            "unknown": 0,
+            "total": 44
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -168,7 +339,16 @@
     },
     "saitama-nishi": {
       "generated": [
-        "SaitamaNishi_Residence_yuusou-tennsyutu_v2.PDF"
+        {
+          "file": "SaitamaNishi_Residence_yuusou-tennsyutu_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 34,
+            "llm": 0,
+            "unknown": 0,
+            "total": 44
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -180,7 +360,16 @@
     },
     "saitama-omiya": {
       "generated": [
-        "SaitamaOmiya_Residence_yuusou-tennsyutu_v2.PDF"
+        {
+          "file": "SaitamaOmiya_Residence_yuusou-tennsyutu_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 34,
+            "llm": 0,
+            "unknown": 0,
+            "total": 44
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -192,7 +381,16 @@
     },
     "saitama-sakura": {
       "generated": [
-        "SaitamaSakura_Residence_yuusou-tennsyutu_v2.PDF"
+        {
+          "file": "SaitamaSakura_Residence_yuusou-tennsyutu_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 34,
+            "llm": 0,
+            "unknown": 0,
+            "total": 44
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -204,7 +402,16 @@
     },
     "saitama-urawa": {
       "generated": [
-        "SaitamaUrawa_Residence_yuusou-tennsyutu_v3.PDF"
+        {
+          "file": "SaitamaUrawa_Residence_yuusou-tennsyutu_v2.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 34,
+            "llm": 0,
+            "unknown": 0,
+            "total": 44
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -216,8 +423,26 @@
     },
     "soka": {
       "generated": [
-        "Soka_Residence_202512yuusoutennshutuyoushiki_v1.PDF",
-        "Soka_Residence_202601yuusoutennshutukinyuurei_v1.PDF"
+        {
+          "file": "Soka_Residence_202512yuusoutennshutuyoushiki_v2.PDF",
+          "stats": {
+            "dictionary": 18,
+            "fragment": 25,
+            "llm": 10,
+            "unknown": 0,
+            "total": 53
+          }
+        },
+        {
+          "file": "Soka_Residence_202601yuusoutennshutukinyuurei_v2.PDF",
+          "stats": {
+            "dictionary": 18,
+            "fragment": 36,
+            "llm": 17,
+            "unknown": 0,
+            "total": 71
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -228,8 +453,26 @@
     },
     "tokorozawa": {
       "generated": [
-        "Tokorozawa_Residence_5tennsyutuyuusou_v1.PDF",
-        "Tokorozawa_Residence_6tennsyutumihon_v1.PDF"
+        {
+          "file": "Tokorozawa_Residence_5tennsyutuyuusou_v2.PDF",
+          "stats": {
+            "dictionary": 17,
+            "fragment": 29,
+            "llm": 12,
+            "unknown": 0,
+            "total": 58
+          }
+        },
+        {
+          "file": "Tokorozawa_Residence_6tennsyutumihon_v2.PDF",
+          "stats": {
+            "dictionary": 16,
+            "fragment": 32,
+            "llm": 17,
+            "unknown": 0,
+            "total": 65
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -237,5 +480,5 @@
       ]
     }
   },
-  "timestamp": "2026-02-18T14:23:49"
+  "timestamp": "2026-02-20T10:12:39"
 }

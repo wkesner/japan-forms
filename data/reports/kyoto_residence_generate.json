@@ -9,46 +9,154 @@
   "wards": {
     "joyo": {
       "generated": [
-        "Joyo_Residence_tennkyo2_20240401_v1.PDF",
-        "Joyo_Residence_tennnyu_v1.PDF",
-        "Joyo_Residence_tennsyutu_20240401_v1.PDF"
+        {
+          "file": "Joyo_Residence_tennkyo2_20240401_v2.PDF",
+          "stats": {
+            "dictionary": 18,
+            "fragment": 44,
+            "llm": 28,
+            "unknown": 0,
+            "total": 90
+          }
+        },
+        {
+          "file": "Joyo_Residence_tennnyu_v2.PDF",
+          "stats": {
+            "dictionary": 14,
+            "fragment": 48,
+            "llm": 37,
+            "unknown": 0,
+            "total": 99
+          }
+        },
+        {
+          "file": "Joyo_Residence_tennsyutu_20240401_v2.PDF",
+          "stats": {
+            "dictionary": 17,
+            "fragment": 46,
+            "llm": 31,
+            "unknown": 0,
+            "total": 94
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "kameoka": {
       "generated": [
-        "Kameoka_Residence_13959_v1.PDF"
+        {
+          "file": "Kameoka_Residence_13959_v2.PDF",
+          "stats": {
+            "dictionary": 20,
+            "fragment": 18,
+            "llm": 18,
+            "unknown": 0,
+            "total": 56
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "muko": {
       "generated": [
-        "Muko_Residence_14366_v1.PDF",
-        "Muko_Residence_14367_v1.PDF",
-        "Muko_Residence_14368_v1.PDF"
+        {
+          "file": "Muko_Residence_14366_v2.PDF",
+          "stats": {
+            "dictionary": 44,
+            "fragment": 15,
+            "llm": 18,
+            "unknown": 0,
+            "total": 77
+          }
+        },
+        {
+          "file": "Muko_Residence_14367_v2.PDF",
+          "stats": {
+            "dictionary": 40,
+            "fragment": 30,
+            "llm": 18,
+            "unknown": 0,
+            "total": 88
+          }
+        },
+        {
+          "file": "Muko_Residence_14368_v2.PDF",
+          "stats": {
+            "dictionary": 50,
+            "fragment": 27,
+            "llm": 19,
+            "unknown": 0,
+            "total": 96
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "nagaokakyo": {
       "generated": [
-        "Nagaokakyo_Residence_mynumber_tensyutu_v1.PDF",
-        "Nagaokakyo_Residence_tenshutsu_v1.PDF"
+        {
+          "file": "Nagaokakyo_Residence_mynumber_tensyutu_v2.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 20,
+            "llm": 12,
+            "unknown": 0,
+            "total": 37
+          }
+        },
+        {
+          "file": "Nagaokakyo_Residence_tenshutsu_v2.PDF",
+          "stats": {
+            "dictionary": 4,
+            "fragment": 22,
+            "llm": 11,
+            "unknown": 0,
+            "total": 37
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "uji": {
       "generated": [
-        "Uji_Residence_21597_v1.PDF",
-        "Uji_Residence_44718_v1.PDF",
-        "Uji_Residence_45151_v1.PDF"
+        {
+          "file": "Uji_Residence_21597_v2.PDF",
+          "stats": {
+            "dictionary": 11,
+            "fragment": 30,
+            "llm": 10,
+            "unknown": 0,
+            "total": 51
+          }
+        },
+        {
+          "file": "Uji_Residence_44718_v2.PDF",
+          "stats": {
+            "dictionary": 1,
+            "fragment": 63,
+            "llm": 15,
+            "unknown": 0,
+            "total": 79
+          }
+        },
+        {
+          "file": "Uji_Residence_45151_v2.PDF",
+          "stats": {
+            "dictionary": 0,
+            "fragment": 49,
+            "llm": 23,
+            "unknown": 0,
+            "total": 72
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     }
   },
-  "timestamp": "2026-02-18T15:58:28"
+  "timestamp": "2026-02-20T10:13:00"
 }

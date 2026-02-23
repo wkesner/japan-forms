@@ -1,0 +1,541 @@
+{
+  "prefecture": "tokyo",
+  "form_type": "residence",
+  "summary": {
+    "generated": 39,
+    "failed": 0,
+    "skipped": 1
+  },
+  "wards": {
+    "adachi": {
+      "generated": [
+        {
+          "file": "Adachi_Residence_0020-0020yuusoutennsyutu20260106_v2.PDF",
+          "stats": {
+            "dictionary": 24,
+            "fragment": 34,
+            "llm": 14,
+            "unknown": 0,
+            "total": 72
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "arakawa": {
+      "generated": [
+        {
+          "file": "Arakawa_Residence_r4tenshutsuyuuso_v1.PDF",
+          "stats": {
+            "dictionary": 21,
+            "fragment": 18,
+            "llm": 18,
+            "unknown": 0,
+            "total": 57
+          }
+        },
+        {
+          "file": "Arakawa_Residence_tenshutsuyuso-kinyurei_v1.PDF",
+          "stats": {
+            "dictionary": 11,
+            "fragment": 7,
+            "llm": 2,
+            "unknown": 0,
+            "total": 20
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "bunkyo": {
+      "generated": [
+        {
+          "file": "Bunkyo_Residence_20217211109_v1.PDF",
+          "stats": {
+            "dictionary": 105,
+            "fragment": 24,
+            "llm": 16,
+            "unknown": 1,
+            "total": 146
+          }
+        },
+        {
+          "file": "Bunkyo_Residence_202299101946_v1.PDF",
+          "stats": {
+            "dictionary": 89,
+            "fragment": 54,
+            "llm": 33,
+            "unknown": 0,
+            "total": 176
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "chiyoda": {
+      "generated": [
+        {
+          "file": "Chiyoda_Residence_tenshutsutodoke-yusoyo_v1.PDF",
+          "stats": {
+            "dictionary": 13,
+            "fragment": 36,
+            "llm": 4,
+            "unknown": 0,
+            "total": 53
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "chuo": {
+      "generated": [],
+      "failed": [],
+      "skipped": [
+        "idoutodoke.pdf"
+      ]
+    },
+    "edogawa": {
+      "generated": [
+        {
+          "file": "Edogawa_Residence_20250201_juminido_v1.PDF",
+          "stats": {
+            "dictionary": 8,
+            "fragment": 69,
+            "llm": 49,
+            "unknown": 0,
+            "total": 126
+          }
+        },
+        {
+          "file": "Edogawa_Residence_20250201_juminidorei_v1.PDF",
+          "stats": {
+            "dictionary": 21,
+            "fragment": 15,
+            "llm": 9,
+            "unknown": 0,
+            "total": 45
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "itabashi": {
+      "generated": [
+        {
+          "file": "Itabashi_Residence_idotodoke_v1.PDF",
+          "stats": {
+            "dictionary": 8,
+            "fragment": 47,
+            "llm": 27,
+            "unknown": 0,
+            "total": 82
+          }
+        },
+        {
+          "file": "Itabashi_Residence_yusotensyutu_v1.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 39,
+            "llm": 36,
+            "unknown": 0,
+            "total": 80
+          }
+        },
+        {
+          "file": "Itabashi_Residence_yusotensyutukinyurei_v1.PDF",
+          "stats": {
+            "dictionary": 13,
+            "fragment": 66,
+            "llm": 43,
+            "unknown": 0,
+            "total": 122
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "katsushika": {
+      "generated": [
+        {
+          "file": "Katsushika_Residence_ido_v2.PDF",
+          "stats": {
+            "dictionary": 20,
+            "fragment": 38,
+            "llm": 97,
+            "unknown": 0,
+            "total": 155
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "kita": {
+      "generated": [
+        {
+          "file": "Kita_Residence_idoutodokdesyo20260105_v1.PDF",
+          "stats": {
+            "dictionary": 44,
+            "fragment": 50,
+            "llm": 11,
+            "unknown": 0,
+            "total": 105
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "koto": {
+      "generated": [
+        {
+          "file": "Koto_Residence_20251217171915_v1.PDF",
+          "stats": {
+            "dictionary": 2,
+            "fragment": 30,
+            "llm": 6,
+            "unknown": 0,
+            "total": 38
+          }
+        },
+        {
+          "file": "Koto_Residence_tennyuu_1_v1.PDF",
+          "stats": {
+            "dictionary": 29,
+            "fragment": 22,
+            "llm": 23,
+            "unknown": 0,
+            "total": 74
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "meguro": {
+      "generated": [
+        {
+          "file": "Meguro_Residence_yuusou_v1.PDF",
+          "stats": {
+            "dictionary": 8,
+            "fragment": 19,
+            "llm": 12,
+            "unknown": 0,
+            "total": 39
+          }
+        },
+        {
+          "file": "Meguro_Residence_yuusou_kakikata_v1.PDF",
+          "stats": {
+            "dictionary": 12,
+            "fragment": 31,
+            "llm": 16,
+            "unknown": 0,
+            "total": 59
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "minato": {
+      "generated": [
+        {
+          "file": "Minato_Residence_idoujapan_v1.PDF",
+          "stats": {
+            "dictionary": 51,
+            "fragment": 72,
+            "llm": 45,
+            "unknown": 0,
+            "total": 168
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "nakano": {
+      "generated": [
+        {
+          "file": "Nakano_Residence_HP_v1.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 28,
+            "llm": 33,
+            "unknown": 0,
+            "total": 64
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "nerima": {
+      "generated": [
+        {
+          "file": "Nerima_Residence_R7.12.4_tensyutu-yuusou_v1.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 47,
+            "llm": 80,
+            "unknown": 0,
+            "total": 132
+          }
+        },
+        {
+          "file": "Nerima_Residence_R7.12.4_tensyutu_sample_v1.PDF",
+          "stats": {
+            "dictionary": 13,
+            "fragment": 52,
+            "llm": 90,
+            "unknown": 0,
+            "total": 155
+          }
+        },
+        {
+          "file": "Nerima_Residence_R7.8.26_tensyutu-todoke_v1.PDF",
+          "stats": {
+            "dictionary": 16,
+            "fragment": 0,
+            "llm": 2,
+            "unknown": 0,
+            "total": 18
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "ota": {
+      "generated": [
+        {
+          "file": "Ota_Residence_tensyutsu_yuso_v1.PDF",
+          "stats": {
+            "dictionary": 8,
+            "fragment": 24,
+            "llm": 8,
+            "unknown": 0,
+            "total": 40
+          }
+        },
+        {
+          "file": "Ota_Residence_tensyutsu_yuso_mynumber_v1.PDF",
+          "stats": {
+            "dictionary": 16,
+            "fragment": 11,
+            "llm": 25,
+            "unknown": 0,
+            "total": 52
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "setagaya": {
+      "generated": [
+        {
+          "file": "Setagaya_Residence_juuminidoutodoke_v1.PDF",
+          "stats": {
+            "dictionary": 81,
+            "fragment": 75,
+            "llm": 14,
+            "unknown": 0,
+            "total": 170
+          }
+        },
+        {
+          "file": "Setagaya_Residence_tenshutsu_v1.PDF",
+          "stats": {
+            "dictionary": 68,
+            "fragment": 21,
+            "llm": 7,
+            "unknown": 0,
+            "total": 96
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "shibuya": {
+      "generated": [
+        {
+          "file": "Shibuya_Residence_mynumber_sinsei_v1.PDF",
+          "stats": {
+            "dictionary": 16,
+            "fragment": 31,
+            "llm": 8,
+            "unknown": 0,
+            "total": 55
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "shinagawa": {
+      "generated": [
+        {
+          "file": "Shinagawa_Residence_20250206184722_1_v1.PDF",
+          "stats": {
+            "dictionary": 53,
+            "fragment": 126,
+            "llm": 44,
+            "unknown": 0,
+            "total": 223
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "shinjuku": {
+      "generated": [
+        {
+          "file": "Shinjuku_Residence_000253160_v1.PDF",
+          "stats": {
+            "dictionary": 0,
+            "fragment": 27,
+            "llm": 3,
+            "unknown": 0,
+            "total": 30
+          }
+        },
+        {
+          "file": "Shinjuku_Residence_000253161_v1.PDF",
+          "stats": {
+            "dictionary": 0,
+            "fragment": 19,
+            "llm": 1,
+            "unknown": 0,
+            "total": 20
+          }
+        },
+        {
+          "file": "Shinjuku_Residence_000253172_v1.PDF",
+          "stats": {
+            "dictionary": 12,
+            "fragment": 36,
+            "llm": 119,
+            "unknown": 0,
+            "total": 167
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "suginami": {
+      "generated": [
+        {
+          "file": "Suginami_Residence_kinyurei1229_v1.PDF",
+          "stats": {
+            "dictionary": 11,
+            "fragment": 29,
+            "llm": 26,
+            "unknown": 0,
+            "total": 66
+          }
+        },
+        {
+          "file": "Suginami_Residence_todokedesyo1229_v1.PDF",
+          "stats": {
+            "dictionary": 12,
+            "fragment": 20,
+            "llm": 23,
+            "unknown": 0,
+            "total": 55
+          }
+        },
+        {
+          "file": "Suginami_Residence_yusoutensyutukankatu_v1.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 33,
+            "llm": 21,
+            "unknown": 0,
+            "total": 57
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "sumida": {
+      "generated": [
+        {
+          "file": "Sumida_Residence_idoutodoke_japanese_v1.PDF",
+          "stats": {
+            "dictionary": 2,
+            "fragment": 39,
+            "llm": 29,
+            "unknown": 0,
+            "total": 70
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "taito": {
+      "generated": [
+        {
+          "file": "Taito_Residence_mynatensyutsu_v1.PDF",
+          "stats": {
+            "dictionary": 16,
+            "fragment": 56,
+            "llm": 28,
+            "unknown": 0,
+            "total": 100
+          }
+        },
+        {
+          "file": "Taito_Residence_tenshutsu_tokurei_v1.PDF",
+          "stats": {
+            "dictionary": 7,
+            "fragment": 37,
+            "llm": 4,
+            "unknown": 0,
+            "total": 48
+          }
+        },
+        {
+          "file": "Taito_Residence_tenshutsu_yuso_v1.PDF",
+          "stats": {
+            "dictionary": 7,
+            "fragment": 38,
+            "llm": 4,
+            "unknown": 0,
+            "total": 49
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "toshima": {
+      "generated": [
+        {
+          "file": "Toshima_Residence_hpyoutodokedesho_v1.PDF",
+          "stats": {
+            "dictionary": 60,
+            "fragment": 42,
+            "llm": 38,
+            "unknown": 0,
+            "total": 140
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    }
+  },
+  "timestamp": "2026-02-20T14:14:51"
+}

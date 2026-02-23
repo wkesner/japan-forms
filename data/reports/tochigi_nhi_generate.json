@@ -9,10 +9,46 @@
   "wards": {
     "oyama": {
       "generated": [
-        "Oyama_NHIapp_1689727269_doc_9_0_v1.PDF",
-        "Oyama_NHIapp_1689727273_doc_9_0_v1.PDF",
-        "Oyama_NHIapp_1695541889_doc_9_0_v1.PDF",
-        "Oyama_NHIapp_1695541893_doc_9_0_v1.PDF"
+        {
+          "file": "Oyama_NHIapp_1689727269_doc_9_0_v2.PDF",
+          "stats": {
+            "dictionary": 0,
+            "fragment": 40,
+            "llm": 5,
+            "unknown": 0,
+            "total": 45
+          }
+        },
+        {
+          "file": "Oyama_NHIapp_1689727273_doc_9_0_v2.PDF",
+          "stats": {
+            "dictionary": 0,
+            "fragment": 20,
+            "llm": 1,
+            "unknown": 1,
+            "total": 22
+          }
+        },
+        {
+          "file": "Oyama_NHIapp_1695541889_doc_9_0_v2.PDF",
+          "stats": {
+            "dictionary": 14,
+            "fragment": 25,
+            "llm": 38,
+            "unknown": 0,
+            "total": 77
+          }
+        },
+        {
+          "file": "Oyama_NHIapp_1695541893_doc_9_0_v2.PDF",
+          "stats": {
+            "dictionary": 19,
+            "fragment": 18,
+            "llm": 39,
+            "unknown": 0,
+            "total": 76
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -20,5 +56,5 @@
       ]
     }
   },
-  "timestamp": "2026-02-18T11:45:53"
+  "timestamp": "2026-02-20T10:06:37"
 }

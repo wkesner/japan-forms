@@ -9,9 +9,36 @@
   "wards": {
     "oyama": {
       "generated": [
-        "Oyama_Residence_1694136174_doc_9_0_v1.PDF",
-        "Oyama_Residence_1695350482_doc_5_0_v1.PDF",
-        "Oyama_Residence_1709685081_doc_59_0_v1.PDF"
+        {
+          "file": "Oyama_Residence_1694136174_doc_9_0_v2.PDF",
+          "stats": {
+            "dictionary": 31,
+            "fragment": 44,
+            "llm": 10,
+            "unknown": 0,
+            "total": 85
+          }
+        },
+        {
+          "file": "Oyama_Residence_1695350482_doc_5_0_v2.PDF",
+          "stats": {
+            "dictionary": 31,
+            "fragment": 44,
+            "llm": 10,
+            "unknown": 0,
+            "total": 85
+          }
+        },
+        {
+          "file": "Oyama_Residence_1709685081_doc_59_0_v2.PDF",
+          "stats": {
+            "dictionary": 31,
+            "fragment": 53,
+            "llm": 17,
+            "unknown": 0,
+            "total": 101
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -31,5 +58,5 @@
       ]
     }
   },
-  "timestamp": "2026-02-18T10:53:33"
+  "timestamp": "2026-02-20T09:58:55"
 }

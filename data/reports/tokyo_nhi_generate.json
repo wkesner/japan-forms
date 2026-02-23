@@ -1,0 +1,478 @@
+{
+  "prefecture": "tokyo",
+  "form_type": "nhi",
+  "summary": {
+    "generated": 35,
+    "failed": 0,
+    "skipped": 1
+  },
+  "wards": {
+    "adachi": {
+      "generated": [
+        {
+          "file": "Adachi_NHIapp_202412kokuminnkennkouhokennsikakusousitutodoke_v1.PDF",
+          "stats": {
+            "dictionary": 15,
+            "fragment": 59,
+            "llm": 51,
+            "unknown": 0,
+            "total": 125
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": [
+        "1.pdf"
+      ]
+    },
+    "arakawa": {
+      "generated": [
+        {
+          "file": "Arakawa_NHIapp_tekiyousyuryoutodokekaisei_v1.PDF",
+          "stats": {
+            "dictionary": 15,
+            "fragment": 69,
+            "llm": 47,
+            "unknown": 0,
+            "total": 131
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "chuo": {
+      "generated": [
+        {
+          "file": "Chuo_NHIapp_56gotodokedesho_v1.PDF",
+          "stats": {
+            "dictionary": 45,
+            "fragment": 52,
+            "llm": 20,
+            "unknown": 0,
+            "total": 117
+          }
+        },
+        {
+          "file": "Chuo_NHIapp_56gotodokedeshokinyurei_v1.PDF",
+          "stats": {
+            "dictionary": 29,
+            "fragment": 77,
+            "llm": 27,
+            "unknown": 0,
+            "total": 133
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "edogawa": {
+      "generated": [
+        {
+          "file": "Edogawa_NHIapp_sikakukaisitodoke_v1.PDF",
+          "stats": {
+            "dictionary": 12,
+            "fragment": 55,
+            "llm": 24,
+            "unknown": 0,
+            "total": 91
+          }
+        },
+        {
+          "file": "Edogawa_NHIapp_sousitutodoke_v1.PDF",
+          "stats": {
+            "dictionary": 28,
+            "fragment": 22,
+            "llm": 10,
+            "unknown": 0,
+            "total": 60
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "itabashi": {
+      "generated": [
+        {
+          "file": "Itabashi_NHIapp_madoguchi20241202_v1.PDF",
+          "stats": {
+            "dictionary": 8,
+            "fragment": 27,
+            "llm": 15,
+            "unknown": 0,
+            "total": 50
+          }
+        },
+        {
+          "file": "Itabashi_NHIapp_yuusou20241202_v1.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 24,
+            "llm": 17,
+            "unknown": 0,
+            "total": 51
+          }
+        },
+        {
+          "file": "Itabashi_NHIapp_yuusoukinyuurei20241212_v1.PDF",
+          "stats": {
+            "dictionary": 8,
+            "fragment": 56,
+            "llm": 29,
+            "unknown": 0,
+            "total": 93
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "katsushika": {
+      "generated": [
+        {
+          "file": "Katsushika_NHIapp_sousitutodoke_v1.PDF",
+          "stats": {
+            "dictionary": 8,
+            "fragment": 25,
+            "llm": 51,
+            "unknown": 0,
+            "total": 84
+          }
+        },
+        {
+          "file": "Katsushika_NHIapp_sousitutodokemihon_v1.PDF",
+          "stats": {
+            "dictionary": 5,
+            "fragment": 34,
+            "llm": 65,
+            "unknown": 0,
+            "total": 104
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "kita": {
+      "generated": [
+        {
+          "file": "Kita_NHIapp_idoutodoke_v1.PDF",
+          "stats": {
+            "dictionary": 29,
+            "fragment": 72,
+            "llm": 18,
+            "unknown": 0,
+            "total": 119
+          }
+        },
+        {
+          "file": "Kita_NHIapp_idoutodokekinyuurei_v1.PDF",
+          "stats": {
+            "dictionary": 27,
+            "fragment": 76,
+            "llm": 19,
+            "unknown": 0,
+            "total": 122
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "koto": {
+      "generated": [
+        {
+          "file": "Koto_NHIapp_shikakushutoku_v1.PDF",
+          "stats": {
+            "dictionary": 43,
+            "fragment": 20,
+            "llm": 18,
+            "unknown": 0,
+            "total": 81
+          }
+        },
+        {
+          "file": "Koto_NHIapp_shikakusoushitsu_v1.PDF",
+          "stats": {
+            "dictionary": 14,
+            "fragment": 22,
+            "llm": 17,
+            "unknown": 0,
+            "total": 53
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "meguro": {
+      "generated": [
+        {
+          "file": "Meguro_NHIapp_shikakuidoutodoke_v1.PDF",
+          "stats": {
+            "dictionary": 30,
+            "fragment": 63,
+            "llm": 40,
+            "unknown": 0,
+            "total": 133
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "minato": {
+      "generated": [
+        {
+          "file": "Minato_NHIapp_20250930112721_v1.PDF",
+          "stats": {
+            "dictionary": 0,
+            "fragment": 0,
+            "llm": 0,
+            "unknown": 0,
+            "total": 0
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "nakano": {
+      "generated": [
+        {
+          "file": "Nakano_NHIapp_kanyurei_v1.PDF",
+          "stats": {
+            "dictionary": 38,
+            "fragment": 108,
+            "llm": 111,
+            "unknown": 0,
+            "total": 257
+          }
+        },
+        {
+          "file": "Nakano_NHIapp_kanyusoshitu_v1.PDF",
+          "stats": {
+            "dictionary": 38,
+            "fragment": 101,
+            "llm": 110,
+            "unknown": 0,
+            "total": 249
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "nerima": {
+      "generated": [
+        {
+          "file": "Nerima_NHIapp_R70418kanyu_v1.PDF",
+          "stats": {
+            "dictionary": 20,
+            "fragment": 53,
+            "llm": 82,
+            "unknown": 0,
+            "total": 155
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "ota": {
+      "generated": [
+        {
+          "file": "Ota_NHIapp_kanyutodoke_v1.PDF",
+          "stats": {
+            "dictionary": 15,
+            "fragment": 49,
+            "llm": 66,
+            "unknown": 0,
+            "total": 130
+          }
+        },
+        {
+          "file": "Ota_NHIapp_kanyutodokekakikata_v1.PDF",
+          "stats": {
+            "dictionary": 14,
+            "fragment": 55,
+            "llm": 52,
+            "unknown": 0,
+            "total": 121
+          }
+        },
+        {
+          "file": "Ota_NHIapp_sousitsutodoke_v1.PDF",
+          "stats": {
+            "dictionary": 21,
+            "fragment": 40,
+            "llm": 78,
+            "unknown": 0,
+            "total": 139
+          }
+        },
+        {
+          "file": "Ota_NHIapp_sousitsutodokekakikata_v1.PDF",
+          "stats": {
+            "dictionary": 12,
+            "fragment": 53,
+            "llm": 59,
+            "unknown": 0,
+            "total": 124
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "setagaya": {
+      "generated": [
+        {
+          "file": "Setagaya_NHIapp_idou_v1.PDF",
+          "stats": {
+            "dictionary": 28,
+            "fragment": 68,
+            "llm": 41,
+            "unknown": 0,
+            "total": 137
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "shinagawa": {
+      "generated": [
+        {
+          "file": "Shinagawa_NHIapp_idoutodoke_v1.PDF",
+          "stats": {
+            "dictionary": 25,
+            "fragment": 40,
+            "llm": 29,
+            "unknown": 0,
+            "total": 94
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "suginami": {
+      "generated": [
+        {
+          "file": "Suginami_NHIapp_kaishi_v1.PDF",
+          "stats": {
+            "dictionary": 18,
+            "fragment": 39,
+            "llm": 45,
+            "unknown": 0,
+            "total": 102
+          }
+        },
+        {
+          "file": "Suginami_NHIapp_kaishiyuusou_v1.PDF",
+          "stats": {
+            "dictionary": 13,
+            "fragment": 41,
+            "llm": 45,
+            "unknown": 0,
+            "total": 99
+          }
+        },
+        {
+          "file": "Suginami_NHIapp_kisaireikaishi_v1.PDF",
+          "stats": {
+            "dictionary": 12,
+            "fragment": 58,
+            "llm": 62,
+            "unknown": 0,
+            "total": 132
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "sumida": {
+      "generated": [
+        {
+          "file": "Sumida_NHIapp_sikakusyutokutodoke_v1.PDF",
+          "stats": {
+            "dictionary": 33,
+            "fragment": 34,
+            "llm": 10,
+            "unknown": 0,
+            "total": 77
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "taito": {
+      "generated": [
+        {
+          "file": "Taito_NHIapp_ridatsutodoke_202512_v1.PDF",
+          "stats": {
+            "dictionary": 21,
+            "fragment": 84,
+            "llm": 25,
+            "unknown": 0,
+            "total": 130
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "toshima": {
+      "generated": [
+        {
+          "file": "Toshima_NHIapp_tekiyoukaisi_sikakusyutoku_omote_v1.PDF",
+          "stats": {
+            "dictionary": 44,
+            "fragment": 65,
+            "llm": 69,
+            "unknown": 0,
+            "total": 178
+          }
+        },
+        {
+          "file": "Toshima_NHIapp_tekiyoukaisi_sikakusyutoku_ura_v1.PDF",
+          "stats": {
+            "dictionary": 7,
+            "fragment": 8,
+            "llm": 6,
+            "unknown": 0,
+            "total": 21
+          }
+        },
+        {
+          "file": "Toshima_NHIapp_tekiyousyuuryou_sikakusousitu_omte_v1.PDF",
+          "stats": {
+            "dictionary": 48,
+            "fragment": 43,
+            "llm": 43,
+            "unknown": 0,
+            "total": 134
+          }
+        },
+        {
+          "file": "Toshima_NHIapp_tekiyousyuuryou_sikakusousitu_ura_v1.PDF",
+          "stats": {
+            "dictionary": 7,
+            "fragment": 0,
+            "llm": 0,
+            "unknown": 0,
+            "total": 7
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    }
+  },
+  "timestamp": "2026-02-20T14:13:46"
+}

@@ -9,28 +9,82 @@
   "wards": {
     "nara": {
       "generated": [
-        "Nara_Residence_205687_v1.PDF",
-        "Nara_Residence_205697_v1.PDF",
-        "Nara_Residence_205700_v1.PDF",
-        "Nara_Residence_205796_v1.PDF"
+        {
+          "file": "Nara_Residence_205687_v2.PDF",
+          "stats": {
+            "dictionary": 44,
+            "fragment": 42,
+            "llm": 25,
+            "unknown": 0,
+            "total": 111
+          }
+        },
+        {
+          "file": "Nara_Residence_205697_v2.PDF",
+          "stats": {
+            "dictionary": 44,
+            "fragment": 42,
+            "llm": 25,
+            "unknown": 0,
+            "total": 111
+          }
+        },
+        {
+          "file": "Nara_Residence_205700_v2.PDF",
+          "stats": {
+            "dictionary": 44,
+            "fragment": 42,
+            "llm": 25,
+            "unknown": 0,
+            "total": 111
+          }
+        },
+        {
+          "file": "Nara_Residence_205796_v2.PDF",
+          "stats": {
+            "dictionary": 23,
+            "fragment": 54,
+            "llm": 55,
+            "unknown": 0,
+            "total": 132
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "tenri": {
       "generated": [
-        "Tenri_Residence_42517478_v1.PDF"
+        {
+          "file": "Tenri_Residence_42517478_v2.PDF",
+          "stats": {
+            "dictionary": 0,
+            "fragment": 38,
+            "llm": 3,
+            "unknown": 0,
+            "total": 41
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "yamatokoriyama": {
       "generated": [
-        "Yamatokoriyama_Residence_yusou-tensyutu-2011_v1.PDF"
+        {
+          "file": "Yamatokoriyama_Residence_yusou-tensyutu-2011_v2.PDF",
+          "stats": {
+            "dictionary": 18,
+            "fragment": 35,
+            "llm": 15,
+            "unknown": 0,
+            "total": 68
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     }
   },
-  "timestamp": "2026-02-18T15:58:17"
+  "timestamp": "2026-02-20T10:02:34"
 }

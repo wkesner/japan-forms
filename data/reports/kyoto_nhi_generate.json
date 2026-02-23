@@ -9,8 +9,26 @@
   "wards": {
     "nagaokakyo": {
       "generated": [
-        "Nagaokakyo_NHIapp_saikoufu_v1.PDF",
-        "Nagaokakyo_NHIapp_saikouhu_2025111315494788_v1.PDF"
+        {
+          "file": "Nagaokakyo_NHIapp_saikoufu_v2.PDF",
+          "stats": {
+            "dictionary": 7,
+            "fragment": 22,
+            "llm": 15,
+            "unknown": 0,
+            "total": 44
+          }
+        },
+        {
+          "file": "Nagaokakyo_NHIapp_saikouhu_2025111315494788_v2.PDF",
+          "stats": {
+            "dictionary": 18,
+            "fragment": 21,
+            "llm": 12,
+            "unknown": 0,
+            "total": 51
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -18,5 +36,5 @@
       ]
     }
   },
-  "timestamp": "2026-02-18T16:11:09"
+  "timestamp": "2026-02-20T10:14:57"
 }

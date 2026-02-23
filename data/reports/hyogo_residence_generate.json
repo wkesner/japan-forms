@@ -9,22 +9,58 @@
   "wards": {
     "akashi": {
       "generated": [
-        "Akashi_Residence_yusoutensyutu_v1.PDF"
+        {
+          "file": "Akashi_Residence_yusoutensyutu_v2.PDF",
+          "stats": {
+            "dictionary": 17,
+            "fragment": 14,
+            "llm": 14,
+            "unknown": 0,
+            "total": 45
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "amagasaki": {
       "generated": [
-        "Amagasaki_Residence_idoutodokeR801_v1.PDF"
+        {
+          "file": "Amagasaki_Residence_idoutodokeR801_v2.PDF",
+          "stats": {
+            "dictionary": 34,
+            "fragment": 6,
+            "llm": 9,
+            "unknown": 0,
+            "total": 49
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "ashiya": {
       "generated": [
-        "Ashiya_Residence_yuusouniyorutennshutsutodoke-tokureir0712_v1.PDF",
-        "Ashiya_Residence_yuusouniyorutenshutsutodoker0712_v1.PDF"
+        {
+          "file": "Ashiya_Residence_yuusouniyorutennshutsutodoke-tokureir0712_v2.PDF",
+          "stats": {
+            "dictionary": 7,
+            "fragment": 16,
+            "llm": 23,
+            "unknown": 0,
+            "total": 46
+          }
+        },
+        {
+          "file": "Ashiya_Residence_yuusouniyorutenshutsutodoker0712_v2.PDF",
+          "stats": {
+            "dictionary": 7,
+            "fragment": 13,
+            "llm": 22,
+            "unknown": 0,
+            "total": 42
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -33,30 +69,102 @@
     },
     "himeji": {
       "generated": [
-        "Himeji_Residence_2019920105555_v1.PDF",
-        "Himeji_Residence_2024103_v1.PDF",
-        "Himeji_Residence_20241126_v1.PDF"
+        {
+          "file": "Himeji_Residence_2019920105555_v2.PDF",
+          "stats": {
+            "dictionary": 77,
+            "fragment": 37,
+            "llm": 52,
+            "unknown": 0,
+            "total": 166
+          }
+        },
+        {
+          "file": "Himeji_Residence_2024103_v2.PDF",
+          "stats": {
+            "dictionary": 46,
+            "fragment": 55,
+            "llm": 30,
+            "unknown": 0,
+            "total": 131
+          }
+        },
+        {
+          "file": "Himeji_Residence_20241126_v2.PDF",
+          "stats": {
+            "dictionary": 51,
+            "fragment": 43,
+            "llm": 21,
+            "unknown": 0,
+            "total": 115
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "itami": {
       "generated": [
-        "Itami_Residence_45565871_v1.PDF",
-        "Itami_Residence_64484204_v1.PDF",
-        "Itami_Residence_66800220_v1.PDF"
+        {
+          "file": "Itami_Residence_45565871_v2.PDF",
+          "stats": {
+            "dictionary": 22,
+            "fragment": 48,
+            "llm": 3,
+            "unknown": 0,
+            "total": 73
+          }
+        },
+        {
+          "file": "Itami_Residence_64484204_v2.PDF",
+          "stats": {
+            "dictionary": 30,
+            "fragment": 43,
+            "llm": 20,
+            "unknown": 0,
+            "total": 93
+          }
+        },
+        {
+          "file": "Itami_Residence_66800220_v2.PDF",
+          "stats": {
+            "dictionary": 32,
+            "fragment": 51,
+            "llm": 11,
+            "unknown": 0,
+            "total": 94
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "takarazuka": {
       "generated": [
-        "Takarazuka_Residence_2103_kinyuurei_v1.PDF",
-        "Takarazuka_Residence_2103_tenshututodoke_v1.PDF"
+        {
+          "file": "Takarazuka_Residence_2103_kinyuurei_v2.PDF",
+          "stats": {
+            "dictionary": 18,
+            "fragment": 66,
+            "llm": 26,
+            "unknown": 0,
+            "total": 110
+          }
+        },
+        {
+          "file": "Takarazuka_Residence_2103_tenshututodoke_v2.PDF",
+          "stats": {
+            "dictionary": 18,
+            "fragment": 49,
+            "llm": 35,
+            "unknown": 0,
+            "total": 102
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     }
   },
-  "timestamp": "2026-02-18T15:58:44"
+  "timestamp": "2026-02-20T10:10:53"
 }

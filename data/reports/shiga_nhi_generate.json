@@ -9,10 +9,46 @@
   "wards": {
     "hikone": {
       "generated": [
-        "Hikone_NHIapp_5061202_kokuho_syokuji_v1.PDF",
-        "Hikone_NHIapp_kokuho_gendogaku_v1.PDF",
-        "Hikone_NHIapp_kokuho_gendogaku02_v1.PDF",
-        "Hikone_NHIapp_kokuho_sippei_v1.PDF"
+        {
+          "file": "Hikone_NHIapp_5061202_kokuho_syokuji_v3.PDF",
+          "stats": {
+            "dictionary": 14,
+            "fragment": 24,
+            "llm": 8,
+            "unknown": 0,
+            "total": 46
+          }
+        },
+        {
+          "file": "Hikone_NHIapp_kokuho_gendogaku_v3.PDF",
+          "stats": {
+            "dictionary": 22,
+            "fragment": 35,
+            "llm": 28,
+            "unknown": 0,
+            "total": 85
+          }
+        },
+        {
+          "file": "Hikone_NHIapp_kokuho_gendogaku02_v3.PDF",
+          "stats": {
+            "dictionary": 22,
+            "fragment": 20,
+            "llm": 18,
+            "unknown": 0,
+            "total": 60
+          }
+        },
+        {
+          "file": "Hikone_NHIapp_kokuho_sippei_v3.PDF",
+          "stats": {
+            "dictionary": 10,
+            "fragment": 7,
+            "llm": 9,
+            "unknown": 0,
+            "total": 26
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -21,11 +57,56 @@
     },
     "kusatsu": {
       "generated": [
-        "Kusatsu_NHIapp_503sisin_v1.PDF",
-        "Kusatsu_NHIapp_504shishinnkokusho_v1.PDF",
-        "Kusatsu_NHIapp_505shinnkokusho_v1.PDF",
-        "Kusatsu_NHIapp_506shinnkokusyo_v1.PDF",
-        "Kusatsu_NHIapp_507sisin_v1.PDF"
+        {
+          "file": "Kusatsu_NHIapp_503sisin_v3.PDF",
+          "stats": {
+            "dictionary": 86,
+            "fragment": 67,
+            "llm": 49,
+            "unknown": 0,
+            "total": 202
+          }
+        },
+        {
+          "file": "Kusatsu_NHIapp_504shishinnkokusho_v3.PDF",
+          "stats": {
+            "dictionary": 113,
+            "fragment": 65,
+            "llm": 45,
+            "unknown": 0,
+            "total": 223
+          }
+        },
+        {
+          "file": "Kusatsu_NHIapp_505shinnkokusho_v3.PDF",
+          "stats": {
+            "dictionary": 117,
+            "fragment": 72,
+            "llm": 47,
+            "unknown": 0,
+            "total": 236
+          }
+        },
+        {
+          "file": "Kusatsu_NHIapp_506shinnkokusyo_v3.PDF",
+          "stats": {
+            "dictionary": 114,
+            "fragment": 62,
+            "llm": 49,
+            "unknown": 0,
+            "total": 225
+          }
+        },
+        {
+          "file": "Kusatsu_NHIapp_507sisin_v3.PDF",
+          "stats": {
+            "dictionary": 115,
+            "fragment": 76,
+            "llm": 61,
+            "unknown": 0,
+            "total": 252
+          }
+        }
       ],
       "failed": [],
       "skipped": []
@@ -39,14 +120,50 @@
     },
     "otsu": {
       "generated": [
-        "Otsu_NHIapp_01_20241202_kokuho_sousitu_3_v1.PDF",
-        "Otsu_NHIapp_02_20241202_kokuho_116zyou_v1.PDF",
-        "Otsu_NHIapp_14_20241202_kanrentuti_sohusaki_2_v1.PDF",
-        "Otsu_NHIapp_soufusaki_v1.PDF"
+        {
+          "file": "Otsu_NHIapp_01_20241202_kokuho_sousitu_3_v3.PDF",
+          "stats": {
+            "dictionary": 37,
+            "fragment": 62,
+            "llm": 40,
+            "unknown": 0,
+            "total": 139
+          }
+        },
+        {
+          "file": "Otsu_NHIapp_02_20241202_kokuho_116zyou_v3.PDF",
+          "stats": {
+            "dictionary": 24,
+            "fragment": 61,
+            "llm": 29,
+            "unknown": 0,
+            "total": 114
+          }
+        },
+        {
+          "file": "Otsu_NHIapp_14_20241202_kanrentuti_sohusaki_2_v3.PDF",
+          "stats": {
+            "dictionary": 4,
+            "fragment": 39,
+            "llm": 6,
+            "unknown": 0,
+            "total": 49
+          }
+        },
+        {
+          "file": "Otsu_NHIapp_soufusaki_v3.PDF",
+          "stats": {
+            "dictionary": 4,
+            "fragment": 39,
+            "llm": 10,
+            "unknown": 0,
+            "total": 53
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     }
   },
-  "timestamp": "2026-02-18T16:13:49"
+  "timestamp": "2026-02-20T13:59:42"
 }

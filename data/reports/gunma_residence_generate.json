@@ -4,7 +4,7 @@
   "summary": {
     "generated": 9,
     "failed": 0,
-    "skipped": 11
+    "skipped": 12
   },
   "wards": {
     "isesaki": {
@@ -25,27 +25,109 @@
         "1-2-1kisairei2.pdf",
         "kisairei1-1.pdf",
         "kisairei1-2-2.pdf",
+        "shinnsei-rei.pdf",
         "yousiki-jumin-inkan.pdf",
         "zyukyo-hyouji.pdf"
       ]
     },
     "ota": {
       "generated": [
-        "Ota_Residence_14420_v1.PDF",
-        "Ota_Residence_17536_v1.PDF",
-        "Ota_Residence_4615_v1.PDF",
-        "Ota_Residence_7383_v1.PDF",
-        "Ota_Residence_7384_v1.PDF"
+        {
+          "file": "Ota_Residence_14420_v2.PDF",
+          "stats": {
+            "dictionary": 20,
+            "fragment": 43,
+            "llm": 22,
+            "unknown": 0,
+            "total": 85
+          }
+        },
+        {
+          "file": "Ota_Residence_17536_v2.PDF",
+          "stats": {
+            "dictionary": 20,
+            "fragment": 43,
+            "llm": 22,
+            "unknown": 0,
+            "total": 85
+          }
+        },
+        {
+          "file": "Ota_Residence_4615_v2.PDF",
+          "stats": {
+            "dictionary": 15,
+            "fragment": 32,
+            "llm": 37,
+            "unknown": 0,
+            "total": 84
+          }
+        },
+        {
+          "file": "Ota_Residence_7383_v2.PDF",
+          "stats": {
+            "dictionary": 2,
+            "fragment": 14,
+            "llm": 5,
+            "unknown": 0,
+            "total": 21
+          }
+        },
+        {
+          "file": "Ota_Residence_7384_v2.PDF",
+          "stats": {
+            "dictionary": 4,
+            "fragment": 5,
+            "llm": 26,
+            "unknown": 1,
+            "total": 36
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "takasaki": {
       "generated": [
-        "Takasaki_Residence_19672_v1.PDF",
-        "Takasaki_Residence_19673_v1.PDF",
-        "Takasaki_Residence_26133_v1.PDF",
-        "Takasaki_Residence_35885_v1.PDF"
+        {
+          "file": "Takasaki_Residence_19672_v2.PDF",
+          "stats": {
+            "dictionary": 37,
+            "fragment": 35,
+            "llm": 68,
+            "unknown": 0,
+            "total": 140
+          }
+        },
+        {
+          "file": "Takasaki_Residence_19673_v2.PDF",
+          "stats": {
+            "dictionary": 27,
+            "fragment": 17,
+            "llm": 53,
+            "unknown": 0,
+            "total": 97
+          }
+        },
+        {
+          "file": "Takasaki_Residence_26133_v2.PDF",
+          "stats": {
+            "dictionary": 29,
+            "fragment": 35,
+            "llm": 17,
+            "unknown": 0,
+            "total": 81
+          }
+        },
+        {
+          "file": "Takasaki_Residence_35885_v2.PDF",
+          "stats": {
+            "dictionary": 23,
+            "fragment": 49,
+            "llm": 17,
+            "unknown": 0,
+            "total": 89
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -53,5 +135,5 @@
       ]
     }
   },
-  "timestamp": "2026-02-18T10:53:45"
+  "timestamp": "2026-02-20T10:10:53"
 }

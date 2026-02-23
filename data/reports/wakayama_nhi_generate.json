@@ -9,20 +9,92 @@
   "wards": {
     "hashimoto": {
       "generated": [
-        "Hashimoto_NHIapp_futuucyousyuumoushikomisyo_v1.PDF",
-        "Hashimoto_NHIapp_hizihatushinnkokusyo_v1.PDF",
-        "Hashimoto_NHIapp_kokuhoidoushinnseisyo_v1.PDF",
-        "Hashimoto_NHIapp_koureishosaikoufushinnseisyo_v1.PDF"
+        {
+          "file": "Hashimoto_NHIapp_futuucyousyuumoushikomisyo_v2.PDF",
+          "stats": {
+            "dictionary": 0,
+            "fragment": 13,
+            "llm": 4,
+            "unknown": 0,
+            "total": 17
+          }
+        },
+        {
+          "file": "Hashimoto_NHIapp_hizihatushinnkokusyo_v2.PDF",
+          "stats": {
+            "dictionary": 7,
+            "fragment": 17,
+            "llm": 13,
+            "unknown": 0,
+            "total": 37
+          }
+        },
+        {
+          "file": "Hashimoto_NHIapp_kokuhoidoushinnseisyo_v2.PDF",
+          "stats": {
+            "dictionary": 24,
+            "fragment": 44,
+            "llm": 49,
+            "unknown": 0,
+            "total": 117
+          }
+        },
+        {
+          "file": "Hashimoto_NHIapp_koureishosaikoufushinnseisyo_v2.PDF",
+          "stats": {
+            "dictionary": 23,
+            "fragment": 27,
+            "llm": 20,
+            "unknown": 0,
+            "total": 70
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "tanabe": {
       "generated": [
-        "Tanabe_NHIapp_20240401ryouyouhi_v1.PDF",
-        "Tanabe_NHIapp_3gouyousiki_v1.PDF",
-        "Tanabe_NHIapp_4gouyousiki_v1.PDF",
-        "Tanabe_NHIapp_R7kokuho_v1.PDF"
+        {
+          "file": "Tanabe_NHIapp_20240401ryouyouhi_v2.PDF",
+          "stats": {
+            "dictionary": 17,
+            "fragment": 37,
+            "llm": 45,
+            "unknown": 0,
+            "total": 99
+          }
+        },
+        {
+          "file": "Tanabe_NHIapp_3gouyousiki_v2.PDF",
+          "stats": {
+            "dictionary": 11,
+            "fragment": 9,
+            "llm": 7,
+            "unknown": 0,
+            "total": 27
+          }
+        },
+        {
+          "file": "Tanabe_NHIapp_4gouyousiki_v2.PDF",
+          "stats": {
+            "dictionary": 11,
+            "fragment": 14,
+            "llm": 6,
+            "unknown": 0,
+            "total": 31
+          }
+        },
+        {
+          "file": "Tanabe_NHIapp_R7kokuho_v2.PDF",
+          "stats": {
+            "dictionary": 0,
+            "fragment": 67,
+            "llm": 32,
+            "unknown": 0,
+            "total": 99
+          }
+        }
       ],
       "failed": [],
       "skipped": [
@@ -31,13 +103,40 @@
     },
     "wakayama": {
       "generated": [
-        "Wakayama_NHIapp_20240331de-taherusukiekakusyo_v1.PDF",
-        "Wakayama_NHIapp_ri-huretto0215_v1.PDF",
-        "Wakayama_NHIapp_todokede0215_v1.PDF"
+        {
+          "file": "Wakayama_NHIapp_20240331de-taherusukiekakusyo_v2.PDF",
+          "stats": {
+            "dictionary": 56,
+            "fragment": 125,
+            "llm": 257,
+            "unknown": 0,
+            "total": 438
+          }
+        },
+        {
+          "file": "Wakayama_NHIapp_ri-huretto0215_v2.PDF",
+          "stats": {
+            "dictionary": 3,
+            "fragment": 20,
+            "llm": 19,
+            "unknown": 0,
+            "total": 42
+          }
+        },
+        {
+          "file": "Wakayama_NHIapp_todokede0215_v2.PDF",
+          "stats": {
+            "dictionary": 11,
+            "fragment": 13,
+            "llm": 19,
+            "unknown": 0,
+            "total": 43
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     }
   },
-  "timestamp": "2026-02-18T16:15:29"
+  "timestamp": "2026-02-20T14:12:01"
 }

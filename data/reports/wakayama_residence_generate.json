@@ -9,11 +9,20 @@
   "wards": {
     "tanabe": {
       "generated": [
-        "Tanabe_Residence_kojin-yuusou-tenshutu-maina3_v1.PDF"
+        {
+          "file": "Tanabe_Residence_kojin-yuusou-tenshutu-maina3_v2.PDF",
+          "stats": {
+            "dictionary": 6,
+            "fragment": 31,
+            "llm": 7,
+            "unknown": 0,
+            "total": 44
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     }
   },
-  "timestamp": "2026-02-18T15:58:12"
+  "timestamp": "2026-02-20T09:57:25"
 }

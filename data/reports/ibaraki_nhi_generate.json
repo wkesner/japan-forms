@@ -9,23 +9,86 @@
   "wards": {
     "hitachi": {
       "generated": [
-        "Hitachi_NHIapp_saikouhu1_v1.PDF",
-        "Hitachi_NHIapp_saikouhu1_rei_v1.PDF",
-        "Hitachi_NHIapp_shinseisyo2_v1.PDF",
-        "Hitachi_NHIapp_shinseisyo2_rei_v1.PDF",
-        "Hitachi_NHIapp_tokuteisippei_v1.PDF"
+        {
+          "file": "Hitachi_NHIapp_saikouhu1_v2.PDF",
+          "stats": {
+            "dictionary": 11,
+            "fragment": 8,
+            "llm": 4,
+            "unknown": 0,
+            "total": 23
+          }
+        },
+        {
+          "file": "Hitachi_NHIapp_saikouhu1_rei_v2.PDF",
+          "stats": {
+            "dictionary": 12,
+            "fragment": 11,
+            "llm": 3,
+            "unknown": 0,
+            "total": 26
+          }
+        },
+        {
+          "file": "Hitachi_NHIapp_shinseisyo2_v2.PDF",
+          "stats": {
+            "dictionary": 15,
+            "fragment": 11,
+            "llm": 14,
+            "unknown": 0,
+            "total": 40
+          }
+        },
+        {
+          "file": "Hitachi_NHIapp_shinseisyo2_rei_v2.PDF",
+          "stats": {
+            "dictionary": 20,
+            "fragment": 12,
+            "llm": 14,
+            "unknown": 0,
+            "total": 46
+          }
+        },
+        {
+          "file": "Hitachi_NHIapp_tokuteisippei_v2.PDF",
+          "stats": {
+            "dictionary": 12,
+            "fragment": 12,
+            "llm": 14,
+            "unknown": 0,
+            "total": 38
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "tsukuba": {
       "generated": [
-        "Tsukuba_NHIapp_kaigairyouyouhi_checkrist3_v1.PDF",
-        "Tsukuba_NHIapp_koujosyoumeisinnseisyo_v1.PDF"
+        {
+          "file": "Tsukuba_NHIapp_kaigairyouyouhi_checkrist3_v2.PDF",
+          "stats": {
+            "dictionary": 0,
+            "fragment": 32,
+            "llm": 22,
+            "unknown": 0,
+            "total": 54
+          }
+        },
+        {
+          "file": "Tsukuba_NHIapp_koujosyoumeisinnseisyo_v2.PDF",
+          "stats": {
+            "dictionary": 6,
+            "fragment": 19,
+            "llm": 9,
+            "unknown": 0,
+            "total": 34
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     }
   },
-  "timestamp": "2026-02-18T11:45:44"
+  "timestamp": "2026-02-20T10:11:49"
 }
