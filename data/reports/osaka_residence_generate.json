@@ -9,50 +9,140 @@
   "wards": {
     "higashiosaka": {
       "generated": [
-        "Higashiosaka_Residence_(tenkyo)idoutodke_v1.PDF",
-        "Higashiosaka_Residence_(tennyu)idoutodoke_v1.PDF",
-        "Higashiosaka_Residence_(tensyutu)idoutodoke_v1.PDF",
-        "Higashiosaka_Residence_idoutodoke_v1.PDF"
+        {
+          "file": "Higashiosaka_Residence_(tenkyo)idoutodke_v2.PDF",
+          "stats": {
+            "dictionary": 43,
+            "fragment": 69,
+            "llm": 32,
+            "unknown": 0,
+            "total": 144
+          }
+        },
+        {
+          "file": "Higashiosaka_Residence_(tennyu)idoutodoke_v2.PDF",
+          "stats": {
+            "dictionary": 42,
+            "fragment": 75,
+            "llm": 28,
+            "unknown": 0,
+            "total": 145
+          }
+        },
+        {
+          "file": "Higashiosaka_Residence_(tensyutu)idoutodoke_v2.PDF",
+          "stats": {
+            "dictionary": 43,
+            "fragment": 74,
+            "llm": 28,
+            "unknown": 0,
+            "total": 145
+          }
+        },
+        {
+          "file": "Higashiosaka_Residence_idoutodoke_v2.PDF",
+          "stats": {
+            "dictionary": 41,
+            "fragment": 69,
+            "llm": 27,
+            "unknown": 0,
+            "total": 137
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "hirakata": {
       "generated": [
-        "Hirakata_Residence_sonotanotetuduki_v1.PDF"
+        {
+          "file": "Hirakata_Residence_sonotanotetuduki_v2.PDF",
+          "stats": {
+            "dictionary": 20,
+            "fragment": 43,
+            "llm": 4,
+            "unknown": 0,
+            "total": 67
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "kishiwada": {
       "generated": [
-        "Kishiwada_Residence_73464_v1.PDF"
+        {
+          "file": "Kishiwada_Residence_73464_v2.PDF",
+          "stats": {
+            "dictionary": 21,
+            "fragment": 40,
+            "llm": 10,
+            "unknown": 0,
+            "total": 71
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "neyagawa": {
       "generated": [
-        "Neyagawa_Residence_tensyutsu_yuso_v1.PDF"
+        {
+          "file": "Neyagawa_Residence_tensyutsu_yuso_v2.PDF",
+          "stats": {
+            "dictionary": 15,
+            "fragment": 11,
+            "llm": 8,
+            "unknown": 0,
+            "total": 34
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "sakai": {
       "generated": [
-        "Sakai_Residence_tenshutu_260105_v1.PDF"
+        {
+          "file": "Sakai_Residence_tenshutu_260105_v2.PDF",
+          "stats": {
+            "dictionary": 16,
+            "fragment": 10,
+            "llm": 19,
+            "unknown": 0,
+            "total": 45
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     },
     "suita": {
       "generated": [
-        "Suita_Residence_gaiyouban_v1.PDF",
-        "Suita_Residence_syousaiban_v1.PDF"
+        {
+          "file": "Suita_Residence_gaiyouban_v2.PDF",
+          "stats": {
+            "dictionary": 24,
+            "fragment": 9,
+            "llm": 0,
+            "unknown": 0,
+            "total": 33
+          }
+        },
+        {
+          "file": "Suita_Residence_syousaiban_v2.PDF",
+          "stats": {
+            "dictionary": 51,
+            "fragment": 47,
+            "llm": 2,
+            "unknown": 0,
+            "total": 100
+          }
+        }
       ],
       "failed": [],
       "skipped": []
     }
   },
-  "timestamp": "2026-02-18T15:58:24"
+  "timestamp": "2026-02-23T12:04:54"
 }
