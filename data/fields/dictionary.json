@@ -22344,6 +22344,71 @@
       ],
       "confidence": "draft",
       "notes": "Auto-translated by find_gaps.py"
+    },
+    "manual_447921f8": {
+      "ja": "(城南1-6-10越川ビル1階)",
+      "en": "(Jonan 1-6-10 Koshikawa Building 1F)",
+      "source": "manual"
+    },
+    "manual_7be7ff2a": {
+      "ja": "2備8考",
+      "en": "Section 28 Remarks",
+      "source": "manual"
+    },
+    "manual_0233b3ad": {
+      "ja": "Elderly・Disability・Single Parent",
+      "en": "Elderly / Disability / Single Parent",
+      "source": "manual"
+    },
+    "manual_622ef159": {
+      "ja": "Head・Other",
+      "en": "Head of Household / Other",
+      "source": "manual"
+    },
+    "manual_2afe19eb": {
+      "ja": "doing・not doing",
+      "en": "Doing / Not Doing",
+      "source": "manual"
+    },
+    "manual_6f02c680": {
+      "ja": "【表1/3】",
+      "en": "[Table 1/3]",
+      "source": "manual"
+    },
+    "manual_8d73c7e8": {
+      "ja": "に連絡のつく番号をご記入ください。",
+      "en": "Please enter a phone number where you can be reached.",
+      "source": "manual"
+    },
+    "manual_9834ce28": {
+      "ja": "アパート・マンション名等（                                ）",
+      "en": "Apartment/Condominium name, etc. (                              )",
+      "source": "manual"
+    },
+    "manual_67499d92": {
+      "ja": "令和    年    月    日",
+      "en": "Reiwa __ year __ month __ day",
+      "source": "manual"
+    },
+    "manual_1bf0e37a": {
+      "ja": "住基カードもしくは個人番号カードをお持ちの方",
+      "en": "Those who have a Basic Resident Register card or Individual Number card",
+      "source": "manual"
+    },
+    "manual_26a5ebe1": {
+      "ja": "区 市",
+      "en": "Ward / City",
+      "source": "manual"
+    },
+    "manual_7106813b": {
+      "ja": "特例・紙",
+      "en": "Special exception / Paper",
+      "source": "manual"
+    },
+    "manual_e3d1fb1b": {
+      "ja": "＊上記を封書にて、前の住民登録地あてに郵送してください。",
+      "en": "*Please mail the above in a sealed envelope to your previous place of resident registration.",
+      "source": "manual"
     }
   }
 }
