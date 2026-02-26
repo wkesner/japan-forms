@@ -13,8 +13,8 @@
           "file": "Oyama_NHIapp_1689727269_doc_9_0_v2.PDF",
           "stats": {
             "dictionary": 0,
-            "fragment": 40,
-            "llm": 5,
+            "fragment": 41,
+            "llm": 4,
             "unknown": 0,
             "total": 45
           }
@@ -22,10 +22,10 @@
         {
           "file": "Oyama_NHIapp_1689727273_doc_9_0_v2.PDF",
           "stats": {
-            "dictionary": 0,
+            "dictionary": 1,
             "fragment": 20,
             "llm": 1,
-            "unknown": 1,
+            "unknown": 0,
             "total": 22
           }
         },
@@ -56,5 +56,5 @@
       ]
     }
   },
-  "timestamp": "2026-02-20T10:06:37"
+  "timestamp": "2026-02-24T10:03:03"
 }

@@ -46,9 +46,9 @@
         {
           "file": "Chuo_NHIapp_56gotodokedesho_v2.PDF",
           "stats": {
-            "dictionary": 46,
+            "dictionary": 53,
             "fragment": 51,
-            "llm": 20,
+            "llm": 13,
             "unknown": 0,
             "total": 117
           }
@@ -56,9 +56,9 @@
         {
           "file": "Chuo_NHIapp_56gotodokedeshokinyurei_v2.PDF",
           "stats": {
-            "dictionary": 30,
+            "dictionary": 34,
             "fragment": 76,
-            "llm": 27,
+            "llm": 23,
             "unknown": 0,
             "total": 133
           }
@@ -134,9 +134,9 @@
         {
           "file": "Katsushika_NHIapp_sousitutodoke_v2.PDF",
           "stats": {
-            "dictionary": 8,
-            "fragment": 25,
-            "llm": 51,
+            "dictionary": 10,
+            "fragment": 26,
+            "llm": 48,
             "unknown": 0,
             "total": 84
           }
@@ -144,9 +144,9 @@
         {
           "file": "Katsushika_NHIapp_sousitutodokemihon_v2.PDF",
           "stats": {
-            "dictionary": 5,
-            "fragment": 34,
-            "llm": 65,
+            "dictionary": 7,
+            "fragment": 35,
+            "llm": 62,
             "unknown": 0,
             "total": 104
           }
@@ -186,9 +186,9 @@
         {
           "file": "Koto_NHIapp_shikakushutoku_v2.PDF",
           "stats": {
-            "dictionary": 44,
+            "dictionary": 52,
             "fragment": 21,
-            "llm": 16,
+            "llm": 8,
             "unknown": 0,
             "total": 81
           }
@@ -196,9 +196,9 @@
         {
           "file": "Koto_NHIapp_shikakusoushitsu_v2.PDF",
           "stats": {
-            "dictionary": 19,
+            "dictionary": 22,
             "fragment": 20,
-            "llm": 14,
+            "llm": 11,
             "unknown": 0,
             "total": 53
           }
@@ -212,9 +212,9 @@
         {
           "file": "Meguro_NHIapp_shikakuidoutodoke_v2.PDF",
           "stats": {
-            "dictionary": 55,
+            "dictionary": 63,
             "fragment": 52,
-            "llm": 26,
+            "llm": 18,
             "unknown": 0,
             "total": 133
           }
@@ -244,9 +244,9 @@
         {
           "file": "Nakano_NHIapp_kanyurei_v2.PDF",
           "stats": {
-            "dictionary": 38,
+            "dictionary": 40,
             "fragment": 108,
-            "llm": 111,
+            "llm": 109,
             "unknown": 0,
             "total": 257
           }
@@ -254,9 +254,9 @@
         {
           "file": "Nakano_NHIapp_kanyusoshitu_v2.PDF",
           "stats": {
-            "dictionary": 38,
+            "dictionary": 40,
             "fragment": 101,
-            "llm": 110,
+            "llm": 108,
             "unknown": 0,
             "total": 249
           }
@@ -270,9 +270,9 @@
         {
           "file": "Nerima_NHIapp_R70418kanyu_v2.PDF",
           "stats": {
-            "dictionary": 20,
+            "dictionary": 23,
             "fragment": 53,
-            "llm": 82,
+            "llm": 79,
             "unknown": 0,
             "total": 155
           }
@@ -286,9 +286,9 @@
         {
           "file": "Ota_NHIapp_kanyutodoke_v2.PDF",
           "stats": {
-            "dictionary": 15,
+            "dictionary": 20,
             "fragment": 49,
-            "llm": 66,
+            "llm": 61,
             "unknown": 0,
             "total": 130
           }
@@ -296,9 +296,9 @@
         {
           "file": "Ota_NHIapp_kanyutodokekakikata_v2.PDF",
           "stats": {
-            "dictionary": 14,
+            "dictionary": 22,
             "fragment": 55,
-            "llm": 52,
+            "llm": 44,
             "unknown": 0,
             "total": 121
           }
@@ -306,9 +306,9 @@
         {
           "file": "Ota_NHIapp_sousitsutodoke_v2.PDF",
           "stats": {
-            "dictionary": 21,
+            "dictionary": 29,
             "fragment": 40,
-            "llm": 78,
+            "llm": 70,
             "unknown": 0,
             "total": 139
           }
@@ -316,9 +316,9 @@
         {
           "file": "Ota_NHIapp_sousitsutodokekakikata_v2.PDF",
           "stats": {
-            "dictionary": 12,
+            "dictionary": 17,
             "fragment": 53,
-            "llm": 59,
+            "llm": 54,
             "unknown": 0,
             "total": 124
           }
@@ -400,9 +400,9 @@
         {
           "file": "Sumida_NHIapp_sikakusyutokutodoke_v2.PDF",
           "stats": {
-            "dictionary": 33,
+            "dictionary": 38,
             "fragment": 34,
-            "llm": 10,
+            "llm": 5,
             "unknown": 0,
             "total": 77
           }
@@ -432,9 +432,9 @@
         {
           "file": "Toshima_NHIapp_tekiyoukaisi_sikakusyutoku_omote_v2.PDF",
           "stats": {
-            "dictionary": 44,
+            "dictionary": 45,
             "fragment": 67,
-            "llm": 67,
+            "llm": 66,
             "unknown": 0,
             "total": 178
           }
@@ -462,11 +462,11 @@
         {
           "file": "Toshima_NHIapp_tekiyousyuuryou_sikakusousitu_ura_v2.PDF",
           "stats": {
-            "dictionary": 7,
+            "dictionary": 10,
             "fragment": 4,
             "llm": 3,
             "unknown": 0,
-            "total": 14
+            "total": 17
           }
         }
       ],
@@ -474,5 +474,5 @@
       "skipped": []
     }
   },
-  "timestamp": "2026-02-23T12:41:33"
+  "timestamp": "2026-02-25T11:46:41"
 }

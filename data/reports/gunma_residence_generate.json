@@ -35,9 +35,9 @@
         {
           "file": "Ota_Residence_14420_v2.PDF",
           "stats": {
-            "dictionary": 20,
+            "dictionary": 26,
             "fragment": 43,
-            "llm": 22,
+            "llm": 16,
             "unknown": 0,
             "total": 85
           }
@@ -45,9 +45,9 @@
         {
           "file": "Ota_Residence_17536_v2.PDF",
           "stats": {
-            "dictionary": 20,
+            "dictionary": 26,
             "fragment": 43,
-            "llm": 22,
+            "llm": 16,
             "unknown": 0,
             "total": 85
           }
@@ -55,9 +55,9 @@
         {
           "file": "Ota_Residence_4615_v2.PDF",
           "stats": {
-            "dictionary": 15,
+            "dictionary": 16,
             "fragment": 32,
-            "llm": 37,
+            "llm": 36,
             "unknown": 0,
             "total": 84
           }
@@ -77,8 +77,8 @@
           "stats": {
             "dictionary": 4,
             "fragment": 5,
-            "llm": 26,
-            "unknown": 1,
+            "llm": 27,
+            "unknown": 0,
             "total": 36
           }
         }
@@ -135,5 +135,5 @@
       ]
     }
   },
-  "timestamp": "2026-02-20T10:10:53"
+  "timestamp": "2026-02-24T10:09:42"
 }

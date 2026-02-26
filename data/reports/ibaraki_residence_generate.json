@@ -12,11 +12,11 @@
         {
           "file": "Hitachi_Residence_henkoutodokedekisairei2_v2.PDF",
           "stats": {
-            "dictionary": 52,
-            "fragment": 14,
-            "llm": 16,
+            "dictionary": 50,
+            "fragment": 13,
+            "llm": 11,
             "unknown": 0,
-            "total": 82
+            "total": 74
           }
         }
       ],
@@ -33,19 +33,19 @@
         {
           "file": "Mito_Residence_56286_v3.PDF",
           "stats": {
-            "dictionary": 31,
+            "dictionary": 32,
             "fragment": 69,
             "llm": 30,
-            "unknown": 1,
+            "unknown": 0,
             "total": 131
           }
         },
         {
           "file": "Mito_Residence_63325_v3.PDF",
           "stats": {
-            "dictionary": 28,
+            "dictionary": 30,
             "fragment": 43,
-            "llm": 23,
+            "llm": 21,
             "unknown": 0,
             "total": 94
           }
@@ -53,9 +53,9 @@
         {
           "file": "Mito_Residence_63330_v3.PDF",
           "stats": {
-            "dictionary": 28,
+            "dictionary": 30,
             "fragment": 43,
-            "llm": 23,
+            "llm": 21,
             "unknown": 0,
             "total": 94
           }
@@ -81,11 +81,11 @@
         {
           "file": "Tsukuba_Residence_yuusouyou_v2.PDF",
           "stats": {
-            "dictionary": 17,
-            "fragment": 9,
-            "llm": 3,
+            "dictionary": 16,
+            "fragment": 6,
+            "llm": 2,
             "unknown": 0,
-            "total": 29
+            "total": 24
           }
         }
       ],
@@ -97,5 +97,5 @@
       ]
     }
   },
-  "timestamp": "2026-02-20T10:06:09"
+  "timestamp": "2026-02-24T09:44:51"
 }

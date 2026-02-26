@@ -26,7 +26,7 @@
     "arakawa": {
       "generated": [
         {
-          "file": "Arakawa_Residence_r4tenshutsuyuuso_v1.PDF",
+          "file": "Arakawa_Residence_r4tenshutsuyuuso_v3.PDF",
           "stats": {
             "dictionary": 21,
             "fragment": 18,
@@ -36,13 +36,13 @@
           }
         },
         {
-          "file": "Arakawa_Residence_tenshutsuyuso-kinyurei_v1.PDF",
+          "file": "Arakawa_Residence_tenshutsuyuso-kinyurei_v3.PDF",
           "stats": {
-            "dictionary": 11,
-            "fragment": 7,
+            "dictionary": 12,
+            "fragment": 8,
             "llm": 2,
             "unknown": 0,
-            "total": 20
+            "total": 22
           }
         }
       ],
@@ -52,17 +52,17 @@
     "bunkyo": {
       "generated": [
         {
-          "file": "Bunkyo_Residence_20217211109_v1.PDF",
+          "file": "Bunkyo_Residence_20217211109_v3.PDF",
           "stats": {
-            "dictionary": 105,
-            "fragment": 24,
-            "llm": 16,
-            "unknown": 1,
-            "total": 146
+            "dictionary": 102,
+            "fragment": 23,
+            "llm": 11,
+            "unknown": 0,
+            "total": 136
           }
         },
         {
-          "file": "Bunkyo_Residence_202299101946_v1.PDF",
+          "file": "Bunkyo_Residence_202299101946_v3.PDF",
           "stats": {
             "dictionary": 89,
             "fragment": 54,
@@ -78,7 +78,7 @@
     "chiyoda": {
       "generated": [
         {
-          "file": "Chiyoda_Residence_tenshutsutodoke-yusoyo_v1.PDF",
+          "file": "Chiyoda_Residence_tenshutsutodoke-yusoyo_v3.PDF",
           "stats": {
             "dictionary": 13,
             "fragment": 36,
@@ -101,23 +101,23 @@
     "edogawa": {
       "generated": [
         {
-          "file": "Edogawa_Residence_20250201_juminido_v1.PDF",
+          "file": "Edogawa_Residence_20250201_juminido_v3.PDF",
           "stats": {
-            "dictionary": 8,
-            "fragment": 69,
-            "llm": 49,
+            "dictionary": 10,
+            "fragment": 70,
+            "llm": 46,
             "unknown": 0,
             "total": 126
           }
         },
         {
-          "file": "Edogawa_Residence_20250201_juminidorei_v1.PDF",
+          "file": "Edogawa_Residence_20250201_juminidorei_v3.PDF",
           "stats": {
-            "dictionary": 21,
-            "fragment": 15,
-            "llm": 9,
+            "dictionary": 23,
+            "fragment": 19,
+            "llm": 5,
             "unknown": 0,
-            "total": 45
+            "total": 47
           }
         }
       ],
@@ -127,17 +127,17 @@
     "itabashi": {
       "generated": [
         {
-          "file": "Itabashi_Residence_idotodoke_v1.PDF",
+          "file": "Itabashi_Residence_idotodoke_v3.PDF",
           "stats": {
-            "dictionary": 8,
+            "dictionary": 10,
             "fragment": 47,
-            "llm": 27,
+            "llm": 25,
             "unknown": 0,
             "total": 82
           }
         },
         {
-          "file": "Itabashi_Residence_yusotensyutu_v1.PDF",
+          "file": "Itabashi_Residence_yusotensyutu_v3.PDF",
           "stats": {
             "dictionary": 5,
             "fragment": 39,
@@ -147,7 +147,7 @@
           }
         },
         {
-          "file": "Itabashi_Residence_yusotensyutukinyurei_v1.PDF",
+          "file": "Itabashi_Residence_yusotensyutukinyurei_v3.PDF",
           "stats": {
             "dictionary": 13,
             "fragment": 66,
@@ -165,9 +165,9 @@
         {
           "file": "Katsushika_Residence_ido_v2.PDF",
           "stats": {
-            "dictionary": 20,
-            "fragment": 38,
-            "llm": 97,
+            "dictionary": 27,
+            "fragment": 64,
+            "llm": 64,
             "unknown": 0,
             "total": 155
           }
@@ -179,7 +179,7 @@
     "kita": {
       "generated": [
         {
-          "file": "Kita_Residence_idoutodokdesyo20260105_v1.PDF",
+          "file": "Kita_Residence_idoutodokdesyo20260105_v3.PDF",
           "stats": {
             "dictionary": 44,
             "fragment": 50,
@@ -195,23 +195,23 @@
     "koto": {
       "generated": [
         {
-          "file": "Koto_Residence_20251217171915_v1.PDF",
+          "file": "Koto_Residence_20251217171915_v3.PDF",
           "stats": {
-            "dictionary": 2,
-            "fragment": 30,
-            "llm": 6,
+            "dictionary": 3,
+            "fragment": 31,
+            "llm": 4,
             "unknown": 0,
             "total": 38
           }
         },
         {
-          "file": "Koto_Residence_tennyuu_1_v1.PDF",
+          "file": "Koto_Residence_tennyuu_1_v3.PDF",
           "stats": {
-            "dictionary": 29,
-            "fragment": 22,
-            "llm": 23,
+            "dictionary": 27,
+            "fragment": 24,
+            "llm": 18,
             "unknown": 0,
-            "total": 74
+            "total": 69
           }
         }
       ],
@@ -221,21 +221,21 @@
     "meguro": {
       "generated": [
         {
-          "file": "Meguro_Residence_yuusou_v1.PDF",
+          "file": "Meguro_Residence_yuusou_v3.PDF",
           "stats": {
-            "dictionary": 8,
+            "dictionary": 9,
             "fragment": 19,
-            "llm": 12,
+            "llm": 11,
             "unknown": 0,
             "total": 39
           }
         },
         {
-          "file": "Meguro_Residence_yuusou_kakikata_v1.PDF",
+          "file": "Meguro_Residence_yuusou_kakikata_v3.PDF",
           "stats": {
-            "dictionary": 12,
+            "dictionary": 13,
             "fragment": 31,
-            "llm": 16,
+            "llm": 15,
             "unknown": 0,
             "total": 59
           }
@@ -247,11 +247,11 @@
     "minato": {
       "generated": [
         {
-          "file": "Minato_Residence_idoujapan_v1.PDF",
+          "file": "Minato_Residence_idoujapan_v3.PDF",
           "stats": {
-            "dictionary": 51,
+            "dictionary": 52,
             "fragment": 72,
-            "llm": 45,
+            "llm": 44,
             "unknown": 0,
             "total": 168
           }
@@ -263,11 +263,11 @@
     "nakano": {
       "generated": [
         {
-          "file": "Nakano_Residence_HP_v1.PDF",
+          "file": "Nakano_Residence_HP_v3.PDF",
           "stats": {
             "dictionary": 3,
-            "fragment": 28,
-            "llm": 33,
+            "fragment": 29,
+            "llm": 32,
             "unknown": 0,
             "total": 64
           }
@@ -279,7 +279,7 @@
     "nerima": {
       "generated": [
         {
-          "file": "Nerima_Residence_R7.12.4_tensyutu-yuusou_v1.PDF",
+          "file": "Nerima_Residence_R7.12.4_tensyutu-yuusou_v3.PDF",
           "stats": {
             "dictionary": 5,
             "fragment": 47,
@@ -289,7 +289,7 @@
           }
         },
         {
-          "file": "Nerima_Residence_R7.12.4_tensyutu_sample_v1.PDF",
+          "file": "Nerima_Residence_R7.12.4_tensyutu_sample_v3.PDF",
           "stats": {
             "dictionary": 13,
             "fragment": 52,
@@ -299,13 +299,13 @@
           }
         },
         {
-          "file": "Nerima_Residence_R7.8.26_tensyutu-todoke_v1.PDF",
+          "file": "Nerima_Residence_R7.8.26_tensyutu-todoke_v3.PDF",
           "stats": {
-            "dictionary": 16,
-            "fragment": 0,
-            "llm": 2,
+            "dictionary": 27,
+            "fragment": 11,
+            "llm": 8,
             "unknown": 0,
-            "total": 18
+            "total": 46
           }
         }
       ],
@@ -315,7 +315,7 @@
     "ota": {
       "generated": [
         {
-          "file": "Ota_Residence_tensyutsu_yuso_v1.PDF",
+          "file": "Ota_Residence_tensyutsu_yuso_v3.PDF",
           "stats": {
             "dictionary": 8,
             "fragment": 24,
@@ -325,11 +325,11 @@
           }
         },
         {
-          "file": "Ota_Residence_tensyutsu_yuso_mynumber_v1.PDF",
+          "file": "Ota_Residence_tensyutsu_yuso_mynumber_v3.PDF",
           "stats": {
-            "dictionary": 16,
-            "fragment": 11,
-            "llm": 25,
+            "dictionary": 23,
+            "fragment": 12,
+            "llm": 17,
             "unknown": 0,
             "total": 52
           }
@@ -341,23 +341,23 @@
     "setagaya": {
       "generated": [
         {
-          "file": "Setagaya_Residence_juuminidoutodoke_v1.PDF",
+          "file": "Setagaya_Residence_juuminidoutodoke_v3.PDF",
           "stats": {
-            "dictionary": 81,
-            "fragment": 75,
-            "llm": 14,
+            "dictionary": 86,
+            "fragment": 61,
+            "llm": 33,
             "unknown": 0,
-            "total": 170
+            "total": 180
           }
         },
         {
-          "file": "Setagaya_Residence_tenshutsu_v1.PDF",
+          "file": "Setagaya_Residence_tenshutsu_v3.PDF",
           "stats": {
-            "dictionary": 68,
-            "fragment": 21,
-            "llm": 7,
+            "dictionary": 65,
+            "fragment": 29,
+            "llm": 5,
             "unknown": 0,
-            "total": 96
+            "total": 99
           }
         }
       ],
@@ -367,11 +367,11 @@
     "shibuya": {
       "generated": [
         {
-          "file": "Shibuya_Residence_mynumber_sinsei_v1.PDF",
+          "file": "Shibuya_Residence_mynumber_sinsei_v3.PDF",
           "stats": {
-            "dictionary": 16,
-            "fragment": 31,
-            "llm": 8,
+            "dictionary": 30,
+            "fragment": 22,
+            "llm": 3,
             "unknown": 0,
             "total": 55
           }
@@ -383,11 +383,11 @@
     "shinagawa": {
       "generated": [
         {
-          "file": "Shinagawa_Residence_20250206184722_1_v1.PDF",
+          "file": "Shinagawa_Residence_20250206184722_1_v3.PDF",
           "stats": {
-            "dictionary": 53,
-            "fragment": 126,
-            "llm": 44,
+            "dictionary": 100,
+            "fragment": 107,
+            "llm": 16,
             "unknown": 0,
             "total": 223
           }
@@ -399,7 +399,7 @@
     "shinjuku": {
       "generated": [
         {
-          "file": "Shinjuku_Residence_000253160_v1.PDF",
+          "file": "Shinjuku_Residence_000253160_v3.PDF",
           "stats": {
             "dictionary": 0,
             "fragment": 27,
@@ -409,7 +409,7 @@
           }
         },
         {
-          "file": "Shinjuku_Residence_000253161_v1.PDF",
+          "file": "Shinjuku_Residence_000253161_v3.PDF",
           "stats": {
             "dictionary": 0,
             "fragment": 19,
@@ -419,11 +419,11 @@
           }
         },
         {
-          "file": "Shinjuku_Residence_000253172_v1.PDF",
+          "file": "Shinjuku_Residence_000253172_v3.PDF",
           "stats": {
-            "dictionary": 12,
-            "fragment": 36,
-            "llm": 119,
+            "dictionary": 13,
+            "fragment": 44,
+            "llm": 110,
             "unknown": 0,
             "total": 167
           }
@@ -435,7 +435,7 @@
     "suginami": {
       "generated": [
         {
-          "file": "Suginami_Residence_kinyurei1229_v1.PDF",
+          "file": "Suginami_Residence_kinyurei1229_v3.PDF",
           "stats": {
             "dictionary": 11,
             "fragment": 29,
@@ -445,7 +445,7 @@
           }
         },
         {
-          "file": "Suginami_Residence_todokedesyo1229_v1.PDF",
+          "file": "Suginami_Residence_todokedesyo1229_v3.PDF",
           "stats": {
             "dictionary": 12,
             "fragment": 20,
@@ -455,7 +455,7 @@
           }
         },
         {
-          "file": "Suginami_Residence_yusoutensyutukankatu_v1.PDF",
+          "file": "Suginami_Residence_yusoutensyutukankatu_v3.PDF",
           "stats": {
             "dictionary": 3,
             "fragment": 33,
@@ -471,11 +471,11 @@
     "sumida": {
       "generated": [
         {
-          "file": "Sumida_Residence_idoutodoke_japanese_v1.PDF",
+          "file": "Sumida_Residence_idoutodoke_japanese_v3.PDF",
           "stats": {
             "dictionary": 2,
-            "fragment": 39,
-            "llm": 29,
+            "fragment": 47,
+            "llm": 21,
             "unknown": 0,
             "total": 70
           }
@@ -487,27 +487,27 @@
     "taito": {
       "generated": [
         {
-          "file": "Taito_Residence_mynatensyutsu_v1.PDF",
+          "file": "Taito_Residence_mynatensyutsu_v3.PDF",
           "stats": {
-            "dictionary": 16,
-            "fragment": 56,
-            "llm": 28,
+            "dictionary": 51,
+            "fragment": 47,
+            "llm": 2,
             "unknown": 0,
             "total": 100
           }
         },
         {
-          "file": "Taito_Residence_tenshutsu_tokurei_v1.PDF",
+          "file": "Taito_Residence_tenshutsu_tokurei_v3.PDF",
           "stats": {
-            "dictionary": 7,
-            "fragment": 37,
+            "dictionary": 8,
+            "fragment": 36,
             "llm": 4,
             "unknown": 0,
             "total": 48
           }
         },
         {
-          "file": "Taito_Residence_tenshutsu_yuso_v1.PDF",
+          "file": "Taito_Residence_tenshutsu_yuso_v3.PDF",
           "stats": {
             "dictionary": 7,
             "fragment": 38,
@@ -523,11 +523,11 @@
     "toshima": {
       "generated": [
         {
-          "file": "Toshima_Residence_hpyoutodokedesho_v1.PDF",
+          "file": "Toshima_Residence_hpyoutodokedesho_v3.PDF",
           "stats": {
-            "dictionary": 60,
-            "fragment": 42,
-            "llm": 38,
+            "dictionary": 70,
+            "fragment": 43,
+            "llm": 27,
             "unknown": 0,
             "total": 140
           }
@@ -537,5 +537,5 @@
       "skipped": []
     }
   },
-  "timestamp": "2026-02-20T14:14:51"
+  "timestamp": "2026-02-25T12:34:45"
 }

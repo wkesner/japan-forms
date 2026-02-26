@@ -13,8 +13,8 @@
           "file": "Joyo_Residence_tennkyo2_20240401_v2.PDF",
           "stats": {
             "dictionary": 18,
-            "fragment": 44,
-            "llm": 28,
+            "fragment": 45,
+            "llm": 27,
             "unknown": 0,
             "total": 90
           }
@@ -23,8 +23,8 @@
           "file": "Joyo_Residence_tennnyu_v2.PDF",
           "stats": {
             "dictionary": 14,
-            "fragment": 48,
-            "llm": 37,
+            "fragment": 50,
+            "llm": 35,
             "unknown": 0,
             "total": 99
           }
@@ -49,8 +49,8 @@
           "file": "Kameoka_Residence_13959_v2.PDF",
           "stats": {
             "dictionary": 20,
-            "fragment": 18,
-            "llm": 18,
+            "fragment": 19,
+            "llm": 17,
             "unknown": 0,
             "total": 56
           }
@@ -136,9 +136,9 @@
         {
           "file": "Uji_Residence_44718_v2.PDF",
           "stats": {
-            "dictionary": 1,
-            "fragment": 63,
-            "llm": 15,
+            "dictionary": 3,
+            "fragment": 65,
+            "llm": 11,
             "unknown": 0,
             "total": 79
           }
@@ -158,5 +158,5 @@
       "skipped": []
     }
   },
-  "timestamp": "2026-02-20T10:13:00"
+  "timestamp": "2026-02-24T09:52:38"
 }

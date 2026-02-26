@@ -28,19 +28,19 @@
         {
           "file": "Kawaguchi_NHIapp_jyusinnannnaipannhuretto_v2.PDF",
           "stats": {
-            "dictionary": 19,
-            "fragment": 18,
-            "llm": 132,
+            "dictionary": 17,
+            "fragment": 29,
+            "llm": 146,
             "unknown": 0,
-            "total": 169
+            "total": 192
           }
         },
         {
           "file": "Kawaguchi_NHIapp_kinyuureitodokedesyo_v2.PDF",
           "stats": {
-            "dictionary": 25,
+            "dictionary": 27,
             "fragment": 55,
-            "llm": 43,
+            "llm": 41,
             "unknown": 0,
             "total": 123
           }
@@ -48,19 +48,19 @@
         {
           "file": "Kawaguchi_NHIapp_sanzensango_v2.PDF",
           "stats": {
-            "dictionary": 9,
-            "fragment": 3,
-            "llm": 7,
+            "dictionary": 11,
+            "fragment": 6,
+            "llm": 20,
             "unknown": 0,
-            "total": 19
+            "total": 37
           }
         },
         {
           "file": "Kawaguchi_NHIapp_sanzensangotodokedesho_v2.PDF",
           "stats": {
             "dictionary": 8,
-            "fragment": 28,
-            "llm": 9,
+            "fragment": 29,
+            "llm": 8,
             "unknown": 0,
             "total": 45
           }
@@ -68,9 +68,9 @@
         {
           "file": "Kawaguchi_NHIapp_shikakusyutokusousitutodoke_saishin1_v2.PDF",
           "stats": {
-            "dictionary": 13,
+            "dictionary": 20,
             "fragment": 50,
-            "llm": 49,
+            "llm": 42,
             "unknown": 0,
             "total": 112
           }
@@ -84,11 +84,11 @@
         {
           "file": "Koshigaya_NHIapp_3rddetahelth1220_v2.PDF",
           "stats": {
-            "dictionary": 43,
-            "fragment": 186,
-            "llm": 237,
+            "dictionary": 29,
+            "fragment": 183,
+            "llm": 226,
             "unknown": 0,
-            "total": 466
+            "total": 438
           }
         },
         {
@@ -120,9 +120,9 @@
         {
           "file": "SaitamaChuo_NHIapp_idoutodoke_v2.PDF",
           "stats": {
-            "dictionary": 40,
+            "dictionary": 42,
             "fragment": 37,
-            "llm": 21,
+            "llm": 19,
             "unknown": 0,
             "total": 98
           }
@@ -130,9 +130,9 @@
         {
           "file": "SaitamaChuo_NHIapp_idoutodoke_rei_v2.PDF",
           "stats": {
-            "dictionary": 33,
+            "dictionary": 39,
             "fragment": 32,
-            "llm": 33,
+            "llm": 27,
             "unknown": 0,
             "total": 98
           }
@@ -144,5 +144,5 @@
       ]
     }
   },
-  "timestamp": "2026-02-20T14:18:31"
+  "timestamp": "2026-02-25T12:32:04"
 }

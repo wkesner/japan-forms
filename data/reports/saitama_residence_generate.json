@@ -13,8 +13,8 @@
           "file": "Ageo_Residence_111971_v2.PDF",
           "stats": {
             "dictionary": 26,
-            "fragment": 48,
-            "llm": 19,
+            "fragment": 49,
+            "llm": 18,
             "unknown": 0,
             "total": 93
           }
@@ -32,11 +32,11 @@
         {
           "file": "Ageo_Residence_403250_1117718_misc_v2.PDF",
           "stats": {
-            "dictionary": 31,
-            "fragment": 5,
-            "llm": 10,
+            "dictionary": 32,
+            "fragment": 20,
+            "llm": 16,
             "unknown": 0,
-            "total": 46
+            "total": 68
           }
         }
       ],
@@ -51,10 +51,10 @@
         {
           "file": "Asaka_Residence_86246_v2.PDF",
           "stats": {
-            "dictionary": 2,
-            "fragment": 31,
-            "llm": 11,
-            "unknown": 1,
+            "dictionary": 3,
+            "fragment": 32,
+            "llm": 10,
+            "unknown": 0,
             "total": 45
           }
         }
@@ -103,8 +103,8 @@
           "file": "Kawaguchi_Residence_202103shinzyuuminnidoutodokeyuusouyou_v3.PDF",
           "stats": {
             "dictionary": 11,
-            "fragment": 40,
-            "llm": 6,
+            "fragment": 41,
+            "llm": 5,
             "unknown": 0,
             "total": 57
           }
@@ -189,8 +189,8 @@
           "file": "Niiza_Residence_62624_v2.PDF",
           "stats": {
             "dictionary": 12,
-            "fragment": 31,
-            "llm": 14,
+            "fragment": 32,
+            "llm": 13,
             "unknown": 0,
             "total": 57
           }
@@ -199,8 +199,8 @@
           "file": "Niiza_Residence_62626_v2.PDF",
           "stats": {
             "dictionary": 24,
-            "fragment": 29,
-            "llm": 16,
+            "fragment": 30,
+            "llm": 15,
             "unknown": 0,
             "total": 69
           }
@@ -403,7 +403,7 @@
     "saitama-urawa": {
       "generated": [
         {
-          "file": "SaitamaUrawa_Residence_yuusou-tennsyutu_v2.PDF",
+          "file": "SaitamaUrawa_Residence_yuusou-tennsyutu_v3.PDF",
           "stats": {
             "dictionary": 10,
             "fragment": 34,
@@ -480,5 +480,5 @@
       ]
     }
   },
-  "timestamp": "2026-02-20T10:12:39"
+  "timestamp": "2026-02-24T10:10:40"
 }
