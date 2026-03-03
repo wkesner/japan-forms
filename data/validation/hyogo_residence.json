@@ -1,11 +1,11 @@
 {
   "prefecture": "hyogo",
   "form_type": "residence",
-  "timestamp": "2026-02-18T15:55:34",
+  "timestamp": "2026-03-02T09:31:20",
   "summary": {
-    "ok": 16,
-    "failed": 3,
-    "skipped": 0
+    "ok": 12,
+    "failed": 1,
+    "skipped": 2
   },
   "results": {
     "akashi": {
@@ -14,7 +14,7 @@
         {
           "filename": "yusoutensyutu.pdf",
           "status": "ok",
-          "detail": "score=50"
+          "detail": "matched: 転出届"
         }
       ]
     },
@@ -23,18 +23,8 @@
       "files": [
         {
           "filename": "idoutodokeR801.pdf",
-          "status": "ok",
-          "detail": "score=40"
-        },
-        {
-          "filename": "idoutodokeR801.pdf",
-          "status": "ok",
-          "detail": "score=40"
-        },
-        {
-          "filename": "idoutodokeR801.pdf",
-          "status": "ok",
-          "detail": "score=40"
+          "status": "skipped",
+          "detail": "image-based (0 chars) — skipping validation"
         }
       ]
     },
@@ -42,19 +32,19 @@
       "name_en": "Ashiya City",
       "files": [
         {
-          "filename": "yuusouniyorutenshutsutodoker0712.pdf",
-          "status": "ok",
-          "detail": "score=55"
+          "filename": "honninkakunin_yuusoutenshutsu_6.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 713 chars of text"
         },
         {
           "filename": "yuusouniyorutennshutsutodoke-tokureir0712.pdf",
           "status": "ok",
-          "detail": "score=40"
+          "detail": "matched: 転入届"
         },
         {
-          "filename": "honninkakunin_yuusoutenshutsu_6.pdf",
-          "status": "failed",
-          "detail": "validation failed: no validation terms found in 713 chars of text"
+          "filename": "yuusouniyorutenshutsutodoker0712.pdf",
+          "status": "ok",
+          "detail": "matched: 転出届"
         }
       ]
     },
@@ -62,29 +52,19 @@
       "name_en": "Himeji City",
       "files": [
         {
-          "filename": "20241126.pdf",
+          "filename": "2019920105555.pdf",
           "status": "ok",
-          "detail": "score=35"
+          "detail": "matched: 住民異動届"
         },
         {
           "filename": "2024103.pdf",
           "status": "ok",
-          "detail": "score=35"
+          "detail": "matched: 住民異動届"
         },
         {
           "filename": "20241126.pdf",
           "status": "ok",
-          "detail": "score=35"
-        },
-        {
-          "filename": "20241126.pdf",
-          "status": "ok",
-          "detail": "score=35"
-        },
-        {
-          "filename": "2019920105555.pdf",
-          "status": "ok",
-          "detail": "score=35"
+          "detail": "matched: 住民異動届"
         }
       ]
     },
@@ -94,17 +74,17 @@
         {
           "filename": "45565871.pdf",
           "status": "ok",
-          "detail": "score=40"
+          "detail": "matched: 転入届"
         },
         {
           "filename": "64484204.pdf",
           "status": "ok",
-          "detail": "score=40"
+          "detail": "matched: 転入届"
         },
         {
           "filename": "66800220.pdf",
           "status": "ok",
-          "detail": "score=40"
+          "detail": "matched: 転入届"
         }
       ]
     },
@@ -112,9 +92,9 @@
       "name_en": "Kakogawa City",
       "files": [
         {
-          "filename": "(none)",
-          "status": "failed",
-          "detail": "no candidates found"
+          "filename": "zyuuminnidoutodoke202509.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
         }
       ]
     },
@@ -122,9 +102,9 @@
       "name_en": "Nishinomiya City",
       "files": [
         {
-          "filename": "(none)",
-          "status": "failed",
-          "detail": "no candidates found"
+          "filename": "jyuminidoutodoke2025.pdf",
+          "status": "skipped",
+          "detail": "image-based (0 chars) — skipping validation"
         }
       ]
     },
@@ -132,14 +112,14 @@
       "name_en": "Takarazuka City",
       "files": [
         {
-          "filename": "2103_tenshututodoke.pdf",
-          "status": "ok",
-          "detail": "score=40"
-        },
-        {
           "filename": "2103_kinyuurei.pdf",
           "status": "ok",
-          "detail": "score=40"
+          "detail": "matched: 転出届"
+        },
+        {
+          "filename": "2103_tenshututodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 転出届"
         }
       ]
     }

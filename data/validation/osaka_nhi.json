@@ -1,50 +1,40 @@
 {
   "prefecture": "osaka",
   "form_type": "nhi",
-  "timestamp": "2026-02-18T16:09:11",
+  "timestamp": "2026-03-02T09:31:22",
   "summary": {
     "ok": 19,
-    "failed": 4,
-    "skipped": 0
+    "failed": 1,
+    "skipped": 2
   },
   "results": {
     "higashiosaka": {
       "name_en": "Higashiosaka City",
       "files": [
         {
-          "filename": "kokuhosyoubyouteatesinseisyo.pdf",
+          "filename": "R4kokuhonouhuhouhouhenkoumousidesho.pdf",
           "status": "ok",
-          "detail": "score=55"
+          "detail": "matched: 国民健康保険"
         },
         {
           "filename": "R8kokuhokoukinouhushoumeishonegai.pdf",
           "status": "ok",
-          "detail": "score=45"
+          "detail": "matched: 国民健康保険"
         },
         {
           "filename": "R8kokuhonouhushoumeishomihon.pdf",
           "status": "ok",
-          "detail": "score=45"
-        },
-        {
-          "filename": "R4kokuhonouhuhouhouhenkoumousidesho.pdf",
-          "status": "ok",
-          "detail": "score=45"
+          "detail": "matched: 国民健康保険"
         },
         {
           "filename": "kokuhokimekata.pdf",
           "status": "ok",
-          "detail": "score=45"
-        }
-      ]
-    },
-    "hirakata": {
-      "name_en": "Hirakata City",
-      "files": [
+          "detail": "matched: 国民健康保険"
+        },
         {
-          "filename": "(none)",
-          "status": "failed",
-          "detail": "no candidates found"
+          "filename": "kokuhosyoubyouteatesinseisyo.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
         }
       ]
     },
@@ -52,39 +42,29 @@
       "name_en": "Ibaraki City",
       "files": [
         {
-          "filename": "sousitutodoke.pdf",
+          "filename": "kokuminnenkinhihokensyakankeitodokesyo.pdf",
           "status": "ok",
-          "detail": "score=100"
+          "detail": "matched: 資格取得"
         },
         {
           "filename": "saihakkou_2025.pdf",
           "status": "ok",
-          "detail": "score=50"
+          "detail": "matched: 国民健康保険"
         },
         {
           "filename": "sougu.pdf",
           "status": "ok",
-          "detail": "score=50"
+          "detail": "matched: 国民健康保険"
         },
         {
-          "filename": "kokuminnenkinhihokensyakankeitodokesyo.pdf",
+          "filename": "sousitutodoke.pdf",
           "status": "ok",
-          "detail": "score=45"
+          "detail": "matched: 国民健康保険"
         },
         {
           "filename": "tekiyoujyogai.pdf",
           "status": "ok",
-          "detail": "score=40"
-        }
-      ]
-    },
-    "kishiwada": {
-      "name_en": "Kishiwada City",
-      "files": [
-        {
-          "filename": "(none)",
-          "status": "failed",
-          "detail": "no candidates found"
+          "detail": "matched: 国民健康保険"
         }
       ]
     },
@@ -92,14 +72,14 @@
       "name_en": "Neyagawa City",
       "files": [
         {
-          "filename": "kaigai20231004.pdf",
-          "status": "ok",
-          "detail": "score=40"
-        },
-        {
           "filename": "2025idoutodoke.pdf",
           "status": "failed",
-          "detail": "validation failed: no validation terms found in 2083 chars of text"
+          "detail": "no validation terms found in 2083 chars of text"
+        },
+        {
+          "filename": "kaigai20231004.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
         }
       ]
     },
@@ -109,7 +89,7 @@
         {
           "filename": "enroll23.pdf",
           "status": "ok",
-          "detail": "score=85"
+          "detail": "matched: 国民健康保険"
         }
       ]
     },
@@ -119,7 +99,7 @@
         {
           "filename": "saikohu.pdf",
           "status": "ok",
-          "detail": "score=50"
+          "detail": "matched: 国民健康保険"
         }
       ]
     },
@@ -127,9 +107,14 @@
       "name_en": "Takatsuki City",
       "files": [
         {
-          "filename": "(none)",
-          "status": "failed",
-          "detail": "no candidates found"
+          "filename": "kokuho_idoutodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "kokuho_idoutodoke_kisairei.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
         }
       ]
     },
@@ -139,7 +124,7 @@
         {
           "filename": "kaijyosinsei20241028.pdf",
           "status": "ok",
-          "detail": "score=60"
+          "detail": "matched: 国民健康保険"
         }
       ]
     },
@@ -147,29 +132,29 @@
       "name_en": "Yao City",
       "files": [
         {
+          "filename": "20260212-2.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
           "filename": "itijikinr5.4.1.pdf",
-          "status": "ok",
-          "detail": "score=50"
-        },
-        {
-          "filename": "sousaihisinseisyo.pdf",
-          "status": "ok",
-          "detail": "score=50"
-        },
-        {
-          "filename": "shokuji.pdf",
-          "status": "ok",
-          "detail": "score=50"
+          "status": "skipped",
+          "detail": "image-based (0 chars) — skipping validation"
         },
         {
           "filename": "seikatsu.pdf",
           "status": "ok",
-          "detail": "score=50"
+          "detail": "matched: 国民健康保険"
         },
         {
-          "filename": "20260212-2.pdf",
+          "filename": "shokuji.pdf",
           "status": "ok",
-          "detail": "score=40"
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "sousaihisinseisyo.pdf",
+          "status": "skipped",
+          "detail": "image-based (0 chars) — skipping validation"
         }
       ]
     }

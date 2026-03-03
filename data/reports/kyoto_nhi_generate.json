@@ -2,11 +2,53 @@
   "prefecture": "kyoto",
   "form_type": "nhi",
   "summary": {
-    "generated": 2,
+    "generated": 7,
     "failed": 0,
     "skipped": 1
   },
   "wards": {
+    "joyo": {
+      "generated": [
+        {
+          "file": "Joyo_NHIapp_idoutodoke7_20241213_v1.PDF",
+          "stats": {
+            "dictionary": 28,
+            "fragment": 54,
+            "llm": 56,
+            "unknown": 0,
+            "total": 138
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "muko": {
+      "generated": [
+        {
+          "file": "Muko_NHIapp_kokuho_idoutodoke_v1.PDF",
+          "stats": {
+            "dictionary": 23,
+            "fragment": 49,
+            "llm": 54,
+            "unknown": 0,
+            "total": 126
+          }
+        },
+        {
+          "file": "Muko_NHIapp_kokuho_idoutodoke_rei_v1.PDF",
+          "stats": {
+            "dictionary": 30,
+            "fragment": 54,
+            "llm": 79,
+            "unknown": 0,
+            "total": 163
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
     "nagaokakyo": {
       "generated": [
         {
@@ -34,7 +76,33 @@
       "skipped": [
         "3idoutodoke.pdf"
       ]
+    },
+    "uji": {
+      "generated": [
+        {
+          "file": "Uji_NHIapp_kokuho_idoutodoke_v1.PDF",
+          "stats": {
+            "dictionary": 37,
+            "fragment": 56,
+            "llm": 24,
+            "unknown": 0,
+            "total": 117
+          }
+        },
+        {
+          "file": "Uji_NHIapp_kokuho_idoutodoke_rei_v1.PDF",
+          "stats": {
+            "dictionary": 26,
+            "fragment": 73,
+            "llm": 31,
+            "unknown": 3,
+            "total": 133
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
     }
   },
-  "timestamp": "2026-02-20T10:14:57"
+  "timestamp": "2026-03-02T09:43:43"
 }

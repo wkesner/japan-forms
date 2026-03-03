@@ -1,10 +1,10 @@
 {
   "prefecture": "kyoto",
   "form_type": "nhi",
-  "timestamp": "2026-02-18T16:04:01",
+  "timestamp": "2026-03-02T09:31:22",
   "summary": {
-    "ok": 2,
-    "failed": 5,
+    "ok": 7,
+    "failed": 1,
     "skipped": 0
   },
   "results": {
@@ -12,19 +12,9 @@
       "name_en": "Joyo City",
       "files": [
         {
-          "filename": "(none)",
-          "status": "failed",
-          "detail": "no candidates found"
-        }
-      ]
-    },
-    "kameoka": {
-      "name_en": "Kameoka City",
-      "files": [
-        {
-          "filename": "(none)",
-          "status": "failed",
-          "detail": "best score too low (10)"
+          "filename": "idoutodoke7_20241213.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
         }
       ]
     },
@@ -32,9 +22,14 @@
       "name_en": "Muko City",
       "files": [
         {
-          "filename": "(none)",
-          "status": "failed",
-          "detail": "no candidates found"
+          "filename": "kokuho_idoutodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "kokuho_idoutodoke_rei.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
         }
       ]
     },
@@ -42,19 +37,19 @@
       "name_en": "Nagaokakyo City",
       "files": [
         {
-          "filename": "saikouhu_2025111315494788.pdf",
-          "status": "ok",
-          "detail": "score=50"
+          "filename": "3idoutodoke.pdf",
+          "status": "failed",
+          "detail": "no validation terms found in 2818 chars of text"
         },
         {
           "filename": "saikoufu.pdf",
           "status": "ok",
-          "detail": "score=40"
+          "detail": "matched: 被保険者"
         },
         {
-          "filename": "3idoutodoke.pdf",
-          "status": "failed",
-          "detail": "validation failed: no validation terms found in 2818 chars of text"
+          "filename": "saikouhu_2025111315494788.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
         }
       ]
     },
@@ -62,9 +57,14 @@
       "name_en": "Uji City",
       "files": [
         {
-          "filename": "(none)",
-          "status": "failed",
-          "detail": "no candidates found"
+          "filename": "kokuho_idoutodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
+        },
+        {
+          "filename": "kokuho_idoutodoke_rei.pdf",
+          "status": "ok",
+          "detail": "matched: 国民健康保険"
         }
       ]
     }

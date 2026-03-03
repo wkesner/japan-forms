@@ -2,7 +2,7 @@
   "prefecture": "hyogo",
   "form_type": "residence",
   "summary": {
-    "generated": 12,
+    "generated": 14,
     "failed": 0,
     "skipped": 1
   },
@@ -28,11 +28,11 @@
         {
           "file": "Amagasaki_Residence_idoutodokeR801_v2.PDF",
           "stats": {
-            "dictionary": 34,
-            "fragment": 6,
-            "llm": 9,
+            "dictionary": 33,
+            "fragment": 14,
+            "llm": 15,
             "unknown": 0,
-            "total": 49
+            "total": 62
           }
         }
       ],
@@ -72,9 +72,9 @@
         {
           "file": "Himeji_Residence_2019920105555_v2.PDF",
           "stats": {
-            "dictionary": 77,
+            "dictionary": 79,
             "fragment": 37,
-            "llm": 52,
+            "llm": 50,
             "unknown": 0,
             "total": 166
           }
@@ -82,9 +82,9 @@
         {
           "file": "Himeji_Residence_2024103_v2.PDF",
           "stats": {
-            "dictionary": 46,
+            "dictionary": 50,
             "fragment": 55,
-            "llm": 30,
+            "llm": 26,
             "unknown": 0,
             "total": 131
           }
@@ -92,9 +92,9 @@
         {
           "file": "Himeji_Residence_20241126_v2.PDF",
           "stats": {
-            "dictionary": 51,
+            "dictionary": 54,
             "fragment": 43,
-            "llm": 21,
+            "llm": 18,
             "unknown": 0,
             "total": 115
           }
@@ -108,9 +108,9 @@
         {
           "file": "Itami_Residence_45565871_v2.PDF",
           "stats": {
-            "dictionary": 22,
+            "dictionary": 24,
             "fragment": 48,
-            "llm": 3,
+            "llm": 1,
             "unknown": 0,
             "total": 73
           }
@@ -118,9 +118,9 @@
         {
           "file": "Itami_Residence_64484204_v2.PDF",
           "stats": {
-            "dictionary": 30,
+            "dictionary": 31,
             "fragment": 43,
-            "llm": 20,
+            "llm": 19,
             "unknown": 0,
             "total": 93
           }
@@ -128,11 +128,43 @@
         {
           "file": "Itami_Residence_66800220_v2.PDF",
           "stats": {
-            "dictionary": 32,
+            "dictionary": 33,
             "fragment": 51,
-            "llm": 11,
+            "llm": 10,
             "unknown": 0,
             "total": 94
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "kakogawa": {
+      "generated": [
+        {
+          "file": "Kakogawa_Residence_zyuuminnidoutodoke202509_v1.PDF",
+          "stats": {
+            "dictionary": 56,
+            "fragment": 59,
+            "llm": 31,
+            "unknown": 0,
+            "total": 146
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "nishinomiya": {
+      "generated": [
+        {
+          "file": "Nishinomiya_Residence_jyuminidoutodoke2025_v1.PDF",
+          "stats": {
+            "dictionary": 59,
+            "fragment": 8,
+            "llm": 10,
+            "unknown": 0,
+            "total": 77
           }
         }
       ],
@@ -145,8 +177,8 @@
           "file": "Takarazuka_Residence_2103_kinyuurei_v2.PDF",
           "stats": {
             "dictionary": 18,
-            "fragment": 66,
-            "llm": 26,
+            "fragment": 68,
+            "llm": 24,
             "unknown": 0,
             "total": 110
           }
@@ -154,9 +186,9 @@
         {
           "file": "Takarazuka_Residence_2103_tenshututodoke_v2.PDF",
           "stats": {
-            "dictionary": 18,
-            "fragment": 49,
-            "llm": 35,
+            "dictionary": 19,
+            "fragment": 52,
+            "llm": 31,
             "unknown": 0,
             "total": 102
           }
@@ -166,5 +198,5 @@
       "skipped": []
     }
   },
-  "timestamp": "2026-02-20T10:10:53"
+  "timestamp": "2026-03-02T15:59:45"
 }

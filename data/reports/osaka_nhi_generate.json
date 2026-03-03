@@ -2,7 +2,7 @@
   "prefecture": "osaka",
   "form_type": "nhi",
   "summary": {
-    "generated": 19,
+    "generated": 21,
     "failed": 0,
     "skipped": 1
   },
@@ -12,9 +12,9 @@
         {
           "file": "Higashiosaka_NHIapp_R4kokuhonouhuhouhouhenkoumousidesho_v2.PDF",
           "stats": {
-            "dictionary": 6,
+            "dictionary": 7,
             "fragment": 17,
-            "llm": 7,
+            "llm": 6,
             "unknown": 0,
             "total": 30
           }
@@ -44,9 +44,9 @@
           "stats": {
             "dictionary": 4,
             "fragment": 65,
-            "llm": 27,
+            "llm": 25,
             "unknown": 0,
-            "total": 96
+            "total": 94
           }
         },
         {
@@ -68,9 +68,9 @@
         {
           "file": "IbarakiOsaka_NHIapp_kokuminnenkinhihokensyakankeitodokesyo_v2.PDF",
           "stats": {
-            "dictionary": 25,
+            "dictionary": 36,
             "fragment": 136,
-            "llm": 46,
+            "llm": 35,
             "unknown": 0,
             "total": 207
           }
@@ -78,9 +78,9 @@
         {
           "file": "IbarakiOsaka_NHIapp_saihakkou_2025_v2.PDF",
           "stats": {
-            "dictionary": 2,
-            "fragment": 20,
-            "llm": 20,
+            "dictionary": 3,
+            "fragment": 21,
+            "llm": 18,
             "unknown": 0,
             "total": 42
           }
@@ -98,9 +98,9 @@
         {
           "file": "IbarakiOsaka_NHIapp_sousitutodoke_v2.PDF",
           "stats": {
-            "dictionary": 20,
+            "dictionary": 35,
             "fragment": 15,
-            "llm": 62,
+            "llm": 47,
             "unknown": 0,
             "total": 97
           }
@@ -125,8 +125,8 @@
           "file": "Neyagawa_NHIapp_kaigai20231004_v2.PDF",
           "stats": {
             "dictionary": 0,
-            "fragment": 17,
-            "llm": 12,
+            "fragment": 19,
+            "llm": 10,
             "unknown": 0,
             "total": 29
           }
@@ -142,9 +142,9 @@
         {
           "file": "Sakai_NHIapp_enroll23_v2.PDF",
           "stats": {
-            "dictionary": 36,
-            "fragment": 44,
-            "llm": 52,
+            "dictionary": 38,
+            "fragment": 47,
+            "llm": 47,
             "unknown": 0,
             "total": 132
           }
@@ -159,10 +159,36 @@
           "file": "Suita_NHIapp_saikohu_v2.PDF",
           "stats": {
             "dictionary": 13,
-            "fragment": 44,
-            "llm": 21,
+            "fragment": 45,
+            "llm": 20,
             "unknown": 0,
             "total": 78
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "takatsuki": {
+      "generated": [
+        {
+          "file": "Takatsuki_NHIapp_kokuho_idoutodoke_v1.PDF",
+          "stats": {
+            "dictionary": 24,
+            "fragment": 70,
+            "llm": 46,
+            "unknown": 0,
+            "total": 140
+          }
+        },
+        {
+          "file": "Takatsuki_NHIapp_kokuho_idoutodoke_kisairei_v1.PDF",
+          "stats": {
+            "dictionary": 13,
+            "fragment": 61,
+            "llm": 32,
+            "unknown": 0,
+            "total": 106
           }
         }
       ],
@@ -174,9 +200,9 @@
         {
           "file": "Toyonaka_NHIapp_kaijyosinsei20241028_v2.PDF",
           "stats": {
-            "dictionary": 11,
-            "fragment": 28,
-            "llm": 6,
+            "dictionary": 12,
+            "fragment": 29,
+            "llm": 4,
             "unknown": 0,
             "total": 45
           }
@@ -190,9 +216,9 @@
         {
           "file": "Yao_NHIapp_20260212-2_v2.PDF",
           "stats": {
-            "dictionary": 34,
+            "dictionary": 35,
             "fragment": 50,
-            "llm": 58,
+            "llm": 57,
             "unknown": 0,
             "total": 142
           }
@@ -200,19 +226,19 @@
         {
           "file": "Yao_NHIapp_itijikinr5.4.1_v2.PDF",
           "stats": {
-            "dictionary": 26,
-            "fragment": 16,
-            "llm": 11,
+            "dictionary": 24,
+            "fragment": 12,
+            "llm": 9,
             "unknown": 0,
-            "total": 53
+            "total": 45
           }
         },
         {
           "file": "Yao_NHIapp_seikatsu_v2.PDF",
           "stats": {
-            "dictionary": 28,
+            "dictionary": 30,
             "fragment": 23,
-            "llm": 15,
+            "llm": 13,
             "unknown": 0,
             "total": 66
           }
@@ -220,9 +246,9 @@
         {
           "file": "Yao_NHIapp_shokuji_v2.PDF",
           "stats": {
-            "dictionary": 27,
+            "dictionary": 29,
             "fragment": 23,
-            "llm": 16,
+            "llm": 14,
             "unknown": 0,
             "total": 66
           }
@@ -230,11 +256,11 @@
         {
           "file": "Yao_NHIapp_sousaihisinseisyo_v2.PDF",
           "stats": {
-            "dictionary": 17,
+            "dictionary": 18,
             "fragment": 15,
-            "llm": 3,
+            "llm": 1,
             "unknown": 0,
-            "total": 35
+            "total": 34
           }
         }
       ],
@@ -242,5 +268,5 @@
       "skipped": []
     }
   },
-  "timestamp": "2026-02-19T11:42:50"
+  "timestamp": "2026-03-02T16:33:00"
 }
