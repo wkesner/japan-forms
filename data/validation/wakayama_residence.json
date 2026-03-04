@@ -1,30 +1,20 @@
 {
   "prefecture": "wakayama",
   "form_type": "residence",
-  "timestamp": "2026-02-18T15:46:18",
+  "timestamp": "2026-03-02T17:47:39",
   "summary": {
-    "ok": 1,
-    "failed": 2,
+    "ok": 2,
+    "failed": 0,
     "skipped": 0
   },
   "results": {
-    "hashimoto": {
-      "name_en": "Hashimoto City",
-      "files": [
-        {
-          "filename": "(none)",
-          "status": "failed",
-          "detail": "best score too low (40)"
-        }
-      ]
-    },
     "tanabe": {
       "name_en": "Tanabe City",
       "files": [
         {
           "filename": "kojin-yuusou-tenshutu-maina3.pdf",
           "status": "ok",
-          "detail": "score=30"
+          "detail": "matched: 転入届"
         }
       ]
     },
@@ -32,9 +22,9 @@
       "name_en": "Wakayama City",
       "files": [
         {
-          "filename": "(none)",
-          "status": "failed",
-          "detail": "best score too low (25)"
+          "filename": "yusoTensyutsu20241202.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
         }
       ]
     }

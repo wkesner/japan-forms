@@ -2,19 +2,91 @@
   "prefecture": "nara",
   "form_type": "residence",
   "summary": {
-    "generated": 6,
+    "generated": 12,
     "failed": 0,
     "skipped": 0
   },
   "wards": {
+    "ikoma": {
+      "generated": [
+        {
+          "file": "Ikoma_Residence_idoutodoke_v2.PDF",
+          "stats": {
+            "dictionary": 15,
+            "fragment": 35,
+            "llm": 39,
+            "unknown": 0,
+            "total": 89
+          }
+        },
+        {
+          "file": "Ikoma_Residence_tennyukinyurei_v2.PDF",
+          "stats": {
+            "dictionary": 17,
+            "fragment": 39,
+            "llm": 52,
+            "unknown": 0,
+            "total": 108
+          }
+        },
+        {
+          "file": "Ikoma_Residence_tensyutukinyurei_v2.PDF",
+          "stats": {
+            "dictionary": 19,
+            "fragment": 44,
+            "llm": 50,
+            "unknown": 0,
+            "total": 113
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "kashihara": {
+      "generated": [
+        {
+          "file": "Kashihara_Residence_idoutodoke_v2.PDF",
+          "stats": {
+            "dictionary": 30,
+            "fragment": 60,
+            "llm": 82,
+            "unknown": 0,
+            "total": 172
+          }
+        },
+        {
+          "file": "Kashihara_Residence_tennyu_kisairei_v2.PDF",
+          "stats": {
+            "dictionary": 26,
+            "fragment": 52,
+            "llm": 41,
+            "unknown": 0,
+            "total": 119
+          }
+        },
+        {
+          "file": "Kashihara_Residence_tensyutu_kisairei_v2.PDF",
+          "stats": {
+            "dictionary": 26,
+            "fragment": 53,
+            "llm": 38,
+            "unknown": 0,
+            "total": 117
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
     "nara": {
       "generated": [
         {
           "file": "Nara_Residence_205687_v2.PDF",
           "stats": {
-            "dictionary": 44,
+            "dictionary": 46,
             "fragment": 42,
-            "llm": 25,
+            "llm": 23,
             "unknown": 0,
             "total": 111
           }
@@ -22,9 +94,9 @@
         {
           "file": "Nara_Residence_205697_v2.PDF",
           "stats": {
-            "dictionary": 44,
+            "dictionary": 46,
             "fragment": 42,
-            "llm": 25,
+            "llm": 23,
             "unknown": 0,
             "total": 111
           }
@@ -32,9 +104,9 @@
         {
           "file": "Nara_Residence_205700_v2.PDF",
           "stats": {
-            "dictionary": 44,
+            "dictionary": 46,
             "fragment": 42,
-            "llm": 25,
+            "llm": 23,
             "unknown": 0,
             "total": 111
           }
@@ -43,8 +115,8 @@
           "file": "Nara_Residence_205796_v2.PDF",
           "stats": {
             "dictionary": 23,
-            "fragment": 54,
-            "llm": 55,
+            "fragment": 56,
+            "llm": 53,
             "unknown": 0,
             "total": 132
           }
@@ -86,5 +158,5 @@
       "skipped": []
     }
   },
-  "timestamp": "2026-02-20T10:02:34"
+  "timestamp": "2026-03-03T16:29:06"
 }

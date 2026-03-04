@@ -1,20 +1,145 @@
 {
   "prefecture": "osaka",
   "form_type": "residence",
-  "timestamp": "2026-02-26T12:24:37",
+  "timestamp": "2026-03-02T17:46:16",
   "summary": {
-    "ok": 0,
-    "failed": 1,
+    "ok": 17,
+    "failed": 0,
     "skipped": 0
   },
   "results": {
+    "higashiosaka": {
+      "name_en": "Higashiosaka City",
+      "files": [
+        {
+          "filename": "(tenkyo)idoutodke.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "(tennyu)idoutodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "(tensyutu)idoutodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "idoutodoke.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "hirakata": {
+      "name_en": "Hirakata City",
+      "files": [
+        {
+          "filename": "sonotanotetuduki.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
     "ibaraki-osaka": {
       "name_en": "Ibaraki City",
       "files": [
         {
-          "filename": "(none)",
-          "status": "failed",
-          "detail": "best score too low (20)"
+          "filename": "2026yuusou.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "2026yuusoumihonn.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "kishiwada": {
+      "name_en": "Kishiwada City",
+      "files": [
+        {
+          "filename": "73464.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "neyagawa": {
+      "name_en": "Neyagawa City",
+      "files": [
+        {
+          "filename": "tensyutsu_yuso.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        }
+      ]
+    },
+    "sakai": {
+      "name_en": "Sakai City",
+      "files": [
+        {
+          "filename": "tenshutu_260105.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        }
+      ]
+    },
+    "suita": {
+      "name_en": "Suita City",
+      "files": [
+        {
+          "filename": "gaiyouban.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        },
+        {
+          "filename": "syousaiban.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        }
+      ]
+    },
+    "takatsuki": {
+      "name_en": "Takatsuki City",
+      "files": [
+        {
+          "filename": "tensyutu_mynumber.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        },
+        {
+          "filename": "tensyutu_nomynumber.pdf",
+          "status": "ok",
+          "detail": "matched: 転入届"
+        }
+      ]
+    },
+    "toyonaka": {
+      "name_en": "Toyonaka City",
+      "files": [
+        {
+          "filename": "juminidotodokeyuso.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        }
+      ]
+    },
+    "yao": {
+      "name_en": "Yao City",
+      "files": [
+        {
+          "filename": "kakikata1.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
+        },
+        {
+          "filename": "tensyutu1.pdf",
+          "status": "ok",
+          "detail": "matched: 住民異動届"
         }
       ]
     }

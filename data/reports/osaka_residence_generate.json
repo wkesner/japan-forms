@@ -2,7 +2,7 @@
   "prefecture": "osaka",
   "form_type": "residence",
   "summary": {
-    "generated": 10,
+    "generated": 17,
     "failed": 0,
     "skipped": 0
   },
@@ -12,9 +12,9 @@
         {
           "file": "Higashiosaka_Residence_(tenkyo)idoutodke_v2.PDF",
           "stats": {
-            "dictionary": 43,
+            "dictionary": 51,
             "fragment": 69,
-            "llm": 32,
+            "llm": 24,
             "unknown": 0,
             "total": 144
           }
@@ -22,9 +22,9 @@
         {
           "file": "Higashiosaka_Residence_(tennyu)idoutodoke_v2.PDF",
           "stats": {
-            "dictionary": 42,
+            "dictionary": 49,
             "fragment": 75,
-            "llm": 28,
+            "llm": 21,
             "unknown": 0,
             "total": 145
           }
@@ -32,9 +32,9 @@
         {
           "file": "Higashiosaka_Residence_(tensyutu)idoutodoke_v2.PDF",
           "stats": {
-            "dictionary": 43,
+            "dictionary": 50,
             "fragment": 74,
-            "llm": 28,
+            "llm": 21,
             "unknown": 0,
             "total": 145
           }
@@ -42,9 +42,9 @@
         {
           "file": "Higashiosaka_Residence_idoutodoke_v2.PDF",
           "stats": {
-            "dictionary": 41,
+            "dictionary": 49,
             "fragment": 69,
-            "llm": 27,
+            "llm": 19,
             "unknown": 0,
             "total": 137
           }
@@ -63,6 +63,32 @@
             "llm": 4,
             "unknown": 0,
             "total": 67
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "ibaraki-osaka": {
+      "generated": [
+        {
+          "file": "IbarakiOsaka_Residence_2026yuusou_v4.PDF",
+          "stats": {
+            "dictionary": 41,
+            "fragment": 64,
+            "llm": 86,
+            "unknown": 0,
+            "total": 191
+          }
+        },
+        {
+          "file": "IbarakiOsaka_Residence_2026yuusoumihonn_v4.PDF",
+          "stats": {
+            "dictionary": 46,
+            "fragment": 55,
+            "llm": 104,
+            "unknown": 0,
+            "total": 205
           }
         }
       ],
@@ -142,7 +168,75 @@
       ],
       "failed": [],
       "skipped": []
+    },
+    "takatsuki": {
+      "generated": [
+        {
+          "file": "Takatsuki_Residence_tensyutu_mynumber_v4.PDF",
+          "stats": {
+            "dictionary": 13,
+            "fragment": 23,
+            "llm": 9,
+            "unknown": 0,
+            "total": 45
+          }
+        },
+        {
+          "file": "Takatsuki_Residence_tensyutu_nomynumber_v4.PDF",
+          "stats": {
+            "dictionary": 17,
+            "fragment": 18,
+            "llm": 10,
+            "unknown": 0,
+            "total": 45
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "toyonaka": {
+      "generated": [
+        {
+          "file": "Toyonaka_Residence_juminidotodokeyuso_v4.PDF",
+          "stats": {
+            "dictionary": 26,
+            "fragment": 47,
+            "llm": 56,
+            "unknown": 0,
+            "total": 129
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
+    },
+    "yao": {
+      "generated": [
+        {
+          "file": "Yao_Residence_kakikata1_v4.PDF",
+          "stats": {
+            "dictionary": 18,
+            "fragment": 48,
+            "llm": 21,
+            "unknown": 0,
+            "total": 87
+          }
+        },
+        {
+          "file": "Yao_Residence_tensyutu1_v4.PDF",
+          "stats": {
+            "dictionary": 15,
+            "fragment": 43,
+            "llm": 13,
+            "unknown": 0,
+            "total": 71
+          }
+        }
+      ],
+      "failed": [],
+      "skipped": []
     }
   },
-  "timestamp": "2026-02-23T12:04:54"
+  "timestamp": "2026-03-03T16:39:12"
 }

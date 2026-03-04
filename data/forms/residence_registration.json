@@ -15,7 +15,7 @@
     "aliases_en": ["Moving-In Notification", "Change of Address Form", "Notification of Change of Residence"]
   },
 
-  "validation_terms": ["住民異動届", "転入届", "転居届", "転出届", "住所異動届"],
+  "validation_terms": ["住民異動届", "転入届", "転居届", "転出届", "住所異動届", "住民異動"],
 
   "legal_basis": {
     "law": "住民基本台帳法",
